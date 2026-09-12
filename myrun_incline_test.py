@@ -4,11 +4,14 @@ Technogym MYRUN - controlled incline diagnostic test
 
 Purpose:
 - connect via BLE
-- perform the same QZ-style initialization that already worked
+- perform the same QZ-style initialization used by qdomyos-zwift
 - take baseline STATUS / RADCEXT / DUMPIO
+- send FTMS START/RESUME without setting a belt speed
+- verify controller state
 - request a small incline via FTMS (default +2.0 %)
 - immediately sample DUMPIO / STATUS / RADCEXT several times
 - request 0.0 % again
+- send FTMS STOP/PAUSE
 - take final samples
 - write everything as a readable report
 
@@ -22,6 +25,11 @@ Optional:
     python3 myrun_incline_test.py --address E0:86:1D:FA:4D:A0
     python3 myrun_incline_test.py --target 1.0
     python3 myrun_incline_test.py --output incline_test.txt
+
+Safety:
+- nobody should stand on the belt during this test
+- the script does NOT set a speed, but START/RESUME is a real FTMS control command
+- STOP/PAUSE is sent in a finally block after START/RESUME whenever possible
 """
 
 import argparse
@@ -30,16 +38,15 @@ from datetime import datetime
 from pathlib import Path
 import struct
 import sys
-import time
 
 from bleak import BleakClient, BleakScanner
 
 FTMS_CONTROL_POINT = "00002ad9-0000-1000-8000-00805f9b34fb"
 
-TG_WRITE  = "df1eb8e4-1753-4bb9-a6a6-e018040af0a3"
+TG_WRITE = "df1eb8e4-1753-4bb9-a6a6-e018040af0a3"
 TG_NOTIFY = "6f26de4b-dcef-4459-9465-931f1b144c20"
 
-# QZ-style MYRUN initialization, confirmed working on this machine
+# QZ-style MYRUN initialization, confirmed working on the test machine.
 QZ_FTMS_INIT = bytes.fromhex("00 93 F0 51 E8 1B 42 92 8E")
 INIT_COMMANDS = [
     "@DISABLE_PACE#",
@@ -48,9 +55,10 @@ INIT_COMMANDS = [
     "@LJSK_EN 1#",
 ]
 
-# FTMS opcode from QZ enum:
-# 0x00 request control, 0x01 reset, 0x02 target speed, 0x03 target inclination
+# FTMS Control Point opcodes.
 FTMS_SET_TARGET_INCLINATION = 0x03
+FTMS_START_RESUME = 0x07
+FTMS_STOP_PAUSE = 0x08
 
 BYTE_DELAY = 0.040
 TEXT_RESPONSE_TIMEOUT = 6.0
@@ -66,6 +74,16 @@ def clean_text(data: bytes) -> str:
     return text.replace("\r\n", "\n").replace("\r", "\n")
 
 
+def ftms_result_name(code: int) -> str:
+    return {
+        0x01: "SUCCESS",
+        0x02: "NOT_SUPPORTED",
+        0x03: "INVALID_PARAMETER",
+        0x04: "OPERATION_FAILED",
+        0x05: "CONTROL_NOT_PERMITTED",
+    }.get(code, hex(code))
+
+
 class Receiver:
     def __init__(self):
         self.text_buffer = bytearray()
@@ -76,7 +94,7 @@ class Receiver:
         chunk = bytes(data)
         self.text_buffer.extend(chunk)
 
-        # Reassemble !....# text frames. The MYRUN often notifies one byte at a time.
+        # Reassemble !....# frames. MYRUN often notifies one byte at a time.
         while b"#" in self.text_buffer:
             idx = self.text_buffer.index(ord("#"))
             frame = bytes(self.text_buffer[:idx + 1])
@@ -133,33 +151,24 @@ async def send_ascii_bytewise(client, text):
 
 async def text_command(client, rx, command):
     rx.clear_text()
-    t = now()
+    sent_at = now()
     await send_ascii_bytewise(client, command)
     try:
         frame = await asyncio.wait_for(
             rx.text_frames.get(), timeout=TEXT_RESPONSE_TIMEOUT
         )
-        return t, frame, None
+        return sent_at, frame, None
     except asyncio.TimeoutError:
         partial = bytes(rx.text_buffer)
         rx.text_buffer.clear()
-        return t, partial, "TIMEOUT"
+        return sent_at, partial, "TIMEOUT"
 
 
-async def send_incline(client, rx, percent):
-    """
-    FTMS target inclination = signed int16 in units of 0.1 %.
-    QZ's MYRUN implementation sends exactly:
-      [0x03, low byte, high byte]
-    """
-    tenth_percent = int(round(percent * 10.0))
-    payload = bytes([FTMS_SET_TARGET_INCLINATION]) + struct.pack("<h", tenth_percent)
-
+async def send_ftms(client, rx, payload: bytes):
     rx.clear_ftms()
     sent_at = now()
     await client.write_gatt_char(FTMS_CONTROL_POINT, payload, response=True)
 
-    # FTMS response should normally be: 80 03 01  (response / opcode / success)
     try:
         answer = await asyncio.wait_for(
             rx.ftms_frames.get(), timeout=FTMS_RESPONSE_TIMEOUT
@@ -167,6 +176,28 @@ async def send_incline(client, rx, percent):
         return sent_at, payload, answer, None
     except asyncio.TimeoutError:
         return sent_at, payload, b"", "FTMS RESPONSE TIMEOUT"
+
+
+async def send_incline(client, rx, percent):
+    """
+    FTMS target inclination = signed int16 in units of 0.1 %.
+    QZ's MYRUN implementation sends:
+      [0x03, low byte, high byte]
+    """
+    tenth_percent = int(round(percent * 10.0))
+    payload = bytes([FTMS_SET_TARGET_INCLINATION]) + struct.pack(
+        "<h", tenth_percent
+    )
+    return await send_ftms(client, rx, payload)
+
+
+async def send_start(client, rx):
+    return await send_ftms(client, rx, bytes([FTMS_START_RESUME]))
+
+
+async def send_stop(client, rx):
+    # FTMS stop/pause opcode + STOP parameter 0x01, matching QZ.
+    return await send_ftms(client, rx, bytes([FTMS_STOP_PAUSE, 0x01]))
 
 
 def section(f, title):
@@ -179,8 +210,8 @@ def log_text_result(f, label, command, sent_at, response, error=None):
     section(f, label)
     f.write(f"Zeit:    {sent_at}\n")
     f.write(f"Befehl:  {command}\n")
-    f.write(f"Status:  {error or 'OK'}\n")
-    f.write("\n")
+    f.write(f"Status:  {error or 'OK'}\n\n")
+
     if response:
         txt = clean_text(response)
         f.write(txt)
@@ -191,38 +222,40 @@ def log_text_result(f, label, command, sent_at, response, error=None):
         f.write("<keine Antwort>\n")
 
 
-def log_ftms_result(f, label, percent, sent_at, payload, answer, error=None):
+def log_ftms_result(f, label, description, sent_at, payload, answer, error=None):
     section(f, label)
     f.write(f"Zeit:          {sent_at}\n")
-    f.write(f"Zielneigung:   {percent:.1f} %\n")
+    f.write(f"Aktion:        {description}\n")
     f.write(f"FTMS TX:       {payload.hex(' ')}\n")
+
     if answer:
         f.write(f"FTMS RX:       {answer.hex(' ')}\n")
         if len(answer) >= 3 and answer[0] == 0x80:
-            result_names = {
-                0x01: "SUCCESS",
-                0x02: "NOT_SUPPORTED",
-                0x03: "INVALID_PARAMETER",
-                0x04: "OPERATION_FAILED",
-                0x05: "CONTROL_NOT_PERMITTED",
-            }
-            f.write(
-                f"FTMS Ergebnis:  {result_names.get(answer[2], hex(answer[2]))}\n"
-            )
+            f.write(f"FTMS Ergebnis:  {ftms_result_name(answer[2])}\n")
     else:
         f.write(f"FTMS RX:       <keine Antwort> ({error})\n")
 
 
+def ftms_succeeded(answer: bytes) -> bool:
+    return len(answer) >= 3 and answer[0] == 0x80 and answer[2] == 0x01
+
+
 async def sample_triplet(client, rx, f, prefix):
-    # DUMPIO first: we want the elevation command bits as early as possible.
+    # DUMPIO first: capture elevation command bits as early as possible.
     for label, cmd in [
         (f"{prefix} - Digital I/O", "@DUMPIO#"),
         (f"{prefix} - Status", "@STATUS#"),
         (f"{prefix} - ADC / incline", "@RADCEXT#"),
     ]:
-        t, resp, err = await text_command(client, rx, cmd)
-        log_text_result(f, label, cmd, t, resp, err)
+        sent_at, resp, err = await text_command(client, rx, cmd)
+        log_text_result(f, label, cmd, sent_at, resp, err)
         f.flush()
+
+
+async def sample_status(client, rx, f, prefix):
+    sent_at, resp, err = await text_command(client, rx, "@STATUS#")
+    log_text_result(f, f"{prefix} - Status", "@STATUS#", sent_at, resp, err)
+    f.flush()
 
 
 async def main():
@@ -233,13 +266,13 @@ async def main():
         "--target",
         type=float,
         default=2.0,
-        help="test target inclination in percent (default: 2.0)"
+        help="test target inclination in percent (default: 2.0)",
     )
     ap.add_argument("--output", help="report filename")
     args = ap.parse_args()
 
     if not (0.5 <= args.target <= 5.0):
-        print("Aus Sicherheitsgründen erlaubt dieses Testscript nur 0.5 bis 5.0 %.")
+        print("Aus Sicherheitsgründen erlaubt das Script nur 0.5 bis 5.0 %.")
         return 2
 
     output = Path(
@@ -259,6 +292,7 @@ async def main():
 
     rx = Receiver()
     disconnected = asyncio.Event()
+    start_sent = False
 
     def on_disconnect(_client):
         disconnected.set()
@@ -282,119 +316,185 @@ async def main():
             await client.start_notify(TG_NOTIFY, rx.tg_notify)
             await client.start_notify(FTMS_CONTROL_POINT, rx.ftms_notify)
 
-            # ---- Initialization ----
-            section(f, "BLE / FTMS INITIALISIERUNG")
-            rx.clear_ftms()
-            f.write(f"FTMS TX: {QZ_FTMS_INIT.hex(' ')}\n")
-            await client.write_gatt_char(
-                FTMS_CONTROL_POINT, QZ_FTMS_INIT, response=True
-            )
             try:
-                ans = await asyncio.wait_for(
-                    rx.ftms_frames.get(), timeout=FTMS_RESPONSE_TIMEOUT
+                # ---- Initialization ----
+                section(f, "BLE / FTMS INITIALISIERUNG")
+                rx.clear_ftms()
+                f.write(f"FTMS TX: {QZ_FTMS_INIT.hex(' ')}\n")
+                await client.write_gatt_char(
+                    FTMS_CONTROL_POINT, QZ_FTMS_INIT, response=True
                 )
-                f.write(f"FTMS RX: {ans.hex(' ')}\n")
-            except asyncio.TimeoutError:
-                f.write("FTMS RX: <Timeout>\n")
+                try:
+                    ans = await asyncio.wait_for(
+                        rx.ftms_frames.get(), timeout=FTMS_RESPONSE_TIMEOUT
+                    )
+                    f.write(f"FTMS RX: {ans.hex(' ')}\n")
+                except asyncio.TimeoutError:
+                    f.write("FTMS RX: <Timeout>\n")
 
-            await asyncio.sleep(0.5)
+                await asyncio.sleep(0.5)
 
-            section(f, "TECHNOGYM SETUP")
-            for cmd in INIT_COMMANDS:
-                t, resp, err = await text_command(client, rx, cmd)
-                f.write(f"\n[{t}] {cmd}\n")
-                if resp:
-                    txt = clean_text(resp)
-                    f.write(txt)
-                    if not txt.endswith("\n"):
-                        f.write("\n")
-                else:
-                    f.write(f"<{err}>\n")
-                await asyncio.sleep(0.2)
+                section(f, "TECHNOGYM SETUP")
+                for cmd in INIT_COMMANDS:
+                    sent_at, resp, err = await text_command(client, rx, cmd)
+                    f.write(f"\n[{sent_at}] {cmd}\n")
+                    if resp:
+                        txt = clean_text(resp)
+                        f.write(txt)
+                        if not txt.endswith("\n"):
+                            f.write("\n")
+                    else:
+                        f.write(f"<{err}>\n")
+                    await asyncio.sleep(0.2)
 
-            # ---- Baseline ----
-            print("Baseline erfassen ...")
-            await sample_triplet(client, rx, f, "BASELINE")
+                # ---- Baseline ----
+                print("Baseline erfassen ...")
+                await sample_triplet(client, rx, f, "BASELINE")
 
-            # ---- Incline up test ----
-            print()
-            print(f"ACHTUNG: In 3 Sekunden wird {args.target:.1f} % Neigung angefordert.")
-            print("Das Laufband selbst wird NICHT gestartet.")
-            for n in (3, 2, 1):
-                print(n, flush=True)
-                await asyncio.sleep(1.0)
+                print()
+                print("ACHTUNG: Gleich wird FTMS START/RESUME gesendet.")
+                print("Niemand darf auf dem Laufband stehen.")
+                print("Das Script setzt KEINE Geschwindigkeit, aber START ist real.")
+                for n in (3, 2, 1):
+                    print(n, flush=True)
+                    await asyncio.sleep(1.0)
 
-            print(f"Setze Zielneigung auf {args.target:.1f} % ...")
-            t, payload, ans, err = await send_incline(
-                client, rx, args.target
-            )
-            log_ftms_result(
-                f,
-                "FTMS: ZIELNEIGUNG HOCH",
-                args.target,
-                t,
-                payload,
-                ans,
-                err,
-            )
-            f.flush()
+                # ---- Start/Resume ----
+                print("Sende START/RESUME ...")
+                sent_at, payload, ans, err = await send_start(client, rx)
+                start_sent = True
+                log_ftms_result(
+                    f,
+                    "FTMS: START / RESUME",
+                    "START/RESUME",
+                    sent_at,
+                    payload,
+                    ans,
+                    err,
+                )
+                f.flush()
 
-            # Very short delay; then inspect the command lines first.
-            await asyncio.sleep(0.10)
-            print("Messung A direkt nach Befehl ...")
-            await sample_triplet(client, rx, f, "NACH +INCLINE A")
+                await asyncio.sleep(0.25)
+                print("Status nach START erfassen ...")
+                await sample_status(client, rx, f, "NACH START")
 
-            # Re-issue the same target so a transient command is less likely to be missed.
-            print("Zielneigung erneut anfordern ...")
-            t, payload, ans, err = await send_incline(
-                client, rx, args.target
-            )
-            log_ftms_result(
-                f,
-                "FTMS: ZIELNEIGUNG HOCH - WIEDERHOLUNG",
-                args.target,
-                t,
-                payload,
-                ans,
-                err,
-            )
-            f.flush()
+                if not ftms_succeeded(ans):
+                    print("START/RESUME wurde nicht erfolgreich bestätigt.")
+                    print("Incline wird trotzdem NICHT blind erzwungen; Diagnose geht weiter.")
+                    section(f, "HINWEIS")
+                    f.write(
+                        "START/RESUME wurde nicht mit SUCCESS bestätigt. "
+                        "Der Incline-Befehl wird dennoch einmal regulär über FTMS "
+                        "gesendet, um die Antwort zu protokollieren; es wird kein "
+                        "niedrigerer Sicherheitsmechanismus umgangen.\n"
+                    )
 
-            await asyncio.sleep(0.10)
-            print("Messung B nach Wiederholung ...")
-            await sample_triplet(client, rx, f, "NACH +INCLINE B")
+                # ---- Incline up test ----
+                print(f"Setze Zielneigung auf {args.target:.1f} % ...")
+                sent_at, payload, ans_up1, err = await send_incline(
+                    client, rx, args.target
+                )
+                log_ftms_result(
+                    f,
+                    "FTMS: ZIELNEIGUNG HOCH",
+                    f"Zielneigung {args.target:.1f} %",
+                    sent_at,
+                    payload,
+                    ans_up1,
+                    err,
+                )
+                f.flush()
 
-            # ---- Return to zero ----
-            print("Setze Zielneigung wieder auf 0.0 % ...")
-            t, payload, ans, err = await send_incline(
-                client, rx, 0.0
-            )
-            log_ftms_result(
-                f,
-                "FTMS: ZIELNEIGUNG ZURÜCK AUF 0",
-                0.0,
-                t,
-                payload,
-                ans,
-                err,
-            )
-            f.flush()
+                await asyncio.sleep(0.10)
+                print("Messung A direkt nach Incline-Befehl ...")
+                await sample_triplet(client, rx, f, "NACH +INCLINE A")
 
-            await asyncio.sleep(0.3)
-            print("Abschlussmessung ...")
-            await sample_triplet(client, rx, f, "NACH 0 %")
+                print("Zielneigung erneut anfordern ...")
+                sent_at, payload, ans_up2, err = await send_incline(
+                    client, rx, args.target
+                )
+                log_ftms_result(
+                    f,
+                    "FTMS: ZIELNEIGUNG HOCH - WIEDERHOLUNG",
+                    f"Zielneigung {args.target:.1f} %",
+                    sent_at,
+                    payload,
+                    ans_up2,
+                    err,
+                )
+                f.flush()
 
-            section(f, "ENDE")
-            f.write(f"Beendet: {now()}\n")
+                await asyncio.sleep(0.10)
+                print("Messung B nach Wiederholung ...")
+                await sample_triplet(client, rx, f, "NACH +INCLINE B")
 
-            try:
-                await client.stop_notify(TG_NOTIFY)
-            except Exception:
-                pass
-            try:
-                await client.stop_notify(FTMS_CONTROL_POINT)
-            except Exception:
-                pass
+                # ---- Return to zero ----
+                print("Setze Zielneigung wieder auf 0.0 % ...")
+                sent_at, payload, ans_zero, err = await send_incline(
+                    client, rx, 0.0
+                )
+                log_ftms_result(
+                    f,
+                    "FTMS: ZIELNEIGUNG ZURÜCK AUF 0",
+                    "Zielneigung 0.0 %",
+                    sent_at,
+                    payload,
+                    ans_zero,
+                    err,
+                )
+                f.flush()
+
+                await asyncio.sleep(0.25)
+                await sample_triplet(client, rx, f, "NACH 0 %")
+
+            finally:
+                # STOP/PAUSE after START whenever the BLE connection still exists.
+                if start_sent and client.is_connected:
+                    print("Sende STOP/PAUSE ...")
+                    try:
+                        sent_at, payload, ans_stop, err = await send_stop(
+                            client, rx
+                        )
+                        log_ftms_result(
+                            f,
+                            "FTMS: STOP / PAUSE",
+                            "STOP/PAUSE",
+                            sent_at,
+                            payload,
+                            ans_stop,
+                            err,
+                        )
+                        f.flush()
+                        await asyncio.sleep(0.25)
+
+                        if client.is_connected:
+                            print("Abschlussstatus erfassen ...")
+                            await sample_triplet(
+                                client, rx, f, "NACH STOP"
+                            )
+                    except Exception as stop_exc:
+                        section(f, "STOP / PAUSE FEHLER")
+                        f.write(
+                            f"{type(stop_exc).__name__}: {stop_exc}\n"
+                        )
+                        f.flush()
+                        print(
+                            "WARNUNG: STOP/PAUSE konnte nicht sauber gesendet werden."
+                        )
+
+                section(f, "ENDE")
+                f.write(f"Beendet: {now()}\n")
+                f.flush()
+
+                if client.is_connected:
+                    try:
+                        await client.stop_notify(TG_NOTIFY)
+                    except Exception:
+                        pass
+                    try:
+                        await client.stop_notify(FTMS_CONTROL_POINT)
+                    except Exception:
+                        pass
 
     print()
     print("Fertig.")
