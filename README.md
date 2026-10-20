@@ -45,6 +45,18 @@ The test is intended to distinguish, for example, between:
 - a CPU/controller that asserts `ELEVAT_UP` / `ELEV_DOWN` but produces no physical motion,
 - an incline feedback signal that does or does not change.
 
+### `myrun_fault_monitor.py`
+
+Timestamped fault-transition monitor with **actively confirmed FTMS START/RESUME**.
+
+The monitor first reads firmware, the error log and the baseline state. Before connecting or sending any motor command, the operator must type the exact confirmation `START FREIGEBEN` in the terminal. It then sends FTMS `START/RESUME` **only if the baseline STATUS was successfully read and did not already report `QSHardwareFault`**.
+
+It records repeated raw `@STATUS#` and `@DUMPIO#` responses, highlights state and I/O transitions, ends on `QSHardwareFault` (or after the configured duration), attempts FTMS `STOP/PAUSE`, and saves final error log/status/I/O snapshots.
+
+**Important behavior observed:** FTMS START/RESUME automatically requested **1.2 km/h**, despite no explicit speed command. A faulty controller may reject the FTMS STOP command: on the tested MYRUN it returned `80 08 04` (`OPERATION_FAILED`) after HF904. **Software STOP is not a substitute for the physical safety stop.**
+
+The optional `--incline 1.0` requests one incline adjustment after an acknowledged successful START. **Do not use it on a partially dismantled or electrically faulty treadmill.** The default is **no incline adjustment**.
+
 ## Requirements
 
 - Linux with working BlueZ/Bluetooth LE
@@ -107,20 +119,41 @@ python3 myrun_incline_test.py \
 
 For safety, the script only accepts test targets from **0.5 % to 5.0 %**.
 
+### Fault-transition monitor (actively starts the belt)
+
+```bash
+python3 myrun_fault_monitor.py --duration 180
+```
+
+The program waits for the exact terminal confirmation `START FREIGEBEN` before any BLE connection / start attempt. **Nobody may be on the belt; the treadmill must be completely assembled, mechanically safe and ready to stop using the physical emergency stop.**
+
+Optional flags:
+
+```bash
+python3 myrun_fault_monitor.py --duration 120 --interval 0.2 --output myrun_fault.txt
+# Only on a fully assembled, demonstrably safe machine:
+python3 myrun_fault_monitor.py --duration 120 --incline 1.0
+```
+
+- `--duration`: monitoring time after START, in seconds (default 120).
+- `--interval`: delay between complete STATUS/DUMPIO polling pairs, **not** the actual sample period; BLE calls take much longer (default 0.2 seconds).
+- `--incline`: one optional target of 0.5–2.0% after START success; default: disabled.
+- `--address`, `--name`, `--output`: device selection / report path.
+
 ## Safety
 
 `myrun_dump.py` is intended to be read-only apart from the connection/setup sequence.
 
-`myrun_incline_test.py` sends real FTMS control commands. In particular, it sends `START/RESUME`, an incline request, and `STOP/PAUSE`.
+`myrun_incline_test.py` and `myrun_fault_monitor.py` send real FTMS control commands. In particular, the fault monitor sends `START/RESUME`, and optionally an incline request, then attempts `STOP/PAUSE`.
 
-During the incline test:
+During any active test:
 
 - nobody should stand on the treadmill,
 - the treadmill must be fully assembled and mechanically safe,
 - do not run the test with the incline linkage disconnected or unsupported,
 - keep the area around the treadmill clear.
 
-The script does **not** set a belt speed, but `START/RESUME` is still a real machine-control command. `STOP/PAUSE` is sent in a `finally` block whenever the BLE connection is still available after a start attempt.
+No explicit speed command is issued, but `START/RESUME` **did cause the tested machine to request 1.2 km/h**. The active fault monitor attempts `STOP/PAUSE` at the end of monitoring, but during a hardware fault this can fail. Use the physical safety stop as needed. Never run an active test while the motor compartment is open or wiring is exposed. Disconnect mains and verify safe discharge before inspecting the motor controller or its connectors.
 
 These tools are experimental and are not affiliated with or supported by Technogym.
 
@@ -187,6 +220,40 @@ means the target-inclination command succeeded, while:
 ```
 
 means `OPERATION_FAILED`.
+
+## MYRUN technical service manual and diagnostic cross-check
+
+A publicly hosted **MYRUN TECHNOGYM Technical Service Manual**, revision **2.2 (November 2016)**, **French, 112 pages**, is available as an external PDF:
+
+- [MYRUN service manual (PDF, manuals.plus)](https://manuals.plus/m/077b22630fbae70ec842c1934cbd88c864a0677a4bc4fdc5807af41d91ae321d.pdf)
+
+Useful printed pages (not necessarily compatible pinouts / board LEDs on later hardware):
+
+| Printed pages | Topic |
+| --- | --- |
+| 18–20 | Electrical wiring, 220 V version |
+| 40–43 | Lower drive kit; diagnostic LEDs, including common RELAY ENABLED for belt and incline |
+| 44–47 | DC treadmill motor, PWM input, RPM feedback and optical encoder |
+| 48–51 | AC incline actuator controlled through two relays; potentiometer feedback |
+| 52–54 | Emergency interlocks and motor thermal-protection circuit |
+| 64–70 | ASCII diagnostic commands, including `@STATUS#`, `@DUMPIO#` and error log |
+| 85–88 | Error codes and HF900 (speed-feedback) troubleshooting flowchart |
+| 89–91 | Incline troubleshooting flowchart |
+| 95 | Dismantling chapter **does not provide removal steps**; refers to Technogym's training course |
+
+**Revision caveat:** The 2016 manual illustrates an older lower-controller design. The tested machine uses a **Gefran GIRT S6T30**, part **S0WR01179AG**, and firmware `WFW0699_BA30.35167`. **Do not assume D21/D50/D24 LED locations, CN J3 connector pins, component layouts or listed voltages apply unchanged to this later controller.**
+
+The 2016 manual lists:
+- **HF500–505:** lower drive-kit faults.
+- **HF600:** incline motor fault.
+- **HF900:** speed signal / feedback fault; worn motor brushes are noted as a possibility.
+- **HF901 and HF904:** **not defined** in this edition. In particular, identifying HF901 as an “inverter error” is **not verified by this manual**.
+
+### Observed failure on the tested device (20 October 2026)
+
+On an operator-confirmed FTMS START, the controller reported `QSRunningRC`, `SpeedSet=1.2`, `MotON=1` and increasing `PWM_MOTOR` raw values (6486→8526), but `MeasSpeed` remained 0.0 and the belt did not move. `EM_POWENA`, `EM_STATUS`, `LOWKITENA`, `LOWKITENB` and `LK_ENABLE` simultaneously dropped to 0, recovered, then dropped again; the state changed to `QSHardwareFault` and a new HF904 was logged. Subsequent FTMS STOP returned `80 08 04`.
+
+These observations establish a failed start under motor demand but **do not distinguish** failed power output, relay/contact problems, motor/brush wiring, an interlock/thermal trip, or a feedback fault. The older service manual makes the common lower drive/interlock path worth checking, but it does **not** definitively diagnose the S6T30.
 
 ## Background / attribution
 
