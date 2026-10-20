@@ -51,7 +51,7 @@ async def command(client, rx, cmd, timeout=4.0):
 def fields(payload):
     import re
     return {k.strip():v.strip() for k,v in re.findall(
-        r"(?m)(?:^|[,\\n])\\s*([A-Za-z_][A-Za-z_0-9]*):\\s*([^,\\n#]+)", payload)}
+        r"(?m)(?:^|[,\n])\s*([A-Za-z_][A-Za-z_0-9]*):\s*([^,\n#]+)", payload)}
 
 async def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -106,7 +106,7 @@ async def main():
                         if state == "OK":
                             if label == "STATUS":
                                 import re
-                                match = re.search(r"Status:\\s*(QS\\w+)", response)
+                                match = re.search(r"Status:\s*(QS\w+)", response)
                                 current = match.group(1) if match else None
                                 if current and previous.get("state") != current:
                                     emit(f"STATE CHANGE {previous.get('state')} -> {current}")
@@ -115,7 +115,7 @@ async def main():
                                     fault = True
                             else:
                                 import re
-                                values = dict(re.findall(r"(?m)^(?:OUT|IN|PWM)\\s+(\\w+)\\s*=\\s*(\\d+)", response))
+                                values = dict(re.findall(r"(?m)^(?:OUT|IN|PWM)\s+(\w+)\s*=\s*(\d+)", response))
                                 for key, value in values.items():
                                     if key in previous and previous[key] != value:
                                         emit(f"IO CHANGE {key}: {previous[key]} -> {value}")
