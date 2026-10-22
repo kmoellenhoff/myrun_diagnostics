@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: EUPL-1.2
 """
 Technogym MYRUN - controlled incline diagnostic test
 

@@ -272,3 +272,13 @@ WFW0699_BA30.35167
 ```
 
 Other hardware revisions or firmware versions may behave differently.
+
+## License
+
+Copyright (c) 2026 Klaus Möllenhoff
+
+Licensed under the European Union Public Licence v1.2 (EUPL-1.2); see [`LICENSE`](LICENSE).
+
+Provided as is, without warranty and without support. Use at your own risk: these tools talk to a motorized treadmill, and a software STOP is no substitute for the physical safety stop.
+
+This is an independent hobby project, not affiliated with or endorsed by Technogym. Technogym and MYRUN are trademarks of their respective owner. The BLE initialization was derived in part from inspecting the open-source qdomyos-zwift project (GPL-3.0); this repository contains its own Python implementation.

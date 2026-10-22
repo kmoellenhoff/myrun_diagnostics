@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: EUPL-1.2
 """MYRUN fault-transition monitor with confirmed FTMS START and optional incline."""
 import argparse
 import asyncio
