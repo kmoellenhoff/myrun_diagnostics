@@ -245,6 +245,7 @@ async def main():
                             prev = last_speed.get("ftms")
                             if prev is not None and prev > 0.2 and v < 0.05:
                                 rec.log(f"SPEED_LOSS (FTMS 0x2ACD) {prev:.2f} -> {v:.2f} km/h")
+                                loss_flag["pending"] = "FTMS"
                             last_speed["ftms"] = v
                             rec.sig("ftms_speed_kmh", v)
                         if "incline_pct" in dec:
@@ -267,6 +268,7 @@ async def main():
             subscribed = []
             counters = {}
             last_speed = {}
+            loss_flag = {"pending": None, "done": 0}
             for svc in client.services:
                 for ch in svc.characteristics:
                     rec.log(f"GATT {svc.uuid} / {ch.uuid} ({','.join(ch.properties)})")
@@ -310,13 +312,10 @@ async def main():
             for k, v in io_prev.items():
                 rec.sig(f"io_{k}", int(v))
 
-            started = False
-            if not a.no_start:
-                if s != "OK" or state == "QSHardwareFault":
-                    rec.log("Baseline faulted/unavailable -> START suppressed. Power-cycle first.")
-                    return 4
-                started = await ftms_cmd(client, rx, bytes([0x07]), rec)
-                rec.log(f"START acknowledged = {started}")
+            start_attempted = False
+            if not a.no_start and (s != "OK" or state == "QSHardwareFault"):
+                rec.log("Baseline faulted/unavailable -> START suppressed. Power-cycle first.")
+                return 4
 
             # --- fast loop
             loop = asyncio.get_running_loop()
@@ -326,21 +325,54 @@ async def main():
             fault_at = None
             cycles = 0
             try:
+                if not a.no_start:
+                    start_attempted = True        # STOP is sent even if no ACK arrives
+                    ok = await ftms_cmd(client, rx, bytes([0x07]), rec)
+                    rec.log(f"START acknowledged = {ok}")
                 while loop.time() < t_end:
                     r, s = await tg_cmd(client, rx, "@RPWM#", a.byte_delay, write_resp, 2.5)
+                    rec.sig("raw_rpwm", f"{s} {r!r}")
                     m = re.search(r"PWM=([\d.]+)%", r)
                     if m:
                         rec.sig("pwm_pct", float(m.group(1)))
+                    else:
+                        rec.log(f"PARSE FAIL @RPWM# {s} {r!r}")
                     r, s = await tg_cmd(client, rx, "@RENC#", a.byte_delay, write_resp, 2.5)
+                    rec.sig("raw_renc", f"{s} {r!r}")
                     m = re.search(r"([\d.]+)\s*Hz\s*->\s*([\d.]+)\s*km/h", r)
+                    if not m:
+                        rec.log(f"PARSE FAIL @RENC# {s} {r!r}")
                     if m:
                         hz = float(m.group(1))
                         prev = last_speed.get("enc")
                         if prev is not None and prev > 0 and hz == 0:
                             rec.log(f"SPEED_LOSS (encoder) {prev:g} Hz -> 0 Hz")
+                            loss_flag["pending"] = loss_flag["pending"] or "encoder"
                         last_speed["enc"] = hz
                         rec.sig("enc_hz", hz)
                         rec.sig("enc_kmh", float(m.group(2)))
+                    if loss_flag["pending"] and loss_flag["done"] < 2:
+                        # immediate snapshot right after a speed loss
+                        src = loss_flag["pending"]
+                        loss_flag["pending"] = None
+                        loss_flag["done"] += 1
+                        tnow = rec.rel()
+                        ages = []
+                        for nm in ("pwm_pct", "enc_hz", "ftms_speed_kmh"):
+                            ser = rec.series.get(nm)
+                            if ser:
+                                ages.append(f"{nm}={ser[-1][1]} (age {tnow - ser[-1][0]:.2f}s)")
+                        rec.log(f"SNAPSHOT after SPEED_LOSS [{src}]: " + ", ".join(ages))
+                        r, s = await tg_cmd(client, rx, "@DUMPIO#", a.byte_delay, write_resp)
+                        rec.log(f"SNAPSHOT DUMPIO {s} {r!r}")
+                        io = parse_dumpio(r)
+                        for k, v in io.items():
+                            if io_prev.get(k) != v:
+                                rec.log(f"IO CHANGE {k}: {io_prev.get(k)} -> {v}")
+                                rec.sig(f"io_{k}", int(v))
+                        io_prev.update(io)
+                        r, s = await tg_cmd(client, rx, "@STATUS#", a.byte_delay, write_resp)
+                        rec.log(f"SNAPSHOT STATUS {s} {r!r}")
                     now = loop.time()
                     if now >= next_dump:
                         next_dump = now + a.dumpio_every
@@ -364,10 +396,12 @@ async def main():
                             rec.log(f"HARDWARE FAULT detected, logging {a.post_fault:.0f} s more")
                             t_end = min(t_end, fault_at + a.post_fault)
                     cycles += 1
-            except KeyboardInterrupt:
+            except (KeyboardInterrupt, asyncio.CancelledError):
                 rec.log("interrupted")
+            except Exception as e:
+                rec.log(f"ERROR in monitor loop: {type(e).__name__}: {e}")
             finally:
-                if started and client.is_connected:
+                if start_attempted and client.is_connected:
                     try:
                         ok = await ftms_cmd(client, rx, bytes([0x08, 0x01]), rec)
                         rec.log(f"STOP acknowledged = {ok} (verify belt physically)")
