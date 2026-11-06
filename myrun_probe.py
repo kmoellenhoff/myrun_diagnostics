@@ -172,7 +172,16 @@ async def main():
         f.write(f"MYRUN READ-ONLY PROBE  {now()}  {dev.name} {dev.address}\n")
         async with BleakClient(dev, timeout=20) as cl:
             await cl.start_notify(TG_NOTIFY, rx.notify)
-            await cl.write_gatt_char(FTMS_CONTROL_POINT, QZ_FTMS_INIT, response=True)
+            # FTMS Control Point verlangt ein aktives Indication-Abo vor dem
+            # Schreiben, sonst: CCCD_IMPROPERLY_CONFIGURED.
+            try:
+                await cl.start_notify(FTMS_CONTROL_POINT, lambda _s, _d: None)
+            except Exception as e:
+                print(f"Warnung FTMS-Abo: {e}")
+            try:
+                await cl.write_gatt_char(FTMS_CONTROL_POINT, QZ_FTMS_INIT, response=True)
+            except Exception as e:
+                print(f"Warnung FTMS-Init: {e} (Probe läuft trotzdem weiter)")
             await asyncio.sleep(0.8)
             for c in INIT_COMMANDS:
                 await send(cl, rx, c)
