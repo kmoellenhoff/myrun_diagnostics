@@ -47,6 +47,7 @@ SETUP = ("@DISABLE_PACE#", "@SSIUNITS#", "@RJSK_EN 1#", "@LJSK_EN 1#")
 UUID_TREADMILL_DATA = "00002acd-0000-1000-8000-00805f9b34fb"
 UUID_MACHINE_STATUS = "00002ada-0000-1000-8000-00805f9b34fb"
 UUID_TRAINING_STATUS = "00002ad3-0000-1000-8000-00805f9b34fb"
+SAFE_START_STATES = {"QSWaitForStartRC", "QSWaitForStart"}
 UUID_RSC = "00002a53-0000-1000-8000-00805f9b34fb"
 
 MACHINE_STATUS = {
@@ -313,8 +314,10 @@ async def main():
                 rec.sig(f"io_{k}", int(v))
 
             start_attempted = False
-            if not a.no_start and (s != "OK" or state == "QSHardwareFault"):
-                rec.log("Baseline faulted/unavailable -> START suppressed. Power-cycle first.")
+            t_start = None
+            if not a.no_start and (s != "OK" or state not in SAFE_START_STATES):
+                rec.log(f"Baseline state {state!r} ({s}) not a confirmed start state "
+                        f"{sorted(SAFE_START_STATES)} -> START suppressed. Power-cycle first.")
                 return 4
 
             # --- fast loop
@@ -327,6 +330,7 @@ async def main():
             try:
                 if not a.no_start:
                     start_attempted = True        # STOP is sent even if no ACK arrives
+                    t_start = rec.rel()
                     ok = await ftms_cmd(client, rx, bytes([0x07]), rec)
                     rec.log(f"START acknowledged = {ok}")
                 while loop.time() < t_end:
@@ -426,16 +430,28 @@ async def main():
             return next((t for t, v in S.get(name, []) if pred(v)), None)
         def last(name, pred):
             return next((t for t, v in reversed(S.get(name, [])) if pred(v)), None)
-        rec.log("SUMMARY")
+        t0 = t_start if t_start is not None else 0.0
+        def after(name):
+            return [(t, v) for t, v in S.get(name, []) if t >= t0]
+        def drops(name):
+            """first transitions >0 -> 0 after START: (t_last_pos, t_first_zero)"""
+            out, prev = [], None
+            for t, v in after(name):
+                if prev is not None and prev[1] > 0 and v == 0:
+                    out.append((prev[0], t))
+                prev = (t, v)
+            return out
+        rec.log(f"SUMMARY (times in s since script start; START at {t_start})")
         for nm in ("ftms_speed_kmh", "enc_hz"):
-            t_on = first(nm, lambda v: v > 0)
-            t_off = last(nm, lambda v: v > 0)
-            rec.log(f"  {nm}: first >0 at {t_on}, last >0 at {t_off}, samples={len(S.get(nm, []))}")
-            if t_off is not None:
-                pw = [v for t, v in S.get("pwm_pct", []) if abs(t - t_off) < 1.0]
-                rec.log(f"    PWM % around drop: {pw}")
-        t_pow = first("io_EM_POWENA", lambda v: v == 0)
-        rec.log(f"  first EM_POWENA=0 at {t_pow}")
+            ser = after(nm)
+            t_on = next((t for t, v in ser if v > 0), None)
+            rec.log(f"  {nm}: samples={len(ser)}, first >0 at {t_on}")
+            for t_pos, t_zero in drops(nm):
+                pw = [(round(t, 2), v) for t, v in after("pwm_pct") if t_pos - 1.0 <= t <= t_zero + 1.0]
+                rec.log(f"    DROP: last >0 at {t_pos:.2f}, first 0 at {t_zero:.2f} "
+                        f"(resolution {t_zero - t_pos:.2f} s); PWM % nearby: {pw}")
+        t_pow = next((t for t, v in after("io_EM_POWENA") if v == 0), None)
+        rec.log(f"  first EM_POWENA=0 after START at {t_pow}")
         rec.log(f"  files: {txt_path.resolve()} / {csv_path.resolve()}")
     return 0
 
