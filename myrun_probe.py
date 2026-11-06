@@ -38,7 +38,11 @@ QZ_FTMS_INIT = bytes.fromhex("00 93 F0 51 E8 1B 42 92 8E")
 INIT_COMMANDS = ["@DISABLE_PACE#", "@SSIUNITS#", "@RJSK_EN 1#", "@LJSK_EN 1#"]
 
 # Dokumentierte Lesebefehle (Servicehandbuch Rev. 2.2, S. 65-80)
+# plus zwei undokumentierte, die auf FW WFW0699_BA30.35167 antworten
+# (@RPWM# = PWM-Tastgrad in %, @RADC# = Steigungs-ADC kurz).
 DOCUMENTED = [
+    ("PWM-Tastgrad (undokumentiert)",     "@RPWM#"),
+    ("ADC kurz (undokumentiert)",         "@RADC#"),
     ("Firmware-Version",                  "@FWVER#"),
     ("Encoder-Frequenz / Geschwindigkeit", "@RENC#"),
     ("ADC Steigung erweitert",             "@RADCEXT#"),
@@ -65,7 +69,7 @@ GUESSES = [
     "@RLK#", "@RLKSTAT#", "@RLKSTATUS#", "@RLKVER#", "@RLKFW#", "@RLKERR#",
     "@RLOWKIT#", "@RINV#", "@RINVSTAT#", "@RDRIVE#",
     "@RVBUS#", "@RVDC#", "@RIMOT#", "@RCURR#", "@RMOT#", "@RMOTOR#",
-    "@RPWM#", "@RSPEED#", "@RADC#",
+    "@RSPEED#",
     "@RCONF#", "@RPAR#", "@RPARAM#", "@RINFO#", "@RVER#",
     "@RERR#", "@RFAULT#", "@RALARM#",
 ]
@@ -104,6 +108,10 @@ class Receiver:
             i = self.buf.index(ord("#"))
             self.frames.put_nowait(bytes(self.buf[: i + 1]))
             del self.buf[: i + 1]
+        # Unbekannte Befehle beantwortet die Firmware mit "!CMD:ERROR" OHNE "#".
+        if self.buf.startswith(b"!") and self.buf.endswith(b":ERROR"):
+            self.frames.put_nowait(bytes(self.buf))
+            self.buf.clear()
 
     def clear(self):
         self.buf.clear()
