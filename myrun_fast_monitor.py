@@ -33,7 +33,7 @@ import re
 import struct
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from bleak import BleakClient, BleakScanner
@@ -47,6 +47,7 @@ SETUP = ("@DISABLE_PACE#", "@SSIUNITS#", "@RJSK_EN 1#", "@LJSK_EN 1#")
 UUID_TREADMILL_DATA = "00002acd-0000-1000-8000-00805f9b34fb"
 UUID_MACHINE_STATUS = "00002ada-0000-1000-8000-00805f9b34fb"
 UUID_TRAINING_STATUS = "00002ad3-0000-1000-8000-00805f9b34fb"
+UUID_RSC = "00002a53-0000-1000-8000-00805f9b34fb"
 
 MACHINE_STATUS = {
     0x01: "Reset", 0x02: "Stopped/paused by user", 0x03: "Stopped by safety key",
@@ -92,7 +93,7 @@ class Recorder:
         self.t0 = time.monotonic()
         self.txt = txt
         self.csv = csv.writer(csvfile)
-        self.csv.writerow(["t_rel_s", "wallclock", "signal", "value"])
+        self.csv.writerow(["t_rel_s", "wallclock", "utc", "signal", "value"])
         self.csvfile = csvfile
         self.series = {}
 
@@ -106,7 +107,8 @@ class Recorder:
 
     def sig(self, name, value):
         t = self.rel()
-        self.csv.writerow([f"{t:.3f}", stamp(), name, value])
+        self.csv.writerow([f"{t:.3f}", stamp(),
+                           datetime.now(timezone.utc).isoformat(timespec="milliseconds"), name, value])
         self.series.setdefault(name, []).append((t, value))
         self.csvfile.flush()
 
@@ -185,10 +187,14 @@ async def main():
     ap.add_argument("--no-write-response", action="store_true",
                     help="write command bytes without response (faster; test whether firmware accepts)")
     ap.add_argument("--no-start", action="store_true", help="passive mode: monitor without sending START")
+    ap.add_argument("--listen-only", action="store_true",
+                    help="purely passive: no init, no commands at all; only GATT inventory + notifications")
     ap.add_argument("--output", help="base filename (without extension)")
     a = ap.parse_args()
     write_resp = not a.no_write_response
 
+    if a.listen_only:
+        a.no_start = True
     if not a.no_start:
         print("\nACHTUNG: FTMS START lässt das Band mit ca. 1,2 km/h anlaufen.")
         print("Niemand auf dem Band, Gerät montiert, Not-Aus griffbereit.")
@@ -235,7 +241,12 @@ async def main():
                     if u == UUID_TREADMILL_DATA:
                         dec = decode_treadmill_data(d)
                         if "speed_kmh" in dec:
-                            rec.sig("ftms_speed_kmh", dec["speed_kmh"])
+                            v = dec["speed_kmh"]
+                            prev = last_speed.get("ftms")
+                            if prev is not None and prev > 0.2 and v < 0.05:
+                                rec.log(f"SPEED_LOSS (FTMS 0x2ACD) {prev:.2f} -> {v:.2f} km/h")
+                            last_speed["ftms"] = v
+                            rec.sig("ftms_speed_kmh", v)
                         if "incline_pct" in dec:
                             rec.sig("ftms_incline_pct", dec["incline_pct"])
                         rec.sig("raw_2acd", d.hex(" "))
@@ -245,11 +256,20 @@ async def main():
                         rec.log(f"MACHINE STATUS {txtv} [{d.hex(' ')}]")
                     elif u == UUID_TRAINING_STATUS:
                         rec.sig("training_status", d.hex(" "))
+                    elif u == UUID_RSC and len(d) >= 4:
+                        rec.sig("rsc_speed_kmh", round(int.from_bytes(d[1:3], "little") * 3.6 / 256, 3))
+                        rec.sig("rsc_cadence", d[3])
                     else:
                         rec.sig(f"raw_{u[4:8]}", d.hex(" "))
+                    counters[u[4:8]] = counters.get(u[4:8], 0) + 1
                 return cb
 
             subscribed = []
+            counters = {}
+            last_speed = {}
+            for svc in client.services:
+                for ch in svc.characteristics:
+                    rec.log(f"GATT {svc.uuid} / {ch.uuid} ({','.join(ch.properties)})")
             for svc in client.services:
                 for ch in svc.characteristics:
                     u = ch.uuid.lower()
@@ -262,6 +282,14 @@ async def main():
                         except Exception as e:
                             rec.log(f"subscribe failed {u}: {e}")
             rec.log("SUBSCRIBED " + ", ".join(subscribed))
+
+            if a.listen_only:
+                rec.log(f"LISTEN-ONLY for {a.duration:.0f} s (no init, no commands)")
+                await asyncio.sleep(a.duration)
+                el = max(rec.rel(), 1e-6)
+                rec.log("NOTIFY packets per UUID: " + ", ".join(
+                    f"{k}={n} ({n / el:.1f}/s)" for k, n in sorted(counters.items())))
+                return 0
 
             # --- init as QZ / existing scripts (without @SETDATE!)
             await client.write_gatt_char(FTMS_CP, QZ_INIT, response=True)
@@ -306,7 +334,12 @@ async def main():
                     r, s = await tg_cmd(client, rx, "@RENC#", a.byte_delay, write_resp, 2.5)
                     m = re.search(r"([\d.]+)\s*Hz\s*->\s*([\d.]+)\s*km/h", r)
                     if m:
-                        rec.sig("enc_hz", float(m.group(1)))
+                        hz = float(m.group(1))
+                        prev = last_speed.get("enc")
+                        if prev is not None and prev > 0 and hz == 0:
+                            rec.log(f"SPEED_LOSS (encoder) {prev:g} Hz -> 0 Hz")
+                        last_speed["enc"] = hz
+                        rec.sig("enc_hz", hz)
                         rec.sig("enc_kmh", float(m.group(2)))
                     now = loop.time()
                     if now >= next_dump:
@@ -347,6 +380,9 @@ async def main():
                         rec.log(f"{label} {s} {r!r}")
                     except Exception as e:
                         rec.log(f"{label} error {e}")
+                el = max(rec.rel(), 1e-6)
+                rec.log("NOTIFY packets per UUID: " + ", ".join(
+                    f"{k}={n} ({n / el:.1f}/s)" for k, n in sorted(counters.items())))
                 rec.log(f"END cycles={cycles}, mean poll period "
                         f"{(rec.rel() / max(cycles, 1)):.3f} s per RPWM+RENC pair")
 
