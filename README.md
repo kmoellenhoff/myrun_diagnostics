@@ -2,7 +2,7 @@
 
 Small Linux/Python BLE diagnostic tools for the **Technogym MYRUN** treadmill.
 
-The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the incline test, issue a controlled low-incline request.
+The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved and whose lower-kit belt drive (Gefran GIRT S6T30) faults on start. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the active tests, issue controlled FTMS START/STOP and low-incline requests.
 
 ## Contents
 
@@ -59,22 +59,43 @@ The optional `--incline 1.0` requests one incline adjustment after an acknowledg
 
 ### `myrun_fast_monitor.py`
 
-Faster fault monitor (active FTMS START, confirmed by pressing Enter).
+Faster, higher-resolution fault monitor for the belt-drive failure. It has three modes:
 
-- Passively subscribes to **all** notify/indicate characteristics and logs them with ms timestamps, including FTMS Treadmill Data (0x2ACD, speed decoded), Machine Status (0x2ADA) and Training Status (0x2AD3). Approach taken from qdomyos-zwift, which subscribes to every notifying characteristic.
-- Polls only the short replies `@RPWM#` (PWM %) and `@RENC#` (encoder Hz) in the fast loop; `@DUMPIO#` / `@STATUS#` only every few seconds (`--dumpio-every`, `--status-every`). The long replies are the bottleneck because the firmware answers one byte per notification.
-- Writes a `.txt` log and a `.csv` (t_rel_s, signal, value) for plotting, plus a summary (when speed/encoder dropped, PWM at that moment, first `EM_POWENA=0`).
-- Logs the full GATT inventory, packets per characteristic (rate), RSC speed/cadence (0x2A53) and live `SPEED_LOSS` markers (encoder `@RENC#` and `MeasSpeed` from `@STATUS#`; the FTMS 0x2ACD speed field is the setpoint on this firmware and is only logged); CSV has a UTC column.
-- `--listen-only` sends nothing at all (no init, no commands) and only records notifications; `--no-start` monitors passively; `--byte-delay` / `--no-write-response` allow testing faster command writes.
-- Unlike QZ it does **not** send `@SETDATE` (QZ writes a fixed 2022 date, which would corrupt error-log timestamps).
+| Mode | Sends | Use it for |
+| --- | --- | --- |
+| *default* (active), e.g. `--duration 90` | init, polling, FTMS `START`, FTMS `STOP` | reproducing the fault under script control |
+| `--no-start` | init and polling, but **no** `START`/`STOP` | watching the controller without a script-commanded start |
+| `--listen-only` | **nothing** (no init, no commands) | starting the belt manually from the console while recording |
 
-```bash
-python3 myrun_fast_monitor.py --duration 90
-```
+**Active mode (default).** Before connecting, the script asks the operator to press Enter (Ctrl+C aborts). After the init sequence it reads firmware, error log, a baseline `@STATUS#` and `@DUMPIO#`. FTMS `START/RESUME` is sent **only if the baseline `@STATUS#` was read successfully and reports `QSWaitForStart` or `QSWaitForStartRC`**; in any other state (e.g. `QSHardwareFault`) the script aborts without starting and asks for a power cycle. Once a START has been attempted, FTMS `STOP/PAUSE` is **always** sent at the end, even if the START was not acknowledged. `--duration` is the maximum monitoring time (default 120 s).
+
+**`--no-start`.** Polls `@RPWM#`, `@RENC#`, `@DUMPIO#` and `@STATUS#` exactly as in active mode, but sends no `START`/`STOP`. It still sends the FTMS request-control init (`00 93 F0 …`) and the Technogym setup commands. On 7 November 2026 a `--no-start` run coincided with the console refusing a manual start and repeated FTMS Machine Status "Target incline changed" notifications. **If you want to start the belt from the console, use `--listen-only` instead.**
+
+**`--listen-only`.** Connects, logs the GATT inventory and subscribes to notifications, then only records them for `--duration` seconds. No init, no Technogym commands and no FTMS control-point writes are sent.
+
+What it records:
+
+- The full GATT inventory and **all** notify/indicate characteristics, with ms timestamps: FTMS Treadmill Data (0x2ACD, speed and incline decoded), Machine Status (0x2ADA, decoded), Training Status (0x2AD3), RSC speed/cadence (0x2A53), FTMS Control Point responses, and any other characteristic as raw hex. Approach taken from qdomyos-zwift, which subscribes to every notifying characteristic. Packets per characteristic (rate) are logged at the end.
+- In the fast loop only the short replies `@RPWM#` (PWM %) and `@RENC#` (encoder Hz and km/h); `@DUMPIO#` / `@STATUS#` only every few seconds (`--dumpio-every`, `--status-every`). The long replies are the bottleneck because the firmware answers one byte per notification. Raw replies and parse failures are logged too.
+- Live `SPEED_LOSS` markers when the encoder (`@RENC#`) drops from >0 Hz to 0 Hz, or `MeasSpeed` in `@STATUS#` drops from >0.2 km/h to 0 outside `QSStopping*`. Each loss (at most two) triggers an immediate `@DUMPIO#` + `@STATUS#` snapshot. `@STATUS#` state changes and `@DUMPIO#` I/O changes are logged as they happen.
+- When `@STATUS#` reports `QSHardwareFault`, logging continues for `--post-fault` seconds (default 8), then STOP (active mode only) and final error log, status and I/O snapshots are taken.
+- A summary at the end: per `enc_hz` / `meas_speed`, the first value >0 after START and every >0 → 0 drop (with time resolution and the PWM % values around it), plus the first `EM_POWENA=0` after START and the mean polling period.
+
+Output: `<base>.txt` (log) and `<base>.csv` with the columns `t_rel_s, wallclock, utc, signal, value`, for plotting. The default base name is `myrun_fast_monitor_YYYYMMDD_HHMMSS`.
+
+**Speed field caveat:** On firmware `WFW0699_BA30.35167` the speed field in FTMS Treadmill Data (0x2ACD) is the **setpoint**, not the measured belt speed: it kept reporting 1.2 km/h in `QSHardwareFault` while the belt was standing still. The monitor therefore only logs it and detects speed loss exclusively from `@RENC#` (encoder) and `MeasSpeed` in `@STATUS#`.
+
+Unlike QZ it does **not** send `@SETDATE` (QZ writes a fixed 2022 date, which would corrupt error-log timestamps).
 
 ### `myrun_probe.py`
 
-Read-only probe of all documented read commands (`--guess` also tries undocumented `@R…#` commands; write/reset commands are hard-blocked). Undocumented but working on WFW0699_BA30.35167: `@RPWM#`, `@RADC#`.
+Read-only command probe. After the usual init sequence it sends each read command once and writes the raw reply (text and hex) plus an overview to `myrun_probe_YYYYMMDD_HHMMSS.txt`. No FTMS START/STOP and no incline commands are sent.
+
+- Default command list: the read commands documented in the 2016 service manual (`@FWVER#`, `@RENC#`, `@RADCEXT#`, `@DUMPIO#`, `@STATUS#`, `@RERRORLOG#`, `@RKPWM#`, `@RQSPAR#`, `@RSTAT#`, `@RTASKHANG#`, `@RRUNDETMINSP#`, `@GETDATE#`, `@RTG_ID#`, `@RDS_UP#`, `@RDS_DOWN#`) plus two **undocumented** commands that answer on `WFW0699_BA30.35167`: `@RPWM#` (PWM duty cycle in %) and `@RADC#` (short incline ADC reading).
+- `--guess` additionally tries a list of undocumented, guessed read/help commands (`@HELP#`, `@RTEMP#`, `@RLKSTAT#`, `@RVBUS#`, …). Unknown commands are answered with `!CMD:ERROR` (without `#`), which the probe recognizes as a reply.
+- `--extra CMD` (repeatable) probes additional commands; `@` and `#` are added if missing.
+- `--watch N` repeats `@RENC#`, `@STATUS#` and `@DUMPIO#` for N seconds afterwards.
+- Hard block list: any command matching a write/reset/calibrate pattern (`RESET`, `SET`, `@S…` except `@STATUS#`, `INIT`, `CAL`, `ELEV`, `FORCE`, `SUSPEND`, `STG_ID`, `WRITE`, `ERASE`, `CLEAR`, `FORMAT`, `UPD`, `BOOT`, `FLASH`) is never sent, including commands passed via `--extra`; it is logged as blocked instead. (The fixed init/setup sequence is not subject to this list.)
 
 ## Requirements
 
@@ -159,15 +180,52 @@ python3 myrun_fault_monitor.py --duration 120 --incline 1.0
 - `--incline`: one optional target of 0.5–2.0% after START success; default: disabled.
 - `--address`, `--name`, `--output`: device selection / report path.
 
+### Fast fault monitor
+
+```bash
+# Active: press Enter to allow START; starts only from QSWaitForStart/QSWaitForStartRC
+python3 myrun_fast_monitor.py --duration 90
+# Poll RPWM/RENC/DUMPIO/STATUS without START/STOP (still sends the init)
+python3 myrun_fast_monitor.py --no-start --duration 120
+# Send nothing; start the belt from the console while recording
+python3 myrun_fast_monitor.py --listen-only --duration 120
+```
+
+- `--duration`: maximum monitoring time in seconds (default 120); with `--listen-only`, the listening time.
+- `--dumpio-every` / `--status-every`: seconds between `@DUMPIO#` / `@STATUS#` polls (defaults 3 and 5).
+- `--post-fault`: keep logging N seconds after `QSHardwareFault` is detected (default 8).
+- `--byte-delay`: pause between command bytes (default 0.04 s); `--no-write-response`: write command bytes without write response. Both only for testing faster command writes; check that the firmware still accepts the commands.
+- `--no-start`, `--listen-only`: see above.
+- `--address` (default `E0:86:1D:FA:4D:A0`), `--name` (default `MyRun`): device selection.
+- `--output`: base filename **without extension**; `.txt` and `.csv` are appended.
+
+### Read-only command probe
+
+```bash
+python3 myrun_probe.py
+python3 myrun_probe.py --guess
+python3 myrun_probe.py --extra "@RXYZ#" --extra "@RABC#"
+python3 myrun_probe.py --watch 60
+```
+
+- `--address`, `--name` (default `MyRun`), `--output`: device selection / report path.
+
 ## Safety
 
-`myrun_dump.py` is intended to be read-only apart from the connection/setup sequence.
+`myrun_dump.py` and `myrun_probe.py` are intended to be read-only apart from the connection/setup sequence. `myrun_fast_monitor.py --listen-only` sends no commands at all.
 
-`myrun_incline_test.py` and `myrun_fault_monitor.py` send real FTMS control commands. In particular, the fault monitor sends `START/RESUME`, and optionally an incline request, then attempts `STOP/PAUSE`.
+`myrun_incline_test.py`, `myrun_fault_monitor.py` and `myrun_fast_monitor.py` (active mode) send real FTMS control commands. In particular, the fault monitors send `START/RESUME` (the fault monitor optionally an incline request), then attempt `STOP/PAUSE`.
 
-During any active test:
+Rules followed by all scripts:
 
-- nobody should stand on the treadmill,
+- no writing, reset or calibration commands are sent (the probe hard-blocks them),
+- no `@SETDATE` (it would corrupt the error-log timestamps),
+- nothing is ever written to the unknown service `6e40a8d5-b5a3-f393-e0a9-e50e24dcca9e`; writes go only to the Technogym write characteristic and the FTMS Control Point listed below.
+
+During any script start, and in particular any active test:
+
+- nobody may be on the belt,
+- the emergency stop must be within reach,
 - the treadmill must be fully assembled and mechanically safe,
 - do not run the test with the incline linkage disconnected or unsupported,
 - keep the area around the treadmill clear.
@@ -239,6 +297,8 @@ means the target-inclination command succeeded, while:
 ```
 
 means `OPERATION_FAILED`.
+
+FTMS Treadmill Data (0x2ACD) is not a reliable speed measurement on `WFW0699_BA30.35167`: its speed field is the **setpoint** and kept reporting 1.2 km/h in `QSHardwareFault` with the belt standing. Use `@RENC#` (encoder) or `MeasSpeed` in `@STATUS#` for the actual belt speed.
 
 ## MYRUN technical service manual and diagnostic cross-check
 
