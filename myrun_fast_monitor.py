@@ -244,9 +244,12 @@ async def main():
                         if "speed_kmh" in dec:
                             v = dec["speed_kmh"]
                             prev = last_speed.get("ftms")
-                            if prev is not None and prev > 0.2 and v < 0.05:
-                                rec.log(f"SPEED_LOSS (FTMS 0x2ACD) {prev:.2f} -> {v:.2f} km/h")
-                                loss_flag["pending"] = "FTMS"
+                            # 0x2ACD carries the SETPOINT on this firmware: it kept
+                            # reporting 1.2 km/h in QSHardwareFault with the belt
+                            # standing still (07.11.). So it is only logged, never
+                            # used as a speed-loss trigger.
+                            if prev is not None and abs(prev - v) >= 0.05:
+                                rec.log(f"FTMS 0x2ACD speed field (setpoint) {prev:.2f} -> {v:.2f} km/h")
                             last_speed["ftms"] = v
                             rec.sig("ftms_speed_kmh", v)
                         if "incline_pct" in dec:
@@ -362,7 +365,7 @@ async def main():
                         loss_flag["done"] += 1
                         tnow = rec.rel()
                         ages = []
-                        for nm in ("pwm_pct", "enc_hz", "ftms_speed_kmh"):
+                        for nm in ("pwm_pct", "enc_hz", "meas_speed"):
                             ser = rec.series.get(nm)
                             if ser:
                                 ages.append(f"{nm}={ser[-1][1]} (age {tnow - ser[-1][0]:.2f}s)")
@@ -392,8 +395,17 @@ async def main():
                         r, s = await tg_cmd(client, rx, "@STATUS#", a.byte_delay, write_resp)
                         st, ms = parse_status(r)
                         if st:
+                            if st != last_speed.get("state"):
+                                rec.log(f"STATE {last_speed.get('state')} -> {st}")
+                            last_speed["state"] = st
                             rec.sig("state", st)
                         if ms is not None:
+                            prev = last_speed.get("meas")
+                            if (prev is not None and prev > 0.2 and ms == 0
+                                    and st not in ("QSStoppingRC", "QSStopping")):
+                                rec.log(f"SPEED_LOSS (MeasSpeed) {prev:g} -> 0 km/h, state {st}")
+                                loss_flag["pending"] = loss_flag["pending"] or "MeasSpeed"
+                            last_speed["meas"] = ms
                             rec.sig("meas_speed", ms)
                         if st == "QSHardwareFault" and fault_at is None:
                             fault_at = loop.time()
@@ -442,7 +454,7 @@ async def main():
                 prev = (t, v)
             return out
         rec.log(f"SUMMARY (times in s since script start; START at {t_start})")
-        for nm in ("ftms_speed_kmh", "enc_hz"):
+        for nm in ("enc_hz", "meas_speed"):
             ser = after(nm)
             t_on = next((t for t, v in ser if v > 0), None)
             rec.log(f"  {nm}: samples={len(ser)}, first >0 at {t_on}")

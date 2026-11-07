@@ -64,7 +64,7 @@ Faster fault monitor (active FTMS START, confirmed by pressing Enter).
 - Passively subscribes to **all** notify/indicate characteristics and logs them with ms timestamps, including FTMS Treadmill Data (0x2ACD, speed decoded), Machine Status (0x2ADA) and Training Status (0x2AD3). Approach taken from qdomyos-zwift, which subscribes to every notifying characteristic.
 - Polls only the short replies `@RPWM#` (PWM %) and `@RENC#` (encoder Hz) in the fast loop; `@DUMPIO#` / `@STATUS#` only every few seconds (`--dumpio-every`, `--status-every`). The long replies are the bottleneck because the firmware answers one byte per notification.
 - Writes a `.txt` log and a `.csv` (t_rel_s, signal, value) for plotting, plus a summary (when speed/encoder dropped, PWM at that moment, first `EM_POWENA=0`).
-- Logs the full GATT inventory, packets per characteristic (rate), RSC speed/cadence (0x2A53) and live `SPEED_LOSS` markers (FTMS speed and encoder); CSV has a UTC column.
+- Logs the full GATT inventory, packets per characteristic (rate), RSC speed/cadence (0x2A53) and live `SPEED_LOSS` markers (encoder `@RENC#` and `MeasSpeed` from `@STATUS#`; the FTMS 0x2ACD speed field is the setpoint on this firmware and is only logged); CSV has a UTC column.
 - `--listen-only` sends nothing at all (no init, no commands) and only records notifications; `--no-start` monitors passively; `--byte-delay` / `--no-write-response` allow testing faster command writes.
 - Unlike QZ it does **not** send `@SETDATE` (QZ writes a fixed 2022 date, which would corrupt error-log timestamps).
 
