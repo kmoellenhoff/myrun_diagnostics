@@ -97,6 +97,18 @@ Read-only command probe. After the usual init sequence it sends each read comman
 - `--watch N` repeats `@RENC#`, `@STATUS#` and `@DUMPIO#` for N seconds afterwards.
 - Hard block list: any command matching a write/reset/calibrate pattern (`RESET`, `SET`, `@S…` except `@STATUS#`, `INIT`, `CAL`, `ELEV`, `FORCE`, `SUSPEND`, `STG_ID`, `WRITE`, `ERASE`, `CLEAR`, `FORMAT`, `UPD`, `BOOT`, `FLASH`) is never sent, including commands passed via `--extra`; it is logged as blocked instead. (The fixed init/setup sequence is not subject to this list.)
 
+### `myrun_renc_watch.py`
+
+Minimal encoder watch. Writes nothing except the read command `@RENC#`
+(optionally one of `@STATUS#`, `@DUMPIO#`, `@RPWM#` every 5th cycle) on the
+Technogym text channel: no FTMS request-control init, no setup commands, no
+START/STOP. Intended for pushing the belt by hand to check whether the encoder
+signal still reaches the console through the lower kit, e.g. while the drive is
+locked and again after a power cycle. Output: CSV with
+`t_rel_s, wallclock, enc_hz, enc_kmh, raw`.
+
+    python3 myrun_renc_watch.py --duration 60
+
 ## Requirements
 
 - Linux with working BlueZ/Bluetooth LE
