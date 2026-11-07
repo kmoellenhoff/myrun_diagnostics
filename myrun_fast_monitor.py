@@ -16,7 +16,8 @@ Improvements over myrun_fault_monitor.py:
 Safety:
   * Sends FTMS START/RESUME after pressing Enter. Nobody on the belt,
     machine assembled, emergency stop reachable.
-  * START is suppressed if the baseline status already reports QSHardwareFault.
+  * START is sent only if the baseline @STATUS# confirms QSWaitForStart or
+    QSWaitForStartRC; otherwise the script exits (power-cycle first).
   * At the end FTMS STOP is sent; a faulted controller may reject it.
   * No write/reset/calibration commands are sent. No @SETDATE.
 
