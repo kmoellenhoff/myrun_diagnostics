@@ -45,3 +45,13 @@ Alle Messungen in-circuit, Werte steigen/fallen wegen Kondensatoren → Wert bei
 6. Wenn Werte vorliegen: Foto vom Messpunkt mitliefern, damit ich Pad-Zuordnung und Raster nachtrage.
 
 Nicht tun: nichts auslöten, nichts verbinden; der Bereich liegt auf Netzpotenzial (0VA = DC−).
+
+## Messung 08.11. 21:10 (messprotokoll_b18.csv) – Auswertung
+
+In-circuit: R1 = 378k (Nennwert 475k), R2 = 600k und R3 = 600k (Nennwert je 1M), Gegenrichtung 406k / 840k / 840k.
+Alle drei liegen unter dem Nennwert und passen genau zu einem **geschlossenen Ring** R1–R2–R3, dessen Enden P1 und P2 niederohmig verbunden sind:
+- R1 ∥ (R2+R3) = 475k ∥ 2M = 384k (gemessen 378k)
+- R2 ∥ (R1+R3) = 1M ∥ 1,475M = 596k (gemessen 600k)
+- R3 ∥ (R1+R2) = 596k (gemessen = R2, wie erwartet)
+Folgerung [H]: P1 und P2 sind (in Vorwärtsrichtung) mit höchstens einigen 10 kΩ verbunden – die Kette ist kein offener Teiler gegen den DC-Link. Die Gegenrichtung (höher) deutet auf ein Halbleiter-/Ladeeffekt im Rückweg hin.
+Nächste Messungen: P1↔P2 direkt, P2↔0VA/L−/L+, P1↔0VA, V1↔0VA.

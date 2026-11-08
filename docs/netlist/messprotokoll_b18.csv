@@ -1,0 +1,5 @@
+Mess-ID;Datum/Zeit;Rot (zuerst);Schwarz;Modus;Wert;Gegenrichtung;Status;Bemerkung
+B18-M01;2026-11-08 21:08;B18-R1 Ende Richtung B19 (R1/R2-Knoten);B18-R1 Ende P1-Seite;Widerstand;378 kOhm;406 kOhm;gemessen;stromlos in-circuit; Nennwert 475k -> Parallelpfad
+B18-M02;2026-11-08 21:08;B18-R2 Ende bei R1 (R1/R2-Knoten);B18-R2 Ende bei R3 (V1);Widerstand;600 kOhm;840 kOhm;gemessen;Nennwert 1M -> Parallelpfad
+B18-M03;2026-11-08 21:09;B18-R3 (Seite wie R2 angegeben: gleich);B18-R3;Widerstand;wie M02 (600 kOhm);wie M02 (840 kOhm);gemessen;Nutzer: "exakt gleich wie 2."
+B18-A01;2026-11-08 21:15;-;-;Auswertung;;;Hypothese;Werte passen zu geschlossenem Ring: R1||(R2+R3)=384k, R2||(R1+R3)=596k, R3||(R1+R2)=596k, d.h. P1 und P2 sind niederohmig verbunden (Verbindungswiderstand ext <~ 50 kOhm)
