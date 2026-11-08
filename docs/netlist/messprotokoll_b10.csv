@@ -25,4 +25,4 @@ B10-M23;2026-11-08 18:12;+5VA;B10-J1 (D1-Kathodenbein);Widerstand;ca. 9 kOhm;aeh
 B10-M24;2026-11-08 18:12;+5VA;B10-J2 (D2-Kathodenbein);Widerstand;ca. 10 kOhm;aehnlich;gemessen;J2 = Kathodenende D2 (Annahme)
 B10-M25;2026-11-08 18:12;B10-J2;0VA;Widerstand;ca. 6.8 kOhm;;gemessen;
 B10-M26;2026-11-08 18:12;B10-J1;0VA;Widerstand;ca. 6.4 kOhm;;gemessen;J1 und J2 gleiches Netz bestaetigt (aehnliche Werte)
-B10-M27;2026-11-08 18:12;B10-T1/T2;0VA und 12VA;Widerstand;um 2 MOhm;;gemessen;Formulierung des Nutzers mehrdeutig ("gegen 2 MOhm"); 12VA = welcher Testpunkt (+/-)?
+B10-M27;2026-11-08 18:12;B10-T1/T2;0VA und +5VA;Widerstand;um 2 MOhm;;gemessen (korrigiert 18:15: +5VA statt 12VA);beide Ketten, schwankend
