@@ -193,3 +193,10 @@ Service manuals consulted: MyRun Rev. 2.2 (FR, 2016); Technogym Excite Run 500/7
 ## 11. Disclaimer
 
 Private, non-commercial repair documentation, provided as is, without warranty. It is not affiliated with or endorsed by Technogym, Gefran or WEG; product and company names belong to their owners and are used only to identify the hardware. No manufacturer documents, firmware or schematics are reproduced; all content comes from measurements, photos and logs of one lawfully acquired unit, plus short paraphrased facts from the cited manuals. Working on a mains-powered, non-isolated board can be lethal – do so only if you are qualified and follow the safety notes above.
+
+## 12. Age and usage of the unit (11/08/2026)
+- **Date codes on the GIRT [P]:** Gefran label on the DC-link electrolytic `S890A16E U12 GIRT 140421 V.10.05` = 14 Apr 2021; transformer `ETI349X4 2110 FALCO` = week 10 of 2021. So the lower kit was built in spring 2021 or later (about 5.5 years old). `YH 18` on the PCB back is unexplained (supplier/date code?).
+- **Console clock** (`@GETDATE#`, 11/06/2026) is set to the real date, so it does not tell the build date. The serial `DCKA2B021008231` has no known date format.
+- **Usage counters** (`@RSTAT#`, 11/06/2026, last digits of each reply are a checksum): powered 8339 × 10 min ≈ 1390 h (standby only 23 × 10 min), belt run 2050 × 10 min ≈ 342 h, incline motor 84 min, distance 3719 km. Light wear, but the unit was almost never in standby.
+- **Error log 11/06:** 904 (10:04, 10:11, 10:20), 902 (13:02), 904 (13:04).
+- **Guessed read commands** (`myrun_probe.py --guess`, 11/06): all timed out (`@RTEMP#`, `@RVBUS#`, `@RVDC#`, `@RIMOT#` …), so no temperature/bus telemetry is available over BLE on this firmware.
