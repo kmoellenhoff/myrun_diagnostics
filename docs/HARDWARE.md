@@ -12,7 +12,7 @@ Unit documented: MyRun serial `DCKA2B021008231`, console firmware `WFW0699_BA30.
 
 ![Estimated functional block diagram](img/block_diagram.png)
 
-*The block diagram (version 4, 2026-11-08 evening; version 3 kept as `img/block_diagram_v3.png`) is an estimate built from photos of both board sides and the stromlos measurements of that day (German labels): mains sense B10 healthy, bus-voltage divider B18 (hypothesis), Q2/D3 statically OK. Numbers mark the suspicion ranking at the time of drawing, not a verified fault location.*
+*The block diagram (version 4, 2026-11-08 evening; version 3 kept as `img/block_diagram_v3.png`) is an estimate built from photos of both board sides and the stromlos measurements of that day (German labels): mains sense B10 statically unremarkable (intermittent faults not excluded), bus-voltage divider B18 (hypothesis), Q2/D3 statically OK. Numbers mark the suspicion ranking at the time of drawing, not a verified fault location.*
 
 The belt motor is a **brushed DC motor driven by a chopper from the rectified mains** (not an AC inverter drive). The console (CPU board in the handlebar) commands the GIRT over P2: an enable/emergency line, a PWM set-point and tacho feedback. The GIRT's microcontroller (QFP-32, mains side) is separated from the console side by 8 Vishay VO617A-8 optocouplers in one column (further ones elsewhere not excluded) **[O]**.
 

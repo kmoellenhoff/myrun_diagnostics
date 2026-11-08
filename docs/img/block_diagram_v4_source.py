@@ -16,7 +16,7 @@ box(403,385,228,100,'UP/DOWN-Relais','Schrack PE + 2× ALQ3F12<br><span style="c
 box(665,385,185,100,'FUSE MOT','<span style="color:#d40000">FEHLT (T 4 A, 5×20)</span>','R',None,True)
 box(885,385,285,100,'Höhenmotor AC','70/71/141 Ω, 6,25 µF<br>Poti an P3 (korrodiert)')
 box(1200,365,335,125,'Busspannungs-Teiler (B18, E5)','L+ (=P2, 0 Ω) → 475k+1M+1M → P1<br>P1 ≈ 221k gegen 0VA (≈ 8 %)<br>→ Block B19 → Auswertung<br><small>Hypothese, 6 Messwerte passen [H]</small>','O',None,True)
-box(28,500,340,100,'Netzerfassung (B10, J6)','L/N → 2×475k → Diode → Knoten J<br>J ≈ 6,8k gegen 0VA<br><small>Nulldurchgang/Netz da, gemessen gesund [M]</small>','G')
+box(28,500,340,100,'Netzerfassung (B10, J6)','L/N → 2×475k → Diode → Knoten J<br>J ≈ 6,8k gegen 0VA<br><small>statisch unauffällig [M], Intermittenz offen</small>','G')
 box(403,610,228,112,'Hilfsnetzteil','Flyback FSGM300N<br>läuft (Konsole an)','G')
 box(665,610,242,112,'Hilfsspannungen','+12 V für Konsole (≤2,5 A)<br>+24 V, ±12 V, +5 V','G')
 box(940,610,285,130,'8× Optokoppler → MCU QFP-32','0VA/+5VA · TL082 · LM2903<br>PWM → SOT-23-5 → 22 Ω → Gate Q2','N')
@@ -73,6 +73,6 @@ html+='''
 <b style="color:#d40000">4</b> Chopper: Q2 + D3 statisch in Ordnung (D3 0,397 V, Body-Diode 0,444 V, G–S 9,13 kΩ, G–D 2,19 MΩ, 22-Ω-Gate-R). Offen: Treiber SOT-23-5 und Schalten – nur live (Trenntrafo nötig, nicht vorhanden).<br>
 <b style="color:#d40000">5</b> Live-Messung L+/L− beim Start (DC): bei 1,2 km/h nur wenige Volt erwartet (Handbuch S. 46: 0,8 km/h ≈ 2,6 V).<br>
 <b style="color:#d40000">6</b> UP/DOWN-Pads und P3 korrodiert: Kriechstrom bei 230 V kann FUSE MOT zerstört haben. Betrifft nur die Höhenverstellung.<br>
-<b>Neu in Version 4:</b> B10 = Netzerfassung 2×(2×475k)+Diode (gesund, nicht Fehlerbereich) · B18 = Teiler L+ → 2,475 MΩ → P1 → ≈221k → 0VA (P2 = L+, 0 Ω; P1↔0VA 223,7k) · Q2 B5: G links im Foto (Rückseite: Pad mit Bahn zum 22-Ω-Widerstand) · Fehlstart: erster Impuls ≈5 s nach START, dann Abbruch, STS2 blinkt 4/8 (Fehler 902/904).
+<b>Neu in Version 4:</b> B10 = Netzerfassung 2×(2×475k)+Diode (statisch unauffällig, Intermittenz nicht ausgeschlossen) · B18 = Teiler L+ → 2,475 MΩ → P1 → ≈221k → 0VA (P2 = L+, 0 Ω; P1↔0VA 223,7k) · Q2 B5: G links im Foto (Rückseite: Pad mit Bahn zum 22-Ω-Widerstand) · Fehlstart: erster Impuls ≈5 s nach START, dann Abbruch, STS2 blinkt 4/8 (Fehler 902/904).
 </div></div>'''
 open('bd.html','w',encoding='utf-8').write(html)
