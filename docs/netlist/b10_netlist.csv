@@ -12,9 +12,9 @@ B10-C10;B10-N4;B10-R4.2;Kupfer direkt;Foto;;b10_ids.png;
 B10-C11;B10-R4.1;B10-N3;Kupfer direkt;Foto;;b10_ids.png;
 B10-C12;B10-N3;B10-R3.2;Kupfer direkt;Foto;;b10_ids.png;
 B10-C13;B10-R3.1;B10-T2;Kupfer direkt;Foto;;b10_ids.png;
-B10-V01;B10-R1.1;B10-R1.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;Wert aus Code, nicht gemessen
+B10-V01;B10-R1.1;B10-R1.2;Bauteil;Messung;472.5 kOhm (in-circuit);B10-M06;passt zu 4753 = 475k
 B10-V02;B10-R2.1;B10-R2.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
-B10-V03;B10-R3.1;B10-R3.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
+B10-V03;B10-R3.1;B10-R3.2;Bauteil;Messung;473.2 kOhm (in-circuit);B10-M07;passt zu 4753 = 475k
 B10-V04;B10-R4.1;B10-R4.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
 B10-V05;B10-D1.1;B10-D1.2;Bauteil Diode;Messung (Anode D1.1, Kathode D1.2);0.497 V Durchlass, Gegenrichtung OL;B10-M01;in-circuit, Typ nicht lesbar
 B10-V06;B10-D2.1;B10-D2.2;Bauteil Diode;Messung (Anode D2.1, Kathode D2.2);0.499 V Durchlass, Gegenrichtung OL;B10-M02;in-circuit

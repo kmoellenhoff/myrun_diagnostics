@@ -4,3 +4,5 @@ B10-M02;2026-11-08 17:40;B10-N4;B10-J2;Diode;0.499 V;OL;gemessen;D2 wie D1, Kath
 B10-M03;2026-11-08 17:40;B10-J1;B10-J3;Widerstand;0.3 Ohm;;gemessen;entspricht Spitzenwiderstand 0.2-0.4 Ohm
 B10-M04;2026-11-08 17:41;B10-T1;B10-T2;Diode;OL;OL;gemessen;beide Richtungen OL (Widerstandskette)
 B10-M05;2026-11-08 17:41;B10-T1;B10-T2;Widerstand;ca. 12 MOhm, fallend;ca. 12 MOhm, fallend;gemessen;Trend fallend in beiden Richtungen, Bedeutung offen (Leckpfad/Kontamination/Parallelpfade)
+B10-M06;2026-11-08 17:43;B10-T1;B10-N1;Widerstand;472.5 kOhm;417 kOhm Start, steigend;gemessen;R1 über Code 4753 bestätigt (-0.5 %); Rückrichtung: Parallelpfad lädt (hyp. Kapazität am Knoten J)
+B10-M07;2026-11-08 17:43;B10-T2;B10-N3;Widerstand;473.2 kOhm;424 kOhm Start, steigend;gemessen;R3 bestätigt (-0.4 %); gleiches Verhalten wie links
