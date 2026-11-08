@@ -27,7 +27,8 @@ Usage:
     python3 myrun_fast_monitor.py --byte-delay 0.02 --no-write-response   # faster, test first
     python3 myrun_fast_monitor.py --duration 150 --ramp
         # after START: 30 s -> 2.5 km/h, 60 s -> 2.9 km/h,
-        #              80 s -> incline 2.0 %, 105 s -> incline 0 %
+        #              75 s -> incline 2.0 %, 90 s -> 2.5 km/h,
+        #              105 s -> incline 0 %, 120 s -> 1.2 km/h
     python3 myrun_fast_monitor.py --duration 120 --steps "30:speed=2.0,60:incline=1.5,90:incline=0"
 
 Step profile (--steps / --ramp):
@@ -191,7 +192,7 @@ def parse_status(text):
 
 SPEED_MIN, SPEED_MAX = 0.8, 2.9       # km/h; runner detector starts at 3.0 km/h
 INCLINE_MIN, INCLINE_MAX = 0.0, 5.0   # percent
-DEFAULT_RAMP = "30:speed=2.5,60:speed=2.9,80:incline=2.0,105:incline=0"
+DEFAULT_RAMP = "30:speed=2.5,60:speed=2.9,75:incline=2.0,90:speed=2.5,105:incline=0,120:speed=1.2"
 
 
 def parse_steps(spec):
