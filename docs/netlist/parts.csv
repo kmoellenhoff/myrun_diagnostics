@@ -1,0 +1,16 @@
+ID;Typ;Aufdruck;Lage (Feld, Vorderseite);Pin-1/Orientierung;Gewissheit;Bemerkung
+OC01;VO617A-8;VO617A-8 V 110 25 (kopfüber);E2;Pin1 (LED-Anode) rechts unten, 180° gedreht;Foto sicher (Schrift+Punkt);LED-Seite rechts (zur MCU-Seite) [I]
+OC02;VO617A-8;lesbar;E2;Pin1 links oben;Foto sicher;LED-Seite links
+OC03;VO617A-8;lesbar;E2;Pin1 links oben;Foto sicher;LED-Seite links
+OC04;VO617A-8;lesbar;E2;Pin1 links oben;Foto sicher;LED-Seite links
+OC05;VO617A-8;lesbar;E3;Pin1 links oben;Foto sicher;LED-Seite links
+OC06;VO617A-8;lesbar;E3;Pin1 links oben;Foto sicher;LED-Seite links
+OC07;VO617A-8;kopfüber;E3;Pin1 (LED-Anode) rechts unten, 180° gedreht;Foto sicher (Schrift+Punkt);LED-Seite rechts [I]
+OC08;VO617A-8;verwaschen;E3;Pin1 links oben (Punkt schwach);Foto unsicher;nach Reinigung/Streiflicht prüfen
+U-ADM485;ADM485 SO-8;ADM485 JR7;E2/E3 (Logikspalte, 2. von unten);Pin1 unten rechts im Foto (Spalte unten=0°-Lage gedreht 180°) => rechte Padreihe von unten nach oben 1-4 (RO,/RE,DE,DI), linke von oben nach unten 5-8 (GND,A,B,VCC);Foto, Pinout laut Datenblatt;Anbindung an A/B ungeklärt
+U-78L05-1;78L05A SO-8;ST 78L05A;E2 (oberstes IC der Logikspalte);;Foto;
+U-78L05-2;78L05A SO-8;ST 78L05A;E3 (unterstes IC der Logikspalte);;Foto;
+U-ACT14-1;74ACT14G SO-14;;E2;;Foto;
+U-ACT14-2;74ACT14G SO-14;;E2;;Foto;
+U-LM2903;LM2903 SO-8;2903 AK1PA;E3;;Foto;
+U-CPC1017;CPC1017N SOP-4;CPC1017N 103T7;E1/E2 (rechts oberhalb OC01);;Foto;OptoMOS-Schließer, Pinout aus Datenblatt prüfen

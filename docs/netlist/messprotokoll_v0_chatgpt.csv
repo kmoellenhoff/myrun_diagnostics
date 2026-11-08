@@ -1,0 +1,6 @@
+﻿Mess-ID;Punkt A;Punkt B;Messart;Wert;Einheit;Quelle;Status;Bemerkung
+GIRT-M001;P4.0V;P2.07;Widerstand;0;Ohm;Bericht 2026-11-07 S.18;gemessen;Keine Aussage ueber Schutztrennung
+GIRT-M002;P4.TACHO;P2.09;Widerstand;16000;Ohm;Bericht 2026-11-07 S.18;gemessen;"Kein direkter Kurzschluss; Signalaufbereitung nur Hypothese"
+GIRT-M003;P4.TACHO;P4.0V;Widerstand;12480;Ohm;Bericht 2026-11-07 S.18;gemessen;In-Circuit
+GIRT-M004;P2.09;P2.07;Widerstand;4300;Ohm;Bericht 2026-11-07 S.18;gemessen;In-Circuit
+GIRT-M005;P2/P4 Pads;erster Leiterbahnkontakt;Widerstand;0.3-0.5;Ohm;Bericht 2026-11-08 S.9;gemessen zusammenfassend;"Pruefspitzen selbst 0.2-0.4 Ohm; pro Netz noch konkretisieren"

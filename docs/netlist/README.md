@@ -1,0 +1,2 @@
+# Netlist workspace (draft)
+Files: `parts.csv` (IDs, orientation), `messprotokoll_v0_chatgpt.csv` (measurements to date, as compiled by the second AI), image `../img/optocoupler_pads.png` (pad roles OC01–OC08). Pad IDs: `OC03.4` = optocoupler OC03, pin 4. Board grid: see `../GIRT_Platinen_Uebersicht_Entwurf.pdf`. Only measured or photo-verified connections go into a net table; everything else stays hypothesis.

@@ -14,7 +14,7 @@ Unit documented: MyRun serial `DCKA2B021008231`, console firmware `WFW0699_BA30.
 
 *The block diagram is an estimate built from photos of both board sides (German labels); numbers mark the suspicion ranking at the time of drawing, not a verified fault location.*
 
-The belt motor is a **brushed DC motor driven by a chopper from the rectified mains** (not an AC inverter drive). The console (CPU board in the handlebar) commands the GIRT over P2: an enable/emergency line, a PWM set-point and tacho feedback. The GIRT's microcontroller (QFP-32, mains side) is separated from the console side by ~10 Vishay VO617A optocouplers **[O]**.
+The belt motor is a **brushed DC motor driven by a chopper from the rectified mains** (not an AC inverter drive). The console (CPU board in the handlebar) commands the GIRT over P2: an enable/emergency line, a PWM set-point and tacho feedback. The GIRT's microcontroller (QFP-32, mains side) is separated from the console side by 8 Vishay VO617A-8 optocouplers in one column (further ones elsewhere not excluded) **[O]**.
 
 ## 2. Board areas and identified parts
 
@@ -29,7 +29,7 @@ The belt motor is a **brushed DC motor driven by a chopper from the rectified ma
 | Incline path | 3 × Panasonic ALQ3F12 (12 V, 10 A), Schrack PE014012, **FUSE MOT T4A 5×20** | UP/DOWN relays and fuse for the AC incline motor | [O] |
 | Aux. supply | FSGM300N (DIP-8), transformer ETI1349X4, thermistor RT700 | +24 V, +12 V iso, ±12 V, +5 V | [O] |
 | Logic | MCU QFP-32, 2 × 74ACT14, LM2903 (comparator), TL082 (current sense), 24C32 EEPROM, 78L05, 2 × SOT-223 regulators | control, protection, parameters | [O] |
-| Isolation | ~10 × VO617A, CPC1017N (OptoMOS) | console ↔ mains-side separation | [O] |
+| Isolation | 8 × VO617A-8 (OC01–OC08, see `docs/img/optocoupler_pads.png`), CPC1017N (OptoMOS) | console ↔ mains-side separation | [O] |
 | LEDs | LINE (blue), +5V (green), STS1 (green), STS2 (red) | see section 7 | [O] |
 
 Resistor code `4753` on the SMD resistors of the measuring chains means **475 kΩ** (not 47.5 kΩ).
