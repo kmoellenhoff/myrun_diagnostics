@@ -21,3 +21,8 @@ B10-M19;2026-11-08 18:00;-;-;Hinweis;alle J1-Messungen (M16-M18) laut Nutzer an 
 B10-M20;2026-11-08 18:01;-;-;Hinweis;"DC+"/"DC-" = DC MOTOR L+/L- (vom Nutzer bestaetigt);;bestaetigt;Offen: DC-MOTOR-Stecker bei M14-M18 gezogen? (T-L- 4 MOhm spricht dafuer; Motorwicklung ca. 1.5 Ohm waere sonst parallel)
 B10-M21;2026-11-08 18:03;-;-;Hinweis;Pads B10-J1, B10-J2 und B10-N4 mit schwarzem Lack bedeckt;;Foto + Nutzer;Messungen "J1" erfolgten am Diodenanschluss (Kathodenende D1), nicht am Pad; X3 und J2 sind weisse Farbpunkte, keine Messpunkte; orange/weisse Ablagerungen am Kathodenende von D2 (Korrosion/Flussmittel?)
 B10-M22;2026-11-08 18:05;-;-;Hinweis;DC-MOTOR-Stecker bei allen L+/L- Messungen abgezogen, Platine lose auf dem Tisch;;Nutzer;erklaert T-L- 4 MOhm (Motorwicklung nicht parallel)
+B10-M23;2026-11-08 18:12;+5VA;B10-J1 (D1-Kathodenbein);Widerstand;ca. 9 kOhm;aehnlich;gemessen;Werte schwankend (Platine nicht fixiert)
+B10-M24;2026-11-08 18:12;+5VA;B10-J2 (D2-Kathodenbein);Widerstand;ca. 10 kOhm;aehnlich;gemessen;J2 = Kathodenende D2 (Annahme)
+B10-M25;2026-11-08 18:12;B10-J2;0VA;Widerstand;ca. 6.8 kOhm;;gemessen;
+B10-M26;2026-11-08 18:12;B10-J1;0VA;Widerstand;ca. 6.4 kOhm;;gemessen;J1 und J2 gleiches Netz bestaetigt (aehnliche Werte)
+B10-M27;2026-11-08 18:12;B10-T1/T2;0VA und 12VA;Widerstand;um 2 MOhm;;gemessen;Formulierung des Nutzers mehrdeutig ("gegen 2 MOhm"); 12VA = welcher Testpunkt (+/-)?
