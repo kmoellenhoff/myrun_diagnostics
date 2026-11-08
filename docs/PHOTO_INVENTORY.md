@@ -20,8 +20,11 @@ Parts seen: 3 relays (1 Schrack RT334024 orange, 2 Panasonic grey), 3 mains-filt
 
 ## Back side (solder side)
 - Large copper pours on the mains side, slots (isolation) between mains and logic; backlight shows continuous copper only in the pour regions, signal area dense two-layer-looking tracks (layer count not yet confirmed).
-- LED labels LINE / +5V / STS1 / STS2 (SMD LEDs), SO-16 IC bottom middle, three 4702 / 47R0 SMD resistors, 4× `R020` shunt resistors (0.02 Ω) next to heatsink, two `471` SMD power resistors, 4753 (475 kΩ) chains with diodes at the lower left edge.
+- LED labels LINE / +5V / STS1 / STS2 (SMD LEDs), SO-20 IC (marking illegible) bottom middle (back), three 4702 / 47R0 SMD resistors, 4× `R020` shunt resistors (0.02 Ω) next to heatsink, two `471` SMD power resistors, 4753 (475 kΩ) chains with diodes at the lower left edge.
 - P2 solder pads at top centre (two rows).
 
 ## Open
 Full per-net table not started; next steps need grid + IDs (see report section 8).
+
+## Overview drafts
+See `docs/GIRT_Platinen_Uebersicht_Entwurf.pdf` (grid A-L x 1-6, front + back flipped vertically), images `docs/img/overview_front.jpg`, `docs/img/overview_back_flipped.jpg`. Traces not yet traced.
