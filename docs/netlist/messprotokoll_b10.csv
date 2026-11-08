@@ -28,3 +28,4 @@ B10-M26;2026-11-08 18:12;B10-J1;0VA;Widerstand;ca. 6.4 kOhm;;gemessen;J1 und J2 
 B10-M27;2026-11-08 18:12;B10-T1/T2;0VA und +5VA;Widerstand;um 2 MOhm;;gemessen (korrigiert 18:15: +5VA statt 12VA);beide Ketten, schwankend
 B10-M28;2026-11-08 18:16;0VA;+5VA;Widerstand;2.16 kOhm;2.55 kOhm (Gegenrichtung);gemessen;Logikversorgung in-circuit
 B10-A01;2026-11-08 18:17;-;-;Auswertung;Sternersatz aus J-0VA 6.4k, J-5VA ca. 9.5k, 5VA-0VA ca. 2.35k: J hat ca. 6.8 kOhm zu 0VA, sonst keine niederohmige Anbindung;;Hypothese (rechnerisch);Teiler 950k : 6.8k = ca. 1:140, 325 V Spitze -> ca. 2.3 V an J; Widerspruch offen: B10-M16 (J1 - L+ 1 kOhm) nachmessen
+B10-M29;2026-11-08 18:18;B10-J1;DC MOTOR L+;Widerstand;11 kOhm Start, stark steigend, nach ca. 1 min 4 MOhm, danach leicht fallend;;gemessen;ersetzt B10-M16 (1 kOhm); passt zu 6.8 kOhm + Ladekondensator; 0VA vermutlich = DC- (Zwischenkreis-Minus) [Hypothese]
