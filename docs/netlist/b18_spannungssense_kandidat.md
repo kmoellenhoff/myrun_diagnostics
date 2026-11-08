@@ -75,3 +75,9 @@ Prüfen: P2↔L− (Motorpad) sollte ≈ 0 Ω bzw. Drosselwiderstand sein; Diode
 - P1↔0VA 223,7k vs. P1↔5VA 226,4k: Differenz 2,7k liegt nahe am 1%-Messfehler, daher ist „Fusspunkt = 0VA“ nur wahrscheinlich, nicht belegt.
 - P2↔L− = 300k steigend: offen (Bleeder/Snubber/D3/Q2-Umfeld?).
 - Früherer Wert J1→L− = 2,6M konstant bleibt ungeklärt (kein Zusammenhang mit der Kette mehr, Übereinstimmung war Zufall).
+
+## Leistungsstufe, Diodentest 21:27 (messprotokoll_leistungsteil.csv)
+
+- L− → L+ : 0,397 V, Gegenrichtung OL → D3 (Freilaufdiode, Anode L−, Kathode L+) unauffällig.
+- 0VA → L− : 0,444 V, Gegenrichtung OL → Body-Diode von Q2 (Source an 0VA = DC−, Drain an L−) unauffällig.
+Topologie damit [I, aus Messung]: L+ = DC-Bus (nach Drossel), L− = Q2-Drain (low-side), 0VA = Source/DC−. Kein Hinweis auf Kurzschluss oder offene Dioden; Gate/Treiber ungeprüft.

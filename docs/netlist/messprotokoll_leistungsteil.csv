@@ -1,0 +1,3 @@
+Mess-ID;Datum/Zeit;Rot (zuerst);Schwarz;Modus;Wert;Gegenrichtung;Status;Bemerkung
+PW-M01;2026-11-08 21:25;DC MOTOR L-;DC MOTOR L+;Diode;0,397 V;OL;gemessen;stromlos in-circuit; Freilaufdiode D3: Anode L-, Kathode L+ -> unauffaellig [Annahme: schwarz = L+, vom Nutzer nicht ausdruecklich genannt]
+PW-M02;2026-11-08 21:26;0VA;DC MOTOR L-;Diode;0,444 V;OL;gemessen;stromlos in-circuit; Body-Diode Q2: Source 0VA (Anode), Drain L- (Kathode) -> unauffaellig
