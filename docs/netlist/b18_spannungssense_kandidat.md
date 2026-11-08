@@ -3,7 +3,7 @@
 Stand 2026-11-08, nur aus Fotos (keine Messung). Status: **Hypothese [H]**, Bauteilwerte teilweise [I] gelesen.
 
 Fotos: `img/b18_chain_4753_1004_1001.jpg` (Makro der Kette), `img/b18_context_wide.jpg` (Umgebung, Quelle PXL_20261108_153921371).
-Lage: Rückseite, ungefähr Raster F6 (SIFT-Lokalisierung der Foto-Kachel; Raster-Zelle ± 1), neben dem SO-20-IC (B3) und am Rand des grossen Kupferfeldes. Auf der Vorderseite liegt der Bereich unter dem Kühlkörper.
+Lage: Rückseite, Raster E5 (±1; korrigiert gegen die Übersicht, vorher F6 geschätzt), südwestlich unterhalb des SO-20-IC (B3), Box B18 in der Übersicht. Auf der Vorderseite liegt der Bereich unter dem Kühlkörper.
 
 ## B18-A: Hochohm-Kette (Kandidat für Teiler zum DC-Link / Motorspannung)
 
@@ -23,13 +23,15 @@ Summe ≈ 2,475 MΩ, Abgriff nach 1,475 MΩ.
 
 Das passt zum gemessenen Verhalten J1 → L+ (steigt auf ≈4 MΩ und fällt wieder leicht): ein Hochohm-Pfad im Bereich einiger MΩ zwischen Niederspannungsseite und DC-Link.
 
+Übersichts-IDs: B18 = Kette, B19 = Widerstandsblock (E6), B20 = Reihe aus 4 Widerständen + SOT-23 (E6).
+
 ## B18-B: Weiterführung von P1
 
 Die Bahn von P1 läuft schräg nach links oben und trifft dort auf einen Block aus kleinen Widerständen (Aufdruck u. a. "1003", "1001", zwei bis drei hochkant stehende SMD-Widerstände, kleine SMD-Kondensatoren). Der Block liegt neben den drei grossen SMD-Elkos/Keramikkondensatoren (Hilfsversorgung) und ist sehr wahrscheinlich Teil der Messaufbereitung (Filter, Teilerfuss, Referenz). Aufdrucke dort aus den Fotos nicht sicher lesbar (Bewegungsunschärfe) → neue Makros nötig.
 
-## B18-C: Spalte aus vier Widerständen darunter (≈ F6/F7)
+## B18-C (Übersicht: B20): Reihe aus vier Widerständen (E6)
 
-Vier SMD-Widerstände in einer Spalte (Aufdrucke grob "4701"?/"4751"/"1003"/"4751"?, nicht sicher), daneben "4714"? und ein SOT-23 mit zwei 2,2k/1,2k-Widerständen. Die rechten Enden führen über Rundpads auf Bahnen nach rechts ins grosse Kupferfeld / zur Leistungsstufe. Vermutung [H]: Strom-/Spannungsabgriff am Motorausgang. Status offen, neue Makros nötig.
+Vier SMD-Widerstände in einer Reihe (Aufdrucke grob "4701"?/"4751"/"1003"/"4751"?, nicht sicher), daneben "4714"? und ein SOT-23 mit zwei 2,2k/1,2k-Widerständen. Die rechten Enden führen über Rundpads auf Bahnen nach rechts ins grosse Kupferfeld / zur Leistungsstufe. Vermutung [H]: Strom-/Spannungsabgriff am Motorausgang. Status offen, neue Makros nötig.
 
 ## Messplan (stromlos, Elko < 5 V, rot zuerst, Motor abgesteckt)
 

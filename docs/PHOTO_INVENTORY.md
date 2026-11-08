@@ -27,4 +27,4 @@ Parts seen: 3 relays (1 Schrack RT334024 orange, 2 Panasonic grey), 3 mains-filt
 Full per-net table not started; next steps need grid + IDs (see report section 8).
 
 ## Overview drafts
-See `docs/GIRT_Platinen_Uebersicht_Entwurf.pdf` (grid A-L x 1-6, front + back flipped vertically), images `docs/img/overview_front.jpg`, `docs/img/overview_back_flipped.jpg`. Traces not yet traced.
+See `docs/GIRT_Platinen_Uebersicht_Entwurf.pdf` (v2, grid A-L x 1-6, both variants): variant A = front as photographed + back flipped vertically (`docs/img/overview_front.jpg`, `overview_back_flipped.jpg`); variant B = back as photographed (readable text) + front flipped vertically (`overview_back_upright.jpg`, `overview_front_flipped.jpg`). Same field names in all four; in flipped-to-upright variants the row digits run 6 (top) to 1 (bottom). New boxes B18-B20 (voltage-sense candidate, hypothesis). Traces not yet traced.
