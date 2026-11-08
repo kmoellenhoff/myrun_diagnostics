@@ -55,3 +55,6 @@ Alle drei liegen unter dem Nennwert und passen genau zu einem **geschlossenen Ri
 - R3 ∥ (R1+R2) = 596k (gemessen = R2, wie erwartet)
 Folgerung [H]: P1 und P2 sind (in Vorwärtsrichtung) mit höchstens einigen 10 kΩ verbunden – die Kette ist kein offener Teiler gegen den DC-Link. Die Gegenrichtung (höher) deutet auf ein Halbleiter-/Ladeeffekt im Rückweg hin.
 Nächste Messungen: P1↔P2 direkt, P2↔0VA/L−/L+, P1↔0VA, V1↔0VA.
+
+**Nachtrag 21:12 (B18-M04):** Gesamte Kette P1↔P2 (Nennwert 2,475M): 170k steigend (rot an P1-Seite, Richtung B19), invertiert 619k steigend.
+Daraus Aussenpfad zwischen P1 und P2 ≈ 180k vorwärts / ≈ 830k rückwärts (beide noch steigend, also Ladeeffekt/Halbleiter beteiligt). Die frühere Abschätzung „ext ≲ 50k“ ist damit auf **ext ≈ 100–200k** korrigiert; P1 und P2 sind nicht derselbe Knoten, aber über ein Netz von einigen 100 kΩ gekoppelt.
