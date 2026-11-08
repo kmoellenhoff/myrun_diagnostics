@@ -10,3 +10,9 @@ B10-M08;2026-11-08 17:48;B10-N1;B10-N2;Widerstand;wie B10-M06 (ca. 472 kOhm);wie
 B10-M09;2026-11-08 17:48;B10-N3;B10-N4;Widerstand;wie B10-M07 (ca. 473 kOhm);wie B10-M07;gemessen;R4 gleich R3
 B10-M10;2026-11-08 17:48;B10-T2;B10-N4;Widerstand;0.923 MOhm;0.930 MOhm (Gegenrichtung);gemessen;R3+R4, ca. 1-2 % unter Summe 946k, innerhalb Messgeraet- und Bauteiltoleranz
 B10-M11;2026-11-08 17:50;B10-T1;B10-N2;Widerstand;0.92 MOhm;;gemessen;R1+R2 in Reihe, passt zu 2 x 475k (Summe 946k, -2.7 %)
+B10-M12;2026-11-08 17:55;B10-T2;AC LINE L;Widerstand;0 Ohm;;gemessen;direkte Kupferverbindung: T2 = Netz L
+B10-M13;2026-11-08 17:55;B10-T1;AC LINE N;Widerstand;0 Ohm;;gemessen;direkte Kupferverbindung: T1 = Netz N
+B10-M14;2026-11-08 17:54;B10-T1;"DC+";Widerstand;160 kOhm steigend;13 MOhm steigend (Gegenrichtung);gemessen;T2 gleiches Verhalten; "DC+" vermutlich DC MOTOR L+ (bestätigen); Diodenverhalten wie Brückengleichrichter + Ladekondensator [I]
+B10-M15;2026-11-08 17:54;B10-T1/T2;"DC-";Widerstand;4 MOhm steigend;;gemessen;"DC-" vermutlich DC MOTOR L- (bestätigen)
+B10-M16;2026-11-08 17:55;B10-J1;"DC+";Widerstand;1 kOhm steigend;;gemessen;niederohmiger Pfad mit Ladeverhalten
+B10-M17;2026-11-08 17:55;B10-J1;"DC-";Widerstand;2.6 MOhm konstant;;gemessen;
