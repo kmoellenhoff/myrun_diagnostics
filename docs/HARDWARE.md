@@ -123,7 +123,7 @@ The FTMS Treadmill Data speed field (0x2ACD) is the **set-point**, not the measu
 - Typical sequence in a failed start **[O]**: START accepted → console raises PWM → encoder stays at 0 Hz, `MeasSpeed` 0 → after ≈7 s EM_POWENA/EM_STATUS/LOWKITENA/B/LK_ENABLE drop (they follow the console output) → console aborts after ≈16 s → `QSHardwareFault` → new HF904.
 - The GIRT **does not drive the motor** in that state: 0 V at DC MOTOR (generator voltage is visible when the shaft is turned by hand, so the motor winding is fine).
 - The GIRT locks and starts the STS2 blink code within about 1.5 s (11/07 22:04) to 5 s (11/08 13:26, video synchronised to the BLE log, ±0.3 s) after START, and stays locked until it is fully de-energised. In the 11/08 run the first STS2 pulse came about 1.3 s *before* the console dropped the enable lines, so the GIRT notices the fault before the console does.
-- Failed start 11/08 13:26 (belt not moving, multimeter on V DC at DC MOTOR, MAX hold **not** active): display stayed at 0.0 V from START to START + 8 s (4 frames/s), so no voltage longer than ≈0.3 s at the motor output; shorter pulses are not excluded. Console PWM request rose 0.077 → 0.099 → 0.143 % while encoder and `MeasSpeed` stayed 0; PWM_MOTOR 9366 at the first enable drop and 5046 in the second attempt (same value as 11/07). New error-log entry **902** (not 904).
+- Failed start 11/08 13:26 (belt not moving, multimeter on V DC at DC MOTOR, MAX hold active according to the user, not verifiable in the video because of poor display lighting; bench test on a 9 V block: first value after ≈0.5 s tap, full 9.2 V after ≈1 s): display stayed at 0.0 V from START to START + 8 s (4 frames/s), so no voltage of ≳0.5 s duration at the motor output; the MAX capture is slow, so shorter pulses (<0.5 s) are not excluded until a pulse-length calibration is done. Console PWM request rose 0.077 → 0.099 → 0.143 % while encoder and `MeasSpeed` stayed 0; PWM_MOTOR 9366 at the first enable drop and 5046 in the second attempt (same value as 11/07). New error-log entry **902** (not 904).
 - Good run (17:18, 07.11.): belt ran 95 s at 1.2 km/h, encoder 300–310 Hz, PWM 0.085 %, 12.38–12.41 V DC at DC MOTOR.
 - Other values: motor winding 1.5–1.6 Ω over more than 16 rotor positions, thermal switch ≈0 Ω, usage counters from `@RSTAT#`: ≈1390 h powered, ≈342 h belt, ≈3719 km.
 
@@ -138,7 +138,7 @@ Technogym driver codes (same numbering in four drive generations **[Man]**): 01 
 | Motor brushes / commutator | unlikely: 342 h of belt time, but not yet opened and checked |
 | Speed sensor / cable | unlikely: mechanics fine, signal reaches P2 pin 9 |
 
-Open measurements: the voltage at DC MOTOR (MAX hold) during a fresh failed start after a complete power-off, pad-to-pad continuity of the P2/P4 traces towards the logic area, leakage to neighbouring traces, and a check of the brushes and commutator.
+Open measurements: MAX pulse-length calibration on the 9 V block (taps of 0.1/0.2/0.3 s), the voltage at DC MOTOR during a fresh failed start after a complete power-off, pad-to-pad continuity of the P2/P4 traces towards the logic area, leakage to neighbouring traces, and a check of the brushes and commutator.
 
 ## 7. LEDs (rear of the board, between D3 and Q2)
 
