@@ -1,0 +1,628 @@
+{
+  "repository": "https://github.com/kmoellenhoff/myrun_diagnostics",
+  "base_commit": "9d1f74617b602f57db36a1993998581de360b832",
+  "coordinate_system": "Claude: A–L × 1–6, unverändert. Lokale Pixelkoordinaten sind nur Quellfoto-Adressen, kein neues Platinenraster.",
+  "status_legend": {
+    "M": "bestehende Messung aus Repository",
+    "F": "sichtbarer Anschluss/Leiterbahn im Originalfoto",
+    "I": "aus Aufdruck, Bauform oder Herstellerdaten abgeleitet; elektrische Bestätigung fehlt",
+    "H": "Hypothese, offen"
+  },
+  "images": [
+    {
+      "id": "01",
+      "title": "RT334024: Spule und Kontaktpins",
+      "source": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+      "grid": "F27 = I4; Rückseite, Makro gedreht",
+      "box": [
+        900,
+        1150,
+        1900,
+        2150
+      ],
+      "points": [
+        {
+          "id": "Ca",
+          "x": 1448,
+          "y": 2050,
+          "lx": 1260,
+          "ly": 2070,
+          "status": "I",
+          "note": "Spulenanschluss; A1/A2-Reihenfolge offen"
+        },
+        {
+          "id": "Cb",
+          "x": 1670,
+          "y": 2050,
+          "lx": 1710,
+          "ly": 2070,
+          "status": "I",
+          "note": "zweiter Spulenanschluss"
+        },
+        {
+          "id": "11a",
+          "x": 1448,
+          "y": 1458,
+          "lx": 1170,
+          "ly": 1490,
+          "status": "I",
+          "note": "Kontaktseite nahe Spule, Pin 11 nach RT1-Pinraster"
+        },
+        {
+          "id": "11b",
+          "x": 1670,
+          "y": 1458,
+          "lx": 1720,
+          "ly": 1490,
+          "status": "I",
+          "note": "zweiter Pin derselben Kontaktseite"
+        },
+        {
+          "id": "14a",
+          "x": 1448,
+          "y": 1305,
+          "lx": 1170,
+          "ly": 1190,
+          "status": "I",
+          "note": "Kontaktseite fern der Spule, Pin 14 nach RT1-Pinraster"
+        },
+        {
+          "id": "14b",
+          "x": 1670,
+          "y": 1305,
+          "lx": 1720,
+          "ly": 1190,
+          "status": "I",
+          "note": "zweiter Pin derselben Kontaktseite"
+        }
+      ],
+      "image": "makros/01.png",
+      "header_px": 100,
+      "source_size": [
+        4080,
+        3064
+      ],
+      "source_sha256": "4a176d4b52f73b15eee4ff1e590443e58ffbf0838429d086e612f4d5b8842ca2",
+      "output_sha256": "6c74b0198c12746354430975b3aae3f6447ca46a3fed9a914395a53db0985d6d",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_154119736.jpg"
+    },
+    {
+      "id": "02",
+      "title": "P600: beide Sensor-Steckkontakte",
+      "source": "photos/2026-11-08/q2/q2_vorderseite_makro.jpg",
+      "grid": "F15 = B5; Vorderseite, Foto unverändert ausgerichtet",
+      "box": [
+        670,
+        750,
+        1020,
+        1190
+      ],
+      "points": [
+        {
+          "id": "Ka",
+          "x": 876,
+          "y": 918,
+          "lx": 905,
+          "ly": 820,
+          "status": "F",
+          "note": "sichtbarer Crimpkontakt, weiter vom P600-Schriftzug"
+        },
+        {
+          "id": "Kb",
+          "x": 845,
+          "y": 964,
+          "lx": 675,
+          "ly": 985,
+          "status": "F",
+          "note": "sichtbarer Crimpkontakt, näher am P600-Schriftzug"
+        }
+      ],
+      "image": "makros/02.png",
+      "header_px": 138,
+      "source_size": [
+        2212,
+        1661
+      ],
+      "source_sha256": "dd7960e4dee04d81a4f044aad50368ba3addaf37cb55adb24abb4469523b35eb",
+      "output_sha256": "3f79328c3cd10ea9f2c90c9d0193ca16388dd76a6b21d52501e06348dbff8d88",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_vorderseite_makro.jpg"
+    },
+    {
+      "id": "03",
+      "title": "B18 → B19: Knoten und erster Widerstand",
+      "source": "photos/2026-11-08/back/PXL_20261108_153921371.jpg",
+      "grid": "B18 = E5; B19 = E6; Rückseite, Makro gedreht",
+      "box": [
+        1150,
+        700,
+        4080,
+        1750
+      ],
+      "points": [
+        {
+          "id": "P1",
+          "x": 2626,
+          "y": 1433,
+          "lx": 2420,
+          "ly": 1510,
+          "status": "M",
+          "note": "B18-P1; rundes Pad auf Bahn, nicht beliebiges Via"
+        },
+        {
+          "id": "P2",
+          "x": 3851,
+          "y": 1443,
+          "lx": 3760,
+          "ly": 1540,
+          "status": "M",
+          "note": "B18-P2 = DC MOTOR L+; quadratisches Pad"
+        },
+        {
+          "id": "V1/TP1",
+          "x": 3256,
+          "y": 1596,
+          "lx": 3020,
+          "ly": 1640,
+          "status": "F",
+          "note": "R2/R3-Abgriff; Testpad, kein Via"
+        },
+        {
+          "id": "V2/TP2",
+          "x": 3458,
+          "y": 1262,
+          "lx": 3480,
+          "ly": 1150,
+          "status": "F",
+          "note": "Netz R3/P2; Testpad, kein Via"
+        },
+        {
+          "id": "E1",
+          "x": 1912,
+          "y": 1097,
+          "lx": 1970,
+          "ly": 1140,
+          "status": "F",
+          "note": "B19: rechtes Pad des unteren horizontalen 1001-Widerstands; sichtbare Bahn ab P1"
+        },
+        {
+          "id": "E2",
+          "x": 1795,
+          "y": 1097,
+          "lx": 1580,
+          "ly": 1175,
+          "status": "F",
+          "note": "anderes Ende desselben Widerstands; Aufdruck 1001 = 1 kΩ [I]"
+        }
+      ],
+      "image": "makros/03.png",
+      "header_px": 293,
+      "source_size": [
+        4080,
+        3064
+      ],
+      "source_sha256": "526be77d9f9d527d37801c2317202d8273946d86194c8dbf3c245ffbc677f24e",
+      "output_sha256": "d0d2f1f79ccf3a632b11365ecd63502fe5da75787189d110c7c0f9bd1932b9e8",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg"
+    },
+    {
+      "id": "04",
+      "title": "B20: vier Widerstände und SOT-23",
+      "source": "photos/2026-11-08/back/PXL_20261108_153921371.jpg",
+      "grid": "B20 = E6; Rückseite; Reihe erscheint im Makro senkrecht",
+      "box": [
+        1300,
+        1500,
+        1775,
+        2350
+      ],
+      "points": [
+        {
+          "id": "Ta",
+          "x": 1485,
+          "y": 1679,
+          "lx": 1305,
+          "ly": 1685,
+          "status": "F",
+          "note": "einzelner SOT-23-Anschluss links im Foto"
+        },
+        {
+          "id": "Tb",
+          "x": 1653,
+          "y": 1619,
+          "lx": 1655,
+          "ly": 1515,
+          "status": "F",
+          "note": "SOT-23 oben rechts im Foto"
+        },
+        {
+          "id": "Tc",
+          "x": 1658,
+          "y": 1744,
+          "lx": 1665,
+          "ly": 1760,
+          "status": "F",
+          "note": "SOT-23 unten rechts im Foto"
+        },
+        {
+          "id": "R1a",
+          "x": 1450,
+          "y": 1863,
+          "lx": 1305,
+          "ly": 1813,
+          "status": "F",
+          "note": "lokaler Anschluss links im Foto"
+        },
+        {
+          "id": "R1b",
+          "x": 1572,
+          "y": 1863,
+          "lx": 1635,
+          "ly": 1843,
+          "status": "F",
+          "note": "lokaler Anschluss rechts im Foto"
+        },
+        {
+          "id": "R2a",
+          "x": 1450,
+          "y": 1999,
+          "lx": 1305,
+          "ly": 1949,
+          "status": "F",
+          "note": "lokaler Anschluss links im Foto"
+        },
+        {
+          "id": "R2b",
+          "x": 1572,
+          "y": 1999,
+          "lx": 1635,
+          "ly": 1979,
+          "status": "F",
+          "note": "lokaler Anschluss rechts im Foto"
+        },
+        {
+          "id": "R3a",
+          "x": 1450,
+          "y": 2136,
+          "lx": 1305,
+          "ly": 2086,
+          "status": "F",
+          "note": "lokaler Anschluss links im Foto"
+        },
+        {
+          "id": "R3b",
+          "x": 1572,
+          "y": 2136,
+          "lx": 1635,
+          "ly": 2116,
+          "status": "F",
+          "note": "lokaler Anschluss rechts im Foto"
+        },
+        {
+          "id": "R4a",
+          "x": 1450,
+          "y": 2271,
+          "lx": 1305,
+          "ly": 2221,
+          "status": "F",
+          "note": "lokaler Anschluss links im Foto"
+        },
+        {
+          "id": "R4b",
+          "x": 1572,
+          "y": 2271,
+          "lx": 1635,
+          "ly": 2251,
+          "status": "F",
+          "note": "lokaler Anschluss rechts im Foto"
+        }
+      ],
+      "image": "makros/04.png",
+      "header_px": 100,
+      "source_size": [
+        4080,
+        3064
+      ],
+      "source_sha256": "526be77d9f9d527d37801c2317202d8273946d86194c8dbf3c245ffbc677f24e",
+      "output_sha256": "5c2705658387f377bc991d98a61341e731f4858ce97be9dd5d74324eba48f877",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg"
+    },
+    {
+      "id": "05",
+      "title": "Q2: G/D/S, Gate-R und fünf Treiberanschlüsse",
+      "source": "photos/2026-11-08/q2/q2_rueckseite_makro.jpg",
+      "grid": "F33/B21 = B5; Rückseite; Foto gegenüber Übersicht um 180° gedreht",
+      "box": [
+        0,
+        0,
+        1661,
+        2212
+      ],
+      "points": [
+        {
+          "id": "G",
+          "x": 315,
+          "y": 1855,
+          "lx": 90,
+          "ly": 1940,
+          "status": "M",
+          "note": "Gate, links im Originalmakro; in aufrechter Rückseitenübersicht rechts"
+        },
+        {
+          "id": "D = L−",
+          "x": 808,
+          "y": 1855,
+          "lx": 680,
+          "ly": 2040,
+          "status": "M",
+          "note": "Drain, Mitte"
+        },
+        {
+          "id": "S = 0VA",
+          "x": 1303,
+          "y": 1855,
+          "lx": 1280,
+          "ly": 1940,
+          "status": "M",
+          "note": "Source, rechts"
+        },
+        {
+          "id": "RG-G",
+          "x": 1046,
+          "y": 1162,
+          "lx": 1030,
+          "ly": 1260,
+          "status": "M",
+          "note": "unteres Ende des 22-Ω-Widerstands, Gate-Seite"
+        },
+        {
+          "id": "RG-U",
+          "x": 1052,
+          "y": 910,
+          "lx": 1140,
+          "ly": 845,
+          "status": "M",
+          "note": "oberes Ende des 22-Ω-Widerstands, Treiber-Seite"
+        },
+        {
+          "id": "A",
+          "x": 679,
+          "y": 735,
+          "lx": 520,
+          "ly": 625,
+          "status": "F",
+          "note": "Treiber: oben links im Originalmakro, Funktion offen"
+        },
+        {
+          "id": "B",
+          "x": 760,
+          "y": 735,
+          "lx": 730,
+          "ly": 575,
+          "status": "F",
+          "note": "Treiber: oben Mitte, Funktion offen"
+        },
+        {
+          "id": "C",
+          "x": 845,
+          "y": 735,
+          "lx": 895,
+          "ly": 655,
+          "status": "F",
+          "note": "Treiber: oben rechts, Funktion offen"
+        },
+        {
+          "id": "D5",
+          "x": 679,
+          "y": 970,
+          "lx": 470,
+          "ly": 1000,
+          "status": "F",
+          "note": "Treiber: unten links, Funktion offen; D5 ist kein MOSFET-Drain"
+        },
+        {
+          "id": "E",
+          "x": 851,
+          "y": 970,
+          "lx": 780,
+          "ly": 1090,
+          "status": "F",
+          "note": "Treiber: unten rechts; Bahn zu RG-U sichtbar, durchmessen"
+        }
+      ],
+      "image": "makros/05.png",
+      "header_px": 166,
+      "source_size": [
+        1661,
+        2212
+      ],
+      "source_sha256": "ea90e6a6f3c6f2e4db189c59bab734fd611cbd4bea572cf1faddb8461d67c5ce",
+      "output_sha256": "76f8239ce1a84a415c65d8c4865582462408bb77547e53c4ef7227cd05bfadd8",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg"
+    },
+    {
+      "id": "05b",
+      "title": "Q2-Treiberumfeld: Widerstandsanschlüsse",
+      "source": "photos/2026-11-08/q2/q2_rueckseite_makro.jpg",
+      "grid": "B21 = B5; Rückseite; gleiche Bildlage wie Blatt 05",
+      "box": [
+        200,
+        260,
+        870,
+        690
+      ],
+      "points": [
+        {
+          "id": "R1001-a",
+          "x": 365,
+          "y": 390,
+          "lx": 210,
+          "ly": 275,
+          "status": "F",
+          "note": "linkes Ende im Originalfoto, Code 1001"
+        },
+        {
+          "id": "R1001-b",
+          "x": 521,
+          "y": 390,
+          "lx": 470,
+          "ly": 275,
+          "status": "F",
+          "note": "rechtes Ende im Originalfoto"
+        },
+        {
+          "id": "R221-a",
+          "x": 616,
+          "y": 390,
+          "lx": 610,
+          "ly": 275,
+          "status": "F",
+          "note": "linkes Ende im Originalfoto, Code 221"
+        },
+        {
+          "id": "R221-b",
+          "x": 777,
+          "y": 390,
+          "lx": 760,
+          "ly": 275,
+          "status": "F",
+          "note": "rechtes Ende im Originalfoto"
+        },
+        {
+          "id": "R4752-a",
+          "x": 363,
+          "y": 560,
+          "lx": 210,
+          "ly": 620,
+          "status": "F",
+          "note": "linkes Ende im Originalfoto, Code 4752"
+        },
+        {
+          "id": "R4752-b",
+          "x": 522,
+          "y": 560,
+          "lx": 480,
+          "ly": 620,
+          "status": "F",
+          "note": "rechtes Ende im Originalfoto"
+        }
+      ],
+      "image": "makros/05b.png",
+      "header_px": 100,
+      "source_size": [
+        1661,
+        2212
+      ],
+      "source_sha256": "ea90e6a6f3c6f2e4db189c59bab734fd611cbd4bea572cf1faddb8461d67c5ce",
+      "output_sha256": "d18a1e8a8ab59607d0fe7f3368c84daabffbf828de32982b9e960a0d384731a5",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg"
+    },
+    {
+      "id": "06",
+      "title": "Hilfsversorgung: 0VA und +5VA",
+      "source": "photos/2026-11-08/front/PXL_20261108_155115274.jpg",
+      "grid": "F31 = D5; Vorderseite, Makro gedreht",
+      "box": [
+        0,
+        1200,
+        2100,
+        3064
+      ],
+      "points": [
+        {
+          "id": "0VA",
+          "x": 1440,
+          "y": 2349,
+          "lx": 1520,
+          "ly": 2250,
+          "status": "M",
+          "note": "beschrifteter Testpunkt 0VA, DC− / Netzseite"
+        },
+        {
+          "id": "+5VA",
+          "x": 1425,
+          "y": 2525,
+          "lx": 1520,
+          "ly": 2550,
+          "status": "F",
+          "note": "beschrifteter Testpunkt +5VA"
+        }
+      ],
+      "image": "makros/06.png",
+      "header_px": 210,
+      "source_size": [
+        4080,
+        3064
+      ],
+      "source_sha256": "35bdaf0b94adb77c28d8cdf22e734c07bdbb7b3f7a89255389748b8302677d9b",
+      "output_sha256": "ba0c0ad7cc1731a062f83bb0c7f41106ab28be77e0c5dbb5a3e23b5202648f90",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/front/PXL_20261108_155115274.jpg"
+    },
+    {
+      "id": "07",
+      "title": "Hilfsversorgung: 0V24 und +24V bei P400",
+      "source": "photos/2026-11-08/front/PXL_20261108_155137120.jpg",
+      "grid": "F23 = F3; Vorderseite; Umfeld F17/F18",
+      "box": [
+        1700,
+        1200,
+        3200,
+        2500
+      ],
+      "points": [
+        {
+          "id": "0V24",
+          "x": 2551,
+          "y": 2015,
+          "lx": 2720,
+          "ly": 1940,
+          "status": "I",
+          "note": "oberes beschriftetes Testloch, Anschlusslage noch durchmessen"
+        },
+        {
+          "id": "+24V",
+          "x": 2531,
+          "y": 2172,
+          "lx": 2720,
+          "ly": 2200,
+          "status": "I",
+          "note": "unteres beschriftetes Testloch, Anschlusslage noch durchmessen"
+        },
+        {
+          "id": "P400-schwarz",
+          "x": 2725,
+          "y": 1587,
+          "lx": 2860,
+          "ly": 1420,
+          "status": "F",
+          "note": "sichtbarer Steckkontakt mit schwarzer Leitung; Farbzuordnung allein kein Netzbeweis"
+        },
+        {
+          "id": "P400-rot",
+          "x": 2680,
+          "y": 1765,
+          "lx": 2860,
+          "ly": 1690,
+          "status": "F",
+          "note": "sichtbarer Steckkontakt mit roter Leitung"
+        }
+      ],
+      "image": "makros/07.png",
+      "header_px": 150,
+      "source_size": [
+        4080,
+        3064
+      ],
+      "source_sha256": "82b51e3651c69f629d6bce4f5c82696313c31cf60a306f972668136af71b6869",
+      "output_sha256": "e404c950d411780ccde944942537929d846bc968cd3a8fe11cdfacf46cd201b5",
+      "unmarked_pixels_identical": true,
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/front/PXL_20261108_155137120.jpg"
+    }
+  ]
+}

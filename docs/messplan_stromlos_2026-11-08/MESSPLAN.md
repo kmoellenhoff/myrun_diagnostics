@@ -1,0 +1,237 @@
+# GIRT S6T30 – stromloser Messplan mit Originalmakros
+
+Basis: `9d1f74617b602f57db36a1993998581de360b832` · Auswertung 08.11.2026 · keine neuen Messwerte
+
+**Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Es wurden keine neuen elektrischen Messungen durchgeführt.
+
+**Koordinaten unverändert.** Claudes Raster bleibt A–L × 1–6, dasselbe Feld auf beiden Platinenseiten. Variante A: Vorderseite wie fotografiert, Rückseite vertikal gespiegelt. Variante B: Rückseite wie fotografiert, Vorderseite vertikal gespiegelt; Zeilen 6 oben bis 1 unten. Makros werden hier weder gedreht noch gespiegelt. Die Zusatz-IDs identifizieren nur Anschlüsse im jeweiligen Originalmakro. Rasterangaben bleiben grob (laut Quelle etwa ±1 Feld).
+
+**Vor jeder Messung.** Netzstecker ziehen und alle externen Versorgungen trennen. Restspannung direkt am Zwischenkreis-Elko in V DC prüfen; erst nach bestätigtem Wert unter 5 V zu den hier geplanten Ω-/Diodentests wechseln. Nur spannungsfrei messen; vorhandene Anschlüsse nicht brücken. DC MOTOR für vergleichbare Leistungsteilwerte abgezogen lassen (B10-M22). Sensor für NTC-01/02 abziehen. Steckzustände protokollieren. 0VA = Netzseite/DC−, kein Schutzleiter.
+
+**Messwerte richtig lesen.** Prüfspitzen kurzschließen und Eigenwiderstand notieren (bisher 0,2–0,4 Ω). Ω-Werte samt Zeitverlauf und Polung erfassen; 10/60 s sind nur Ablesezeiten, kein Beweis für Einschwingen. Bei weiterem Trend bis zum erkennbaren Endwert beobachten oder ausdrücklich „nicht eingeschwungen“ eintragen. Bei hoher Impedanz kein Kontakt mit Fingern. Diodenmessung: Rot ist positive Prüfspitze. Keine pauschalen Gut-/Schlechtgrenzen für unbekannte In-Circuit-Netze.
+
+**Reihenfolge aus dem Stand.** 1 Relais F27; 2 NTC F15; 3 B19/B20 fotografieren und sichtbaren B18-Pfad prüfen; 4 Q2-Treiber reinigen/lesen und Pins zu Referenzen kartieren; 5 Hilfsversorgung, Elkos und Lötstellen. B10 und Q2 nicht wegen alter Zwischenhypothesen erneut als defekt behandeln. Klickvergleich beim Gut-/Fehlstart und andere Betriebsmessungen gehören nicht zu diesem stromlosen Plan.
+
+**Status.** Türkis F/M: Kontakt sichtbar bzw. vorhandene Messreferenz; der Marker ist keine neue elektrische Bestätigung. Gelb I/?: aus Pinraster/Aufdruck abgeleitete Zuordnung, zuerst durchmessen. H: Funktion oder Sollwertmodell offen. Neue Ergebnisfelder bleiben leer. Die Originalfotos wurden nur gelesen; PNGs enthalten Ausschnitte mit Overlays und Kopfzeile, ohne erzeugte Platineninhalte.
+
+## Blatt 01 – RT334024: Spule und Kontaktpins
+
+F27 = I4; Rückseite, Makro gedreht
+
+![Blatt 01](makros/01.png)
+
+Original: [photos/2026-11-08/back/PXL_20261108_154119736.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_154119736.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(900, 1150, 1900, 2150)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** RLY-01: Ω Ca–Cb, beide Richtungen. RLY-02/03: Ω 11a–11b / 14a–14b. RLY-04: Ω 11a–14a, beide Richtungen; nichts bestromen.
+
+**Bisher.** Keine Spulen- oder Kontaktmesswerte dokumentiert. Laut HARDWARE.md wurden Relais-/Umfeldlötstellen bereits nachgelötet; Fehler kam zurück.
+
+**Erwartung.** Spule allein 1,44 kΩ bei 23 °C, ±10 % (1,296–1,584 kΩ); in-circuit können Diode/Ansteuerung den Wert senken oder polungsabhängig machen. 11a–11b und 14a–14b etwa Spitzenwiderstand (bisher 0,2–0,4 Ω).
+
+**Grenze / Zuordnung.** I = aus Gehäuselage, Sechspin-Geometrie und Hersteller-Bottom-View abgeleitet, noch nicht elektrisch bestätigt. Spulenpaar und Kontakt-Doppelpaare zuerst prüfen. Schließer allein unbestromt OL; eingelötet können Parallelpfade endliche Werte ergeben. Kein sicherer 68-Ω-Pfad belegt. Statisch lässt sich das Schließen unter Last nicht beurteilen.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| Ca | 1448, 2050 | I | Spulenanschluss; A1/A2-Reihenfolge offen |
+| Cb | 1670, 2050 | I | zweiter Spulenanschluss |
+| 11a | 1448, 1458 | I | Kontaktseite nahe Spule, Pin 11 nach RT1-Pinraster |
+| 11b | 1670, 1458 | I | zweiter Pin derselben Kontaktseite |
+| 14a | 1448, 1305 | I | Kontaktseite fern der Spule, Pin 14 nach RT1-Pinraster |
+| 14b | 1670, 1305 | I | zweiter Pin derselben Kontaktseite |
+
+## Blatt 02 – P600: beide Sensor-Steckkontakte
+
+F15 = B5; Vorderseite, Foto unverändert ausgerichtet
+
+![Blatt 02](makros/02.png)
+
+Original: [photos/2026-11-08/q2/q2_vorderseite_makro.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_vorderseite_makro.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(670, 750, 1020, 1190)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** NTC-01/02: Sensorstecker von P600 abziehen; Ω direkt zwischen den zwei markierten kabelseitigen Crimpkontakten. Kalt, dann mit Handwärme, danach bei gleichbleibender Temperatur Leitung/Stecker vorsichtig bewegen. NTC-03: wieder gesteckt, Ω zwischen denselben Kontakten; Vergleich nur mit eigenem gesteckten Ausgangswert.
+
+**Bisher.** HARDWARE.md §2: NTC 10 kΩ; gemessen ca. 11 kΩ bei Raumtemperatur, 10,75 kΩ erwärmt. Temperaturen und damaliger Steckzustand fehlen.
+
+**Erwartung.** Abgezogen bei ähnlicher Temperatur grob 10–11 kΩ, kein harter Toleranztest. Bei Erwärmung gleichmäßig fallend. Bei konstantem Temperaturzustand keine Sprünge/OL durch Kabelbewegung. Gesteckt können Parallelpfade den Absolutwert ändern.
+
+**Grenze / Zuordnung.** Ka/Kb sind lokale Fotobezeichnungen, keine behaupteten P600-Pinnummern; NTC ist unpolar. Foto zeigt den Stecker gesteckt. Markiert ist das sichtbare Kontaktmetall, nicht Kunststoff. Die abgezogene Steckansicht ist nicht im Repository vorhanden. Eine schlechte Buchsen-Lötstelle kann beim Messen nur auf der Kabelseite unentdeckt bleiben; deshalb zusätzlich Lötstellen ansehen, nicht durch einen stabilen Sensortest freigeben.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| Ka | 876, 918 | F | sichtbarer Crimpkontakt, weiter vom P600-Schriftzug |
+| Kb | 845, 964 | F | sichtbarer Crimpkontakt, näher am P600-Schriftzug |
+
+## Blatt 03 – B18 → B19: Knoten und erster Widerstand
+
+B18 = E5; B19 = E6; Rückseite, Makro gedreht
+
+![Blatt 03](makros/03.png)
+
+Original: [photos/2026-11-08/back/PXL_20261108_153921371.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(1150, 700, 4080, 1750)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** PATH-01: Ω P1–E1, nur blankes Kontaktmetall. PATH-02: Ω E1–E2, beide Richtungen. B18-01: Ω P2–0VA (Blatt 06), Endwert/Verlauf und Gegenrichtung notieren.
+
+**Bisher.** B18-M05/06: P1–0VA 223,7 kΩ; P1–+5VA 226,4 kΩ, konstant. M07: P2–0VA 6 MΩ fallend, kein Endwert. M08: P2–L+ 0 Ω. M10/11: V1–0VA 1,211 MΩ, V1–+5VA 1,206 MΩ. P1–P2 170 kΩ / 619 kΩ, jeweils steigend.
+
+**Erwartung.** P1–E1: etwa Spitzenwiderstand, sofern die sichtbare Bahn intakt ist. E1–E2: Aufdruck legt 1 kΩ nahe, in-circuit kein isolierter Nennwerttest. P2–0VA: Modell nennt etwa 1,5 MΩ (früher 1,5–2,7 MΩ); Hypothese, kein Grenzwert.
+
+**Grenze / Zuordnung.** P2 ist L+, nicht L−. V1/V2 sind Messpads, keine Ebenenwechsel. Fusspunkt 0VA gegenüber +5VA bleibt unbewiesen. Die Funktion als Busspannungsüberwachung ist plausibel [H]. E1 ist ein konkreter nächster Bahnkontakt; der Weg hinter E2 bis zum Messeingang ist offen. Neue Makros beider Seiten bleiben nötig; die Vorderseite ist hier durch den Kühlkörper verdeckt.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| P1 | 2626, 1433 | M | B18-P1; rundes Pad auf Bahn, nicht beliebiges Via |
+| P2 | 3851, 1443 | M | B18-P2 = DC MOTOR L+; quadratisches Pad |
+| V1/TP1 | 3256, 1596 | F | R2/R3-Abgriff; Testpad, kein Via |
+| V2/TP2 | 3458, 1262 | F | Netz R3/P2; Testpad, kein Via |
+| E1 | 1912, 1097 | F | B19: rechtes Pad des unteren horizontalen 1001-Widerstands; sichtbare Bahn ab P1 |
+| E2 | 1795, 1097 | F | anderes Ende desselben Widerstands; Aufdruck 1001 = 1 kΩ [I] |
+
+## Blatt 04 – B20: vier Widerstände und SOT-23
+
+B20 = E6; Rückseite; Reihe erscheint im Makro senkrecht
+
+![Blatt 04](makros/04.png)
+
+Original: [photos/2026-11-08/back/PXL_20261108_153921371.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(1300, 1500, 1775, 2350)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Nächster Schritt.** Wie im Stand geplant zuerst schärfere Makros beider Seiten bzw. verdeckte Vorderseite dokumentieren. Diese Markierungen dienen der eindeutigen Rückmeldung der Anschlüsse; es ist noch keine gesicherte B20-Netzliste.
+
+**Messmodus / bisher.** Optional Ω direkt a–b pro Widerstand, beide Richtungen; danach nur konkrete Padpaare zur Bahnverfolgung. B20: bisher keine elektrischen Messwerte dokumentiert.
+
+**Erwartung / offen.** Keine belastbaren Nennwerte oder Ta/Tb/Tc-Funktionen aus diesem Foto. Codes und Typ vor Sollwertfestlegung lesbar aufnehmen. Halbleiter-/Parallelpfade können polungsabhängige Werte verursachen; OL im Diodentest ist bei unbekannter Pin-Funktion kein Defektbeleg.
+
+**Bezeichnungen.** R1–R4, Ta–Tc sind ausschließlich neue lokale Foto-IDs innerhalb B20, keine Herstellerpins. Die bestehenden B20-/E6-Koordinaten bleiben unverändert. Die Reihe wurde nicht zu einer neuen Rasterspalte umdefiniert.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| Ta | 1485, 1679 | F | einzelner SOT-23-Anschluss links im Foto |
+| Tb | 1653, 1619 | F | SOT-23 oben rechts im Foto |
+| Tc | 1658, 1744 | F | SOT-23 unten rechts im Foto |
+| R1a | 1450, 1863 | F | lokaler Anschluss links im Foto |
+| R1b | 1572, 1863 | F | lokaler Anschluss rechts im Foto |
+| R2a | 1450, 1999 | F | lokaler Anschluss links im Foto |
+| R2b | 1572, 1999 | F | lokaler Anschluss rechts im Foto |
+| R3a | 1450, 2136 | F | lokaler Anschluss links im Foto |
+| R3b | 1572, 2136 | F | lokaler Anschluss rechts im Foto |
+| R4a | 1450, 2271 | F | lokaler Anschluss links im Foto |
+| R4b | 1572, 2271 | F | lokaler Anschluss rechts im Foto |
+
+## Blatt 05 – Q2: G/D/S, Gate-R und fünf Treiberanschlüsse
+
+F33/B21 = B5; Rückseite; Foto gegenüber Übersicht um 180° gedreht
+
+![Blatt 05](makros/05.png)
+
+Original: [photos/2026-11-08/q2/q2_rueckseite_makro.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(0, 0, 1661, 2212)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** DRV-01/02: Ω G–RG-G / G–RG-U. DRV-03/04: Ω G–S / G–D. DRV-05: Diode rot S, schwarz D; dann umpolen. DRV-06/07: jeden Anschluss A/B/C/D5/E einzeln gegen 0VA und +5VA messen, jeweils Ω und Diode in beiden Richtungen. DRV-08: Ω E–RG-U.
+
+**Bisher.** PW-M03: G–D 2,19 MΩ. PW-M04: G–S 9,13 kΩ beidseitig. PW-M05: G–RG-G ca. 0 Ω, G–RG-U ca. 22 Ω (zusammenfassend bestätigt). PW-M02: S–D 0,444 V, rückwärts OL. Treiberpin-/Versorgungswerte fehlen.
+
+**Erwartung.** Gate-Pfad etwa 0/22 Ω; G–S Referenz 9,13 kΩ, G–D hochohmig (2,19 MΩ als Vergleich, nicht OL erzwingen); S→D etwa 0,44 V, zurück OL. E–RG-U bei direkter Bahn etwa Spitzenwiderstand. Unbekannte Treiberpins: keine pauschalen Sollwerte.
+
+**Grenze / Zuordnung.** A/B/C/D5/E sind physische Foto-IDs, keine Pin-Nummern und keine zugesagten Funktionen VCC/GND/IN. Sichtbarer Fünfbeiner, Typ/Aufdruck nicht sicher identifiziert. Auch ein 0-Ω-Pfad zur Versorgung ist erst eine Netzzuordnung, kein Funktionsnachweis. +5VA ist nur Referenz, nicht schon bewiesene Treiberversorgung. 0VA ist DC− auf Netzpotenzial.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| G | 315, 1855 | M | Gate, links im Originalmakro; in aufrechter Rückseitenübersicht rechts |
+| D = L− | 808, 1855 | M | Drain, Mitte |
+| S = 0VA | 1303, 1855 | M | Source, rechts |
+| RG-G | 1046, 1162 | M | unteres Ende des 22-Ω-Widerstands, Gate-Seite |
+| RG-U | 1052, 910 | M | oberes Ende des 22-Ω-Widerstands, Treiber-Seite |
+| A | 679, 735 | F | Treiber: oben links im Originalmakro, Funktion offen |
+| B | 760, 735 | F | Treiber: oben Mitte, Funktion offen |
+| C | 845, 735 | F | Treiber: oben rechts, Funktion offen |
+| D5 | 679, 970 | F | Treiber: unten links, Funktion offen; D5 ist kein MOSFET-Drain |
+| E | 851, 970 | F | Treiber: unten rechts; Bahn zu RG-U sichtbar, durchmessen |
+
+## Blatt 05b – Q2-Treiberumfeld: Widerstandsanschlüsse
+
+B21 = B5; Rückseite; gleiche Bildlage wie Blatt 05
+
+![Blatt 05b](makros/05b.png)
+
+Original: [photos/2026-11-08/q2/q2_rueckseite_makro.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(200, 260, 870, 690)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** DRV-09a/b/c: Ω direkt zwischen a und b jedes markierten Widerstands, beide Richtungen. Zuordnung zu Treiberanschlüssen erst nach direkter Bahn-/Durchgangsprüfung dokumentieren.
+
+**Bisher.** Keine Einzelmesswerte dieser drei Widerstände in den Netzlisten dokumentiert.
+
+**Erwartung.** Aufdrucke [I]: 1001 → 1 kΩ; 221 → 220 Ω; 4752 → 47,5 kΩ. Eingelötet können Parallelpfade niedrigere/zeitabhängige Werte ergeben. Der separat markierte Gate-R trägt 220 → 22 Ω; nicht mit 221 verwechseln.
+
+**Grenze / Zuordnung.** Neue lokale Foto-IDs, keine unterstellten Hersteller-Designatoren. Codes sind im Originalmakro um 180° gedreht. Keine Nennwerte als schon gemessen verbuchen; elektrische Funktion dieser Widerstände bleibt offen.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| R1001-a | 365, 390 | F | linkes Ende im Originalfoto, Code 1001 |
+| R1001-b | 521, 390 | F | rechtes Ende im Originalfoto |
+| R221-a | 616, 390 | F | linkes Ende im Originalfoto, Code 221 |
+| R221-b | 777, 390 | F | rechtes Ende im Originalfoto |
+| R4752-a | 363, 560 | F | linkes Ende im Originalfoto, Code 4752 |
+| R4752-b | 522, 560 | F | rechtes Ende im Originalfoto |
+
+## Blatt 06 – Hilfsversorgung: 0VA und +5VA
+
+F31 = D5; Vorderseite, Makro gedreht
+
+![Blatt 06](makros/06.png)
+
+Original: [photos/2026-11-08/front/PXL_20261108_155115274.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/front/PXL_20261108_155115274.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(0, 1200, 2100, 3064)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** SUP-01: Ω rot 0VA, schwarz +5VA, danach umpolen; Startwert/Endwert/Trend festhalten. Sichtkontrolle der abgebildeten Regler-/47-µF-Elko-Lötstellen, des Umfelds und der Rückseite.
+
+**Bisher.** B10-M28: 0VA→+5VA 2,16 kΩ, umgekehrt 2,55 kΩ, stromlos in-circuit. Diese Referenz bestätigt keinen sicheren Zustand der Hilfsversorgung unter Last.
+
+**Erwartung.** Bei gleichem Aufbau ähnliche Größenordnung; Ladung/Halbleiter können den Verlauf ändern. Dauerhaft nahe Spitzenwiderstand wäre ein neuer Kurzschlussverdacht. Ω-Messung bestimmt weder Kapazität noch ESR und beweist keine stabilen +5 V.
+
+**Grenze / Zuordnung.** Testpunkte sind am Aufdruck identifiziert. Keine Gleichsetzung mit 0VISO oder 0V24. Bestehende Fotos zeigen keine sichere Freigabe schwerer Lötstellen; Risse benötigen ggf. neues Streiflicht-Makro. Live-Messungen bleiben zurückgestellt.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| 0VA | 1440, 2349 | M | beschrifteter Testpunkt 0VA, DC− / Netzseite |
+| +5VA | 1425, 2525 | F | beschrifteter Testpunkt +5VA |
+
+## Blatt 07 – Hilfsversorgung: 0V24 und +24V bei P400
+
+F23 = F3; Vorderseite; Umfeld F17/F18
+
+![Blatt 07](makros/07.png)
+
+Original: [photos/2026-11-08/front/PXL_20261108_155137120.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/front/PXL_20261108_155137120.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(1700, 1200, 3200, 2500)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
+
+**Messmodus.** SUP-02: zuerst Ω oberes Loch–P400-schwarz und unteres Loch–P400-rot zur Beschriftungszuordnung (Spitzenwiderstand erwartet). Erst danach SUP-03: Ω +24V–0V24 beidseitig, Verlauf notieren. SUP-04 optional: Ω 0V24–0VA (Blatt 06), Zugehörigkeit offen.
+
+**Bisher.** Keine stromlosen 24-V-Rail-Messwerte in den Netzlisten. P400 ist als 0V24/+24V dokumentiert; Verbindung zum RT334024-Spulenpad noch nicht gemessen.
+
+**Erwartung.** Direktes Loch–Steckkontakt-Paar etwa 0 Ω nur bei richtiger Zuordnung. Rail-Widerstand ohne Schaltplan nicht numerisch vorhersagbar; Ladekurve möglich, ein stabiler Kurzschluss wäre auffällig. Kein Sollwert 24 V bei einer stromlosen Ω-Messung.
+
+**Grenze / Zuordnung.** I = Lochzuordnung aus benachbartem Aufdruck, noch nicht elektrisch bestätigt. Weder 0V24 = 0VA noch P400+24V = bestimmtes Relais-Spulenpad voraussetzen. Die abgebildeten Elkos (330 µF/10 V, 47 µF/35 V) nicht allein aus Nähe einem 24-V-Netz zuordnen; 10-V-Elkos gehören damit nicht automatisch an 24 V.
+
+| Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
+|---|---|---|---|
+| 0V24 | 2551, 2015 | I | oberes beschriftetes Testloch, Anschlusslage noch durchmessen |
+| +24V | 2531, 2172 | I | unteres beschriftetes Testloch, Anschlusslage noch durchmessen |
+| P400-schwarz | 2725, 1587 | F | sichtbarer Steckkontakt mit schwarzer Leitung; Farbzuordnung allein kein Netzbeweis |
+| P400-rot | 2680, 1765 | F | sichtbarer Steckkontakt mit roter Leitung |
+
+## Quellenabgleich und offene Zuordnungen
+
+**B18-Historie.** Maßgeblich ist b18_spannungssense_kandidat.md Abschnitt 1–5. P2 = L+ ist gemessen; P2 = L− ist widerlegt. V1/V2 sind Testpads, keine Vias. Die älteren B18-H-Zeilen in b10_netlist.csv enthalten noch „Via“ und sind dafür nicht maßgeblich. Die Rohmessung B18-M06 formuliert den Fusspunkt zu sicher: 223,7/226,4 kΩ beweisen 0VA gegenüber +5VA nicht.
+
+**Q2-Stand.** In q2_zuordnung.md stehen oben „Messung offen“ und alte Erwartungsbereiche; die Ergebniszeilen 21:39 und PW-M03…M06 haben Vorrang. Gate-Pulldown ist 9,13 kΩ, nicht pauschal mehrere 10–100 kΩ. G–D ist mit 2,19 MΩ dokumentiert, daher ist OL kein zwingendes stromloses Soll. Die Gate-Seite im Makro liegt links, in der aufrechten Rückseitenübersicht rechts.
+
+**B10-Stand.** B10 bleibt statisch unauffällig; intermittierende Fehler bleiben möglich. B10-M16 (J1–L+ 1 kΩ) wurde durch M29 (11 kΩ Start, nach ca. 1 min 4 MΩ, Verlauf) ersetzt. B10-M21: J2/X3 sind Farbpunkte bzw. Bereiche mit Lack, keine verlässlich blanken Messpads; frühere J-Messungen erfolgten am Dioden-Kathodenanschluss. Keine neuen Messspitzen auf einen Farbpunkt setzen.
+
+**Raster / Sicherheit der Zuordnung.** F27 ist eine Bauteil-ID, kein Feld F27: Feld I4. F15 ist P600, Feld B5. B19/B20: E6. Es wurde kein Raster an Makros neu aufgespannt. Der Rasterindex lokalisiert Mittelfeld/Ecken nur ungefähr; an einigen Fotos fehlt die Lokalisierung. Bei B18-P1 ist im Foto nur der Weg bis zum B19-Widerstand sichtbar; der Messeingang dahinter bleibt unbewiesen.
+
+**Offen.** Treiber-Typ und Herstellerpinbelegung, B19/B20-Funktion, B18-Teilerfusspunkt und vollständiger Messeingang, 24-V-Return-Zugehörigkeit, Relaiskontaktverhalten im Betrieb, Elko-ESR/Kapazität und dynamische Versorgung. Keine Bauteile allein aufgrund dieser Foto-/In-Circuit-Auswertung ersetzen. Scharfe neue Vorder-/Rückseitenmakros anfordern, wo Kontakte unter dem Kühlkörper oder Gehäusen verborgen bleiben.
+
+**Herstellerquelle.** TE Connectivity, RT334024 / 4-1393240-8: 24-V-DC-Spule, 1440 Ω, 0,4 W, 1 Form A (Schließer). Datenblatt RT1, Spulentabelle bei 23 °C ±10 %, Bottom View 16 A / 5 mm. Quelle: https://www.te.com/en/product-4-1393240-8.html und verlinktes RT1-Datenblatt, Seiten 3 und 5 (abgerufen 08.11.2026). Es wurden keine Herstellerbilder in die Fotomarkierungen übernommen.
+
+## Dateien und Nutzung
+
+- `messplan.pdf`: bebilderter Messplan für die Werkbank; komprimierte Fotovorschauen, volle Auflösung in den PNGs.
+- `makros/*.png`: markierte Ausschnitte in Originalauflösung.
+- `messprotokoll_vorlage.csv`: geplante Messungen mit bisherigen Werten/Erwartungen; neue Felder leer.
+- `foto_nachweis.json`: Quellfoto, Commit, SHA-256, Ausschnitt und exakte Originalpixel jedes Markers.
+
+Die Verbindung zwischen Quellpixel und PNG lautet: `x_PNG = x_Original − x0`; `y_PNG = y_Original − y0 + header_px`. Die Pixel außerhalb der Overlays wurden automatisch gegen den Originalausschnitt verglichen. Sämtliche bereits vorhandenen Repository-Dateien werden nach der Erstellung per SHA-256 auf Unverändertheit geprüft.
