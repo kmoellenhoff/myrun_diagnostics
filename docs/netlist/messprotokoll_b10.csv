@@ -9,3 +9,4 @@ B10-M07;2026-11-08 17:43;B10-T2;B10-N3;Widerstand;473.2 kOhm;424 kOhm Start, ste
 B10-M08;2026-11-08 17:48;B10-N1;B10-N2;Widerstand;wie B10-M06 (ca. 472 kOhm);wie B10-M06;gemessen;R2 gleich R1, kein Abzweig an N1/N2 erkennbar (Wert vom Nutzer als "exakt gleich" gemeldet)
 B10-M09;2026-11-08 17:48;B10-N3;B10-N4;Widerstand;wie B10-M07 (ca. 473 kOhm);wie B10-M07;gemessen;R4 gleich R3
 B10-M10;2026-11-08 17:48;B10-T2;B10-N4;Widerstand;0.923 MOhm;0.930 MOhm (Gegenrichtung);gemessen;R3+R4, ca. 1-2 % unter Summe 946k, innerhalb Messgeraet- und Bauteiltoleranz
+B10-M11;2026-11-08 17:50;B10-T1;B10-N2;Widerstand;0.92 MOhm;;gemessen;R1+R2 in Reihe, passt zu 2 x 475k (Summe 946k, -2.7 %)
