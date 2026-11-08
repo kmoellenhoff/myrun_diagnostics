@@ -6,3 +6,8 @@ B18-A01;2026-11-08 21:15;-;-;Auswertung;;;Hypothese;Werte passen zu geschlossene
 B18-M04;2026-11-08 21:12;B18-P1 Seite (Richtung B19);B18-P2 (quadratisches Pad);Widerstand;170 kOhm steigend;619 kOhm steigend;gemessen;gesamte Kette R1+R2+R3 (Nennwert 2,475M) -> Aussenpfad P1-P2 ca. 180k vorwaerts, ca. 830k rueckwaerts (noch steigend)
 B18-M05;2026-11-08 21:16;B18-P1;0VA;Widerstand;223,7 kOhm konstant;;gemessen;P1 hat ca. 221-224k gegen die 0VA/+5VA-Gruppe
 B18-M06;2026-11-08 21:16;B18-P1;+5VA;Widerstand;226,4 kOhm konstant;;gemessen;Differenz 2,7k = 0VA-5VA-Widerstand (2,2-2,5k) -> Fusspunkt liegt bei 0VA
+B18-M07;2026-11-08 21:20;B18-P2;0VA;Widerstand;6 MOhm fallend;;gemessen;Einschwingen, Endwert offen (Erwartung 1,5-2,7M)
+B18-M08;2026-11-08 21:20;B18-P2;DC MOTOR L+;Widerstand;0 Ohm;;gemessen;P2 = Netz L+ (Motoranschluss +, DC-Bus-Seite) [belegt]
+B18-M09;2026-11-08 21:20;B18-P2;DC MOTOR L-;Widerstand;300 kOhm steigend;;gemessen;Ladeeffekt/Halbleiter im Pfad; Ursache offen
+B18-M10;2026-11-08 21:20;B18-V1(TP);0VA;Widerstand;1,211 MOhm;;gemessen;Abgriff R2/R3
+B18-M11;2026-11-08 21:20;B18-V1(TP);+5VA;Widerstand;1,206 MOhm;;gemessen;Differenz zu M10 (5k) im Messfehler (1%) -> 0VA/5VA nicht unterscheidbar

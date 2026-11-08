@@ -14,8 +14,8 @@ Lage: Rückseite, Raster E5 (±1; korrigiert gegen die Übersicht, vorher F6 ges
 | B18-R3 | "h001" = 1004 um 180° gedreht gelesen | 1,00 MΩ | I (Orientierung aus Foto) | in Reihe zu R2 |
 | B18-P1 | rundes verzinntes Pad auf der Leiterbahn links von R1 | – | I | Anfang der Kette, Bahn läuft schräg nach links oben (siehe B18-B) |
 | B18-P2 | quadratisches verzinntes Pad rechts von R3 | – | I | Ende der Kette, am Rand des grossen Kupferfeldes; mögliche Anschlussfläche |
-| B18-V1 | Via/Rundpad unter dem R2/R3-Knoten | – | I | Abgriff-Knoten (Ebenenwechsel) |
-| B18-V2 | Via/Rundpad über dem rechten Ende von R3 | – | I | Ebenenwechsel am Kettenende |
+| B18-V1 (=TP1) | Rundpad (Messpunkt, kein Via) unter dem R2/R3-Knoten | – | I | Abgriff-Knoten (Ebenenwechsel) |
+| B18-V2 (=TP2) | Rundpad (Messpunkt) über dem rechten Ende von R3 | – | I | Ebenenwechsel am Kettenende |
 
 Topologie laut Foto [I, nicht gemessen]:
 `P1 – R1(475k) – R2(1M) – [Knoten V1] – R3(1M) – P2/V2`
@@ -65,3 +65,13 @@ P1↔0VA = 223,7k konstant, P1↔+5VA = 226,4k konstant. Die 2,7k Differenz ents
 Zusammen mit der Kette: L− (=P2?) → 475k + 1M + 1M → P1 → ≈221k → 0VA ergibt ≈ 2,70 MΩ. Gemessen wurde früher **J1→L− = 2,6 MΩ konstant** (J1 ≈ 6,8k gegen 0VA). Das passt auf ca. 4 %.
 Hypothese [H, hohe Plausibilität]: **P2 liegt am Motoranschluss L− (Schaltknoten / Drain von Q2), P1 ist der abgeteilte Messknoten (≈ 8 % von U(L−)) und geht über B19 zum Messeingang** → das ist die Motorspannungs-Überwachung der GIRT.
 Prüfen: P2↔L− (Motorpad) sollte ≈ 0 Ω bzw. Drosselwiderstand sein; Diodentest rot 0VA / schwarz P2 sollte ≈ 0,4–0,6 V zeigen (Body-Diode Q2), Gegenrichtung OL.
+
+## Korrektur/Nachtrag 21:21 (B18-M07…M11)
+
+- **P2 = L+ (0 Ω gemessen).** Die Hypothese „P2 = L−“ von 21:17 ist **widerlegt**; ebenso der vorgeschlagene Body-Diodentest 0VA→P2 (P2 ist nicht der Schaltknoten).
+- Kette = **Teiler vom DC-Bus/Motor-L+ (P2) → 2,475 MΩ → P1 → ≈221k → 0VA**; P1 ist der Messknoten Richtung B19. Verhältnis ≈ 8 % (Nachfolgeschaltung in B19 unbekannt) [H, hohe Plausibilität].
+- V1 und V2 sind **einfache Messpunkte** (runde Lands), keine Vias – Bezeichnung korrigiert (TP1/TP2).
+- V1↔0VA = 1,211M, V1↔5VA = 1,206M: mit Tap-Modell (R1+R2+221k = 1,70M parallel zu R3 + Rx) ergibt sich Rx ≈ 3,2M (L+ gegen 0VA über übrige Pfade). Damit erwartet P2↔0VA ≈ 1,5M Endwert; gemessen 6M fallend (noch nicht eingeschwungen).
+- P1↔0VA 223,7k vs. P1↔5VA 226,4k: Differenz 2,7k liegt nahe am 1%-Messfehler, daher ist „Fusspunkt = 0VA“ nur wahrscheinlich, nicht belegt.
+- P2↔L− = 300k steigend: offen (Bleeder/Snubber/D3/Q2-Umfeld?).
+- Früherer Wert J1→L− = 2,6M konstant bleibt ungeklärt (kein Zusammenhang mit der Kette mehr, Übereinstimmung war Zufall).
