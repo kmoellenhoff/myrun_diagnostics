@@ -32,3 +32,4 @@ B10-M29;2026-11-08 18:18;B10-J1;DC MOTOR L+;Widerstand;11 kOhm Start, stark stei
 B10-M30;2026-11-08 18:22;B10-J1;P70 Pin 1-6;Widerstand;alle ca. 11 kOhm;;gemessen;kein Pin sticht heraus, kein direkter Pfad
 B10-M31;2026-11-08 18:22;B10-J1;P13;Widerstand;13 kOhm;;gemessen;kein direkter Pfad
 B10-A02;2026-11-08 18:23;-;-;Auswertung;J fuehrt weder direkt zu P70 noch zu P13; Werte ca. 11-13 kOhm = 6.8 kOhm + Netzwerk der Logikmasse/5V; Weiterverfolgung von J ohne Zugriff auf die Vorderseite unter dem Kuehlkoerper nicht moeglich;;Hypothese;B10 vorerst abgeschlossen (Netzerkennung, bauteilgesund)
+B10-M32;2026-11-08 18:23;B10-J1;P601 RST / P601 0VA;Widerstand;RST 16 kOhm / 0VA 8 kOhm;;gemessen;kein direkter Pfad; 0VA-Wert passt zu 6.4 kOhm am Testpunkt (Kontaktstreuung)
