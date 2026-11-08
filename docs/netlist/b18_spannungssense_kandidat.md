@@ -58,3 +58,10 @@ Nächste Messungen: P1↔P2 direkt, P2↔0VA/L−/L+, P1↔0VA, V1↔0VA.
 
 **Nachtrag 21:12 (B18-M04):** Gesamte Kette P1↔P2 (Nennwert 2,475M): 170k steigend (rot an P1-Seite, Richtung B19), invertiert 619k steigend.
 Daraus Aussenpfad zwischen P1 und P2 ≈ 180k vorwärts / ≈ 830k rückwärts (beide noch steigend, also Ladeeffekt/Halbleiter beteiligt). Die frühere Abschätzung „ext ≲ 50k“ ist damit auf **ext ≈ 100–200k** korrigiert; P1 und P2 sind nicht derselbe Knoten, aber über ein Netz von einigen 100 kΩ gekoppelt.
+
+## Nachtrag 21:17 (B18-M05/M06) – Teiler-Hypothese
+
+P1↔0VA = 223,7k konstant, P1↔+5VA = 226,4k konstant. Die 2,7k Differenz entsprechen dem 0VA↔+5VA-Widerstand (2,2–2,5k): P1 hängt über ca. 221k an **0VA** (Fusspunkt), +5VA wird nur über das Versorgungsnetz gesehen.
+Zusammen mit der Kette: L− (=P2?) → 475k + 1M + 1M → P1 → ≈221k → 0VA ergibt ≈ 2,70 MΩ. Gemessen wurde früher **J1→L− = 2,6 MΩ konstant** (J1 ≈ 6,8k gegen 0VA). Das passt auf ca. 4 %.
+Hypothese [H, hohe Plausibilität]: **P2 liegt am Motoranschluss L− (Schaltknoten / Drain von Q2), P1 ist der abgeteilte Messknoten (≈ 8 % von U(L−)) und geht über B19 zum Messeingang** → das ist die Motorspannungs-Überwachung der GIRT.
+Prüfen: P2↔L− (Motorpad) sollte ≈ 0 Ω bzw. Drosselwiderstand sein; Diodentest rot 0VA / schwarz P2 sollte ≈ 0,4–0,6 V zeigen (Body-Diode Q2), Gegenrichtung OL.

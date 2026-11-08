@@ -4,3 +4,5 @@ B18-M02;2026-11-08 21:08;B18-R2 Ende bei R1 (R1/R2-Knoten);B18-R2 Ende bei R3 (V
 B18-M03;2026-11-08 21:09;B18-R3 (Seite wie R2 angegeben: gleich);B18-R3;Widerstand;wie M02 (600 kOhm);wie M02 (840 kOhm);gemessen;Nutzer: "exakt gleich wie 2."
 B18-A01;2026-11-08 21:15;-;-;Auswertung;;;Hypothese;Werte passen zu geschlossenem Ring: R1||(R2+R3)=384k, R2||(R1+R3)=596k, R3||(R1+R2)=596k, d.h. P1 und P2 sind niederohmig verbunden (Verbindungswiderstand ext <~ 50 kOhm)
 B18-M04;2026-11-08 21:12;B18-P1 Seite (Richtung B19);B18-P2 (quadratisches Pad);Widerstand;170 kOhm steigend;619 kOhm steigend;gemessen;gesamte Kette R1+R2+R3 (Nennwert 2,475M) -> Aussenpfad P1-P2 ca. 180k vorwaerts, ca. 830k rueckwaerts (noch steigend)
+B18-M05;2026-11-08 21:16;B18-P1;0VA;Widerstand;223,7 kOhm konstant;;gemessen;P1 hat ca. 221-224k gegen die 0VA/+5VA-Gruppe
+B18-M06;2026-11-08 21:16;B18-P1;+5VA;Widerstand;226,4 kOhm konstant;;gemessen;Differenz 2,7k = 0VA-5VA-Widerstand (2,2-2,5k) -> Fusspunkt liegt bei 0VA
