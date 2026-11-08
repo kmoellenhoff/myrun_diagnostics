@@ -180,7 +180,7 @@ For comparison: on the WEG TPD500 `STS1`/`STS2` are µC status LEDs (boot = asym
 
 *Salt crust between the P2 pins, on P3, at the earth screw and between the UP/DOWN pads; a salt line runs along the whole edge (German labels).*
 
-The P2/P4 signals run as a bundle of about 8 traces along the top board edge towards the driver/logic area (100 Ω resistors, "2F" transistors, 4.75 kΩ, 22 Ω). Under the solder mask there are dark spots (corroded copper), rust dots at the edge and a dark deposit on one upper-row P2 pad **[O]**. That these traces are interrupted or leaky is a **hypothesis**; it still needs pad-to-pad continuity (≈0 Ω and stable when the edge is pressed) and neighbour-trace checks (OL / MΩ).
+The P2/P4 signals run as a bundle of about 8 traces along the top board edge towards the driver/logic area (100 Ω resistors, "2F" transistors, 4.75 kΩ, 22 Ω). Under the solder mask there are dark spots (corroded copper), rust dots at the edge and a dark deposit on one upper-row P2 pad **[O]**. **Measured 11/08 (13:40):** all P2 and P4 pads on the solder side show 0.3–0.5 Ω to the next contact, with 0.2–0.4 Ω for the probe tips touching each other, so each trace is continuous to its first component pad (at most ≈0.1–0.2 Ω of trace resistance). That makes an *open* corroded trace unlikely; an intermittent contact under pressure, leakage between neighbouring traces and faults behind the first component are not excluded. Still open: whether the values stay stable when the edge is pressed or bent, and the neighbour-trace checks (OL / MΩ expected).
 
 ![Trace bundle](img/trace_bundle_corrosion.jpg)
 
