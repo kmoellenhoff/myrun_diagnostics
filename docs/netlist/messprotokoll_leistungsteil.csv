@@ -1,3 +1,7 @@
 Mess-ID;Datum/Zeit;Rot (zuerst);Schwarz;Modus;Wert;Gegenrichtung;Status;Bemerkung
 PW-M01;2026-11-08 21:25;DC MOTOR L-;DC MOTOR L+;Diode;0,397 V;OL;gemessen;stromlos in-circuit; Freilaufdiode D3: Anode L-, Kathode L+ -> unauffaellig [Annahme: schwarz = L+, vom Nutzer nicht ausdruecklich genannt]
 PW-M02;2026-11-08 21:26;0VA;DC MOTOR L-;Diode;0,444 V;OL;gemessen;stromlos in-circuit; Body-Diode Q2: Source 0VA (Anode), Drain L- (Kathode) -> unauffaellig
+PW-M03;2026-11-08 21:38;Q2-G;Q2-D (L-);Widerstand;2,19 MOhm;;gemessen;stromlos in-circuit; hochohmig wie erwartet
+PW-M04;2026-11-08 21:38;Q2-G;Q2-S (0VA);Widerstand;9,13 kOhm;9,13 kOhm;gemessen;Gate-Pulldown ca. 9,1k (E24-Wert), beide Richtungen gleich -> rein ohmsch, kein Gate-Schaden
+PW-M05;2026-11-08 21:38;Q2-G;Pad/Bahn am 22-Ohm-Widerstand und Widerstand;Widerstand;wie vorhergesagt (ca. 0 Ohm / ca. 22 Ohm);;gemessen;Nutzer: "alles weitere exakt wie vorhergesagt"
+PW-M06;2026-11-08 21:38;Q2-S;Q2-D;Diode;wie vorhergesagt (ca. 0,44 V, Gegenrichtung OL);;gemessen;Nutzer: "alles weitere exakt wie vorhergesagt"

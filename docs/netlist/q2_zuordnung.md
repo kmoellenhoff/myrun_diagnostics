@@ -22,3 +22,8 @@ Treiber: 5-poliger SOT-23 oberhalb des Gate-Widerstands, Aufdruck nicht lesbar (
 3. G ↔ S (0VA): Gate-Pulldown, erwartet einige 10 kΩ bis einige 100 kΩ; kleiner als 1 kΩ oder < 0,1 V im Diodentest wäre ein Fehler.
 4. G ↔ D (L−): hochohmig/OL.
 5. Diodentest rot S, schwarz D: ≈ 0,44 V (wie PW-M02), Gegenrichtung OL.
+
+## Ergebnis 21:39 (messprotokoll_leistungsteil.csv PW-M03…M06)
+G↔D 2,19 MΩ, G↔S 9,13 kΩ (beide Richtungen), Gate-Widerstand und Diodenstrecke wie erwartet.
+→ Q2 statisch unauffällig (kein Gate-Schaden, kein D-S-Schluss), Gate-Pulldown ≈ 9,1k, Gate-Pfad bis zum 22-Ω-Widerstand intakt.
+Offen: ob der Treiber (SOT-23-5) beim Fehlstart überhaupt schaltet (nur live prüfbar), und seine Versorgung/Ansteuerung.
