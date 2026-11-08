@@ -16,8 +16,8 @@ B10-V01;B10-R1.1;B10-R1.2;Bauteil;Messung;472.5 kOhm (in-circuit);B10-M06;passt 
 B10-V02;B10-R2.1;B10-R2.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
 B10-V03;B10-R3.1;B10-R3.2;Bauteil;Messung;473.2 kOhm (in-circuit);B10-M07;passt zu 4753 = 475k
 B10-V04;B10-R4.1;B10-R4.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
-B10-V05;B10-D1.1;B10-D1.2;Bauteil Diode;Messung (Anode D1.1, Kathode D1.2);0.497 V Durchlass, Gegenrichtung OL;B10-M01;in-circuit, Typ nicht lesbar
-B10-V06;B10-D2.1;B10-D2.2;Bauteil Diode;Messung (Anode D2.1, Kathode D2.2);0.499 V Durchlass, Gegenrichtung OL;B10-M02;in-circuit
+B10-V05;B10-D1.1;B10-D1.2;Bauteil Diode;Messung + Foto (Anode D1.1, Kathode D1.2, Kathodenring am unteren Ende);0.497 V Durchlass, Gegenrichtung OL;B10-M01;SMA-Gehäuse, Aufdruck vermutlich "M7" (1N4007-Klasse) [I]
+B10-V06;B10-D2.1;B10-D2.2;Bauteil Diode;Messung + Foto (Kathodenring unten);0.499 V Durchlass, Gegenrichtung OL;B10-M02;baugleich D1
 B10-C14;B10-T1;AC LINE N;Kupfer direkt;Messung;0 Ohm;B10-M13;T1 = Netz N
 B10-C15;B10-T2;AC LINE L;Kupfer direkt;Messung;0 Ohm;B10-M12;T2 = Netz L
 B10-H03;B10-J3/J1;?;Gemeinsamer Knoten der beiden Dioden;Hypothese;;;Weiterführung offen; Funktion (Netz-/Zwischenkreiserfassung, Nulldurchgang) offen
