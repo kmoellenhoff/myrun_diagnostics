@@ -75,7 +75,7 @@ All connectors sit on the board edge on the solder side of the PCB. The edge col
 
 The [Man] names come from the MyRun service manual Rev. 2.2, which describes an older lower-kit generation. The wire colours matched for every pin that was checked.
 
-**Orientation.** View A of the figure is the plug seen from the cable side (as in the photo below): pin 1 top left, 1–9 on the top row, 10–18 on the bottom row. View B is the board seen from the solder side: the mirror image with pin 1 (square pad) top right. The PCB edge is the bottom row (pins 18…10) in view B.
+**Orientation.** View A of the figure is the plug seen from the cable side (as in the photo below): pin 1 top left, 1–9 on the top row, 10–18 on the bottom row. View B is the board seen from the solder side, rotated the way it usually lies on the bench: pin 1 (square pad) bottom left, pins 1–9 on the inner row, pins 10–18 on the row at the PCB edge (top).
 
 ![P2 plug, cable side](img/p2_plug_photo.jpg)
 
@@ -83,7 +83,7 @@ The [Man] names come from the MyRun service manual Rev. 2.2, which describes an 
 
 ![P2 and P4 on the solder side](img/p2_p4_solder_side.jpg)
 
-*Solder side of the board: P2 inner row (pins 1–9, pin 1 = square pad at the left in this photo) and the four P4 pads on the right.*
+*Solder side of the board, same orientation as view B: P2 inner row (pins 1–9, pin 1 = square pad at the left) and the four P4 pads on the right.*
 
 ### 3.2 P4 – speed sensor
 
@@ -179,3 +179,7 @@ Repair idea if a trace is bad: 30 AWG wire-wrap bridge pad to pad, then seal wit
 ## 10. Sources
 
 Service manuals consulted: MyRun Rev. 2.2 (FR, 2016); Technogym Excite Run 500/700/900 Rev. 1.3; Run Personal + Unity Rev. 4.1; Jog Now Excite+ 700; Skillrun Unity 7000 Technical Service Guide Rev. 6.0; WEG TPD500 instruction manual. Their drives are older or different hardware; only the points tagged [Man] are taken over, and the manuals never describe the HF901–HF904 codes or the STS LEDs of this board.
+
+## 11. Disclaimer
+
+Private, non-commercial repair documentation, provided as is, without warranty. It is not affiliated with or endorsed by Technogym, Gefran or WEG; product and company names belong to their owners and are used only to identify the hardware. No manufacturer documents, firmware or schematics are reproduced; all content comes from measurements, photos and logs of one lawfully acquired unit, plus short paraphrased facts from the cited manuals. Working on a mains-powered, non-isolated board can be lethal – do so only if you are qualified and follow the safety notes above.
