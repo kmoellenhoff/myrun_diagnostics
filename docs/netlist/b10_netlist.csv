@@ -1,0 +1,23 @@
+Verb-ID;Punkt A;Punkt B;Art;Status;Wert;Quelle;Bemerkung
+B10-C01;B10-T1;B10-R1.1;Kupfer direkt;Foto;;b10_ids.png;Via-Ring T1 oben, kurze Bahn zum Widerstandspad
+B10-C02;B10-R1.2;B10-N1;Kupfer direkt;Foto;;b10_ids.png;N1 = rundes Pad auf der Bahn
+B10-C03;B10-N1;B10-R2.1;Kupfer direkt;Foto;;b10_ids.png;
+B10-C04;B10-R2.2;B10-N2;Kupfer direkt;Foto;;b10_ids.png;
+B10-C05;B10-N2;B10-D1.1;Kupfer direkt;Foto;;b10_ids.png;
+B10-C06;B10-D1.2;B10-J1;Kupfer direkt;Foto;;b10_ids.png;
+B10-C07;B10-J1;B10-J3;Kupfer direkt (Bahn mit Pad J2);Foto;;b10_ids.png;sichtbare Brücke; Durchgang messen
+B10-C08;B10-J3;B10-D2.2;Kupfer direkt;Foto;;b10_ids.png;
+B10-C09;B10-D2.1;B10-N4;Kupfer direkt;Foto;;b10_ids.png;
+B10-C10;B10-N4;B10-R4.2;Kupfer direkt;Foto;;b10_ids.png;
+B10-C11;B10-R4.1;B10-N3;Kupfer direkt;Foto;;b10_ids.png;
+B10-C12;B10-N3;B10-R3.2;Kupfer direkt;Foto;;b10_ids.png;
+B10-C13;B10-R3.1;B10-T2;Kupfer direkt;Foto;;b10_ids.png;
+B10-V01;B10-R1.1;B10-R1.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;Wert aus Code, nicht gemessen
+B10-V02;B10-R2.1;B10-R2.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
+B10-V03;B10-R3.1;B10-R3.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
+B10-V04;B10-R4.1;B10-R4.2;Bauteil;Hypothese (Aufdruck 4753);475k;Foto Aufdruck;
+B10-V05;B10-D1.1;B10-D1.2;Bauteil Diode;Hypothese (Polarität offen);;;Typ nicht lesbar
+B10-V06;B10-D2.1;B10-D2.2;Bauteil Diode;Hypothese (Polarität offen);;;
+B10-H01;B10-T1;?;Via/Leitung;Hypothese;;;T1 führt vermutlich auf die Vorderseite oder in eine Leiterbahn (zu messen)
+B10-H02;B10-T2;?;Via/Leitung;Hypothese;;;
+B10-H03;B10-J3/J1;?;Gemeinsamer Knoten der beiden Dioden;Hypothese;;;Weiterführung offen; Funktion (Netz-/Zwischenkreiserfassung, Nulldurchgang) offen
