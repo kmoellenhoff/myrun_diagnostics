@@ -14,8 +14,9 @@ Improvements over myrun_fault_monitor.py:
     first EM_POWENA change, fault time).
 
 Safety:
-  * Sends FTMS START/RESUME after pressing Enter. Nobody on the belt,
-    machine assembled, emergency stop reachable.
+  * Sends FTMS START/RESUME after pressing Enter. The Enter prompt appears
+    after connecting and confirming the ready state, right before START.
+    Nobody on the belt, machine assembled, emergency stop reachable.
   * START is sent only if the baseline @STATUS# confirms QSWaitForStart or
     QSWaitForStartRC; otherwise the script exits (power-cycle first).
   * At the end FTMS STOP is sent; a faulted controller may reject it.
@@ -26,6 +27,9 @@ Usage:
     python3 myrun_fast_monitor.py --duration 90 --dumpio-every 2 --status-every 4
     python3 myrun_fast_monitor.py --byte-delay 0.02 --no-write-response   # faster, test first
     python3 myrun_fast_monitor.py --duration 150 --ramp
+    python3 myrun_fast_monitor.py --wait-device 300 --duration 150 --ramp
+        # start the script first, then switch the treadmill on: it keeps scanning,
+        # connects after boot, waits for QSWaitForStart*, then asks for Enter
         # after START: 30 s -> 2.5 km/h, 60 s -> 2.9 km/h,
         #              75 s -> incline 2.0 %, 90 s -> 2.5 km/h,
         #              105 s -> incline 0 %, 120 s -> 1.2 km/h
@@ -234,8 +238,14 @@ async def main():
                     help='timed profile after START, e.g. "30:speed=2.5,60:speed=2.9,80:incline=2,105:incline=0"')
     ap.add_argument("--ramp", action="store_true",
                     help='shortcut for --steps "%s"' % DEFAULT_RAMP)
+    ap.add_argument("--wait-device", type=float, default=0,
+                    help="keep scanning up to N s for the treadmill (start the script before power-on)")
+    ap.add_argument("--wait-ready", type=float, default=None,
+                    help="after connecting, wait up to N s for QSWaitForStart* (default 150 with --wait-device, else 0)")
     ap.add_argument("--output", help="base filename (without extension)")
     a = ap.parse_args()
+    if a.wait_ready is None:
+        a.wait_ready = 150.0 if a.wait_device > 0 else 0.0
     try:
         steps = parse_steps(DEFAULT_RAMP if (a.ramp and not a.steps) else a.steps)
     except ValueError as e:
@@ -254,19 +264,23 @@ async def main():
     if not a.no_start:
         print("\nACHTUNG: FTMS START lässt das Band mit ca. 1,2 km/h anlaufen.")
         print("Niemand auf dem Band, Gerät montiert, Not-Aus griffbereit.")
-        try:
-            input("Enter = Start freigeben,  Strg+C = Abbruch ... ")
-        except (KeyboardInterrupt, EOFError):
-            print("\nAbbruch ohne Verbindung.")
-            return 1
+        print("Die Start-Freigabe (Enter) wird abgefragt, sobald das Gerät verbunden und bereit ist.\n")
 
     base = a.output or f"myrun_fast_monitor_{datetime.now():%Y%m%d_%H%M%S}"
     txt_path, csv_path = Path(base + ".txt"), Path(base + ".csv")
 
-    dev = await BleakScanner.find_device_by_address(a.address, timeout=15)
-    if dev is None:
-        dev = await BleakScanner.find_device_by_filter(
-            lambda d, ad: a.name.lower() in (d.name or ad.local_name or "").lower(), timeout=20)
+    t_wait_end = time.monotonic() + a.wait_device
+    dev = None
+    while dev is None:
+        dev = await BleakScanner.find_device_by_address(a.address, timeout=10 if a.wait_device else 15)
+        if dev is None and not a.wait_device:
+            dev = await BleakScanner.find_device_by_filter(
+                lambda d, ad: a.name.lower() in (d.name or ad.local_name or "").lower(), timeout=20)
+        if dev is None and time.monotonic() < t_wait_end:
+            print(f"[{datetime.now():%H:%M:%S}] MYRUN noch nicht sichtbar, suche weiter "
+                  f"(noch {t_wait_end - time.monotonic():.0f} s) ...")
+            continue
+        break
     if dev is None:
         print("MYRUN nicht gefunden (andere BLE-Apps trennen).")
         return 2
@@ -374,10 +388,33 @@ async def main():
             start_attempted = False
             incline_touched = False
             t_start = None
+            t_ready_end = time.monotonic() + a.wait_ready
+            while (s != "OK" or state not in SAFE_START_STATES) and time.monotonic() < t_ready_end:
+                await asyncio.sleep(3)
+                r, s = await tg_cmd(client, rx, "@STATUS#", a.byte_delay, write_resp)
+                new_state, _ = parse_status(r)
+                if new_state != state:
+                    rec.log(f"WAIT READY: state {state} -> {new_state}")
+                state = new_state
+            if a.wait_ready and s == "OK" and state in SAFE_START_STATES:
+                r2, s2 = await tg_cmd(client, rx, "@DUMPIO#", a.byte_delay, write_resp)
+                io_prev = parse_dumpio(r2)
+                rec.log(f"READY STATUS {state}; DUMPIO {s2} {io_prev}")
+                for k, v in io_prev.items():
+                    rec.sig(f"io_{k}", int(v))
             if not a.no_start and (s != "OK" or state not in SAFE_START_STATES):
                 rec.log(f"Baseline state {state!r} ({s}) not a confirmed start state "
                         f"{sorted(SAFE_START_STATES)} -> START suppressed. Power-cycle first.")
                 return 4
+            if not a.no_start:
+                print(f"\nBereit: {state}. Video/Messgerät bereit? STS2 dunkel, STS1 1 Hz?")
+                try:
+                    await asyncio.get_running_loop().run_in_executor(
+                        None, input, "Enter = START senden,  Strg+C = Abbruch ... ")
+                except (KeyboardInterrupt, EOFError):
+                    rec.log("START declined by user")
+                    return 1
+                rec.log("START released by user (Enter)")
 
             # --- fast loop
             loop = asyncio.get_running_loop()

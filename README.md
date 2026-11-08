@@ -80,6 +80,12 @@ What it records:
 - Live `SPEED_LOSS` markers when the encoder (`@RENC#`) drops from >0 Hz to 0 Hz, or `MeasSpeed` in `@STATUS#` drops from >0.2 km/h to 0 outside `QSStopping*`. Each loss (at most two) triggers an immediate `@DUMPIO#` + `@STATUS#` snapshot. `@STATUS#` state changes and `@DUMPIO#` I/O changes are logged as they happen.
 - When `@STATUS#` reports `QSHardwareFault`, logging continues for `--post-fault` seconds (default 8), then STOP (active mode only) and final error log, status and I/O snapshots are taken.
 
+**Start before power-on (`--wait-device`, `--wait-ready`).** `--wait-device N` keeps scanning up to N seconds, so the script can be started before the treadmill is switched on and logs from the first moment after boot. After connecting it polls `@STATUS#` until `QSWaitForStart*` (up to `--wait-ready`, default 150 s with `--wait-device`). The Enter prompt for `START` now always appears after the connection and the ready check, immediately before `START` is sent.
+
+```bash
+python3 myrun_fast_monitor.py --wait-device 300 --duration 150 --ramp
+```
+
 **Timed speed/incline profile (`--steps`, `--ramp`).** In active mode the script can change speed and incline at fixed times after `START` via the FTMS Control Point (`0x02` Set Target Speed in 0.01 km/h, `0x03` Set Target Inclination in 0.1 %). `--ramp` is a shortcut for `30:speed=2.5,60:speed=2.9,75:incline=2.0,90:speed=2.5,105:incline=0,120:speed=1.2` (seconds after START). Hard limits: speed 0.8–2.9 km/h (below the runner-detector threshold of 3.0 km/h), incline 0–5 %. Steps stop after a hardware fault; if an incline step was sent, incline 0 % is requested again before `STOP`. Steps are executed at the next poll cycle, so the actual send time (logged as `STEP +x s`) can lag the planned time by a few seconds.
 
 ```bash
