@@ -17,3 +17,4 @@ B10-M15;2026-11-08 17:54;B10-T1/T2;"DC-";Widerstand;4 MOhm steigend;;gemessen;"D
 B10-M16;2026-11-08 17:55;B10-J1;"DC+";Widerstand;1 kOhm steigend;;gemessen;niederohmiger Pfad mit Ladeverhalten
 B10-M17;2026-11-08 17:55;B10-J1;"DC-";Widerstand;2.6 MOhm konstant;;gemessen;
 B10-M18;2026-11-08 17:58;"DC-";B10-J1;Widerstand;ca. 1.3 MOhm, sehr langsam steigend (Eingabe "1,3,00" mehrdeutig);;gemessen;Gegenrichtung zu B10-M17 (2.6 MOhm konstant); polaritaetsabhaengig
+B10-M19;2026-11-08 18:00;-;-;Hinweis;alle J1-Messungen (M16-M18) laut Nutzer an B10-J1;;bestaetigt;"DC+"/"DC-" Zuordnung (DC MOTOR L+/L-?) vom Nutzer noch nicht bestaetigt
