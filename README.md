@@ -124,6 +124,15 @@ locked and again after a power cycle. Output: CSV with
 
 ## Hardware documentation
 
+### Fotoatlas und Schaltplan (Branch `110926`)
+
+- [Alle 110 Originalfotos zugeordnet, mit Raster und Gewissheit](docs/atlas_110926/README.md)
+- [Belegter Teilschaltplan, Quellen und weitere Fehlereingrenzung](docs/schaltplan_110926/README.md)
+- [Stromloser Messplan mit acht markierten Originalmakros und Messwertvorlage](docs/messplan_stromlos_2026-11-08/MESSPLAN.md)
+
+Die vorhandenen Originalfotos und Claudes Koordinatensystem bleiben erhalten. Offene Pin-/Netzzuordnungen werden ausdrücklich gekennzeichnet.
+
+
 [`docs/HARDWARE.md`](docs/HARDWARE.md) (also as [PDF](docs/HARDWARE.pdf)) collects what is known about the lower kit (Gefran GIRT S6T30): block diagram, board areas and identified parts, connector pinouts for P2 (console, 18 pin) and P4 (speed sensor) from both plug and solder side, DUMPIO signals, LED behaviour, fault sequence, repairs and corrosion findings. Each statement is tagged as measured, observed, from a manual, or inferred.
 
 ## Requirements

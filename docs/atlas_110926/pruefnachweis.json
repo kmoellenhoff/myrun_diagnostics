@@ -1,0 +1,26 @@
+{
+  "photos": 110,
+  "assigned": 110,
+  "unassigned": [],
+  "legacy_disagreements": [
+    {
+      "photo": "PHOTO003",
+      "old": "G4",
+      "new": "L5",
+      "status": "Originalindex abweichend: G4; Nachbarfoto-Abgleich L5; visuell bestätigt"
+    },
+    {
+      "photo": "PHOTO012",
+      "old": "G4",
+      "new": "I5",
+      "status": "Originalindex abweichend: G4; Nachbarfoto-Abgleich I5; visuell bestätigt"
+    },
+    {
+      "photo": "PHOTO047",
+      "old": "H3",
+      "new": "A2",
+      "status": "Originalindex abweichend: H3; Nachbarfoto-Abgleich A2; visuell bestätigt"
+    }
+  ],
+  "original_sha256_verified": true
+}

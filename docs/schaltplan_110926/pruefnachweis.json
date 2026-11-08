@@ -1,0 +1,24 @@
+{
+  "original_files_checked": 160,
+  "original_changes_only": [
+    "README.md (navigation links)"
+  ],
+  "all_110_original_photos_unchanged": true,
+  "original_raster_index_unchanged": true,
+  "atlas_photos": 110,
+  "atlas_pages": 10,
+  "schematic_pages": 3,
+  "evidence_entries": 55,
+  "all_new_relative_links_valid": true,
+  "schematic_topology_checks": {
+    "B18_P2_equals_Lplus": true,
+    "B18_P1_to_B19_E1_visible": true,
+    "Lplus_Lminus_not_shorted": true,
+    "Gate_resistor_not_a_wire": true,
+    "0VA_5VA_not_merged": true,
+    "0V24_0VA_not_merged": true,
+    "Console_ground_0VA_not_merged": true,
+    "AC_L_N_not_merged": true
+  },
+  "new_electrical_measurements": false
+}

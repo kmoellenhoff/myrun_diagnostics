@@ -1,0 +1,56 @@
+﻿ID;Knoten_A;Knoten_B;Art;Status;Wert;Quelle;Originalfoto;Bemerkung
+B10-C01;B10-T1;B10-R1.1;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C01;docs/img/b10_ids.png;Via-Ring T1 oben, kurze Bahn zum Widerstandspad
+B10-C02;B10-R1.2;B10-N1;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C02;docs/img/b10_ids.png;N1 = rundes Pad auf der Bahn
+B10-C03;B10-N1;B10-R2.1;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C03;docs/img/b10_ids.png;
+B10-C04;B10-R2.2;B10-N2;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C04;docs/img/b10_ids.png;
+B10-C05;B10-N2;B10-D1.1;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C05;docs/img/b10_ids.png;
+B10-C06;B10-D1.2;B10-J1;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C06;docs/img/b10_ids.png;
+B10-C07;B10-J1;B10-J3;Kupfer direkt;M+F;0.3 Ohm (= Spitzenwiderstand);docs/netlist/b10_netlist.csv B10-C07;docs/img/b10_ids.png;sichtbare Brücke, Durchgang bestätigt
+B10-C08;B10-J3;B10-D2.2;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C08;docs/img/b10_ids.png;
+B10-C09;B10-D2.1;B10-N4;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C09;docs/img/b10_ids.png;
+B10-C10;B10-N4;B10-R4.2;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C10;docs/img/b10_ids.png;
+B10-C11;B10-R4.1;B10-N3;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C11;docs/img/b10_ids.png;
+B10-C12;B10-N3;B10-R3.2;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C12;docs/img/b10_ids.png;
+B10-C13;B10-R3.1;B10-T2;Kupfer direkt;F;;docs/netlist/b10_netlist.csv B10-C13;docs/img/b10_ids.png;
+B10-C14;B10-T1;AC LINE N;Kupfer direkt;M+F;0 Ohm;docs/netlist/b10_netlist.csv B10-C14;docs/img/b10_ids.png;T1 = Netz N
+B10-C15;B10-T2;AC LINE L;Kupfer direkt;M+F;0 Ohm;docs/netlist/b10_netlist.csv B10-C15;docs/img/b10_ids.png;T2 = Netz L
+B10-R1;B10-R1.1;B10-R1.2;Widerstand;I+M;"475 kΩ Code; 472,5 kΩ in-circuit";docs/netlist/messprotokoll_b10.csv B10-M06;;
+B10-R2;B10-R2.1;B10-R2.2;Widerstand;I+M;"475 kΩ Code; ca. 472 kΩ in-circuit";docs/netlist/messprotokoll_b10.csv B10-M08;;
+B10-R3;B10-R3.1;B10-R3.2;Widerstand;I+M;"475 kΩ Code; 473,2 kΩ in-circuit";docs/netlist/messprotokoll_b10.csv B10-M07;;
+B10-R4;B10-R4.1;B10-R4.2;Widerstand;I+M;"475 kΩ Code; ca. 473 kΩ in-circuit";docs/netlist/messprotokoll_b10.csv B10-M09;;
+B10-D1;B10-D1.1 (A);B10-D1.2 (K);Diode;M+F;"0,497 V; rückwärts OL";docs/netlist/messprotokoll_b10.csv B10-M01;;
+B10-D2;B10-D2.1 (A);B10-D2.2 (K);Diode;M+F;"0,499 V; rückwärts OL";docs/netlist/messprotokoll_b10.csv B10-M02;;
+B18-F01;B18-P2;B18-R3.2;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B18-F02;B18-P2;B18-V2/TP2;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B18-F03;B18-R3.1;B18-R2.2;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B18-F04;B18-R3.1;B18-V1/TP1;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B18-F05;B18-R2.1;B18-R1.2;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B18-F06;B18-R1.1;B18-P1;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B19-F01;B18-P1;B19-E1;Kupfer direkt;F;;"docs/netlist/b18_spannungssense_kandidat.md; Messplan Blatt 03";photos/2026-11-08/back/PXL_20261108_153921371.jpg;"V1/V2 sind Testpads, keine Vias; P1→E1 noch ohne neue Ω-Messung"
+B18-M08;B18-P2;DC MOTOR L+;Kupfer direkt;M;0 Ω;docs/netlist/messprotokoll_b18.csv B18-M08;photos/2026-11-08/back/PXL_20261108_153921371.jpg;
+B18-R1;B18-R1.1;B18-R1.2;Widerstand;I;475 kΩ / 4753;docs/netlist/b18_spannungssense_kandidat.md §2;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Nennwert nur aus Code, Rohmesswerte in-circuit kleiner
+B18-R2;B18-R2.1;B18-R2.2;Widerstand;I;1 MΩ / 1004;docs/netlist/b18_spannungssense_kandidat.md §2;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Nennwert nur aus Code, Rohmesswerte in-circuit kleiner
+B18-R3;B18-R3.1;B18-R3.2;Widerstand;I;1 MΩ / 1004;docs/netlist/b18_spannungssense_kandidat.md §2;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Nennwert nur aus Code, Rohmesswerte in-circuit kleiner
+B19-Rin;B19-E1;B19-E2;Widerstand;I+F;1001 → 1 kΩ;Messplan Blatt 03;photos/2026-11-08/back/PXL_20261108_153921371.jpg;"Lokaler Name für unteren horizontalen 1001; Funktion/Weiterweg nicht belegt"
+B18-M05;B18-P1;0VA;"In-Circuit-Messung; keine Netzvereinigung";M;223,7 kΩ konstant;docs/netlist/messprotokoll_b18.csv B18-M05;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Kein einzelner entsprechender Widerstand nachgewiesen
+B18-M06;B18-P1;+5VA;"In-Circuit-Messung; keine Netzvereinigung";M;226,4 kΩ konstant;docs/netlist/messprotokoll_b18.csv B18-M06;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Kein einzelner entsprechender Widerstand nachgewiesen
+B18-M07;B18-P2;0VA;"In-Circuit-Messung; keine Netzvereinigung";M;"6 MΩ fallend; Endwert offen";docs/netlist/messprotokoll_b18.csv B18-M07;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Kein einzelner entsprechender Widerstand nachgewiesen
+B18-M09;B18-P2;DC MOTOR L−;"In-Circuit-Messung; keine Netzvereinigung";M;300 kΩ steigend;docs/netlist/messprotokoll_b18.csv B18-M09;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Kein einzelner entsprechender Widerstand nachgewiesen
+B18-M10;B18-V1/TP1;0VA;"In-Circuit-Messung; keine Netzvereinigung";M;1,211 MΩ;docs/netlist/messprotokoll_b18.csv B18-M10;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Kein einzelner entsprechender Widerstand nachgewiesen
+B18-M11;B18-V1/TP1;+5VA;"In-Circuit-Messung; keine Netzvereinigung";M;1,206 MΩ;docs/netlist/messprotokoll_b18.csv B18-M11;photos/2026-11-08/back/PXL_20261108_153921371.jpg;Kein einzelner entsprechender Widerstand nachgewiesen
+Q2-T01;Q2-D;DC MOTOR L−;Topologie aus Stand / Pinout + Diodentest;I+M;;"docs/netlist/q2_zuordnung.md; STAND_2026-11-08.md";photos/2026-11-08/q2/q2_rueckseite_makro.jpg;Keine eigene neue 0-Ω-Pad→Klemmenmessung durchgeführt
+Q2-T02;Q2-S;0VA;Topologie aus Stand / Pinout + Diodentest;I+M;;"docs/netlist/q2_zuordnung.md; STAND_2026-11-08.md";photos/2026-11-08/q2/q2_rueckseite_makro.jpg;
+PW-M05a;Q2-G;Q2-RG-G;Kupfer direkt;M;ca. 0 Ω;docs/netlist/messprotokoll_leistungsteil.csv PW-M05;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;zusammenfassend bestätigt, keine separate exakte Rohanzeige
+Q2-RG;Q2-RG-G;Q2-RG-U;Widerstand;I+M;"220 → 22 Ω; Gate-Pfad ca. 22 Ω";docs/netlist/messprotokoll_leistungsteil.csv PW-M05;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;
+DRV-F01;Q2-DRV.E;Q2-RG-U;Kupfer direkt;F;;Originalmakro / Messplan Blatt 05;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;"Ω-Bestätigung offen; E ist Foto-ID, keine Herstellerpinnummer"
+PW-M03;Q2-G;Q2-D;"In-Circuit-Messung; keine Netzvereinigung";M;2,19 MΩ;docs/netlist/messprotokoll_leistungsteil.csv PW-M03;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;"Bei PW-M01 ist schwarz=L+ im Rohprotokoll angenommen; kein neuer Messbeleg"
+PW-M04;Q2-G;Q2-S;"In-Circuit-Messung; keine Netzvereinigung";M;9,13 kΩ beidseitig;docs/netlist/messprotokoll_leistungsteil.csv PW-M04;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;"Bei PW-M01 ist schwarz=L+ im Rohprotokoll angenommen; kein neuer Messbeleg"
+PW-M02;Q2-S (A);Q2-D (K);"In-Circuit-Messung; keine Netzvereinigung";M;"Diode 0,444 V; zurück OL";docs/netlist/messprotokoll_leistungsteil.csv PW-M02;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;"Bei PW-M01 ist schwarz=L+ im Rohprotokoll angenommen; kein neuer Messbeleg"
+PW-M01;DC MOTOR L− (A);DC MOTOR L+ (K);"In-Circuit-Messung; keine Netzvereinigung";M;"Diode D3 0,397 V; zurück OL";docs/netlist/messprotokoll_leistungsteil.csv PW-M01;photos/2026-11-08/q2/q2_rueckseite_makro.jpg;"Bei PW-M01 ist schwarz=L+ im Rohprotokoll angenommen; kein neuer Messbeleg"
+IF-01;P4.0V;P2.7;Kupfer direkt;M;0 Ω;"docs/HARDWARE.md §3; messprotokoll_v0_chatgpt.csv";;
+IF-02;P2.7;P2.8;Kupfer direkt;M;0 Ω;"docs/HARDWARE.md §3; messprotokoll_v0_chatgpt.csv";;
+IF-03;P2.1;P2.4;Kupfer direkt;M;0 Ω;"docs/HARDWARE.md §3; messprotokoll_v0_chatgpt.csv";;
+GIRT-M002;P4.TACHO;P2.9;"In-Circuit-Messung; keine Netzvereinigung";M;16 kΩ;docs/netlist/messprotokoll_v0_chatgpt.csv GIRT-M002;;
+GIRT-M003;P4.TACHO;P4.0V;"In-Circuit-Messung; keine Netzvereinigung";M;12,48 kΩ;docs/netlist/messprotokoll_v0_chatgpt.csv GIRT-M003;;
+GIRT-M004;P2.9;P2.7;"In-Circuit-Messung; keine Netzvereinigung";M;4,3 kΩ;docs/netlist/messprotokoll_v0_chatgpt.csv GIRT-M004;;
+NTC-M01;P600-Ka;P600-Kb;"Sensorwiderstand; damaliger Steckzustand offen";M;"11 kΩ Raumtemperatur; 10,75 kΩ erwärmt";docs/HARDWARE.md §2;photos/2026-11-08/q2/q2_vorderseite_makro.jpg;"Temperaturen fehlen; keine NTC→MCU-Pinzuordnung"
