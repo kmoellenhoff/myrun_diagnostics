@@ -1,0 +1,6 @@
+Mess-ID;Datum/Zeit;Rot (zuerst);Schwarz;Modus;Wert;Gegenrichtung;Status;Bemerkung
+B10-M01;2026-11-08 17:40;B10-N2;B10-J1 (Ende D1);Diode;0.497 V;OL;gemessen;stromlos, in-circuit; Anode oben (N2-Seite), Kathode unten (J1-Seite)
+B10-M02;2026-11-08 17:40;B10-N4;B10-J2;Diode;0.499 V;OL;gemessen;D2 wie D1, Kathode zur Brücke
+B10-M03;2026-11-08 17:40;B10-J1;B10-J3;Widerstand;0.3 Ohm;;gemessen;entspricht Spitzenwiderstand 0.2-0.4 Ohm
+B10-M04;2026-11-08 17:41;B10-T1;B10-T2;Diode;OL;OL;gemessen;beide Richtungen OL (Widerstandskette)
+B10-M05;2026-11-08 17:41;B10-T1;B10-T2;Widerstand;ca. 12 MOhm, fallend;ca. 12 MOhm, fallend;gemessen;Trend fallend in beiden Richtungen, Bedeutung offen (Leckpfad/Kontamination/Parallelpfade)
