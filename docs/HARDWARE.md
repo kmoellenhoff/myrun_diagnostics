@@ -122,7 +122,8 @@ The FTMS Treadmill Data speed field (0x2ACD) is the **set-point**, not the measu
 - Console error codes seen: HF900, HF901, HF902, HF904 (hardware fault after the console loses the speed signal).
 - Typical sequence in a failed start **[O]**: START accepted → console raises PWM → encoder stays at 0 Hz, `MeasSpeed` 0 → after ≈7 s EM_POWENA/EM_STATUS/LOWKITENA/B/LK_ENABLE drop (they follow the console output) → console aborts after ≈16 s → `QSHardwareFault` → new HF904.
 - The GIRT **does not drive the motor** in that state: 0 V at DC MOTOR (generator voltage is visible when the shaft is turned by hand, so the motor winding is fine).
-- The GIRT locks about **1.5 s after START** at the latest and stays locked until it is fully de-energised; the blink code on STS2 (section 7) starts at the same time.
+- The GIRT locks and starts the STS2 blink code within about 1.5 s (11/07 22:04) to 5 s (11/08 13:26, video synchronised to the BLE log, ±0.3 s) after START, and stays locked until it is fully de-energised. In the 11/08 run the first STS2 pulse came about 1.3 s *before* the console dropped the enable lines, so the GIRT notices the fault before the console does.
+- Failed start 11/08 13:26 (belt not moving, multimeter on V DC at DC MOTOR, MAX hold **not** active): display stayed at 0.0 V from START to START + 8 s (4 frames/s), so no voltage longer than ≈0.3 s at the motor output; shorter pulses are not excluded. Console PWM request rose 0.077 → 0.099 → 0.143 % while encoder and `MeasSpeed` stayed 0; PWM_MOTOR 9366 at the first enable drop and 5046 in the second attempt (same value as 11/07). New error-log entry **902** (not 904).
 - Good run (17:18, 07.11.): belt ran 95 s at 1.2 km/h, encoder 300–310 Hz, PWM 0.085 %, 12.38–12.41 V DC at DC MOTOR.
 - Other values: motor winding 1.5–1.6 Ω over more than 16 rotor positions, thermal switch ≈0 Ω, usage counters from `@RSTAT#`: ≈1390 h powered, ≈342 h belt, ≈3719 km.
 
@@ -150,7 +151,16 @@ Silkscreen: `LINE`, `+5V`, `STS1`, `STS2`.
 | Boot | on at t0 | on at +0.9 s | dark until +7.6 s, then 1 Hz | one 0.2 s flash at +8.3 s |
 | Ready | on | on | 1 Hz (0.5 s on / 0.47 s off) | off |
 | Running | on | on | steady on | off |
-| Fault (locked) | on | on | 1 Hz | 8 pulses (≈0.26–0.31 s on, 0.5 s period), 1.46 s pause, group period 5.33 s |
+| Fault (locked) | on | on | 1 Hz | N pulses (≈0.27 s on, 0.5 s period), ≈1.4 s pause, then repeat; N = 8 or 4 so far, see below |
+
+Observed fault blink codes (same pulse timing, different count):
+
+| Date / run | Pulses per group | Group period | Error log entry | First pulse after START |
+|---|---|---|---|---|
+| 11/07 17:30 and 22:04 | 8 | 5.33 s | 904 | ≤ 1.5 s |
+| 11/08 13:26 | 4 | 3.33 s (pause 1.53 s) | 902 | ≈ 5 s |
+
+Two data points only. A possible reading **[I]**: the pulse count is the drive's error number. With the Technogym numbering shared by four drive generations, 08 is *belt-motor encoder error* and 04 is *DC-bus over-voltage (OU)*. In both cases the motor output stayed at 0 V, so the GIRT may be switching its output off for different reasons (or reporting different consequences of one root cause). Noting pulse count and HF number at every failed start will show whether the mapping holds. If OU is real, the voltage measuring chains (four 475 kΩ resistors with UJ12 diodes, assumed to sense the DC link) become the first suspects.
 
 Frame-by-frame timing from phone video **[O]**:
 
