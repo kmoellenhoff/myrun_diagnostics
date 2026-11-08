@@ -25,6 +25,18 @@ Usage:
     python3 myrun_fast_monitor.py
     python3 myrun_fast_monitor.py --duration 90 --dumpio-every 2 --status-every 4
     python3 myrun_fast_monitor.py --byte-delay 0.02 --no-write-response   # faster, test first
+    python3 myrun_fast_monitor.py --duration 150 --ramp
+        # after START: 30 s -> 2.5 km/h, 60 s -> 2.9 km/h,
+        #              80 s -> incline 2.0 %, 105 s -> incline 0 %
+    python3 myrun_fast_monitor.py --duration 120 --steps "30:speed=2.0,60:incline=1.5,90:incline=0"
+
+Step profile (--steps / --ramp):
+  * Times are seconds after the START command. Commands: speed=<km/h>,
+    incline=<percent>. Sent via FTMS Control Point (0x02 / 0x03).
+  * Hard limits: speed 0.8 ... 2.9 km/h (stays below the runner-detector
+    threshold of 3.0 km/h), incline 0 ... 5 %.
+  * Steps are skipped once a hardware fault is seen. If an incline step was
+    sent, incline 0 % is requested again before STOP.
 """
 
 import argparse
@@ -177,6 +189,32 @@ def parse_status(text):
     return (st.group(1) if st else None), (float(ms.group(1)) if ms else None)
 
 
+SPEED_MIN, SPEED_MAX = 0.8, 2.9       # km/h; runner detector starts at 3.0 km/h
+INCLINE_MIN, INCLINE_MAX = 0.0, 5.0   # percent
+DEFAULT_RAMP = "30:speed=2.5,60:speed=2.9,80:incline=2.0,105:incline=0"
+
+
+def parse_steps(spec):
+    """'30:speed=2.5,80:incline=2' -> sorted [(30.0, 'speed', 2.5), ...] with limit checks."""
+    out = []
+    for part in filter(None, (x.strip() for x in spec.split(","))):
+        m = re.fullmatch(r"(\d+(?:\.\d+)?)\s*:\s*(speed|incline)\s*=\s*(-?\d+(?:\.\d+)?)", part)
+        if not m:
+            raise ValueError(f"cannot parse '{part}' (expected e.g. 30:speed=2.5)")
+        t, kind, val = float(m.group(1)), m.group(2), float(m.group(3))
+        lo, hi = (SPEED_MIN, SPEED_MAX) if kind == "speed" else (INCLINE_MIN, INCLINE_MAX)
+        if not lo <= val <= hi:
+            raise ValueError(f"{kind}={val} outside safe range {lo}..{hi}")
+        out.append((t, kind, val))
+    return sorted(out)
+
+
+def step_payload(kind, val):
+    if kind == "speed":     # FTMS Set Target Speed: uint16, 0.01 km/h
+        return bytes([0x02]) + struct.pack("<H", int(round(val * 100)))
+    return bytes([0x03]) + struct.pack("<h", int(round(val * 10)))   # Set Target Inclination: sint16, 0.1 %
+
+
 async def main():
     ap = argparse.ArgumentParser(description="MYRUN fast fault monitor")
     ap.add_argument("--address", default="E0:86:1D:FA:4D:A0")
@@ -191,8 +229,23 @@ async def main():
     ap.add_argument("--no-start", action="store_true", help="passive mode: monitor without sending START")
     ap.add_argument("--listen-only", action="store_true",
                     help="purely passive: no init, no commands at all; only GATT inventory + notifications")
+    ap.add_argument("--steps", default="",
+                    help='timed profile after START, e.g. "30:speed=2.5,60:speed=2.9,80:incline=2,105:incline=0"')
+    ap.add_argument("--ramp", action="store_true",
+                    help='shortcut for --steps "%s"' % DEFAULT_RAMP)
     ap.add_argument("--output", help="base filename (without extension)")
     a = ap.parse_args()
+    try:
+        steps = parse_steps(DEFAULT_RAMP if (a.ramp and not a.steps) else a.steps)
+    except ValueError as e:
+        print(f"--steps: {e}")
+        return 2
+    if steps and (a.no_start or a.listen_only):
+        print("--steps/--ramp need START (not with --no-start/--listen-only).")
+        return 2
+    if steps and a.duration < steps[-1][0] + 15:
+        print(f"Hinweis: --duration {a.duration:.0f} s endet kurz nach/vor dem letzten Schritt "
+              f"({steps[-1][0]:.0f} s nach START).")
     write_resp = not a.no_write_response
 
     if a.listen_only:
@@ -318,6 +371,7 @@ async def main():
                 rec.sig(f"io_{k}", int(v))
 
             start_attempted = False
+            incline_touched = False
             t_start = None
             if not a.no_start and (s != "OK" or state not in SAFE_START_STATES):
                 rec.log(f"Baseline state {state!r} ({s}) not a confirmed start state "
@@ -337,7 +391,16 @@ async def main():
                     t_start = rec.rel()
                     ok = await ftms_cmd(client, rx, bytes([0x07]), rec)
                     rec.log(f"START acknowledged = {ok}")
+                t_start_loop = loop.time()
+                pending = list(steps)
                 while loop.time() < t_end:
+                    while pending and fault_at is None and loop.time() - t_start_loop >= pending[0][0]:
+                        t_due, kind, val = pending.pop(0)
+                        incline_touched |= (kind == "incline")
+                        rec.log(f"STEP +{loop.time() - t_start_loop:.1f}s (planned +{t_due:g}s): {kind} -> {val:g}")
+                        ok = await ftms_cmd(client, rx, step_payload(kind, val), rec)
+                        rec.log(f"STEP {kind}={val:g} acknowledged = {ok}")
+                        rec.sig(f"step_{kind}", val)
                     r, s = await tg_cmd(client, rx, "@RPWM#", a.byte_delay, write_resp, 2.5)
                     rec.sig("raw_rpwm", f"{s} {r!r}")
                     m = re.search(r"PWM=([\d.]+)%", r)
@@ -418,6 +481,12 @@ async def main():
             except Exception as e:
                 rec.log(f"ERROR in monitor loop: {type(e).__name__}: {e}")
             finally:
+                if start_attempted and client.is_connected and incline_touched and fault_at is None:
+                    try:
+                        ok = await ftms_cmd(client, rx, step_payload("incline", 0.0), rec)
+                        rec.log(f"incline reset to 0 % acknowledged = {ok}")
+                    except Exception as e:
+                        rec.log(f"incline reset error {e}")
                 if start_attempted and client.is_connected:
                     try:
                         ok = await ftms_cmd(client, rx, bytes([0x08, 0x01]), rec)

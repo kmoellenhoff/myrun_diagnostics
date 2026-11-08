@@ -79,6 +79,13 @@ What it records:
 - In the fast loop only the short replies `@RPWM#` (PWM %) and `@RENC#` (encoder Hz and km/h); `@DUMPIO#` / `@STATUS#` only every few seconds (`--dumpio-every`, `--status-every`). The long replies are the bottleneck because the firmware answers one byte per notification. Raw replies and parse failures are logged too.
 - Live `SPEED_LOSS` markers when the encoder (`@RENC#`) drops from >0 Hz to 0 Hz, or `MeasSpeed` in `@STATUS#` drops from >0.2 km/h to 0 outside `QSStopping*`. Each loss (at most two) triggers an immediate `@DUMPIO#` + `@STATUS#` snapshot. `@STATUS#` state changes and `@DUMPIO#` I/O changes are logged as they happen.
 - When `@STATUS#` reports `QSHardwareFault`, logging continues for `--post-fault` seconds (default 8), then STOP (active mode only) and final error log, status and I/O snapshots are taken.
+
+**Timed speed/incline profile (`--steps`, `--ramp`).** In active mode the script can change speed and incline at fixed times after `START` via the FTMS Control Point (`0x02` Set Target Speed in 0.01 km/h, `0x03` Set Target Inclination in 0.1 %). `--ramp` is a shortcut for `30:speed=2.5,60:speed=2.9,80:incline=2.0,105:incline=0` (seconds after START). Hard limits: speed 0.8–2.9 km/h (below the runner-detector threshold of 3.0 km/h), incline 0–5 %. Steps stop after a hardware fault; if an incline step was sent, incline 0 % is requested again before `STOP`. Steps are executed at the next poll cycle, so the actual send time (logged as `STEP +x s`) can lag the planned time by a few seconds.
+
+```bash
+python3 myrun_fast_monitor.py --duration 150 --ramp
+python3 myrun_fast_monitor.py --duration 120 --steps "30:speed=2.0,60:incline=1.5,90:incline=0"
+```
 - A summary at the end: per `enc_hz` / `meas_speed`, the first value >0 after START and every >0 → 0 drop (with time resolution and the PWM % values around it), plus the first `EM_POWENA=0` after START and the mean polling period.
 
 Output: `<base>.txt` (log) and `<base>.csv` with the columns `t_rel_s, wallclock, utc, signal, value`, for plotting. The default base name is `myrun_fast_monitor_YYYYMMDD_HHMMSS`.
