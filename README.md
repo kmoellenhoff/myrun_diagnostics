@@ -127,7 +127,8 @@ locked and again after a power cycle. Output: CSV with
 ### Fotoatlas und Schaltplan (Branch `110926`)
 
 - [Alle 110 Originalfotos zugeordnet, mit Raster und Gewissheit](docs/atlas_110926/README.md)
-- [Belegter Teilschaltplan, Quellen und weitere Fehlereingrenzung](docs/schaltplan_110926/README.md)
+- [Gemeinsamer, elektrisch verbundener Schaltplan aller gemessenen Teilnetze: PDF, KiCad und Messregister](docs/gesamtschaltplan_110926/README.md)
+- [Bisheriger Teilschaltplan, Quellen und weitere Fehlereingrenzung](docs/schaltplan_110926/README.md)
 - [Stromloser Messplan mit acht markierten Originalmakros und Messwertvorlage](docs/messplan_stromlos_2026-11-08/MESSPLAN.md)
 - [Fortsetzungsstand 09.11.: Q2-C / R2211 / 1P, Messwerte und späterer Diodentest](docs/messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md)
 

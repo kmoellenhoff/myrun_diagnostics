@@ -1,5 +1,7 @@
 # GIRT S6T30: Teilschaltplan und weitere Fehlereingrenzung
 
+**Neu: [Gemeinsamer, elektrisch verbundener Schaltplan aller gemessenen Teilnetze](../gesamtschaltplan_110926/README.md)** mit bearbeitbarer KiCad-Datei, A1-Übersicht, vergrößerten Ausschnitten und vollständigem Messregister. Die folgenden vier Blätter dokumentieren den bisherigen Teilplanstand.
+
 Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–07 einschließlich 05b sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
 
 [Schaltplan als PDF: drei Grundblätter plus Nachtrag 4](teilschaltplan.pdf) · [Fotoatlas](../atlas_110926/README.md) · [Markierte Messkontakte und Messwertvorlage](../messplan_stromlos_2026-11-08/MESSPLAN.md) · [Verbindungsnachweis als CSV](verbindungen.csv)

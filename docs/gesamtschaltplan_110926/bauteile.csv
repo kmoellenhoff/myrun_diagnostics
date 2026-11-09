@@ -1,0 +1,39 @@
+﻿Reference;Repository_ID;Feld_Claude;Wert;Messwerte
+R101;B18-R3;E5;1 M / 1004;600 / 840 kΩ
+R102;B18-R2;E5;1 M / 1004;600 / 840 kΩ
+R103;B18-R1;E5;475 k / 4753;378 / 406 kΩ
+R104;B19-1003 rechts;E6;100 k / 1003;102,6 / 90,4 kΩ
+R105;B19-1003 links;E6;100 k / 1003;102,6 / 90,4 kΩ
+U301;L4981AD;E6;L4981AD;
+R106;B19-3922;E6;39,2 k / 3922;38,43 / 38,91 kΩ
+R107;B19-4750;E6;475 Ω / 4750;478 Ω beidseitig
+R108;B19-1004 oben;E6;1 M / 1004;498 kΩ beidseitig
+R109;B19-1004 unten;E6;1 M / 1004;496 kΩ beidseitig
+TP501;+5VA;;+5VA;
+TP502;+24V;;+24V;
+TP503;0V24;;0V24;
+M1;DC MOTOR;;Bürsten-DC-Motor;Wicklung 1,5–1,6 Ω / 16 Rotorpositionen
+D3;D3;B5;Freilaufdiode D3;0,397 V / OL (Polungsannahme im Altprotokoll)
+Q2;Q2;B5;MOSFET Q2;"Body 0,444 V / OL; G–S 9,14 kΩ; G–D 2,2 / 1,86 MΩ steigend"
+R201;Q2-RG;B5;22 Ω / 220;Gatepfad 22,2 Ω
+U201;Q2-DRV;B5;SOT-23-5: Typ offen;
+R202;Q2-R2211 (alt R221);B5;2,21 k / 2211;2,09 kΩ beidseitig
+U202;Q2-1P;B5;1P: Typ offen;
+U401;B20-SOT23;E6;Typ / Funktionen offen;
+R301;B20-R1;E6;4,75 k / 4751;4,6 kΩ beidseitig
+R302;B20-R2;E6;4,75 k / 4751;a→b 2,7 / b→a 3,3 kΩ
+R303;B20-R3;E6;100 k / 1003;72,3 kΩ beidseitig
+R304;B20-R4;E6;475…? Nennwert offen;4,77 kΩ beidseitig
+R203;R1001;B5;1 k / 1001;979 / 977 Ω
+R204;R4752;B5;47,5 k / 4752;4,16 kΩ beidseitig
+R401;B10-R1;J6;475 k / 4753;472,5 kΩ / 417 kΩ ↑
+R402;B10-R2;J6;475 k / 4753;≈472 kΩ, wie R1
+R403;B10-R3;J6;475 k / 4753;473,2 / 424 kΩ ↑
+R404;B10-R4;J6;475 k / 4753;≈473 kΩ, wie R3
+D401;B10-D1;J6;M7-Klasse?;0,497 V / OL
+D402;B10-D2;J6;M7-Klasse?;0,499 V / OL
+K501;F27 RT334024;I4;RT334024 / 24-V-Spule;"Spule 1,41 kΩ; Kontaktgruppe 68,4 Ω in-circuit"
+TH501;P600 Ka/Kb;B5;NTC, ca. 10-k-Klasse;"abgezogen 11,28 kΩ; fingerwarm 10,9 kΩ; gesteckt 3,11 / 2,47 kΩ"
+J201;P2 (nur vermessene Pins);;P2, Auswahl aus 18 Pins;
+SW501;Motor-Thermoschalter;;Thermokontakt, kalt geschlossen;0 Ω kalt
+J204;P4;;P4: TACHO / 0V;
