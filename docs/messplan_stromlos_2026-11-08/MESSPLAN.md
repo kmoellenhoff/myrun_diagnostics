@@ -2,6 +2,8 @@
 
 Basis: `9d1f74617b602f57db36a1993998581de360b832` · Auswertung 08.11.2026 · keine neuen Messwerte
 
+**Nachtrag 09.11.2026:** Blatt 01 (RT334024) ist stromlos abgearbeitet. [Berichtete Werte und Interpretation](ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Der folgende Plantext, das PDF und die leere CSV-Vorlage beschreiben weiterhin den Planstand vom 08.11.2026. Blatt 02 (P600) wird als Nächstes bearbeitet; dessen laufende Werte sind hier noch nicht eingepflegt.
+
 **Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Es wurden keine neuen elektrischen Messungen durchgeführt.
 
 **Koordinaten unverändert.** Claudes Raster bleibt A–L × 1–6, dasselbe Feld auf beiden Platinenseiten. Variante A: Vorderseite wie fotografiert, Rückseite vertikal gespiegelt. Variante B: Rückseite wie fotografiert, Vorderseite vertikal gespiegelt; Zeilen 6 oben bis 1 unten. Makros werden hier weder gedreht noch gespiegelt. Die Zusatz-IDs identifizieren nur Anschlüsse im jeweiligen Originalmakro. Rasterangaben bleiben grob (laut Quelle etwa ±1 Feld).
