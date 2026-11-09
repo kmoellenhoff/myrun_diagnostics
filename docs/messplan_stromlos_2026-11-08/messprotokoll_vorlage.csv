@@ -30,7 +30,7 @@ DRV-06-E;4;05/06;Q2-DRV.E;0VA;Ω und Diode, je beide Richtungen;nicht dokumentie
 DRV-07-E;4;05/06;Q2-DRV.E;+5VA;Ω und Diode, je beide Richtungen;nicht dokumentiert;"offen; direkte Verbindung nur bei stabilem Spitzenwiderstand nachweisbar";F/H;"Pin-Nummer, VCC/GND/IN/OUT offen; vier Anzeigen je Paar getrennt notieren";;;;;;;;;;;;;
 DRV-08;4;05;Q2-DRV.E;Q2-RG-U;Ω;nicht dokumentiert;etwa Spitzenwiderstand bei sichtbarer direkter Bahn;F;Treiberfunktion damit noch nicht bestimmt;;;;;;;;;;;;;
 DRV-09-1001;4;05b;R1001-a;R1001-b;"Ω; beide Richtungen";nicht dokumentiert;"Code 1001: 1 kΩ [I]; Parallelpfade möglich";F/I;Widerstände im Treiberumfeld, Verbindung zum IC noch zu bestätigen;;;;;;;;;;;;;
-DRV-09-221;4;05b;R221-a;R221-b;"Ω; beide Richtungen";nicht dokumentiert;"Code 221: 220 Ω [I]; Parallelpfade möglich";F/I;Widerstände im Treiberumfeld, Verbindung zum IC noch zu bestätigen;;;;;;;;;;;;;
+DRV-09-221;4;05b;R221-a;R221-b;"Ω; beide Richtungen";nicht dokumentiert;"Code 2211: 2,21 kΩ [I]; Parallelpfade möglich; früherer 220-Ω-Sollwert korrigiert";F/I;"Alias R2211; alte Foto-ID R221-a/b unverändert. Ergebnisse in separater CSV.";;;;;;;;;;;;;
 DRV-09-4752;4;05b;R4752-a;R4752-b;"Ω; beide Richtungen";nicht dokumentiert;"Code 4752: 47,5 kΩ [I]; Parallelpfade möglich";F/I;Widerstände im Treiberumfeld, Verbindung zum IC noch zu bestätigen;;;;;;;;;;;;;
 SUP-01;5;06;0VA;+5VA;"Ω; beide Richtungen";"B10-M28 2,16 kΩ; rückwärts 2,55 kΩ";"ähnliche Größenordnung bei gleichem Aufbau; Zeitverlauf mit erfassen";M;Kein ESR-/Regelungsnachweis;;;;;;;;;;;;;
 SUP-02a;5;07;0V24-Testloch (oberes);P400-schwarz;Ω;nicht dokumentiert;etwa Spitzenwiderstand, falls Aufdruckzuordnung richtig;I;"Zuerst bestätigen; Kabel-/Farbzuordnung ist kein elektrischer Nachweis";;;;;;;;;;;;;

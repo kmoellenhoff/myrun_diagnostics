@@ -1,0 +1,13 @@
+{
+  "source_filename": "50386.jpg",
+  "source_sha256": "48d6c2292cc9e8d803814a030b6d704376b897a4c20994aa54d264525739726e",
+  "sanitized_sha256": "78cc965557d47c886c889fb2f5b32e083a0d50325a3aecde2ce177fa26958cbb",
+  "removed_markers": [
+    "0xe1",
+    "0xe1"
+  ],
+  "exif_absent": true,
+  "decoded_pixels_unchanged": true,
+  "jpeg_reencoded": false,
+  "board_location": "Q2 / B21 / B5, Claude unverändert"
+}

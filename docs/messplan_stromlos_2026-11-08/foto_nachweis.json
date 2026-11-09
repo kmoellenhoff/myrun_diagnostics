@@ -482,7 +482,7 @@
           "lx": 610,
           "ly": 275,
           "status": "F",
-          "note": "linkes Ende im Originalfoto, Code 221"
+          "note": "linkes Ende im Originalfoto; Code 2211 = 2,21 kΩ, Alias R2211; alte Foto-ID unverändert"
         },
         {
           "id": "R221-b",
@@ -521,7 +521,8 @@
       "source_sha256": "ea90e6a6f3c6f2e4db189c59bab734fd611cbd4bea572cf1faddb8461d67c5ce",
       "output_sha256": "d18a1e8a8ab59607d0fe7f3368c84daabffbf828de32982b9e960a0d384731a5",
       "unmarked_pixels_identical": true,
-      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg"
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg",
+      "revision_note": "09.11.: Code 2211 statt 221 korrigiert; vorhandene Marker-IDs, Koordinaten und PNG-Pixel unverändert."
     },
     {
       "id": "06",

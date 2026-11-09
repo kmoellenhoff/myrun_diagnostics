@@ -58,5 +58,38 @@
     "R4_full_code_readable": false,
     "defective_component_identified": false,
     "next_sheet": "05 / Q2-Treiber / B21 / B5"
+  },
+  "revision_Q2_05_05b_2026_11_09": {
+    "parent_commit": "36c52f795a1df1579d179a2f038da7b24da8917c",
+    "report_date": "2026-11-09",
+    "new_Q2_result_rows": 29,
+    "total_result_rows": 76,
+    "prior_47_results_preserved": true,
+    "evidence_rows": 117,
+    "E_RG_U_promoted_from_photo_to_measured": true,
+    "B_0VA_direct_connection_confirmed": true,
+    "C_D5_not_unintentionally_grounded_in_schematic": true,
+    "R1001_corrected_ohm": [
+      979,
+      977
+    ],
+    "R221_actual_code": "2211",
+    "B_0VA_wrong_diode_reading_retracted": true,
+    "G_D_reverse_value_is_unsettled": true,
+    "S_D_report_is_comparative_confirmation": true,
+    "prior_photos_and_raster_unchanged": true,
+    "baseline_photo_related_files_hash_checked": 112,
+    "all_8_macro_pixels_and_coordinates_unchanged": true,
+    "new_photo_exif_xmp_iptc_comments_absent": true,
+    "new_photo_decoded_pixels_identical": true,
+    "plan_pdf_pages": 10,
+    "schematic_pdf_pages": 3,
+    "unaffected_pdf_pages_preserved": true,
+    "pdf_text_in_bounds": true,
+    "local_markdown_links_valid": true,
+    "driver_marking_user_report": "1000CA",
+    "driver_type_confirmed": false,
+    "next_sheet": "06 / Hilfsversorgung",
+    "new_06_07_values_held_separately": true
   }
 }

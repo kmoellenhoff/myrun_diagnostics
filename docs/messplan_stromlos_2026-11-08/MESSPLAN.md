@@ -2,7 +2,7 @@
 
 Basis: `9d1f74617b602f57db36a1993998581de360b832` · Plan 08.11.2026 · Ergebnisse/Nachtrag 09.11.2026
 
-**Nachtrag 09.11.2026:** Blätter 01–04 sind im jeweils dokumentierten stromlosen Umfang abgearbeitet. [Blatt 01](ERGEBNISSE_2026-11-09.md) · [Blatt 02](P600_ERGEBNISSE_2026-11-09.md) · [Blatt 03: B18/B19, Korrekturen und offene Punkte](B19_ERGEBNISSE_2026-11-09.md) · [Blatt 04: B20](B20_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Blätter 03/04, Quellenabgleich und PDF sind nachgeführt; andere Planabschnitte enthalten den ursprünglichen Ausgangsstand. **Als Nächstes Blatt 05 (Q2-Treiber).**
+**Nachtrag 09.11.2026:** Blätter 01–05/05b sind im jeweils dokumentierten stromlosen Umfang abgearbeitet. [Blatt 01](ERGEBNISSE_2026-11-09.md) · [Blatt 02](P600_ERGEBNISSE_2026-11-09.md) · [Blatt 03: B18/B19, Korrekturen und offene Punkte](B19_ERGEBNISSE_2026-11-09.md) · [Blatt 04: B20](B20_ERGEBNISSE_2026-11-09.md) · [Blätter 05/05b: Q2 und Treiber](Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Blätter 03–05b, Quellenabgleich und PDF sind nachgeführt; andere Planabschnitte enthalten den ursprünglichen Ausgangsstand. **Als Nächstes Blatt 06 (Hilfsversorgung).**
 
 **Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Diese Arbeitsgrundlage beschreibt den Planstand vom 08.11.; die Nutzer-Messungen vom 09.11. stehen in den verlinkten Nachträgen.
 
@@ -127,13 +127,13 @@ F33/B21 = B5; Rückseite; Foto gegenüber Übersicht um 180° gedreht
 
 Original: [photos/2026-11-08/q2/q2_rueckseite_makro.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(0, 0, 1661, 2212)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
 
-**Messmodus.** DRV-01/02: Ω G–RG-G / G–RG-U. DRV-03/04: Ω G–S / G–D. DRV-05: Diode rot S, schwarz D; dann umpolen. DRV-06/07: jeden Anschluss A/B/C/D5/E einzeln gegen 0VA und +5VA messen, jeweils Ω und Diode in beiden Richtungen. DRV-08: Ω E–RG-U.
+**Stand / Gatepfad.** 09.11.2026: im vorgesehenen stromlosen Umfang abgearbeitet. G–RG-G 0 Ω; Gatewiderstandspfad 22,2 Ω. G–S 9,14 kΩ beidseitig. G–D 2,2 MΩ, rückwärts 1,86 MΩ langsam steigend, kein Endwert. S→D: Referenz 0,444 V / OL unverändert bestätigt.
 
-**Bisher.** PW-M03: G–D 2,19 MΩ. PW-M04: G–S 9,13 kΩ beidseitig. PW-M05: G–RG-G ca. 0 Ω, G–RG-U ca. 22 Ω (zusammenfassend bestätigt). PW-M02: S–D 0,444 V, rückwärts OL. Treiberpin-/Versorgungswerte fehlen.
+**Bestätigte Knoten.** B–0VA 0 Ω beidseitig; Diodentest korrigiert 0,0 V. E–RG-U ≈0 Ω ausdrücklich bestätigt: Gate-Ansteuerpfad elektrisch belegt. E–0VA 9,16 kΩ passt zu G–S plus 22,2 Ω. Keine direkte +5VA-Verbindung des Treibers belegt.
 
-**Erwartung.** Gate-Pfad etwa 0/22 Ω; G–S Referenz 9,13 kΩ, G–D hochohmig (2,19 MΩ als Vergleich, nicht OL erzwingen); S→D etwa 0,44 V, zurück OL. E–RG-U bei direkter Bahn etwa Spitzenwiderstand. Unbekannte Treiberpins: keine pauschalen Sollwerte.
+**Matrix / Grenzen.** A/B/C/D5/E gegen 0VA und +5VA in Ω und Diode erfasst; komplette Matrix und Rohkorrekturen: Q2_TREIBER_ERGEBNISSE_2026-11-09.md. Nutzer liest Aufdruck 1000CA; Typ, Herstellerpinout, Versorgung und Freigabe bleiben offen. Statische Werte beweisen keine Betriebsschaltung.
 
-**Grenze / Zuordnung.** A/B/C/D5/E sind physische Foto-IDs, keine Pin-Nummern und keine zugesagten Funktionen VCC/GND/IN. Sichtbarer Fünfbeiner, Typ/Aufdruck nicht sicher identifiziert. Auch ein 0-Ω-Pfad zur Versorgung ist erst eine Netzzuordnung, kein Funktionsnachweis. +5VA ist nur Referenz, nicht schon bewiesene Treiberversorgung. 0VA ist DC− auf Netzpotenzial.
+[Ergebnisbericht](Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [neue Originalaufnahme](../../photos/2026-11-09/q2/50386.jpg)
 
 | Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
 |---|---|---|---|
@@ -143,10 +143,10 @@ Original: [photos/2026-11-08/q2/q2_rueckseite_makro.jpg](https://github.com/kmoe
 | RG-G | 1046, 1162 | M | unteres Ende des 22-Ω-Widerstands, Gate-Seite |
 | RG-U | 1052, 910 | M | oberes Ende des 22-Ω-Widerstands, Treiber-Seite |
 | A | 679, 735 | F | Treiber: oben links im Originalmakro, Funktion offen |
-| B | 760, 735 | F | Treiber: oben Mitte, Funktion offen |
+| B | 760, 735 | F | Treiber: oben Mitte; 0 Ω zu 0VA gemessen |
 | C | 845, 735 | F | Treiber: oben rechts, Funktion offen |
 | D5 | 679, 970 | F | Treiber: unten links, Funktion offen; D5 ist kein MOSFET-Drain |
-| E | 851, 970 | F | Treiber: unten rechts; Bahn zu RG-U sichtbar, durchmessen |
+| E | 851, 970 | F | Treiber: unten rechts; E–RG-U ≈0 Ω bestätigt |
 
 ## Blatt 05b – Q2-Treiberumfeld: Widerstandsanschlüsse
 
@@ -156,19 +156,19 @@ B21 = B5; Rückseite; gleiche Bildlage wie Blatt 05
 
 Original: [photos/2026-11-08/q2/q2_rueckseite_makro.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/q2/q2_rueckseite_makro.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(200, 260, 870, 690)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
 
-**Messmodus.** DRV-09a/b/c: Ω direkt zwischen a und b jedes markierten Widerstands, beide Richtungen. Zuordnung zu Treiberanschlüssen erst nach direkter Bahn-/Durchgangsprüfung dokumentieren.
+**Stand / Messmodus.** 09.11.2026: Ω zwischen den bestehenden a/b-Endkappen, beide Richtungen, stromlos in-circuit. Blätter 05/05b gemeinsam abgearbeitet; nächste Prüfungen Blatt 06 Hilfsversorgung. Vollständiger Ergebnisbericht: Q2_TREIBER_ERGEBNISSE_2026-11-09.md.
 
-**Bisher.** Keine Einzelmesswerte dieser drei Widerstände in den Netzlisten dokumentiert.
+**Ergebnisse / Korrektur.** R1001: 979/977 Ω; anfängliche kΩ-Einheit ausdrücklich korrigiert. Bisherige Foto-ID R221: tatsächlicher Code 2211 = 2,21 kΩ, gemessen 2,09 kΩ beidseitig. Früherer 220-Ω-Sollwert war ein Lesefehler. R4752: 4,16 kΩ beidseitig bei Code 4752 = 47,5 kΩ.
 
-**Erwartung.** Aufdrucke [I]: 1001 → 1 kΩ; 221 → 220 Ω; 4752 → 47,5 kΩ. Eingelötet können Parallelpfade niedrigere/zeitabhängige Werte ergeben. Der separat markierte Gate-R trägt 220 → 22 Ω; nicht mit 221 verwechseln.
+**Zuordnung / Grenzen.** Alias R2211 ergänzt die alte Foto-ID R221; a/b-Pixel unverändert. Eingelötete Werte können durch Parallelpfade niedriger sein. Kein eindeutiger Einzelwiderstandsdefekt nachgewiesen. Neues Originalmakro 50386.jpg ohne EXIF gesichert; keine generierten Platineninhalte.
 
-**Grenze / Zuordnung.** Neue lokale Foto-IDs, keine unterstellten Hersteller-Designatoren. Codes sind im Originalmakro um 180° gedreht. Keine Nennwerte als schon gemessen verbuchen; elektrische Funktion dieser Widerstände bleibt offen.
+[Ergebnisbericht](Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [neue Originalaufnahme](../../photos/2026-11-09/q2/50386.jpg)
 
 | Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
 |---|---|---|---|
 | R1001-a | 365, 390 | F | linkes Ende im Originalfoto, Code 1001 |
 | R1001-b | 521, 390 | F | rechtes Ende im Originalfoto |
-| R221-a | 616, 390 | F | linkes Ende im Originalfoto, Code 221 |
+| R221-a | 616, 390 | F | linkes Ende im Originalfoto, Code 2211 (Alias R2211) |
 | R221-b | 777, 390 | F | rechtes Ende im Originalfoto |
 | R4752-a | 363, 560 | F | linkes Ende im Originalfoto, Code 4752 |
 | R4752-b | 522, 560 | F | rechtes Ende im Originalfoto |

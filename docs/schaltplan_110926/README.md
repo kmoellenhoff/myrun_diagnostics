@@ -1,6 +1,6 @@
 # GIRT S6T30: Teilschaltplan und weitere Fehlereingrenzung
 
-Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–04 sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
+Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–05/05b sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
 
 [Schaltplan als PDF](teilschaltplan.pdf) · [Fotoatlas](../atlas_110926/README.md) · [Markierte Messkontakte und Messwertvorlage](../messplan_stromlos_2026-11-08/MESSPLAN.md) · [Verbindungsnachweis als CSV](verbindungen.csv)
 
@@ -8,7 +8,7 @@ Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die
 
 | Blatt | Inhalt | Noch offen |
 |---|---|---|
-| [1: Motorstufe](blatt_1.svg) | L+/L−, Q2, Body-Diode, D3, 22-Ω-Gate-Pfad; NTC und Relais als getrennte Fragmente | Treibertyp und Pin-Funktionen, Versorgung/Freigabe, Relais-Netzanbindung |
+| [1: Motorstufe](blatt_1.svg) | L+/L−, Q2, Body-Diode, D3, 22-Ω-Gate-Pfad; NTC und Relais als getrennte Fragmente | B=0VA und E–RG-U elektrisch bestätigt; Typ, übrige Pin-Funktionen, Versorgung/Freigabe und Relais-Netzanbindung offen |
 | [2: B18/B19](blatt_2.svg) | B18-Kette, zwei B19-1003, 3922-Fusspunkt zu 0VA und gemessener Weg zu L4981AD Pin 14 VFEED | B19-1004-Einbindung, C-Weiterweg, P2–0VA-Endwert und B20-Netze |
 | [3: B10 und Anschlüsse](blatt_3.svg) | Beide AC-Sense-Ketten mit Dioden; direkte P2/P4-Verbindungen | Kathoden-Auswertung, PWM-/Enable-/Tachoweg bis zu bestimmten IC-Pins |
 
@@ -31,7 +31,7 @@ Die gestrichelte graue Linie zwischen P4.TACHO und P2.9 auf Blatt 3 bezeichnet a
 
 Die Zuordnung Q2-D = L− und Q2-S = 0VA folgt dem bisherigen Stand, dem Pinout und Diodentest. Ein neues separates Pad-zu-Klemmen-Durchgangsprotokoll liegt nicht vor. Bei D3 wurde Schwarz = L+ im ursprünglichen PW-M01-Protokoll angenommen. Dieser Vorbehalt bleibt erhalten.
 
-B19-Rin bezeichnet E1–E2: **1003 = 100 kΩ**. Die frühere Lesung 1001 / 1 kΩ ist korrigiert. P1–E1 misst 0,4 Ω; E2 = B19-Pad A, der weitere Weg führt über den linken 1003 zu Pad B. B–L4981AD Pin 14 (VFEED) ist mit 0 Ω bestätigt. Der 3922-Fusspunkt liegt an 0VA. [Alle neuen Werte und Grenzen](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Am Treiber heißen die fünf Kontakte **A/B/C/D5/E**, entsprechend dem markierten Originalmakro. Das sind keine Hersteller-Pinnummern. E → RG-U ist als sichtbare Bahn eingezeichnet; die Funktion „OUT“ oder eine bestimmte Treiberversorgung wird daraus noch nicht abgeleitet.
+B19-Rin bezeichnet E1–E2: **1003 = 100 kΩ**. Die frühere Lesung 1001 / 1 kΩ ist korrigiert. P1–E1 misst 0,4 Ω; E2 = B19-Pad A, der weitere Weg führt über den linken 1003 zu Pad B. B–L4981AD Pin 14 (VFEED) ist mit 0 Ω bestätigt. Der 3922-Fusspunkt liegt an 0VA. [Alle neuen Werte und Grenzen](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Am Treiber heißen die fünf Kontakte **A/B/C/D5/E**, entsprechend dem markierten Originalmakro. Das sind keine Hersteller-Pinnummern. E → RG-U ist mit ≈0 Ω elektrisch bestätigt, B mit 0 Ω beidseitig als 0VA. Herstellerpinout, Typ und tatsächliche Versorgung bleiben offen. [Ergebnisse 05/05b mit korrigiertem Widerstandscode 2211](../messplan_stromlos_2026-11-08/Q2_TREIBER_ERGEBNISSE_2026-11-09.md).
 
 Die Relais-Pinzuordnung basiert auf Gehäuselage und RT1-Pinraster. Ca/Cb sind das Spulenpaar; ihre individuelle A1/A2-Zuordnung bleibt offen. 11a/11b und 14a/14b sind abgeleitete Kontakt-Doppelpaare, keine neuen Messbefunde. Herstellerangaben: [TE RT334024](https://www.te.com/en/product-4-1393240-8.html), 24 V DC, 1,44 kΩ Spule, 0,4 W, Schließer. Der Nennwert gilt für die Spule allein, nicht beliebig für die eingelötete Umgebung.
 
@@ -54,11 +54,11 @@ Das dokumentierte Multimeter/MAX-Verfahren konnte kurze Ausgangspulse unter etwa
 
 ## Nächste Messungen
 
-Blätter 01–04 sind im dokumentierten Umfang abgearbeitet: [Relais](../messplan_stromlos_2026-11-08/ERGEBNISSE_2026-11-09.md), [P600](../messplan_stromlos_2026-11-08/P600_ERGEBNISSE_2026-11-09.md), [B18/B19](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Die historischen Werte in den übrigen Schaltplanblättern bleiben als Referenzen erhalten; die Ergebnisberichte haben für den Messstand Vorrang.
+Blätter 01–05/05b sind im dokumentierten Umfang abgearbeitet: [Relais](../messplan_stromlos_2026-11-08/ERGEBNISSE_2026-11-09.md), [P600](../messplan_stromlos_2026-11-08/P600_ERGEBNISSE_2026-11-09.md), [B18/B19](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Die historischen Werte in den übrigen Schaltplanblättern bleiben als Referenzen erhalten; die Ergebnisberichte haben für den Messstand Vorrang.
 
 Blatt 04: [B20-Ergebnisse und neues Originalmakro](../messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md). **Tb = 0VA ist gemessen**; Typ, R4-Code und vollständige B20-Netze bleiben offen. Der bestehende dreiseitige Teilschaltplan wird durch dieses bestätigte Fragment im Ergebnisbericht ergänzt.
 
-Als Nächstes **Q2-Treiber (Blätter 05/05b)**, danach Hilfsversorgungen (06/07) gemäß [Messplan](../messplan_stromlos_2026-11-08/MESSPLAN.md). Keine pauschalen Sollwerte für unbekannte Halbleiterpins.
+Q2/Treiberblock 05/05b: [Messungen und Korrekturen](../messplan_stromlos_2026-11-08/Q2_TREIBER_ERGEBNISSE_2026-11-09.md). Kein eindeutiger Defekt nachgewiesen; Nutzeraufdruck 1000CA bleibt ohne bestätigten Typ. Als Nächstes **Hilfsversorgungen (Blätter 06/07)** gemäß [Messplan](../messplan_stromlos_2026-11-08/MESSPLAN.md). Keine pauschalen Sollwerte für unbekannte Halbleiterpins.
 
 **Verschmutzung bleibt eine offene Hypothese.** Leitfähige/feuchte Rückstände können die hochohmige Rückführung verändern; das Foto beweist keine Leitfähigkeit. Eine spätere geeignete Reinigung mit dokumentiertem Vorher-/Nachhervergleich bei gleichen Messbedingungen kann den Verdacht prüfen. Sie wurde noch nicht durchgeführt und ersetzt keinen Nachweis des Fehlerverhaltens.
 
@@ -68,6 +68,6 @@ Netz und externe Versorgung trennen; Restspannung am Zwischenkreis-Elko zuerst i
 
 ## Nachprüfbarkeit
 
-`verbindungen.csv` enthält 89 Einträge mit Art, Status und Quellen. `Kupfer direkt`, `Widerstand`, `Diode` und `In-Circuit-Messung` bleiben verschiedene Kategorien. Nur direkte Kupferverbindungen dürfen beim Weiterzeichnen zu einem gemeinsamen Netz zusammengefasst werden; Werte im kΩ-/MΩ-Bereich dürfen das nicht.
+`verbindungen.csv` enthält 117 Einträge mit Art, Status und Quellen. `Kupfer direkt`, `Widerstand`, `Diode` und `In-Circuit-Messung` bleiben verschiedene Kategorien. Nur direkte Kupferverbindungen dürfen beim Weiterzeichnen zu einem gemeinsamen Netz zusammengefasst werden; Werte im kΩ-/MΩ-Bereich dürfen das nicht.
 
 Die Originalquellen bleiben maßgeblich: `STAND_2026-11-08.md`, die aktuelle Fassung `netlist/b18_spannungssense_kandidat.md` ohne verworfene Historie, `netlist/q2_zuordnung.md` mit Ergebnisstand 21:39, die Mess-CSV-Dateien und `HARDWARE.md`. Die ältere unbestätigte Annahme P2 = L− und die pauschale Gate-Pulldown-Erwartung aus einem Zwischenstand werden nicht übernommen.
