@@ -1,0 +1,36 @@
+[
+  {
+    "source": "PXL_20261109_090536653.MACRO_FOCUS.jpg",
+    "sanitized": "PXL_20261109_090536653.MACRO_FOCUS.jpg",
+    "source_sha256": "a2c670730703d851856c0c37ae45352324ca8f80e567c28687324e49ffecb780",
+    "sanitized_sha256": "1802cf5f2139460db981057bb3cb931823c38a84ae4b480ff1a8b8a16d211519",
+    "exif_removed": true,
+    "decoded_pixels_unchanged": true,
+    "removed_marker_types": [
+      "0xe1",
+      "0xe1",
+      "0xe1",
+      "0xe1"
+    ],
+    "source_archive": "Photos-1-001.zip",
+    "board_location": "P600 / F15 / B5",
+    "original_metadata_values_published": false
+  },
+  {
+    "source": "PXL_20261109_090553655.MACRO_FOCUS.jpg",
+    "sanitized": "PXL_20261109_090553655.MACRO_FOCUS.jpg",
+    "source_sha256": "0d0684da7975ed3422d1160224f6831c7a97859cb582de580e7d377c929d7ff9",
+    "sanitized_sha256": "e8c5a3d4b8e2b2a23c33675e5732898de5921fc6a9b59aeb1d26ff365ad29b6c",
+    "exif_removed": true,
+    "decoded_pixels_unchanged": true,
+    "removed_marker_types": [
+      "0xe1",
+      "0xe1",
+      "0xe1",
+      "0xe1"
+    ],
+    "source_archive": "Photos-1-001.zip",
+    "board_location": "P600 / F15 / B5",
+    "original_metadata_values_published": false
+  }
+]

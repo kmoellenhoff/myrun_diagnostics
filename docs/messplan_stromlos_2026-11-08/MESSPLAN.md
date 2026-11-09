@@ -2,7 +2,7 @@
 
 Basis: `9d1f74617b602f57db36a1993998581de360b832` · Auswertung 08.11.2026 · keine neuen Messwerte
 
-**Nachtrag 09.11.2026:** Blatt 01 (RT334024) ist stromlos abgearbeitet. [Berichtete Werte und Interpretation](ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Der folgende Plantext, das PDF und die leere CSV-Vorlage beschreiben weiterhin den Planstand vom 08.11.2026. Blatt 02 (P600) wird als Nächstes bearbeitet; dessen laufende Werte sind hier noch nicht eingepflegt.
+**Nachtrag 09.11.2026:** Blatt 01 (RT334024) und Blatt 02 (P600/NTC) sind im beschriebenen stromlosen Umfang abgearbeitet. [Ergebnisse Blatt 01](ERGEBNISSE_2026-11-09.md) · [Ergebnisse Blatt 02 mit Sichtprüfung und Testgrenzen](P600_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Der folgende Plantext, das PDF und die leere CSV-Vorlage beschreiben weiterhin den Planstand vom 08.11.2026. Als Nächstes folgt Blatt 03 (B18/B19).
 
 **Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Es wurden keine neuen elektrischen Messungen durchgeführt.
 

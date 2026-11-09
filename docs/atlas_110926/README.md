@@ -2,6 +2,8 @@
 
 **Alle 110 Originalfotos sind erfasst:** 57 Rückseite, 41 Vorderseite, 3 Q2, 7 verkleinerte Inspektionsfotos und 2 Übersichtskopien. Originaldateien und ursprünglicher Rückseitenindex bleiben unverändert.
 
+**Foto-Nachtrag 09.11.2026:** [Zwei weitere Aufnahmen von P600-Buchse und Kabelstecker](../../photos/2026-11-09/p600/README.md), vor dem GitHub-Upload von EXIF/Metadaten bereinigt. Der folgende Index und Kontaktatlas bleiben der historische Bestand vom 08.11.2026.
+
 [Kontaktatlas als PDF](kontaktatlas.pdf) · [Vollständiger Index CSV](fotoindex.csv) · [Bauteil-/Foto-Suchindex](bauteil_fotoindex.csv) · [Registrierungen/Originalprüfsummen JSON](registrierungen.json) · [Teilschaltplan und Diagnose](../schaltplan_110926/README.md)
 
 | Teil | Fotos |
