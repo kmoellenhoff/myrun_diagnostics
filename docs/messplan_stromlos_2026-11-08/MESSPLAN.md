@@ -1,10 +1,10 @@
 # GIRT S6T30 – stromloser Messplan mit Originalmakros
 
-Basis: `9d1f74617b602f57db36a1993998581de360b832` · Auswertung 08.11.2026 · keine neuen Messwerte
+Basis: `9d1f74617b602f57db36a1993998581de360b832` · Plan 08.11.2026 · Ergebnisse/Nachtrag 09.11.2026
 
-**Nachtrag 09.11.2026:** Blatt 01 (RT334024) und Blatt 02 (P600/NTC) sind im beschriebenen stromlosen Umfang abgearbeitet. [Ergebnisse Blatt 01](ERGEBNISSE_2026-11-09.md) · [Ergebnisse Blatt 02 mit Sichtprüfung und Testgrenzen](P600_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Der folgende Plantext, das PDF und die leere CSV-Vorlage beschreiben weiterhin den Planstand vom 08.11.2026. Als Nächstes folgt Blatt 03 (B18/B19).
+**Nachtrag 09.11.2026:** Blätter 01–03 sind im jeweils dokumentierten stromlosen Umfang abgearbeitet. [Blatt 01](ERGEBNISSE_2026-11-09.md) · [Blatt 02](P600_ERGEBNISSE_2026-11-09.md) · [Blatt 03: B18/B19, Korrekturen und offene Punkte](B19_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Blatt 03, Quellenabgleich und PDF sind nachgeführt; andere Planabschnitte enthalten den ursprünglichen Ausgangsstand. **Als Nächstes Blatt 04 (B20).**
 
-**Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Es wurden keine neuen elektrischen Messungen durchgeführt.
+**Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Diese Arbeitsgrundlage beschreibt den Planstand vom 08.11.; die Nutzer-Messungen vom 09.11. stehen in den verlinkten Nachträgen.
 
 **Koordinaten unverändert.** Claudes Raster bleibt A–L × 1–6, dasselbe Feld auf beiden Platinenseiten. Variante A: Vorderseite wie fotografiert, Rückseite vertikal gespiegelt. Variante B: Rückseite wie fotografiert, Vorderseite vertikal gespiegelt; Zeilen 6 oben bis 1 unten. Makros werden hier weder gedreht noch gespiegelt. Die Zusatz-IDs identifizieren nur Anschlüsse im jeweiligen Originalmakro. Rasterangaben bleiben grob (laut Quelle etwa ±1 Feld).
 
@@ -70,13 +70,13 @@ B18 = E5; B19 = E6; Rückseite, Makro gedreht
 
 Original: [photos/2026-11-08/back/PXL_20261108_153921371.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(1150, 700, 4080, 1750)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
 
-**Messmodus.** PATH-01: Ω P1–E1, nur blankes Kontaktmetall. PATH-02: Ω E1–E2, beide Richtungen. B18-01: Ω P2–0VA (Blatt 06), Endwert/Verlauf und Gegenrichtung notieren.
+**Messmodus / Stand.** Ω, stromlos, in-circuit. Nachtrag 09.11.2026: Blatt 03 im geprüften Umfang abgeschlossen; nächste Messungen auf Blatt 04 (B20). Alle Einzelwerte, Polungen und Grenzen: B19_ERGEBNISSE_2026-11-09.md und ausgefüllte Ergebnis-CSV.
 
-**Bisher.** B18-M05/06: P1–0VA 223,7 kΩ; P1–+5VA 226,4 kΩ, konstant. M07: P2–0VA 6 MΩ fallend, kein Endwert. M08: P2–L+ 0 Ω. M10/11: V1–0VA 1,211 MΩ, V1–+5VA 1,206 MΩ. P1–P2 170 kΩ / 619 kΩ, jeweils steigend.
+**Ergebnisse.** P1–E1 0,4 Ω. E1–E2 zuerst 97,6 kΩ, erneut 102,6/90,4 kΩ; benachbarter 1003 gleich. 3922: 38,43/38,91 kΩ. Beide B19-1004 parallel bestätigt: 498/496 kΩ. 4750: 478 Ω beidseitig (korrigierte Einheit). P2–0VA bis 6 MΩ steigend, dann fallend; Endwert offen.
 
-**Erwartung.** P1–E1: etwa Spitzenwiderstand, sofern die sichtbare Bahn intakt ist. E1–E2: Aufdruck legt 1 kΩ nahe, in-circuit kein isolierter Nennwerttest. P2–0VA: Modell nennt etwa 1,5 MΩ (früher 1,5–2,7 MΩ); Hypothese, kein Grenzwert.
+**Korrektur / Zuordnung.** E1–E2 trägt 1003 = 100 kΩ; der frühere 1-kΩ-Planwert war ein Lesefehler. E2 = Pad A; A zum oberen linken 1003, dessen unteres Ende = Pad B: je 0 Ω. B–L4981AD Pin 14 (VFEED): 0 Ω. Rechte Kappe 3922 und linke Kappe 4750: je 0 Ω zu 0VA. C–0VA: 478 Ω.
 
-**Grenze / Zuordnung.** P2 ist L+, nicht L−. V1/V2 sind Messpads, keine Ebenenwechsel. Fusspunkt 0VA gegenüber +5VA bleibt unbewiesen. Die Funktion als Busspannungsüberwachung ist plausibel [H]. E1 ist ein konkreter nächster Bahnkontakt; der Weg hinter E2 bis zum Messeingang ist offen. Neue Makros beider Seiten bleiben nötig; die Vorderseite ist hier durch den Kühlkörper verdeckt.
+**Erwartung / Grenzen.** Nominalmodell: L+ über 1 MΩ + 1 MΩ + 475 kΩ + 100 kΩ + 100 kΩ zu B; 39,2 kΩ von B nach 0VA. Widerstands-Codes sind keine isolierten Einzelmessungen. B19-1004-Einbindung und C-Weiterweg offen. Verschmutzungsleck möglich, nicht nachgewiesen. Kein verursachender Bauteildefekt belegt.
 
 | Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
 |---|---|---|---|
@@ -84,8 +84,8 @@ Original: [photos/2026-11-08/back/PXL_20261108_153921371.jpg](https://github.com
 | P2 | 3851, 1443 | M | B18-P2 = DC MOTOR L+; quadratisches Pad |
 | V1/TP1 | 3256, 1596 | F | R2/R3-Abgriff; Testpad, kein Via |
 | V2/TP2 | 3458, 1262 | F | Netz R3/P2; Testpad, kein Via |
-| E1 | 1912, 1097 | F | B19: rechtes Pad des unteren horizontalen 1001-Widerstands; sichtbare Bahn ab P1 |
-| E2 | 1795, 1097 | F | anderes Ende desselben Widerstands; Aufdruck 1001 = 1 kΩ [I] |
+| E1 | 1912, 1097 | F | B19: rechtes Pad des unteren horizontalen 1003-Widerstands; sichtbare Bahn ab P1 |
+| E2 | 1795, 1097 | F | anderes Ende desselben Widerstands; Aufdruck 1003 = 100 kΩ [I] |
 
 ## Blatt 04 – B20: vier Widerstände und SOT-23
 
@@ -217,15 +217,15 @@ Original: [photos/2026-11-08/front/PXL_20261108_155137120.jpg](https://github.co
 
 ## Quellenabgleich und offene Zuordnungen
 
-**B18-Historie.** Maßgeblich ist b18_spannungssense_kandidat.md Abschnitt 1–5. P2 = L+ ist gemessen; P2 = L− ist widerlegt. V1/V2 sind Testpads, keine Vias. Die älteren B18-H-Zeilen in b10_netlist.csv enthalten noch „Via“ und sind dafür nicht maßgeblich. Die Rohmessung B18-M06 formuliert den Fusspunkt zu sicher: 223,7/226,4 kΩ beweisen 0VA gegenüber +5VA nicht.
+**B18/B19 aktuell.** 09.11.2026: B19 E1–E2 ist 1003 = 100 kΩ, kein 1-kΩ-R. Teiler zu L4981AD Pin 14 (VFEED) und 39,2-kΩ-Fusspunkt zu 0VA bestätigt. Historische 223,7/226,4 kΩ bleiben effektive Messwerte. P2 = L+, nicht L−; TP1/TP2 sind Testpads, keine Vias. P2–0VA-Endwert weiterhin offen.
 
 **Q2-Stand.** In q2_zuordnung.md stehen oben „Messung offen“ und alte Erwartungsbereiche; die Ergebniszeilen 21:39 und PW-M03…M06 haben Vorrang. Gate-Pulldown ist 9,13 kΩ, nicht pauschal mehrere 10–100 kΩ. G–D ist mit 2,19 MΩ dokumentiert, daher ist OL kein zwingendes stromloses Soll. Die Gate-Seite im Makro liegt links, in der aufrechten Rückseitenübersicht rechts.
 
 **B10-Stand.** B10 bleibt statisch unauffällig; intermittierende Fehler bleiben möglich. B10-M16 (J1–L+ 1 kΩ) wurde durch M29 (11 kΩ Start, nach ca. 1 min 4 MΩ, Verlauf) ersetzt. B10-M21: J2/X3 sind Farbpunkte bzw. Bereiche mit Lack, keine verlässlich blanken Messpads; frühere J-Messungen erfolgten am Dioden-Kathodenanschluss. Keine neuen Messspitzen auf einen Farbpunkt setzen.
 
-**Raster / Sicherheit der Zuordnung.** F27 ist eine Bauteil-ID, kein Feld F27: Feld I4. F15 ist P600, Feld B5. B19/B20: E6. Es wurde kein Raster an Makros neu aufgespannt. Der Rasterindex lokalisiert Mittelfeld/Ecken nur ungefähr; an einigen Fotos fehlt die Lokalisierung. Bei B18-P1 ist im Foto nur der Weg bis zum B19-Widerstand sichtbar; der Messeingang dahinter bleibt unbewiesen.
+**Raster / Sicherheit der Zuordnung.** F27 ist eine Bauteil-ID, kein Feld F27: Feld I4. F15 ist P600, Feld B5. B19/B20: E6. Es wurde kein Raster an Makros neu aufgespannt. Der Rasterindex lokalisiert Mittelfeld/Ecken nur ungefähr; an einigen Fotos fehlt die Lokalisierung. Nachtrag 09.11.: B19-Pad B ist mit 0 Ω zu L4981AD Pin 14 (VFEED) bestätigt.
 
-**Offen.** Treiber-Typ und Herstellerpinbelegung, B19/B20-Funktion, B18-Teilerfusspunkt und vollständiger Messeingang, 24-V-Return-Zugehörigkeit, Relaiskontaktverhalten im Betrieb, Elko-ESR/Kapazität und dynamische Versorgung. Keine Bauteile allein aufgrund dieser Foto-/In-Circuit-Auswertung ersetzen. Scharfe neue Vorder-/Rückseitenmakros anfordern, wo Kontakte unter dem Kühlkörper oder Gehäusen verborgen bleiben.
+**Offen.** Treiber-Typ und Herstellerpinbelegung, B20-Funktion, Einbindung des B19-1004-Paars, C-Weiterweg, P2–0VA-Endwert, 24-V-Return-Zugehörigkeit, Relaiskontaktverhalten im Betrieb, Elko-ESR/Kapazität und dynamische Versorgung. Keine Bauteile allein aufgrund dieser Foto-/In-Circuit-Auswertung ersetzen. Scharfe neue Vorder-/Rückseitenmakros anfordern, wo Kontakte unter dem Kühlkörper oder Gehäusen verborgen bleiben.
 
 **Herstellerquelle.** TE Connectivity, RT334024 / 4-1393240-8: 24-V-DC-Spule, 1440 Ω, 0,4 W, 1 Form A (Schließer). Datenblatt RT1, Spulentabelle bei 23 °C ±10 %, Bottom View 16 A / 5 mm. Quelle: https://www.te.com/en/product-4-1393240-8.html und verlinktes RT1-Datenblatt, Seiten 3 und 5 (abgerufen 08.11.2026). Es wurden keine Herstellerbilder in die Fotomarkierungen übernommen.
 
@@ -236,4 +236,4 @@ Original: [photos/2026-11-08/front/PXL_20261108_155137120.jpg](https://github.co
 - `messprotokoll_vorlage.csv`: geplante Messungen mit bisherigen Werten/Erwartungen; neue Felder leer.
 - `foto_nachweis.json`: Quellfoto, Commit, SHA-256, Ausschnitt und exakte Originalpixel jedes Markers.
 
-Die Verbindung zwischen Quellpixel und PNG lautet: `x_PNG = x_Original − x0`; `y_PNG = y_Original − y0 + header_px`. Die Pixel außerhalb der Overlays wurden automatisch gegen den Originalausschnitt verglichen. Sämtliche bereits vorhandenen Repository-Dateien werden nach der Erstellung per SHA-256 auf Unverändertheit geprüft.
+Die Verbindung zwischen Quellpixel und PNG lautet: `x_PNG = x_Original − x0`; `y_PNG = y_Original − y0 + header_px`. Die Pixel außerhalb der Overlays wurden automatisch gegen den Originalausschnitt verglichen. Die Originalfotos und der originale Rasterindex bleiben unverändert; aktuelle Dokumente werden mit ausgewiesenen Nachträgen fortgeschrieben.

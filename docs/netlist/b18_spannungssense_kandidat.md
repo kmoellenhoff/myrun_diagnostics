@@ -1,48 +1,40 @@
-# B18 – Busspannungs-Teiler (Kandidat für die Spannungsüberwachung DC-Bus/Motor), Rückseite E5
+# B18/B19 – Spannungsrückführung zum L4981AD
 
-**Maßgeblicher Stand: 2026-11-08 21:40.** Abschnitt 1–4 gilt; verworfene Zwischenhypothesen stehen nur in Abschnitt 6 (Historie) und dürfen **nicht** für Messungen verwendet werden.
-Sicherheitsgrade: [M] gemessen, [I] aus Foto/Aufdruck gelesen, [H] Hypothese.
+**Maßgeblicher Stand: 09.11.2026.** Claudes Raster bleibt B18 E5, B19/B20 E6. M = gemessen, F = sichtbare Bahn, I = Code/Hersteller-Pinout, H = Hypothese. Historische Rohmessungen bleiben erhalten; Abschnitt 6 enthält verworfene Annahmen.
 
 ## 1. Maßgebliche Schaltung
 
-```
-DC MOTOR L+ (= DC-Bus nach Drossel)
-   │  0 Ω [M]
-  B18-P2 (quadratisches Pad)
-   │
-  B18-R3  1 MΩ  [I]
-   │
-  B18-V1 (TP1, Messpunkt, Abgriff)
-   │
-  B18-R2  1 MΩ  [I]
-   │
-  B18-R1  475 kΩ [I]
-   │
-  B18-P1 (rundes Pad auf der Bahn) ──► Bahn nach B19 (Widerstandsblock, E6) → Messauswertung [H]
-   │
-  ≈ 221 kΩ gegen 0VA  [M: P1↔0VA 223,7k konstant; P1↔+5VA 226,4k konstant]
+```text
+DC MOTOR L+ = B18-P2 [M, 0 Ω]
+  → R3 1 MΩ (1004) → V1/TP1 → R2 1 MΩ (1004)
+  → R1 475 kΩ (4753) → P1 [F]
+  → E1 [M, 0,4 Ω] → 1003 rechts / 100 kΩ → E2 = Pad A [M]
+  → 1003 links / 100 kΩ → Pad B [F + Endkappenverbindungen M]
+  → 3922 / 39,2 kΩ → 0VA [F + Endkappe–0VA M]
+
+Pad B → L4981AD Pin 14 VFEED [M, 0 Ω; Funktion Hersteller-Pinout]
+0VA → 4750 / 475 Ω → Pad C [F]; C-Weiterweg offen
+B19: zwei zusätzliche 1004 / 1 MΩ parallel [M]; Einbindung offen
 ```
 
-- Teilerverhältnis nur über diese Widerstände ≈ 8 % (≈ 221k / 2,70 M). Was B19 danach noch teilt/filtert, ist **nicht bekannt**.
-- Funktion „Busspannungs-Überwachung“ ist [H, plausibel], aber nicht bewiesen; der Fusspunkt „0VA“ ist wahrscheinlich, nicht belegt (Differenz 0VA/+5VA nur 2,7k ≈ Messfehler).
-- Die Messwerte (Abschnitt 3) sind in-circuit; Kondensatoren/Halbleiter verfälschen die Anzeige (steigend/fallend). Einzelwerte sind keine Bauteil-Nennwerte.
+Nominales unbelastetes Modell an B: R_oben 2,675 MΩ, R_unten 39,2 kΩ, Verhältnis 1,444 %. 5,1 V am Abgriff entsprächen rechnerisch 353,1 V am Eingang; kein gemessener Betriebswert und kein bestätigter realer Sollwert. Eingangsbeschaltung, Referenzbezug und Dynamik sind nicht vollständig geprüft. Die Funktion Spannungsrückführung zum PFC-Regler ist durch die Verbindung zu VFEED identifiziert. Ein Fehler in diesem Netz ist damit nicht bewiesen.
 
 ## 2. Lage und Bauteil-IDs
 
-Lage: Rückseite, Raster **E5** (± 1), unterhalb des SO-20-IC (B3); Vorderseite liegt der Bereich unter dem Kühlkörper. Übersichts-IDs: **B18** = Kette, **B19** = Widerstandsblock (E6), **B20** = Reihe aus 4 Widerständen + SOT-23 (E6).
-Fotos: `img/b18_chain_annotiert_aufrecht.jpg`, `img/b18_chain_annotiert_foto.jpg`, `img/b18_chain_4753_1004_1001.jpg`, `img/b18_context_wide.jpg`.
+Originale B18-IDs und TP1/TP2 bleiben unverändert. TP1/TP2 sind Testpads, keine Vias; TP2 liegt am R3/P2-Netz. B19-Rin bezeichnet weiterhin E1–E2, jetzt korrekt **1003 = 100 kΩ**. E1/E2 behalten die Originalpixel des Messplans. A/B/C sind nur lokale B19-Padnamen in der neuen Nutzerfoto-Orientierung (IC links, 1003 oben), keine Rasterkoordinaten.
 
-| ID | Aufdruck | Wert | Grad | Bemerkung |
-|---|---|---|---|---|
-| B18-R1 | 4753 | 475 kΩ | I | wie die Netz-Ketten in B10 |
-| B18-R2 | 1004 | 1,00 MΩ | I | |
-| B18-R3 | "h001" = 1004 um 180° gedreht | 1,00 MΩ | I | |
-| B18-P1 | rundes verzinntes Pad auf der Bahn links von R1 | – | I | Messknoten, Bahn schräg nach B19 |
-| B18-P2 | quadratisches verzinntes Pad rechts von R3 | – | I/M | = DC MOTOR L+ (0 Ω) [M] |
-| B18-V1 (=TP1) | Rundpad (Messpunkt, kein Via) unter dem R2/R3-Knoten | – | I | Abgriff |
-| B18-V2 (=TP2) | Rundpad (Messpunkt) über dem rechten Ende von R3 | – | I | Netz von R3/P2 |
+| Teil | Aufdruck / Nennwert | Nachweis |
+|---|---|---|
+| B18-R1 | 4753 / 475 kΩ | I, historische In-Circuit-Messung |
+| B18-R2 und R3 | 1004 / je 1 MΩ | I, historische In-Circuit-Messung |
+| B19-Rin (E1–E2) | 1003 / 100 kΩ | I; 97,6 kΩ, wiederholt 102,6/90,4 kΩ M |
+| B19-1003 links | 1003 / 100 kΩ | I; 102,6/90,4 kΩ M |
+| B19-3922 | 3922 / 39,2 kΩ | I; 38,43/38,91 kΩ M |
+| B19-4750 | 4750 / 475 Ω | I; 478 Ω beide Richtungen M |
+| B19-1004-Paar | je 1 MΩ, parallel nominal 500 kΩ | I und Verbindungen M; 498/496 kΩ M |
+| B3, SO20 | ST L4981AD | neues Nutzer-Originalmakro; Pin 14 VFEED laut ST-Datenblatt |
 
-B19 (Widerstandsblock, Aufdrucke u. a. "1003", "1001", mehrere hochkant stehende Widerstände, kleine SMD-Kondensatoren) und B20 (Reihe aus 4 Widerständen + SOT-23): **Aufdrucke nicht sicher lesbar**, Funktion offen → scharfe Makros beider Seiten nötig.
+[Alle Messungen, Paddefinitionen und Grenzen vom 09.11.](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). [ST L4981-Datenblatt](https://www.st.com/resource/en/datasheet/l4981.pdf). B20 bleibt eine Reihe aus vier Widerständen und SOT-23, Werte/Funktionen offen.
 
 ## 3. Messwerte (alle in-circuit, stromlos; Rohdaten: `messprotokoll_b18.csv`)
 
@@ -60,7 +52,7 @@ B19 (Widerstandsblock, Aufdrucke u. a. "1003", "1001", mehrere hochkant stehende
 | B18-M10 | V1↔0VA | 1,211 MΩ | |
 | B18-M11 | V1↔+5VA | 1,206 MΩ | |
 
-Auswertung: Alle drei Widerstände messen unter Nennwert, weil parallel der Rest des Netzes liegt (R1 ∥ (R2+R3+Rest) ≈ 384k, R2 ∥ (R1+R3+Rest) ≈ 596k, jeweils passend). Der Aussenpfad P1–P2 beträgt ≈ 180 kΩ vorwärts / ≈ 830 kΩ rückwärts (steigend, Ladeeffekt/Halbleiter). V1↔0VA ≈ 1,2 MΩ passt zum Tap-Modell (Rx ≈ 3,2 M von L+ gegen 0VA über übrige Pfade).
+Historische Modellrechnung vom 08.11.: Die damaligen niedrigeren In-Circuit-Werte wurden durch Parallelpfade modelliert. Daraus folgen weder isolierte Bauteilwerte noch ein nachgewiesener physischer 221-kΩ-Widerstand. Der aktuelle Verlauf und die Ergebnisse vom 09.11. stehen im verlinkten B19-Bericht.
 
 ## 4. Zusammenhang Leistungsstufe (messprotokoll_leistungsteil.csv, `q2_zuordnung.md`)
 
@@ -68,13 +60,12 @@ L+ = DC-Bus (nach Drossel), L− = Q2-Drain (Low-Side), 0VA = Source/DC−. D3 (
 
 ## 5. Offene Punkte
 
-- B19/B20: Aufdrucke lesen (Makros Vorder- und Rückseite), Weg von P1 bis zum Messeingang (MCU/Komparator LM2903/TL082?) verfolgen.
-- P2↔0VA einschwingen lassen (Endwert, Modell erwartet ≈ 1,5 M).
-- P2↔L− = 300 kΩ steigend: Ursache offen (Bleeder/Snubber/D3/Q2-Umfeld?).
-- Fusspunkt von P1: 0VA oder +5VA (Differenz 2,7k im Messfehler) – eindeutig nur über die Bahn bzw. eine Messung mit höherer Auflösung.
-- Funktion als Busspannungs-Überwachung nur live prüfbar (Trenntrafo nötig, nicht vorhanden).
-
-Nicht tun: nichts auslöten, nichts verbinden; Bereich liegt auf Netzpotenzial (0VA = DC−).
+- Blatt 04: B20 scharf fotografieren, Codes lesen und Netze gezielt verfolgen.
+- P2–0VA: neuer Verlauf steigend bis 6 MΩ, dann fallend; Endwert und Gegenrichtung fehlen.
+- B19-1004-Parallelnetz: Einbindung der gemeinsamen Enden offen; Pad C: weitere Funktion offen.
+- OVP-Pin 3 und Signal-/Leistungsmasse des L4981AD nicht separat verfolgt; +5VA nicht als VREF annehmen.
+- Leitfähige Verschmutzung an Pins/Pads ist möglich, aber durch Fotos und Messwerte nicht bewiesen. Vergleich vor/nach geeigneter Reinigung bei gleicher Polung, Temperatur und Ablesezeit wäre aussagekräftig.
+- P2–L−-Ladeverlauf, dynamische Versorgung und tatsächliches Verhalten beim Fehlstart bleiben ungeklärt. Stromlose Werte geben keine Betriebsfreigabe.
 
 ## 6. Historie (überholt – nicht für Messungen verwenden)
 
@@ -84,3 +75,5 @@ Nicht tun: nichts auslöten, nichts verbinden; Bereich liegt auf Netzpotenzial (
 - Anfangsbezeichnung „V1/V2 = Via/Ebenenwechsel“ → falsch; es sind einfache Messpunkte (TP1/TP2).
 - Anfangslage „F6“ → korrigiert auf E5.
 - Frühere Beschreibung von B20 als „Spalte aus vier Widerständen“ → es ist eine Reihe.
+
+- 09.11.: B19-Code `1001 / 1 kΩ` korrigiert zu **1003 / 100 kΩ**. MCU-/Komparator-Zielhypothese durch gemessene Verbindung zu **L4981AD Pin 14 VFEED** ersetzt. Historische ≈221-kΩ-Modellgröße bleibt kein identifizierter Einzelwiderstand.

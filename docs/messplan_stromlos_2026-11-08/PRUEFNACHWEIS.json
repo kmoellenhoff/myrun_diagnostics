@@ -1,12 +1,36 @@
 {
-  "original_files_checked": 160,
-  "original_files_changed": [],
-  "annotated_original_macro_sheets": 8,
-  "measurement_rows": 38,
-  "pdf_pages": 10,
-  "pdf_bytes": 3399639,
-  "source_commit": "9d1f74617b602f57db36a1993998581de360b832",
-  "all_output_hashes_verified": true,
-  "unmarked_photo_pixels_identical": true,
-  "new_measurements_recorded": false
+  "initial_validation_2026_11_08": {
+    "original_files_checked": 160,
+    "original_files_changed": [],
+    "annotated_original_macro_sheets": 8,
+    "measurement_rows": 38,
+    "pdf_pages": 10,
+    "pdf_bytes": 3399639,
+    "source_commit": "9d1f74617b602f57db36a1993998581de360b832",
+    "all_output_hashes_verified": true,
+    "unmarked_photo_pixels_identical": true,
+    "new_measurements_recorded": false
+  },
+  "revision_2026_11_09": {
+    "revision_date": "2026-11-09",
+    "parent_commit": "c31ccd2cd0db9e39055337ade3083f19932b019f",
+    "result_rows": 35,
+    "new_B18_B19_result_rows": 24,
+    "prior_11_result_rows_preserved": true,
+    "original_photo_files_hash_verified": 112,
+    "original_photos_and_raster_index_unchanged": true,
+    "all_8_macro_coordinates_and_pixels_unchanged": true,
+    "plan_pdf_pages": 10,
+    "schematic_pdf_pages": 3,
+    "schematic_pages_1_3_preserved": true,
+    "pdf_text_within_page": true,
+    "measurement_values_checked": true,
+    "direct_copper_topology_checked": true,
+    "local_markdown_links_checked": true,
+    "inline_new_B19_photo_originals_archived": false,
+    "P2_0VA_end_value_known": false,
+    "contamination_is_confirmed": false
+  },
+  "electrical_measurements_performed_by_assistant": false,
+  "user_reported_measurements_recorded": true
 }

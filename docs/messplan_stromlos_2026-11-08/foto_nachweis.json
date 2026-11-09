@@ -184,7 +184,7 @@
           "lx": 1970,
           "ly": 1140,
           "status": "F",
-          "note": "B19: rechtes Pad des unteren horizontalen 1001-Widerstands; sichtbare Bahn ab P1"
+          "note": "B19: rechtes Pad des unteren horizontalen 1003-Widerstands; sichtbare Bahn ab P1"
         },
         {
           "id": "E2",
@@ -193,7 +193,7 @@
           "lx": 1580,
           "ly": 1175,
           "status": "F",
-          "note": "anderes Ende desselben Widerstands; Aufdruck 1001 = 1 kΩ [I]"
+          "note": "anderes Ende desselben Widerstands; Aufdruck 1003 = 100 kΩ [I]"
         }
       ],
       "image": "makros/03.png",
@@ -205,7 +205,8 @@
       "source_sha256": "526be77d9f9d527d37801c2317202d8273946d86194c8dbf3c245ffbc677f24e",
       "output_sha256": "d0d2f1f79ccf3a632b11365ecd63502fe5da75787189d110c7c0f9bd1932b9e8",
       "unmarked_pixels_identical": true,
-      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg"
+      "source_url": "https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg",
+      "revision_note": "09.11.2026: B19-Code 1003 = 100 kΩ korrigiert; Pixel/PNG/Originalfoto unverändert."
     },
     {
       "id": "04",
