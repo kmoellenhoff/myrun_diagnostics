@@ -129,7 +129,7 @@ locked and again after a power cycle. Output: CSV with
 - [Alle 110 Originalfotos zugeordnet, mit Raster und Gewissheit](docs/atlas_110926/README.md)
 - [Belegter Teilschaltplan, Quellen und weitere Fehlereingrenzung](docs/schaltplan_110926/README.md)
 - [Stromloser Messplan mit acht markierten Originalmakros und Messwertvorlage](docs/messplan_stromlos_2026-11-08/MESSPLAN.md)
-- [Fortsetzungsstand 09.11.: Blatt 03 B18/B19 abgeschlossen, als Nächstes Blatt 04 B20](docs/messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md)
+- [Fortsetzungsstand 09.11.: Blätter 01–04 abgearbeitet, als Nächstes Blatt 05 Q2-Treiber](docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md)
 
 Die vorhandenen Originalfotos und Claudes Koordinatensystem bleiben erhalten. Offene Pin-/Netzzuordnungen werden ausdrücklich gekennzeichnet.
 

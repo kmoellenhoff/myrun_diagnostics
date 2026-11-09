@@ -1,6 +1,6 @@
 # GIRT S6T30: Teilschaltplan und weitere Fehlereingrenzung
 
-Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–03 sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
+Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–04 sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
 
 [Schaltplan als PDF](teilschaltplan.pdf) · [Fotoatlas](../atlas_110926/README.md) · [Markierte Messkontakte und Messwertvorlage](../messplan_stromlos_2026-11-08/MESSPLAN.md) · [Verbindungsnachweis als CSV](verbindungen.csv)
 
@@ -54,9 +54,11 @@ Das dokumentierte Multimeter/MAX-Verfahren konnte kurze Ausgangspulse unter etwa
 
 ## Nächste Messungen
 
-Blätter 01–03 sind im dokumentierten Umfang abgearbeitet: [Relais](../messplan_stromlos_2026-11-08/ERGEBNISSE_2026-11-09.md), [P600](../messplan_stromlos_2026-11-08/P600_ERGEBNISSE_2026-11-09.md), [B18/B19](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Die historischen Werte in den übrigen Schaltplanblättern bleiben als Referenzen erhalten; die Ergebnisberichte haben für den Messstand Vorrang.
+Blätter 01–04 sind im dokumentierten Umfang abgearbeitet: [Relais](../messplan_stromlos_2026-11-08/ERGEBNISSE_2026-11-09.md), [P600](../messplan_stromlos_2026-11-08/P600_ERGEBNISSE_2026-11-09.md), [B18/B19](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Die historischen Werte in den übrigen Schaltplanblättern bleiben als Referenzen erhalten; die Ergebnisberichte haben für den Messstand Vorrang.
 
-Als Nächstes **Blatt 04 B20**: scharfes Originalmakro der vier Widerstände und des SOT-23, Codes lesen und unklare Netze gezielt kartieren. Danach Q2-Treiber (Blätter 05/05b) und Hilfsversorgungen (06/07) gemäß [Messplan](../messplan_stromlos_2026-11-08/MESSPLAN.md). Keine pauschalen Sollwerte für unbekannte Halbleiterpins.
+Blatt 04: [B20-Ergebnisse und neues Originalmakro](../messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md). **Tb = 0VA ist gemessen**; Typ, R4-Code und vollständige B20-Netze bleiben offen. Der bestehende dreiseitige Teilschaltplan wird durch dieses bestätigte Fragment im Ergebnisbericht ergänzt.
+
+Als Nächstes **Q2-Treiber (Blätter 05/05b)**, danach Hilfsversorgungen (06/07) gemäß [Messplan](../messplan_stromlos_2026-11-08/MESSPLAN.md). Keine pauschalen Sollwerte für unbekannte Halbleiterpins.
 
 **Verschmutzung bleibt eine offene Hypothese.** Leitfähige/feuchte Rückstände können die hochohmige Rückführung verändern; das Foto beweist keine Leitfähigkeit. Eine spätere geeignete Reinigung mit dokumentiertem Vorher-/Nachhervergleich bei gleichen Messbedingungen kann den Verdacht prüfen. Sie wurde noch nicht durchgeführt und ersetzt keinen Nachweis des Fehlerverhaltens.
 
@@ -66,6 +68,6 @@ Netz und externe Versorgung trennen; Restspannung am Zwischenkreis-Elko zuerst i
 
 ## Nachprüfbarkeit
 
-`verbindungen.csv` enthält 77 Einträge mit Art, Status und Quellen. `Kupfer direkt`, `Widerstand`, `Diode` und `In-Circuit-Messung` bleiben verschiedene Kategorien. Nur direkte Kupferverbindungen dürfen beim Weiterzeichnen zu einem gemeinsamen Netz zusammengefasst werden; Werte im kΩ-/MΩ-Bereich dürfen das nicht.
+`verbindungen.csv` enthält 89 Einträge mit Art, Status und Quellen. `Kupfer direkt`, `Widerstand`, `Diode` und `In-Circuit-Messung` bleiben verschiedene Kategorien. Nur direkte Kupferverbindungen dürfen beim Weiterzeichnen zu einem gemeinsamen Netz zusammengefasst werden; Werte im kΩ-/MΩ-Bereich dürfen das nicht.
 
 Die Originalquellen bleiben maßgeblich: `STAND_2026-11-08.md`, die aktuelle Fassung `netlist/b18_spannungssense_kandidat.md` ohne verworfene Historie, `netlist/q2_zuordnung.md` mit Ergebnisstand 21:39, die Mess-CSV-Dateien und `HARDWARE.md`. Die ältere unbestätigte Annahme P2 = L− und die pauschale Gate-Pulldown-Erwartung aus einem Zwischenstand werden nicht übernommen.

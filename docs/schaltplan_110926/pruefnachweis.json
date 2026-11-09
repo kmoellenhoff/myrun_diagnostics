@@ -45,5 +45,31 @@
   },
   "electrical_measurements_performed_by_assistant": false,
   "user_reported_measurements_recorded": true,
-  "evidence_entries": 77
+  "evidence_entries": 89,
+  "revision_B20_2026_11_09": {
+    "parent_commit": "dc53a78ce198dd188963be6754a59c72d8a145c6",
+    "report_date": "2026-11-09",
+    "new_B20_result_rows": 12,
+    "total_result_rows": 47,
+    "prior_35_results_preserved": true,
+    "total_evidence_rows": 89,
+    "prior_77_evidence_rows_preserved": true,
+    "only_new_direct_connection": "B20-Tb = 0VA",
+    "original_a_b_mapping_preserved": true,
+    "R2_a_to_b_ohm": 2700,
+    "R2_b_to_a_ohm": 3300,
+    "new_photo_exif_xmp_iptc_comments_absent": true,
+    "new_photo_pixels_identical": true,
+    "all_preexisting_photos_unchanged": true,
+    "baseline_photo_related_files_hash_verified": 112,
+    "all_8_macro_files_and_coordinates_unchanged": true,
+    "plan_pdf_pages": 10,
+    "plan_pdf_only_intro_and_sheet04_changed": true,
+    "pdf_text_within_page": true,
+    "local_markdown_links_valid": true,
+    "SOT23_type_identified": false,
+    "R4_full_code_readable": false,
+    "defective_component_identified": false,
+    "next_sheet": "05 / Q2-Treiber / B21 / B5"
+  }
 }

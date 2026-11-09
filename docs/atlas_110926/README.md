@@ -61,3 +61,7 @@ Kein Foto bleibt ohne grobe Bereichszuordnung. Das ist ausdrücklich keine volls
 Vorschauen sind verkleinerte, ungedrehte Kopien mit Foto-ID und Zuordnung in einem zusätzlichen Rand. Es wurden keine Platinenbilder generiert. Die Originalfotos wurden nur gelesen. `registrierungen.json` enthält für jedes Original die SHA-256-Prüfsumme, Quelle, Methode und gegebenenfalls die Transformation in die bestehende Übersicht. Die ursprüngliche Datei `photos/2026-11-08/back_raster_index.csv` ist unverändert.
 
 Der Teilschaltplan verwendet ausschließlich ausdrücklich belegte Verbindungen. Ein gutes Bild-Matching ergänzt keine unsichtbare Leiterbahn und identifiziert keinen unbekannten IC-Pin.
+
+### Neue Rückseitenaufnahme B20, 09.11.2026
+
+[50370.jpg und Zuordnung](../../photos/2026-11-09/b20/README.md), vor dem Import ohne EXIF/XMP bereinigt, Bildpixel unverändert. B20 / E6 bleibt unverändert; der historische Index der 110 Fotos wird nicht umnummeriert. [Messwerte](../messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md).

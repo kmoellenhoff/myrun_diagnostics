@@ -2,7 +2,7 @@
 
 Basis: `9d1f74617b602f57db36a1993998581de360b832` · Plan 08.11.2026 · Ergebnisse/Nachtrag 09.11.2026
 
-**Nachtrag 09.11.2026:** Blätter 01–03 sind im jeweils dokumentierten stromlosen Umfang abgearbeitet. [Blatt 01](ERGEBNISSE_2026-11-09.md) · [Blatt 02](P600_ERGEBNISSE_2026-11-09.md) · [Blatt 03: B18/B19, Korrekturen und offene Punkte](B19_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Blatt 03, Quellenabgleich und PDF sind nachgeführt; andere Planabschnitte enthalten den ursprünglichen Ausgangsstand. **Als Nächstes Blatt 04 (B20).**
+**Nachtrag 09.11.2026:** Blätter 01–04 sind im jeweils dokumentierten stromlosen Umfang abgearbeitet. [Blatt 01](ERGEBNISSE_2026-11-09.md) · [Blatt 02](P600_ERGEBNISSE_2026-11-09.md) · [Blatt 03: B18/B19, Korrekturen und offene Punkte](B19_ERGEBNISSE_2026-11-09.md) · [Blatt 04: B20](B20_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Blätter 03/04, Quellenabgleich und PDF sind nachgeführt; andere Planabschnitte enthalten den ursprünglichen Ausgangsstand. **Als Nächstes Blatt 05 (Q2-Treiber).**
 
 **Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Diese Arbeitsgrundlage beschreibt den Planstand vom 08.11.; die Nutzer-Messungen vom 09.11. stehen in den verlinkten Nachträgen.
 
@@ -95,13 +95,15 @@ B20 = E6; Rückseite; Reihe erscheint im Makro senkrecht
 
 Original: [photos/2026-11-08/back/PXL_20261108_153921371.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/back/PXL_20261108_153921371.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(1300, 1500, 1775, 2350)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
 
-**Nächster Schritt.** Wie im Stand geplant zuerst schärfere Makros beider Seiten bzw. verdeckte Vorderseite dokumentieren. Diese Markierungen dienen der eindeutigen Rückmeldung der Anschlüsse; es ist noch keine gesicherte B20-Netzliste.
+**Messmodus / Stand.** Nachtrag 09.11.2026: Blatt 04 im geprüften stromlosen Umfang abgeschlossen. Nächstes Blatt 05 (Q2-Treiber). Alle Einzelwerte und Grenzen: B20_ERGEBNISSE_2026-11-09.md; neue Aufnahme: photos/2026-11-09/b20/50370.jpg.
 
-**Messmodus / bisher.** Optional Ω direkt a–b pro Widerstand, beide Richtungen; danach nur konkrete Padpaare zur Bahnverfolgung. B20: bisher keine elektrischen Messwerte dokumentiert.
+**Widerstände.** R1 4751 / 4,75 kΩ: 4,6 kΩ beidseitig. R2 4751 / 4,75 kΩ: a→b 2,7 kΩ, b→a 3,3 kΩ. R3 1003 / 100 kΩ: 72,3 kΩ beidseitig. R4: 4,77 kΩ beidseitig; Code unvollständig lesbar. In-circuit keine isolierte Toleranzprüfung.
 
-**Erwartung / offen.** Keine belastbaren Nennwerte oder Ta/Tb/Tc-Funktionen aus diesem Foto. Codes und Typ vor Sollwertfestlegung lesbar aufnehmen. Halbleiter-/Parallelpfade können polungsabhängige Werte verursachen; OL im Diodentest ist bei unbekannter Pin-Funktion kein Defektbeleg.
+**SOT-23.** Diodenmodus Ta→Tb 1,13 V, zurück 0,70 V; Ta→Tc 2,38/0,68 V; Tb→Tc 1,94/0,69 V. Ω gegen 0VA: Ta 20,5 kΩ, Tb 0 Ω, Tc 14,8 kΩ, jeweils beide Richtungen. Gegen +5VA: Ta 23,1 kΩ, Tc 12,2 kΩ, beidseitig. Tb = 0VA bestätigt; Typ und Funktion offen.
 
-**Bezeichnungen.** R1–R4, Ta–Tc sind ausschließlich neue lokale Foto-IDs innerhalb B20, keine Herstellerpins. Die bestehenden B20-/E6-Koordinaten bleiben unverändert. Die Reihe wurde nicht zu einer neuen Rasterspalte umdefiniert.
+**Zuordnung / Grenzen.** Ursprüngliche a/b-Bezeichnungen bleiben erhalten. Neues Foto: R1–R4 links nach rechts; a unten, b oben; Ta unten einzeln, Tb oben links, Tc oben rechts. Die frühere umgekehrte Chatbeschreibung war falsch. Achtpolige ICs als TL082I lesbar. Keine direkte +5VA-Verbindung und kein eindeutiger Defektbefund.
+
+[Neue Originalaufnahme ohne EXIF](../../photos/2026-11-09/b20/50370.jpg) · [Ergebnisbericht](B20_ERGEBNISSE_2026-11-09.md)
 
 | Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
 |---|---|---|---|

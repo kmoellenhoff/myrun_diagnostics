@@ -60,7 +60,7 @@ L+ = DC-Bus (nach Drossel), L− = Q2-Drain (Low-Side), 0VA = Source/DC−. D3 (
 
 ## 5. Offene Punkte
 
-- Blatt 04: B20 scharf fotografieren, Codes lesen und Netze gezielt verfolgen.
+- Blatt 04: [B20-Messungen vom 09.11.](../messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md) abgeschlossen im geprüften Umfang; Tb = 0VA bestätigt. Typ, R4-Code und vollständige Netzfunktion bleiben offen. Nächstes Blatt 05: Q2-Treiber.
 - P2–0VA: neuer Verlauf steigend bis 6 MΩ, dann fallend; Endwert und Gegenrichtung fehlen.
 - B19-1004-Parallelnetz: Einbindung der gemeinsamen Enden offen; Pad C: weitere Funktion offen.
 - OVP-Pin 3 und Signal-/Leistungsmasse des L4981AD nicht separat verfolgt; +5VA nicht als VREF annehmen.
