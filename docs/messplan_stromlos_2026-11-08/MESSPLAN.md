@@ -2,7 +2,7 @@
 
 Basis: `9d1f74617b602f57db36a1993998581de360b832` · Plan 08.11.2026 · Ergebnisse/Nachtrag 09.11.2026
 
-**Nachtrag 09.11.2026:** Blätter 01–05/05b sind im jeweils dokumentierten stromlosen Umfang abgearbeitet. [Blatt 01](ERGEBNISSE_2026-11-09.md) · [Blatt 02](P600_ERGEBNISSE_2026-11-09.md) · [Blatt 03: B18/B19, Korrekturen und offene Punkte](B19_ERGEBNISSE_2026-11-09.md) · [Blatt 04: B20](B20_ERGEBNISSE_2026-11-09.md) · [Blätter 05/05b: Q2 und Treiber](Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [ausgefüllte Ergebnis-CSV](messprotokoll_2026-11-09.csv). Blätter 03–05b, Quellenabgleich und PDF sind nachgeführt; andere Planabschnitte enthalten den ursprünglichen Ausgangsstand. **Als Nächstes Blatt 06 (Hilfsversorgung).**
+**Nachtrag 09.11.2026:** Die bisherigen stromlosen Messungen aller acht Blätter (01–07 einschließlich 05b) sind dokumentiert. [Relais](ERGEBNISSE_2026-11-09.md) · [P600](P600_ERGEBNISSE_2026-11-09.md) · [B18/B19](B19_ERGEBNISSE_2026-11-09.md) · [B20](B20_ERGEBNISSE_2026-11-09.md) · [Q2/Treiber 05/05b](Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [Hilfsversorgungen 06/07](HILFSVERSORGUNG_ERGEBNISSE_2026-11-09.md) · [Ergebnis-CSV](messprotokoll_2026-11-09.csv). **0V24–0VA ist mit 0 Ω beidseitig im geprüften Steckzustand bestätigt.** Nicht berichtete Sicht-/ESR-/Last- und Einzelsteckkontaktprüfungen bleiben offen; kein eindeutiger Defekt nachgewiesen.
 
 **Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Diese Arbeitsgrundlage beschreibt den Planstand vom 08.11.; die Nutzer-Messungen vom 09.11. stehen in den verlinkten Nachträgen.
 
@@ -181,13 +181,13 @@ F31 = D5; Vorderseite, Makro gedreht
 
 Original: [photos/2026-11-08/front/PXL_20261108_155115274.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/front/PXL_20261108_155115274.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(0, 1200, 2100, 3064)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
 
-**Messmodus.** SUP-01: Ω rot 0VA, schwarz +5VA, danach umpolen; Startwert/Endwert/Trend festhalten. Sichtkontrolle der abgebildeten Regler-/47-µF-Elko-Lötstellen, des Umfelds und der Rückseite.
+**Stand / Messmodus.** 09.11.2026: Ω rot 0VA, schwarz +5VA, dann umgepolt; stromlos in-circuit. SUP-01: 2,18 kΩ / 2,57 kΩ. Exakt gleicher Vergleich wie zuvor am Q2-Treiberkontakt B (=0VA). Zeitverlauf und Temperatur nicht mitgeteilt.
 
-**Bisher.** B10-M28: 0VA→+5VA 2,16 kΩ, umgekehrt 2,55 kΩ, stromlos in-circuit. Diese Referenz bestätigt keinen sicheren Zustand der Hilfsversorgung unter Last.
+**Erwartung / Ergebnis.** Historische Referenz 2,16/2,55 kΩ nahe. Kein neuer niederohmiger Kurzschlussbefund aus diesen Anzeigen. Ω bestimmt weder Spannung unter Last noch ESR/Kapazität oder Reglerfunktion.
 
-**Erwartung.** Bei gleichem Aufbau ähnliche Größenordnung; Ladung/Halbleiter können den Verlauf ändern. Dauerhaft nahe Spitzenwiderstand wäre ein neuer Kurzschlussverdacht. Ω-Messung bestimmt weder Kapazität noch ESR und beweist keine stabilen +5 V.
+**Zuordnung / Grenzen.** 0V24–0VA inzwischen mit 0 Ω beidseitig im geprüften Steckzustand bestätigt (Blatt 07). 0VISO bleibt ungeprüft. Sichtprüfung der Regler-/Elko-Lötstellen nicht als neu durchgeführt verbuchen. Ergebnisbericht: HILFSVERSORGUNG_ERGEBNISSE_2026-11-09.md.
 
-**Grenze / Zuordnung.** Testpunkte sind am Aufdruck identifiziert. Keine Gleichsetzung mit 0VISO oder 0V24. Bestehende Fotos zeigen keine sichere Freigabe schwerer Lötstellen; Risse benötigen ggf. neues Streiflicht-Makro. Live-Messungen bleiben zurückgestellt.
+[Ergebnisbericht](HILFSVERSORGUNG_ERGEBNISSE_2026-11-09.md)
 
 | Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
 |---|---|---|---|
@@ -202,13 +202,13 @@ F23 = F3; Vorderseite; Umfeld F17/F18
 
 Original: [photos/2026-11-08/front/PXL_20261108_155137120.jpg](https://github.com/kmoellenhoff/myrun_diagnostics/blob/9d1f74617b602f57db36a1993998581de360b832/photos/2026-11-08/front/PXL_20261108_155137120.jpg) · Ausschnitt im Original (x0,y0,x1,y1): `(1700, 1200, 3200, 2500)`. Pixelursprung links oben, x nach rechts, y nach unten; keine Änderung des Platinenrasters.
 
-**Messmodus.** SUP-02: zuerst Ω oberes Loch–P400-schwarz und unteres Loch–P400-rot zur Beschriftungszuordnung (Spitzenwiderstand erwartet). Erst danach SUP-03: Ω +24V–0V24 beidseitig, Verlauf notieren. SUP-04 optional: Ω 0V24–0VA (Blatt 06), Zugehörigkeit offen.
+**Stand / Steckzustand.** 09.11.2026: Nutzer bestätigt P400 als Anschluss des Gehäuselüfters; Lüfter gesteckt. Gemessen an den als 0V24/+24V bezeichneten Punkten direkt daneben. Einzelne Testloch–Steckkontakt-Paare SUP-02a/b nicht separat berichtet.
 
-**Bisher.** Keine stromlosen 24-V-Rail-Messwerte in den Netzlisten. P400 ist als 0V24/+24V dokumentiert; Verbindung zum RT334024-Spulenpad noch nicht gemessen.
+**Ergebnisse / Polung.** SUP-03: Rot 0V24, Schwarz +24V: 37,49 kΩ; umgepolt 47,5 kΩ. Das ist die umgekehrte Reihenfolge zur ursprünglichen Vorlage. SUP-04: 0V24–0VA 0 Ω in beiden Richtungen. Zeitverlauf/Temperatur nicht mitgeteilt.
 
-**Erwartung.** Direktes Loch–Steckkontakt-Paar etwa 0 Ω nur bei richtiger Zuordnung. Rail-Widerstand ohne Schaltplan nicht numerisch vorhersagbar; Ladekurve möglich, ein stabiler Kurzschluss wäre auffällig. Kein Sollwert 24 V bei einer stromlosen Ω-Messung.
+**Einordnung / Grenzen.** Massebezüge im geprüften Steckzustand niederohmig verbunden; physischer Verbindungsweg offen. Kein Trennungsnachweis. 24-V-Werte enthalten mögliche Lüfterpfade, kein bekannter Ω-Sollwert und kein Nachweis funktionierender Versorgung. Relaisanbindung und ESR offen. Bericht: HILFSVERSORGUNG_ERGEBNISSE_2026-11-09.md.
 
-**Grenze / Zuordnung.** I = Lochzuordnung aus benachbartem Aufdruck, noch nicht elektrisch bestätigt. Weder 0V24 = 0VA noch P400+24V = bestimmtes Relais-Spulenpad voraussetzen. Die abgebildeten Elkos (330 µF/10 V, 47 µF/35 V) nicht allein aus Nähe einem 24-V-Netz zuordnen; 10-V-Elkos gehören damit nicht automatisch an 24 V.
+[Ergebnisbericht](HILFSVERSORGUNG_ERGEBNISSE_2026-11-09.md)
 
 | Foto-ID | Originalpixel (x,y) | Status | Kontakt / Zuordnung |
 |---|---|---|---|
@@ -221,13 +221,13 @@ Original: [photos/2026-11-08/front/PXL_20261108_155137120.jpg](https://github.co
 
 **B18/B19 aktuell.** 09.11.2026: B19 E1–E2 ist 1003 = 100 kΩ, kein 1-kΩ-R. Teiler zu L4981AD Pin 14 (VFEED) und 39,2-kΩ-Fusspunkt zu 0VA bestätigt. Historische 223,7/226,4 kΩ bleiben effektive Messwerte. P2 = L+, nicht L−; TP1/TP2 sind Testpads, keine Vias. P2–0VA-Endwert weiterhin offen.
 
-**Q2-Stand.** In q2_zuordnung.md stehen oben „Messung offen“ und alte Erwartungsbereiche; die Ergebniszeilen 21:39 und PW-M03…M06 haben Vorrang. Gate-Pulldown ist 9,13 kΩ, nicht pauschal mehrere 10–100 kΩ. G–D ist mit 2,19 MΩ dokumentiert, daher ist OL kein zwingendes stromloses Soll. Die Gate-Seite im Makro liegt links, in der aufrechten Rückseitenübersicht rechts.
+**Q2-Stand.** 09.11.: G–S 9,14 kΩ beidseitig; G–D 2,2 MΩ / rückwärts 1,86 MΩ langsam steigend, Endwert offen. B=0VA und E–RG-U ≈0 Ω gemessen. Umfeldcode 2211 = 2,21 kΩ korrigiert. FAN3100C ist nach Hersteller-Markierung/Pinabgleich ein gut passender Kandidat [I], noch keine abschließend bestätigte Typnummer; bedingte Zuordnung in docs/netlist/q2_treiber_fan3100c_kandidat.md.
 
 **B10-Stand.** B10 bleibt statisch unauffällig; intermittierende Fehler bleiben möglich. B10-M16 (J1–L+ 1 kΩ) wurde durch M29 (11 kΩ Start, nach ca. 1 min 4 MΩ, Verlauf) ersetzt. B10-M21: J2/X3 sind Farbpunkte bzw. Bereiche mit Lack, keine verlässlich blanken Messpads; frühere J-Messungen erfolgten am Dioden-Kathodenanschluss. Keine neuen Messspitzen auf einen Farbpunkt setzen.
 
 **Raster / Sicherheit der Zuordnung.** F27 ist eine Bauteil-ID, kein Feld F27: Feld I4. F15 ist P600, Feld B5. B19/B20: E6. Es wurde kein Raster an Makros neu aufgespannt. Der Rasterindex lokalisiert Mittelfeld/Ecken nur ungefähr; an einigen Fotos fehlt die Lokalisierung. Nachtrag 09.11.: B19-Pad B ist mit 0 Ω zu L4981AD Pin 14 (VFEED) bestätigt.
 
-**Offen.** Treiber-Typ und Herstellerpinbelegung, B20-Funktion, Einbindung des B19-1004-Paars, C-Weiterweg, P2–0VA-Endwert, 24-V-Return-Zugehörigkeit, Relaiskontaktverhalten im Betrieb, Elko-ESR/Kapazität und dynamische Versorgung. Keine Bauteile allein aufgrund dieser Foto-/In-Circuit-Auswertung ersetzen. Scharfe neue Vorder-/Rückseitenmakros anfordern, wo Kontakte unter dem Kühlkörper oder Gehäusen verborgen bleiben.
+**Offen.** Treiber-Typ und Herstellerpinbelegung, B20-Funktion, Einbindung des B19-1004-Paars, C-Weiterweg, P2–0VA-Endwert, physischer Verlauf der gemessenen 0V24–0VA-Verbindung, Relaiskontaktverhalten im Betrieb, Elko-ESR/Kapazität und dynamische Versorgung. Keine Bauteile allein aufgrund dieser Foto-/In-Circuit-Auswertung ersetzen. Scharfe neue Vorder-/Rückseitenmakros anfordern, wo Kontakte unter dem Kühlkörper oder Gehäusen verborgen bleiben.
 
 **Herstellerquelle.** TE Connectivity, RT334024 / 4-1393240-8: 24-V-DC-Spule, 1440 Ω, 0,4 W, 1 Form A (Schließer). Datenblatt RT1, Spulentabelle bei 23 °C ±10 %, Bottom View 16 A / 5 mm. Quelle: https://www.te.com/en/product-4-1393240-8.html und verlinktes RT1-Datenblatt, Seiten 3 und 5 (abgerufen 08.11.2026). Es wurden keine Herstellerbilder in die Fotomarkierungen übernommen.
 
