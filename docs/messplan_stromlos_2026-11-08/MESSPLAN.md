@@ -2,6 +2,8 @@
 
 Basis: `9d1f74617b602f57db36a1993998581de360b832` · Plan 08.11.2026 · Ergebnisse/Nachtrag 09.11.2026
 
+**Neuester Pausenstand 09.11.2026:** [Q2-C / R2211 / 1P: Messungen, korrigierte Arbeitshypothese und späterer Diodentest](Q2_C_1P_NACHTRAG_2026-11-09.md). [Markiertes Originalmakro und Ergebnisse als PDF](Q2_C_1P_NACHTRAG_2026-11-09.pdf). Das Gesamt-PDF enthält diesen Nachtrag auf den letzten zwei Seiten. **Diodentest am 1P-Bauteil ausstehend; keine Defektfeststellung.**
+
 **Nachtrag 09.11.2026:** Die bisherigen stromlosen Messungen aller acht Blätter (01–07 einschließlich 05b) sind dokumentiert. [Relais](ERGEBNISSE_2026-11-09.md) · [P600](P600_ERGEBNISSE_2026-11-09.md) · [B18/B19](B19_ERGEBNISSE_2026-11-09.md) · [B20](B20_ERGEBNISSE_2026-11-09.md) · [Q2/Treiber 05/05b](Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [Hilfsversorgungen 06/07](HILFSVERSORGUNG_ERGEBNISSE_2026-11-09.md) · [Ergebnis-CSV](messprotokoll_2026-11-09.csv). **0V24–0VA ist mit 0 Ω beidseitig im geprüften Steckzustand bestätigt.** Nicht berichtete Sicht-/ESR-/Last- und Einzelsteckkontaktprüfungen bleiben offen; kein eindeutiger Defekt nachgewiesen.
 
 **Arbeitsgrundlage.** Repository-Stand 9d1f74617b602f57db36a1993998581de360b832. Zuerst gelesen: docs/STAND_2026-11-08.md, docs/netlist/* und photos/2026-11-08/back_raster_index.csv; danach Übersichts-PDF, HARDWARE.md und Foto-Inventar. Diese Arbeitsgrundlage beschreibt den Planstand vom 08.11.; die Nutzer-Messungen vom 09.11. stehen in den verlinkten Nachträgen.

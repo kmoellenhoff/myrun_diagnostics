@@ -2,7 +2,7 @@
 
 Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–07 einschließlich 05b sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
 
-[Schaltplan als PDF](teilschaltplan.pdf) · [Fotoatlas](../atlas_110926/README.md) · [Markierte Messkontakte und Messwertvorlage](../messplan_stromlos_2026-11-08/MESSPLAN.md) · [Verbindungsnachweis als CSV](verbindungen.csv)
+[Schaltplan als PDF: drei Grundblätter plus Nachtrag 4](teilschaltplan.pdf) · [Fotoatlas](../atlas_110926/README.md) · [Markierte Messkontakte und Messwertvorlage](../messplan_stromlos_2026-11-08/MESSPLAN.md) · [Verbindungsnachweis als CSV](verbindungen.csv)
 
 ## Was der Schaltplan abdeckt
 
@@ -11,6 +11,7 @@ Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die
 | [1: Motorstufe](blatt_1.svg) | L+/L−, Q2, Body-Diode, D3, 22-Ω-Gate-Pfad; NTC und Relais als getrennte Fragmente | B=0VA und E–RG-U elektrisch bestätigt; Typ, übrige Pin-Funktionen, Versorgung/Freigabe und Relais-Netzanbindung offen |
 | [2: B18/B19](blatt_2.svg) | B18-Kette, zwei B19-1003, 3922-Fusspunkt zu 0VA und gemessener Weg zu L4981AD Pin 14 VFEED | B19-1004-Einbindung, C-Weiterweg, P2–0VA-Endwert und B20-Netze |
 | [3: B10 und Anschlüsse](blatt_3.svg) | Beide AC-Sense-Ketten mit Dioden; direkte P2/P4-Verbindungen | Kathoden-Auswertung, PWM-/Enable-/Tachoweg bis zu bestimmten IC-Pins |
+| [4: Nachtrag C / R2211 / 1P](blatt_4.svg) | Gemessene Anschlüsse C–R221-b, R221-a–1P.O, 1P.R–0VA; NPN-Kandidat klar bedingt | Diodentest ausstehend, positive Versorgung und Zweigfunktion offen |
 
 ![Motorstufe und offene Versorgungen](blatt_1.svg)
 
@@ -54,6 +55,9 @@ Das dokumentierte Multimeter/MAX-Verfahren konnte kurze Ausgangspulse unter etwa
 
 ## Nächste Messungen
 
+**Neuester Pausenstand:** [Q2-C / R2211 / 1P](../messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md). Der Lüfter läuft laut Nutzer auch beim Fehlstart an. R2211 ist keine nachgewiesene positive Versorgungszuleitung; NPN-Ableitzweig ist ein Kandidatenmodell. **Diodentest ausstehend**. Siehe [Nachtrag 4](blatt_4.svg); O/L/R sind physische Foto-Hilfen, keine Herstellerpins.
+
+
 Blätter 01–07 einschließlich 05b sind im dokumentierten Umfang abgearbeitet: [Relais](../messplan_stromlos_2026-11-08/ERGEBNISSE_2026-11-09.md), [P600](../messplan_stromlos_2026-11-08/P600_ERGEBNISSE_2026-11-09.md), [B18/B19](../messplan_stromlos_2026-11-08/B19_ERGEBNISSE_2026-11-09.md). Die historischen Werte in den übrigen Schaltplanblättern bleiben als Referenzen erhalten; die Ergebnisberichte haben für den Messstand Vorrang.
 
 Blatt 04: [B20-Ergebnisse und neues Originalmakro](../messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md). **Tb = 0VA ist gemessen**; Typ, R4-Code und vollständige B20-Netze bleiben offen. Der bestehende dreiseitige Teilschaltplan wird durch dieses bestätigte Fragment im Ergebnisbericht ergänzt.
@@ -68,6 +72,6 @@ Netz und externe Versorgung trennen; Restspannung am Zwischenkreis-Elko zuerst i
 
 ## Nachprüfbarkeit
 
-`verbindungen.csv` enthält 120 Einträge mit Art, Status und Quellen. `Kupfer direkt`, `Widerstand`, `Diode` und `In-Circuit-Messung` bleiben verschiedene Kategorien. Direkte Kupferverbindungen dürfen als gemeinsames Netz gezeichnet werden. Die neue gemessene 0V24–0VA-Netzverbindung gilt für den geprüften Steckzustand; der Pfad ist offen und wird nicht als Fotoleiterbahn ausgegeben. Werte im kΩ-/MΩ-Bereich vereinigen keine Netze.
+`verbindungen.csv` enthält 128 Einträge mit Art, Status und Quellen. `Kupfer direkt`, `Widerstand`, `Diode` und `In-Circuit-Messung` bleiben verschiedene Kategorien. Direkte Kupferverbindungen dürfen als gemeinsames Netz gezeichnet werden. Die neue gemessene 0V24–0VA-Netzverbindung gilt für den geprüften Steckzustand; der Pfad ist offen und wird nicht als Fotoleiterbahn ausgegeben. Werte im kΩ-/MΩ-Bereich vereinigen keine Netze.
 
 Die Originalquellen bleiben maßgeblich: `STAND_2026-11-08.md`, die aktuelle Fassung `netlist/b18_spannungssense_kandidat.md` ohne verworfene Historie, `netlist/q2_zuordnung.md` mit Ergebnisstand 21:39, die Mess-CSV-Dateien und `HARDWARE.md`. Die ältere unbestätigte Annahme P2 = L− und die pauschale Gate-Pulldown-Erwartung aus einem Zwischenstand werden nicht übernommen.

@@ -1,3 +1,5 @@
+**Pausenstand 09.11.2026:** [Q2-C / R2211 / 1P: neue Netzzuordnungen und vorläufiger NPN-Ableitzweig](../messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md). Lüfter läuft auch beim Fehlstart an. Positive Treiberversorgung weiter offen; Diodentest am 1P-Bauteil auf später verschoben.
+
 **Weiterer Nachtrag 09.11.2026:** [FAN3100C als gut passender Kandidat, bedingter Pinabgleich](q2_treiber_fan3100c_kandidat.md). Kurzcode 100C plus Datumscode und gemessene Anschlüsse B/E passen; Typ noch nicht abschließend gesichert.
 
 **Nachtrag 09.11.2026:** [Aktueller Messblock Q2/Treiber 05/05b](../messplan_stromlos_2026-11-08/Q2_TREIBER_ERGEBNISSE_2026-11-09.md) hat Vorrang vor den folgenden historischen Erwartungen: B=0VA, E–RG-U ≈0 Ω bestätigt; Gatepfad 22,2 Ω, G–S 9,14 kΩ beidseitig, G–D 2,2 MΩ / rückwärts 1,86 MΩ langsam steigend (kein Endwert). Der Umfeldwiderstand trägt **2211 = 2,21 kΩ**, nicht 221/220 Ω. R1001 979/977 Ω, R2211 2,09 kΩ beidseitig, R4752 4,16 kΩ beidseitig. Aufdruck des Fünfbeiners laut Nutzer **1000CA**, Typ/Funktionspinout weiter offen. Folgender Text bleibt als Historie erhalten.

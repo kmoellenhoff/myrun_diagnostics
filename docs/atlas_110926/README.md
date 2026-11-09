@@ -69,3 +69,7 @@ Der Teilschaltplan verwendet ausschließlich ausdrücklich belegte Verbindungen.
 ### Neues Q2-Rückseitenmakro, 09.11.2026
 
 [50386.jpg ohne EXIF und mit Zuordnung](../../photos/2026-11-09/q2/README.md), Q2/B21/B5 unverändert. [Ergebnisse 05/05b und Codekorrektur 2211](../messplan_stromlos_2026-11-08/Q2_TREIBER_ERGEBNISSE_2026-11-09.md). Historische Foto-IDs und der 110-Foto-Index bleiben erhalten.
+
+### Detail 50396: 1P-Dreibeiner, 09.11.2026
+
+[Originalmakro ohne EXIF und Metadatennachweis](../../photos/2026-11-09/q2/README.md) · [markierte Kontakte und Pausenstand](../messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md). Q2/B21/B5 unverändert; historischer 110-Foto-Index bleibt unverändert.

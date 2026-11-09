@@ -11,3 +11,11 @@ Der früher „R221“ genannte Widerstand trägt **2211 = 2,21 kΩ**, nicht 221
 [Ergebnisse mit Korrekturen und Grenzen](../../../docs/messplan_stromlos_2026-11-08/Q2_TREIBER_ERGEBNISSE_2026-11-09.md) · [Metadaten-/Pixelnachweis](metadaten_pruefung.json)
 
 APP1 (EXIF/XMP), gegebenenfalls APP13 und Kommentare wurden vor dem GitHub-Import entfernt. Der JPEG-Bildstrom wurde nicht neu kodiert; die dekodierten Pixel sind gegenüber dem Upload identisch. Die Upload-Datei mit ursprünglichen Metadaten ist nicht im Repository. Keine Platineninhalte wurden generiert, vorhandene Originalfotos wurden nicht verändert.
+
+## Detailaufnahme 50396: „1P“-Dreibeiner über R2211
+
+[50396.jpg](50396.jpg) zeigt das Bauteil mit gut lesbarem **1P** und einem nicht sicher entzifferten Zusatzzeichen. [Metadaten-/Pixelnachweis](50396_metadaten_pruefung.json): EXIF/XMP vor dem Import entfernt, JPEG-Bildstrom und dekodierte Pixel unverändert. Alte Originale bleiben unverändert.
+
+[Gemessene Anschlüsse, NPN-Kandidat und ausstehender Diodentest](../../../docs/messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md) · [PDF mit Kontaktmarkierungen auf der Originalaufnahme](../../../docs/messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.pdf).
+
+Foto-Hilfsnamen **O / L / R** bedeuten oberer Einzelanschluss / unten links / unten rechts in 50396. Sie sind keine neuen Rasterfelder oder Herstellerpins. Claude-Raster Q2/B21/B5 bleibt unverändert. NPN-Typ und B/C/E-Funktionen bleiben vorläufig; der Diodentest wurde vom Nutzer auf später verschoben.

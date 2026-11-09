@@ -1,0 +1,131 @@
+{
+  "source": "Nutzerberichte im Chat, 09.11.2026",
+  "archive_parent_commit": "473b733fd4c81a521ff7eb67eb19ffda9de9d6d6",
+  "branch": "110926",
+  "measurements_performed_by_assistant": false,
+  "archive_requested_raw": "mach ich später. bitte bisherige messungen und schlussfolgerungen zu github",
+  "observations": [
+    {
+      "raw": "imboot vorgang und insbesondere beim fehlstart läuft lüfter definitiv lautstark an",
+      "component": "Gehäuselüfter an P400 laut vorheriger Nutzerzuordnung",
+      "context": "Bootvorgang, ausdrücklich auch Fehlstart",
+      "observation": "Lüfter läuft deutlich hörbar an.",
+      "interpretation": "An der Lüfterversorgung steht beim Anlauf zumindest zeitweise ausreichend Leistung zur Verfügung. Ein vollständiger Ausfall dieses Versorgungszweigs ist weniger wahrscheinlich. Keine gemessene Spannung, kein Nachweis störungsfreier Versorgung während des ganzen Fehlstarts und kein Nachweis der lokalen Gate-Treiberversorgung oder Eingangsfreigabe.",
+      "driver_supply_relation": "Versorgung des Kandidaten FAN3100C am lokalen Kontakt C ist noch nicht zum P400-Versorgungsnetz zugeordnet. Keine direkte Gleichsetzung.",
+      "diagnostic_priority": "Lokale Treiberversorgung und Eingangs-/Freigabepfade gezielt zuordnen; Lüfteranlauf als positiven Betriebsbefund berücksichtigen."
+    }
+  ],
+  "measurements": [
+    {
+      "raw": "41 kohm",
+      "mode": "Ω; stromlos, in-circuit laut laufendem Messablauf",
+      "red": "R2211 linke Endkappe, ursprüngliche Foto-ID R221-a",
+      "black": "+24V-Testpunkt neben P400",
+      "ohm": 41000,
+      "reverse_ohm": 50800,
+      "time_course": "Beide Richtungen zuvor niedriger, ansteigend; nach ungefähr 20 s berichtete Anzeigen 41 bzw. 50,8 kΩ erreicht.",
+      "plug_state": "P400-Gehäuselüfter laut letztem Bericht gesteckt; keine neue Änderung mitgeteilt",
+      "interpretation": "Keine direkte niederohmige Verbindung des linken R2211-Endes zu +24V belegt. Anstieg in beiden Richtungen mit Ladeeffekten im angeschlossenen Netz vereinbar; keine isolierten Widerstandswerte oder Versorgungsspannung bestimmt und kein Defekt allein dadurch bewiesen.",
+      "possible_path_model": "Rechnerisch 2,09 kΩ R2211 + 1,48 kΩ C–0VA + 37,49 kΩ 0V24–+24V ≈41,06 kΩ, nahe 41 kΩ. Nur unbestätigtes In-Circuit-Modell; keine tatsächliche Einzelserienverschaltung allein daraus nachgewiesen.",
+      "reverse_raw": "invertiert 50,8kohm",
+      "time_raw": "beide male etwa 20 sekunden gebruacht um wert zu erreichen. vorher niedriger und angestiegen",
+      "reported_reading_time_s_approx": 20,
+      "continued_stability_after_reading": "nicht ausdrücklich mitgeteilt"
+    },
+    {
+      "raw": "0 ohm",
+      "context": "Antwort auf Ω-Messung Rot Q2-DRV.C, Schwarz rechte Endkappe R2211 (alte Foto-ID R221-b).",
+      "red": "Q2-DRV.C",
+      "black": "R2211 rechte Endkappe / R221-b",
+      "mode": "Ω; stromlos laut Arbeitsablauf",
+      "ohm": 0,
+      "reverse_direction": "nicht separat berichtet",
+      "interpretation": "C→rechtes R2211-Ende elektrisch bestätigt. Kein neuer Herstellerpin-Funktionsbeweis allein daraus."
+    },
+    {
+      "raw": "oben 0, unten links 4,78 kohm unten rechts 3,38kohm",
+      "mode": "Ω; stromlos laut laufendem Ablauf",
+      "black": "linke Endkappe R2211, alte Foto-ID R221-a",
+      "red_sequential_results": [
+        {
+          "contact": "Dreibeiner direkt über R2211, einzelner oberer Anschluss",
+          "ohm": 0
+        },
+        {
+          "contact": "derselbe Dreibeiner, unterer linker Anschluss",
+          "ohm": 4780
+        },
+        {
+          "contact": "derselbe Dreibeiner, unterer rechter Anschluss",
+          "ohm": 3380
+        }
+      ],
+      "reverse_directions": "nicht berichtet",
+      "time_course": "nicht mitgeteilt",
+      "interpretation": "Einzelner oberer Pin ist mit R2211-a niederohmig verbunden. Untere Pins haben endliche In-Circuit-Widerstände zu diesem Knoten; daraus keine B/C/E- oder G/D/S-Funktion bestimmen."
+    },
+    {
+      "raw_initial": "beide nicht 0 ohm",
+      "raw_values": "lunten links steigend auf 57,5 kohm\nunten rechts 37,46 kohm",
+      "mode": "Ω; stromlos laut Messablauf",
+      "black": "+24V-Testpunkt neben P400 laut erstem Messauftrag",
+      "red_sequential_results": [
+        {
+          "contact": "unterer linker Anschluss des Dreibeiners unmittelbar über R2211",
+          "ohm_reported": 57500,
+          "time_course": "steigend auf 57,5 kΩ; Ablesezeit nicht mitgeteilt"
+        },
+        {
+          "contact": "unterer rechter Anschluss desselben Dreibeiners",
+          "ohm_reported": 37460,
+          "time_course": "nicht mitgeteilt"
+        }
+      ],
+      "polarity_note": "Werte den zuerst angefragten Richtungen Rot am Anschluss, Schwarz +24V zugeordnet; Nutzer wiederholte die Polung nicht. Gegenrichtungen nicht numerisch berichtet, nicht ergänzen.",
+      "interpretation": "Unterer rechter Anschluss gegen +24V ist nahe der bekannten 0V24→+24V-Anzeige 37,49 kΩ; das legt einen Massebezug dieses Pins nahe, beweist ihn nicht. Anstieg links mit In-Circuit-Ladeeffekten vereinbar. Kein Defektbeweis.",
+      "working_model_correction": "Die Verbindung C→R2211-rechts ist gemessen, ebenso R2211-links→oberer Einzelpin des Dreibeiners. Daraus allein folgt NICHT, dass der R2211/Dreibeiner-Zweig die speisende Versorgung ist; er könnte auch ein Steuer-/Ableitzweig sein. Keine Funktion ohne weiteren Nachweis festlegen."
+    },
+    {
+      "raw": "unten rechts 0va0 ohm in beide richtungen",
+      "component": "Dreibeiner unmittelbar über R2211 im Foto 50386",
+      "mode": "Ω; stromlos laut Messablauf",
+      "red": "unterer rechter Anschluss des Dreibeiners",
+      "black": "0VA",
+      "ohm": 0,
+      "reverse_ohm": 0,
+      "interpretation": "Unterer rechter Pin ist im geprüften Aufbau Masse. Oberer Einzelpin ist bereits R2211-a zugeordnet. Der dritte Pin und der Bauteiltyp sind offen. Diese Netzzuordnung beweist weder eine speisende Reglerfunktion noch eine Schalt-/Ableitfunktion; keinen B/C/E- oder G/D/S-Pinout festlegen."
+    }
+  ],
+  "marking_raw": {
+    "raw": "1 P und etwas anderes noch. Evtl Symbol oder um 90 Grad nach links gedrehte liegende 3",
+    "legible_code": "1P",
+    "extra_mark": "nicht sicher entziffert; nicht als Typziffer oder Herstellerlogo festlegen"
+  },
+  "candidate": {
+    "legible_marking": "1P",
+    "family_candidate": "MMBT2222A / PMBT2222A, NPN switching transistor",
+    "certainty": "gut passender Kandidat aus Kurzcode, SOT23-Gehäuse und zwei gemessenen Anschlüssen; Hersteller/Variante und Zusatzzeichen nicht eindeutig identifiziert; Diodentest noch ausstehend",
+    "primary_source": "https://assets.nexperia.com/documents/data-sheet/PMBT2222A.pdf",
+    "primary_source_details": "Nexperia PMBT2222A, 27.07.2022, Seite 1 Pin1=B/Pin2=E/Pin3=C, Seite 2 Markierung %1P (% Fertigungsstätten-Code).",
+    "conditional_mapping_in_user_photo_50396": {
+      "bottom_left": "Pin 1 Basis [I]",
+      "bottom_right": "Pin 2 Emitter [I]; 0 Ω beidseitig zu 0VA [M]",
+      "single_top": "Pin 3 Kollektor [I]; 0 Ω zum linken R2211-Ende [M]"
+    },
+    "circuit_inference": "Unter NPN-Annahme ist C(Treiber)→R2211→Kollektor→Emitter(0VA) ein möglicher gesteuerter Ableit-/Belastungszweig. Der R2211-Zweig ist damit nicht als positive Versorgungsquelle belegt. Ein falsches Aktivieren/Leck wäre relevant, aber durch bisherige stromlose Messungen nicht bewiesen."
+  },
+  "next_test_status": "Diodentest ausstehend; keine Anzeigen berichtet",
+  "photo_proof": {
+    "source_filename": "50396.jpg",
+    "source_sha256": "0e08d0067040dcc41b896ca8a3f06a22a98e9a7c87f99368c10995576a3f1872",
+    "sanitized_sha256": "e146509c2a6b10ba736e8f30d082a1bd80f1c6d80f5db393d829857b9f4e57fa",
+    "removed_markers": [
+      "0xe1",
+      "0xe1"
+    ],
+    "exif_absent": true,
+    "decoded_pixels_unchanged": true,
+    "jpeg_reencoded": false,
+    "board_location": "Dreibeiner über R2211, Q2/B21/B5, Claude unverändert"
+  }
+}
