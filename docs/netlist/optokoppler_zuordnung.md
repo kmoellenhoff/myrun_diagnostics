@@ -75,3 +75,28 @@ Messspitzen mit Schutzkappe, damit nichts über den Schlitz rutscht.
 Im aktiven Lauf 10.11. 13:50 fielen EM_POWENA, EM_STATUS, LOWKITENA/B und LK_ENABLE gemeinsam von 1 auf 0 (HF 902, err 9).
 Ein Enable-Koppler mit nachlassendem CTR würde so ein Bild liefern; die Enable-Schleife über P2.5/Thermoschalter ebenso.
 Erst A + B trennen das.
+
+## Rückseite hinter der OC-Spalte (Feld B2/C2, Grenze zu 3) – grobe Sichtung 10.11.
+
+![Rückseite](../img/optokoppler_rueckseite.jpg)
+
+Durch den Isolationsschlitz sind die 8 OC-Gehäuse von unten sichtbar; damit lassen sich die OC-Positionen auf
+`photos/2026-11-08/back/PXL_20261108_153958521.jpg` festlegen (OC01 auf der P2-Seite, OC08 am Schlitzende bei P602).
+Konsolenseite des Schlitzes, von OC01 nach OC08 **[I]/[H]**:
+
+| Bereich | Höhe | Inhalt | Deutung |
+|---|---|---|---|
+| Via-Reihe direkt am Schlitz | OC01–OC08 | Durchkontaktierungen | Verbindungen zu den Konsolen-Pads der Koppler **[I]** |
+| A | OC01–OC04 | gleich aufgebaute Zellen aus SOT-23 + Widerständen, oben 2 × 22 Ω | LED-Treiber/Pegelwandler zwischen P2-Bündel und Kopplern **[H]** |
+| B | OC05–OC06 | Widerstandsfeld mit 1004 (1 MΩ) + 4753 (475 kΩ) | Teiler/Eingangsnetz (Tacho, Enable?) neben LM2903 **[H]** |
+| C | OC05–OC07, an der Kante | 2 × 3R30 + zwei 3-polige Filter | Versorgung der Konsolenseite (+12 V → 78L05) **[H]** |
+| D | OC07–OC08 | 2 × 47R5, SOT-23, Kondensatoren | gegenüber ADM485; evtl. RS-485-Leitung mit Schutz **[H]** |
+| Bündel | ganze Länge, Kante | ~8 Bahnen von P2/P4 | die 08.11. korrodierten Bahnen speisen genau diesen Bereich **[O]** |
+
+**Hypothese RS-485:** Der ADM485 auf der Konsolenseite braucht zur MCU RO (Konsole → MCU) sowie DI und DE (MCU → Konsole).
+Genau zwei Koppler arbeiten MCU → Konsole (OC01, OC07). Dann liefe der Lower-Kit-Status (EM/LK-Flags) als Datenbus.
+Nicht belegt. Prüfung stromlos auf der Vorderseite (ADM485-Pinout laut `parts.csv`):
+1. ADM485 Pin 6 / 7 (A / B) → P2-Pins 13…18 (Durchgang, ggf. über 47R5).
+2. ADM485 Pin 1 (RO) → OCx.1 der Kanäle Konsole → MCU.
+3. ADM485 Pin 4 (DI) und Pin 2/3 (/RE, DE) → OC01.3/.4 und OC07.3/.4.
+4. Bündel: P2-Pad → erstes Zielpad messen und dabei die Kante leicht biegen.
