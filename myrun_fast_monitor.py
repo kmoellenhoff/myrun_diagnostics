@@ -220,6 +220,81 @@ def step_payload(kind, val):
     return bytes([0x03]) + struct.pack("<h", int(round(val * 10)))   # Set Target Inclination: sint16, 0.1 %
 
 
+POLL_READ = ("@RENC#", "@RPWM#", "@STATUS#", "@DUMPIO#")
+
+
+async def listen_poll_loop(client, rx, rec, a, write_resp, last_speed):
+    """Console-started run: read-only polling only (no FTMS init, no setup,
+    no START/STOP). Reads the error log at start and end, then every
+    --listen-poll seconds encoder, PWM, status and digital I/O."""
+    async def q(cmd, timeout=4.0):
+        try:
+            return await tg_cmd(client, rx, cmd, a.byte_delay, write_resp, timeout)
+        except Exception as e:                       # BLE hiccup: keep listening
+            return f"{type(e).__name__}: {e}", "ERROR"
+
+    r, s = await q("@RERRORLOG#")
+    rec.log(f"ERRORLOG_START {s} {r!r}")
+    if s != "OK":
+        rec.log("WARNING: no reply to read command without init; polling continues, "
+                "notifications are still recorded")
+    io_prev, fault_at, cycles = {}, None, 0
+    loop = asyncio.get_running_loop()
+    t_end = loop.time() + a.duration
+    try:
+        while loop.time() < t_end:
+            t_cycle = loop.time()
+            r, s = await q("@RENC#", 2.5)
+            m = re.search(r"([\d.]+)\s*Hz\s*->\s*([\d.]+)\s*km/h", r)
+            if m:
+                hz = float(m.group(1))
+                prev = last_speed.get("enc")
+                if prev is not None and prev > 0 and hz == 0:
+                    rec.log(f"SPEED_LOSS (encoder) {prev:g} Hz -> 0 Hz")
+                last_speed["enc"] = hz
+                rec.sig("enc_hz", hz)
+                rec.sig("enc_kmh", float(m.group(2)))
+            r2, s2 = await q("@RPWM#", 2.5)
+            m2 = re.search(r"PWM=([\d.]+)%", r2)
+            if m2:
+                rec.sig("pwm_pct", float(m2.group(1)))
+            r3, s3 = await q("@STATUS#")
+            st, ms = parse_status(r3)
+            if st:
+                if st != last_speed.get("state"):
+                    rec.log(f"STATE {last_speed.get('state')} -> {st}")
+                last_speed["state"] = st
+                rec.sig("state", st)
+            if ms is not None:
+                rec.sig("meas_speed", ms)
+            r4, s4 = await q("@DUMPIO#")
+            io = parse_dumpio(r4)
+            for k, v in io.items():
+                if io_prev.get(k) != v:
+                    if io_prev:
+                        rec.log(f"IO CHANGE {k}: {io_prev.get(k)} -> {v}")
+                    rec.sig(f"io_{k}", int(v))
+            io_prev.update(io)
+            rec.log(f"POLL enc={m.group(1) + ' Hz' if m else s} "
+                    f"pwm={m2.group(1) + ' %' if m2 else s2} state={st or s3} "
+                    f"meas={ms} EM_POWENA={io.get('EM_POWENA', s4)} LK_ENABLE={io.get('LK_ENABLE', '-')} "
+                    f"(cycle {loop.time() - t_cycle:.1f} s)")
+            cycles += 1
+            if st == "QSHardwareFault" and fault_at is None:
+                fault_at = loop.time()
+                rec.log(f"HARDWARE FAULT detected, logging {a.post_fault:.0f} s more")
+                t_end = min(t_end, fault_at + a.post_fault)
+            await asyncio.sleep(max(0.0, a.listen_poll - (loop.time() - t_cycle)))
+    except (KeyboardInterrupt, asyncio.CancelledError):
+        rec.log("interrupted")
+    finally:
+        for label, c in (("ERRORLOG_END", "@RERRORLOG#"), ("STATUS_END", "@STATUS#"),
+                         ("DUMPIO_END", "@DUMPIO#")):
+            r, s = await q(c)
+            rec.log(f"{label} {s} {r!r}")
+        rec.log(f"END listen-poll cycles={cycles}")
+
+
 async def main():
     ap = argparse.ArgumentParser(description="MYRUN fast fault monitor")
     ap.add_argument("--address", default="E0:86:1D:FA:4D:A0")
@@ -234,6 +309,10 @@ async def main():
     ap.add_argument("--no-start", action="store_true", help="passive mode: monitor without sending START")
     ap.add_argument("--listen-only", action="store_true",
                     help="purely passive: no init, no commands at all; only GATT inventory + notifications")
+    ap.add_argument("--listen-poll", type=float, default=0, metavar="SEC",
+                    help="like --listen-only (no FTMS init, no setup, no START/STOP), but every SEC "
+                         "seconds read-only @RENC# @RPWM# @STATUS# @DUMPIO#; error log at start/end. "
+                         "For runs started at the console, e.g. --listen-poll 10")
     ap.add_argument("--steps", default="",
                     help='timed profile after START, e.g. "30:speed=2.5,60:speed=2.9,80:incline=2,105:incline=0"')
     ap.add_argument("--ramp", action="store_true",
@@ -244,6 +323,11 @@ async def main():
                     help="after connecting, wait up to N s for QSWaitForStart* (default 150 with --wait-device, else 0)")
     ap.add_argument("--output", help="base filename (without extension)")
     a = ap.parse_args()
+    if a.listen_poll < 0:
+        print("--listen-poll must be >= 0")
+        return 2
+    if a.listen_poll > 0:
+        a.listen_only = True
     if a.wait_ready is None:
         a.wait_ready = 150.0 if a.wait_device > 0 else 0.0
     try:
@@ -357,6 +441,15 @@ async def main():
                         except Exception as e:
                             rec.log(f"subscribe failed {u}: {e}")
             rec.log("SUBSCRIBED " + ", ".join(subscribed))
+
+            if a.listen_only and a.listen_poll > 0:
+                rec.log(f"LISTEN-POLL for {a.duration:.0f} s: no FTMS init, no setup, no START/STOP; "
+                        f"read-only {', '.join(POLL_READ)} every {a.listen_poll:g} s")
+                await listen_poll_loop(client, rx, rec, a, write_resp, last_speed)
+                el = max(rec.rel(), 1e-6)
+                rec.log("NOTIFY packets per UUID: " + ", ".join(
+                    f"{k}={n} ({n / el:.1f}/s)" for k, n in sorted(counters.items())))
+                return 0
 
             if a.listen_only:
                 rec.log(f"LISTEN-ONLY for {a.duration:.0f} s (no init, no commands)")
