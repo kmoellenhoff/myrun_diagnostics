@@ -100,3 +100,11 @@ Nicht belegt. Prüfung stromlos auf der Vorderseite (ADM485-Pinout laut `parts.c
 2. ADM485 Pin 1 (RO) → OCx.1 der Kanäle Konsole → MCU.
 3. ADM485 Pin 4 (DI) und Pin 2/3 (/RE, DE) → OC01.3/.4 und OC07.3/.4.
 4. Bündel: P2-Pad → erstes Zielpad messen und dabei die Kante leicht biegen.
+
+## Gemessene Zuordnung (11.11.2026, stromlos)
+| OC | LED-Ansteuerung | Signal | Beleg |
+|---|---|---|---|
+| OC02, OC03, OC05, OC08 | Kathode an 0 V Konsole, Signal an Anode | offen | Kathode → P2.7 = 0 Ω |
+| **OC04** | Kathode an **LM2903 OUT B (Pin 7)** | **Enable/OtM-Kette von P2.5** (über IN− B, Pin 6, ≈17 kΩ zu P2.5) | 0 Ω Pin 7 → OC04.2; P2.5 → Pin 6 17 kΩ, → Pin 5 1 MΩ |
+| **OC06** | Kathode an **ADM485 RO (Pin 1)** | RS-485-Empfang Konsole → MCU | 0 Ω |
+| OC01, OC07 | LED auf Netzseite (MCU → Konsole) | vermutlich RS-485 DI/DE | offen |
