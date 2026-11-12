@@ -23,7 +23,7 @@ The belt motor is a **brushed DC motor driven by a chopper from the rectified ma
 | Mains input | EMI filter with 3 chokes, X2 1 µF, varistors RV300/RV301 | filtering | [O] |
 | Inrush limiter | Schrack RT334024 relay (24 V DC coil, 16 A) + white 7 W 68 Ω resistor | soft start / main relay | [O] |
 | Rectifier / PFC | bridge rectifier (heat sink right), Q1, D2, 4 × R020 shunts on the back | DC link supply, input current sense | [O]/[I] |
-| DC link | EPCOS B43630-C9567-M 560 µF | ~300–380 V DC | [O] |
+| DC link | EPCOS B43630-C9567-M7, 560 µF ±20 %, **400 V**, climatic category 25/085/56 (**85 °C**), date code 04.21 | ~300–380 V DC | [O] |
 | Motor chopper | Q2 + D3 (heat sink left, markings hidden), 4 × R020 shunts on the front near DC MOTOR | PWM motor drive, current sense | [O]/[I] |
 | Temperature | NTC 10 kΩ on connector P600, screwed next to Q2: 11 kΩ at room temperature, 10.75 kΩ warmed | Q2 temperature | [M] |
 | Incline path | 3 × Panasonic ALQ3F12 (12 V, 10 A), Schrack PE014012, **FUSE MOT T4A 5×20** | UP/DOWN relays and fuse for the AC incline motor | [O] |
