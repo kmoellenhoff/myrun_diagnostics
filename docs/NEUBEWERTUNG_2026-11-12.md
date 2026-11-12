@@ -44,3 +44,8 @@ Letzte Option: Tausch-Test mit einer zweiten GIRT S6T30 oder Konsole.
   - Prüfen: nach Netz-Aus Zeit messen, bis LINE, +5V und STS1 erlöschen. Ab jetzt nur noch **Kaltstarts** werten (alle LEDs aus, Elko < 5 V) und jeweils den **ersten** Fehler nach einem Kaltstart notieren.
 - Bisherige „erste“ Fehler nach Lauf: 07.11. (95 s gut, danach 8×), 10.11. 13:34 (≈ 1 s, err 4), 11.11. 10:33 (10 s, err 9). Wechselnde Codes sprechen gegen den Speed-Sensor als alleinige Ursache (dann wäre durchgehend 08 zu erwarten) **[I]**; er ist aber nicht ausgeschlossen. Prüfen: Encoder (`@RENC#`) bei langsam von Hand gedrehtem Band und im nächsten Lauf im 1-s-Raster.
 - **Hinweis ChatGPT [I]:** Beim FAN3100C ist OUT nur high, wenn IN+ (Pad A) high **und** IN− (Pad D) low ist. IN− kann ein Sperr-/Schutzeingang sein (z. B. Überstromabschaltung über TL082). Stromlos klären: Wohin führen Pad A und Pad D (bis zum nächsten Bauteil)? Außerdem offener Zweig VDD (Pad C) → 2,21 kΩ → „1P“ (SOT-23, Markierung passt zu MMBT2222A) → 0VA.
+
+## Nachtrag 23:03 – Freigabe von Q2 (Schaltungsentwurf ChatGPT aus Makros, Branch 110926)
+VDD (Pad C) → 2,21 kΩ → Knoten N → 1 kΩ → IN+ (Pad A); IN+ → 47,5 kΩ → 0VA; „1P“ (NPN?) Kollektor an N, Emitter an 0VA, Basis 1P.L Herkunft offen. Pad D (IN−?) läuft ins Leiterbahnbündel, Ende offen.
+Lesart **[H]**: IN+ wird über VDD hochgezogen; leitet 1P, zieht er IN+ auf low → Treiber gesperrt. Ein dauerhaft leitender 1P (Basis angesteuert oder C-E-Leck) würde genau 904 („GIRT treibt nicht“) erklären.
+Stromlos prüfen: 1P Diodentest L→R und L→O ≈ 0,6–0,7 V, Gegenrichtung OL; O–R eingebaut ≈ 48 kΩ (Parallelweg 1 k + 47,5 k), deutlich weniger = Leck. Danach 1P.L und Pad D bis zum Quell-IC verfolgen.

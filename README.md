@@ -73,10 +73,10 @@ Faster, higher-resolution fault monitor for the belt-drive failure. It has three
 
 **`--listen-only`.** Connects, logs the GATT inventory and subscribes to notifications, then only records them for `--duration` seconds. No init, no Technogym commands and no FTMS control-point writes are sent.
 
-**`--listen-poll SEC`.** Like `--listen-only` (no FTMS init, no setup commands, no START/STOP), but reads the error log right after connecting and then, starting immediately, every SEC seconds the read-only commands `@RENC#`, `@RPWM#`, `@STATUS#` and `@DUMPIO#` (one `POLL` line per cycle, state and I/O changes logged as they happen, 8 s post-fault logging, error log/status/I/O at the end). Meant for runs started at the console. Whether the firmware answers these reads without the init sequence is untested; if not, a warning is logged and notifications are still recorded.
+**`--listen-poll SEC`.** Like `--listen-only` (no FTMS init, no setup commands, no START/STOP), but reads the error log right after connecting and then, starting immediately, every SEC seconds `@RENC#` (encoder, ≈0.5–1 s per read) and every `--slow-every` N-th cycle (default 5) additionally `@STATUS#`, `@DUMPIO#` and `@RPWM#` (one `POLL` line per cycle, encoder drops and jumps > 30 % logged, state and I/O changes logged as they happen, 8 s post-fault logging, error log/status/I/O at the end). Meant for runs started at the console. Whether the firmware answers these reads without the init sequence is untested; if not, a warning is logged and notifications are still recorded.
 
 ```bash
-python3 myrun_fast_monitor.py --listen-poll 10 --wait-device 300 --duration 300
+python3 myrun_fast_monitor.py --listen-poll 1 --slow-every 5 --wait-device 300 --duration 300
 ```
 
 What it records:
