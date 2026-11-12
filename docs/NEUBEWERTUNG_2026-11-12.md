@@ -38,3 +38,9 @@ Zweiter Strang: **Ablauf Konsole ↔ GIRT** (wer schaltet zuerst ab bei err 9 / 
 **E – Protokoll jeder Einschaltung**: kalt/warm, Elko entladen ja/nein, Dauer bis Fehler, Displaycode, STS2-Blinkzahl. Bestätigt oder widerlegt Beobachtung 2.3.
 
 Letzte Option: Tausch-Test mit einer zweiten GIRT S6T30 oder Konsole.
+
+## Nachtrag 22:56 – Folgefehler durch unvollständigen Reset; Treiber-Eingänge
+- **Idee des Nutzers [H]:** Viele Fehlstarts sind Folgefehler. Nach einem echten Fehler bleibt die GIRT verriegelt, bis sie vollständig stromlos ist. Da sich der Zwischenkreis nach Netz-Aus nur langsam entlädt (gemessen: Elko braucht lange, Restspannung), läuft die Hilfsversorgung/MCU nach dem Ausschalten womöglich weiter → „Neustart“ ist kein Reset. Passt zu: Fehlstart 15:08 ohne vorheriges Entladen; gute Läufe nur nach langer Pause.
+  - Prüfen: nach Netz-Aus Zeit messen, bis LINE, +5V und STS1 erlöschen. Ab jetzt nur noch **Kaltstarts** werten (alle LEDs aus, Elko < 5 V) und jeweils den **ersten** Fehler nach einem Kaltstart notieren.
+- Bisherige „erste“ Fehler nach Lauf: 07.11. (95 s gut, danach 8×), 10.11. 13:34 (≈ 1 s, err 4), 11.11. 10:33 (10 s, err 9). Wechselnde Codes sprechen gegen den Speed-Sensor als alleinige Ursache (dann wäre durchgehend 08 zu erwarten) **[I]**; er ist aber nicht ausgeschlossen. Prüfen: Encoder (`@RENC#`) bei langsam von Hand gedrehtem Band und im nächsten Lauf im 1-s-Raster.
+- **Hinweis ChatGPT [I]:** Beim FAN3100C ist OUT nur high, wenn IN+ (Pad A) high **und** IN− (Pad D) low ist. IN− kann ein Sperr-/Schutzeingang sein (z. B. Überstromabschaltung über TL082). Stromlos klären: Wohin führen Pad A und Pad D (bis zum nächsten Bauteil)? Außerdem offener Zweig VDD (Pad C) → 2,21 kΩ → „1P“ (SOT-23, Markierung passt zu MMBT2222A) → 0VA.
