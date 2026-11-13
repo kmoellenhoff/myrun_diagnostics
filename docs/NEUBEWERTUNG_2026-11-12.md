@@ -55,3 +55,4 @@ Stromlos prüfen: 1P Diodentest L→R und L→O ≈ 0,6–0,7 V, Gegenrichtung O
 - **F27 stromlos [M]:** Kontakt (2 × 2 Pins, doppelt ausgeführt) = 68 Ω (parallel Vorwiderstand 68 Ω, weiß); Spule **1,4 kΩ in beide Richtungen** (keine Freilaufdiode direkt parallel messbar); Spulen-Plus = 0 Ω zu +24V. Bestromungstest offen.
 - Zwischenkreisspannung noch nicht gemessen.
 - **1P Diodentest [M]:** L→R 0,70 V, L→O 0,70 V (beide Übergänge gut); R→L 1,56 V, O→L 2,18 V (statt OL – eingebaut über Parallelwiderstände, z. B. Basis-Ableitwiderstand, plausibel **[I]**). Offen: Ohm O→R (≈ 48 kΩ erwartet), Verlauf von L und Pad D.
+- **F27 Bestromungstest [M]:** Relais zieht mit 18 V (2 × 9 V) 20–30 × hörbar an; Kontaktwiderstand angezogen **0,03 Ω**. **F27 statisch in Ordnung.** Offen bleibt nur, ob es im Betrieb angesteuert wird (Klicken nach Einschalten, Spannung über 68 Ω).
