@@ -49,3 +49,8 @@ Letzte Option: Tausch-Test mit einer zweiten GIRT S6T30 oder Konsole.
 VDD (Pad C) → 2,21 kΩ → Knoten N → 1 kΩ → IN+ (Pad A); IN+ → 47,5 kΩ → 0VA; „1P“ (NPN?) Kollektor an N, Emitter an 0VA, Basis 1P.L Herkunft offen. Pad D (IN−?) läuft ins Leiterbahnbündel, Ende offen.
 Lesart **[H]**: IN+ wird über VDD hochgezogen; leitet 1P, zieht er IN+ auf low → Treiber gesperrt. Ein dauerhaft leitender 1P (Basis angesteuert oder C-E-Leck) würde genau 904 („GIRT treibt nicht“) erklären.
 Stromlos prüfen: 1P Diodentest L→R und L→O ≈ 0,6–0,7 V, Gegenrichtung OL; O–R eingebaut ≈ 48 kΩ (Parallelweg 1 k + 47,5 k), deutlich weniger = Leck. Danach 1P.L und Pad D bis zum Quell-IC verfolgen.
+
+## Messungen 13.11. (Messplan Q2)
+- **Reset-Zeit [M]:** Nach Netz-Aus sind alle LEDs (LINE, +5V, STS1) nach **3–5 s** aus → die Hilfsversorgung bricht schnell zusammen, die GIRT setzt sich nach wenigen Sekunden zurück. Die Folgefehler-Hypothese (kein Reset bei Neustart) gilt damit nur für Neustarts innerhalb weniger Sekunden **[I]**.
+- **F27 stromlos [M]:** Kontakt (2 × 2 Pins, doppelt ausgeführt) = 68 Ω (parallel Vorwiderstand 68 Ω, weiß); Spule **1,4 kΩ in beide Richtungen** (keine Freilaufdiode direkt parallel messbar); Spulen-Plus = 0 Ω zu +24V. Bestromungstest offen.
+- Zwischenkreisspannung noch nicht gemessen.
