@@ -136,7 +136,7 @@ Technogym driver codes (same numbering in four drive generations **[Man]**): 01 
 | Intermittent contact / corrosion in the signal or monitoring path on the GIRT between P2/P4 and the optocoupler/MCU area | most likely [I] |
 | Power stage / drive (Q2, D3, shunts, gate drive) | possible [I] |
 | Motor brushes / commutator | unlikely: 342 h of belt time, but not yet opened and checked |
-| Speed sensor / cable | unlikely: mechanics fine, signal reaches P2 pin 9 |
+| Speed sensor / cable | **re-rated 11/13: likely contributor** – fork windows covered with black (brush) dust, mounting screws on the motor housing were loose (sensor could move while running); signal reaches P2 pin 9 when clean and still [O] |
 
 Open measurements: MAX pulse-length calibration on the 9 V block (taps of 0.1/0.2/0.3 s), the voltage at DC MOTOR during a fresh failed start after a complete power-off, pad-to-pad continuity of the P2/P4 traces towards the logic area, leakage to neighbouring traces, and a check of the brushes and commutator.
 
