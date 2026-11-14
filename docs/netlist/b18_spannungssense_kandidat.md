@@ -1,5 +1,8 @@
 # B18 – Busspannungs-Teiler (Kandidat für die Spannungsüberwachung DC-Bus/Motor), Rückseite E5
 
+> **Veraltet auf `main`:** Maßgeblicher Stand seit 09.11. auf Branch `110926` (`docs/netlist/b18_spannungssense_kandidat.md`): B18 → 100 kΩ → 100 kΩ → B19-Pad B → 39,2 kΩ → 0VA; **Pad B = L4981 Pin 14 (VFEED)**. Der hier genannte ≈ 221-kΩ-Fußpunkt ist eine Modellgröße, kein Bauteil; Ziel ist die PFC-Rückführung, kein belegter MCU-Eingang.
+
+
 **Maßgeblicher Stand: 2026-11-08 21:40.** Abschnitt 1–4 gilt; verworfene Zwischenhypothesen stehen nur in Abschnitt 6 (Historie) und dürfen **nicht** für Messungen verwendet werden.
 Sicherheitsgrade: [M] gemessen, [I] aus Foto/Aufdruck gelesen, [H] Hypothese.
 
