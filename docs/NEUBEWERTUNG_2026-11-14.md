@@ -54,3 +54,13 @@ Sicherheit: Messpunkte auf Netzpotential; Klemmen nur bei entladenem Elko (< 5 V
 | 5 | Optional, erst wenn die PFC freigegeben wird: L4981 Pin 14 (VFEED) und B18-P1 im Betrieb | Start | Modell: Pad B ≈ 4,6 V, P1 ≈ 27,9 V bei 316 V (unbelastet, kein Sollwert) | nur für PFC-Regelung relevant |
 
 Bei jedem Lauf: Skript `--start-delay 20`, Displaycode, STS2-Blinks, MIN/MAX notieren.
+
+## 4. Stand 17:45 – Sperre kommt aktiv vom MCU [M]
+Kette vollständig gemessen: **MCU-Pin (untere linke Kante Nr. 3, vermutl. Pin 11)** → Knoten → 2,21 kΩ → Basis T3 → T3 zieht L4981 Pin 15 auf 0VA; Pull-up 10 kΩ („01C“) nach +5VA. Pegel am Knoten: **Standby 4,9 V, Start 4,9 V** (bei reinem Pull-up wären ≈ 1,5 V zu erwarten) → der MCU **treibt aktiv high** und gibt die PFC beim Start nicht frei. Die Sperransteuerung selbst ist damit in Ordnung; offen ist, **warum der MCU nicht freigibt**.
+
+### Nächste Schritte
+1. **F27-Spule** (Plus gegen Elko-Minus und Spannung über der Spule), Standby und Start: Schließt der MCU die Vorladung überhaupt ab?
+2. **Testpunkte P70 (MCU-Pin 5 der unteren linken Kante) und P13** gegen Testpunkt 0VA (Vorderseite), Standby und Start: Herstellertestpunkte liegen meist an wichtigen Signalen; jede Änderung beim Start ist ein Hinweis.
+3. **Basis T2 bzw. Motorfreigabe-Pin** am MCU zuordnen (gleiches Vorgehen wie bei T3), um zu sehen, ob beide Freigaben am MCU enden.
+4. Eingänge des MCU identifizieren, die vor dem Start ausgewertet werden könnten: Netz-/Zwischenkreismessung (Ketten in B10), Strommessung (TL082 → B20-R1…R4), Netzerkennung (LINE), Konsolen-Signale (OC04 Enable, OC05 PWM, OC06 RS-485). Jeweils: Weg zum MCU-Pin, Pegel Standby/Start.
+5. Erst danach: EEPROM 24C32 (Parameter) und MCU-Tausch/Tausch-GIRT als Option.
