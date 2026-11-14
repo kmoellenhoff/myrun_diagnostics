@@ -30,3 +30,5 @@ Erwartung stromlos = typische Beschaltung, auf dieser Platine **nicht** gemessen
 
 ## Messungen 14.11. (stromlos, Nachbarpins gegeneinander) [M]
 13–14: 500 kΩ · 14–15: 50 kΩ · 15–16: 20 kΩ · 19–20: 4,23 kΩ · 2–3: 78 kΩ → keine Lötbrücke/kein Kriechpfad zwischen Nachbarpins erkennbar [I]. Offen: 11–12, 12–13, 3–4 sowie Pins 12, 15, 3, 20 gegen S-GND.
+Pins gegen S-GND (Pin 10) [M]: **12 (SS) 6,9–7 MΩ, leicht steigend** (nur Kondensator, statisch nicht nach Masse gezogen) · 3 (OVP) 77 kΩ · **15 (P-UVLO) 20,5 kΩ** · 20 (GDRV) 2,9 kΩ. Nachbarpins: 11–12 6,2 MΩ · 12–13 steigend, nach 20 s 2 MΩ · 3–4 108 kΩ.
+Bewertung [I]: keine Kurzschlüsse, SS nicht dauerhaft auf Masse. Pin 15 hat einen Teiler (20,5 kΩ nach Masse); ob dessen Einschaltschwelle unter 13,5 V liegt, hängt vom oberen Widerstand ab → stromlos Pin 15 gegen Pin 19 messen. Möglich ist auch, dass der MCU über Pin 15 oder Pin 12 die PFC ein-/ausschaltet → im Betrieb Pin 12 und Pin 15 beim Start messen.
