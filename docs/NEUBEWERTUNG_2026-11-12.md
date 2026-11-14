@@ -1,5 +1,7 @@
 # Neubewertung 12.11.2026 (abends)
 
+> **Überholt:** aktueller Stand in `NEUBEWERTUNG_2026-11-14.md` (MCU startet den Fahrbetrieb nicht; Startbedingung/Zwischenkreis-Messung).
+
 Ersetzt die Gewichtung aus `NEUBEWERTUNG_2026-11-11.md`. Tags: [M] gemessen, [O] beobachtet, [I] gefolgert, [H] Hypothese.
 
 ## 1. Was jetzt ausgeschlossen bzw. unauffällig ist
