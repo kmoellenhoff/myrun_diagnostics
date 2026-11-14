@@ -47,7 +47,7 @@ Sicherheit: Messpunkte auf Netzpotential; Klemmen nur bei entladenem Elko (< 5 V
 
 | # | Messung | Bedingung | Erwartung | Bedeutung bei Abweichung |
 |---|---|---|---|---|
-| 1 | **Quelle der T3-Ansteuerung stromlos**: vom quellenseitigen Ende von „2211“ (Testpad) bis zum nächsten Bauteilanschluss (MCU-Pin, IC-Pin, Transistor) | stromlos | ≈ 0 Ω zu genau einem Anschluss | MCU-Pin → Firmware; anderes Bauteil → Schutz-/Logikstufe |
+| 1 | **Quelle der T3-Ansteuerung stromlos**: vom quellenseitigen Ende von „2211“ (Testpad) bis zum nächsten Bauteilanschluss (MCU-Pin, IC-Pin, Transistor) | stromlos | ≈ 0 Ω zu einem Anschluss; Abzweigungen prüfen. Vorab: Testpad ↔ Basis T3 ≈ 2,2 kΩ (nicht 0 Ω) | MCU-Pin → Ansteuerung kommt vom MCU (Grund noch offen); anderes Bauteil → vorgeschaltete Logik/Schutzstufe, dort weiter |
 | 2 | Testpad an „2211“ (quellenseitig) gegen Elko-Minus | Standby, Start | Pegel notieren (≈ 5 V = high bzw. Pull-up) | ändert sich beim Start nicht → Quelle gibt nie frei |
 | 3 | F27: (a) Spulen-Plus gegen Elko-Minus, (b) **Spannung über der Spule** (Plus gegen Minus) | Standby, dann Start | (a) ≈ 24 V; (b) ≈ 24 V = angezogen, ≈ 0 V = nicht angesteuert | nur (b) zusammen mit (a) ist aussagekräftig; Spulen-Minus allein reicht nicht |
 | 4 | Optional, nachrangig: obere Enden B20-R1b…R4b gegen Elko-Minus | Standby, Start | **keine begründete Erwartung** (Funktion unbekannt) | nur dokumentieren, keine Bewertung ohne Schaltungsfunktion |
