@@ -41,6 +41,7 @@ Offene Kernfrage: **Warum bleibt die Sperransteuerung an T3 aktiv?** Nicht bewie
 4. MCU-Defekt oder EEPROM-Parameter.
 
 ## 3. Messplan
+Messpunkte: `img/messpunkte_2026-11-14_t3_quelle.jpg` (Schritte 1, 2, 4), `img/mcu_qfp32_pins.jpg` (Ziel von Schritt 1); F27-Spule: Foto der Rückseite unter F27 noch nötig.
 Sicherheit: Messpunkte auf Netzpotential; Klemmen nur bei entladenem Elko (< 5 V) setzen, Bezug Elko-Minus (Rückseite) = 0VA, danach nichts berühren.
 
 | # | Messung | Bedingung | Erwartung | Bedeutung bei Abweichung |
