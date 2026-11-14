@@ -104,7 +104,8 @@ Nicht belegt. Prüfung stromlos auf der Vorderseite (ADM485-Pinout laut `parts.c
 ## Gemessene Zuordnung (11.11.2026, stromlos)
 | OC | LED-Ansteuerung | Signal | Beleg |
 |---|---|---|---|
-| OC02, OC03, OC05, OC08 | Kathode an 0 V Konsole, Signal an Anode | offen | Kathode → P2.7 = 0 Ω |
+| OC02, OC03, OC08 | Kathode an 0 V Konsole, Signal an Anode | offen | Kathode → P2.7 = 0 Ω |
+| **OC05** | Kathode an 0 V Konsole, Anode über ≈ 1 kΩ an **P2.6** | **PWM-Sollwert Konsole → MCU** | P2.6 → OC05.1 = 0,956 kΩ (14.11.), andere Anoden 15–20 kΩ |
 | **OC04** | Kathode an **LM2903 OUT B (Pin 7)** | **Enable/OtM-Kette von P2.5** (über IN− B, Pin 6, ≈17 kΩ zu P2.5) | 0 Ω Pin 7 → OC04.2; P2.5 → Pin 6 17 kΩ, → Pin 5 1 MΩ |
 | **OC06** | Kathode an **ADM485 RO (Pin 1)** | RS-485-Empfang Konsole → MCU | 0 Ω |
 | OC01, OC07 | LED auf Netzseite (MCU → Konsole) | vermutlich RS-485 DI/DE | offen |
