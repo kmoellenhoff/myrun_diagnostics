@@ -92,6 +92,13 @@ What it records:
 python3 myrun_fast_monitor.py --wait-device 300 --duration 150 --ramp
 ```
 
+**Delayed / automatic start (`--start-delay`, `--auto-start`).** `--start-delay SEC` inserts a countdown (with terminal beeps every 5 s and in the last 3 s) between the Enter confirmation and `START`, so the operator can walk from the PC to the treadmill. `--auto-start` skips the Enter prompt entirely and sends `START` once the device is ready, always after a countdown (default 20 s, minimum 10 s). In both cases `@STATUS#` is read again at the end of the countdown; if the state is no longer `QSWaitForStart*` (e.g. the belt was moved and the lower kit faulted), `START` is suppressed. Ctrl+C during the countdown aborts without `START`.
+
+```bash
+python3 myrun_fast_monitor.py --wait-device 300 --duration 120 --start-delay 20
+python3 myrun_fast_monitor.py --wait-device 300 --duration 120 --auto-start --start-delay 30
+```
+
 **Timed speed/incline profile (`--steps`, `--ramp`).** In active mode the script can change speed and incline at fixed times after `START` via the FTMS Control Point (`0x02` Set Target Speed in 0.01 km/h, `0x03` Set Target Inclination in 0.1 %). `--ramp` is a shortcut for `30:speed=2.5,60:speed=2.9,75:incline=2.0,90:speed=2.5,105:incline=0,120:speed=1.2` (seconds after START). Hard limits: speed 0.8–2.9 km/h (below the runner-detector threshold of 3.0 km/h), incline 0–5 %. Steps stop after a hardware fault; if an incline step was sent, incline 0 % is requested again before `STOP`. Steps are executed at the next poll cycle, so the actual send time (logged as `STEP +x s`) can lag the planned time by a few seconds.
 
 ```bash

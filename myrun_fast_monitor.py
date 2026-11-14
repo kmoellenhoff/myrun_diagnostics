@@ -332,8 +332,26 @@ async def main():
                     help="keep scanning up to N s for the treadmill (start the script before power-on)")
     ap.add_argument("--wait-ready", type=float, default=None,
                     help="after connecting, wait up to N s for QSWaitForStart* (default 150 with --wait-device, else 0)")
+    ap.add_argument("--start-delay", type=float, default=0, metavar="SEC",
+                    help="wait SEC seconds after Enter (or after ready with --auto-start) before sending "
+                         "START; countdown with beeps, state re-checked before START")
+    ap.add_argument("--auto-start", action="store_true",
+                    help="no Enter prompt: send START automatically once the device is ready "
+                         "(requires --start-delay >= 10; default 20)")
     ap.add_argument("--output", help="base filename (without extension)")
     a = ap.parse_args()
+    if a.auto_start:
+        if a.no_start or a.listen_only or a.listen_poll > 0:
+            print("--auto-start cannot be combined with --no-start/--listen-only/--listen-poll")
+            return 2
+        if a.start_delay == 0:
+            a.start_delay = 20.0
+        if a.start_delay < 10:
+            print("--auto-start requires --start-delay >= 10 s")
+            return 2
+    if a.start_delay < 0:
+        print("--start-delay must be >= 0")
+        return 2
     if a.listen_poll < 0:
         print("--listen-poll must be >= 0")
         return 2
@@ -359,7 +377,14 @@ async def main():
     if not a.no_start:
         print("\nACHTUNG: FTMS START lässt das Band mit ca. 1,2 km/h anlaufen.")
         print("Niemand auf dem Band, Gerät montiert, Not-Aus griffbereit.")
-        print("Die Start-Freigabe (Enter) wird abgefragt, sobald das Gerät verbunden und bereit ist.\n")
+        if a.auto_start:
+            print(f"AUTO-START: START wird {a.start_delay:g} s nach der Bereitschaft OHNE Enter gesendet "
+                  "(Strg+C bricht ab).\n")
+        else:
+            print("Die Start-Freigabe (Enter) wird abgefragt, sobald das Gerät verbunden und bereit ist.")
+            if a.start_delay > 0:
+                print(f"Nach Enter folgt ein Countdown von {a.start_delay:g} s bis START.")
+            print()
 
     base = a.output or f"myrun_fast_monitor_{datetime.now():%Y%m%d_%H%M%S}"
     txt_path, csv_path = Path(base + ".txt"), Path(base + ".csv")
@@ -513,13 +538,38 @@ async def main():
                 return 4
             if not a.no_start:
                 print(f"\nBereit: {state}. Video/Messgerät bereit? STS2 dunkel, STS1 1 Hz?")
-                try:
-                    await asyncio.get_running_loop().run_in_executor(
-                        None, input, "Enter = START senden,  Strg+C = Abbruch ... ")
-                except (KeyboardInterrupt, EOFError):
-                    rec.log("START declined by user")
-                    return 1
-                rec.log("START released by user (Enter)")
+                if a.auto_start:
+                    rec.log(f"START released automatically (--auto-start), delay {a.start_delay:g} s")
+                else:
+                    try:
+                        await asyncio.get_running_loop().run_in_executor(
+                            None, input, "Enter = START senden,  Strg+C = Abbruch ... ")
+                    except (KeyboardInterrupt, EOFError):
+                        rec.log("START declined by user")
+                        return 1
+                    rec.log("START released by user (Enter)")
+                if a.start_delay > 0:
+                    rec.log(f"START DELAY {a.start_delay:g} s (Strg+C = Abbruch ohne START)")
+                    t_go = time.monotonic() + a.start_delay
+                    last_shown = None
+                    while True:
+                        left = t_go - time.monotonic()
+                        if left <= 0:
+                            break
+                        sec = int(left + 0.999)
+                        if sec != last_shown:
+                            last_shown = sec
+                            bell = "\a" if (sec <= 3 or sec % 5 == 0) else ""
+                            print(f"\r  START in {sec:3d} s ... {bell}", end="", flush=True)
+                        await asyncio.sleep(min(0.2, left))
+                    print()
+                    # re-check: the state may have changed while waiting (e.g. belt touched -> 901)
+                    r, s = await tg_cmd(client, rx, "@STATUS#", a.byte_delay, write_resp)
+                    state, _ = parse_status(r)
+                    if s != "OK" or state not in SAFE_START_STATES:
+                        rec.log(f"After start delay state {state!r} ({s}) not a start state -> START suppressed.")
+                        return 4
+                    rec.log(f"START DELAY over, state {state} -> sending START")
 
             # --- fast loop
             loop = asyncio.get_running_loop()
