@@ -1,4 +1,4 @@
-# Neubewertung 14.11.2026 – Der MCU startet den Fahrbetrieb nicht
+# Neubewertung 14.11.2026 – PFC und Motor bleiben gesperrt (T3-Sperre)
 
 Ersetzt den Hauptverdacht aus `NEUBEWERTUNG_2026-11-12.md`. Messdaten und Logs: `LAUF_2026-11-14.md`, `logs_2026-11-14/`.
 Tags: [M] gemessen, [O] beobachtet, [I] gefolgert, [H] Hypothese.
@@ -11,7 +11,7 @@ Ablauf jedes Mal: START → Konsole `QSRunning`, PWM_MOTOR > 0 → Encoder 0 Hz 
 | Speed-Sensor (gereinigt), Handtest | Impulse sauber, GIRT erkennt Bewegung | – | ok [M] |
 | Enable P2.5 → LM2903 → OC04 | aktiv | aktiv | ok [M] (11.11.) |
 | PWM-Sollwert P2.6 → OC05, LED-Seite | 7 mV | 100 → 160 mV | Konsole liefert PWM [M] |
-| OC05 Transistorseite (C–E) | 4,95 V | 4,5 → 4,3 V | **Sollwert erreicht MCU** [M] |
+| OC05 Transistorseite (C–E) | 4,95 V | 4,5 → 4,3 V | **PWM-Änderung am Ausgang von OC05** [M]; Weg zum MCU und Pulsform nicht gemessen |
 | VCC L4981 / VDD Gate-Treiber | 13,5 V | 13,5 V | Versorgung ok [M] |
 | Zwischenkreis | 316 V | 316 V | **PFC startet nicht** [M] |
 | L4981 Pin 15 (P-UVLO) | 6 mV | 6 mV | PFC aktiv gesperrt [M] |
@@ -21,11 +21,12 @@ Ablauf jedes Mal: START → Konsole `QSRunning`, PWM_MOTOR > 0 → Encoder 0 Hz 
 | Relais F27 (Vorladung) | ? | kein Klicken | nie angesteuert? [O] |
 | Temperaturfühler P600 | – | – | vom Nutzer zweimal geprüft, o. B. [M] |
 
-Statisch in Ordnung: T2, 1P, T3 (alle NPN, Übergänge 0,67–0,70 V, keine Lecks), F27 (Spule 1,4 kΩ, Kontakt angezogen 0,03 Ω), L4981-Pins (keine Brücken/Kurzschlüsse), alle Elkos, Q2/D3, Shunts, Motor.
+Statisch in Ordnung: T2, 1P, T3 (alle NPN, Übergänge 0,67–0,70 V; C–E-Ohmwerte passen zum jeweiligen Parallelnetz, kein niederohmiger C–E-Pfad bei Ohmmessung – Verhalten unter Betriebsspannung damit nicht geprüft), F27 (Spule 1,4 kΩ, Kontakt angezogen 0,03 Ω), L4981-Pins (keine Brücken/Kurzschlüsse), alle Elkos, Q2/D3, Shunts, Motor.
 
 ## 2. Theorie [I/H]
-Der MCU bekommt alles, was er zum Fahren braucht (Enable, Sollwert, Versorgung), **schaltet aber keinen einzigen Ausgang ein**: keine PFC-Freigabe (T3 bleibt an), keine Q2-Freigabe (T2 bleibt aus), kein Vorladerelais. Danach meldet er „keine Drehzahl“ (08). Zwei getrennte Ausgänge bleiben gleichzeitig inaktiv → **Entscheidung der Firmware, kein einzelner defekter Pin**. Der MCU selbst arbeitet sonst normal.
-→ **Eine Startbedingung des MCU ist nicht erfüllt**, typischerweise ein analoger Messwert. Dass Läufe gelegentlich gelingen (oft nach langer Pause), passt zu einem Messwert nahe einer Schwelle, der mit Temperatur/Feuchte driftet.
+Gemessen ist: Enable-Kanal aktiv, PWM-Änderung am OC05-Ausgang, Versorgung 13,5 V – trotzdem bleiben die PFC-Sperre (T3 an, Pin 15 ≈ 6 mV) und die fehlende Q2-Freigabe (Basis T2 ≈ 0 V) bestehen; beim START ist kein Relaisklicken hörbar. Danach meldet die GIRT 08.
+**Hypothese [H]:** Beide Freigaben werden von derselben Stelle (vermutlich MCU) zurückgehalten, weil eine Startbedingung nicht erfüllt ist; ein einzelner defekter Pin würde nicht beide Pfade betreffen. **Nicht bewiesen:** Quelle der T3- und T2-Ansteuerung, bewusste Firmwareentscheidung (auch eine nachgewiesene MCU-Verbindung würde das allein nicht belegen), Zusammenhang beider Sperren.
+→ Falls die Hypothese stimmt, ist eine Startbedingung nicht erfüllt, z. B. ein analoger Messwert. Dass Läufe gelegentlich gelingen (oft nach langer Pause), passt zu einem Messwert nahe einer Schwelle, der mit Temperatur/Feuchte driftet.
 
 Verlauf der T3-Ansteuerung (aus Makros, `img/t3_ansteuerung_buendel.jpg`): Basis T3 → 2,21 kΩ („2211“) → Testpad → Bündel aus 4 Bahnen (die anderen 3 von den Widerständen am TL082) → Richtung MCU; kein weiteres Bauteil dazwischen erkennbar.
 
@@ -48,8 +49,8 @@ Sicherheit: Messpunkte auf Netzpotential; Klemmen nur bei entladenem Elko (< 5 V
 |---|---|---|---|---|
 | 1 | **Quelle der T3-Ansteuerung stromlos**: vom quellenseitigen Ende von „2211“ (Testpad) bis zum nächsten Bauteilanschluss (MCU-Pin, IC-Pin, Transistor) | stromlos | ≈ 0 Ω zu genau einem Anschluss | MCU-Pin → Firmware; anderes Bauteil → Schutz-/Logikstufe |
 | 2 | Testpad an „2211“ (quellenseitig) gegen Elko-Minus | Standby, Start | Pegel notieren (≈ 5 V = high bzw. Pull-up) | ändert sich beim Start nicht → Quelle gibt nie frei |
-| 3 | F27 Spulen-Minus gegen Elko-Minus | Standby, dann Start | ≈ 0 V = Relais angezogen; ≈ 24 V = offen | offen in Standby und Start → MCU sieht Vorladung nicht als fertig |
-| 4 | MCU-seitige Enden der vier Widerstände am TL082 (= B20-R1…R4) | Standby | feste Werte nahe 0 V oder mittlere Referenz | Anschlag (≈ Versorgung) → Strommessung verdächtig |
+| 3 | F27: (a) Spulen-Plus gegen Elko-Minus, (b) **Spannung über der Spule** (Plus gegen Minus) | Standby, dann Start | (a) ≈ 24 V; (b) ≈ 24 V = angezogen, ≈ 0 V = nicht angesteuert | nur (b) zusammen mit (a) ist aussagekräftig; Spulen-Minus allein reicht nicht |
+| 4 | Optional, nachrangig: obere Enden B20-R1b…R4b gegen Elko-Minus | Standby, Start | **keine begründete Erwartung** (Funktion unbekannt) | nur dokumentieren, keine Bewertung ohne Schaltungsfunktion |
 | 5 | Optional, erst wenn die PFC freigegeben wird: L4981 Pin 14 (VFEED) und B18-P1 im Betrieb | Start | Modell: Pad B ≈ 4,6 V, P1 ≈ 27,9 V bei 316 V (unbelastet, kein Sollwert) | nur für PFC-Regelung relevant |
 
 Bei jedem Lauf: Skript `--start-delay 20`, Displaycode, STS2-Blinks, MIN/MAX notieren.
