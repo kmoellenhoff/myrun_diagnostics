@@ -27,3 +27,6 @@ Erwartung stromlos = typische Beschaltung, auf dieser Platine **nicht** gemessen
 | 20 | GDRV | Gate-Ausgang zum PFC-MOSFET | Gate-Widerstand, Ableitwiderstand | kΩ-Bereich |
 
 **Betrieb:** Die PFC taktet nur, wenn VCC die Einschaltschwelle überschreitet (Pin 15) und SS (Pin 12) hochläuft; OVP (Pin 3) > 5,1 V schaltet ab. Ein eigener Enable-Pin existiert nicht.
+
+## Messungen 14.11. (stromlos, Nachbarpins gegeneinander) [M]
+13–14: 500 kΩ · 14–15: 50 kΩ · 15–16: 20 kΩ · 19–20: 4,23 kΩ · 2–3: 78 kΩ → keine Lötbrücke/kein Kriechpfad zwischen Nachbarpins erkennbar [I]. Offen: 11–12, 12–13, 3–4 sowie Pins 12, 15, 3, 20 gegen S-GND.
