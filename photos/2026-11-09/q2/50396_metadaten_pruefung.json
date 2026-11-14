@@ -1,0 +1,13 @@
+{
+  "source_filename": "50396.jpg",
+  "source_sha256": "0e08d0067040dcc41b896ca8a3f06a22a98e9a7c87f99368c10995576a3f1872",
+  "sanitized_sha256": "e146509c2a6b10ba736e8f30d082a1bd80f1c6d80f5db393d829857b9f4e57fa",
+  "removed_markers": [
+    "0xe1",
+    "0xe1"
+  ],
+  "exif_absent": true,
+  "decoded_pixels_unchanged": true,
+  "jpeg_reencoded": false,
+  "board_location": "Dreibeiner über R2211, Q2/B21/B5, Claude unverändert"
+}

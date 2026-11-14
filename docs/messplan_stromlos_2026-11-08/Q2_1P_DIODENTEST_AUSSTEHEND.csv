@@ -1,0 +1,3 @@
+﻿Test_ID;Rot;Schwarz;Modus;Status;Anzeige_V;Gegenrichtung_V;Erwartung_nur_Kandidat
+Q2-1P-D01;Q2-1P.L;Q2-1P.R;"Diode, stromlos; danach umpolen";AUSSTEHEND – vom Nutzer auf später verschoben;;;"Basis→Emitter eines isolierten Si-NPN etwa 0,5–0,8 V, rückwärts gesperrt; in-circuit Parallelpfade möglich"
+Q2-1P-D02;Q2-1P.L;Q2-1P.O;"Diode, stromlos; danach umpolen";AUSSTEHEND – vom Nutzer auf später verschoben;;;"Basis→Kollektor eines isolierten Si-NPN etwa 0,5–0,8 V, rückwärts gesperrt; in-circuit Parallelpfade möglich"

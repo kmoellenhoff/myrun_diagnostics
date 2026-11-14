@@ -1,0 +1,41 @@
+{
+  "source": "photos/2026-11-09/q2/50396.jpg",
+  "source_sha256": "e146509c2a6b10ba736e8f30d082a1bd80f1c6d80f5db393d829857b9f4e57fa",
+  "source_size": [
+    1280,
+    1014
+  ],
+  "source_orientation": "wie hochgeladen, keine Drehung/Spiegelung",
+  "coordinate_system": "Claude Q2/B21/B5 unverändert; x/y sind nur Quellfoto-Pixel mit Ursprung links oben",
+  "points": [
+    {
+      "id": "O",
+      "x": 656,
+      "y": 304,
+      "label_x": 820,
+      "label_y": 205,
+      "label": "O: oberer Einzelpin"
+    },
+    {
+      "id": "L",
+      "x": 540,
+      "y": 588,
+      "label_x": 45,
+      "label_y": 700,
+      "label": "L: unten links"
+    },
+    {
+      "id": "R",
+      "x": 762,
+      "y": 639,
+      "label_x": 850,
+      "label_y": 775,
+      "label": "R: unten rechts = 0VA"
+    }
+  ],
+  "output_pdf": "Q2_C_1P_NACHTRAG_2026-11-09.pdf",
+  "output_pdf_sha256": "e677d6af1dd16b080cb31d9054e85ba272e3dedd97f8f2e149e4c9670e5cd31d",
+  "original_jpeg_embedded_without_pixel_edit": true,
+  "annotations": "separate vector lines, circles and labels",
+  "pin_functions_are_conditional": true
+}

@@ -1,0 +1,7187 @@
+{
+  "grid": "Claude A–L × 1–6; beide Seiten wie bestehende Übersichten",
+  "reference_front": "docs/img/overview_front.jpg",
+  "reference_back": "docs/img/overview_back_upright.jpg",
+  "entries": [
+    {
+      "photo_id": "PHOTO001",
+      "source": "photos/2026-11-08/back/PXL_20261108_153725460.jpg",
+      "source_sha256": "515c1f1e90f47bf5f8a5f7878b5e310386b981e19c62cf608c3793e9003688f1",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 1932,
+        "matches": 1995,
+        "median_error_px": 0.123,
+        "inlier_hull_fraction": 0.4941,
+        "projected_area_fraction": 1.827,
+        "valid": true,
+        "strong": true,
+        "center": "G4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.7706118402455142,
+            -1.0365233626193388e-05,
+            -33.71639264247852
+          ],
+          [
+            -5.207774012785376e-06,
+            0.770190816849714,
+            -706.8414387758615
+          ],
+          [
+            -6.446228355356697e-09,
+            3.6282522962343944e-10,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            -33.716392517089844,
+            -706.8414306640625
+          ],
+          [
+            3110.461669921875,
+            -706.8812866210938
+          ],
+          [
+            3110.426513671875,
+            1653.454345703125
+          ],
+          [
+            -33.74811935424805,
+            1653.43212890625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO002",
+      "source": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+      "source_sha256": "2606534888a3a718e5b53faa78fd77ff1eb96186545ce76c191748207e8aa80e",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 426,
+        "matches": 500,
+        "median_error_px": 1.354,
+        "inlier_hull_fraction": 0.5998,
+        "projected_area_fraction": 0.352,
+        "valid": true,
+        "strong": true,
+        "center": "K3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          "I6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.002330236032348403,
+            -0.325195410822483,
+            3112.9461231679497
+          ],
+          [
+            0.3372187892228458,
+            0.01841522996165544,
+            -35.06069514802307
+          ],
+          [
+            -1.6590336374736795e-06,
+            5.416050087006897e-06,
+            0.9976633736559996
+          ]
+        ],
+        "polygon": [
+          [
+            3120.237060546875,
+            -35.1428108215332
+          ],
+          [
+            3151.146240234375,
+            1353.1126708984375
+          ],
+          [
+            2110.072265625,
+            1386.8355712890625
+          ],
+          [
+            2086.61669921875,
+            21.0728702545166
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "K3",
+            "inliers": 426
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "K3",
+            "inliers": 388
+          },
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "K3",
+            "inliers": 33
+          }
+        ]
+      },
+      "assigned": "K4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO003",
+      "source": "photos/2026-11-08/back/PXL_20261108_153802461.jpg",
+      "source_sha256": "e3265fc2f10059f46b10beeedf9c4458995bf3c8f12fda2cceebfa44c6e849e2",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 45,
+        "matches": 66,
+        "median_error_px": 1.278,
+        "inlier_hull_fraction": 0.46,
+        "projected_area_fraction": 0.0694,
+        "valid": true,
+        "strong": true,
+        "center": "L5",
+        "corner_cells": [
+          "",
+          "",
+          "K4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.01130741037191507,
+            -0.17482064024311983,
+            3051.715951221519
+          ],
+          [
+            0.1505631894135314,
+            -0.0011958752370148373,
+            -49.060243310637965
+          ],
+          [
+            1.5623934202192309e-06,
+            -1.0070814910633136e-05,
+            0.999170866978911
+          ]
+        ],
+        "polygon": [
+          [
+            3054.248291015625,
+            -49.100955963134766
+          ],
+          [
+            3080.76611328125,
+            562.120361328125
+          ],
+          [
+            2628.656005859375,
+            576.1593627929688
+          ],
+          [
+            2598.31689453125,
+            -54.45066452026367
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "L5",
+            "inliers": 45
+          }
+        ]
+      },
+      "assigned": "L5",
+      "assignment_status": "Originalindex abweichend: G4; Nachbarfoto-Abgleich L5; visuell bestätigt"
+    },
+    {
+      "photo_id": "PHOTO004",
+      "source": "photos/2026-11-08/back/PXL_20261108_153806786.jpg",
+      "source_sha256": "ae928d76746e81bff1d503aac4329a93e5454ffa2d0491432c33ec7a53a4ada9",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 142,
+        "matches": 155,
+        "median_error_px": 1.024,
+        "inlier_hull_fraction": 0.6363,
+        "projected_area_fraction": 0.0787,
+        "valid": true,
+        "strong": true,
+        "center": "L4",
+        "corner_cells": [
+          "",
+          "",
+          "K3",
+          "K6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.018744862992644242,
+            -0.17625330440478987,
+            3065.355703534546
+          ],
+          [
+            0.16162685139865612,
+            0.003596699368151199,
+            193.73512267651373
+          ],
+          [
+            2.782563664571715e-06,
+            -6.486608390093359e-06,
+            1.0002938575600582
+          ]
+        ],
+        "polygon": [
+          [
+            3064.455078125,
+            193.67820739746094
+          ],
+          [
+            3105.6640625,
+            843.3504028320312
+          ],
+          [
+            2623.294921875,
+            871.3677368164062
+          ],
+          [
+            2575.664794921875,
+            208.84751892089844
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "L4",
+            "inliers": 142
+          }
+        ]
+      },
+      "assigned": "L4",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO005",
+      "source": "photos/2026-11-08/back/PXL_20261108_153809691.jpg",
+      "source_sha256": "35a8fc48b98a8c6d0f8837a169ca8fe12a551bd7d6215177ac9cdcddb8828578",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 85,
+        "matches": 101,
+        "median_error_px": 0.864,
+        "inlier_hull_fraction": 0.5055,
+        "projected_area_fraction": 0.084,
+        "valid": true,
+        "strong": true,
+        "center": "L3",
+        "corner_cells": [
+          "",
+          "",
+          "K1",
+          "K4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0074252958394840545,
+            -0.18096284477812186,
+            3069.1406864220744
+          ],
+          [
+            0.16356089379558958,
+            0.0008229176534505619,
+            511.97648003671014
+          ],
+          [
+            -7.332984868535609e-07,
+            -6.526240109319758e-06,
+            1.0012446155628663
+          ]
+        ],
+        "polygon": [
+          [
+            3065.325439453125,
+            511.3400573730469
+          ],
+          [
+            3104.86083984375,
+            1181.3690185546875
+          ],
+          [
+            2601.443115234375,
+            1208.0994873046875
+          ],
+          [
+            2562.636962890625,
+            524.3323364257812
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "L3",
+            "inliers": 85
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "L3",
+            "inliers": 38
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "L3",
+            "inliers": 31
+          }
+        ]
+      },
+      "assigned": "L3",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO006",
+      "source": "photos/2026-11-08/back/PXL_20261108_153812115.jpg",
+      "source_sha256": "7dbd730247d52433bd3d31ccde54eee37e2ad6162850dc8151404b9d45f66d58",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 25,
+        "matches": 42,
+        "median_error_px": 0.976,
+        "inlier_hull_fraction": 0.2669,
+        "projected_area_fraction": 0.0881,
+        "valid": true,
+        "strong": false,
+        "center": "L2",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          "K3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.00031672953465874417,
+            -0.183872127001659,
+            3116.71354260765
+          ],
+          [
+            0.16368410135782163,
+            -0.0007105431621993887,
+            727.7943117271897
+          ],
+          [
+            -3.307242195908384e-06,
+            -6.045331338842538e-06,
+            1.0035537795919405
+          ]
+        ],
+        "polygon": [
+          [
+            3105.6767578125,
+            725.217041015625
+          ],
+          [
+            3146.69873046875,
+            1409.636962890625
+          ],
+          [
+            2626.710693359375,
+            1434.27587890625
+          ],
+          [
+            2592.040283203125,
+            736.6461181640625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "L2",
+            "inliers": 25
+          }
+        ]
+      },
+      "assigned": "L2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO007",
+      "source": "photos/2026-11-08/back/PXL_20261108_153815740.jpg",
+      "source_sha256": "8ab3d862158e102969cbe7da127f2dedcb795351422b6378bc49a39e10a5fb0a",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 62,
+        "matches": 84,
+        "median_error_px": 1.096,
+        "inlier_hull_fraction": 0.4287,
+        "projected_area_fraction": 0.0984,
+        "valid": true,
+        "strong": true,
+        "center": "K2",
+        "corner_cells": [
+          "L4",
+          "",
+          "",
+          "J3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.00968035037136655,
+            -0.17013252628737163,
+            2836.7619601370193
+          ],
+          [
+            0.17105896582862204,
+            0.008618115087276711,
+            661.5636808756262
+          ],
+          [
+            -5.554160028751349e-06,
+            2.9351928013013844e-06,
+            0.9989427551541721
+          ]
+        ],
+        "polygon": [
+          [
+            2839.764404296875,
+            662.2638549804688
+          ],
+          [
+            2865.22412109375,
+            1392.51220703125
+          ],
+          [
+            2309.8984375,
+            1406.6044921875
+          ],
+          [
+            2297.15087890625,
+            682.5562133789062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "K2",
+            "inliers": 38
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "K2",
+            "inliers": 62
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "K2",
+            "inliers": 61
+          }
+        ]
+      },
+      "assigned": "K2",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO008",
+      "source": "photos/2026-11-08/back/PXL_20261108_153820259.jpg",
+      "source_sha256": "90779798f39bea63a397f861982f60815987bbbc2a577038f6d46d36d6e93140",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 77,
+        "matches": 98,
+        "median_error_px": 1.07,
+        "inlier_hull_fraction": 0.3972,
+        "projected_area_fraction": 0.0873,
+        "valid": true,
+        "strong": true,
+        "center": "J2",
+        "corner_cells": [
+          "K3",
+          "",
+          "",
+          "I3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.017659786670316684,
+            -0.15956800036842417,
+            2695.6281701895678
+          ],
+          [
+            0.15507235537594916,
+            0.00965568758711959,
+            737.4639907152289
+          ],
+          [
+            -9.906664979174913e-06,
+            2.1728670888233605e-06,
+            1.0001637725455814
+          ]
+        ],
+        "polygon": [
+          [
+            2695.186767578125,
+            737.34326171875
+          ],
+          [
+            2733.619140625,
+            1427.6290283203125
+          ],
+          [
+            2208.782470703125,
+            1448.4110107421875
+          ],
+          [
+            2191.673828125,
+            761.8563232421875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "J2",
+            "inliers": 46
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "J2",
+            "inliers": 77
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "J2",
+            "inliers": 56
+          }
+        ]
+      },
+      "assigned": "J2",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO009",
+      "source": "photos/2026-11-08/back/PXL_20261108_153823849.jpg",
+      "source_sha256": "4d1fc18653e9c604b3f3222a64e35eb3eed2f12f38f677847bde017dd2a32804",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 371,
+        "matches": 390,
+        "median_error_px": 0.485,
+        "inlier_hull_fraction": 0.8525,
+        "projected_area_fraction": 0.0829,
+        "valid": true,
+        "strong": true,
+        "center": "J3",
+        "corner_cells": [
+          "K5",
+          "K2",
+          "I2",
+          "I5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0015350995044886998,
+            -0.16050528270584274,
+            2714.372213110766
+          ],
+          [
+            0.16345898375908463,
+            0.007517787907825092,
+            377.9625992529888
+          ],
+          [
+            -8.395542110302819e-07,
+            1.6264988961907305e-06,
+            1.0007092688768078
+          ]
+        ],
+        "polygon": [
+          [
+            2712.4482421875,
+            377.6947021484375
+          ],
+          [
+            2728.045166015625,
+            1047.720947265625
+          ],
+          [
+            2223.717529296875,
+            1065.496826171875
+          ],
+          [
+            2209.915771484375,
+            398.7308349609375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "J3",
+            "inliers": 209
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "J3",
+            "inliers": 371
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "J3",
+            "inliers": 294
+          }
+        ]
+      },
+      "assigned": "J3",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO010",
+      "source": "photos/2026-11-08/back/PXL_20261108_153826344.jpg",
+      "source_sha256": "67faac12d6bce0cb61965f4e5303945293ab00439a923c249a82f30bfe818b61",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 285,
+        "matches": 311,
+        "median_error_px": 0.987,
+        "inlier_hull_fraction": 0.8277,
+        "projected_area_fraction": 0.0801,
+        "valid": true,
+        "strong": true,
+        "center": "J5",
+        "corner_cells": [
+          "K6",
+          "K3",
+          "I3",
+          "I6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.020294851746568632,
+            -0.18417051377251478,
+            2653.317744783209
+          ],
+          [
+            0.16057498207369675,
+            -0.004141861633012228,
+            100.08992139371871
+          ],
+          [
+            5.04137493604619e-06,
+            -1.0958492294583478e-05,
+            0.9848174113608807
+          ]
+        ],
+        "polygon": [
+          [
+            2694.22314453125,
+            101.63297271728516
+          ],
+          [
+            2721.46240234375,
+            751.1897583007812
+          ],
+          [
+            2234.735595703125,
+            764.0875244140625
+          ],
+          [
+            2196.010009765625,
+            91.87747955322266
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "J5",
+            "inliers": 285
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "J5",
+            "inliers": 159
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "J5",
+            "inliers": 148
+          }
+        ]
+      },
+      "assigned": "J5",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO011",
+      "source": "photos/2026-11-08/back/PXL_20261108_153829037.jpg",
+      "source_sha256": "2f69e0bce19653d3d954db73fb8f4c667a427340b60362817879f294a6f49636",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 122,
+        "matches": 173,
+        "median_error_px": 0.89,
+        "inlier_hull_fraction": 0.3122,
+        "projected_area_fraction": 0.0788,
+        "valid": true,
+        "strong": true,
+        "center": "J6",
+        "corner_cells": [
+          "",
+          "K4",
+          "I4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.011405406739566536,
+            -0.1619718045617269,
+            2618.584411427559
+          ],
+          [
+            0.15831580690967587,
+            0.0006902392596725253,
+            -145.41816655941582
+          ],
+          [
+            7.788835235888083e-07,
+            -2.653978959236497e-06,
+            0.9829074329782503
+          ]
+        ],
+        "polygon": [
+          [
+            2664.12109375,
+            -147.94696044921875
+          ],
+          [
+            2702.72607421875,
+            507.57305908203125
+          ],
+          [
+            2217.64501953125,
+            513.957275390625
+          ],
+          [
+            2177.136474609375,
+            -147.01138305664062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "J6",
+            "inliers": 122
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "J6",
+            "inliers": 81
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "J6",
+            "inliers": 63
+          }
+        ]
+      },
+      "assigned": "J6",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO012",
+      "source": "photos/2026-11-08/back/PXL_20261108_153832358.jpg",
+      "source_sha256": "712545baeb167a87684628aff648367071b5b827d0c7942c39a1fed79f2d8b19",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 100,
+        "matches": 158,
+        "median_error_px": 1.313,
+        "inlier_hull_fraction": 0.5597,
+        "projected_area_fraction": 0.0884,
+        "valid": true,
+        "strong": true,
+        "center": "I5",
+        "corner_cells": [
+          "",
+          "J4",
+          "H4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.017299724318212563,
+            -0.17343538639337688,
+            2387.653838397004
+          ],
+          [
+            0.17155734873781192,
+            0.007887002720528554,
+            -88.674508122458
+          ],
+          [
+            4.276192903188962e-06,
+            -2.4118383989999606e-06,
+            0.9954541355288763
+          ]
+        ],
+        "polygon": [
+          [
+            2398.557373046875,
+            -89.07945251464844
+          ],
+          [
+            2426.927001953125,
+            603.4937744140625
+          ],
+          [
+            1916.1802978515625,
+            631.9674072265625
+          ],
+          [
+            1878.5799560546875,
+            -65.28382110595703
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "I5",
+            "inliers": 79
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "I5",
+            "inliers": 100
+          }
+        ]
+      },
+      "assigned": "I5",
+      "assignment_status": "Originalindex abweichend: G4; Nachbarfoto-Abgleich I5; visuell bestätigt"
+    },
+    {
+      "photo_id": "PHOTO013",
+      "source": "photos/2026-11-08/back/PXL_20261108_153834626.jpg",
+      "source_sha256": "39cedbf8f417663724a09c492592de79f85f1ce6768344d544604d27047ed973",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 38,
+        "matches": 73,
+        "median_error_px": 0.511,
+        "inlier_hull_fraction": 0.3675,
+        "projected_area_fraction": 0.0908,
+        "valid": true,
+        "strong": true,
+        "center": "I4",
+        "corner_cells": [
+          "J6",
+          "J2",
+          "H2",
+          "H5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.001368469384057254,
+            -0.1683381421539137,
+            2414.8855299757797
+          ],
+          [
+            0.16947239053497823,
+            0.006394923548873612,
+            215.5552899933592
+          ],
+          [
+            -1.5564023286852577e-06,
+            2.176700471385513e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2414.885498046875,
+            215.55528259277344
+          ],
+          [
+            2435.9375,
+            912.7990112304688
+          ],
+          [
+            1903.98095703125,
+            926.3032836914062
+          ],
+          [
+            1886.4241943359375,
+            233.59454345703125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "I4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO014",
+      "source": "photos/2026-11-08/back/PXL_20261108_153836782.jpg",
+      "source_sha256": "da99a4593a3f69ec9883a033fc4f8b34d4761fd187919bfd43584152444b4160",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 245,
+        "matches": 288,
+        "median_error_px": 0.942,
+        "inlier_hull_fraction": 0.7226,
+        "projected_area_fraction": 0.0887,
+        "valid": true,
+        "strong": true,
+        "center": "I3",
+        "corner_cells": [
+          "J4",
+          "J1",
+          "H1",
+          "H4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0030707134931519846,
+            -0.1750003770486537,
+            2394.7883026613245
+          ],
+          [
+            0.16500328343655546,
+            0.004064924679136716,
+            526.8389615309445
+          ],
+          [
+            -3.660748184637199e-06,
+            -3.1977822025359564e-06,
+            1.0035207109203148
+          ]
+        ],
+        "polygon": [
+          [
+            2386.386474609375,
+            524.9906005859375
+          ],
+          [
+            2409.767578125,
+            1213.9093017578125
+          ],
+          [
+            1885.9759521484375,
+            1238.7901611328125
+          ],
+          [
+            1870.237060546875,
+            542.7036743164062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_153750178.jpg",
+            "center": "I3",
+            "inliers": 27
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "I3",
+            "inliers": 245
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "I3",
+            "inliers": 179
+          },
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "I3",
+            "inliers": 24
+          }
+        ]
+      },
+      "assigned": "I3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO015",
+      "source": "photos/2026-11-08/back/PXL_20261108_153839659.jpg",
+      "source_sha256": "785078ea25fc59b244ebd82a6bfec8a50a1b89c8ebecd262d087f31e2132f681",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 75,
+        "matches": 129,
+        "median_error_px": 1.141,
+        "inlier_hull_fraction": 0.37,
+        "projected_area_fraction": 0.0964,
+        "valid": true,
+        "strong": true,
+        "center": "I2",
+        "corner_cells": [
+          "J3",
+          "",
+          "",
+          "H3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.010391811373110753,
+            -0.1835836970429931,
+            2356.1081585305824
+          ],
+          [
+            0.1670481138614641,
+            0.0002964914887677294,
+            741.41753740797
+          ],
+          [
+            -6.2603116792726105e-06,
+            -4.564052055166002e-06,
+            1.0034629079404123
+          ]
+        ],
+        "polygon": [
+          [
+            2347.977294921875,
+            738.8589477539062
+          ],
+          [
+            2365.94775390625,
+            1455.101318359375
+          ],
+          [
+            1816.6295166015625,
+            1477.1573486328125
+          ],
+          [
+            1812.5850830078125,
+            750.2213134765625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "I2",
+            "inliers": 75
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "I2",
+            "inliers": 65
+          },
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "I2",
+            "inliers": 18
+          }
+        ]
+      },
+      "assigned": "I2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO016",
+      "source": "photos/2026-11-08/back/PXL_20261108_153842361.jpg",
+      "source_sha256": "d1c7cc8b5af0304118a45802cd0811484c2a748bde0f6ff931fbfd00d941c705",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 57,
+        "matches": 99,
+        "median_error_px": 1.268,
+        "inlier_hull_fraction": 0.3017,
+        "projected_area_fraction": 0.0962,
+        "valid": true,
+        "strong": true,
+        "center": "H2",
+        "corner_cells": [
+          "I3",
+          "",
+          "",
+          "G3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.008052276965134147,
+            -0.18288379984963052,
+            2146.5860541981797
+          ],
+          [
+            0.1695443851793307,
+            -0.001303310748401584,
+            743.6705664127746
+          ],
+          [
+            -4.71382302255401e-06,
+            -4.185030239487355e-06,
+            1.0054992244484335
+          ]
+        ],
+        "polygon": [
+          [
+            2134.845947265625,
+            739.6033325195312
+          ],
+          [
+            2143.165283203125,
+            1455.39892578125
+          ],
+          [
+            1595.6572265625,
+            1470.4708251953125
+          ],
+          [
+            1597.8382568359375,
+            745.1353149414062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "H2",
+            "inliers": 57
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+            "center": "H2",
+            "inliers": 56
+          },
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "H2",
+            "inliers": 42
+          }
+        ]
+      },
+      "assigned": "H2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO017",
+      "source": "photos/2026-11-08/back/PXL_20261108_153845377.jpg",
+      "source_sha256": "0faddcb0562006733a33dc95791f5959392ca661dd59f4e351f452017d3dc726",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 45,
+        "matches": 68,
+        "median_error_px": 0.844,
+        "inlier_hull_fraction": 0.6466,
+        "projected_area_fraction": 0.0897,
+        "valid": true,
+        "strong": true,
+        "center": "H3",
+        "corner_cells": [
+          "I4",
+          "I1",
+          "G1",
+          "G4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0006743913950377993,
+            -0.17684184144264123,
+            2147.5128146420975
+          ],
+          [
+            0.1678765915945002,
+            -0.0007672782297100774,
+            537.6796745740102
+          ],
+          [
+            -1.246127510575431e-06,
+            -3.944117384491115e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2147.5126953125,
+            537.6796875
+          ],
+          [
+            2161.252685546875,
+            1228.864013671875
+          ],
+          [
+            1636.42578125,
+            1241.5841064453125
+          ],
+          [
+            1625.2188720703125,
+            541.8779296875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "H3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO018",
+      "source": "photos/2026-11-08/back/PXL_20261108_153847630.jpg",
+      "source_sha256": "110325d844313f41e527f2b5db58bb93d287f9036299f40d3ad78e42a552b1f4",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 109,
+        "matches": 144,
+        "median_error_px": 0.651,
+        "inlier_hull_fraction": 0.5821,
+        "projected_area_fraction": 0.0873,
+        "valid": true,
+        "strong": true,
+        "center": "H4",
+        "corner_cells": [
+          "I5",
+          "I2",
+          "G2",
+          "G5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0003328963306999267,
+            -0.1697015020017309,
+            2139.182346911982
+          ],
+          [
+            0.16672849058323272,
+            0.0013170197075489014,
+            285.10367457256865
+          ],
+          [
+            -1.0080971361340022e-06,
+            -6.871281144761444e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2139.182373046875,
+            285.1036682128906
+          ],
+          [
+            2149.381103515625,
+            969.3428344726562
+          ],
+          [
+            1630.6251220703125,
+            975.4581298828125
+          ],
+          [
+            1622.5430908203125,
+            289.7498474121094
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "H4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO019",
+      "source": "photos/2026-11-08/back/PXL_20261108_153851483.jpg",
+      "source_sha256": "29a5361189ef992ff48a931c78a93394a3772f3f8a5fcdcedd31e2f5aa20d5fd",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 58,
+        "matches": 112,
+        "median_error_px": 1.037,
+        "inlier_hull_fraction": 0.3398,
+        "projected_area_fraction": 0.0889,
+        "valid": true,
+        "strong": true,
+        "center": "H5",
+        "corner_cells": [
+          "",
+          "I4",
+          "G4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.009341985074114639,
+            -0.16514243318232255,
+            2186.4790187344515
+          ],
+          [
+            0.1726825954778974,
+            0.005870624118916799,
+            -62.58814724127873
+          ],
+          [
+            4.067938401081008e-06,
+            4.284813067911813e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2186.47900390625,
+            -62.5881462097168
+          ],
+          [
+            2188.275146484375,
+            631.4761352539062
+          ],
+          [
+            1668.8966064453125,
+            640.8949584960938
+          ],
+          [
+            1658.6153564453125,
+            -44.019405364990234
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "H5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO020",
+      "source": "photos/2026-11-08/back/PXL_20261108_153855456.jpg",
+      "source_sha256": "7a6b9d2ccf951be2539cc144216f487051a7b611da4a71f47719f6a2fb10633d",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 54,
+        "matches": 103,
+        "median_error_px": 0.547,
+        "inlier_hull_fraction": 0.685,
+        "projected_area_fraction": 0.0855,
+        "valid": true,
+        "strong": true,
+        "center": "G5",
+        "corner_cells": [
+          "",
+          "H4",
+          "F4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0029825725477668685,
+            -0.16884254266365045,
+            1940.6762234046369
+          ],
+          [
+            0.16758944949536175,
+            0.000218012104264865,
+            -7.10677625897143
+          ],
+          [
+            1.561392892083621e-06,
+            -1.2660004188691264e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1940.67626953125,
+            -7.106776237487793
+          ],
+          [
+            1940.4832763671875,
+            672.3748168945312
+          ],
+          [
+            1431.8551025390625,
+            675.6434326171875
+          ],
+          [
+            1428.7958984375,
+            -6.463748455047607
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO021",
+      "source": "photos/2026-11-08/back/PXL_20261108_153857829.jpg",
+      "source_sha256": "78efcdfc44d23e92cb26e7f37ccf140495677f1d1eefa7e502593c0cd32b0ed5",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 154,
+        "matches": 185,
+        "median_error_px": 0.401,
+        "inlier_hull_fraction": 0.7429,
+        "projected_area_fraction": 0.0875,
+        "valid": true,
+        "strong": true,
+        "center": "G4",
+        "corner_cells": [
+          "H5",
+          "H2",
+          "F2",
+          "F5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.005451273891523169,
+            -0.16818654414545242,
+            1911.5148201488923
+          ],
+          [
+            0.16413878118985817,
+            0.000562703160665817,
+            288.03699597139484
+          ],
+          [
+            -4.337586515436467e-06,
+            -8.42364447522316e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1911.5147705078125,
+            288.0369873046875
+          ],
+          [
+            1923.3111572265625,
+            974.9777221679688
+          ],
+          [
+            1402.2972412109375,
+            979.3068237304688
+          ],
+          [
+            1399.71484375,
+            290.5113525390625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO022",
+      "source": "photos/2026-11-08/back/PXL_20261108_153900296.jpg",
+      "source_sha256": "ef90d7ae832f93fafa3a3b7c29f28869dee1c603f3a6309fa0332304658cd6f6",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 52,
+        "matches": 75,
+        "median_error_px": 0.964,
+        "inlier_hull_fraction": 0.5826,
+        "projected_area_fraction": 0.0949,
+        "valid": true,
+        "strong": true,
+        "center": "G2",
+        "corner_cells": [
+          "H4",
+          "H1",
+          "F1",
+          "F4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.004824696359088152,
+            -0.17908183702788044,
+            1906.8152265305837
+          ],
+          [
+            0.16911415534197927,
+            -0.0019803461440413314,
+            558.5024919548007
+          ],
+          [
+            -4.359082644419267e-06,
+            -3.854048454967551e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1906.815185546875,
+            558.5025024414062
+          ],
+          [
+            1921.3009033203125,
+            1271.0947265625
+          ],
+          [
+            1379.145263671875,
+            1280.3114013671875
+          ],
+          [
+            1374.2440185546875,
+            559.036376953125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO023",
+      "source": "photos/2026-11-08/back/PXL_20261108_153903047.jpg",
+      "source_sha256": "ee0ced7e3b853b6672c4113ed3cb2ffad5a4d7e131541338e0112a36303b8636",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 53,
+        "matches": 91,
+        "median_error_px": 0.604,
+        "inlier_hull_fraction": 0.6641,
+        "projected_area_fraction": 0.0929,
+        "valid": true,
+        "strong": true,
+        "center": "G2",
+        "corner_cells": [
+          "H3",
+          "",
+          "",
+          "F3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0019090255211834763,
+            -0.17653486449381028,
+            1896.5295820750912
+          ],
+          [
+            0.16931572480725293,
+            -0.0012513811003133598,
+            694.1583944730927
+          ],
+          [
+            -2.6956425701328073e-06,
+            -2.809579874214622e-06,
+            0.9999924214682051
+          ]
+        ],
+        "polygon": [
+          [
+            1896.5439453125,
+            694.1636352539062
+          ],
+          [
+            1909.7591552734375,
+            1400.3787841796875
+          ],
+          [
+            1374.7098388671875,
+            1408.7657470703125
+          ],
+          [
+            1367.315673828125,
+            696.3241577148438
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+            "center": "G2",
+            "inliers": 16
+          },
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "G2",
+            "inliers": 53
+          }
+        ]
+      },
+      "assigned": "G2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO024",
+      "source": "photos/2026-11-08/back/PXL_20261108_153904998.jpg",
+      "source_sha256": "4ba6207efb311c951f0ebcf568f5390af92c8354739f14b132f5b99d024536cf",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 28,
+        "matches": 65,
+        "median_error_px": 0.633,
+        "inlier_hull_fraction": 0.5324,
+        "projected_area_fraction": 0.0932,
+        "valid": true,
+        "strong": false,
+        "center": "F2",
+        "corner_cells": [
+          "G3",
+          "",
+          "",
+          "E3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.008001100983299198,
+            -0.17651114070256377,
+            1635.9327033933248
+          ],
+          [
+            0.16670040670050026,
+            -0.006677555803785026,
+            721.4651933581905
+          ],
+          [
+            -4.37491374598071e-06,
+            -3.7320504363201115e-06,
+            0.9999936875061549
+          ]
+        ],
+        "polygon": [
+          [
+            1635.9429931640625,
+            721.4697265625
+          ],
+          [
+            1632.4368896484375,
+            1427.0848388671875
+          ],
+          [
+            1094.4228515625,
+            1422.8177490234375
+          ],
+          [
+            1107.6839599609375,
+            709.1162109375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "F2",
+            "inliers": 28
+          }
+        ]
+      },
+      "assigned": "F2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO025",
+      "source": "photos/2026-11-08/back/PXL_20261108_153907263.jpg",
+      "source_sha256": "8d84e96b0bcd31d422c019dcf5ca693d8eb26a1f1adae6e76dc84023ca0e524d",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 47,
+        "matches": 88,
+        "median_error_px": 0.732,
+        "inlier_hull_fraction": 0.6181,
+        "projected_area_fraction": 0.0889,
+        "valid": true,
+        "strong": true,
+        "center": "F3",
+        "corner_cells": [
+          "G4",
+          "G1",
+          "E1",
+          "E5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.004751377912134156,
+            -0.17161384817849676,
+            1629.116232122182
+          ],
+          [
+            0.16530343522582155,
+            -0.0017266246463911376,
+            452.7344067117227
+          ],
+          [
+            -3.4965780497879147e-06,
+            -2.7008768626818352e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1629.1162109375,
+            452.7344055175781
+          ],
+          [
+            1633.0274658203125,
+            1143.4854736328125
+          ],
+          [
+            1108.8101806640625,
+            1147.7548828125
+          ],
+          [
+            1112.4072265625,
+            451.1774597167969
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "F3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO026",
+      "source": "photos/2026-11-08/back/PXL_20261108_153909351.jpg",
+      "source_sha256": "11c409bb22a432cc5c6dc950ffef1d69771bffb8dce2d69c3a3f0ca0aad11f4e",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 114,
+        "matches": 159,
+        "median_error_px": 0.491,
+        "inlier_hull_fraction": 0.7435,
+        "projected_area_fraction": 0.0864,
+        "valid": true,
+        "strong": true,
+        "center": "F4",
+        "corner_cells": [
+          "G5",
+          "G2",
+          "E2",
+          "E5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0014689591408045607,
+            -0.17167242025550813,
+            1646.789657658582
+          ],
+          [
+            0.16531169425523662,
+            -0.0022717246849458107,
+            245.07671145666336
+          ],
+          [
+            -1.312156371313593e-06,
+            -4.105693053136632e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1646.7896728515625,
+            245.0767059326172
+          ],
+          [
+            1649.6278076171875,
+            924.497802734375
+          ],
+          [
+            1135.0584716796875,
+            929.25341796875
+          ],
+          [
+            1134.97412109375,
+            241.14907836914062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "F4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO027",
+      "source": "photos/2026-11-08/back/PXL_20261108_153911731.jpg",
+      "source_sha256": "01e27c85ccacc90a1c82c2a68a0bebffdcab24381bb07c9c5c5d96ba3a4282d0",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 77,
+        "matches": 109,
+        "median_error_px": 0.574,
+        "inlier_hull_fraction": 0.7124,
+        "projected_area_fraction": 0.085,
+        "valid": true,
+        "strong": true,
+        "center": "F5",
+        "corner_cells": [
+          "G6",
+          "G3",
+          "E3",
+          "E6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00509247891860349,
+            -0.17116884935942953,
+            1647.411656104939
+          ],
+          [
+            0.16726141407884548,
+            -0.0008567257312716438,
+            5.3194245806427745
+          ],
+          [
+            2.782276503292462e-06,
+            -3.5859647757682164e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1647.41162109375,
+            5.319424629211426
+          ],
+          [
+            1649.4647216796875,
+            680.0265502929688
+          ],
+          [
+            1143.2220458984375,
+            684.8723754882812
+          ],
+          [
+            1135.3355712890625,
+            2.723893642425537
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "F5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO028",
+      "source": "photos/2026-11-08/back/PXL_20261108_153913723.jpg",
+      "source_sha256": "e78a5149c7dbb905f15745d5c6f87235e3717421c297923a8e4b745a5d070373",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 50,
+        "matches": 80,
+        "median_error_px": 0.627,
+        "inlier_hull_fraction": 0.5341,
+        "projected_area_fraction": 0.0877,
+        "valid": true,
+        "strong": true,
+        "center": "F5",
+        "corner_cells": [
+          "",
+          "G4",
+          "E4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.005993094731204507,
+            -0.17460112149783338,
+            1648.6284950452327
+          ],
+          [
+            0.1695212036018518,
+            -0.000371069710444915,
+            -78.21253709121852
+          ],
+          [
+            2.6318062688416177e-06,
+            -4.724624891439354e-06,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            1648.6285400390625,
+            -78.21253967285156
+          ],
+          [
+            1655.3060302734375,
+            606.9170532226562
+          ],
+          [
+            1142.2825927734375,
+            614.5960083007812
+          ],
+          [
+            1129.9173583984375,
+            -80.51545715332031
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "F5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO029",
+      "source": "photos/2026-11-08/back/PXL_20261108_153921371.jpg",
+      "source_sha256": "526be77d9f9d527d37801c2317202d8273946d86194c8dbf3c245ffbc677f24e",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 35,
+        "matches": 66,
+        "median_error_px": 0.924,
+        "inlier_hull_fraction": 0.4379,
+        "projected_area_fraction": 0.0861,
+        "valid": true,
+        "strong": true,
+        "center": "E5",
+        "corner_cells": [
+          "",
+          "F4",
+          "D4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00565432507035061,
+            -0.1667220654665485,
+            1368.5969849496146
+          ],
+          [
+            0.16804553937075672,
+            0.0017563318551829588,
+            -83.73871320009218
+          ],
+          [
+            1.0302016169995048e-06,
+            9.9725560044633e-07,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            1368.5970458984375,
+            -83.73871612548828
+          ],
+          [
+            1385.8416748046875,
+            599.3677978515625
+          ],
+          [
+            874.393798828125,
+            602.892822265625
+          ],
+          [
+            855.0584716796875,
+            -78.11763763427734
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "E5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO030",
+      "source": "photos/2026-11-08/back/PXL_20261108_153924115.jpg",
+      "source_sha256": "87c5b405664a4c2970dfdd6a7bcc64636210a20108b6fb23aa2483b5b74ce404",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 44,
+        "matches": 89,
+        "median_error_px": 0.734,
+        "inlier_hull_fraction": 0.8049,
+        "projected_area_fraction": 0.0915,
+        "valid": true,
+        "strong": true,
+        "center": "E4",
+        "corner_cells": [
+          "F6",
+          "F3",
+          "D3",
+          "D6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00304287723677405,
+            -0.1788718465155506,
+            1391.8943984541017
+          ],
+          [
+            0.17237234230227177,
+            -0.0031992260550795073,
+            197.43334048025258
+          ],
+          [
+            2.23626343592703e-06,
+            -6.053393656974026e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1391.8944091796875,
+            197.43333435058594
+          ],
+          [
+            1391.6123046875,
+            892.5687255859375
+          ],
+          [
+            864.2982177734375,
+            899.3867797851562
+          ],
+          [
+            859.6834716796875,
+            191.17567443847656
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "E4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO031",
+      "source": "photos/2026-11-08/back/PXL_20261108_153927181.jpg",
+      "source_sha256": "b782376857639dd86cbbcc78b25c84fb9a4a551e042d154861d77503961e0767",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 41,
+        "matches": 97,
+        "median_error_px": 0.904,
+        "inlier_hull_fraction": 0.5892,
+        "projected_area_fraction": 0.0883,
+        "valid": true,
+        "strong": true,
+        "center": "E3",
+        "corner_cells": [
+          "F5",
+          "F2",
+          "D2",
+          "D5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.003093444381399053,
+            -0.17440905458828287,
+            1388.6781157759565
+          ],
+          [
+            0.1712792867785956,
+            -0.004467783255233545,
+            422.6386055713317
+          ],
+          [
+            3.1933467231249185e-06,
+            -3.932150967207479e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1388.6781005859375,
+            422.63861083984375
+          ],
+          [
+            1383.27685546875,
+            1107.03466796875
+          ],
+          [
+            865.9695434570312,
+            1106.683349609375
+          ],
+          [
+            864.6145629882812,
+            413.9349365234375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "E3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO032",
+      "source": "photos/2026-11-08/back/PXL_20261108_153929309.jpg",
+      "source_sha256": "32621f554f65984949397e1179850ba7239afcd1f6b60d3d6bdea6d13bb45759",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 23,
+        "matches": 86,
+        "median_error_px": 0.654,
+        "inlier_hull_fraction": 0.5131,
+        "projected_area_fraction": 0.0937,
+        "valid": true,
+        "strong": false,
+        "center": "E2",
+        "corner_cells": [
+          "F3",
+          "",
+          "",
+          "D3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0018386938130113195,
+            -0.17868087450489678,
+            1389.4881662280648
+          ],
+          [
+            0.17554300991683922,
+            -0.0038619192048044686,
+            691.7097375326294
+          ],
+          [
+            2.033084011529156e-06,
+            -2.9009466041687473e-06,
+            0.999994822419956
+          ]
+        ],
+        "polygon": [
+          [
+            1389.495361328125,
+            691.7133178710938
+          ],
+          [
+            1385.5045166015625,
+            1396.3497314453125
+          ],
+          [
+            849.9266967773438,
+            1396.9287109375
+          ],
+          [
+            849.4708862304688,
+            685.9766845703125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "E2",
+            "inliers": 23
+          }
+        ]
+      },
+      "assigned": "E2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO033",
+      "source": "photos/2026-11-08/back/PXL_20261108_153931527.jpg",
+      "source_sha256": "a011eaf9660f08ef7387c57a19de4c02565ceb0ee5fd65e25dd2c3cd730ba6f5",
+      "side": "back",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 25,
+        "matches": 55,
+        "median_error_px": 0.688,
+        "inlier_hull_fraction": 0.3467,
+        "projected_area_fraction": 0.0933,
+        "valid": true,
+        "strong": false,
+        "center": "D2",
+        "corner_cells": [
+          "E3",
+          "",
+          "",
+          "C3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.000470859590196682,
+            -0.17630942937389263,
+            1130.4284843933717
+          ],
+          [
+            0.1752166555838078,
+            -0.005881073259392217,
+            701.8356364417301
+          ],
+          [
+            1.6043991736854226e-06,
+            -1.8530791783562133e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1130.428466796875,
+            701.8356323242188
+          ],
+          [
+            1124.9854736328125,
+            1407.506103515625
+          ],
+          [
+            591.530517578125,
+            1397.485107421875
+          ],
+          [
+            593.49267578125,
+            687.7183227539062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "D2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO034",
+      "source": "photos/2026-11-08/back/PXL_20261108_153933907.jpg",
+      "source_sha256": "b46ac30148deea07e030d9b88c073e9c7f073339a79aff92aa28efac6c35cede",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 43,
+        "matches": 80,
+        "median_error_px": 0.593,
+        "inlier_hull_fraction": 0.647,
+        "projected_area_fraction": 0.0967,
+        "valid": true,
+        "strong": true,
+        "center": "D3",
+        "corner_cells": [
+          "E4",
+          "E1",
+          "C1",
+          "C4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00024047221124047011,
+            -0.17845458349001805,
+            1133.2228841301412
+          ],
+          [
+            0.17936787561972353,
+            -0.004272906969391245,
+            527.3733619143788
+          ],
+          [
+            1.9929868757923643e-06,
+            -4.827501918698426e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1133.222900390625,
+            527.3733520507812
+          ],
+          [
+            1125.0557861328125,
+            1249.037841796875
+          ],
+          [
+            583.4429321289062,
+            1237.8656005859375
+          ],
+          [
+            587.2116088867188,
+            515.0408325195312
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "D3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO035",
+      "source": "photos/2026-11-08/back/PXL_20261108_153936293.jpg",
+      "source_sha256": "93885c7a803a99a3629db42955f2ed022527526dd316fc9ff61f95a14f2f19b6",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 78,
+        "matches": 125,
+        "median_error_px": 0.59,
+        "inlier_hull_fraction": 0.6128,
+        "projected_area_fraction": 0.0878,
+        "valid": true,
+        "strong": true,
+        "center": "D4",
+        "corner_cells": [
+          "E5",
+          "E2",
+          "C2",
+          "C5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.001448472247618061,
+            -0.17028546404304779,
+            1101.0643481620104
+          ],
+          [
+            0.17321861756690787,
+            -0.003570674982702966,
+            324.7390629882633
+          ],
+          [
+            4.278095339200558e-06,
+            -2.6632281996687686e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1101.0643310546875,
+            324.73907470703125
+          ],
+          [
+            1087.9837646484375,
+            1013.7759399414062
+          ],
+          [
+            575.5523071289062,
+            1003.826416015625
+          ],
+          [
+            579.6919555664062,
+            314.05291748046875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "D4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO036",
+      "source": "photos/2026-11-08/back/PXL_20261108_153939094.jpg",
+      "source_sha256": "461656a2655e16e5b7154ade0b225cebd1f08f30960b70219b83e857bd42abb7",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 68,
+        "matches": 104,
+        "median_error_px": 0.621,
+        "inlier_hull_fraction": 0.5783,
+        "projected_area_fraction": 0.0872,
+        "valid": true,
+        "strong": true,
+        "center": "D5",
+        "corner_cells": [
+          "",
+          "E4",
+          "C4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0018868147411163897,
+            -0.17000982503163053,
+            1082.8572298646309
+          ],
+          [
+            0.1701387481273311,
+            -0.0024503517675348242,
+            -12.626156340194054
+          ],
+          [
+            2.8914959246602095e-06,
+            -2.0925811700456836e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1082.857177734375,
+            -12.6261568069458
+          ],
+          [
+            1077.83984375,
+            673.5933227539062
+          ],
+          [
+            566.5043334960938,
+            670.4208374023438
+          ],
+          [
+            565.4827880859375,
+            -20.26529884338379
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "D5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO037",
+      "source": "photos/2026-11-08/back/PXL_20261108_153942267.jpg",
+      "source_sha256": "dba11ee3f59a443a358bafa32025a58939c6b56c54491bbb11cdc37f23b94deb",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 41,
+        "matches": 74,
+        "median_error_px": 0.525,
+        "inlier_hull_fraction": 0.4127,
+        "projected_area_fraction": 0.0866,
+        "valid": true,
+        "strong": true,
+        "center": "C5",
+        "corner_cells": [
+          "",
+          "D4",
+          "B4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0008984200251172233,
+            -0.1675740940789129,
+            805.0715034867576
+          ],
+          [
+            0.1706776056892349,
+            -0.0027307071342112907,
+            -29.120165964308267
+          ],
+          [
+            2.7065129903072554e-06,
+            -1.6263636311868702e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            805.071533203125,
+            -29.120166778564453
+          ],
+          [
+            799.904052734375,
+            659.9568481445312
+          ],
+          [
+            292.1204833984375,
+            652.0012817382812
+          ],
+          [
+            291.68048095703125,
+            -37.5072021484375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "C5",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO038",
+      "source": "photos/2026-11-08/back/PXL_20261108_153944155.jpg",
+      "source_sha256": "cc5a4b53742f946267f44ea27885b6d05738e87681360befd63e62d555e5312d",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 63,
+        "matches": 105,
+        "median_error_px": 0.712,
+        "inlier_hull_fraction": 0.4368,
+        "projected_area_fraction": 0.0877,
+        "valid": true,
+        "strong": true,
+        "center": "C4",
+        "corner_cells": [
+          "D6",
+          "D3",
+          "B3",
+          "B6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00192111254670633,
+            -0.1706777429175181,
+            794.6566742819762
+          ],
+          [
+            0.1733783192522584,
+            -0.005293005768839514,
+            203.0402957008418
+          ],
+          [
+            5.198258276372651e-06,
+            -4.5080286821717685e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            794.6566772460938,
+            203.04029846191406
+          ],
+          [
+            785.8282470703125,
+            891.5157470703125
+          ],
+          [
+            277.3961486816406,
+            887.64013671875
+          ],
+          [
+            275.41387939453125,
+            189.436767578125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "C4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO039",
+      "source": "photos/2026-11-08/back/PXL_20261108_153950316.jpg",
+      "source_sha256": "cf33aa5114ebf0f7b2a3ba67c492bf17e933b4ee8b71875153545cc500fbe25e",
+      "side": "back",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 32,
+        "matches": 68,
+        "median_error_px": 0.984,
+        "inlier_hull_fraction": 0.4388,
+        "projected_area_fraction": 0.0781,
+        "valid": true,
+        "strong": false,
+        "center": "C3",
+        "corner_cells": [
+          "D5",
+          "D2",
+          "B2",
+          "B5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.007440719766612356,
+            -0.16133800724385092,
+            756.0694229926844
+          ],
+          [
+            0.1712049508209748,
+            -0.0024370703195480434,
+            420.2264220026438
+          ],
+          [
+            1.0074488407934539e-05,
+            -5.381912876103952e-07,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            756.0693969726562,
+            420.2264099121094
+          ],
+          [
+            755.3785400390625,
+            1074.573486328125
+          ],
+          [
+            280.9183349609375,
+            1069.093505859375
+          ],
+          [
+            262.0759582519531,
+            413.4398193359375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "C3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO040",
+      "source": "photos/2026-11-08/back/PXL_20261108_153953773.jpg",
+      "source_sha256": "c1d853a5db4ed2bfac88c9272d0eb0f99b0cc6447def5cb37d88dfd1502bae0a",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 38,
+        "matches": 83,
+        "median_error_px": 0.873,
+        "inlier_hull_fraction": 0.4766,
+        "projected_area_fraction": 0.0789,
+        "valid": true,
+        "strong": true,
+        "center": "C3",
+        "corner_cells": [
+          "D5",
+          "D2",
+          "B2",
+          "B5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.002770805376473162,
+            -0.16166769922470964,
+            816.3268789418281
+          ],
+          [
+            0.16525540569646696,
+            -0.004002096323484872,
+            445.07616195724523
+          ],
+          [
+            4.527716757526159e-06,
+            -2.4432606832501027e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            816.326904296875,
+            445.076171875
+          ],
+          [
+            812.6201782226562,
+            1099.0159912109375
+          ],
+          [
+            328.58599853515625,
+            1095.024169921875
+          ],
+          [
+            323.3116149902344,
+            436.07672119140625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "C3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO041",
+      "source": "photos/2026-11-08/back/PXL_20261108_153958521.jpg",
+      "source_sha256": "252e22485d1b236e752a79f989c0bee78e69e9741b4334cc5eb414a0fe263155",
+      "side": "back",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 25,
+        "matches": 59,
+        "median_error_px": 0.837,
+        "inlier_hull_fraction": 0.1962,
+        "projected_area_fraction": 0.0809,
+        "valid": true,
+        "strong": false,
+        "center": "C2",
+        "corner_cells": [
+          "D3",
+          "",
+          "",
+          "B3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00131459522856835,
+            -0.16301891645971886,
+            818.6833206387963
+          ],
+          [
+            0.16749610236746762,
+            -0.0017180871875326856,
+            792.5513031922654
+          ],
+          [
+            3.553197083491986e-06,
+            9.210005983376308e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            818.683349609375,
+            792.5513305664062
+          ],
+          [
+            812.2713623046875,
+            1454.844482421875
+          ],
+          [
+            318.94598388671875,
+            1445.6326904296875
+          ],
+          [
+            318.2082824707031,
+            785.0703735351562
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "C2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO042",
+      "source": "photos/2026-11-08/back/PXL_20261108_154004074.jpg",
+      "source_sha256": "611b24943149d684ea9717b245ac79977511cbaca0a224f53153784090d4fd19",
+      "side": "back",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 3,
+        "matches": 33,
+        "median_error_px": 0.669,
+        "inlier_hull_fraction": 0.0006,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "G5",
+        "corner_cells": [
+          "G5",
+          "G5",
+          "G5",
+          "G5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.31663492890433814,
+            -1.177158172384238,
+            1555.202280023527
+          ],
+          [
+            -0.06461927511445656,
+            -0.23996216266912765,
+            317.09048890633164
+          ],
+          [
+            -0.00020356747578052946,
+            -0.0007571735597727575,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            1555.2022705078125,
+            317.0904846191406
+          ],
+          [
+            1554.0867919921875,
+            315.40582275390625
+          ],
+          [
+            1554.720458984375,
+            317.0374450683594
+          ],
+          [
+            1554.274169921875,
+            316.78790283203125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "B2",
+      "assignment_status": "Originalindex übernommen"
+    },
+    {
+      "photo_id": "PHOTO043",
+      "source": "photos/2026-11-08/back/PXL_20261108_154012668.jpg",
+      "source_sha256": "dd5e30d357e3d6abb194ec9966a690d31ad6412732aad71da90475a4c2396b5f",
+      "side": "back",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 6,
+        "matches": 44,
+        "median_error_px": 0.002,
+        "inlier_hull_fraction": 0.0214,
+        "projected_area_fraction": 0.0093,
+        "valid": false,
+        "strong": false,
+        "center": "G6",
+        "corner_cells": [
+          "",
+          "F6",
+          "I6",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -2.7346856404638085,
+            -0.703007432340921,
+            3901.0580168256192
+          ],
+          [
+            -0.05505785098477839,
+            -0.031344674905410604,
+            64.00497721658454
+          ],
+          [
+            -0.0015917322826918365,
+            0.0003614302098544117,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            3901.05810546875,
+            64.00497436523438
+          ],
+          [
+            1320.7327880859375,
+            29.236116409301758
+          ],
+          [
+            2145.337158203125,
+            58.515655517578125
+          ],
+          [
+            828.7416381835938,
+            -15.20762825012207
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "B3",
+      "assignment_status": "Originalindex übernommen"
+    },
+    {
+      "photo_id": "PHOTO044",
+      "source": "photos/2026-11-08/back/PXL_20261108_154016619.jpg",
+      "source_sha256": "743b0f8430e51ef26df5d99b525edf5ea340d96ecbfea39f55b715d03e14a3ac",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 26,
+        "matches": 70,
+        "median_error_px": 0.588,
+        "inlier_hull_fraction": 0.1466,
+        "projected_area_fraction": 0.0995,
+        "valid": true,
+        "strong": false,
+        "center": "B4",
+        "corner_cells": [
+          "C6",
+          "C3",
+          "A3",
+          "A6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0015488254869930444,
+            -0.1804242274000488,
+            559.4219281163873
+          ],
+          [
+            0.1868193066088474,
+            -0.0035418066885114694,
+            91.04994487009401
+          ],
+          [
+            6.519759088148922e-06,
+            -4.139494821204555e-07,
+            0.9999980834261696
+          ]
+        ],
+        "polygon": [
+          [
+            559.4229736328125,
+            91.05011749267578
+          ],
+          [
+            551.0830688476562,
+            831.164794921875
+          ],
+          [
+            12.508241653442383,
+            821.6072998046875
+          ],
+          [
+            6.514145374298096,
+            80.2979736328125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+            "center": "B4",
+            "inliers": 26
+          }
+        ]
+      },
+      "assigned": "B4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO045",
+      "source": "photos/2026-11-08/back/PXL_20261108_154021818.jpg",
+      "source_sha256": "da386d5788501db7c4d65dfbb159f881e743f01067de15368a9d1bdf6755a600",
+      "side": "back",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 6,
+        "matches": 36,
+        "median_error_px": 0.241,
+        "inlier_hull_fraction": 0.1072,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "E5",
+        "corner_cells": [
+          "D4",
+          "E5",
+          "E5",
+          "E5"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -1.0900148487501555,
+            3.2126132307423463,
+            978.493316773374
+          ],
+          [
+            -0.4670487784129283,
+            1.3082440986588868,
+            456.3363376258311
+          ],
+          [
+            -0.001035035665125171,
+            0.002919712987465328,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            978.4933471679688,
+            456.3363342285156
+          ],
+          [
+            1076.2723388671875,
+            449.6578369140625
+          ],
+          [
+            1113.8558349609375,
+            447.1805114746094
+          ],
+          [
+            1088.0714111328125,
+            448.9035339355469
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "A5",
+      "assignment_status": "Originalindex übernommen"
+    },
+    {
+      "photo_id": "PHOTO046",
+      "source": "photos/2026-11-08/back/PXL_20261108_154024924.jpg",
+      "source_sha256": "36531a43fe2e3c6d8fa1315f26a76af8a4ab9cdf725d2e3f24029266ba2e88a5",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 36,
+        "matches": 65,
+        "median_error_px": 1.175,
+        "inlier_hull_fraction": 0.2736,
+        "projected_area_fraction": 0.0999,
+        "valid": true,
+        "strong": true,
+        "center": "A4",
+        "corner_cells": [
+          "B5",
+          "B2",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.001063207516005204,
+            -0.17843385089579733,
+            418.6651364558021
+          ],
+          [
+            0.17957169980178828,
+            -0.00962295085818456,
+            289.74770068556643
+          ],
+          [
+            3.537955244919047e-06,
+            -6.539871767928148e-06,
+            0.9872119554156646
+          ]
+        ],
+        "polygon": [
+          [
+            424.0884094238281,
+            293.5010070800781
+          ],
+          [
+            422.30755615234375,
+            1020.7192993164062
+          ],
+          [
+            -126.1336669921875,
+            1011.51708984375
+          ],
+          [
+            -132.50132751464844,
+            269.0920715332031
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154050560.jpg",
+            "center": "A4",
+            "inliers": 36
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+            "center": "A4",
+            "inliers": 36
+          }
+        ]
+      },
+      "assigned": "A4",
+      "assignment_status": "über Original-Nachbarfoto registriert"
+    },
+    {
+      "photo_id": "PHOTO047",
+      "source": "photos/2026-11-08/back/PXL_20261108_154029418.jpg",
+      "source_sha256": "a504fb63f50d064a6904088b55af70f072861ed5c241aadb6f671fa052582d3e",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 114,
+        "matches": 195,
+        "median_error_px": 1.042,
+        "inlier_hull_fraction": 0.4541,
+        "projected_area_fraction": 0.106,
+        "valid": true,
+        "strong": true,
+        "center": "A2",
+        "corner_cells": [
+          "C4",
+          "B1",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0030619075151501894,
+            -0.18198867159711576,
+            499.18633351089846
+          ],
+          [
+            0.18114580424451493,
+            -0.008383272976885379,
+            533.5849060478656
+          ],
+          [
+            -7.171277481198571e-07,
+            -3.413779151960366e-06,
+            0.9849909954706467
+          ]
+        ],
+        "polygon": [
+          [
+            506.79278564453125,
+            541.7155151367188
+          ],
+          [
+            495.58197021484375,
+            1295.901611328125
+          ],
+          [
+            -73.0921630859375,
+            1283.4134521484375
+          ],
+          [
+            -60.05362319946289,
+            521.1685791015625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154050560.jpg",
+            "center": "A2",
+            "inliers": 35
+          },
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+            "center": "A2",
+            "inliers": 114
+          }
+        ]
+      },
+      "assigned": "A2",
+      "assignment_status": "Originalindex abweichend: H3; Nachbarfoto-Abgleich A2; visuell bestätigt"
+    },
+    {
+      "photo_id": "PHOTO048",
+      "source": "photos/2026-11-08/back/PXL_20261108_154033156.jpg",
+      "source_sha256": "5a3b23044d3ea1cdb49ae8cc0e5bfd49869e941b8da1f2b26c0208ac1d0106d4",
+      "side": "back",
+      "registration": {
+        "status": "über Original-Nachbarfoto registriert",
+        "inliers": 68,
+        "matches": 152,
+        "median_error_px": 1.175,
+        "inlier_hull_fraction": 0.1226,
+        "projected_area_fraction": 0.1115,
+        "valid": true,
+        "strong": true,
+        "center": "A2",
+        "corner_cells": [
+          "C3",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0014513950612553583,
+            -0.18811417276276274,
+            505.62926881234773
+          ],
+          [
+            0.1955924590193824,
+            -0.01839416855005106,
+            726.0299194830571
+          ],
+          [
+            7.256283297276595e-06,
+            -1.0099867210872555e-05,
+            0.9823150918585765
+          ]
+        ],
+        "polygon": [
+          [
+            514.7322387695312,
+            739.100830078125
+          ],
+          [
+            493.82086181640625,
+            1506.0933837890625
+          ],
+          [
+            -78.26399230957031,
+            1496.1502685546875
+          ],
+          [
+            -74.4750747680664,
+            703.8952026367188
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ],
+        "via_original_photo": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+        "bridge_candidates": [
+          {
+            "via": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+            "center": "A2",
+            "inliers": 68
+          }
+        ]
+      },
+      "assigned": "A2",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO049",
+      "source": "photos/2026-11-08/back/PXL_20261108_154050560.jpg",
+      "source_sha256": "b24716ff1155976be8515adf55d6c0c838ea0be9cbcda5c3d1df820de8adf61e",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 103,
+        "matches": 146,
+        "median_error_px": 0.835,
+        "inlier_hull_fraction": 0.4153,
+        "projected_area_fraction": 0.3936,
+        "valid": true,
+        "strong": true,
+        "center": "B3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0018949246513234837,
+            -0.3544846803549579,
+            982.548929036193
+          ],
+          [
+            0.35398425730813676,
+            -0.008903852261798838,
+            -33.8478670050579
+          ],
+          [
+            -2.449066456545946e-06,
+            -2.2009048708568967e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            982.5489501953125,
+            -33.84786605834961
+          ],
+          [
+            984.656494140625,
+            1424.6431884765625
+          ],
+          [
+            -113.41062927246094,
+            1406.6650390625
+          ],
+          [
+            -104.48592376708984,
+            -61.54915237426758
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "B3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO050",
+      "source": "photos/2026-11-08/back/PXL_20261108_154053061.jpg",
+      "source_sha256": "e3017e5640843795f344fb1751cb61a362d8e9788d3297fcccb562d6034ccd5e",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 162,
+        "matches": 231,
+        "median_error_px": 1.074,
+        "inlier_hull_fraction": 0.4883,
+        "projected_area_fraction": 0.3975,
+        "valid": true,
+        "strong": true,
+        "center": "B3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0008355729500401958,
+            -0.35385147227481023,
+            945.4831121635978
+          ],
+          [
+            0.3498934474539042,
+            -0.008187136807107672,
+            -6.0397484994644115
+          ],
+          [
+            -5.068033938703822e-06,
+            -5.601143280628111e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            945.4830932617188,
+            -6.039748668670654
+          ],
+          [
+            961.965087890625,
+            1451.539794921875
+          ],
+          [
+            -147.91305541992188,
+            1451.3587646484375
+          ],
+          [
+            -141.3324737548828,
+            -31.673168182373047
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "B3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO051",
+      "source": "photos/2026-11-08/back/PXL_20261108_154058519.jpg",
+      "source_sha256": "8ea3f470981bb048fedd104afba9bfe9096b2af07aa36b55636a8b1853d3fdf3",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 261,
+        "matches": 346,
+        "median_error_px": 1.055,
+        "inlier_hull_fraction": 0.717,
+        "projected_area_fraction": 0.4121,
+        "valid": true,
+        "strong": true,
+        "center": "D4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0020483429688513645,
+            -0.36963025466753174,
+            1547.1057227722142
+          ],
+          [
+            0.36701951597609017,
+            -0.011429459624478347,
+            -65.99690603814878
+          ],
+          [
+            2.5571980529715675e-06,
+            -3.817183065660383e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1547.105712890625,
+            -65.99690246582031
+          ],
+          [
+            1522.8599853515625,
+            1416.662109375
+          ],
+          [
+            406.518310546875,
+            1398.184814453125
+          ],
+          [
+            419.2660217285156,
+            -102.2186050415039
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "D4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO052",
+      "source": "photos/2026-11-08/back/PXL_20261108_154101512.jpg",
+      "source_sha256": "44f433c99e2105781938233d4fdee1f49576c4822abcd1bf7bc1bb2b0339b444",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 284,
+        "matches": 359,
+        "median_error_px": 1.074,
+        "inlier_hull_fraction": 0.6628,
+        "projected_area_fraction": 0.4111,
+        "valid": true,
+        "strong": true,
+        "center": "D4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.002236993802584715,
+            -0.36876362077188024,
+            1534.5848638089883
+          ],
+          [
+            0.3656063953801053,
+            -0.011422094078902814,
+            -63.17555757901783
+          ],
+          [
+            1.9448597021567294e-06,
+            -3.828500319214727e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1534.5848388671875,
+            -63.17555618286133
+          ],
+          [
+            1513.44873046875,
+            1417.2525634765625
+          ],
+          [
+            396.8766784667969,
+            1398.80712890625
+          ],
+          [
+            409.298583984375,
+            -99.34451293945312
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "D4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO053",
+      "source": "photos/2026-11-08/back/PXL_20261108_154106644.jpg",
+      "source_sha256": "ec50452042ee09346a4c67b480bf032405f052925a5bed080f5e44fdd19d8219",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 319,
+        "matches": 386,
+        "median_error_px": 0.918,
+        "inlier_hull_fraction": 0.7329,
+        "projected_area_fraction": 0.4105,
+        "valid": true,
+        "strong": true,
+        "center": "G4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.005631300801025085,
+            -0.3657266083751637,
+            2191.3232162570152
+          ],
+          [
+            0.361629611166405,
+            -0.0033836112258886553,
+            -59.491110855058565
+          ],
+          [
+            -1.6707853132070855e-06,
+            -1.197340110851333e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2191.3232421875,
+            -59.491111755371094
+          ],
+          [
+            2183.230224609375,
+            1425.67626953125
+          ],
+          [
+            1058.6673583984375,
+            1420.48388671875
+          ],
+          [
+            1074.484375,
+            -70.11758422851562
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO054",
+      "source": "photos/2026-11-08/back/PXL_20261108_154110134.jpg",
+      "source_sha256": "00d4d1b996787851c5bbfb63bfe9d08666b92122e4b7dfa49f92b0928411ef22",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 331,
+        "matches": 375,
+        "median_error_px": 1.151,
+        "inlier_hull_fraction": 0.7751,
+        "projected_area_fraction": 0.4082,
+        "valid": true,
+        "strong": true,
+        "center": "G3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0033472556238368792,
+            -0.3682260843535201,
+            2197.2867095241622
+          ],
+          [
+            0.3604923205127465,
+            -0.004011396253078023,
+            -56.36727807069525
+          ],
+          [
+            -6.929963924616602e-07,
+            -3.751836716602402e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2197.28662109375,
+            -56.367279052734375
+          ],
+          [
+            2189.821533203125,
+            1418.451904296875
+          ],
+          [
+            1070.524169921875,
+            1422.526123046875
+          ],
+          [
+            1081.2777099609375,
+            -69.45894622802734
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO055",
+      "source": "photos/2026-11-08/back/PXL_20261108_154116875.jpg",
+      "source_sha256": "e1838536696e8941d170ee26ff371c8986a41b7ee04bf7123154ea2c0d9d88bb",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 42,
+        "matches": 79,
+        "median_error_px": 0.932,
+        "inlier_hull_fraction": 0.2625,
+        "projected_area_fraction": 0.4171,
+        "valid": true,
+        "strong": true,
+        "center": "J4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0034006346890323503,
+            -0.36143696088095534,
+            2888.9994001118866
+          ],
+          [
+            0.3690860157210051,
+            0.007314241523231624,
+            -111.71441228133818
+          ],
+          [
+            -7.143620797366455e-07,
+            3.50581430911911e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2888.99951171875,
+            -111.71440887451172
+          ],
+          [
+            2883.529052734375,
+            1398.2318115234375
+          ],
+          [
+            1753.7589111328125,
+            1405.5670166015625
+          ],
+          [
+            1762.4288330078125,
+            -88.3504638671875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "J4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO056",
+      "source": "photos/2026-11-08/back/PXL_20261108_154119736.jpg",
+      "source_sha256": "4a176d4b52f73b15eee4ff1e590443e58ffbf0838429d086e612f4d5b8842ca2",
+      "side": "back",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 27,
+        "matches": 56,
+        "median_error_px": 0.876,
+        "inlier_hull_fraction": 0.3251,
+        "projected_area_fraction": 0.416,
+        "valid": true,
+        "strong": false,
+        "center": "J3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.005472105197298091,
+            -0.371746751930166,
+            2885.079640946128
+          ],
+          [
+            0.36347878093478225,
+            0.0012038398848386964,
+            -66.40950908022134
+          ],
+          [
+            -1.9368788138568663e-06,
+            -3.4898766184697517e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2885.07958984375,
+            -66.40950775146484
+          ],
+          [
+            2885.556396484375,
+            1427.8675537109375
+          ],
+          [
+            1756.1834716796875,
+            1447.1868896484375
+          ],
+          [
+            1764.7227783203125,
+            -63.398338317871094
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "J3",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO057",
+      "source": "photos/2026-11-08/back/PXL_20261108_154504043-EDIT.jpg",
+      "source_sha256": "d24f00ab6410815dc4d8698c0c9686f3d90234832852b1fb8e41d259ad0e00e6",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 114,
+        "matches": 162,
+        "median_error_px": 0.749,
+        "inlier_hull_fraction": 0.5492,
+        "projected_area_fraction": 1.1948,
+        "valid": true,
+        "strong": true,
+        "center": "G3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.7920070093980228,
+            -0.1095062498120326,
+            3030.581756927659
+          ],
+          [
+            -0.04336155103298611,
+            -0.7572727298672864,
+            1350.574840285285
+          ],
+          [
+            -4.257900536971798e-05,
+            -6.708680674643348e-05,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            3030.581787109375,
+            1350.5748291015625
+          ],
+          [
+            45.736629486083984,
+            1414.2572021484375
+          ],
+          [
+            -220.741455078125,
+            -244.11476135253906
+          ],
+          [
+            3222.470458984375,
+            -13.15527629852295
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "G4",
+      "assignment_status": "Originalindex übernommen; Bildabgleich ±1 Feld bestätigt"
+    },
+    {
+      "photo_id": "PHOTO058",
+      "source": "photos/2026-11-08/front/PXL_20261108_154927065.jpg",
+      "source_sha256": "4f880ff7a39b41f2010e0e6bfeebe3c984d8301aeb875c4848b7a2a33ee2f3e0",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 117,
+        "matches": 214,
+        "median_error_px": 0.625,
+        "inlier_hull_fraction": 0.3361,
+        "projected_area_fraction": 0.4461,
+        "valid": true,
+        "strong": true,
+        "center": "K4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0060224631154028275,
+            -0.3797888794061991,
+            3097.9340640921455
+          ],
+          [
+            0.38322876878126155,
+            0.01176259934706406,
+            -96.05501904188833
+          ],
+          [
+            1.0297859931300689e-06,
+            3.1701194921314124e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            3097.93408203125,
+            -96.05501556396484
+          ],
+          [
+            3109.44140625,
+            1461.3782958984375
+          ],
+          [
+            1931.7469482421875,
+            1482.9281005859375
+          ],
+          [
+            1915.449951171875,
+            -59.4307746887207
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "K4",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO059",
+      "source": "photos/2026-11-08/front/PXL_20261108_154933842.jpg",
+      "source_sha256": "1c3e95c9945905f8ab7fe6be3294d3ddc30924c289750a2b75d43cd8d23d5cd4",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 133,
+        "matches": 249,
+        "median_error_px": 0.492,
+        "inlier_hull_fraction": 0.3872,
+        "projected_area_fraction": 0.4814,
+        "valid": true,
+        "strong": true,
+        "center": "I3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.01984892607740323,
+            -0.3919490206771822,
+            2614.688993952153
+          ],
+          [
+            0.40830533808117975,
+            0.01662135262116369,
+            -192.2286427439826
+          ],
+          [
+            5.393676433886618e-06,
+            7.938495006351942e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2614.68896484375,
+            -192.2286376953125
+          ],
+          [
+            2637.62841796875,
+            1441.92578125
+          ],
+          [
+            1428.3505859375,
+            1457.0814208984375
+          ],
+          [
+            1379.9764404296875,
+            -137.93626403808594
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "I3",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO060",
+      "source": "photos/2026-11-08/front/PXL_20261108_154939161.jpg",
+      "source_sha256": "f6d94029ddf5f21d2a62fd9be9885ea1c0d5ccf482dfe8197865aab781d0e219",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 93,
+        "matches": 240,
+        "median_error_px": 0.439,
+        "inlier_hull_fraction": 0.4949,
+        "projected_area_fraction": 0.5063,
+        "valid": true,
+        "strong": true,
+        "center": "F4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.01991305156972311,
+            -0.4085433357610673,
+            2009.215106908844
+          ],
+          [
+            0.4184904945377742,
+            0.01335897166080747,
+            -156.86339882366863
+          ],
+          [
+            5.51046959998052e-06,
+            4.113418167859633e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2009.215087890625,
+            -156.8634033203125
+          ],
+          [
+            2044.4945068359375,
+            1516.483154296875
+          ],
+          [
+            810.0425415039062,
+            1537.5660400390625
+          ],
+          [
+            747.7939453125,
+            -114.48126983642578
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "F4",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO061",
+      "source": "photos/2026-11-08/front/PXL_20261108_154944758.jpg",
+      "source_sha256": "e82cbb5a38322254cba04c33f7b003ff25294613bdd9b22dbed2a9e66eafe405",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 192,
+        "matches": 349,
+        "median_error_px": 0.52,
+        "inlier_hull_fraction": 0.4769,
+        "projected_area_fraction": 0.435,
+        "valid": true,
+        "strong": true,
+        "center": "C3",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.0133942535239434,
+            -0.3785911546470764,
+            1292.5979488044752
+          ],
+          [
+            0.38009482313835785,
+            0.0076008781153158195,
+            -159.74313251287833
+          ],
+          [
+            1.5837968679527403e-06,
+            1.9273577762118193e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1292.597900390625,
+            -159.74313354492188
+          ],
+          [
+            1338.5966796875,
+            1382.1126708984375
+          ],
+          [
+            185.73141479492188,
+            1404.43212890625
+          ],
+          [
+            132.31459045410156,
+            -136.36944580078125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C3",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO062",
+      "source": "photos/2026-11-08/front/PXL_20261108_154952632.jpg",
+      "source_sha256": "590dc5d9de1d99e67996cdb6a04564c43d4a958652990ac47aa7888af2c86901",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 155,
+        "matches": 274,
+        "median_error_px": 0.492,
+        "inlier_hull_fraction": 0.3345,
+        "projected_area_fraction": 0.4381,
+        "valid": true,
+        "strong": true,
+        "center": "B4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.014659631376415745,
+            -0.3771285356168304,
+            856.3994946493864
+          ],
+          [
+            0.37721328900158363,
+            0.007883212876931988,
+            -86.26114831163649
+          ],
+          [
+            -1.2839771252093188e-06,
+            -7.263160261293949e-07,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            856.3994750976562,
+            -86.26114654541016
+          ],
+          [
+            921.0357666015625,
+            1460.419677734375
+          ],
+          [
+            -241.31344604492188,
+            1488.0347900390625
+          ],
+          [
+            -299.9912109375,
+            -62.24131774902344
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "B4",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO063",
+      "source": "photos/2026-11-08/front/PXL_20261108_155008238.jpg",
+      "source_sha256": "e3637f79230260874110c620c0b21a2e234e1ff4dc6051b919045cf8fc9b6e15",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 906,
+        "matches": 1027,
+        "median_error_px": 0.157,
+        "inlier_hull_fraction": 0.426,
+        "projected_area_fraction": 1.8108,
+        "valid": true,
+        "strong": true,
+        "center": "G4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.7705504144190853,
+            3.281936588135345e-05,
+            -33.7375162865461
+          ],
+          [
+            -4.650235912546805e-07,
+            0.7706161205983058,
+            -471.4686083629118
+          ],
+          [
+            -1.9118424882716545e-08,
+            -2.191692186777438e-08,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            -33.73751449584961,
+            -471.4685974121094
+          ],
+          [
+            3110.350830078125,
+            -471.5072937011719
+          ],
+          [
+            3110.660400390625,
+            1890.3826904296875
+          ],
+          [
+            -33.639198303222656,
+            1890.2371826171875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "G4",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO064",
+      "source": "photos/2026-11-08/front/PXL_20261108_155016705.jpg",
+      "source_sha256": "90081ea77ac5ee6d82af260f3df415a9eb8dd63b86c522fdea13c9c4c88b83dd",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 40,
+        "matches": 150,
+        "median_error_px": 0.418,
+        "inlier_hull_fraction": 0.4722,
+        "projected_area_fraction": 0.1086,
+        "valid": true,
+        "strong": false,
+        "center": "A2",
+        "corner_cells": [
+          "",
+          "C3",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.007872018700045658,
+            -0.18732544891902306,
+            483.99547494104826
+          ],
+          [
+            0.18897664177276052,
+            0.003235491718500425,
+            -118.65276473148748
+          ],
+          [
+            -5.406818825941309e-08,
+            -2.4571162184594645e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            483.9954833984375,
+            -118.65276336669922
+          ],
+          [
+            516.2271728515625,
+            652.515869140625
+          ],
+          [
+            -58.40443420410156,
+            667.4603881835938
+          ],
+          [
+            -90.75296783447266,
+            -109.56249237060547
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "A2",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO065",
+      "source": "photos/2026-11-08/front/PXL_20261108_155021310.jpg",
+      "source_sha256": "b10afa5a7240d0bb7ec9fffa4c8d05416eefbe1ca4e4cc2f018619f62c96bc80",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 48,
+        "matches": 160,
+        "median_error_px": 0.534,
+        "inlier_hull_fraction": 0.1957,
+        "projected_area_fraction": 0.1127,
+        "valid": true,
+        "strong": false,
+        "center": "A3",
+        "corner_cells": [
+          "B2",
+          "C5",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.008752978603001919,
+            -0.19290781031792195,
+            490.0610469335486
+          ],
+          [
+            0.19722639831867025,
+            0.0031868450002997197,
+            262.06129949822105
+          ],
+          [
+            4.42121173246929e-06,
+            -1.6843643466383143e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            490.06103515625,
+            262.0613098144531
+          ],
+          [
+            516.4570922851562,
+            1047.8433837890625
+          ],
+          [
+            -64.56779479980469,
+            1062.825439453125
+          ],
+          [
+            -101.63599395751953,
+            273.2378845214844
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "A3",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO066",
+      "source": "photos/2026-11-08/front/PXL_20261108_155026077.jpg",
+      "source_sha256": "97258ee75785a451dfa8d6fecbb230abd6449ca1c907a30d85e5390e76553d73",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 57,
+        "matches": 122,
+        "median_error_px": 0.588,
+        "inlier_hull_fraction": 0.2018,
+        "projected_area_fraction": 0.1069,
+        "valid": true,
+        "strong": true,
+        "center": "B5",
+        "corner_cells": [
+          "C3",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.007269418059415143,
+            -0.18749296598179777,
+            544.6524504284874
+          ],
+          [
+            0.18810430336978434,
+            0.0019167177452409125,
+            608.1197763904524
+          ],
+          [
+            1.0718252979908382e-06,
+            -1.99319026253374e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            544.6524658203125,
+            608.1197509765625
+          ],
+          [
+            571.8110961914062,
+            1369.5960693359375
+          ],
+          [
+            -0.2672315835952759,
+            1383.8603515625
+          ],
+          [
+            -30.10991096496582,
+            617.76708984375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "B5",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO067",
+      "source": "photos/2026-11-08/front/PXL_20261108_155029827.jpg",
+      "source_sha256": "8550855e479c52ed26ea4fc6061d0b538d8e5af12ab8dc5632d39f71d8381629",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 55,
+        "matches": 167,
+        "median_error_px": 0.546,
+        "inlier_hull_fraction": 0.2247,
+        "projected_area_fraction": 0.1117,
+        "valid": true,
+        "strong": true,
+        "center": "B4",
+        "corner_cells": [
+          "C2",
+          "C6",
+          "A6",
+          "A2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.007636856250713341,
+            -0.19187836378711878,
+            652.076023477291
+          ],
+          [
+            0.19241200656837604,
+            0.004354382930319158,
+            442.11390130608777
+          ],
+          [
+            1.0255780019011504e-06,
+            1.3214211458691578e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            652.0760498046875,
+            442.1138916015625
+          ],
+          [
+            680.3873901367188,
+            1222.0413818359375
+          ],
+          [
+            94.78176879882812,
+            1234.83203125
+          ],
+          [
+            64.0324478149414,
+            455.273681640625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "B4",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO068",
+      "source": "photos/2026-11-08/front/PXL_20261108_155037495.jpg",
+      "source_sha256": "68faea5f7d2d6862b92842ea91c66d0b2169fe5d996b186a274e26ad46ea78c1",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 31,
+        "matches": 106,
+        "median_error_px": 0.609,
+        "inlier_hull_fraction": 0.2958,
+        "projected_area_fraction": 0.1081,
+        "valid": true,
+        "strong": false,
+        "center": "B3",
+        "corner_cells": [
+          "D1",
+          "D5",
+          "A5",
+          "A1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.006574746152712625,
+            -0.18910883174194995,
+            760.3313816470678
+          ],
+          [
+            0.18887493947657777,
+            0.0036176308569827653,
+            161.51940747062037
+          ],
+          [
+            1.169954367062286e-06,
+            -1.08551278610638e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            760.3313598632812,
+            161.5194091796875
+          ],
+          [
+            783.416748046875,
+            927.7008666992188
+          ],
+          [
+            207.32606506347656,
+            941.8528442382812
+          ],
+          [
+            181.40452575683594,
+            173.18186950683594
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "B3",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO069",
+      "source": "photos/2026-11-08/front/PXL_20261108_155042648.jpg",
+      "source_sha256": "6a49be0f755120abff65076c1aa1cafa881a98aab751f0d770ae171df755eeea",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 74,
+        "matches": 159,
+        "median_error_px": 0.415,
+        "inlier_hull_fraction": 0.4682,
+        "projected_area_fraction": 0.1019,
+        "valid": true,
+        "strong": true,
+        "center": "C2",
+        "corner_cells": [
+          "D1",
+          "D4",
+          "B4",
+          "B1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.00629729815638889,
+            -0.18367018965495277,
+            886.0913116594097
+          ],
+          [
+            0.18303148713426964,
+            0.0008861912888653977,
+            59.28759484838591
+          ],
+          [
+            8.379780804112273e-07,
+            -3.2575772808337207e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            886.09130859375,
+            59.287593841552734
+          ],
+          [
+            908.6775512695312,
+            803.3095703125
+          ],
+          [
+            351.226318359375,
+            814.1156616210938
+          ],
+          [
+            326.4872131347656,
+            62.62857437133789
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO070",
+      "source": "photos/2026-11-08/front/PXL_20261108_155047174.jpg",
+      "source_sha256": "ba14a176ccea285cd217649dc2dd5bdf42930323d82364ceca8db1735cdcb4a3",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 16,
+        "matches": 139,
+        "median_error_px": 0.449,
+        "inlier_hull_fraction": 0.1034,
+        "projected_area_fraction": 0.1029,
+        "valid": true,
+        "strong": false,
+        "center": "C3",
+        "corner_cells": [
+          "D2",
+          "D5",
+          "B5",
+          "B2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.010672208225952226,
+            -0.18990943390492437,
+            891.9432610613003
+          ],
+          [
+            0.1914584739336016,
+            -0.0037188370119719174,
+            250.83752128500484
+          ],
+          [
+            9.852760059034568e-06,
+            -9.257337273765966e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            891.9432373046875,
+            250.8375244140625
+          ],
+          [
+            899.3333129882812,
+            992.1061401367188
+          ],
+          [
+            349.3691101074219,
+            1008.6593017578125
+          ],
+          [
+            319.00958251953125,
+            246.43215942382812
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C3",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO071",
+      "source": "photos/2026-11-08/front/PXL_20261108_155051210.jpg",
+      "source_sha256": "f827d43be642b7d7ca89934fef74538ec84abc3c2c72e1696c989916302d13fa",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 12,
+        "matches": 126,
+        "median_error_px": 0.04,
+        "inlier_hull_fraction": 0.094,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "K3",
+        "corner_cells": [
+          "K3",
+          "K3",
+          "K3",
+          "K3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -1.4468300514060837,
+            -0.3812274154114094,
+            2558.023846827896
+          ],
+          [
+            -0.34959310988829806,
+            -0.09210872334540347,
+            618.0790219710564
+          ],
+          [
+            -0.0005656066801488487,
+            -0.00014902766734611525,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2558.02392578125,
+            618.0790405273438
+          ],
+          [
+            2558.00732421875,
+            618.0899047851562
+          ],
+          [
+            2558.03076171875,
+            618.0833740234375
+          ],
+          [
+            2557.961181640625,
+            618.0911865234375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C4/D5",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO072",
+      "source": "photos/2026-11-08/front/PXL_20261108_155055876.jpg",
+      "source_sha256": "0bdc79eeb79919b174e120536beccb10816ff11bcbac04c13073e58c94bed32e",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 23,
+        "matches": 153,
+        "median_error_px": 0.711,
+        "inlier_hull_fraction": 0.2608,
+        "projected_area_fraction": 0.0953,
+        "valid": true,
+        "strong": false,
+        "center": "D3",
+        "corner_cells": [
+          "E2",
+          "E5",
+          "C5",
+          "B2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.01034636141699729,
+            -0.1789234711252636,
+            1012.8080890614034
+          ],
+          [
+            0.17068389172978735,
+            -0.0005474320470880912,
+            260.7551741461776
+          ],
+          [
+            -4.40111328221829e-06,
+            -1.044296382600411e-05,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1012.80810546875,
+            260.75518798828125
+          ],
+          [
+            1074.3121337890625,
+            974.646728515625
+          ],
+          [
+            533.3501586914062,
+            1005.7125854492188
+          ],
+          [
+            479.8476257324219,
+            267.64288330078125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "D3",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO073",
+      "source": "photos/2026-11-08/front/PXL_20261108_155059777.jpg",
+      "source_sha256": "83b06641d9846542658e2130acb80f91f5a8019a76de706a4fe280d30fb684f2",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 66,
+        "matches": 173,
+        "median_error_px": 0.999,
+        "inlier_hull_fraction": 0.2784,
+        "projected_area_fraction": 0.0937,
+        "valid": true,
+        "strong": true,
+        "center": "D2",
+        "corner_cells": [
+          "",
+          "E3",
+          "C4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.017947699248194535,
+            -0.18266629626382633,
+            1151.1159692587514
+          ],
+          [
+            0.1854342844398675,
+            0.007410632652201915,
+            -46.091880962294105
+          ],
+          [
+            1.61441531560105e-05,
+            -3.017760620646138e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1151.115966796875,
+            -46.091880798339844
+          ],
+          [
+            1148.6810302734375,
+            666.5740356445312
+          ],
+          [
+            628.9447021484375,
+            693.9013671875
+          ],
+          [
+            596.8486938476562,
+            -23.600004196166992
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "D2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO074",
+      "source": "photos/2026-11-08/front/PXL_20261108_155104011.jpg",
+      "source_sha256": "e7e43ff26ca39dd22a2e94927292eb7945348945b07e970161bc71fc07ec992a",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 23,
+        "matches": 96,
+        "median_error_px": 0.722,
+        "inlier_hull_fraction": 0.3183,
+        "projected_area_fraction": 0.1003,
+        "valid": true,
+        "strong": false,
+        "center": "E2",
+        "corner_cells": [
+          "",
+          "F3",
+          "D4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.002699507778224431,
+            -0.1734784888509142,
+            1395.9263397011457
+          ],
+          [
+            0.18095771278169465,
+            0.010465781631391724,
+            -70.71770513396497
+          ],
+          [
+            -3.0020613170388947e-06,
+            8.304355559468865e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1395.9263916015625,
+            -70.71770477294922
+          ],
+          [
+            1424.3868408203125,
+            675.8680419921875
+          ],
+          [
+            863.9057006835938,
+            690.546875
+          ],
+          [
+            842.8461303710938,
+            -37.6859016418457
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "E2",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO075",
+      "source": "photos/2026-11-08/front/PXL_20261108_155109443.jpg",
+      "source_sha256": "bdc31798e4682e1dacfe1bb89808f2a37e915f18c510e828c78e1df666bba80c",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 8,
+        "matches": 115,
+        "median_error_px": 0.475,
+        "inlier_hull_fraction": 0.23,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "K3",
+        "corner_cells": [
+          "K3",
+          "K3",
+          "K3",
+          "K3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -2.6169474607095076,
+            1.9669883774778443,
+            2557.792618606483
+          ],
+          [
+            -0.6325318029014835,
+            0.4752631091017813,
+            618.091014858168
+          ],
+          [
+            -0.0010229556040489388,
+            0.000768843705226702,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2557.792724609375,
+            618.0910034179688
+          ],
+          [
+            2558.357177734375,
+            618.4151611328125
+          ],
+          [
+            2558.31396484375,
+            619.1704711914062
+          ],
+          [
+            2558.199462890625,
+            618.1345825195312
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "E3/E4",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO076",
+      "source": "photos/2026-11-08/front/PXL_20261108_155115274.jpg",
+      "source_sha256": "35bdaf0b94adb77c28d8cdf22e734c07bdbb7b3f7a89255389748b8302677d9b",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 9,
+        "matches": 103,
+        "median_error_px": 0.204,
+        "inlier_hull_fraction": 0.053,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "F2",
+        "corner_cells": [
+          "F2",
+          "F2",
+          "F2",
+          "F2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.8213732835774062,
+            -0.32095872313481927,
+            1342.046432360299
+          ],
+          [
+            -0.27356744075101125,
+            -0.10690542440294339,
+            447.0142102345665
+          ],
+          [
+            -0.000611979273440073,
+            -0.00023915806167182452,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1342.04638671875,
+            447.01422119140625
+          ],
+          [
+            1342.233642578125,
+            447.025146484375
+          ],
+          [
+            1342.168701171875,
+            447.0193176269531
+          ],
+          [
+            1342.0750732421875,
+            447.03289794921875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "D5/E4",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO077",
+      "source": "photos/2026-11-08/front/PXL_20261108_155125967.jpg",
+      "source_sha256": "83cb2f1d7f0d90fd90bb307572c57d2ed2296feb67072088febb7fd3cc4bd7ba",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 10,
+        "matches": 48,
+        "median_error_px": 1.814,
+        "inlier_hull_fraction": 0.2855,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "A3",
+        "corner_cells": [
+          "A3",
+          "A3",
+          "A3",
+          "A3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.0812822852797896,
+            -0.04716228362984145,
+            212.11717952191114
+          ],
+          [
+            -0.2215340246961051,
+            -0.12707458821600903,
+            576.8551392467373
+          ],
+          [
+            -0.00038416342160970855,
+            -0.00022003149834942152,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            212.11717224121094,
+            576.8551635742188
+          ],
+          [
+            210.64035034179688,
+            576.3329467773438
+          ],
+          [
+            212.6512451171875,
+            576.9824829101562
+          ],
+          [
+            207.50848388671875,
+            575.4598999023438
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "E4/G3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO078",
+      "source": "photos/2026-11-08/front/PXL_20261108_155130312.jpg",
+      "source_sha256": "c5b7f3123394e6c416e0c2461a4e160856419d36cfc271862bda1b25a2145666",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 18,
+        "matches": 71,
+        "median_error_px": 0.37,
+        "inlier_hull_fraction": 0.5713,
+        "projected_area_fraction": 0.1073,
+        "valid": true,
+        "strong": false,
+        "center": "F4",
+        "corner_cells": [
+          "G2",
+          "H5",
+          "E5",
+          "E2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.015442167302491863,
+            -0.18799201748603062,
+            1676.6061852324315
+          ],
+          [
+            0.17964838219285612,
+            0.01880230093525008,
+            309.48287076252575
+          ],
+          [
+            -5.346090262864275e-06,
+            -3.574418951484173e-06,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            1676.606201171875,
+            309.4828796386719
+          ],
+          [
+            1778.4007568359375,
+            1065.6932373046875
+          ],
+          [
+            1202.917236328125,
+            1137.33447265625
+          ],
+          [
+            1112.6866455078125,
+            371.1689147949219
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "F4",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO079",
+      "source": "photos/2026-11-08/front/PXL_20261108_155137120.jpg",
+      "source_sha256": "82b51e3651c69f629d6bce4f5c82696313c31cf60a306f972668136af71b6869",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 12,
+        "matches": 98,
+        "median_error_px": 0.496,
+        "inlier_hull_fraction": 0.1033,
+        "projected_area_fraction": 0.0832,
+        "valid": true,
+        "strong": false,
+        "center": "F2",
+        "corner_cells": [
+          "",
+          "G3",
+          "F4",
+          "E1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.02710232567936733,
+            -0.17117408768704634,
+            1601.913873921965
+          ],
+          [
+            0.15871285590725764,
+            0.02565041086919402,
+            -20.942625182172048
+          ],
+          [
+            -4.327654141182343e-06,
+            -1.1052525616251956e-05,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1601.913818359375,
+            -20.942625045776367
+          ],
+          [
+            1743.27197265625,
+            637.8685913085938
+          ],
+          [
+            1252.458984375,
+            743.5244140625
+          ],
+          [
+            1115.1151123046875,
+            59.68551254272461
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "F2",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO080",
+      "source": "photos/2026-11-08/front/PXL_20261108_155150890.jpg",
+      "source_sha256": "c5fae0878d025ba62f510812a43cf2b063afd734a786a97a5f5e27d1ad9e2bcd",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 28,
+        "matches": 105,
+        "median_error_px": 0.605,
+        "inlier_hull_fraction": 0.1411,
+        "projected_area_fraction": 0.0865,
+        "valid": true,
+        "strong": false,
+        "center": "G2",
+        "corner_cells": [
+          "",
+          "H3",
+          "F3",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.004654703004454276,
+            -0.1683934690481898,
+            1787.6815996321359
+          ],
+          [
+            0.16335994441238236,
+            0.016418139384843825,
+            -90.40661304650543
+          ],
+          [
+            -4.683407693603709e-06,
+            -5.847904561646386e-07,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1787.681640625,
+            -90.4066162109375
+          ],
+          [
+            1841.8677978515625,
+            587.3247680664062
+          ],
+          [
+            1318.17578125,
+            639.7877197265625
+          ],
+          [
+            1273.917236328125,
+            -40.16465759277344
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "G2",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO081",
+      "source": "photos/2026-11-08/front/PXL_20261108_155152683.jpg",
+      "source_sha256": "ef0ad2355d0347a49f8cb086331c9e2eda3497694321788fdb9d3d33ec4b3574",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 40,
+        "matches": 114,
+        "median_error_px": 0.52,
+        "inlier_hull_fraction": 0.2177,
+        "projected_area_fraction": 0.0922,
+        "valid": true,
+        "strong": true,
+        "center": "H2",
+        "corner_cells": [
+          "",
+          "I3",
+          "G3",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.02188653993173373,
+            -0.1736408053146662,
+            1984.892303392128
+          ],
+          [
+            0.1705471041279146,
+            0.028002569943900518,
+            -135.5179846612169
+          ],
+          [
+            -2.678374323116061e-06,
+            -2.7178111694276722e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1984.892333984375,
+            -135.5179901123047
+          ],
+          [
+            2097.10595703125,
+            566.5048217773438
+          ],
+          [
+            1572.3392333984375,
+            658.8155517578125
+          ],
+          [
+            1464.9656982421875,
+            -50.12062072753906
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "H2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO082",
+      "source": "photos/2026-11-08/front/PXL_20261108_155154914.jpg",
+      "source_sha256": "df6e87179854b39799c932445b900980bcb1cb8b5d59152fb3de28f1adef1482",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 25,
+        "matches": 83,
+        "median_error_px": 0.699,
+        "inlier_hull_fraction": 0.1838,
+        "projected_area_fraction": 0.0904,
+        "valid": true,
+        "strong": false,
+        "center": "G3",
+        "corner_cells": [
+          "H1",
+          "H4",
+          "F5",
+          "E1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.029482155627406026,
+            -0.1761562774880027,
+            1766.1487184146358
+          ],
+          [
+            0.1817357130436017,
+            0.016536572369441064,
+            141.31181744351372
+          ],
+          [
+            8.661313179460717e-06,
+            -4.605894694014117e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1766.148681640625,
+            141.3118133544922
+          ],
+          [
+            1822.048095703125,
+            852.6620483398438
+          ],
+          [
+            1318.6138916015625,
+            914.0708618164062
+          ],
+          [
+            1243.8690185546875,
+            194.73739624023438
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "G3",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO083",
+      "source": "photos/2026-11-08/front/PXL_20261108_155159325.jpg",
+      "source_sha256": "3533e37a30865e9e56cc417c567dead74262f26629b7ed4b3e2143c24b2df50f",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 21,
+        "matches": 77,
+        "median_error_px": 0.549,
+        "inlier_hull_fraction": 0.2547,
+        "projected_area_fraction": 0.1113,
+        "valid": true,
+        "strong": false,
+        "center": "G4",
+        "corner_cells": [
+          "H3",
+          "H6",
+          "F6",
+          "F3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.004622494232040692,
+            -0.19452280027311084,
+            1827.9676850960789
+          ],
+          [
+            0.17450235447761558,
+            0.016733972813247566,
+            468.0438166547619
+          ],
+          [
+            -1.1500824258889609e-05,
+            -9.350153627089704e-06,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            1827.9676513671875,
+            468.0438232421875
+          ],
+          [
+            1937.75341796875,
+            1238.1097412109375
+          ],
+          [
+            1352.958740234375,
+            1331.961181640625
+          ],
+          [
+            1268.1844482421875,
+            534.645263671875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "G4",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO084",
+      "source": "photos/2026-11-08/front/PXL_20261108_155206065.jpg",
+      "source_sha256": "90b703dc0d91c46cc85c19e89c2efb35284eb341d8155918f60ac73c9129a53e",
+      "side": "front",
+      "registration": {
+        "status": "keine stabile Homographie",
+        "inliers": 0,
+        "matches": 30
+      },
+      "assigned": "I4",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO085",
+      "source": "photos/2026-11-08/front/PXL_20261108_155209219.jpg",
+      "source_sha256": "edc9f481e8dee3ecb5b53c9812be110b74e43200c6c13985a64e3e162ad8ff28",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 9,
+        "matches": 52,
+        "median_error_px": 0.171,
+        "inlier_hull_fraction": 0.0495,
+        "projected_area_fraction": 0.105,
+        "valid": false,
+        "strong": false,
+        "center": "I4",
+        "corner_cells": [
+          "I3",
+          "J6",
+          "H6",
+          "G3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.02348040700892532,
+            -0.17107211334546085,
+            2225.187837698769
+          ],
+          [
+            0.1731471406012809,
+            0.042453897355279546,
+            477.07315663111837
+          ],
+          [
+            -8.391181079056966e-06,
+            2.6769600763914787e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2225.187744140625,
+            477.0731506347656
+          ],
+          [
+            2403.26611328125,
+            1225.4686279296875
+          ],
+          [
+            1844.755126953125,
+            1348.7254638671875
+          ],
+          [
+            1687.09130859375,
+            602.2340087890625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "I4",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO086",
+      "source": "photos/2026-11-08/front/PXL_20261108_155217084.jpg",
+      "source_sha256": "5794798a0172751345b09ee213258b9ff72b24079570248b70d27e66b0c47550",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 52,
+        "matches": 111,
+        "median_error_px": 0.499,
+        "inlier_hull_fraction": 0.4606,
+        "projected_area_fraction": 0.0907,
+        "valid": true,
+        "strong": true,
+        "center": "I2",
+        "corner_cells": [
+          "J1",
+          "J4",
+          "H4",
+          "H1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.031351935943056596,
+            -0.16391144073613229,
+            2303.2279516538842
+          ],
+          [
+            0.1660800602275608,
+            0.03956392715437096,
+            16.565404334133603
+          ],
+          [
+            -2.7249740724985523e-06,
+            2.195060503518933e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2303.22802734375,
+            16.565404891967773
+          ],
+          [
+            2458.47705078125,
+            701.9765625
+          ],
+          [
+            1937.3387451171875,
+            819.0133666992188
+          ],
+          [
+            1788.88232421875,
+            136.88954162597656
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "I2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO087",
+      "source": "photos/2026-11-08/front/PXL_20261108_155223801.jpg",
+      "source_sha256": "1c655cc991c12ed1dca0ff553509496828f068119877b4539fa3d2249b5acc9b",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 68,
+        "matches": 145,
+        "median_error_px": 0.359,
+        "inlier_hull_fraction": 0.4869,
+        "projected_area_fraction": 0.0884,
+        "valid": true,
+        "strong": true,
+        "center": "I2",
+        "corner_cells": [
+          "",
+          "J3",
+          "H3",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.050411635938539874,
+            -0.15901649307832658,
+            2196.265642679623
+          ],
+          [
+            0.1615446243137729,
+            0.054810978970804156,
+            -168.11582231592706
+          ],
+          [
+            -7.389581598326088e-07,
+            1.4874647337016368e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2196.265625,
+            -168.11582946777344
+          ],
+          [
+            2409.208740234375,
+            492.47100830078125
+          ],
+          [
+            1911.6832275390625,
+            657.9408569335938
+          ],
+          [
+            1701.1995849609375,
+            -0.14508885145187378
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "I2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO088",
+      "source": "photos/2026-11-08/front/PXL_20261108_155227844.jpg",
+      "source_sha256": "baa6d53f67abd89d9a3b20073041c2132db79aeba2c395856e5f5f797c0a4762",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 78,
+        "matches": 152,
+        "median_error_px": 0.261,
+        "inlier_hull_fraction": 0.6399,
+        "projected_area_fraction": 0.0896,
+        "valid": true,
+        "strong": true,
+        "center": "I2",
+        "corner_cells": [
+          "",
+          "J3",
+          "H4",
+          "G1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.05276185568946192,
+            -0.16084795845523106,
+            2237.238637282321
+          ],
+          [
+            0.16240402870301238,
+            0.055934552907964646,
+            -120.65871473913742
+          ],
+          [
+            -2.382529239434295e-07,
+            1.07571748151068e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2237.238525390625,
+            -120.6587142944336
+          ],
+          [
+            2454.893310546875,
+            542.47705078125
+          ],
+          [
+            1955.03857421875,
+            711.7086791992188
+          ],
+          [
+            1738.5833740234375,
+            50.58782196044922
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "I2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO089",
+      "source": "photos/2026-11-08/front/PXL_20261108_155230704.jpg",
+      "source_sha256": "599be902840a527790dc07a709923c3d890823b52403cd657ee372d470c8fa2f",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 33,
+        "matches": 66,
+        "median_error_px": 0.352,
+        "inlier_hull_fraction": 0.2251,
+        "projected_area_fraction": 0.0906,
+        "valid": true,
+        "strong": false,
+        "center": "I1",
+        "corner_cells": [
+          "",
+          "K2",
+          "I3",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.057182780253952514,
+            -0.16865944006691924,
+            2387.2262675410852
+          ],
+          [
+            0.16426598794406938,
+            0.054186648647369745,
+            -342.9442263451624
+          ],
+          [
+            2.551300668827962e-06,
+            -1.6354808325857273e-06,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            2387.226318359375,
+            -342.9442138671875
+          ],
+          [
+            2593.53515625,
+            323.8895263671875
+          ],
+          [
+            2092.376220703125,
+            490.66949462890625
+          ],
+          [
+            1879.7852783203125,
+            -177.77845764160156
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "I1",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO090",
+      "source": "photos/2026-11-08/front/PXL_20261108_155233092.jpg",
+      "source_sha256": "80ba49ab1ff4b223237271f995bbec9f89ba0d8e83a0f53389fb35b248f9e987",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 65,
+        "matches": 123,
+        "median_error_px": 0.241,
+        "inlier_hull_fraction": 0.3296,
+        "projected_area_fraction": 0.1013,
+        "valid": true,
+        "strong": true,
+        "center": "J2",
+        "corner_cells": [
+          "",
+          "K3",
+          "I4",
+          "H1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.04901349015408716,
+            -0.17583807360848147,
+            2467.7309543841347
+          ],
+          [
+            0.16956486016460373,
+            0.05775706137670172,
+            -52.84378049368771
+          ],
+          [
+            -2.888516586963938e-06,
+            -1.4224586135968876e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2467.73095703125,
+            -52.843780517578125
+          ],
+          [
+            2699.520263671875,
+            646.6011352539062
+          ],
+          [
+            2163.777099609375,
+            829.368896484375
+          ],
+          [
+            1937.314453125,
+            124.6982421875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "J2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO091",
+      "source": "photos/2026-11-08/front/PXL_20261108_155235509.jpg",
+      "source_sha256": "01978b6d2a34aa6febbd684d5d2a714e1f3af5eecfd1fb29bd6bf967080ee08f",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 44,
+        "matches": 133,
+        "median_error_px": 0.346,
+        "inlier_hull_fraction": 0.6418,
+        "projected_area_fraction": 0.1028,
+        "valid": true,
+        "strong": true,
+        "center": "J3",
+        "corner_cells": [
+          "K2",
+          "L5",
+          "I5",
+          "I2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.04745248198841796,
+            -0.17130659622797137,
+            2537.7706742494797
+          ],
+          [
+            0.16696902351327583,
+            0.060308379856181114,
+            234.0611156413125
+          ],
+          [
+            -4.927849800348371e-06,
+            1.1484958337066833e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2537.770751953125,
+            234.0611114501953
+          ],
+          [
+            2787.419677734375,
+            934.0748901367188
+          ],
+          [
+            2243.61474609375,
+            1118.666015625
+          ],
+          [
+            2005.7364501953125,
+            417.4090270996094
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "J3",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO092",
+      "source": "photos/2026-11-08/front/PXL_20261108_155241755.jpg",
+      "source_sha256": "ff5b07589baabc3b8b9021d587df2d4d1aeb3ab926f8f72d578a98a333461440",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 20,
+        "matches": 81,
+        "median_error_px": 0.452,
+        "inlier_hull_fraction": 0.0771,
+        "projected_area_fraction": 0.1318,
+        "valid": true,
+        "strong": false,
+        "center": "K5",
+        "corner_cells": [
+          "K3",
+          "",
+          "",
+          "I4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.000625375946170018,
+            -0.17243263530525274,
+            2729.765823952555
+          ],
+          [
+            0.16948209848227058,
+            0.05922197096563768,
+            534.3486620026162
+          ],
+          [
+            -2.241981227074464e-05,
+            8.902894400690383e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2729.765869140625,
+            534.3486328125
+          ],
+          [
+            3001.797119140625,
+            1349.255859375
+          ],
+          [
+            2349.609130859375,
+            1503.855224609375
+          ],
+          [
+            2142.875732421875,
+            696.8247680664062
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "K5",
+      "assignment_status": "vorsichtig registriert"
+    },
+    {
+      "photo_id": "PHOTO093",
+      "source": "photos/2026-11-08/front/PXL_20261108_155245932.jpg",
+      "source_sha256": "2041f5cd4ab1aa394bf0549171efdeb5662651b73bca8d5a86b6fa75ba8bbbf1",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 12,
+        "matches": 69,
+        "median_error_px": 0.513,
+        "inlier_hull_fraction": 0.2172,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "K3",
+        "corner_cells": [
+          "K3",
+          "K3",
+          "K3",
+          "K3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.7853716143372635,
+            -0.6480340785417171,
+            2557.7884659796505
+          ],
+          [
+            -0.1897057794581395,
+            -0.15663887272385058,
+            618.0249458374375
+          ],
+          [
+            -0.0003070703462406681,
+            -0.00025333500845731307,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2557.78857421875,
+            618.0249633789062
+          ],
+          [
+            2556.99169921875,
+            616.87353515625
+          ],
+          [
+            2557.76171875,
+            617.9550170898438
+          ],
+          [
+            2557.01123046875,
+            617.0449829101562
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "L4",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO094",
+      "source": "photos/2026-11-08/front/PXL_20261108_155249678.jpg",
+      "source_sha256": "40d0098d0f5f180964e207fbe7f0a1812744b0d0a2666662bb0d81cb0e537265",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 36,
+        "matches": 101,
+        "median_error_px": 0.292,
+        "inlier_hull_fraction": 0.4583,
+        "projected_area_fraction": 0.1337,
+        "valid": true,
+        "strong": true,
+        "center": "K4",
+        "corner_cells": [
+          "",
+          "",
+          "J6",
+          "J2"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.009824383329458397,
+            -0.21119677071740484,
+            3050.3464183833394
+          ],
+          [
+            0.20658608459103708,
+            0.013097357850281434,
+            305.69803886785536
+          ],
+          [
+            -3.0782888289499936e-07,
+            -1.9302672524754694e-08,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            3050.346435546875,
+            305.6980285644531
+          ],
+          [
+            3094.316162109375,
+            1150.013671875
+          ],
+          [
+            2446.427734375,
+            1190.2718505859375
+          ],
+          [
+            2403.26904296875,
+            345.85577392578125
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "K4",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO095",
+      "source": "photos/2026-11-08/front/PXL_20261108_155253342.jpg",
+      "source_sha256": "608f79893d6135810b9c828d57d1179801ce4a81d3a9d94dd5e30445a8029fc6",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 71,
+        "matches": 141,
+        "median_error_px": 0.347,
+        "inlier_hull_fraction": 0.2448,
+        "projected_area_fraction": 0.1306,
+        "valid": true,
+        "strong": true,
+        "center": "L2",
+        "corner_cells": [
+          "",
+          "",
+          "J4",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.015169015873769738,
+            -0.21481370688796655,
+            3071.4352799843837
+          ],
+          [
+            0.20661165557249714,
+            0.013110871512162427,
+            -174.50869351349556
+          ],
+          [
+            2.4226972694740325e-06,
+            -2.5246266826753546e-06,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            3071.435302734375,
+            -174.50869750976562
+          ],
+          [
+            3102.65625,
+            661.9240112304688
+          ],
+          [
+            2469.716552734375,
+            707.1267700195312
+          ],
+          [
+            2431.947021484375,
+            -135.37738037109375
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "L2",
+      "assignment_status": "gut registriert"
+    },
+    {
+      "photo_id": "PHOTO096",
+      "source": "photos/2026-11-08/front/PXL_20261108_155332127.jpg",
+      "source_sha256": "45d4c95edaa55d5153573fcf1a71f87ffbe37913b81750352aba206cfcd287ed",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 7,
+        "matches": 45,
+        "median_error_px": 0.0,
+        "inlier_hull_fraction": 0.0652,
+        "projected_area_fraction": 0.0005,
+        "valid": false,
+        "strong": false,
+        "center": "A4",
+        "corner_cells": [
+          "A4",
+          "A4",
+          "",
+          "A4"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.07322068941678245,
+            0.02805206489769514,
+            124.48082462155973
+          ],
+          [
+            -0.49292504925260794,
+            0.18414778353582198,
+            715.812604123278
+          ],
+          [
+            -0.0006779520366643496,
+            0.0002488194491627364,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            124.48082733154297,
+            715.8126220703125
+          ],
+          [
+            92.7114028930664,
+            737.5350341796875
+          ],
+          [
+            -233.02220153808594,
+            696.049560546875
+          ],
+          [
+            118.5665054321289,
+            728.0407104492188
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO097",
+      "source": "photos/2026-11-08/front/PXL_20261108_155349372.jpg",
+      "source_sha256": "976f5fdcdf9c243a56f2171a24648d710c4d70e9e1fc41d46d2fb57f3ce49057",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 8,
+        "matches": 38,
+        "median_error_px": 0.001,
+        "inlier_hull_fraction": 0.0977,
+        "projected_area_fraction": 0.0124,
+        "valid": false,
+        "strong": false,
+        "center": "G3",
+        "corner_cells": [
+          "",
+          "H5",
+          "J5",
+          "I6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -3.4105236019547123,
+            0.4703963352453745,
+            3381.183547335453
+          ],
+          [
+            -1.6560987306909007,
+            0.4491099888114449,
+            1253.0570119497017
+          ],
+          [
+            -0.0015357361061835327,
+            0.00039518167057386167,
+            0.9999999999999999
+          ]
+        ],
+        "polygon": [
+          [
+            3381.18359375,
+            1253.0570068359375
+          ],
+          [
+            1907.684814453125,
+            1031.2435302734375
+          ],
+          [
+            2460.042236328125,
+            950.2241821289062
+          ],
+          [
+            2028.9847412109375,
+            1181.095947265625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO098",
+      "source": "photos/2026-11-08/front/PXL_20261108_155403914.jpg",
+      "source_sha256": "84fde795a96ba5c3e2ed28e6f67b67e47d2480fe70e25c65adc7841cdee5a5a3",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 4,
+        "matches": 40,
+        "median_error_px": 0.057,
+        "inlier_hull_fraction": 0.0836,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "H1",
+        "corner_cells": [
+          "H1",
+          "H1",
+          "H1",
+          "H1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.7047330579634656,
+            0.12977298519482866,
+            1805.5064757643663
+          ],
+          [
+            -0.0031481322793098683,
+            0.0005576332933664821,
+            8.099215896450698
+          ],
+          [
+            -0.0003903284446555828,
+            7.188505413252089e-05,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1805.5064697265625,
+            8.099215507507324
+          ],
+          [
+            1805.3896484375,
+            7.892667770385742
+          ],
+          [
+            1805.072509765625,
+            7.483831405639648
+          ],
+          [
+            1805.4561767578125,
+            8.021674156188965
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO099",
+      "source": "photos/2026-11-08/inspektion_verkleinert/c1.jpg",
+      "source_sha256": "c35d0d6e6e556d2cb212c6ea753328852b3078d4b6ba05c9a3592fd5d9867402",
+      "side": "back",
+      "registration": {
+        "status": "keine stabile Homographie",
+        "inliers": 0,
+        "matches": 73
+      },
+      "assigned": "B3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO100",
+      "source": "photos/2026-11-08/inspektion_verkleinert/c2.jpg",
+      "source_sha256": "6de4187ffd62db48f53d40b82a416ab2fdb43d1f45670441cd7e80d9b315cb66",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 4,
+        "matches": 14,
+        "median_error_px": 0.0,
+        "inlier_hull_fraction": 0.1246,
+        "projected_area_fraction": 0.533,
+        "valid": false,
+        "strong": false,
+        "center": "H3",
+        "corner_cells": [
+          "",
+          "D3",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            1.82008196422336,
+            1.4286103859477821,
+            -717.8716204614984
+          ],
+          [
+            0.006611711676413369,
+            -0.7738372028576946,
+            637.2658458446862
+          ],
+          [
+            0.00030965667980179163,
+            -0.0014536691915354527,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            -717.8716430664062,
+            637.265869140625
+          ],
+          [
+            756.8472290039062,
+            499.5530700683594
+          ],
+          [
+            -18305.05859375,
+            858.7501220703125
+          ],
+          [
+            -1617.4912109375,
+            280.8955383300781
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO101",
+      "source": "photos/2026-11-08/inspektion_verkleinert/c3a.jpg",
+      "source_sha256": "2448680e2f3d3abfbd174abed0ff0f30fb89a2178ce6106e10147a436e9f281f",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 4,
+        "matches": 8,
+        "median_error_px": 0.0,
+        "inlier_hull_fraction": 0.3892,
+        "projected_area_fraction": 0.0001,
+        "valid": false,
+        "strong": false,
+        "center": "F3",
+        "corner_cells": [
+          "F3",
+          "F3",
+          "F3",
+          "F3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            29.178209229539917,
+            -69.51555748590953,
+            1433.2561342170093
+          ],
+          [
+            11.621242992953622,
+            -27.70166140452978,
+            601.4700196451532
+          ],
+          [
+            0.020387788201094603,
+            -0.04814548621970087,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1433.256103515625,
+            601.4700317382812
+          ],
+          [
+            1431.2144775390625,
+            570.81201171875
+          ],
+          [
+            1388.0177001953125,
+            555.2337036132812
+          ],
+          [
+            1444.22607421875,
+            574.484619140625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO102",
+      "source": "photos/2026-11-08/inspektion_verkleinert/c3b.jpg",
+      "source_sha256": "ca4810f2a28ce2c8af3ea2852d16213fb503f340098089cba1b74235a38bdbce",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 4,
+        "matches": 10,
+        "median_error_px": 0.0,
+        "inlier_hull_fraction": 0.1222,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "K3",
+        "corner_cells": [
+          "K3",
+          "K3",
+          "K3",
+          "K3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            7.704585621872701,
+            -30.366533491473234,
+            2549.937658817919
+          ],
+          [
+            1.8863788404957984,
+            -7.28470424753939,
+            578.645862895622
+          ],
+          [
+            0.0030052880783294766,
+            -0.01181767091171621,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            2549.937744140625,
+            578.6458740234375
+          ],
+          [
+            2561.391357421875,
+            619.530517578125
+          ],
+          [
+            2603.9921875,
+            603.3865356445312
+          ],
+          [
+            2572.6357421875,
+            622.2863159179688
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO103",
+      "source": "photos/2026-11-08/inspektion_verkleinert/p1.jpg",
+      "source_sha256": "47064220974e66c3706144d144b32f5049a98fbd89667818649346a632fbe81e",
+      "side": "back",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 4,
+        "matches": 19,
+        "median_error_px": 0.0,
+        "inlier_hull_fraction": 0.0746,
+        "projected_area_fraction": 1.1048,
+        "valid": false,
+        "strong": false,
+        "center": "K2",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -1.5242111721181029,
+            -0.8732890095463995,
+            3258.208030991354
+          ],
+          [
+            0.027176220173137276,
+            0.24100285152981252,
+            123.50417602421292
+          ],
+          [
+            -0.00035150295491218937,
+            -0.0003444485777952478,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            3258.2080078125,
+            123.5041732788086
+          ],
+          [
+            -509.48126220703125,
+            825.34033203125
+          ],
+          [
+            4471.7822265625,
+            -1669.56884765625
+          ],
+          [
+            4225.4365234375,
+            1224.9334716796875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "B2/C2/B3/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO104",
+      "source": "photos/2026-11-08/inspektion_verkleinert/p2.jpg",
+      "source_sha256": "bbaf7f5fbd0224c0c84b1603ffbccbfa372b572ac550c26b8718428b3730ae95",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 16,
+        "matches": 43,
+        "median_error_px": 2.875,
+        "inlier_hull_fraction": 0.0092,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "A3",
+        "corner_cells": [
+          "A3",
+          "A3",
+          "A3",
+          "A3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.4046290329815716,
+            0.14655037513780683,
+            209.94776308980522
+          ],
+          [
+            -1.1109712440121247,
+            0.4147600655316805,
+            574.7366793151856
+          ],
+          [
+            -0.0019190915703091093,
+            0.0007028296951782246,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            209.94776916503906,
+            574.7366943359375
+          ],
+          [
+            211.2535858154297,
+            580.809326171875
+          ],
+          [
+            217.9713592529297,
+            557.9503784179688
+          ],
+          [
+            209.07569885253906,
+            584.1036987304688
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO105",
+      "source": "photos/2026-11-08/inspektion_verkleinert/p3.jpg",
+      "source_sha256": "d53a62254869e37eb3ede8bd231c7608bc9687aa71c1843a9602cf905ae4d13d",
+      "side": "front",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 18,
+        "matches": 44,
+        "median_error_px": 0.763,
+        "inlier_hull_fraction": 0.0299,
+        "projected_area_fraction": 0.3821,
+        "valid": true,
+        "strong": false,
+        "center": "C2",
+        "corner_cells": [
+          "",
+          "",
+          "B1",
+          "D1"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.8296287335180228,
+            1.2463167670242954,
+            1464.8299956661726
+          ],
+          [
+            0.03620484216713304,
+            -0.9117123484982836,
+            1834.9573163006394
+          ],
+          [
+            0.00022705450222512002,
+            0.002210477148011934,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            1464.8299560546875,
+            1834.957275390625
+          ],
+          [
+            -246.50364685058594,
+            1274.787353515625
+          ],
+          [
+            328.5874938964844,
+            77.34912872314453
+          ],
+          [
+            756.6497802734375,
+            68.52389526367188
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "C2/C3",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO106",
+      "source": "photos/2026-11-08/q2/q2_rueckseite_makro.jpg",
+      "source_sha256": "ea90e6a6f3c6f2e4db189c59bab734fd611cbd4bea572cf1faddb8461d67c5ce",
+      "side": "back",
+      "registration": {
+        "status": "keine stabile Homographie",
+        "inliers": 0,
+        "matches": 32
+      },
+      "assigned": "B5",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO107",
+      "source": "photos/2026-11-08/q2/q2_rueckseite_weit.jpg",
+      "source_sha256": "67f5763e53a46c24c7c961b12c2520410f6f5a25299519e367445ac8ca4ff07b",
+      "side": "back",
+      "registration": {
+        "status": "vorsichtig registriert",
+        "inliers": 19,
+        "matches": 60,
+        "median_error_px": 0.572,
+        "inlier_hull_fraction": 0.2378,
+        "projected_area_fraction": 0.0952,
+        "valid": true,
+        "strong": false,
+        "center": "B5",
+        "corner_cells": [
+          "D4",
+          "A4",
+          "A6",
+          "D6"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.33059445427126144,
+            -0.004609696107051307,
+            807.544066544361
+          ],
+          [
+            0.01585901403693325,
+            -0.3150599613928664,
+            527.8636290016124
+          ],
+          [
+            -3.191551896453015e-05,
+            3.4122247503983105e-05,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            807.5440673828125,
+            527.8636474609375
+          ],
+          [
+            82.06250762939453,
+            605.7047729492188
+          ],
+          [
+            69.5777587890625,
+            40.04170227050781
+          ],
+          [
+            756.9705810546875,
+            4.168483257293701
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "B5/C5",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO108",
+      "source": "photos/2026-11-08/q2/q2_vorderseite_makro.jpg",
+      "source_sha256": "dd7960e4dee04d81a4f044aad50368ba3addaf37cb55adb24abb4469523b35eb",
+      "side": "front",
+      "registration": {
+        "status": "Registrierung nicht freigegeben",
+        "inliers": 14,
+        "matches": 51,
+        "median_error_px": 0.063,
+        "inlier_hull_fraction": 0.1145,
+        "projected_area_fraction": 0.0,
+        "valid": false,
+        "strong": false,
+        "center": "A3",
+        "corner_cells": [
+          "A3",
+          "A3",
+          "A3",
+          "A3"
+        ],
+        "H_native_to_existing_overview": [
+          [
+            -0.010393339448015074,
+            -0.16481180128696393,
+            211.0839711628705
+          ],
+          [
+            -0.028511887144609453,
+            -0.45129360377444533,
+            578.0609712511358
+          ],
+          [
+            -4.931639636670147e-05,
+            -0.000780709843533991,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            211.08396911621094,
+            578.0609741210938
+          ],
+          [
+            211.12509155273438,
+            578.051025390625
+          ],
+          [
+            211.06114196777344,
+            578.0652465820312
+          ],
+          [
+            211.17605590820312,
+            578.0369873046875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "B5",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO109",
+      "source": "photos/2026-11-08/uebersicht_kopien/rueckseite_uebersicht_kopie.jpg",
+      "source_sha256": "c0a9c8a0b8cef6ec97932ab9a9d9aeb8200c8155390e4991d2a3f3983695ff95",
+      "side": "back",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 1946,
+        "matches": 2011,
+        "median_error_px": 0.133,
+        "inlier_hull_fraction": 0.4949,
+        "projected_area_fraction": 1.827,
+        "valid": true,
+        "strong": true,
+        "center": "G4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.7706258098855917,
+            -6.994329469138427e-06,
+            -33.73588812191452
+          ],
+          [
+            -2.9399387402419528e-06,
+            0.7701940250849945,
+            -706.8502348000844
+          ],
+          [
+            -3.6532608933548062e-09,
+            8.64314737987668e-10,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            -33.73588943481445,
+            -706.8502197265625
+          ],
+          [
+            3110.4638671875,
+            -706.8727416992188
+          ],
+          [
+            3110.43408203125,
+            1653.443359375
+          ],
+          [
+            -33.757232666015625,
+            1653.4306640625
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1354
+        ]
+      },
+      "assigned": "A1–L6",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    },
+    {
+      "photo_id": "PHOTO110",
+      "source": "photos/2026-11-08/uebersicht_kopien/vorderseite_uebersicht_kopie.jpg",
+      "source_sha256": "3a1006fc778563cd5715693aaeb37d8372a7de5c58c48d29d175864d38ed37b2",
+      "side": "front",
+      "registration": {
+        "status": "gut registriert",
+        "inliers": 888,
+        "matches": 1003,
+        "median_error_px": 0.152,
+        "inlier_hull_fraction": 0.426,
+        "projected_area_fraction": 1.8106,
+        "valid": true,
+        "strong": true,
+        "center": "G4",
+        "corner_cells": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "H_native_to_existing_overview": [
+          [
+            0.7706242813184435,
+            8.66174752842002e-05,
+            -33.83565948830073
+          ],
+          [
+            -9.427207427980426e-06,
+            0.7706504533052008,
+            -471.4673830750792
+          ],
+          [
+            -7.165724847180552e-09,
+            2.3253116955663312e-08,
+            1.0
+          ]
+        ],
+        "polygon": [
+          [
+            -33.83565902709961,
+            -471.4673767089844
+          ],
+          [
+            3110.40234375,
+            -471.5196228027344
+          ],
+          [
+            3110.446044921875,
+            1890.0987548828125
+          ],
+          [
+            -33.56782531738281,
+            1890.0819091796875
+          ]
+        ],
+        "reference_size": [
+          3000,
+          1367
+        ]
+      },
+      "assigned": "A1–L6",
+      "assignment_status": "visuell nach Bauteilbestand zugeordnet"
+    }
+  ]
+}

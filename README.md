@@ -5,7 +5,7 @@ Small Linux/Python BLE diagnostic tools for the **Technogym MYRUN** treadmill.
 The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved and whose lower-kit belt drive (Gefran GIRT S6T30) faults on start. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the active tests, issue controlled FTMS START/STOP and low-incline requests.
 
 
-> **Current diagnosis status (2026-11-14):** see [`docs/NEUBEWERTUNG_2026-11-14.md`](docs/NEUBEWERTUNG_2026-11-14.md) – the GIRT MCU receives enable and PWM set-point but never enables PFC or motor; suspected start condition (DC-bus sense chain B18). Measurement log: [`docs/LAUF_2026-11-14.md`](docs/LAUF_2026-11-14.md).
+> **Current diagnosis status (2026-11-14):** see [`docs/NEUBEWERTUNG_2026-11-14.md`](docs/NEUBEWERTUNG_2026-11-14.md) – the GIRT MCU receives enable and PWM set-point but never enables PFC or motor; an active inhibit at T3/L4981 pin 15 keeps the PFC off; source of that inhibit is being traced. Measurement log: [`docs/LAUF_2026-11-14.md`](docs/LAUF_2026-11-14.md).
 
 ## Contents
 
@@ -139,6 +139,17 @@ locked and again after a power cycle. Output: CSV with
     python3 myrun_renc_watch.py --duration 60
 
 ## Hardware documentation
+
+### Fotoatlas und Schaltplan (Branch `110926`)
+
+- [Alle 110 Originalfotos zugeordnet, mit Raster und Gewissheit](docs/atlas_110926/README.md)
+- [Gemeinsamer, elektrisch verbundener Schaltplan aller gemessenen Teilnetze: PDF, KiCad und Messregister](docs/gesamtschaltplan_110926/README.md)
+- [Bisheriger Teilschaltplan, Quellen und weitere Fehlereingrenzung](docs/schaltplan_110926/README.md)
+- [Stromloser Messplan mit acht markierten Originalmakros und Messwertvorlage](docs/messplan_stromlos_2026-11-08/MESSPLAN.md)
+- [Fortsetzungsstand 09.11.: Q2-C / R2211 / 1P, Messwerte und späterer Diodentest](docs/messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md)
+
+Die vorhandenen Originalfotos und Claudes Koordinatensystem bleiben erhalten. Offene Pin-/Netzzuordnungen werden ausdrücklich gekennzeichnet.
+
 
 [`docs/HARDWARE.md`](docs/HARDWARE.md) (also as [PDF](docs/HARDWARE.pdf)) collects what is known about the lower kit (Gefran GIRT S6T30): block diagram, board areas and identified parts, connector pinouts for P2 (console, 18 pin) and P4 (speed sensor) from both plug and solder side, DUMPIO signals, LED behaviour, fault sequence, repairs and corrosion findings. Each statement is tagged as measured, observed, from a manual, or inferred.
 

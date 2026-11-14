@@ -1,0 +1,27 @@
+{
+  "native_export": "KiCad 9.0.2, XML/PDF/SVG erfolgreich",
+  "components": 38,
+  "pins_checked": 88,
+  "pairwise_pin_comparisons": 7744,
+  "net_partitions_equal": true,
+  "0VA_console_separate": true,
+  "series_resistors_not_shorted": true,
+  "1P_diode_tests_still_pending": 2,
+  "simulation_or_function_test": false,
+  "latest_rows_covered": 87,
+  "measurement_rows_total": 146,
+  "pdf_pages": 23,
+  "source_sha256": {
+    "docs/schaltplan_110926/verbindungen.csv": "47576e6b344e5977ef751d10fda1be5e0fb904839539c68f440f21a4f2fa5abc",
+    "docs/messplan_stromlos_2026-11-08/messprotokoll_2026-11-09.csv": "fceeb1587c2aca62d1feef5b9b180f401a473cea161ed2930d18519fc51af070",
+    "docs/netlist/messprotokoll_b10.csv": "a26a2f4190d1ad1607babac47e03ffaf427b99cc218899158289c63e9fcdca5a",
+    "docs/netlist/messprotokoll_b18.csv": "983f1b5544bb3f4df4c0f011332256115dbe858e09de81d63cea789c2c688246",
+    "docs/netlist/messprotokoll_leistungsteil.csv": "a35055a581fc838fbaed53a0310b358f377bf481dc9c4c6f5c920c2422c8bf68",
+    "docs/netlist/messprotokoll_v0_chatgpt.csv": "4e3c2cb0b7aab4de414cff6d771fa6ed0b37bac7a6b4591b002d4d5308a2b9e1",
+    "docs/HARDWARE.md": "73aa9c5f18be77e9b7b76c93bb20a240199fd15550ed3186792ed08797d80466",
+    "docs/STAND_2026-11-08.md": "53fc1d7215bb71b31e6f077b3b9a2c0976fd8340d369d5a45ad2f91f2e2c21a5",
+    "docs/netlist/q2_treiber_fan3100c_kandidat.md": "9666023dd3b98c1f3f15e273689abc6e4b4858883aa95651f914a22516c5c8d9",
+    "photos/2026-11-08/back_raster_index.csv": "709b5a83a23f7a67c6c6594b55681384d4e4b5f87944d8f2fc8c424e110faf16",
+    "docs/messplan_stromlos_2026-11-08/Q2_1P_DIODENTEST_AUSSTEHEND.csv": "978244639395bb057eee00923af52e2c28c5e5f6682320cad0a8785a9c7c8d67"
+  }
+}

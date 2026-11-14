@@ -1,0 +1,218 @@
+{
+  "front": {
+    "F1": [
+      "A1",
+      "DC MOTOR"
+    ],
+    "F2": [
+      "A2",
+      "Motordrossel"
+    ],
+    "F3": [
+      "E1",
+      "P4 Tacho"
+    ],
+    "F4": [
+      "F1",
+      "P2 Konsole"
+    ],
+    "F5": [
+      "H1",
+      "P3"
+    ],
+    "F6": [
+      "J1",
+      "UP/DOWN"
+    ],
+    "F7": [
+      "L1",
+      "AC LINE"
+    ],
+    "F8": [
+      "C2",
+      "Logikspalte"
+    ],
+    "F9": [
+      "C2",
+      "Optokoppler"
+    ],
+    "F10": [
+      "B3",
+      "P602"
+    ],
+    "F11": [
+      "B3",
+      "P601"
+    ],
+    "F12": [
+      "C4",
+      "MCU"
+    ],
+    "F13": [
+      "C4",
+      "SO-8"
+    ],
+    "F14": [
+      "C4",
+      "P70"
+    ],
+    "F15": [
+      "B5",
+      "P600 NTC"
+    ],
+    "F16": [
+      "D3",
+      "SOT-223 / CPC1017 / 47 µF"
+    ],
+    "F17": [
+      "E2",
+      "Trafo"
+    ],
+    "F18": [
+      "G2",
+      "330-µF-Elkos / RT700"
+    ],
+    "F19": [
+      "D2",
+      "47-µF-Elkos"
+    ],
+    "F20": [
+      "E3",
+      "U702 / C727 / C703"
+    ],
+    "F21": [
+      "E4",
+      "DC-Link-Elko"
+    ],
+    "F22": [
+      "G3",
+      "großer Ringkern"
+    ],
+    "F23": [
+      "F3",
+      "P400 24 V"
+    ],
+    "F24": [
+      "I2",
+      "Schrack orange"
+    ],
+    "F25": [
+      "I2",
+      "Panasonic x2"
+    ],
+    "F26": [
+      "J4",
+      "Panasonic"
+    ],
+    "F27": [
+      "I4",
+      "RT334024"
+    ],
+    "F28": [
+      "J2",
+      "FUSE MOT"
+    ],
+    "F29": [
+      "L4",
+      "Netzfilter"
+    ],
+    "F30": [
+      "F6",
+      "Kühlkörper"
+    ],
+    "F31": [
+      "D5",
+      "0VA/+5VA"
+    ],
+    "F32": [
+      "I2",
+      "12VISO"
+    ],
+    "F33": [
+      "B5",
+      "Q2"
+    ]
+  },
+  "back": {
+    "B1": [
+      "C5",
+      "LEDs"
+    ],
+    "B2": [
+      "C4",
+      "P70 Pads"
+    ],
+    "B3": [
+      "F6",
+      "SO-20"
+    ],
+    "B4": [
+      "D6",
+      "SO-8 x2"
+    ],
+    "B5": [
+      "F1",
+      "P2 Pads"
+    ],
+    "B6": [
+      "F2",
+      "DPAK x2"
+    ],
+    "B7": [
+      "H4",
+      "R020-Shunts"
+    ],
+    "B8": [
+      "H3",
+      "SOT-223"
+    ],
+    "B9": [
+      "K2",
+      "471 x2"
+    ],
+    "B10": [
+      "J6",
+      "Netz-Sense"
+    ],
+    "B11": [
+      "B3",
+      "Testpad-Reihe"
+    ],
+    "B13": [
+      "A1",
+      "DC MOTOR Pads"
+    ],
+    "B14": [
+      "L4",
+      "Filter-Pads"
+    ],
+    "B15": [
+      "J1",
+      "UP/DOWN Pads"
+    ],
+    "B16": [
+      "L1",
+      "AC LINE Pads"
+    ],
+    "B17": [
+      "E3",
+      "4702/47R0"
+    ],
+    "B18": [
+      "E5",
+      "Spannungsteiler"
+    ],
+    "B19": [
+      "E6",
+      "Messpfad Widerstandsblock"
+    ],
+    "B20": [
+      "E6",
+      "Widerstandsreihe/SOT-23"
+    ],
+    "B21": [
+      "B5",
+      "Q2 G/D/S und Treiber"
+    ]
+  }
+}

@@ -1,0 +1,1455 @@
+{
+  "schema": 1,
+  "sheet": "A1",
+  "branch": "110926",
+  "source_commit": "4e8a91f0a84bc1fafa61f6027e0ec2bc0bf99199",
+  "components": [
+    {
+      "Reference": "R101",
+      "Symbol": "RH",
+      "Repository_ID": "B18-R3",
+      "Wert": "1 M / 1004",
+      "Feld_Claude": "E5",
+      "Messwerte": "600 / 840 kΩ",
+      "Terminals": {
+        "1": "B18-R3.2",
+        "2": "B18-R3.1"
+      },
+      "Pins_xy": {
+        "1": [
+          177.3,
+          80
+        ],
+        "2": [
+          202.7,
+          80
+        ]
+      },
+      "Position_mm": [
+        190,
+        80
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R102",
+      "Symbol": "RH",
+      "Repository_ID": "B18-R2",
+      "Wert": "1 M / 1004",
+      "Feld_Claude": "E5",
+      "Messwerte": "600 / 840 kΩ",
+      "Terminals": {
+        "1": "B18-R2.2",
+        "2": "B18-R2.1"
+      },
+      "Pins_xy": {
+        "1": [
+          247.3,
+          80
+        ],
+        "2": [
+          272.7,
+          80
+        ]
+      },
+      "Position_mm": [
+        260,
+        80
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R103",
+      "Symbol": "RH",
+      "Repository_ID": "B18-R1",
+      "Wert": "475 k / 4753",
+      "Feld_Claude": "E5",
+      "Messwerte": "378 / 406 kΩ",
+      "Terminals": {
+        "1": "B18-R1.2",
+        "2": "B18-R1.1"
+      },
+      "Pins_xy": {
+        "1": [
+          317.3,
+          80
+        ],
+        "2": [
+          342.7,
+          80
+        ]
+      },
+      "Position_mm": [
+        330,
+        80
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R104",
+      "Symbol": "RH",
+      "Repository_ID": "B19-1003 rechts",
+      "Wert": "100 k / 1003",
+      "Feld_Claude": "E6",
+      "Messwerte": "102,6 / 90,4 kΩ",
+      "Terminals": {
+        "1": "B19-E1",
+        "2": "B19-E2"
+      },
+      "Pins_xy": {
+        "1": [
+          387.3,
+          80
+        ],
+        "2": [
+          412.7,
+          80
+        ]
+      },
+      "Position_mm": [
+        400,
+        80
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R105",
+      "Symbol": "RH",
+      "Repository_ID": "B19-1003 links",
+      "Wert": "100 k / 1003",
+      "Feld_Claude": "E6",
+      "Messwerte": "102,6 / 90,4 kΩ",
+      "Terminals": {
+        "1": "B19-1003links.oben",
+        "2": "B19-1003links.unten"
+      },
+      "Pins_xy": {
+        "1": [
+          457.3,
+          80
+        ],
+        "2": [
+          482.7,
+          80
+        ]
+      },
+      "Position_mm": [
+        470,
+        80
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "U301",
+      "Symbol": "PFC",
+      "Repository_ID": "L4981AD",
+      "Wert": "L4981AD",
+      "Feld_Claude": "E6",
+      "Messwerte": "",
+      "Terminals": {
+        "14": "L4981AD.14"
+      },
+      "Pins_xy": {
+        "14": [
+          550,
+          80
+        ]
+      },
+      "Position_mm": [
+        585,
+        80
+      ],
+      "Properties": [
+        [
+          560,
+          57
+        ],
+        [
+          560,
+          103
+        ]
+      ]
+    },
+    {
+      "Reference": "R106",
+      "Symbol": "RV",
+      "Repository_ID": "B19-3922",
+      "Wert": "39,2 k / 3922",
+      "Feld_Claude": "E6",
+      "Messwerte": "38,43 / 38,91 kΩ",
+      "Terminals": {
+        "1": "B19-3922.links",
+        "2": "B19-3922.rechts"
+      },
+      "Pins_xy": {
+        "1": [
+          510,
+          112.3
+        ],
+        "2": [
+          510,
+          137.7
+        ]
+      },
+      "Position_mm": [
+        510,
+        125
+      ],
+      "Properties": [
+        [
+          458,
+          115
+        ],
+        [
+          458,
+          122
+        ]
+      ]
+    },
+    {
+      "Reference": "R107",
+      "Symbol": "RH",
+      "Repository_ID": "B19-4750",
+      "Wert": "475 Ω / 4750",
+      "Feld_Claude": "E6",
+      "Messwerte": "478 Ω beidseitig",
+      "Terminals": {
+        "1": "B19-4750.links",
+        "2": "B19-4750.rechts"
+      },
+      "Pins_xy": {
+        "1": [
+          552.3,
+          150
+        ],
+        "2": [
+          577.7,
+          150
+        ]
+      },
+      "Position_mm": [
+        565,
+        150
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R108",
+      "Symbol": "RH",
+      "Repository_ID": "B19-1004 oben",
+      "Wert": "1 M / 1004",
+      "Feld_Claude": "E6",
+      "Messwerte": "498 kΩ beidseitig",
+      "Terminals": {
+        "1": "B19-1004oben.links",
+        "2": "B19-1004oben.rechts"
+      },
+      "Pins_xy": {
+        "1": [
+          677.3,
+          80
+        ],
+        "2": [
+          702.7,
+          80
+        ]
+      },
+      "Position_mm": [
+        690,
+        80
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R109",
+      "Symbol": "RH",
+      "Repository_ID": "B19-1004 unten",
+      "Wert": "1 M / 1004",
+      "Feld_Claude": "E6",
+      "Messwerte": "496 kΩ beidseitig",
+      "Terminals": {
+        "1": "B19-1004unten.links",
+        "2": "B19-1004unten.rechts"
+      },
+      "Pins_xy": {
+        "1": [
+          677.3,
+          125
+        ],
+        "2": [
+          702.7,
+          125
+        ]
+      },
+      "Position_mm": [
+        690,
+        125
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "TP501",
+      "Symbol": "TP",
+      "Repository_ID": "+5VA",
+      "Wert": "+5VA",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "+5VA"
+      },
+      "Pins_xy": {
+        "1": [
+          765,
+          80
+        ]
+      },
+      "Position_mm": [
+        765,
+        80
+      ],
+      "Properties": [
+        [
+          768,
+          73
+        ],
+        [
+          768,
+          84
+        ]
+      ]
+    },
+    {
+      "Reference": "TP502",
+      "Symbol": "TP",
+      "Repository_ID": "+24V",
+      "Wert": "+24V",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "+24V"
+      },
+      "Pins_xy": {
+        "1": [
+          765,
+          109
+        ]
+      },
+      "Position_mm": [
+        765,
+        109
+      ],
+      "Properties": [
+        [
+          768,
+          102
+        ],
+        [
+          768,
+          113
+        ]
+      ]
+    },
+    {
+      "Reference": "TP503",
+      "Symbol": "TP",
+      "Repository_ID": "0V24",
+      "Wert": "0V24",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "0V24"
+      },
+      "Pins_xy": {
+        "1": [
+          770,
+          175
+        ]
+      },
+      "Position_mm": [
+        770,
+        175
+      ],
+      "Properties": [
+        [
+          773,
+          168
+        ],
+        [
+          773,
+          179
+        ]
+      ]
+    },
+    {
+      "Reference": "M1",
+      "Symbol": "MOTOR",
+      "Repository_ID": "DC MOTOR",
+      "Wert": "Bürsten-DC-Motor",
+      "Feld_Claude": "",
+      "Messwerte": "Wicklung 1,5–1,6 Ω / 16 Rotorpositionen",
+      "Terminals": {
+        "1": "DC MOTOR L+",
+        "2": "DC MOTOR L-"
+      },
+      "Pins_xy": {
+        "1": [
+          80,
+          210
+        ],
+        "2": [
+          80,
+          250
+        ]
+      },
+      "Position_mm": [
+        80,
+        230
+      ],
+      "Properties": [
+        [
+          15,
+          215
+        ],
+        [
+          15,
+          249
+        ]
+      ]
+    },
+    {
+      "Reference": "D3",
+      "Symbol": "DV",
+      "Repository_ID": "D3",
+      "Wert": "Freilaufdiode D3",
+      "Feld_Claude": "B5",
+      "Messwerte": "0,397 V / OL (Polungsannahme im Altprotokoll)",
+      "Terminals": {
+        "1": "DC MOTOR L-",
+        "2": "DC MOTOR L+"
+      },
+      "Pins_xy": {
+        "1": [
+          125,
+          242.7
+        ],
+        "2": [
+          125,
+          217.3
+        ]
+      },
+      "Position_mm": [
+        125,
+        230
+      ],
+      "Properties": [
+        [
+          137,
+          216
+        ],
+        [
+          137,
+          223
+        ]
+      ]
+    },
+    {
+      "Reference": "Q2",
+      "Symbol": "Q2",
+      "Repository_ID": "Q2",
+      "Wert": "MOSFET Q2",
+      "Feld_Claude": "B5",
+      "Messwerte": "Body 0,444 V / OL; G–S 9,14 kΩ; G–D 2,2 / 1,86 MΩ steigend",
+      "Terminals": {
+        "D": "Q2-D",
+        "S": "Q2-S",
+        "G": "Q2-G"
+      },
+      "Pins_xy": {
+        "D": [
+          80,
+          280
+        ],
+        "S": [
+          80,
+          320
+        ],
+        "G": [
+          105,
+          300
+        ]
+      },
+      "Position_mm": [
+        80,
+        300
+      ],
+      "Properties": [
+        [
+          14,
+          282
+        ],
+        [
+          14,
+          309
+        ]
+      ]
+    },
+    {
+      "Reference": "R201",
+      "Symbol": "RH",
+      "Repository_ID": "Q2-RG",
+      "Wert": "22 Ω / 220",
+      "Feld_Claude": "B5",
+      "Messwerte": "Gatepfad 22,2 Ω",
+      "Terminals": {
+        "1": "Q2-RG-G",
+        "2": "Q2-RG-U"
+      },
+      "Pins_xy": {
+        "1": [
+          182.3,
+          290
+        ],
+        "2": [
+          207.7,
+          290
+        ]
+      },
+      "Position_mm": [
+        195,
+        290
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "U201",
+      "Symbol": "DRIVER",
+      "Repository_ID": "Q2-DRV",
+      "Wert": "SOT-23-5: Typ offen",
+      "Feld_Claude": "B5",
+      "Messwerte": "",
+      "Terminals": {
+        "A": "Q2-DRV.A",
+        "B": "Q2-DRV.B",
+        "C": "Q2-DRV.C",
+        "D5": "Q2-DRV.D5",
+        "E": "Q2-DRV.E"
+      },
+      "Pins_xy": {
+        "A": [
+          295,
+          240
+        ],
+        "D5": [
+          295,
+          265
+        ],
+        "E": [
+          295,
+          290
+        ],
+        "C": [
+          405,
+          240
+        ],
+        "B": [
+          350,
+          315
+        ]
+      },
+      "Position_mm": [
+        350,
+        260
+      ],
+      "Properties": [
+        [
+          318,
+          224
+        ],
+        [
+          312,
+          300
+        ]
+      ]
+    },
+    {
+      "Reference": "R202",
+      "Symbol": "RH",
+      "Repository_ID": "Q2-R2211 (alt R221)",
+      "Wert": "2,21 k / 2211",
+      "Feld_Claude": "B5",
+      "Messwerte": "2,09 kΩ beidseitig",
+      "Terminals": {
+        "1": "R221-b (Code 2211)",
+        "2": "R221-a (Code 2211)"
+      },
+      "Pins_xy": {
+        "1": [
+          452.3,
+          240
+        ],
+        "2": [
+          477.7,
+          240
+        ]
+      },
+      "Position_mm": [
+        465,
+        240
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "U202",
+      "Symbol": "ONEP",
+      "Repository_ID": "Q2-1P",
+      "Wert": "1P: Typ offen",
+      "Feld_Claude": "B5",
+      "Messwerte": "",
+      "Terminals": {
+        "O": "Q2-1P.O",
+        "L": "Q2-1P.L",
+        "R": "Q2-1P.R"
+      },
+      "Pins_xy": {
+        "O": [
+          560,
+          240
+        ],
+        "L": [
+          560,
+          275
+        ],
+        "R": [
+          615,
+          315
+        ]
+      },
+      "Position_mm": [
+        615,
+        260
+      ],
+      "Properties": [
+        [
+          579,
+          224
+        ],
+        [
+          578,
+          300
+        ]
+      ]
+    },
+    {
+      "Reference": "U401",
+      "Symbol": "B20",
+      "Repository_ID": "B20-SOT23",
+      "Wert": "Typ / Funktionen offen",
+      "Feld_Claude": "E6",
+      "Messwerte": "",
+      "Terminals": {
+        "Ta": "B20-Ta",
+        "Tb": "B20-Tb",
+        "Tc": "B20-Tc"
+      },
+      "Pins_xy": {
+        "Ta": [
+          720,
+          240
+        ],
+        "Tc": [
+          720,
+          280
+        ],
+        "Tb": [
+          760,
+          315
+        ]
+      },
+      "Position_mm": [
+        760,
+        260
+      ],
+      "Properties": [
+        [
+          735,
+          225
+        ],
+        [
+          712,
+          303
+        ]
+      ]
+    },
+    {
+      "Reference": "R301",
+      "Symbol": "RH",
+      "Repository_ID": "B20-R1",
+      "Wert": "4,75 k / 4751",
+      "Feld_Claude": "E6",
+      "Messwerte": "4,6 kΩ beidseitig",
+      "Terminals": {
+        "1": "B20-R1a",
+        "2": "B20-R1b"
+      },
+      "Pins_xy": {
+        "1": [
+          697.3,
+          390
+        ],
+        "2": [
+          722.7,
+          390
+        ]
+      },
+      "Position_mm": [
+        710,
+        390
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R302",
+      "Symbol": "RH",
+      "Repository_ID": "B20-R2",
+      "Wert": "4,75 k / 4751",
+      "Feld_Claude": "E6",
+      "Messwerte": "a→b 2,7 / b→a 3,3 kΩ",
+      "Terminals": {
+        "1": "B20-R2a",
+        "2": "B20-R2b"
+      },
+      "Pins_xy": {
+        "1": [
+          777.3,
+          390
+        ],
+        "2": [
+          802.7,
+          390
+        ]
+      },
+      "Position_mm": [
+        790,
+        390
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R303",
+      "Symbol": "RH",
+      "Repository_ID": "B20-R3",
+      "Wert": "100 k / 1003",
+      "Feld_Claude": "E6",
+      "Messwerte": "72,3 kΩ beidseitig",
+      "Terminals": {
+        "1": "B20-R3a",
+        "2": "B20-R3b"
+      },
+      "Pins_xy": {
+        "1": [
+          697.3,
+          438
+        ],
+        "2": [
+          722.7,
+          438
+        ]
+      },
+      "Position_mm": [
+        710,
+        438
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R304",
+      "Symbol": "RH",
+      "Repository_ID": "B20-R4",
+      "Wert": "475…? Nennwert offen",
+      "Feld_Claude": "E6",
+      "Messwerte": "4,77 kΩ beidseitig",
+      "Terminals": {
+        "1": "B20-R4a",
+        "2": "B20-R4b"
+      },
+      "Pins_xy": {
+        "1": [
+          777.3,
+          438
+        ],
+        "2": [
+          802.7,
+          438
+        ]
+      },
+      "Position_mm": [
+        790,
+        438
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R203",
+      "Symbol": "RH",
+      "Repository_ID": "R1001",
+      "Wert": "1 k / 1001",
+      "Feld_Claude": "B5",
+      "Messwerte": "979 / 977 Ω",
+      "Terminals": {
+        "1": "R1001-a",
+        "2": "R1001-b"
+      },
+      "Pins_xy": {
+        "1": [
+          337.3,
+          385
+        ],
+        "2": [
+          362.7,
+          385
+        ]
+      },
+      "Position_mm": [
+        350,
+        385
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R204",
+      "Symbol": "RH",
+      "Repository_ID": "R4752",
+      "Wert": "47,5 k / 4752",
+      "Feld_Claude": "B5",
+      "Messwerte": "4,16 kΩ beidseitig",
+      "Terminals": {
+        "1": "R4752-a",
+        "2": "R4752-b"
+      },
+      "Pins_xy": {
+        "1": [
+          457.3,
+          385
+        ],
+        "2": [
+          482.7,
+          385
+        ]
+      },
+      "Position_mm": [
+        470,
+        385
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R401",
+      "Symbol": "RH",
+      "Repository_ID": "B10-R1",
+      "Wert": "475 k / 4753",
+      "Feld_Claude": "J6",
+      "Messwerte": "472,5 kΩ / 417 kΩ ↑",
+      "Terminals": {
+        "1": "B10-R1.1",
+        "2": "B10-R1.2"
+      },
+      "Pins_xy": {
+        "1": [
+          77.3,
+          400
+        ],
+        "2": [
+          102.7,
+          400
+        ]
+      },
+      "Position_mm": [
+        90,
+        400
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R402",
+      "Symbol": "RH",
+      "Repository_ID": "B10-R2",
+      "Wert": "475 k / 4753",
+      "Feld_Claude": "J6",
+      "Messwerte": "≈472 kΩ, wie R1",
+      "Terminals": {
+        "1": "B10-R2.1",
+        "2": "B10-R2.2"
+      },
+      "Pins_xy": {
+        "1": [
+          147.3,
+          400
+        ],
+        "2": [
+          172.7,
+          400
+        ]
+      },
+      "Position_mm": [
+        160,
+        400
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R403",
+      "Symbol": "RH",
+      "Repository_ID": "B10-R3",
+      "Wert": "475 k / 4753",
+      "Feld_Claude": "J6",
+      "Messwerte": "473,2 / 424 kΩ ↑",
+      "Terminals": {
+        "1": "B10-R3.1",
+        "2": "B10-R3.2"
+      },
+      "Pins_xy": {
+        "1": [
+          77.3,
+          445
+        ],
+        "2": [
+          102.7,
+          445
+        ]
+      },
+      "Position_mm": [
+        90,
+        445
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R404",
+      "Symbol": "RH",
+      "Repository_ID": "B10-R4",
+      "Wert": "475 k / 4753",
+      "Feld_Claude": "J6",
+      "Messwerte": "≈473 kΩ, wie R3",
+      "Terminals": {
+        "1": "B10-R4.1",
+        "2": "B10-R4.2"
+      },
+      "Pins_xy": {
+        "1": [
+          147.3,
+          445
+        ],
+        "2": [
+          172.7,
+          445
+        ]
+      },
+      "Position_mm": [
+        160,
+        445
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "D401",
+      "Symbol": "DH",
+      "Repository_ID": "B10-D1",
+      "Wert": "M7-Klasse?",
+      "Feld_Claude": "J6",
+      "Messwerte": "0,497 V / OL",
+      "Terminals": {
+        "1": "B10-D1.1",
+        "2": "B10-D1.2"
+      },
+      "Pins_xy": {
+        "1": [
+          207.3,
+          400
+        ],
+        "2": [
+          232.7,
+          400
+        ]
+      },
+      "Position_mm": [
+        220,
+        400
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "D402",
+      "Symbol": "DH",
+      "Repository_ID": "B10-D2",
+      "Wert": "M7-Klasse?",
+      "Feld_Claude": "J6",
+      "Messwerte": "0,499 V / OL",
+      "Terminals": {
+        "1": "B10-D2.1",
+        "2": "B10-D2.2"
+      },
+      "Pins_xy": {
+        "1": [
+          207.3,
+          445
+        ],
+        "2": [
+          232.7,
+          445
+        ]
+      },
+      "Position_mm": [
+        220,
+        445
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "K501",
+      "Symbol": "RELAY",
+      "Repository_ID": "F27 RT334024",
+      "Wert": "RT334024 / 24-V-Spule",
+      "Feld_Claude": "I4",
+      "Messwerte": "Spule 1,41 kΩ; Kontaktgruppe 68,4 Ω in-circuit",
+      "Terminals": {
+        "Ca": "F27-Ca",
+        "Cb": "F27-Cb",
+        "11a": "F27-11a",
+        "11b": "F27-11b",
+        "14a": "F27-14a",
+        "14b": "F27-14b"
+      },
+      "Pins_xy": {
+        "Ca": [
+          380,
+          455
+        ],
+        "Cb": [
+          480,
+          455
+        ],
+        "11a": [
+          380,
+          485
+        ],
+        "11b": [
+          380,
+          505
+        ],
+        "14a": [
+          480,
+          485
+        ],
+        "14b": [
+          480,
+          505
+        ]
+      },
+      "Position_mm": [
+        430,
+        475
+      ],
+      "Properties": [
+        [
+          395,
+          438
+        ],
+        [
+          392,
+          518
+        ]
+      ]
+    },
+    {
+      "Reference": "TH501",
+      "Symbol": "NTC",
+      "Repository_ID": "P600 Ka/Kb",
+      "Wert": "NTC, ca. 10-k-Klasse",
+      "Feld_Claude": "B5",
+      "Messwerte": "abgezogen 11,28 kΩ; fingerwarm 10,9 kΩ; gesteckt 3,11 / 2,47 kΩ",
+      "Terminals": {
+        "1": "P600-Ka",
+        "2": "P600-Kb"
+      },
+      "Pins_xy": {
+        "1": [
+          572.3,
+          465
+        ],
+        "2": [
+          597.7,
+          465
+        ]
+      },
+      "Position_mm": [
+        585,
+        465
+      ],
+      "Properties": [
+        [
+          551,
+          448
+        ],
+        [
+          548,
+          480
+        ]
+      ]
+    },
+    {
+      "Reference": "J201",
+      "Symbol": "P2",
+      "Repository_ID": "P2 (nur vermessene Pins)",
+      "Wert": "P2, Auswahl aus 18 Pins",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "P2.1",
+        "4": "P2.4",
+        "5": "P2.5",
+        "6": "P2.6",
+        "7": "P2.7",
+        "8": "P2.8",
+        "9": "P2.9",
+        "11": "P2.11"
+      },
+      "Pins_xy": {
+        "1": [
+          80,
+          500
+        ],
+        "4": [
+          80,
+          510
+        ],
+        "5": [
+          80,
+          520
+        ],
+        "6": [
+          80,
+          530
+        ],
+        "7": [
+          80,
+          540
+        ],
+        "8": [
+          80,
+          550
+        ],
+        "9": [
+          80,
+          560
+        ],
+        "11": [
+          80,
+          570
+        ]
+      },
+      "Position_mm": [
+        55,
+        535
+      ],
+      "Properties": [
+        [
+          26,
+          579
+        ],
+        [
+          26,
+          586
+        ]
+      ]
+    },
+    {
+      "Reference": "SW501",
+      "Symbol": "THERMAL",
+      "Repository_ID": "Motor-Thermoschalter",
+      "Wert": "Thermokontakt, kalt geschlossen",
+      "Feld_Claude": "",
+      "Messwerte": "0 Ω kalt",
+      "Terminals": {
+        "1": "P2.5",
+        "2": "THERM_PINK_UNBEKANNT"
+      },
+      "Pins_xy": {
+        "1": [
+          170,
+          520
+        ],
+        "2": [
+          220,
+          520
+        ]
+      },
+      "Position_mm": [
+        195,
+        520
+      ],
+      "Properties": [
+        [
+          146,
+          508
+        ],
+        [
+          147,
+          530
+        ]
+      ]
+    },
+    {
+      "Reference": "J204",
+      "Symbol": "P4",
+      "Repository_ID": "P4",
+      "Wert": "P4: TACHO / 0V",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "TACHO": "P4.TACHO",
+        "0V": "P4.0V"
+      },
+      "Pins_xy": {
+        "TACHO": [
+          245,
+          540
+        ],
+        "0V": [
+          245,
+          560
+        ]
+      },
+      "Position_mm": [
+        270,
+        550
+      ],
+      "Properties": [
+        [
+          280,
+          518
+        ],
+        [
+          254,
+          578
+        ]
+      ]
+    }
+  ],
+  "nets": {
+    "AC_N": [
+      "B10-T1",
+      "B10-R1.1",
+      "AC LINE N"
+    ],
+    "N_B10-R1_2": [
+      "B10-R1.2",
+      "B10-N1",
+      "B10-R2.1"
+    ],
+    "N_B10-R2_2": [
+      "B10-R2.2",
+      "B10-N2",
+      "B10-D1.1"
+    ],
+    "B10_KATHODEN": [
+      "B10-D1.2",
+      "B10-J1",
+      "B10-J3",
+      "B10-D2.2"
+    ],
+    "N_B10-R4_2": [
+      "B10-D2.1",
+      "B10-N4",
+      "B10-R4.2"
+    ],
+    "N_B10-R3_2": [
+      "B10-R4.1",
+      "B10-N3",
+      "B10-R3.2"
+    ],
+    "AC_L": [
+      "B10-R3.1",
+      "B10-T2",
+      "AC LINE L"
+    ],
+    "L+": [
+      "B18-P2",
+      "B18-R3.2",
+      "B18-V2/TP2",
+      "DC MOTOR L+"
+    ],
+    "B18_TP1": [
+      "B18-R3.1",
+      "B18-R2.2",
+      "B18-V1/TP1"
+    ],
+    "N_B18-R2_1": [
+      "B18-R2.1",
+      "B18-R1.2"
+    ],
+    "P1_E1": [
+      "B18-R1.1",
+      "B18-P1",
+      "B19-E1"
+    ],
+    "B19_A": [
+      "B19-E2",
+      "B19-PadA",
+      "B19-1003links.oben"
+    ],
+    "0VA": [
+      "0VA",
+      "Q2-S",
+      "B19-3922.rechts",
+      "B19-4750.links",
+      "B20-Tb",
+      "Q2-DRV.B",
+      "0V24",
+      "Q2-1P.R"
+    ],
+    "+5VA": [
+      "+5VA"
+    ],
+    "L-": [
+      "DC MOTOR L-",
+      "Q2-D"
+    ],
+    "GATE": [
+      "Q2-G",
+      "Q2-RG-G"
+    ],
+    "RG_U": [
+      "Q2-RG-U",
+      "Q2-DRV.E"
+    ],
+    "0V_KONSOLE": [
+      "P4.0V",
+      "P2.7",
+      "P2.8"
+    ],
+    "P2_1_4": [
+      "P2.1",
+      "P2.4"
+    ],
+    "P4_TACHO": [
+      "P4.TACHO"
+    ],
+    "P2_TACHO": [
+      "P2.9"
+    ],
+    "N_P600-Ka": [
+      "P600-Ka"
+    ],
+    "N_P600-Kb": [
+      "P600-Kb"
+    ],
+    "VFEED": [
+      "B19-PadB",
+      "B19-1003links.unten",
+      "B19-3922.links",
+      "L4981AD.14"
+    ],
+    "B19_C": [
+      "B19-4750.rechts",
+      "B19-PadC"
+    ],
+    "B19_1M_L": [
+      "B19-1004oben.links",
+      "B19-1004unten.links"
+    ],
+    "B19_1M_R": [
+      "B19-1004oben.rechts",
+      "B19-1004unten.rechts"
+    ],
+    "N_B20-R1a": [
+      "B20-R1a"
+    ],
+    "N_B20-R1b": [
+      "B20-R1b"
+    ],
+    "N_B20-R2a": [
+      "B20-R2a"
+    ],
+    "N_B20-R2b": [
+      "B20-R2b"
+    ],
+    "N_B20-R3a": [
+      "B20-R3a"
+    ],
+    "N_B20-R3b": [
+      "B20-R3b"
+    ],
+    "N_B20-R4a": [
+      "B20-R4a"
+    ],
+    "N_B20-R4b": [
+      "B20-R4b"
+    ],
+    "B20_Ta": [
+      "B20-Ta"
+    ],
+    "B20_Tc": [
+      "B20-Tc"
+    ],
+    "DRV_A": [
+      "Q2-DRV.A"
+    ],
+    "DRV_C": [
+      "Q2-DRV.C",
+      "Q2-R2211.b"
+    ],
+    "DRV_D5": [
+      "Q2-DRV.D5"
+    ],
+    "N_R1001-a": [
+      "R1001-a"
+    ],
+    "N_R1001-b": [
+      "R1001-b"
+    ],
+    "1P_O": [
+      "Q2-R2211.a",
+      "Q2-1P.O"
+    ],
+    "N_R4752-a": [
+      "R4752-a"
+    ],
+    "N_R4752-b": [
+      "R4752-b"
+    ],
+    "+24V": [
+      "+24V"
+    ],
+    "1P_L": [
+      "Q2-1P.L"
+    ],
+    "N_F27-Ca": [
+      "F27-Ca"
+    ],
+    "N_F27-Cb": [
+      "F27-Cb"
+    ],
+    "RELAIS_11": [
+      "F27-11a",
+      "F27-11b"
+    ],
+    "RELAIS_14": [
+      "F27-14a",
+      "F27-14b"
+    ],
+    "N_P2_5": [
+      "P2.5"
+    ],
+    "THERM_PINK": [
+      "THERM_PINK_UNBEKANNT"
+    ],
+    "N_P2_6": [
+      "P2.6"
+    ],
+    "N_P2_11": [
+      "P2.11"
+    ]
+  },
+  "scope": "0V24=0VA only in measured plug configuration; unknown continuation remains open",
+  "notation": "M measured, F original photo, I inference; CAD references do not change Claude grid"
+}

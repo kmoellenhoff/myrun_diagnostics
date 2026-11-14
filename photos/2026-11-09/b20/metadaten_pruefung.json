@@ -1,0 +1,16 @@
+{
+  "source_filename": "50370.jpg",
+  "source_sha256": "f81e34006bd3459da4c0ec5d964d93f31f92fe5f8cdac9a0ddb2cfbac36a81d6",
+  "sanitized_sha256": "68e47504618ac28a39358692d1bff8176afe60d448e8437ed68bd4fe71000b6d",
+  "removed_markers": [
+    "0xe1",
+    "0xe1"
+  ],
+  "pixels_identical": true,
+  "exif_absent": true,
+  "source_orientation": 1,
+  "board_grid": "B20 / E6, Claude unverändert",
+  "decoded_pixels_unchanged": true,
+  "jpeg_reencoded": false,
+  "original_metadata_values_published": false
+}
