@@ -64,3 +64,17 @@ Kette vollständig gemessen: **MCU-Pin (untere linke Kante Nr. 3, vermutl. Pin 1
 3. **Basis T2 bzw. Motorfreigabe-Pin** am MCU zuordnen (gleiches Vorgehen wie bei T3), um zu sehen, ob beide Freigaben am MCU enden.
 4. Eingänge des MCU identifizieren, die vor dem Start ausgewertet werden könnten: Netz-/Zwischenkreismessung (Ketten in B10), Strommessung (TL082 → B20-R1…R4), Netzerkennung (LINE), Konsolen-Signale (OC04 Enable, OC05 PWM, OC06 RS-485). Jeweils: Weg zum MCU-Pin, Pegel Standby/Start.
 5. Erst danach: EEPROM 24C32 (Parameter) und MCU-Tausch/Tausch-GIRT als Option.
+
+## 5. Kandidaten: Warum erteilt der MCU die Startfreigabe nicht? (Stand 19:10, alle [H])
+Belegt ist nur: Enable-Kanal aktiv, PWM-Änderung am OC05-Ausgang, VDD 13,5 V, Steuerleitung T3 bleibt 4,9 V, F27 ohne Spulenspannung, Basis T2 ≈ 0 V.
+
+| # | Kandidat | Warum plausibel | Prüfung (Aufwand) |
+|---|---|---|---|
+| 1 | **Weitere Konsolen-Signale über OC02/OC03/OC08** (z. B. Wake-up P2.15, Sleep P2.17, weitere Freigabe) | drei Konsole→MCU-Kanäle sind nicht zugeordnet; ein fehlendes „Wake“/aktives „Sleep“ würde den MCU im Standby halten, obwohl PWM ankommt | P2-Pins → Anoden OC02/03/08 stromlos zuordnen; im Betrieb Anodenspannung gegen P2.7 (Konsolenseite, ungefährlich) Standby/Start (gering) |
+| 2 | **Hilfsversorgungen ±12VA, +5VA** | TL082 (Strommessung) braucht vermutlich ±12VA; fehlt eine Schiene, liegt die Strommessung am Anschlag → Selbsttest vor dem Start scheitert | Testpunkte −12VA, +12VA, +5VA gegen 0VA (Vorderseite neben D3) im Standby (sehr gering) |
+| 3 | **Netz-/Zwischenkreiserkennung** (B10 oder anderer Teiler) | Vorladerelais wird typisch erst nach erkannter Netz-/Zwischenkreisspannung geschlossen | Weg von J1 eindeutig zuordnen; Vergleich an anderem Stromkreis (mittel) |
+| 4 | **Motorkreis-Prüfung vor dem Start** (Bürstenkontakt) | Handbuch nennt bei HF900 abgenutzte Bürsten; offene Lamellen/Bürsten nur bei bestimmter Rotorstellung → sporadisch | Motorwiderstand L+/L− bei mehreren Rotorstellungen (Band schrittweise von Hand verschieben, Stecker ab) (gering) |
+| 5 | **Strommessung (TL082) Offset** | Nullpunktprüfung vor Start üblich | erst nach 2; Ausgänge TL082 im Standby (mittel) |
+| 6 | **RS-485 (ADM485, OC06/OC01/OC07)** | Statusflags kommen an, aber ein Startbefehl/Parameter könnte über den Bus laufen | Zuordnung OC01/OC07, Signal mit Hz-Messung (mittel) |
+| 7 | **Gespeicherte Sperre / Parameter im EEPROM 24C32** | manche Antriebe verriegeln nach wiederholten Fehlern dauerhaft | nur durch Tausch/Auslesen klärbar (hoch) |
+| 8 | **MCU/Firmware-Defekt** | nachrangig, MCU arbeitet sonst normal | Tausch-GIRT (hoch) |
