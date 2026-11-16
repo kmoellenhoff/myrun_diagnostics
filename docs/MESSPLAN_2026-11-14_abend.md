@@ -84,3 +84,10 @@ Begründung und vollständige Liste: `NEUBEWERTUNG_2026-11-16.md`. Zusätzlich z
 - Punkte 2 und 3 der Ergänzung erledigt (`LAUF_2026-11-14.md`, „16.11. abends“): J nur 22,1 kΩ nach 0VA; Teiler 1:2 vor X; Y = Temperatureingang über P600.
 - Für die Live-Messung: **X** (Oszi, Lauf O2) rechnerisch ≈ 3,7 V Spitze; **Y** (LD3N-O gegen 0VA, Multimeter DC) rechnerisch ≈ 0,7–0,8 V bei Raumtemperatur, 0 V = Fühlerkreis offen. Beides Rechenmodelle, keine Sollwerte.
 - Noch stromlos offen: P600 Kontakt 2 ↔ +5VA (0 Ω erwartet); Zuordnung OC02/OC03/OC08 (Punkt 4).
+
+### Reihenfolge für den 17.11.
+1. **Konsolenseite, Oszi (ungefährlich):** ADM485 Pin 1 bzw. Kathode OC06 gegen P2.7 im Standby und beim Start mit stehendem Band (×10, DC, 1 V/div, 2 ms/div, Trigger 2,5 V, NORMAL/SINGLE). Impulse bei stehendem Band = Befund. Dazu Multimeter: ADM485 Pin 6 und Pin 7 gegen P2.7 im Standby.
+2. Beim selben Startversuch STS1/STS2 mit Ton filmen, Netzspannung notieren.
+3. Oszi-Lauf O1 (PWM an OC05 Pin 1 gegen P2.7).
+4. Netzseite: X mit dem Oszi (≈ 3,7 V Spitze erwartet, Rechenmodell), Y gegen 0VA (≈ 0,8 V), OC04 Pin 3 gegen 0VA.
+5. Stromlos: OC06 Pin 4 ↔ +5VA, Pin 3 → MCU-Pin.
