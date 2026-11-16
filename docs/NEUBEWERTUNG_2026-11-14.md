@@ -1,3 +1,5 @@
+> **Aktueller Abgleich nach den Abendmessungen:** [Prüfung bis 22:32](PRUEFUNG_2026-11-16_spaet.md). Frühere Kandidaten und pauschale Grenzwerte unten gelten nur unter den dort korrigierten Einschränkungen.
+
 # Neubewertung 14.11.2026 – PFC und Motor bleiben gesperrt (T3-Sperre)
 
 Ersetzt den Hauptverdacht aus `NEUBEWERTUNG_2026-11-12.md`. Messdaten und Logs: `LAUF_2026-11-14.md`, `logs_2026-11-14/`.

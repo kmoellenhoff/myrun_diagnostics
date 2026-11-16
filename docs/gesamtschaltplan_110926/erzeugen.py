@@ -60,7 +60,19 @@ supplements = [
 ]
 evidence += supplements
 current_path = HERE / "befunde_2026-11-16.csv"
-current = read_csv(current_path)
+evening_path = HERE / "befunde_2026-11-16_abend.csv"
+current = read_csv(current_path) + read_csv(evening_path)
+# Preserve historical rows, but never union photo links contradicted by measurement.
+for row in current:
+    if row["ID"] in {"AKT-059", "AKT-060"}:
+        row["Art"] = "Überholter Fotoalias; keine Netzvereinigung"
+        row["Bemerkung"] = "WIDERLEGT durch AKT-065/066: R2a=0VA, R2b=R1b. " + row["Bemerkung"]
+    if row["ID"] == "AKT-024":
+        row["Bemerkung"] = "Serien-4751 nun R1/R301; frühere R2-Fotozuordnung widerlegt (AKT-065 bis 069)."
+    if row["ID"] == "AKT-061":
+        row["Bemerkung"] = "R1a=TL082-Ausgang weiterhin Fotozuordnung; Aussage R2a=OUT ist durch AKT-066 widerlegt."
+    if row["ID"] in {"AKT-075", "AKT-076"}:
+        row["Bemerkung"] += " Nachtrag 22:01: Fühler war gesteckt; Kontakt2=+5VA separat gemessen (AKT-077)."
 evidence += current
 
 
@@ -104,7 +116,7 @@ names = {
     "F27-11a": "RELAIS_11", "F27-14a": "RELAIS_14", "B10-J1": "B10_KATHODEN",
     "+12VA": "+12VA", "-12VA": "-12VA", "TL082.1": "TL082_OUT",
     "MCU.11": "PFC_CTRL", "MCU.12": "ENABLE", "MCU.13": "P70", "MCU.17": "PWM",
-    "MCU.24": "F27_CTRL", "MCU.26": "Y", "MCU.28": "X", "OUT4751.2": "X_VOR_100R",
+    "MCU.24": "F27_CTRL", "MCU.26": "Y", "MCU.28": "X", "X.1000in": "X_VOR_100R",
     "AC LINE N": "AC_N", "AC LINE L": "AC_L", "B20-Ta": "B20_Ta", "B20-Tc": "B20_Tc",
 }
 named_roots = {find(k): v for k, v in names.items()}
@@ -292,7 +304,7 @@ for ref,x,y,repo,val,m in [("R301",710,390,"B20-R1","4,75 k / 4751","4,6 kΩ bei
     add(ref,"RH",x,y,repo,val,{"1":repo+"a","2":repo+"b"},"E6",m)
     text(m,x-30,y+15,1.6)
 text("a = unten; b = oben im ursprünglichen Messplan",681,470,1.7)
-text("Fotoabgleich: R2 Ausgang; R1a ebenfalls OUT.",681,478,1.7)
+text("Abendmessung: R1 in Reihe; R2a=0VA, R2b=R1b.",681,478,1.7)
 text("Diodenmatrix: Ta–Tb 1,13/0,70 V",681,491,1.7)
 text("Ta–Tc 2,38/0,68 V; Tb–Tc 1,94/0,69 V",681,499,1.7)
 
@@ -334,7 +346,8 @@ text("Fingerwarm: 10,9 kΩ; keine Temperaturangabe",535,503,1.7)
 text("Gesteckt: 3,11 / 2,47 kΩ (Platinenpfad offen)",535,511,1.7)
 text("Bewegung stabil im begrenzten Testumfang.",535,519,1.7)
 text("Spule +24V / T4-Kollektor; Ca/Cb-Polzuordnung offen.",535,535,1.7)
-text("NTC-Anschlusswege weiterhin nicht identifiziert.",535,543,1.7)
+text("P600 Kontakt2=+5VA [M]; Kontakt1 nach Y ca. 1 kΩ.",535,543,1.7)
+text("Ka/Kb-Alias offen; Y-Massewert ist In-Circuit.",535,551,1.7)
 text("P400-Lüfter: gesteckt, läuft bei Boot / Fehlstart hörbar.",535,560,1.7)
 text("Einzelne Steckerpins nicht zu 24-V-Testpunkten vermessen.",535,568,1.7)
 
@@ -378,16 +391,14 @@ wire(pos("R602","2"),(210,660),(210,675),pos("U602","3"))
 wire(pos("U602","1"),(325,685),(325,733),(215,733),(215,695),pos("U602","2"))
 label("TL082.1",(325,685),1.6)
 lead("U602","8",(265,640));lead("U602","4",(265,725));lead("U602","5",(285,725))
-# Fotoabgleich: B20 R1–R4 links→rechts in 50370, a unten/b oben.
-# netzsignal_4751.jpg: R2b zum Via, R2a=R1a=TL082 OUT. Keine dritte 4751.
+# Latest measurements override the previous photograph interpretation.
 parts_by_ref={p["Reference"]:p for p in parts}
-parts_by_ref["R302"]["Terminals"]={"1":"OUT4751.1","2":"OUT4751.2"}
 for ref,x in [("R301",687),("R302",767)]:
     wire(pos(ref,"1"),(x,390),(x,382))
     label(parts_by_ref[ref]["Terminals"]["1"],(x,382),1.6)
-wire(pos("R302","2"),(815,390),(815,414),(785,414))
-label("OUT4751.2",(785,414),1.6)
-text("Ausgangs-4751 = R302/B20-R2 [F]; R301/R1a = OUT, R1b offen.",25,765,1.9)
+wire(pos("R301","2"),(738,390),(738,414),(815,414),(815,390),pos("R302","2"))
+label("X.1000in",(755,414),1.6)
+text("R301/B20-R1 Serie; R302/B20-R2 nach 0VA: Teiler 1:2 [M/I].",25,765,1.9)
 add("R603","RH",425,685,"Netzsignal-1000","100 Ω / 1000",{"1":"X.1000in","2":"X"})
 lead("R603","1",(385,685));lead("R603","2",(470,685))
 add("C601","CAP",520,685,"X-Filterkondensator","C Wert offen",{"1":"X","2":"0VA"})
@@ -395,7 +406,7 @@ lead("C601","1",(485,685),labelled=False);lead("C601","2",(560,685)); wire((470,
 lib("LD3N", [("L","L",-35,0,0,10),("O","O",0,-25,90,15),("R","R",35,0,180,10)],poly([(-18,-5),(-8,0),(-18,5),(-18,-5)])+line((-8,-5),(-8,5))+poly([(8,-5),(18,0),(8,5),(8,-5)])+line((18,-5),(18,5))+line((-25,0),(-18,0))+line((-8,0),(8,0))+line((18,0),(25,0))+line((0,0),(0,-10)),True)
 add("U605","LD3N",485,750,"LD3N an Y","Schottky-Kandidat, Typ offen",{"L":"LD3N.L","O":"LD3N.O","R":"LD3N.R"},labels_pos=((455,733),(455,740)))
 for pin in ["L","O","R"]: label(next(p for p in parts if p["Reference"]=="U605")["Terminals"][pin],pos("U605",pin),1.6)
-text("X ≠ Y; kein Serienkondensator, keine Drahtbrücke. LD3N schützt Y; dessen Quelle offen.",25,778,2)
+text("X ≠ Y; kein Serienkondensator, keine Drahtbrücke. Y: P600-Temperaturkandidat; ca. 1 kΩ zu Kontakt1 [M/I].",25,778,2)
 text("Optokoppler — galvanische Trennung bleibt erhalten",25,800,2.7,True)
 for ref,x,name,anode,cathode,emitter in [("U603",100,"OC04","OC04.A","LM2903.7","MCU.12"),("U604",300,"OC05","OC05.A","P2.7","MCU.17")]:
     add(ref,"OC",x,855,name,name,{"A":anode,"K":cathode,"C":"+5VA","E":emitter},labels_pos=((x-20,818),(x-20,825)))
@@ -436,6 +447,22 @@ text("gemessene Leiterzüge übernommen. R203/R204 bleiben offen; siehe",500,104
 text("docs/fotospuren_2026-11-12/README.md für den getrennten F-Entwurf.",500,1050,1.8)
 
 
+text("Abendbefund: ADM485 / OC06 — Tacho-Funktion Kandidat, MCU-Seite offen",25,1110,2.7,True)
+lib("ADM_PART",[("6","6 A",-35,15,0,10),("7","7 B",-35,-15,0,10),("1","1 RO",35,0,180,10),("5","5 GND",0,-40,90,15)],rect((-25,-25),(25,25)),True)
+add("U606","ADM_PART",120,1160,"ADM485 (Teilanschlüsse)","Funktion als Tacho-Aufbereitung [I]",{str(i):f"ADM485.{i}" for i in [1,5,6,7]},labels_pos=((85,1124),(65,1210)))
+for pin in ["5","6","7"]: lead("U606",pin,pos("U606",pin))
+add("U607","OC",300,1160,"OC06","Ausgangsbezug / MCU-Pin offen",{"A":"OC06.A","K":"OC06.K","C":"OC06.C","E":"OC06.E"},labels_pos=((270,1124),(265,1200)))
+wire(pos("U606","1"),(210,1160),(210,1175),pos("U607","K"));label("ADM485.1",(175,1160),1.6)
+for pin in ["A","C","E"]: label(next(p for p in parts if p["Reference"]=="U607")["Terminals"][pin],pos("U607",pin),1.6)
+text("P4 TACHO–Pin7: 1,103 kΩ; zu Pin6: 12,94 kΩ [M].",440,1135,1.8)
+text("Endliche In-Circuit-Pfade, keine erfundenen Serienbauteile.",440,1145,1.8)
+text("Pin5 = LM2903 Pin4 = P2.7 / 0V_KONSOLE [M].",440,1155,1.8)
+text("RO = OC06-Kathode [M]; Pulsfunktion noch nicht gemessen.",440,1165,1.8)
+text("P600: Kontakt2 = +5VA [M], Kontakt1–Y ca. 1 kΩ [M].",440,1185,1.8)
+text("Y–0VA: 1,883 kΩ mit Fühler; Einzelwiderstand unbekannt.",440,1195,1.8)
+text("Kein erfundener 2,2-kΩ-Widerstand, Ka/Kb-Aliase offen.",440,1205,1.8)
+
+
 def symbol_sexpr(p):
     ref=p["Reference"]; x,y=p["Position_mm"]; sym=p["Symbol"]
     at = p["Properties"] or ((x-24,y-12),(x-24,y+5))
@@ -452,7 +479,7 @@ def symbol_sexpr(p):
 
 
 def save_schematic():
-    txt = f'(kicad_sch (version 20250114) (generator "eeschema") (uuid "{ROOT_UUID}") (paper "User" 841 1100)\n'
+    txt = f'(kicad_sch (version 20250114) (generator "eeschema") (uuid "{ROOT_UUID}") (paper "User" 841 1250)\n'
     txt += '(title_block (title "GIRT S6T30 - gemessene Teilnetze") (date "2026-11-16") (rev "main / Evidenzmodell") (company "myrun_diagnostics") (comment 1 "M gemessen / F Foto / I abgeleitet; keine vollstaendige Platinenrekonstruktion"))\n'
     txt += '(lib_symbols\n' + "\n".join(v["text"] for v in libraries.values()) + ')\n'
     txt += "\n".join(drawing) + "\n"
@@ -559,7 +586,7 @@ def pdf_bundle(rows):
     small=ParagraphStyle("small",fontName="DejaVu",fontSize=8,leading=11)
     def para(s): return Paragraph(escape(str(s)).replace("\n","<br/>"),small)
     out=io.BytesIO(); flow=[]
-    flow += [Paragraph("Messwerte zum gemeinsamen Schaltplan",styles["Title"]),Spacer(1,10),para("Die erste Seite ist der gemeinsame Schaltplan (841 × 1100 mm). Es folgen vergrößerte Ausschnitte desselben elektrisch verbundenen Blatts und dieses Messregister. Nichtzero Messwerte sind In-Circuit-Ergebnisse, keine zusätzlichen Einzelbauteile. Bestätigte Schlusskorrekturen bis 16.11.2026 haben Vorrang vor der Historie. Vollständige Rohfelder, Polung, Steckzustand und Hinweise: messwerte_vollstaendig.json / messwerte.csv."),Spacer(1,12)]
+    flow += [Paragraph("Messwerte zum gemeinsamen Schaltplan",styles["Title"]),Spacer(1,10),para("Die erste Seite ist der gemeinsame Schaltplan (841 × 1250 mm). Es folgen vergrößerte Ausschnitte desselben elektrisch verbundenen Blatts und dieses Messregister. Nichtzero Messwerte sind In-Circuit-Ergebnisse, keine zusätzlichen Einzelbauteile. Bestätigte Schlusskorrekturen bis 16.11.2026 haben Vorrang vor der Historie. Vollständige Rohfelder, Polung, Steckzustand und Hinweise: messwerte_vollstaendig.json / messwerte.csv."),Spacer(1,12)]
     groups=[]
     for r in rows:
         key=(r["Ebene"],r["Gruppe"])
@@ -584,11 +611,12 @@ def pdf_bundle(rows):
     crops=[("B18/B19 und Versorgungs-Testpunkte",(150,40,835,205)),("Motorstufe und Gate-Pfad",(8,180,298,370)),("Treiber und 1P-Zweig",(270,190,677,365)),("B20, offene Widerstandsanschlüsse",(670,205,837,513)),("AC-Erfassung B10",(15,370,290,487)),("Relais und NTC",(325,420,673,575)),("Konsole, P2/P4 und Thermokontakt",(15,487,315,591))]
     crops += [("MCU, B10-Puffer und getrennte X/Y-Netze",(15,605,825,798)),("Optokoppler, T3 und F27-Treiber",(15,797,825,955)),("Q2-Freigabe T2 und 1P",(15,965,825,1090))]
     crops += [("B10-Fusswiderstand und TL082-Puffer",(20,630,350,775)),("X-Filter und LD3N an getrenntem Y",(360,650,640,785)),("MCU-Arbeitsnummern",(650,620,825,795)),("OC04 / OC05",(20,810,380,925)),("T3-Steuerung und T4-Relaisstufe",(395,810,825,955)),("T2: reale Serienwiderstaende bis zum Kollektor",(90,985,465,1090))]
+    crops += [("ADM485 / OC06: nur bestaetigte Kupferverbindungen",(20,1100,420,1225)),("Abendbefunde: P600 und offene Tacho-Funktion",(430,1125,825,1220))]
     for title,mmrect in crops:
         page=merged.new_page(width=1190.55,height=841.89)
         page.insert_text((35,28),title,fontsize=12,fontname="helv")
         clip=fitz.Rect(*[n*72/25.4 for n in mmrect]);page.show_pdf_page(fitz.Rect(30,42,1160,805),source,0,clip=clip)
-        page.insert_text((35,824),"Ausschnitt aus dem gemeinsamen Blatt (841 x 1100 mm); Netzverbindungen im Originalblatt / KiCad.",fontsize=9)
+        page.insert_text((35,824),"Ausschnitt aus dem gemeinsamen Blatt (841 x 1250 mm); Netzverbindungen im Originalblatt / KiCad.",fontsize=9)
     merged.insert_pdf(appendix)
     merged.set_metadata({"title":"GIRT S6T30 - gemeinsamer Schaltplan und Messregister","author":"myrun_diagnostics","subject":"Evidence-based reconstruction; branch main; 2026-11-16"})
     merged.save(HERE/"gesamtschaltplan.pdf",garbage=4,deflate=True)
@@ -610,8 +638,8 @@ if __name__=="__main__":
     for p in parts:
         for pin,node in p["Terminals"].items():pins.setdefault(net(node),[]).append(p["Reference"]+"."+pin+" = "+node)
     write_csv(HERE/"netze.csv",[{"Netz":n,"Aliase":sorted(a),"CAD_Pins":pins.get(n,[])} for n,a in sorted(nets.items())],["Netz","Aliase","CAD_Pins"])
-    dump(HERE/"connected_model.json",{"schema":1,"sheet":"User 841x1100 mm","branch":"main","source_commit":"f60fe5d339c43876fd33d5baed5f18d2b33cc3d1","components":parts,"nets":nets,"scope":"0V24=0VA only in measured plug configuration; unknown continuation remains open","notation":"M measured, F original photo, I inference; CAD references do not change Claude grid"})
-    sources=[source,latest_path,current_path,ROOT/"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md",ROOT/"photos/2026-11-09/b20/50370.jpg",ROOT/"photos/2026-11-15/netzsignal_4751.jpg",ROOT/"docs/LAUF_2026-11-11.md",ROOT/"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md",ROOT/"photos/2026-11-09/b20/50370.jpg",ROOT/"photos/2026-11-15/netzsignal_4751.jpg",ROOT/"docs/NEUBEWERTUNG_2026-11-12.md",ROOT/"docs/fotospuren_2026-11-12/README.md",ROOT/"docs/LAUF_2026-11-14.md",ROOT/"docs/MESSPLAN_2026-11-14_abend.md",ROOT/"docs/mcu_skizze_2026-11-16/README.md",ROOT/"docs/netlist/optokoppler_zuordnung.md",*old_sources,ROOT/"docs/HARDWARE.md",ROOT/"docs/STAND_2026-11-08.md",ROOT/"docs/netlist/q2_treiber_fan3100c_kandidat.md",ROOT/"photos/2026-11-08/back_raster_index.csv",ROOT/"docs/messplan_stromlos_2026-11-08/Q2_1P_DIODENTEST_AUSSTEHEND.csv"]
+    dump(HERE/"connected_model.json",{"schema":1,"sheet":"User 841x1250 mm","branch":"main","source_commit":"d917aa8","components":parts,"nets":nets,"scope":"0V24=0VA only in measured plug configuration; unknown continuation remains open","notation":"M measured, F original photo, I inference; CAD references do not change Claude grid"})
+    sources=[source,latest_path,current_path,evening_path,ROOT/"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md",ROOT/"photos/2026-11-09/b20/50370.jpg",ROOT/"photos/2026-11-15/netzsignal_4751.jpg",ROOT/"docs/LAUF_2026-11-11.md",ROOT/"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md",ROOT/"photos/2026-11-09/b20/50370.jpg",ROOT/"photos/2026-11-15/netzsignal_4751.jpg",ROOT/"docs/NEUBEWERTUNG_2026-11-12.md",ROOT/"docs/fotospuren_2026-11-12/README.md",ROOT/"docs/LAUF_2026-11-14.md",ROOT/"docs/MESSPLAN_2026-11-14_abend.md",ROOT/"docs/mcu_skizze_2026-11-16/README.md",ROOT/"docs/netlist/optokoppler_zuordnung.md",*old_sources,ROOT/"docs/HARDWARE.md",ROOT/"docs/STAND_2026-11-08.md",ROOT/"docs/netlist/q2_treiber_fan3100c_kandidat.md",ROOT/"photos/2026-11-08/back_raster_index.csv",ROOT/"docs/messplan_stromlos_2026-11-08/Q2_1P_DIODENTEST_AUSSTEHEND.csv"]
     proof["source_sha256"]={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
     dump(HERE/"pruefnachweis.json",proof)
     print(json.dumps(proof,ensure_ascii=False,indent=2))

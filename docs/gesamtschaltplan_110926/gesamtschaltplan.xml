@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/workspace/myrun_diagnostics/docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch</source>
-    <date>2026-11-16T05:45:09+0000</date>
+    <date>2026-11-16T21:52:11+0000</date>
     <tool>Eeschema 9.0.2+dfsg-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -605,7 +605,7 @@
         <field name="Repository_ID">B20-R2</field>
         <field name="Feld_Claude">E6</field>
         <field name="Messwerte">a→b 2,7 / b→a 3,3 kΩ</field>
-        <field name="Terminal_Aliase">{"1": "OUT4751.1", "2": "OUT4751.2"}</field>
+        <field name="Terminal_Aliase">{"1": "B20-R2a", "2": "B20-R2b"}</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -614,7 +614,7 @@
       <property name="Repository_ID" value="B20-R2"/>
       <property name="Feld_Claude" value="E6"/>
       <property name="Messwerte" value="a→b 2,7 / b→a 3,3 kΩ"/>
-      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;OUT4751.1&quot;, &quot;2&quot;: &quot;OUT4751.2&quot;}"/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;B20-R2a&quot;, &quot;2&quot;: &quot;B20-R2b&quot;}"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
       <property name="exclude_from_bom"/>
@@ -1289,8 +1289,69 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>71dd607e-5316-577a-8a12-beeeb84f306c</tstamps>
     </comp>
+    <comp ref="U606">
+      <value>Funktion als Tacho-Aufbereitung [I]</value>
+      <fields>
+        <field name="Repository_ID">ADM485 (Teilanschlüsse)</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "ADM485.1", "5": "ADM485.5", "6": "ADM485.6", "7": "ADM485.7"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="ADM_PART" description=""/>
+      <property name="Repository_ID" value="ADM485 (Teilanschlüsse)"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;ADM485.1&quot;, &quot;5&quot;: &quot;ADM485.5&quot;, &quot;6&quot;: &quot;ADM485.6&quot;, &quot;7&quot;: &quot;ADM485.7&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bbdc35ff-c932-5e57-9983-a4b8f54eaaf4</tstamps>
+    </comp>
+    <comp ref="U607">
+      <value>Ausgangsbezug / MCU-Pin offen</value>
+      <fields>
+        <field name="Repository_ID">OC06</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"A": "OC06.A", "K": "OC06.K", "C": "OC06.C", "E": "OC06.E"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="OC" description=""/>
+      <property name="Repository_ID" value="OC06"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;A&quot;: &quot;OC06.A&quot;, &quot;K&quot;: &quot;OC06.K&quot;, &quot;C&quot;: &quot;OC06.C&quot;, &quot;E&quot;: &quot;OC06.E&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>51084901-dbfc-5458-a36c-4069b31c351c</tstamps>
+    </comp>
   </components>
   <libparts>
+    <libpart lib="Diag" part="ADM_PART">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1_RO" type="passive"/>
+        <pin num="5" name="5_GND" type="passive"/>
+        <pin num="6" name="6_A" type="passive"/>
+        <pin num="7" name="7_B" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Diag" part="B20">
       <fields>
         <field name="Reference">U</field>
@@ -1637,6 +1698,7 @@
       <node ref="Q602" pin="E" pinfunction="E_/_R" pintype="passive"/>
       <node ref="R106" pin="2" pintype="passive"/>
       <node ref="R107" pin="1" pintype="passive"/>
+      <node ref="R302" pin="1" pintype="passive"/>
       <node ref="R601" pin="2" pintype="passive"/>
       <node ref="TP503" pin="1" pintype="passive"/>
       <node ref="U201" pin="B" pinfunction="B" pintype="passive"/>
@@ -1650,6 +1712,7 @@
       <node ref="J201" pin="8" pinfunction="8" pintype="passive"/>
       <node ref="J204" pin="0V" pinfunction="0V" pintype="passive"/>
       <node ref="U604" pin="K" pinfunction="2_LED_K" pintype="passive"/>
+      <node ref="U606" pin="5" pinfunction="5_GND" pintype="passive"/>
     </net>
     <net code="7" name="/1P_L" class="Default">
       <node ref="R607" pin="1" pintype="passive"/>
@@ -1727,169 +1790,185 @@
       <node ref="M1" pin="2" pinfunction="-" pintype="passive"/>
       <node ref="Q2" pin="D" pinfunction="D" pintype="passive"/>
     </net>
-    <net code="26" name="/N_F27-minus" class="Default">
+    <net code="26" name="/N_ADM485_1" class="Default">
+      <node ref="U606" pin="1" pinfunction="1_RO" pintype="passive"/>
+      <node ref="U607" pin="K" pinfunction="2_LED_K" pintype="passive"/>
+    </net>
+    <net code="27" name="/N_ADM485_6" class="Default">
+      <node ref="U606" pin="6" pinfunction="6_A" pintype="passive"/>
+    </net>
+    <net code="28" name="/N_ADM485_7" class="Default">
+      <node ref="U606" pin="7" pinfunction="7_B" pintype="passive"/>
+    </net>
+    <net code="29" name="/N_F27-minus" class="Default">
       <node ref="K501" pin="minus" pinfunction="-" pintype="passive"/>
       <node ref="Q601" pin="C" pinfunction="C_/_O" pintype="passive"/>
     </net>
-    <net code="27" name="/N_J_1001R" class="Default">
+    <net code="30" name="/N_J_1001R" class="Default">
       <node ref="R602" pin="2" pintype="passive"/>
       <node ref="U602" pin="3" pinfunction="3_IN+_A" pintype="passive"/>
     </net>
-    <net code="28" name="/N_LM2903_7" class="Default">
+    <net code="31" name="/N_LM2903_7" class="Default">
       <node ref="U603" pin="K" pinfunction="2_LED_K" pintype="passive"/>
     </net>
-    <net code="29" name="/N_OC04_A" class="Default">
+    <net code="32" name="/N_OC04_A" class="Default">
       <node ref="U603" pin="A" pinfunction="1_LED_A" pintype="passive"/>
     </net>
-    <net code="30" name="/N_OC05_A" class="Default">
+    <net code="33" name="/N_OC05_A" class="Default">
       <node ref="U604" pin="A" pinfunction="1_LED_A" pintype="passive"/>
     </net>
-    <net code="31" name="/N_P2_6" class="Default">
+    <net code="34" name="/N_OC06_A" class="Default">
+      <node ref="U607" pin="A" pinfunction="1_LED_A" pintype="passive"/>
+    </net>
+    <net code="35" name="/N_OC06_C" class="Default">
+      <node ref="U607" pin="C" pinfunction="4_C" pintype="passive"/>
+    </net>
+    <net code="36" name="/N_OC06_E" class="Default">
+      <node ref="U607" pin="E" pinfunction="3_E" pintype="passive"/>
+    </net>
+    <net code="37" name="/N_P2_6" class="Default">
       <node ref="J201" pin="6" pinfunction="6" pintype="passive"/>
     </net>
-    <net code="32" name="/N_P2_11" class="Default">
+    <net code="38" name="/N_P2_11" class="Default">
       <node ref="J201" pin="11" pinfunction="11" pintype="passive"/>
     </net>
-    <net code="33" name="/N_T2_B" class="Default">
+    <net code="39" name="/N_T2_B" class="Default">
       <node ref="Q602" pin="B" pinfunction="B_/_L" pintype="passive"/>
     </net>
-    <net code="34" name="/N_T2_C" class="Default">
+    <net code="40" name="/N_T2_C" class="Default">
       <node ref="Q602" pin="C" pinfunction="C_/_O" pintype="passive"/>
       <node ref="R608" pin="2" pintype="passive"/>
     </net>
-    <net code="35" name="/N_T2_series" class="Default">
+    <net code="41" name="/N_T2_series" class="Default">
       <node ref="R607" pin="2" pintype="passive"/>
       <node ref="R608" pin="1" pintype="passive"/>
     </net>
-    <net code="36" name="/N_T4_B" class="Default">
+    <net code="42" name="/N_T4_B" class="Default">
       <node ref="Q601" pin="B" pinfunction="B_/_L" pintype="passive"/>
       <node ref="R606" pin="2" pintype="passive"/>
     </net>
-    <net code="37" name="/P1_E1" class="Default">
+    <net code="43" name="/P1_E1" class="Default">
       <node ref="R103" pin="2" pintype="passive"/>
       <node ref="R104" pin="1" pintype="passive"/>
     </net>
-    <net code="38" name="/P2_1_4" class="Default">
+    <net code="44" name="/P2_1_4" class="Default">
       <node ref="J201" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="J201" pin="4" pinfunction="4" pintype="passive"/>
     </net>
-    <net code="39" name="/P2_TACHO" class="Default">
+    <net code="45" name="/P2_TACHO" class="Default">
       <node ref="J201" pin="9" pinfunction="9" pintype="passive"/>
     </net>
-    <net code="40" name="/P4_TACHO" class="Default">
+    <net code="46" name="/P4_TACHO" class="Default">
       <node ref="J204" pin="TACHO" pinfunction="TACHO" pintype="passive"/>
     </net>
-    <net code="41" name="/P70" class="Default">
+    <net code="47" name="/P70" class="Default">
       <node ref="U601" pin="13" pinfunction="13_P70" pintype="passive"/>
     </net>
-    <net code="42" name="/PFC_CTRL" class="Default">
+    <net code="48" name="/PFC_CTRL" class="Default">
       <node ref="R604" pin="1" pintype="passive"/>
       <node ref="R605" pin="2" pintype="passive"/>
       <node ref="U601" pin="11" pinfunction="11_PFC" pintype="passive"/>
     </net>
-    <net code="43" name="/PWM" class="Default">
+    <net code="49" name="/PWM" class="Default">
       <node ref="U601" pin="17" pinfunction="17_PWM" pintype="passive"/>
       <node ref="U601" pin="18" pinfunction="18_PWM" pintype="passive"/>
       <node ref="U604" pin="E" pinfunction="3_E" pintype="passive"/>
     </net>
-    <net code="44" name="/RG_U" class="Default">
+    <net code="50" name="/RG_U" class="Default">
       <node ref="R201" pin="2" pintype="passive"/>
       <node ref="U201" pin="E" pinfunction="E" pintype="passive"/>
     </net>
-    <net code="45" name="/THERM_PINK" class="Default">
+    <net code="51" name="/THERM_PINK" class="Default">
       <node ref="SW501" pin="2" pintype="passive"/>
     </net>
-    <net code="46" name="/TL082_OUT" class="Default">
+    <net code="52" name="/TL082_OUT" class="Default">
       <node ref="R301" pin="1" pintype="passive"/>
-      <node ref="R302" pin="1" pintype="passive"/>
       <node ref="U602" pin="1" pinfunction="1_OUT_A" pintype="passive"/>
       <node ref="U602" pin="2" pinfunction="2_IN-_A" pintype="passive"/>
     </net>
-    <net code="47" name="/VFEED" class="Default">
+    <net code="53" name="/VFEED" class="Default">
       <node ref="R105" pin="2" pintype="passive"/>
       <node ref="R106" pin="1" pintype="passive"/>
       <node ref="U301" pin="14" pinfunction="14_VFEED" pintype="passive"/>
     </net>
-    <net code="48" name="/X" class="Default">
+    <net code="54" name="/X" class="Default">
       <node ref="C601" pin="1" pintype="passive"/>
       <node ref="R603" pin="2" pintype="passive"/>
       <node ref="U601" pin="28" pinfunction="28_X" pintype="passive"/>
     </net>
-    <net code="49" name="/X_VOR_100R" class="Default">
+    <net code="55" name="/X_VOR_100R" class="Default">
+      <node ref="R301" pin="2" pintype="passive"/>
       <node ref="R302" pin="2" pintype="passive"/>
       <node ref="R603" pin="1" pintype="passive"/>
     </net>
-    <net code="50" name="/Y" class="Default">
+    <net code="56" name="/Y" class="Default">
       <node ref="U601" pin="26" pinfunction="26_Y" pintype="passive"/>
       <node ref="U605" pin="O" pinfunction="O" pintype="passive"/>
     </net>
-    <net code="51" name="Net-(D401-A)" class="Default">
+    <net code="57" name="Net-(D401-A)" class="Default">
       <node ref="D401" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="R402" pin="2" pintype="passive"/>
     </net>
-    <net code="52" name="Net-(D402-A)" class="Default">
+    <net code="58" name="Net-(D402-A)" class="Default">
       <node ref="D402" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="R404" pin="2" pintype="passive"/>
     </net>
-    <net code="53" name="Net-(J201-Pad5)" class="Default">
+    <net code="59" name="Net-(J201-Pad5)" class="Default">
       <node ref="J201" pin="5" pinfunction="5" pintype="passive"/>
       <node ref="SW501" pin="1" pintype="passive"/>
     </net>
-    <net code="54" name="Net-(K501-Pad11a)" class="Default">
+    <net code="60" name="Net-(K501-Pad11a)" class="Default">
       <node ref="K501" pin="11a" pinfunction="11a" pintype="passive"/>
       <node ref="K501" pin="11b" pinfunction="11b" pintype="passive"/>
     </net>
-    <net code="55" name="Net-(K501-Pad14a)" class="Default">
+    <net code="61" name="Net-(K501-Pad14a)" class="Default">
       <node ref="K501" pin="14a" pinfunction="14a" pintype="passive"/>
       <node ref="K501" pin="14b" pinfunction="14b" pintype="passive"/>
     </net>
-    <net code="56" name="Net-(R102-Pad2)" class="Default">
+    <net code="62" name="Net-(R102-Pad2)" class="Default">
       <node ref="R102" pin="2" pintype="passive"/>
       <node ref="R103" pin="1" pintype="passive"/>
     </net>
-    <net code="57" name="Net-(R202-Pad2)" class="Default">
+    <net code="63" name="Net-(R202-Pad2)" class="Default">
       <node ref="R202" pin="2" pintype="passive"/>
       <node ref="U202" pin="O" pinfunction="O" pintype="passive"/>
     </net>
-    <net code="58" name="Net-(R401-Pad2)" class="Default">
+    <net code="64" name="Net-(R401-Pad2)" class="Default">
       <node ref="R401" pin="2" pintype="passive"/>
       <node ref="R402" pin="1" pintype="passive"/>
     </net>
-    <net code="59" name="Net-(R403-Pad2)" class="Default">
+    <net code="65" name="Net-(R403-Pad2)" class="Default">
       <node ref="R403" pin="2" pintype="passive"/>
       <node ref="R404" pin="1" pintype="passive"/>
     </net>
-    <net code="60" name="unconnected-(R203-Pad1)" class="Default">
+    <net code="66" name="unconnected-(R203-Pad1)" class="Default">
       <node ref="R203" pin="1" pintype="passive"/>
     </net>
-    <net code="61" name="unconnected-(R203-Pad2)" class="Default">
+    <net code="67" name="unconnected-(R203-Pad2)" class="Default">
       <node ref="R203" pin="2" pintype="passive"/>
     </net>
-    <net code="62" name="unconnected-(R204-Pad1)" class="Default">
+    <net code="68" name="unconnected-(R204-Pad1)" class="Default">
       <node ref="R204" pin="1" pintype="passive"/>
     </net>
-    <net code="63" name="unconnected-(R204-Pad2)" class="Default">
+    <net code="69" name="unconnected-(R204-Pad2)" class="Default">
       <node ref="R204" pin="2" pintype="passive"/>
     </net>
-    <net code="64" name="unconnected-(R301-Pad2)" class="Default">
-      <node ref="R301" pin="2" pintype="passive"/>
-    </net>
-    <net code="65" name="unconnected-(R303-Pad1)" class="Default">
+    <net code="70" name="unconnected-(R303-Pad1)" class="Default">
       <node ref="R303" pin="1" pintype="passive"/>
     </net>
-    <net code="66" name="unconnected-(R303-Pad2)" class="Default">
+    <net code="71" name="unconnected-(R303-Pad2)" class="Default">
       <node ref="R303" pin="2" pintype="passive"/>
     </net>
-    <net code="67" name="unconnected-(R304-Pad1)" class="Default">
+    <net code="72" name="unconnected-(R304-Pad1)" class="Default">
       <node ref="R304" pin="1" pintype="passive"/>
     </net>
-    <net code="68" name="unconnected-(R304-Pad2)" class="Default">
+    <net code="73" name="unconnected-(R304-Pad2)" class="Default">
       <node ref="R304" pin="2" pintype="passive"/>
     </net>
-    <net code="69" name="unconnected-(TH501-Ka-Pad1)" class="Default">
+    <net code="74" name="unconnected-(TH501-Ka-Pad1)" class="Default">
       <node ref="TH501" pin="1" pinfunction="Ka" pintype="passive"/>
     </net>
-    <net code="70" name="unconnected-(TH501-Kb-Pad2)" class="Default">
+    <net code="75" name="unconnected-(TH501-Kb-Pad2)" class="Default">
       <node ref="TH501" pin="2" pinfunction="Kb" pintype="passive"/>
     </net>
   </nets>

@@ -1,6 +1,6 @@
 {
-  "baseline": "f60fe5d339c43876fd33d5baed5f18d2b33cc3d1",
-  "independent_native_net_assertions": 59,
+  "baseline": "d917aa8",
+  "independent_native_net_assertions": 64,
   "all_passed": true,
   "checks": [
     {
@@ -34,12 +34,18 @@
       "same": [
         "U602.1",
         "U602.2",
-        "R302.1",
         "R301.1"
       ]
     },
     {
       "same": [
+        "R302.1",
+        "TP503.1"
+      ]
+    },
+    {
+      "same": [
+        "R301.2",
         "R302.2",
         "R603.1"
       ]
@@ -217,8 +223,38 @@
     },
     {
       "separate": [
-        "R301.2",
-        "R302.2"
+        "R301.1",
+        "R302.1"
+      ]
+    },
+    {
+      "same": [
+        "U606.1",
+        "U607.K"
+      ]
+    },
+    {
+      "same": [
+        "U606.5",
+        "J201.7"
+      ]
+    },
+    {
+      "separate": [
+        "U607.C",
+        "U607.E",
+        "U601.17",
+        "U601.12",
+        "TP501.1",
+        "J201.7"
+      ]
+    },
+    {
+      "separate": [
+        "U606.6",
+        "U606.7",
+        "U606.5",
+        "U606.1"
       ]
     },
     {
@@ -396,8 +432,8 @@
       ]
     }
   ],
-  "unchanged_original_and_reference_files": 254,
-  "source": "Final corrections in LAUF_2026-11-14.md (through 16 Nov 02:50), NEUBEWERTUNG_2026-11-12.md (13 Nov updates), original B20 photographs and labels",
+  "unchanged_original_and_reference_files": 260,
+  "source": "Final corrections in LAUF_2026-11-14.md (through 16 Nov 22:32), NEUBEWERTUNG_2026-11-12.md (13 Nov updates), original B20 photographs and labels",
   "hardware_function_verified": false,
-  "reviewed_xml_sha256": "215ef32f344204cd7ba5f484ccc0e926f1d1a63b7bb50a937f3ac49c8073df84"
+  "reviewed_xml_sha256": "96d942a0ca46a1a0871c586da70a639e16240c04153770d1a7b70859eb0f6061"
 }

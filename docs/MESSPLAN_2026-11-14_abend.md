@@ -1,93 +1,53 @@
-# Messplan – Startfreigabe des MCU (Stand 16.11. 01:30)
+# Messplan – Stand nach Abendmessungen 16.11.2026
 
-Ziel: herausfinden, welche Bedingung dem MCU für die Startfreigabe fehlt (Kandidaten: `NEUBEWERTUNG_2026-11-14.md`, Abschnitt 5; Messprotokoll: `LAUF_2026-11-14.md`).
-**Priorität:** (1) Versorgung → (2) bekannte Freigabe- und Messsignale am MCU → (3) weitere Startbedingungen.
-Erwartungswerte nur, wo begründet; sonst Werte notieren. Netzseite: klemmen nur bei entladenem Elko (< 5 V), Bezug Elko-Minus = 0VA, danach nichts berühren.
+Maßgeblich: [Prüfung des aktuellen Stands](PRUEFUNG_2026-11-16_spaet.md), [Schaltplan](gesamtschaltplan_110926/README.md) und [chronologisches Protokoll](LAUF_2026-11-14.md). Keine neuen Messungen in diesem Dokument. MCU-Pins sind Arbeitsnummern, keine bestätigte Herstellerbelegung.
 
-## Erledigt (stromlos, 14.–16.11.)
-- **Netzsignal B10 vollständig verfolgt, statisch ohne Befund:** Netz → 2 × 475 kΩ → D1/D2 → J (22,1 kΩ → 0VA) → 1,0 kΩ → TL082 (neben T3) Pin 3, als Puffer (Pin 1 = Pin 2) → 4,75 kΩ → Via → 100 Ω („1000“) → Knoten X (Kondensator nach 0VA; Via oberhalb „LD3N“-L) → **MCU-Pin X = 4. Pin ab der Ecke bei P13** (`img/mcu_pin_netzsignal.jpg`). TL082 versorgt mit +12VA (Pin 8) / −12VA (Pin 4).
-- Nachbareingang **Y = 2. Pin ab der Ecke**: Schottky-Klemmdiode „LD3N“ (L = 0VA, R = +5VA, O = Y), Diodentest unauffällig. X ↔ Y 6,5 kΩ (Parallelpfad, kein Fehler).
-- SOT-23-5 / „01C“ / „47R5“: nicht im B10-Weg (10 kΩ waren nicht der direkte Pfad); Funktion offen, vermutlich Treiberstufe.
-- PFC-Sperre: MCU-Pin (untere linke Kante Nr. 3, `img/mcu_pin_kandidaten_t3.jpg`) → 2,21 kΩ → T3 → L4981 Pin 15; Pull-up 10 kΩ nach +5VA; MCU treibt Standby **und** Start aktiv 4,9 V.
-- F27: Standby und Start 0 V über der Spule, Spulen-Plus 24 V.
+**Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Der neue ADM485/OC06-Tacho-Kandidat wird zuerst gezielt geprüft; sein Funktionsnachweis ist noch offen.
 
-## 1 – Versorgung (eingebaut)
-| # | Zustand | Messung | Erwartung |
+## Bereits erledigt
+
+- J–0VA **22,14/22,02 kΩ**, passend zum 22,1-kΩ-Fußwiderstand. Die früheren 6,4–6,8 kΩ sind nicht reproduziert. Keine erneute Suche nach einem daraus allein vermuteten 10-kΩ-Leck.
+- **X/MCU28:** J → 1 kΩ → TL082 Pin3, Pin1=Pin2; Ausgang → **R1 4,75 kΩ** → N; **R2 4,75 kΩ N–0VA**; N → 100 Ω → X, C nach 0VA. N–100-Ω-Pad laut Abendbeleg abgeleitet, nicht separat durchgemessen. Modellwert X ca. 3,7 V Spitze bei 230 V AC, kein harter Sollwert.
+- **Y/MCU26:** LD3N O, L=0VA, R=+5VA; Y–P600 Kontakt1 etwa 1 kΩ. **P600 Kontakt2=+5VA mit 0 Ω bestätigt**, Fühler war gesteckt. Temperatureingang plausibel; diskreter Massewiderstand und Ka/Kb-Alias offen. X/Y nicht verbinden.
+- **OC04:** Pin4=+5VA, Pin3→MCU12. **OC05:** Pin4=+5VA, Pin3→MCU17/18. Die 3,3/10 kΩ gegen 0VA sind In-Circuit-Werte.
+- **F27:** MCU24 → 1 kΩ → T4-Basis L; Emitter R=0VA, Kollektor O=Spulenminus; Spulenplus +24 V. Quelle nicht erneut suchen.
+- **T3:** MCU11 → 2,21 kΩ → Basis, Pull-up 10 kΩ nach +5VA; bisher 4,9 V Steuerleitung / 0,7 V Basis / 6 mV L4981 Pin15. **T2-Quelle weiterhin offen.**
+- **Konsolenseite:** ADM485 Pin5=LM2903 Pin4=P2.7, RO/Pin1=OC06-Kathode. P4 TACHO→Pin7 1,103 kΩ, →Pin6 12,94 kΩ; Bauteilpfad/Funktion noch nicht vollständig bestätigt.
+- **P2.6–P2.7=10,96 kΩ**, nicht 19,96 kΩ. Die Kreuzmessungen passen zu Masse-Rückwegen; kein neuer Hinweis auf eine niederohmige PWM–Tacho-Brücke.
+
+## Messaufbau und Grenzen
+
+Vorhanden laut Repository: BSIDE OT3, akkubetrieben, 10 MHz. **Akkubetrieb, abgezogenes USB-Kabel und ein CAT-Aufdruck allein belegen keine Eignung des Oszilloskopeingangs samt Tastkopf zum potentialfreien Messen an 0VA.** 0VA/Elko-Minus und die MCU-Seite liegen auf Netzpotential. Für die Netzseiten-Schritte ist ein nach Herstellervorgaben dafür geeigneter Messaufbau bzw. eine entsprechend bemessene Differenz-/Isolationsmessung erforderlich. Solange diese Eignung ungeklärt ist, diese Oszi-Schritte nicht mit einer normalen Masseklemme ausführen. Kein USB/PC/Ladegerät während einer potentialfreien Messung; P2.7 und 0VA nicht verbinden.
+
+Konsolenseite und Netzseite getrennt behandeln. Messanschlüsse netzgetrennt, Zwischenkreis nachweislich entladen vorbereiten; benachbarte IC-Pins nicht überbrücken. Auch „Konsolenseite“ bedeutet keine pauschale Gefahrlosigkeit der geöffneten, versorgten Baugruppe. Kein manuelles Erzwingen von Freigaben.
+
+Gleiche Startfolge, STS1/STS2-Video mit Ton, Zeitpunkte Netz-Ein/START/erster Fehler/STOP protokollieren. Band vor dem normalen Startversuch nicht von Hand bewegen: Das löste bereits einen eigenen Fehler aus. Ein gesonderter Bewegungs-/Sensorvergleich muss davon getrennt bleiben. Bei einem einkanaligen Oszi sind nacheinander erfasste Signale keine zeitgleiche Korrelation.
+
+## Reihenfolge und Auswertung
+
+| Schritt | Messung / Bezug | Modus und begründete Erwartung | Entscheidung |
 |---|---|---|---|
-| 1.1 | Standby | +5VA, +12VA, −12VA gegen Testpunkt 0VA (Vorderseite neben D3) | ≈ 5 V, +12 V, −12 V |
-| 1.2 | Start | dieselben mit MIN/MAX | kein Einbruch |
+| **S0 – stromlos** | OC06-Transistorseite: Pin4 gegen +5VA/0VA, Pin3 gezielt zur nächsten Verbindung bzw. MCU verfolgen | Ω / Leiterbahnabgleich; Orientierung aus Originalfoto. Nicht einfach dieselbe Beschaltung wie OC04/05 voraussetzen. | Ein späterer RO-Befund soll einem tatsächlichen MCU-Eingang zugeordnet werden können. Offene Zuordnung ausdrücklich protokollieren. |
+| **K1 – Konsolenseite** | ADM485 Versorgung Pin8 gegen Pin5/P2.7; Pin6 und Pin7 jeweils gegen P2.7 | DC im Standby, beim Start. Größe der Versorgung und A/B-Pegel notieren; kein pauschales „Abstand <0,3 V = Defekt“. | Versorgung oder Referenz auffällig → zuerst dort eingrenzen. Gleichspannung allein übersieht kurze Differenzstörungen. |
+| **K2 – Konsolenseite** | ADM485 RO/Pin1 bzw. OC06-Kathode gegen P2.7 | Oszi DC, korrekt eingestellter Tastkopffaktor; zunächst AUTO zur Pegelbestimmung, dann passende Flanke/Schwelle und Zeitbasis für START/Einzelereignis. 2 ms/div ist nur ein Startwert, ggf. Übersichtsaufnahme über den ganzen Ablauf. | Unerwartete Übergänge bei sicher stillstehendem Band **vor** der Fehlermeldung sind ein gezielter Befund. Noch kein alleiniger Beweis für falsche Tachoimpulse oder den defekten ADM485. |
+| **K3 – falls K2 auffällig** | P4-Tachosignal und ADM485-Eingang Pin7, bei Bedarf Vergleichseingang Pin6; jeweils P2.7 | Passende Signalform/Zeitskala, vergleichbarer Zustand. Auch Empfängerfreigabe/Pin2 und Versorgung berücksichtigen, wenn RO-Übergänge nicht zum Eingang passen. | Schon vor ADM485 gestört → Sensor/Versorgung/Kabel/Eingangsnetz. Eingang plausibel, RO auffällig → Vergleichspegel, Empfängerzustand/Aufbereitung prüfen. Zur sicheren Tacho-Funktionszuordnung muss RO nachvollziehbar auf echte Sensorwechsel reagieren; ein separater Bewegungsversuch darf den Starttest nicht vorbelasten. |
+| **K4 – Konsolenseite** | P2.6 und/oder OC05 Pin1 gegen P2.7 | Oszi DC im Standby/START; High/Low, Frequenz, Tastgrad notieren. Anode liegt an einer LED, deshalb keine 5-V-Pulshöhe dort fordern. | Belegt das Konsolensignal; beweist noch nicht die Übertragung durch OC05. |
+| **N1 – Netzseite, geeigneter Aufbau erforderlich** | +5VA und ±12VA gegen 0VA | DC, ergänzend MIN/MAX; bei Anlass zeitaufgelöst. Größenordnung/Polarität der beschrifteten Schienen erwartet, exakte Toleranzen unbekannt. | 13,5 V am Gate-Treiber/L4981 ersetzen diese Prüfung nicht. Kurze Einbrüche/Ripple können DMM-Messungen entgehen. |
+| **N2 – Netzseite** | OC04 Pin3 (Enable/MCU12), OC05 Pin3 (PWM/MCU17/18), jeweils 0VA | OC04 Pegel und Zeitpunkt; OC05 Pulsform: Low/High/Frequenz/Tastgrad. OC05-Emitter wird bei LED-Strom positiver. | Der bisher abgeleitete PWM-Mittelwert etwa 0,5–0,7 V kann gute hohe Pulse bei kleinem Tastgrad oder einen unzureichenden Pegel bedeuten. Keine festen MCU-Schaltschwellen ohne Typkenntnis. |
+| **N3 – Netzseite** | X: C-Signalseite / bestätigtes Via oberhalb LD3N-L; Y: LD3N-O; jeweils 0VA | X Signalform und Amplitude, DC/Hz nur ergänzend. Y zunächst DC und Stabilität. Modelle: X ca. 3,7 V Spitze, Y etwa 0,8 V bei Raumtemperatur. | Modelle sind keine Freigabegrenzen. Fehlende Hz-Anzeige beweist keinen Defekt. Y=0 V unterscheidet Fühlerunterbrechung nicht von fehlender Versorgung/Kurzschluss. Bei auffälligem X entlang J → TL082 Pin3 → Pin1 → N → X vergleichen. |
+| **N4 – Netzseite** | T4-1001: **MCU-seitiges Ende und Basis-seitiges Ende**, je 0VA; danach bei Bedarf T4-Kollektor/Spule | Netz-Ein, Standby, START; DC/MIN/MAX als Vorprüfung, kurze Befehle mit geeigneter Einzelaufnahme. Einschaltzeitpunkt der Firmware unbekannt. | Quelle high, Basis niedrig: Widerstand/Kontakt/Basislast prüfen. Basis etwa 0,6–0,8 V und ausreichender Basisstrom, aber Kollektor bleibt hoch: Treiberweg prüfen. Beide Enden niedrig: kein anhaltender Befehl erfasst, Ursache davor/Quellzustand offen. |
+| **N5 – nur bei weiter offenem Ablauf** | Steuerleitung T3, T4-Basis bzw. T2-Testpad, 0VA | Geeignete Einzelaufnahme für kurze Schaltversuche; pro Lauf Messpunkt eindeutig nennen. | DMM-MAX ab etwa 0,5 s kann kurze Versuche übersehen. T2-Basis bleibt ohne bekannte Quelle kein direkter MCU-Ausgangsnachweis. |
 
-## 2 – Signale am MCU (eingebaut)
-| # | Zustand | Messung | Notieren / Bewertung |
-|---|---|---|---|
-| **2.1** | **Standby** | **Netzsignal X: Via oberhalb „LD3N“-L** (= Kondensatorpad Signalseite) gegen Elko-Minus, **DC und Hz** | Signalform offen; Hz-Anzeige (50/100 Hz) = Netz kommt am MCU an; konstant/0 V = Spur |
-| 2.2 | Standby | zum Vergleich TL082 Pin 1 und J (B10) gegen Elko-Minus, DC und Hz | Signal entlang des Weges vergleichen |
-| 2.3 | Start | 2.1 mit MIN/MAX bzw. Hz während eines Startversuchs | Änderung? |
-| 2.4 | Standby | Y (Diode O) gegen L, DC und Hz | Pegel notieren (Quelle von Y noch offen) |
+N1–N5 sind keine pauschale Freigabe für das OT3 auf Netzpotential. DMM-Prüfungen können grobe Pegelfehler zeigen; wenn nur die Pulsqualität offen bleibt, ersetzen weitere Widerstandsmatrizen keine geeignete zeitaufgelöste Messung.
 
-## 3 – Weitere Freigabe- und Startsignale (erst stromlos zuordnen)
-| # | Zustand | Messung | Notieren / Erwartung |
-|---|---|---|---|
-| 3.1 | stromlos | **Quelle von Y**: vom Via/Leiterbahn an Diode O rückwärts verfolgen | Signal, Beschaltung |
-| 3.2 | erledigt | OC04/OC05: gemeinsamer Kollektor an +5VA (MCU-Eckpin = VDD); Emitterfolger, Emitter 3,3 kΩ bzw. 10 kΩ nach 0VA | OC04 Emitter → 4. Pin ab rechter Ecke; OC05 Emitter → Pin 1+2 ab Ecke bei P70 |
-| 3.3 | stromlos | **Motorfreigabe T2** unabhängig von T3 verfolgen (Basis → Quelle; Pull-up/-down) | Quelle |
-| 3.4 | stromlos | **F27-Ansteuerung**: Spulen-Minus → Treibertransistor → Basis → Quelle | Quelle |
-| 3.5 | Standby / Start | an den in 3.1–3.4 gefundenen Punkten messen | Pegel, Änderung beim Start |
-| 3.6 | stromlos | **OC02, OC03, OC08**: P2.2, P2.3, P2.9, P2.15, P2.17, P2.18, P4-Tacho ↔ Anode (Pin 1) | kleinster Wert (≈ 1 kΩ wie OC05) = Zuordnung |
-| 3.7 | Standby / Start | Anoden der zugeordneten Kanäle gegen P2.7 (Konsolenseite) | LED an ≈ 1,1 V, aus ≈ 0 V |
-| 3.8 | stromlos | OC01/OC07 Transistorseite ↔ ADM485 Pin 2/3/4 | Zuordnung RS-485 |
-| 3.9 | stromlos | übrige „LD3N“ (andere MCU-Eingänge): Diodentest | ≈ 0 V in beiden Richtungen = durchlegiert |
-| 3.10 | – | Sichtprüfung: dunkle Stellen am Knoten J / weißlicher Belag nachreinigen, trocknen | Fotos |
-| 3.11 | Start | Vergleichsversuch an anderem Stromkreis ohne weitere Verbraucher | läuft / läuft nicht |
+## Was sich gegenüber dem bisherigen Plan ändert
 
-## Zurückgestellt / verworfen
-- **Brücke Kondensatorpad ↔ Diode O: nicht löten** – X und Y sind getrennte MCU-Eingänge.
-- Alle 32 MCU-Pins rasterartig durchsuchen: nur gezielt entlang sichtbarer Bahnen.
-- P13/P70 live: P13 nicht mit X verbunden, Funktion unbekannt.
-- SOT-23-5 live: erst nach Funktionszuordnung.
-- F27-Spulenspannung erneut: bereits gemessen; nur Treiberansteuerung (3.4).
+- Erledigte J-/Y-/P600-/F27-Zuordnungen nicht wiederholen. Kein Rückgriff auf den widerlegten R2-Serienpfad.
+- OC06 gezielt prüfen; OC02/03/08/Wake-up/Sleep bleiben nachrangige Kandidaten. Kleinster Ω-Wert allein identifiziert keinen Kanal.
+- Nicht jeden RO-Puls sofort als Tacho-Fehler interpretieren. Zuerst Funktion, tatsächlichen Stillstand und zeitliche Reihenfolge absichern.
+- Keine pauschalen Aussagen „≥4 V sicher“, „2–3,5 V grenzwertig“, „beidseitig 0 V im Diodentest = dieses Bauteil defekt“. Typgrenzen und eingelötete Parallelwege beachten.
+- F27-Spulenmessung nur gezielt wiederholen, wenn ein Steuerbefehl/kurzer Versuch oder Widerspruch gefunden wird. Kein weiterer Batterie-Test ohne Anlass.
+- B18/B19 bleibt PFC-Rückführung; während gehaltener T3-Sperre nachrangig. Y ist jetzt Temperaturkandidat, nicht Strommess-/Nulldurchgangskandidat aus dem TL082-Feld.
+- Weitere Reinigung/Nachlöten, unbekannte Testpunkte, breite RS-485-Suche und MCU-/EEPROM-Tausch erst bei entsprechendem Befund. Dunkle Stellen allein beweisen keine Kriechströme.
 
-## Nächster Einbau – Live-Messung „Eingänge und Ausgänge des MCU“ (je Standby und Start, gegen 0VA)
-| Messpunkt | Signal | Bekannt / Erwartung |
-|---|---|---|
-| OC04 Pin 3 (Emitter) | Enable von der Konsole → MCU | high, wenn Enable aktiv |
-| OC05 Pin 3 (Emitter) | PWM-Sollwert → MCU | Standby ≈ 0 V; Start Mittelwert > 0, Hz |
-| Via oberhalb „LD3N“-L | Netzsignal B10 → MCU-Pin X | DC + Hz, Signalform offen |
-| Basis T4 (bzw. „1001“) | MCU → F27 (Vorladerelais) | ≈ 0,7 V = angesteuert; 0 V = nicht |
-| Steuerleitung T3 (Testpad „2211“) | MCU → PFC-Sperre | bekannt: Standby und Start 4,9 V (gesperrt) |
-| Testpad Basis T2 | MCU → Motorfreigabe | bekannt: Start 0,1 mV |
-- Grafik Live-Messpunkte: `docs/img/live_messpunkte_2026-11-16.jpg`
-
-## Oszilloskop (BSIDE OT3, akkubetrieben, 10 MHz, CAT II 400 V) – ab 16.11.
-
-**Sicherheit:** Während Messungen auf der Netzseite **kein USB-Kabel** am Oszi (PC/Ladegerät können geerdet sein). Masseklemme nur an 0VA (Elko-Minus) bzw. auf der Konsolenseite an P2.7. Gerät während der Messung nicht anfassen; Klemmen nur bei entladenem Elko setzen. Oszi und Multimeter sind beide akkubetrieben und dürfen gleichzeitig messen, solange beide Massen am selben Bezug (0VA) liegen.
-
-**Grundeinstellung:** Tastkopf und Gerät auf x10, Kopplung DC, Trigger Flanke steigend, Modus AUTO (für Einzelereignisse SINGLE).
-
-| Lauf | Oszi (Kanal) | Masse | Einstellung | gleichzeitig Multimeter | Zweck |
-|---|---|---|---|---|---|
-| O1 | P2.6 bzw. OC05 Pin 1 (Konsolenseite) | P2.7 | 1 V/div, 1 ms/div, Trigger 0,5 V | – | Einarbeitung, PWM-Sollwert der Konsole: Frequenz/Tastgrad |
-| O2 | Via oberhalb LD3N-L (Netzsignal X, MCU-Pin 28) | 0VA | 1 V/div, 5 ms/div, AUTO | OC04 Pin 3 (Enable) DC | Kommt das Netzsignal am MCU an? Standby genügt, dann Start |
-| O3 | OC05 Pin 3 (PWM am MCU, Pin 17/18) | 0VA | 1 V/div, 1 ms/div, Trigger 2 V | Basis T4 DC MIN/MAX | Erreicht der Sollwert den MCU; schaltet der MCU F27 |
-| O4 | Testpad Basis T2 bzw. Basis T4 | 0VA | 0,5 V/div, 100 ms/div, SINGLE, Trigger 0,3 V | Steuerleitung T3 DC MIN/MAX | Kurze Ansteuerungsversuche erfassen, die Multimeter-MAX nicht sieht |
-
-## Ergänzung 16.11. abends – nach Durchsicht aller Unterlagen
-Begründung und vollständige Liste: `NEUBEWERTUNG_2026-11-16.md`. Zusätzlich zu den Punkten oben, in dieser Reihenfolge:
-1. Beim nächsten Startversuch STS1/STS2 mit Ton filmen (blinkt STS1 weiter? Zeit bis zum ersten STS2-Puls).
-2. Stromlos: **J ↔ 0VA** in beiden Polaritäten (22 kΩ oder 6,4–6,9 kΩ?); Testpunkte am SOT-23-5 ↔ 0VA / +5VA.
-3. Stromlos: Y (LD3N-O) ↔ B20-R1b und ↔ TL082 Pin 7 (Quelle von Y).
-4. Punkt 3.6 vorziehen und um **P4 TACHO / P2.9** ergänzen: Zuordnung OC02/OC03/OC08, danach deren Emitter → MCU-Pin.
-5. Punkt 3.7 vorziehen: P2.15, P2.17, P2.18 gegen P2.7 in Standby und Start (Konsolenseite).
-6. Netzspannung an der Steckdose bei jedem Versuch notieren.
-
-### Stand 16.11. 21:45
-- Punkte 2 und 3 der Ergänzung erledigt (`LAUF_2026-11-14.md`, „16.11. abends“): J nur 22,1 kΩ nach 0VA; Teiler 1:2 vor X; Y = Temperatureingang über P600.
-- Für die Live-Messung: **X** (Oszi, Lauf O2) rechnerisch ≈ 3,7 V Spitze; **Y** (LD3N-O gegen 0VA, Multimeter DC) rechnerisch ≈ 0,7–0,8 V bei Raumtemperatur, 0 V = Fühlerkreis offen. Beides Rechenmodelle, keine Sollwerte.
-- Noch stromlos offen: P600 Kontakt 2 ↔ +5VA (0 Ω erwartet); Zuordnung OC02/OC03/OC08 (Punkt 4).
-
-### Reihenfolge für den 17.11.
-1. **Konsolenseite, Oszi (ungefährlich):** ADM485 Pin 1 bzw. Kathode OC06 gegen P2.7 im Standby und beim Start mit stehendem Band (×10, DC, 1 V/div, 2 ms/div, Trigger 2,5 V, NORMAL/SINGLE). Impulse bei stehendem Band = Befund. Dazu Multimeter: ADM485 Pin 6 und Pin 7 gegen P2.7 im Standby.
-2. Beim selben Startversuch STS1/STS2 mit Ton filmen, Netzspannung notieren.
-3. Oszi-Lauf O1 (PWM an OC05 Pin 1 gegen P2.7).
-4. Netzseite: X mit dem Oszi (≈ 3,7 V Spitze erwartet, Rechenmodell), Y gegen 0VA (≈ 0,8 V), OC04 Pin 3 gegen 0VA.
-5. Stromlos: OC06 Pin 4 ↔ +5VA, Pin 3 → MCU-Pin.
+Vorhandene Markierungsfotos bleiben unverändert. Für Funktion und Reihenfolge gilt dieser Stand; Messpunkte aus alten Bildern anhand der unveränderten lokalen Bezeichnungen und des aktuellen Netzmodells wählen.

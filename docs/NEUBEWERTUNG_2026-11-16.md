@@ -1,3 +1,5 @@
+> **Aktueller Abgleich nach den Abendmessungen:** [Prüfung bis 22:32](PRUEFUNG_2026-11-16_spaet.md). Frühere Kandidaten und pauschale Grenzwerte unten gelten nur unter den dort korrigierten Einschränkungen.
+
 # Neubewertung 16.11.2026 (abends) – Durchsicht aller Unterlagen, weitere Ansätze
 
 Ergänzt `NEUBEWERTUNG_2026-11-14.md` (dessen Befundtabelle und Kandidatenliste bleiben gültig). Grundlage: alle Protokolle (`LAUF_*`, `NEUBEWERTUNG_*`, `messplan_stromlos_2026-11-08/`, `netlist/`, `HARDWARE.md`, Logs) und der Gesamtschaltplan `gesamtschaltplan_110926/` (Quellenstand f60fe5d). **Keine neuen Messungen.**

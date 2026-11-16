@@ -19,8 +19,9 @@ def separate(*pins):
 same('D401.2','D402.2','R601.1','R602.1')
 same('R601.2','U602.5','C601.2','U401.Tb','Q601.E','Q602.E','U201.B','U202.R','TP503.1')
 same('R602.2','U602.3')
-same('U602.1','U602.2','R302.1','R301.1')
-same('R302.2','R603.1')
+same('U602.1','U602.2','R301.1')
+same('R302.1','TP503.1')
+same('R301.2','R302.2','R603.1')
 same('R603.2','C601.1','U601.28')
 same('U605.O','U601.26')
 same('U605.L','TP503.1')
@@ -45,19 +46,23 @@ separate('TP503.1','J201.7','TP501.1','TP502.1','U602.4','U602.8','U201.C')
 separate('K501.plus','K501.minus','K501.11a','K501.14a')
 separate('U602.1','R302.2','U601.28','U601.26')
 separate('Q602.B','U601.11','U601.24','U201.D5')
-separate('R301.2','R302.2')
+separate('R301.1','R302.1')
+same('U606.1','U607.K')
+same('U606.5','J201.7')
+separate('U607.C','U607.E','U601.17','U601.12','TP501.1','J201.7')
+separate('U606.6','U606.7','U606.5','U606.1')
 for comp in xml.findall('.//components/comp'):
  ref=comp.attrib['ref']
  if ref.startswith('R'):
   separate(ref+'.1',ref+'.2')
 assert len([p for p in xml.findall('.//components/comp') if p.attrib['ref'] in ['R301','R302']])==2
 media=[]
-for entry in subprocess.check_output(['git','ls-tree','-rz','f60fe5d','--','photos','docs/img','docs/messplan_stromlos_2026-11-08/makros'],cwd=root).split(b'\0'):
+for entry in subprocess.check_output(['git','ls-tree','-rz','d917aa8','--','photos','docs/img','docs/messplan_stromlos_2026-11-08/makros'],cwd=root).split(b'\0'):
  if not entry: continue
  head,path=entry.split(b'\t',1);blob=head.split()[2].decode();name=path.decode();data=(root/name).read_bytes()
  got=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
  assert got==blob,('media changed',name)
  media.append(name)
-result={'baseline':'f60fe5d339c43876fd33d5baed5f18d2b33cc3d1','independent_native_net_assertions':len(checks),'all_passed':True,'checks':checks,'unchanged_original_and_reference_files':len(media),'source':'Final corrections in LAUF_2026-11-14.md (through 16 Nov 02:50), NEUBEWERTUNG_2026-11-12.md (13 Nov updates), original B20 photographs and labels','hardware_function_verified':False,'reviewed_xml_sha256':hashlib.sha256((here/'gesamtschaltplan.xml').read_bytes()).hexdigest()}
+result={'baseline':'d917aa8','independent_native_net_assertions':len(checks),'all_passed':True,'checks':checks,'unchanged_original_and_reference_files':len(media),'source':'Final corrections in LAUF_2026-11-14.md (through 16 Nov 22:32), NEUBEWERTUNG_2026-11-12.md (13 Nov updates), original B20 photographs and labels','hardware_function_verified':False,'reviewed_xml_sha256':hashlib.sha256((here/'gesamtschaltplan.xml').read_bytes()).hexdigest()}
 (here/'unabhaengige_pruefung.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({k:v for k,v in result.items() if k!='checks'},ensure_ascii=False))

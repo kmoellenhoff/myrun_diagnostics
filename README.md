@@ -5,7 +5,7 @@ Small Linux/Python BLE diagnostic tools for the **Technogym MYRUN** treadmill.
 The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved and whose lower-kit belt drive (Gefran GIRT S6T30) faults on start. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the active tests, issue controlled FTMS START/STOP and low-incline requests.
 
 
-> **Current diagnosis status (2026-11-14):** see [`docs/NEUBEWERTUNG_2026-11-14.md`](docs/NEUBEWERTUNG_2026-11-14.md) – the GIRT MCU receives enable and PWM set-point but never enables PFC or motor; an active inhibit at T3/L4981 pin 15 keeps the PFC off; source of that inhibit is being traced. Measurement log: [`docs/LAUF_2026-11-14.md`](docs/LAUF_2026-11-14.md).
+> **Diagnosestand 16.11.2026, nach den Abendmessungen:** [Prüfung und Gewichtung](docs/PRUEFUNG_2026-11-16_spaet.md), [aktueller Messplan](docs/MESSPLAN_2026-11-14_abend.md). X besitzt einen 1:2-Teiler; Y ist P600-Temperaturkandidat. ADM485/OC06 gezielt als Tacho-Aufbereitung prüfen; gültige Enable-/PWM-Pegel und die F27-Schaltreaktion bleiben offen. [Messchronik](docs/LAUF_2026-11-14.md).
 
 ## Contents
 

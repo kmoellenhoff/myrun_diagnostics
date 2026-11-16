@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "sheet": "User 841x1100 mm",
+  "sheet": "User 841x1250 mm",
   "branch": "main",
-  "source_commit": "f60fe5d339c43876fd33d5baed5f18d2b33cc3d1",
+  "source_commit": "d917aa8",
   "components": [
     {
       "Reference": "R101",
@@ -725,8 +725,8 @@
       "Feld_Claude": "E6",
       "Messwerte": "a→b 2,7 / b→a 3,3 kΩ",
       "Terminals": {
-        "1": "OUT4751.1",
-        "2": "OUT4751.2"
+        "1": "B20-R2a",
+        "2": "B20-R2b"
       },
       "Pins_xy": {
         "1": [
@@ -1859,6 +1859,98 @@
           1078
         ]
       ]
+    },
+    {
+      "Reference": "U606",
+      "Symbol": "ADM_PART",
+      "Repository_ID": "ADM485 (Teilanschlüsse)",
+      "Wert": "Funktion als Tacho-Aufbereitung [I]",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "ADM485.1",
+        "5": "ADM485.5",
+        "6": "ADM485.6",
+        "7": "ADM485.7"
+      },
+      "Pins_xy": {
+        "6": [
+          85,
+          1145
+        ],
+        "7": [
+          85,
+          1175
+        ],
+        "1": [
+          155,
+          1160
+        ],
+        "5": [
+          120,
+          1200
+        ]
+      },
+      "Position_mm": [
+        120,
+        1160
+      ],
+      "Properties": [
+        [
+          85,
+          1124
+        ],
+        [
+          65,
+          1210
+        ]
+      ]
+    },
+    {
+      "Reference": "U607",
+      "Symbol": "OC",
+      "Repository_ID": "OC06",
+      "Wert": "Ausgangsbezug / MCU-Pin offen",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "A": "OC06.A",
+        "K": "OC06.K",
+        "C": "OC06.C",
+        "E": "OC06.E"
+      },
+      "Pins_xy": {
+        "A": [
+          270,
+          1145
+        ],
+        "K": [
+          270,
+          1175
+        ],
+        "C": [
+          330,
+          1145
+        ],
+        "E": [
+          330,
+          1175
+        ]
+      },
+      "Position_mm": [
+        300,
+        1160
+      ],
+      "Properties": [
+        [
+          270,
+          1124
+        ],
+        [
+          265,
+          1200
+        ]
+      ]
     }
   ],
   "nets": {
@@ -1931,6 +2023,7 @@
       "Q2-S",
       "B19-3922.rechts",
       "B19-4750.links",
+      "B20-R2a",
       "B20-Tb",
       "Q2-DRV.B",
       "0V24",
@@ -1946,7 +2039,8 @@
       "LD3N.R",
       "MCU.8",
       "OC04.C",
-      "OC05.C"
+      "OC05.C",
+      "P600-Kontakt2"
     ],
     "L-": [
       "DC MOTOR L-",
@@ -1964,7 +2058,9 @@
       "P4.0V",
       "P2.7",
       "P2.8",
-      "OC05.K"
+      "OC05.K",
+      "ADM485.5",
+      "LM2903.4"
     ],
     "P2_1_4": [
       "P2.1",
@@ -2002,15 +2098,12 @@
     ],
     "TL082_OUT": [
       "B20-R1a",
-      "B20-R2a",
       "TL082.1",
       "TL082.2",
       "OUT4751.1"
     ],
-    "N_B20-R1b": [
-      "B20-R1b"
-    ],
     "X_VOR_100R": [
+      "B20-R1b",
       "B20-R2b",
       "OUT4751.2",
       "X.1000in"
@@ -2158,11 +2251,36 @@
       "T2.B",
       "T2.Testpad"
     ],
+    "N_TL082_7": [
+      "TL082.7"
+    ],
+    "N_P600-Kontakt1": [
+      "P600-Kontakt1"
+    ],
+    "N_ADM485_7": [
+      "ADM485.7"
+    ],
+    "N_ADM485_6": [
+      "ADM485.6"
+    ],
+    "N_ADM485_1": [
+      "ADM485.1",
+      "OC06.K"
+    ],
     "N_P2_11": [
       "P2.11"
     ],
     "N_OC04_A": [
       "OC04.A"
+    ],
+    "N_OC06_A": [
+      "OC06.A"
+    ],
+    "N_OC06_C": [
+      "OC06.C"
+    ],
+    "N_OC06_E": [
+      "OC06.E"
     ]
   },
   "scope": "0V24=0VA only in measured plug configuration; unknown continuation remains open",

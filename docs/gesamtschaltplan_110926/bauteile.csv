@@ -54,3 +54,5 @@ TP604;F27+ / SOT223-Tab;;F27+ / SOT223-Tab;
 R607;1P-Basis-4750;;475 Ω / 4750;
 R608;1P-Basis-2211;;2,21 k / 2211;
 Q602;T2;;NPN, Typ offen;
+U606;ADM485 (Teilanschlüsse);;Funktion als Tacho-Aufbereitung [I];
+U607;OC06;;Ausgangsbezug / MCU-Pin offen;
