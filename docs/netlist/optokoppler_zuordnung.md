@@ -2,6 +2,8 @@
 
 ![Optokoppler-Zuordnung](../img/optokoppler_zuordnung.jpg)
 
+> **Stand 16.11.2026:** OC06 ist der Tacho-Kanal (P4 TACHO → ADM485 Pin 7 → RO → OC06 → MCU). Alle Stellen weiter unten, die OC06 bzw. den ADM485 als RS-485-Empfang deuten (Kandidatentabelle, Abschnitt D, Messplan), sind damit überholt; maßgeblich ist die Tabelle „Gemessene Zuordnung“.
+
 Grundlage: Pad-Rollen aus `../img/optocoupler_pads.png`, Bauteilliste `parts.csv`, Foto
 `photos/2026-11-08/front/PXL_20261108_155332127.jpg`. Tags: **[O]** beobachtet, **[I]** gefolgert, **[H]** Hypothese.
 

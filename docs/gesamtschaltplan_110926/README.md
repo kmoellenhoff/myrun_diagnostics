@@ -49,7 +49,7 @@ Die [zweite Prüfung](unabhaengige_pruefung.json) verwendet eigene, aus den letz
 
 ## Offen: Neuaufbau nach Messungen vom 16.11. abends
 
-Neue Eingabe: [befunde_2026-11-16_abend.csv](befunde_2026-11-16_abend.csv) (AKT-064 bis AKT-076; Quelle: [Protokoll 16.11. abends](../LAUF_2026-11-14.md)). Die bestehende `befunde_2026-11-16.csv` bleibt unverändert. PDF, SVG, KiCad-Schaltplan, Netzlisten und Prüfnachweise sind **noch nicht neu erzeugt** und deshalb in folgenden Punkten überholt:
+Neue Eingabe: [befunde_2026-11-16_abend.csv](befunde_2026-11-16_abend.csv) (AKT-064 bis AKT-082; Quelle: [Protokoll 16.11. abends](../LAUF_2026-11-14.md)). Die bestehende `befunde_2026-11-16.csv` bleibt unverändert. PDF, SVG, KiCad-Schaltplan, Netzlisten und Prüfnachweise sind **noch nicht neu erzeugt** und deshalb in folgenden Punkten überholt:
 
 - Tabellenzeilen „Netzsignal X“, „B20-Widerstände“ und „Y, Quelle offen“; Netze TL082_OUT, X_VOR_100R, Y, N_P600-Ka/Kb; Bauteile R301/R302.
 
@@ -58,7 +58,7 @@ Beim Neuaufbau zu ändern:
 - R1 (4,75 kΩ) ist der Serienwiderstand TL082 Pin 1 → Knoten N (= B20-R1b = B20-R2b = TL082-seitiges Pad des „1000“, Netz X_VOR_100R); danach 100 Ω → X.
 - R2 (4,75 kΩ) liegt von X_VOR_100R nach 0VA (B20-R2a ↔ 0VA 0 Ω gemessen). AKT-059 bis AKT-061 und die R2-Zuordnung in AKT-024 sind damit ersetzt.
 - Y (MCU-Arbeitsnummer 26) hängt über ≈ 1 kΩ an P600 Kontakt 1; Widerstand Y → 0VA (1,883 kΩ eingebaut) mit offenem Einzelwert; keine direkte Verbindung zu TL082 Pin 1/Pin 7 oder B20-R1b.
-- P600 Kontakt 2 ↔ +5VA bleibt Hypothese H bis zur 0-Ω-Messung; „Y = Temperatureingang“ ist Ableitung, keine Kupferverbindung. Zuordnung „Kontakt 1/2“ zu P600-Ka/Kb ist offen.
-- Nachtrag 16.11. spätabends (AKT-077 bis AKT-082, Quelle: [Protokoll](../LAUF_2026-11-14.md), „16.11. spätabends“): P600 Kontakt 2 ↔ +5VA ist jetzt **gemessen** (0 Ω, M). Neue Gruppe „Tacho-Kanal“: P4 TACHO → ≈ 1,1 kΩ → ADM485 Pin 7; ADM485 Pin 6 = Vergleichspegel (12,94 kΩ von P4 TACHO); ADM485 Pin 1 → Kathode OC06 (0 Ω, 11.11.); ADM485 Pin 5 = LM2903 Pin 4 = 0 V Konsole (0 Ω zu P2.7). Der Ableitzweig 01C/4751/4751 nach Masse ist nur als Fotoverlauf (F) belegt. Offen: OC06 Transistorseite → MCU-Pin, LM2903 Komparator A, Weg des Tachosignals zu P2.9.
+- P600 Kontakt 2 ↔ +5VA ist gemessen (0 Ω, AKT-077); „Y = Temperatureingang“ ist Ableitung, keine Kupferverbindung. Zuordnung „Kontakt 1/2“ zu P600-Ka/Kb ist offen.
+- Nachtrag 16.11. spätabends (AKT-077 bis AKT-082, Quelle: [Protokoll](../LAUF_2026-11-14.md), „16.11. spätabends“): Neue Gruppe „Tacho-Kanal“: P4 TACHO → ≈ 1,1 kΩ → ADM485 Pin 7; ADM485 Pin 6 = Vergleichspegel (12,94 kΩ von P4 TACHO); ADM485 Pin 1 → Kathode OC06 (0 Ω, 11.11.); ADM485 Pin 5 = LM2903 Pin 4 = 0 V Konsole (0 Ω zu P2.7). Der Ableitzweig 01C/4751/4751 nach Masse ist nur als Fotoverlauf (F) belegt. Offen: OC06 Transistorseite → MCU-Pin, LM2903 Komparator A, Weg des Tachosignals zu P2.9.
 
 Der Neuaufbau ist offen, weil KiCad CLI und PyMuPDF in dieser Umgebung fehlen. `erzeugen.py` liest bisher nur `befunde_2026-11-16.csv` ein und muss die neue Datei noch einbinden; danach ist `pruefen_unabhaengig.py` (Erwartungen zu X-Pfad, B20-Widerständen, Y) anzupassen.
