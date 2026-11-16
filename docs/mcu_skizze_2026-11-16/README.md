@@ -1,12 +1,12 @@
 # MCU-Anschlüsse – Stand 16.11.2026
 
-Geprüfter Quellenstand: `8c38b8b` (ergänzt um F27/T4, Messungen bis 16.11. 02:32). [Skizze PNG](mcu_anschluesse.png) · [SVG](mcu_anschluesse.svg) · [PDF](mcu_anschluesse.pdf).
+Stand: Messungen bis 16.11. 02:32, Pin-Arbeitsnummern ergänzt 16.11. 02:50. [Skizze PNG](mcu_anschluesse.png) · [SVG](mcu_anschluesse.svg) · [PDF](mcu_anschluesse.pdf).
 
 ![MCU-Anschlüsse](mcu_anschluesse.png)
 
 Die Zeichnung ist eine technische Gehäuseskizze, kein erzeugtes Platinenfoto. Keine Originalfotos wurden geändert. Orientierung wie im Original [OC05-Messfoto](../../photos/2026-11-16/oc05_emitter_mcu_pins.jpg): Gehäusemarke unten links, blauer P602-Stecker unten, P70 rechts, EEPROM rechts unten. Andere Fotos sind gegenüber dieser Ansicht gedreht. Claudes Platinenraster und bestehende IDs bleiben unverändert.
 
-**Alle Zahlen in der Skizze zählen lokal entlang einer Gehäuseseite, einschließlich des ersten Anschlusses an der genannten Ecke. Sie sind keine Datenblatt-Pinnummern.** Der MCU-Typ und seine offiziellen Portfunktionen sind nicht identifiziert. Ein gemessener Anschluss an +5VA bestätigt das Netz, nicht die genaue interne Funktion dieses Versorgungspins (VDD/VDDA/Referenz).
+**Pin-Nummern (1–32) sind Arbeitsnummern für die gemeinsame Verständigung:** gezählt ab der Gehäusemarke (Pin 1, in der Skizze unten links) gegen den Uhrzeigersinn – unten 1–8, rechts 9–16, oben 17–24, links 25–32. Das entspricht der üblichen QFP-Konvention; **ob es die Datenblatt-Nummern sind, ist offen**, da der MCU-Typ nicht identifiziert ist. Die lokalen Zählangaben („n. Anschluss ab Ecke …“) bleiben zusätzlich stehen. Zuordnung: Pin 8 +5VA · Pin 11 PFC-Sperre (T3) · Pin 12 Enable (OC04) · Pin 13 P70 · Pin 17/18 PWM (OC05) · Pin 24 F27 (T4) · Pin 26 Y · Pin 28 X (Netzsignal). Gleiche Nummern wie `../img/mcu_pinbelegung.jpg`. Der MCU-Typ und seine offiziellen Portfunktionen sind nicht identifiziert. Ein gemessener Anschluss an +5VA bestätigt das Netz, nicht die genaue interne Funktion dieses Versorgungspins (VDD/VDDA/Referenz).
 
 | Netz | Lage in der Skizze | Gesicherter Anschluss / Stand | Quelle |
 |---|---|---|---|

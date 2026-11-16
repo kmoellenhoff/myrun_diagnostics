@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-16T01:37:19.026005</dc:date>
+    <dc:date>2026-11-16T02:45:43.142943</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -35,7 +35,7 @@ L 720 648
 L 720 360
 L 432 360
 z
-" clip-path="url(#p20406d66ec)" style="fill: #eef2f6; stroke: #283444; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #eef2f6; stroke: #283444; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 406.8 628.2
@@ -43,7 +43,7 @@ L 432 628.2
 L 432 617.4
 L 406.8 617.4
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 720 628.2
@@ -51,7 +51,7 @@ L 745.2 628.2
 L 745.2 617.4
 L 720 617.4
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 406.8 594.257143
@@ -59,7 +59,7 @@ L 432 594.257143
 L 432 583.457143
 L 406.8 583.457143
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 720 594.257143
@@ -67,7 +67,7 @@ L 745.2 594.257143
 L 745.2 583.457143
 L 720 583.457143
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 406.8 560.314286
@@ -75,7 +75,7 @@ L 432 560.314286
 L 432 549.514286
 L 406.8 549.514286
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 720 560.314286
@@ -83,7 +83,7 @@ L 745.2 560.314286
 L 745.2 549.514286
 L 720 549.514286
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
     <path d="M 406.8 526.371429
@@ -91,7 +91,7 @@ L 432 526.371429
 L 432 515.571429
 L 406.8 515.571429
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
     <path d="M 720 526.371429
@@ -99,7 +99,7 @@ L 745.2 526.371429
 L 745.2 515.571429
 L 720 515.571429
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
     <path d="M 406.8 492.428571
@@ -107,7 +107,7 @@ L 432 492.428571
 L 432 481.628571
 L 406.8 481.628571
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
     <path d="M 720 492.428571
@@ -115,7 +115,7 @@ L 745.2 492.428571
 L 745.2 481.628571
 L 720 481.628571
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_13">
     <path d="M 406.8 458.485714
@@ -123,7 +123,7 @@ L 432 458.485714
 L 432 447.685714
 L 406.8 447.685714
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_14">
     <path d="M 720 458.485714
@@ -131,7 +131,7 @@ L 745.2 458.485714
 L 745.2 447.685714
 L 720 447.685714
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
     <path d="M 406.8 424.542857
@@ -139,7 +139,7 @@ L 432 424.542857
 L 432 413.742857
 L 406.8 413.742857
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_16">
     <path d="M 720 424.542857
@@ -147,7 +147,7 @@ L 745.2 424.542857
 L 745.2 413.742857
 L 720 413.742857
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_17">
     <path d="M 406.8 390.6
@@ -155,7 +155,7 @@ L 432 390.6
 L 432 379.8
 L 406.8 379.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_18">
     <path d="M 720 390.6
@@ -163,7 +163,7 @@ L 745.2 390.6
 L 745.2 379.8
 L 720 379.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_19">
     <path d="M 451.8 360
@@ -171,7 +171,7 @@ L 462.6 360
 L 462.6 334.8
 L 451.8 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_20">
     <path d="M 451.8 673.2
@@ -179,7 +179,7 @@ L 462.6 673.2
 L 462.6 648
 L 451.8 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_21">
     <path d="M 485.742857 360
@@ -187,7 +187,7 @@ L 496.542857 360
 L 496.542857 334.8
 L 485.742857 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_22">
     <path d="M 485.742857 673.2
@@ -195,7 +195,7 @@ L 496.542857 673.2
 L 496.542857 648
 L 485.742857 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_23">
     <path d="M 519.685714 360
@@ -203,7 +203,7 @@ L 530.485714 360
 L 530.485714 334.8
 L 519.685714 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_24">
     <path d="M 519.685714 673.2
@@ -211,7 +211,7 @@ L 530.485714 673.2
 L 530.485714 648
 L 519.685714 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_25">
     <path d="M 553.628571 360
@@ -219,7 +219,7 @@ L 564.428571 360
 L 564.428571 334.8
 L 553.628571 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_26">
     <path d="M 553.628571 673.2
@@ -227,7 +227,7 @@ L 564.428571 673.2
 L 564.428571 648
 L 553.628571 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_27">
     <path d="M 587.571429 360
@@ -235,7 +235,7 @@ L 598.371429 360
 L 598.371429 334.8
 L 587.571429 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_28">
     <path d="M 587.571429 673.2
@@ -243,7 +243,7 @@ L 598.371429 673.2
 L 598.371429 648
 L 587.571429 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_29">
     <path d="M 621.514286 360
@@ -251,7 +251,7 @@ L 632.314286 360
 L 632.314286 334.8
 L 621.514286 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_30">
     <path d="M 621.514286 673.2
@@ -259,7 +259,7 @@ L 632.314286 673.2
 L 632.314286 648
 L 621.514286 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_31">
     <path d="M 655.457143 360
@@ -267,7 +267,7 @@ L 666.257143 360
 L 666.257143 334.8
 L 655.457143 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_32">
     <path d="M 655.457143 673.2
@@ -275,7 +275,7 @@ L 666.257143 673.2
 L 666.257143 648
 L 655.457143 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_33">
     <path d="M 689.4 360
@@ -283,7 +283,7 @@ L 700.2 360
 L 700.2 334.8
 L 689.4 334.8
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_34">
     <path d="M 689.4 673.2
@@ -291,7 +291,7 @@ L 700.2 673.2
 L 700.2 648
 L 689.4 648
 z
-" clip-path="url(#p20406d66ec)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #d2d8df; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_35">
     <path d="M 460.8 628.56
@@ -304,193 +304,289 @@ C 452.426229 614.336732 451.44 616.717699 451.44 619.2
 C 451.44 621.682301 452.426229 624.063268 454.181481 625.818519
 C 455.936732 627.573771 458.317699 628.56 460.8 628.56
 z
-" clip-path="url(#p20406d66ec)" style="fill: #283444"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #283444"/>
    </g>
    <g id="line2d_1">
     <path d="M 457.2 334.8
 L 457.2 111.6
 L 46.8 111.6
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #b36208; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #b36208; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_2">
     <path d="M 406.8 419.142857
 L 352.8 419.142857
 L 352.8 295.2
 L 46.8 295.2
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #2366aa; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #2366aa; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_3">
     <path d="M 406.8 487.028571
 L 334.8 487.028571
 L 46.8 487.028571
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_4">
     <path d="M 660.857143 334.8
 L 660.857143 279.36
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_5">
     <path d="M 694.8 334.8
 L 694.8 279.36
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_6">
     <path d="M 660.857143 279.36
 L 694.8 279.36
 L 756 279.36
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_7">
     <path d="M 745.2 487.028571
 L 766.8 487.028571
 L 792 381.6
 L 1101.6 381.6
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #7c8590; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #7c8590; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_8">
     <path d="M 745.2 520.971429
 L 766.8 520.971429
 L 792 475.2
 L 1101.6 475.2
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #007b66; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_9">
     <path d="M 745.2 554.914286
 L 766.8 554.914286
 L 792 568.8
 L 1101.6 568.8
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #b36208; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #b36208; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_10">
     <path d="M 694.8 673.2
 L 694.8 723.6
 L 792 723.6
-" clip-path="url(#p20406d66ec)" style="fill: none; stroke: #ae3651; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pa3d85286fc)" style="fill: none; stroke: #ae3651; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="text_1">
     <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: start" x="39.6" y="38.625938" transform="rotate(-0 39.6 38.625938)">GIRT S6T30 · MCU: bestätigte Anschlüsse</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="39.6" y="65.278125" transform="rotate(-0 39.6 65.278125)">Stand 16.11.2026 · Repo 8c38b8b · Draufsicht auf die Bauteilseite</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="39.6" y="65.278125" transform="rotate(-0 39.6 65.278125)">Stand 16.11.2026 · Draufsicht auf die Bauteilseite</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start" x="39.6" y="88.318125" transform="rotate(-0 39.6 88.318125)">Lokale Zählung ab der genannten Ecke — keine offiziellen MCU-Pinnummern.</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start" x="39.6" y="88.318125" transform="rotate(-0 39.6 88.318125)">Pin-Nr. = Arbeitsnummer: ab Gehäusemarke gegen den Uhrzeigersinn gezählt (1–32). Ob das die Datenblatt-Nummern sind, ist offen.</text>
    </g>
    <g id="text_4">
-    <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle" x="576" y="418.197656" transform="rotate(-0 576 418.197656)">MCU · 32 Anschlüsse</text>
+    <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle" x="576" y="418.408594" transform="rotate(-0 576 418.408594)">MCU · 32 Anschlüsse</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(507.134063 451.918125)">Typ / Datenblatt-Pinout</text>
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(531.264375 465.3555)">nicht gesichert</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(507.128438 453.119297)">Typ / Datenblatt-Pinout</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(531.264375 467.522578)">nicht gesichert</text>
    </g>
    <g id="text_6">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #ae3651" transform="translate(490.7025 509.518125)">X und Y: getrennte Netze</text>
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #ae3651" transform="translate(507.207188 523.04925)">Keine Brücke setzen</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #ae3651" transform="translate(490.69875 510.719297)">X und Y: getrennte Netze</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #ae3651" transform="translate(507.210938 525.291328)">Keine Brücke setzen</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(512.297109 559.158281)">Grau: nicht zugeordnet</text>
-    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(507.439062 571.475875)">MCU-GND-Pin noch offen</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(512.297109 560.259355)">Grau: nicht zugeordnet</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(507.518125 573.462363)">MCU-GND-Pin noch offen</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start" x="478.8" y="615.998438" transform="rotate(-0 478.8 615.998438)">Gehäusemarke</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start" x="478.8" y="601.598438" transform="rotate(-0 478.8 601.598438)">Gehäusemarke (Pin 1)</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7c8590" x="406.8" y="320.798437" transform="rotate(-0 406.8 320.798437)">Ecke bei P13</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7c8590" x="406.8" y="299.198438" transform="rotate(-0 406.8 299.198438)">Ecke bei P13</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7c8590" x="734.4" y="320.798437" transform="rotate(-0 734.4 320.798437)">Ecke bei P70</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7c8590" x="734.4" y="299.198438" transform="rotate(-0 734.4 299.198438)">Ecke bei P70</text>
    </g>
    <g id="text_11">
-    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(496.472656 709.598438)">Blauer Stecker P602</text>
-    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(499.563281 720.79625)">unterhalb des MCU</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(496.469531 710.599414)">Blauer Stecker P602</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #7c8590" transform="translate(499.563281 722.602148)">unterhalb des MCU</text>
    </g>
    <g id="text_12">
     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="792" y="684.398438" transform="rotate(-0 792 684.398438)">EEPROM rechts unten</text>
    </g>
    <g id="text_13">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b36208" x="46.8" y="132.277969" transform="rotate(-0 46.8 132.277969)">F27 · Ausgang zum Relaistreiber T4</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b36208" x="46.8" y="132.277969" transform="rotate(-0 46.8 132.277969)">Pin 24 · F27 · Ausgang zum Relaistreiber T4</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 157.738359)">Obere Reihe: 1. Anschluss ab P13-Ecke</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 171.091734)">MCU → 1 kΩ (1001) → Basis T4 (L)</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 184.445109)">F27-Spule: +24 V → Spule → Kollektor T4 (O)</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 197.798484)">Emitter T4 (R) → 0VA</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 211.151859)">Spulenplus = SOT-223-Tab; Bauteiltyp offen</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 224.505234)">Bisher: 0 V über Spule bei Standby / Fehlstart</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 237.858609)">T4-Ansteuerung im Betrieb noch nicht gemessen.</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 161.024531)">Obere Reihe: 1. Anschluss ab P13-Ecke</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 175.106836)">MCU → 1 kΩ (1001) → Basis T4 (L)</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 189.407344)">F27-Spule: +24 V → Spule → Kollektor T4 (O)</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 204.506836)">Emitter T4 (R) → 0VA</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 218.807344)">Spulenplus = SOT-223-Tab; Bauteiltyp offen</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 233.507344)">Bisher: 0 V über Spule bei Standby / Fehlstart</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 248.207344)">T4-Ansteuerung im Betrieb noch nicht gemessen.</text>
    </g>
    <g id="text_15">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #2366aa" x="46.8" y="312.277969" transform="rotate(-0 46.8 312.277969)">Y · Signalquelle offen</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #2366aa" x="46.8" y="312.277969" transform="rotate(-0 46.8 312.277969)">Pin 26 · Y · Signalquelle offen</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 335.578359)">2. Anschluss ab P13-Ecke</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 347.336063)">LD3N: O = Y; L = 0VA; R = +5VA</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 359.093766)">Klemmung gemessen; Eingangsfunktion offen</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 336.629385)">2. Anschluss ab P13-Ecke</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 349.231436)">LD3N: O = Y; L = 0VA; R = +5VA</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 361.834307)">Klemmung gemessen; Eingangsfunktion offen</text>
    </g>
    <g id="text_17">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007b66" x="46.8" y="505.54654" transform="rotate(-0 46.8 505.54654)">X · Netzsignal aus B10</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007b66" x="46.8" y="505.54654" transform="rotate(-0 46.8 505.54654)">Pin 28 · X · Netzsignal aus B10</text>
    </g>
    <g id="text_18">
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 529.566931)">4. Anschluss ab P13-Ecke</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 543.718142)">J → 1 kΩ → TL082 Pin 3</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 557.869353)">Pin 1 = Pin 2: Spannungsfolger</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 572.020564)">Ausgang → 4,75 kΩ → 100 Ω → X</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 586.171775)">Filterkondensator von X nach 0VA</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 600.322985)">P13 selbst ist nicht mit X verbunden.</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 533.378103)">4. Anschluss ab P13-Ecke</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 548.151931)">J → 1 kΩ → TL082 Pin 3</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 563.860915)">Pin 1 = Pin 2: Spannungsfolger</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 579.610915)">Ausgang → 4,75 kΩ → 100 Ω → X</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 596.378103)">Filterkondensator von X nach 0VA</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 612.128103)">P13 selbst ist nicht mit X verbunden.</text>
    </g>
    <g id="text_19">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007b66" x="770.4" y="245.278125" transform="rotate(-0 770.4 245.278125)">PWM-Sollwert · OC05 Emitter</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007b66" x="770.4" y="245.278125" transform="rotate(-0 770.4 245.278125)">Pin 17 + 18 · PWM-Sollwert · OC05 Emitter</text>
    </g>
    <g id="text_20">
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(770.4 270.778359)">Obere Reihe: 1. + 2. ab P70-Ecke</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(770.4 282.536063)">Beide verbunden laut Messprotokoll.</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(770.4 294.293766)">Zweck der Doppelbelegung unbekannt.</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(770.4 271.829385)">Obere Reihe: 1. + 2. ab P70-Ecke</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(770.4 284.432256)">Beide verbunden laut Messprotokoll.</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(770.4 297.035127)">Zweck der Doppelbelegung unbekannt.</text>
    </g>
    <g id="text_21">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="792" y="399.358125" transform="rotate(-0 792 399.358125)">P70 · Funktion offen</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="792" y="399.358125" transform="rotate(-0 792 399.358125)">Pin 13 · P70 · Funktion offen</text>
    </g>
    <g id="text_22">
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 423.986391)">5. Anschluss ab unterer Ecke</text>
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 437.085416)">Verbindung zum Testpunkt bestätigt.</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 427.209969)">5. Anschluss ab unterer Ecke</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 440.632156)">Verbindung zum Testpunkt bestätigt.</text>
    </g>
    <g id="text_23">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007b66" x="792" y="492.958125" transform="rotate(-0 792 492.958125)">Enable · OC04 Emitter</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007b66" x="792" y="492.958125" transform="rotate(-0 792 492.958125)">Pin 12 · Enable · OC04 Emitter</text>
    </g>
    <g id="text_24">
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 517.586391)">4. Anschluss ab unterer Ecke</text>
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 530.685416)">Signalpfad bestätigt; Live-Pegel offen.</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 520.809969)">4. Anschluss ab unterer Ecke</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 534.232156)">Signalpfad bestätigt; Live-Pegel offen.</text>
    </g>
    <g id="text_25">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b36208" x="792" y="586.464375" transform="rotate(-0 792 586.464375)">PFC-Sperre · Ausgang zu T3</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b36208" x="792" y="586.558125" transform="rotate(-0 792 586.558125)">Pin 11 · PFC-Sperre · Ausgang zu T3</text>
    </g>
    <g id="text_26">
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 611.186391)">3. Anschluss ab unterer Ecke</text>
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 624.285416)">→ 2,21 kΩ → Basis T3 → L4981 Pin 15</text>
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 637.384441)">10-kΩ-Pull-up nach +5VA am Steuerknoten</text>
-    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 650.483466)">Standby / Fehlstart: 4,9 V am Knoten.</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 614.409969)">3. Anschluss ab unterer Ecke</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 628.304508)">→ 2,21 kΩ → Basis T3 → L4981 Pin 15</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 642.252156)">10-kΩ-Pull-up nach +5VA am Steuerknoten</text>
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'" transform="translate(792 656.672156)">Standby / Fehlstart: 4,9 V am Knoten.</text>
    </g>
    <g id="text_27">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ae3651" x="792" y="740.638125" transform="rotate(-0 792 740.638125)">+5VA · Versorgungsknoten</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ae3651" x="792" y="740.638125" transform="rotate(-0 792 740.638125)">Pin 8 · +5VA · Versorgungsknoten</text>
    </g>
    <g id="text_28">
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(792 763.978359)">Unterer Eckanschluss rechts</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(792 775.736063)">= Kollektoren von OC04 und OC05</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(792 787.493766)">Kein Enable-/PWM-Eingang.</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(792 765.029385)">Unterer Eckanschluss rechts</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(792 777.632256)">= Kollektoren von OC04 und OC05</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(792 790.235127)">Kein Enable-/PWM-Eingang.</text>
    </g>
    <g id="text_29">
     <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start" x="46.8" y="718.486875" transform="rotate(-0 46.8 718.486875)">OC04 / OC05: Ausgänge an den Emittern</text>
    </g>
    <g id="text_30">
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 742.378359)">Kollektoren gemeinsam an +5VA. Emitter → 0VA:</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 756.52957)">OC04: 3,3 kΩ; OC05: 10 kΩ (in-circuit gemessen).</text>
-    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 770.680781)">LED-Strom kann den Emitter anheben; Signalqualität noch offen.</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 745.172344)">Kollektoren gemeinsam an +5VA. Emitter → 0VA:</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 760.922344)">OC04: 3,3 kΩ; OC05: 10 kΩ (in-circuit gemessen).</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'" transform="translate(46.8 776.672344)">LED-Strom kann den Emitter anheben; Signalqualität noch offen.</text>
    </g>
    <g id="text_31">
     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="46.8" y="820.518281" transform="rotate(-0 46.8 820.518281)">Noch nicht am MCU lokalisiert: Motorfreigabe T2, OC02/03/08, RS-485. T4-Bahn (b): Funktion offen.</text>
    </g>
    <g id="text_32">
     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8590" x="46.8" y="846.398438" transform="rotate(-0 46.8 846.398438)">Gemessene Verbindungen ≠ Funktionsnachweis. Netzseite: 0VA ist nicht Schutzleiter. Quellen und Orientierung: README.md.</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="457.2" y="640.077891" transform="rotate(-0 457.2 640.077891)">1</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="491.142857" y="640.077891" transform="rotate(-0 491.142857 640.077891)">2</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="525.085714" y="640.077891" transform="rotate(-0 525.085714 640.077891)">3</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="559.028571" y="640.077891" transform="rotate(-0 559.028571 640.077891)">4</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="592.971429" y="640.077891" transform="rotate(-0 592.971429 640.077891)">5</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="626.914286" y="640.077891" transform="rotate(-0 626.914286 640.077891)">6</text>
+   </g>
+   <g id="text_39">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="660.857143" y="640.077891" transform="rotate(-0 660.857143 640.077891)">7</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="694.8" y="640.077891" transform="rotate(-0 694.8 640.077891)">8</text>
+   </g>
+   <g id="text_41">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="625.137891" transform="rotate(-0 714.24 625.137891)">9</text>
+   </g>
+   <g id="text_42">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="591.195033" transform="rotate(-0 714.24 591.195033)">10</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="557.252176" transform="rotate(-0 714.24 557.252176)">11</text>
+   </g>
+   <g id="text_44">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="523.309319" transform="rotate(-0 714.24 523.309319)">12</text>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="489.366462" transform="rotate(-0 714.24 489.366462)">13</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="455.423605" transform="rotate(-0 714.24 455.423605)">14</text>
+   </g>
+   <g id="text_47">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="421.480748" transform="rotate(-0 714.24 421.480748)">15</text>
+   </g>
+   <g id="text_48">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #283444" x="714.24" y="387.537891" transform="rotate(-0 714.24 387.537891)">16</text>
+   </g>
+   <g id="text_49">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="694.8" y="372.597891" transform="rotate(-0 694.8 372.597891)">17</text>
+   </g>
+   <g id="text_50">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="660.857143" y="372.597891" transform="rotate(-0 660.857143 372.597891)">18</text>
+   </g>
+   <g id="text_51">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="626.914286" y="372.597891" transform="rotate(-0 626.914286 372.597891)">19</text>
+   </g>
+   <g id="text_52">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="592.971429" y="372.597891" transform="rotate(-0 592.971429 372.597891)">20</text>
+   </g>
+   <g id="text_53">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="559.028571" y="372.597891" transform="rotate(-0 559.028571 372.597891)">21</text>
+   </g>
+   <g id="text_54">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="525.085714" y="372.597891" transform="rotate(-0 525.085714 372.597891)">22</text>
+   </g>
+   <g id="text_55">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="491.142857" y="372.597891" transform="rotate(-0 491.142857 372.597891)">23</text>
+   </g>
+   <g id="text_56">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283444" x="457.2" y="372.597891" transform="rotate(-0 457.2 372.597891)">24</text>
+   </g>
+   <g id="text_57">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="387.537891" transform="rotate(-0 437.76 387.537891)">25</text>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="421.480748" transform="rotate(-0 437.76 421.480748)">26</text>
+   </g>
+   <g id="text_59">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="455.423605" transform="rotate(-0 437.76 455.423605)">27</text>
+   </g>
+   <g id="text_60">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="489.366462" transform="rotate(-0 437.76 489.366462)">28</text>
+   </g>
+   <g id="text_61">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="523.309319" transform="rotate(-0 437.76 523.309319)">29</text>
+   </g>
+   <g id="text_62">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="557.252176" transform="rotate(-0 437.76 557.252176)">30</text>
+   </g>
+   <g id="text_63">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="591.195033" transform="rotate(-0 437.76 591.195033)">31</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283444" x="437.76" y="625.137891" transform="rotate(-0 437.76 625.137891)">32</text>
    </g>
    <g id="patch_36">
     <path d="M 457.2 338.76
@@ -503,7 +599,7 @@ C 453.657251 332.742464 453.24 333.749796 453.24 334.8
 C 453.24 335.850204 453.657251 336.857536 454.399857 337.600143
 C 455.142464 338.342749 456.149796 338.76 457.2 338.76
 z
-" clip-path="url(#p20406d66ec)" style="fill: #b36208; stroke: #b36208; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #b36208; stroke: #b36208; stroke-linejoin: miter"/>
    </g>
    <g id="patch_37">
     <path d="M 406.8 423.102857
@@ -516,7 +612,7 @@ C 403.257251 417.085321 402.84 418.092653 402.84 419.142857
 C 402.84 420.193061 403.257251 421.200393 403.999857 421.943
 C 404.742464 422.685607 405.749796 423.102857 406.8 423.102857
 z
-" clip-path="url(#p20406d66ec)" style="fill: #2366aa; stroke: #2366aa; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #2366aa; stroke: #2366aa; stroke-linejoin: miter"/>
    </g>
    <g id="patch_38">
     <path d="M 406.8 490.988571
@@ -529,7 +625,7 @@ C 403.257251 484.971035 402.84 485.978367 402.84 487.028571
 C 402.84 488.078776 403.257251 489.086108 403.999857 489.828714
 C 404.742464 490.571321 405.749796 490.988571 406.8 490.988571
 z
-" clip-path="url(#p20406d66ec)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
    </g>
    <g id="patch_39">
     <path d="M 660.857143 338.76
@@ -542,7 +638,7 @@ C 657.314393 332.742464 656.897143 333.749796 656.897143 334.8
 C 656.897143 335.850204 657.314393 336.857536 658.057 337.600143
 C 658.799607 338.342749 659.806939 338.76 660.857143 338.76
 z
-" clip-path="url(#p20406d66ec)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
    </g>
    <g id="patch_40">
     <path d="M 694.8 338.76
@@ -555,7 +651,7 @@ C 691.257251 332.742464 690.84 333.749796 690.84 334.8
 C 690.84 335.850204 691.257251 336.857536 691.999857 337.600143
 C 692.742464 338.342749 693.749796 338.76 694.8 338.76
 z
-" clip-path="url(#p20406d66ec)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
    </g>
    <g id="patch_41">
     <path d="M 745.2 490.988571
@@ -568,7 +664,7 @@ C 741.657251 484.971035 741.24 485.978367 741.24 487.028571
 C 741.24 488.078776 741.657251 489.086108 742.399857 489.828714
 C 743.142464 490.571321 744.149796 490.988571 745.2 490.988571
 z
-" clip-path="url(#p20406d66ec)" style="fill: #7c8590; stroke: #7c8590; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #7c8590; stroke: #7c8590; stroke-linejoin: miter"/>
    </g>
    <g id="patch_42">
     <path d="M 745.2 524.931429
@@ -581,7 +677,7 @@ C 741.657251 518.913892 741.24 519.921224 741.24 520.971429
 C 741.24 522.021633 741.657251 523.028965 742.399857 523.771571
 C 743.142464 524.514178 744.149796 524.931429 745.2 524.931429
 z
-" clip-path="url(#p20406d66ec)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #007b66; stroke: #007b66; stroke-linejoin: miter"/>
    </g>
    <g id="patch_43">
     <path d="M 745.2 558.874286
@@ -594,7 +690,7 @@ C 741.657251 552.856749 741.24 553.864081 741.24 554.914286
 C 741.24 555.96449 741.657251 556.971822 742.399857 557.714429
 C 743.142464 558.457035 744.149796 558.874286 745.2 558.874286
 z
-" clip-path="url(#p20406d66ec)" style="fill: #b36208; stroke: #b36208; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #b36208; stroke: #b36208; stroke-linejoin: miter"/>
    </g>
    <g id="patch_44">
     <path d="M 694.8 677.16
@@ -607,12 +703,12 @@ C 691.257251 671.142464 690.84 672.149796 690.84 673.2
 C 690.84 674.250204 691.257251 675.257536 691.999857 676.000143
 C 692.742464 676.742749 693.749796 677.16 694.8 677.16
 z
-" clip-path="url(#p20406d66ec)" style="fill: #ae3651; stroke: #ae3651; stroke-linejoin: miter"/>
+" clip-path="url(#pa3d85286fc)" style="fill: #ae3651; stroke: #ae3651; stroke-linejoin: miter"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p20406d66ec">
+  <clipPath id="pa3d85286fc">
    <rect x="0" y="0" width="1152" height="864"/>
   </clipPath>
  </defs>
