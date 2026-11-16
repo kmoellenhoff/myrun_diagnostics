@@ -56,3 +56,4 @@ Erwartungswerte nur, wo begründet; sonst Werte notieren. Netzseite: klemmen nur
 | Basis T4 (bzw. „1001“) | MCU → F27 (Vorladerelais) | ≈ 0,7 V = angesteuert; 0 V = nicht |
 | Steuerleitung T3 (Testpad „2211“) | MCU → PFC-Sperre | bekannt: Standby und Start 4,9 V (gesperrt) |
 | Testpad Basis T2 | MCU → Motorfreigabe | bekannt: Start 0,1 mV |
+- Grafik Live-Messpunkte: `docs/img/live_messpunkte_2026-11-16.jpg`
