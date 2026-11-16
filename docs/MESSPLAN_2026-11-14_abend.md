@@ -57,3 +57,16 @@ Erwartungswerte nur, wo begründet; sonst Werte notieren. Netzseite: klemmen nur
 | Steuerleitung T3 (Testpad „2211“) | MCU → PFC-Sperre | bekannt: Standby und Start 4,9 V (gesperrt) |
 | Testpad Basis T2 | MCU → Motorfreigabe | bekannt: Start 0,1 mV |
 - Grafik Live-Messpunkte: `docs/img/live_messpunkte_2026-11-16.jpg`
+
+## Oszilloskop (BSIDE OT3, akkubetrieben, 10 MHz, CAT II 400 V) – ab 16.11.
+
+**Sicherheit:** Während Messungen auf der Netzseite **kein USB-Kabel** am Oszi (PC/Ladegerät können geerdet sein). Masseklemme nur an 0VA (Elko-Minus) bzw. auf der Konsolenseite an P2.7. Gerät während der Messung nicht anfassen; Klemmen nur bei entladenem Elko setzen. Oszi und Multimeter sind beide akkubetrieben und dürfen gleichzeitig messen, solange beide Massen am selben Bezug (0VA) liegen.
+
+**Grundeinstellung:** Tastkopf und Gerät auf x10, Kopplung DC, Trigger Flanke steigend, Modus AUTO (für Einzelereignisse SINGLE).
+
+| Lauf | Oszi (Kanal) | Masse | Einstellung | gleichzeitig Multimeter | Zweck |
+|---|---|---|---|---|---|
+| O1 | P2.6 bzw. OC05 Pin 1 (Konsolenseite) | P2.7 | 1 V/div, 1 ms/div, Trigger 0,5 V | – | Einarbeitung, PWM-Sollwert der Konsole: Frequenz/Tastgrad |
+| O2 | Via oberhalb LD3N-L (Netzsignal X, MCU-Pin 28) | 0VA | 1 V/div, 5 ms/div, AUTO | OC04 Pin 3 (Enable) DC | Kommt das Netzsignal am MCU an? Standby genügt, dann Start |
+| O3 | OC05 Pin 3 (PWM am MCU, Pin 17/18) | 0VA | 1 V/div, 1 ms/div, Trigger 2 V | Basis T4 DC MIN/MAX | Erreicht der Sollwert den MCU; schaltet der MCU F27 |
+| O4 | Testpad Basis T2 bzw. Basis T4 | 0VA | 0,5 V/div, 100 ms/div, SINGLE, Trigger 0,3 V | Steuerleitung T3 DC MIN/MAX | Kurze Ansteuerungsversuche erfassen, die Multimeter-MAX nicht sieht |
