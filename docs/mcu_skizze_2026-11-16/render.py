@@ -9,9 +9,9 @@ from matplotlib.patches import Rectangle, Circle
 
 OUT = Path(__file__).resolve().parent
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11, 'svg.fonttype': 'none'})
-fig, ax = plt.subplots(figsize=(16, 10))
+fig, ax = plt.subplots(figsize=(16, 12))
 fig.subplots_adjust(0, 0, 1, 1)
-ax.set(xlim=(0, 16), ylim=(0, 10))
+ax.set(xlim=(0, 16), ylim=(0, 12))
 ax.axis('off')
 green, blue, orange, red, grey = '#007b66', '#2366aa', '#b36208', '#ae3651', '#7c8590'
 def txt(x, y, s, **kw):
@@ -21,9 +21,9 @@ def wire(points, c, dashed=False):
 def mark(p, c):
     ax.add_patch(Circle(p, .055, color=c, zorder=5))
 
-txt(.55, 9.7, 'GIRT S6T30 · MCU: bestätigte Anschlüsse', fontsize=22, weight='bold')
-txt(.55, 9.22, 'Stand 16.11.2026 · Repo ff2ad40 · Draufsicht auf die Bauteilseite', color=grey, fontsize=12)
-txt(.55, 8.9, 'Lokale Zählung ab der genannten Ecke — keine offiziellen MCU-Pinnummern.', fontsize=12)
+txt(.55, 11.7, 'GIRT S6T30 · MCU: bestätigte Anschlüsse', fontsize=22, weight='bold')
+txt(.55, 11.22, 'Stand 16.11.2026 · Repo 8c38b8b · Draufsicht auf die Bauteilseite', color=grey, fontsize=12)
+txt(.55, 10.9, 'Lokale Zählung ab der genannten Ecke — keine offiziellen MCU-Pinnummern.', fontsize=12)
 
 ax.add_patch(Rectangle((6, 3), 4, 4, facecolor='#eef2f6', edgecolor='#283444', lw=2))
 pos = [3.35 + i * 3.3 / 7 for i in range(8)]
@@ -44,6 +44,12 @@ txt(5.65, 7.65, 'Ecke bei P13', color=grey, fontsize=10, ha='center')
 txt(10.2, 7.65, 'Ecke bei P70', color=grey, fontsize=10, ha='center')
 txt(7.6, 2.25, 'Blauer Stecker P602\nunterhalb des MCU', ha='center', color=grey, fontsize=10)
 txt(11, 2.6, 'EEPROM rechts unten', color=grey, fontsize=10)
+
+# F27: obere Reihe, linker Eckanschluss (Originalfoto um 90 Grad gedreht).
+wire([(xp[0],7.35),(xp[0],10.45),(.65,10.45)],orange)
+mark((xp[0],7.35),orange)
+txt(.65,10.3,'F27 · Ausgang zum Relaistreiber T4',color=orange,weight='bold',fontsize=13)
+txt(.65,9.92,'Obere Reihe: 1. Anschluss ab P13-Ecke\nMCU → 1 kΩ (1001) → Basis T4 (L)\nF27-Spule: +24 V → Spule → Kollektor T4 (O)\nEmitter T4 (R) → 0VA\nSpulenplus = SOT-223-Tab; Bauteiltyp offen\nBisher: 0 V über Spule bei Standby / Fehlstart\nT4-Ansteuerung im Betrieb noch nicht gemessen.',fontsize=10.5,linespacing=1.4)
 
 # Linke Seite: ab oberer Ecke (P13) nach unten zählen.
 y_y, y_x = pos[-2], pos[-4]
@@ -75,7 +81,7 @@ txt(11,1.84,'+5VA · Versorgungsknoten',color=red,weight='bold',fontsize=12)
 txt(11,1.5,'Unterer Eckanschluss rechts\n= Kollektoren von OC04 und OC05\nKein Enable-/PWM-Eingang.',fontsize=10.5)
 txt(.65,2.15,'OC04 / OC05: Ausgänge an den Emittern',weight='bold',fontsize=12)
 txt(.65,1.8,'Kollektoren gemeinsam an +5VA. Emitter → 0VA:\nOC04: 3,3 kΩ; OC05: 10 kΩ (in-circuit gemessen).\nLED-Strom kann den Emitter anheben; Signalqualität noch offen.',fontsize=10.5,linespacing=1.5)
-txt(.65,.72,'Noch nicht am MCU lokalisiert: Motorfreigabe T2, F27-Treiber, OC02/03/08, RS-485.',color=grey,fontsize=11)
+txt(.65,.72,'Noch nicht am MCU lokalisiert: Motorfreigabe T2, OC02/03/08, RS-485. T4-Bahn (b): Funktion offen.',color=grey,fontsize=11)
 txt(.65,.35,'Gemessene Verbindungen ≠ Funktionsnachweis. Netzseite: 0VA ist nicht Schutzleiter. Quellen und Orientierung: README.md.',color=grey,fontsize=10)
 for ext in ('png','svg','pdf'):
     fig.savefig(OUT / f'mcu_anschluesse.{ext}', dpi=160, facecolor='white')
