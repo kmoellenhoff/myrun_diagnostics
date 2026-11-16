@@ -46,3 +46,13 @@ Erwartungswerte nur, wo begründet; sonst Werte notieren. Netzseite: klemmen nur
 - P13/P70 live: P13 nicht mit X verbunden, Funktion unbekannt.
 - SOT-23-5 live: erst nach Funktionszuordnung.
 - F27-Spulenspannung erneut: bereits gemessen; nur Treiberansteuerung (3.4).
+
+## Nächster Einbau – Live-Messung „Eingänge und Ausgänge des MCU“ (je Standby und Start, gegen 0VA)
+| Messpunkt | Signal | Bekannt / Erwartung |
+|---|---|---|
+| OC04 Pin 3 (Emitter) | Enable von der Konsole → MCU | high, wenn Enable aktiv |
+| OC05 Pin 3 (Emitter) | PWM-Sollwert → MCU | Standby ≈ 0 V; Start Mittelwert > 0, Hz |
+| Via oberhalb „LD3N“-L | Netzsignal B10 → MCU-Pin X | DC + Hz, Signalform offen |
+| Basis T4 (bzw. „1001“) | MCU → F27 (Vorladerelais) | ≈ 0,7 V = angesteuert; 0 V = nicht |
+| Steuerleitung T3 (Testpad „2211“) | MCU → PFC-Sperre | bekannt: Standby und Start 4,9 V (gesperrt) |
+| Testpad Basis T2 | MCU → Motorfreigabe | bekannt: Start 0,1 mV |
