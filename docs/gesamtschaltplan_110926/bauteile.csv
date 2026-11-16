@@ -18,8 +18,8 @@ Q2;Q2;B5;MOSFET Q2;"Body 0,444 V / OL; G–S 9,14 kΩ; G–D 2,2 / 1,86 MΩ stei
 R201;Q2-RG;B5;22 Ω / 220;Gatepfad 22,2 Ω
 U201;Q2-DRV;B5;SOT-23-5: Typ offen;
 R202;Q2-R2211 (alt R221);B5;2,21 k / 2211;2,09 kΩ beidseitig
-U202;Q2-1P;B5;1P: Typ offen;
-U401;B20-SOT23;E6;Typ / Funktionen offen;
+U202;Q2-1P;B5;1P NPN, Typ offen;
+U401;B20-SOT23;E6;T3 NPN, Typ offen;
 R301;B20-R1;E6;4,75 k / 4751;4,6 kΩ beidseitig
 R302;B20-R2;E6;4,75 k / 4751;a→b 2,7 / b→a 3,3 kΩ
 R303;B20-R3;E6;100 k / 1003;72,3 kΩ beidseitig
@@ -37,3 +37,20 @@ TH501;P600 Ka/Kb;B5;NTC, ca. 10-k-Klasse;"abgezogen 11,28 kΩ; fingerwarm 10,9 k
 J201;P2 (nur vermessene Pins);;P2, Auswahl aus 18 Pins;
 SW501;Motor-Thermoschalter;;Thermokontakt, kalt geschlossen;0 Ω kalt
 J204;P4;;P4: TACHO / 0V;
+U601;MCU unbekannt;;Arbeitsnummern, kein Datenblatt;
+R601;B10-2212;;22,1 k / 2212;
+R602;B10-1001;;1 k / 1001;
+U602;TL082 neben T3;;TL082I / A = Spannungsfolger;
+R603;Netzsignal-1000;;100 Ω / 1000;
+C601;X-Filterkondensator;;C Wert offen;
+U605;LD3N an Y;;Schottky-Kandidat, Typ offen;
+U603;OC04;;OC04;
+U604;OC05;;OC05;
+R604;T3-2211;;2,21 k / 2211;
+R605;T3-01C;;10 k / 01C;
+R606;T4-1001;;1 k / 1001;
+Q601;T4 1P;;NPN, genauer Typ offen;
+TP604;F27+ / SOT223-Tab;;F27+ / SOT223-Tab;
+R607;1P-Basis-4750;;475 Ω / 4750;
+R608;1P-Basis-2211;;2,21 k / 2211;
+Q602;T2;;NPN, Typ offen;

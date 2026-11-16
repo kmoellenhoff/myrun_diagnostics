@@ -2,14 +2,14 @@
 <export version="E">
   <design>
     <source>/workspace/myrun_diagnostics/docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch</source>
-    <date>2026-11-09T15:03:43+0000</date>
+    <date>2026-11-16T05:45:09+0000</date>
     <tool>Eeschema 9.0.2+dfsg-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>GIRT S6T30 - gemessene Teilnetze</title>
         <company>myrun_diagnostics</company>
-        <rev>110926 / Evidenzmodell</rev>
-        <date>2026-11-09</date>
+        <rev>main / Evidenzmodell</rev>
+        <date>2026-11-16</date>
         <source>GIRT_Gesamtschaltplan.kicad_sch</source>
         <comment number="1" value="M gemessen / F Foto / I abgeleitet; keine vollstaendige Platinenrekonstruktion"/>
         <comment number="2" value=""/>
@@ -24,6 +24,29 @@
     </sheet>
   </design>
   <components>
+    <comp ref="C601">
+      <value>C Wert offen</value>
+      <fields>
+        <field name="Repository_ID">X-Filterkondensator</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "X", "2": "0VA"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="CAP" description=""/>
+      <property name="Repository_ID" value="X-Filterkondensator"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;X&quot;, &quot;2&quot;: &quot;0VA&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0d117b7c-6635-50d0-84d8-184986c11e7d</tstamps>
+    </comp>
     <comp ref="D3">
       <value>Freilaufdiode D3</value>
       <fields>
@@ -145,7 +168,7 @@
         <field name="Repository_ID">F27 RT334024</field>
         <field name="Feld_Claude">I4</field>
         <field name="Messwerte">Spule 1,41 kΩ; Kontaktgruppe 68,4 Ω in-circuit</field>
-        <field name="Terminal_Aliase">{"Ca": "F27-Ca", "Cb": "F27-Cb", "11a": "F27-11a", "11b": "F27-11b", "14a": "F27-14a", "14b": "F27-14b"}</field>
+        <field name="Terminal_Aliase">{"plus": "F27-plus", "minus": "F27-minus", "11a": "F27-11a", "11b": "F27-11b", "14a": "F27-14a", "14b": "F27-14b"}</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -154,7 +177,7 @@
       <property name="Repository_ID" value="F27 RT334024"/>
       <property name="Feld_Claude" value="I4"/>
       <property name="Messwerte" value="Spule 1,41 kΩ; Kontaktgruppe 68,4 Ω in-circuit"/>
-      <property name="Terminal_Aliase" value="{&quot;Ca&quot;: &quot;F27-Ca&quot;, &quot;Cb&quot;: &quot;F27-Cb&quot;, &quot;11a&quot;: &quot;F27-11a&quot;, &quot;11b&quot;: &quot;F27-11b&quot;, &quot;14a&quot;: &quot;F27-14a&quot;, &quot;14b&quot;: &quot;F27-14b&quot;}"/>
+      <property name="Terminal_Aliase" value="{&quot;plus&quot;: &quot;F27-plus&quot;, &quot;minus&quot;: &quot;F27-minus&quot;, &quot;11a&quot;: &quot;F27-11a&quot;, &quot;11b&quot;: &quot;F27-11b&quot;, &quot;14a&quot;: &quot;F27-14a&quot;, &quot;14b&quot;: &quot;F27-14b&quot;}"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
       <property name="exclude_from_bom"/>
@@ -207,6 +230,52 @@
       <property name="exclude_from_board"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>60b6ad5b-c868-51b8-b505-c323216d7eb7</tstamps>
+    </comp>
+    <comp ref="Q601">
+      <value>NPN, genauer Typ offen</value>
+      <fields>
+        <field name="Repository_ID">T4 1P</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"B": "T4.B", "C": "F27-minus", "E": "0VA"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="NPN" description=""/>
+      <property name="Repository_ID" value="T4 1P"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;B&quot;: &quot;T4.B&quot;, &quot;C&quot;: &quot;F27-minus&quot;, &quot;E&quot;: &quot;0VA&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c153e9f6-2070-5687-8c1b-67d9c3523a6b</tstamps>
+    </comp>
+    <comp ref="Q602">
+      <value>NPN, Typ offen</value>
+      <fields>
+        <field name="Repository_ID">T2</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"B": "T2.B", "C": "T2.C", "E": "0VA"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="NPN" description=""/>
+      <property name="Repository_ID" value="T2"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;B&quot;: &quot;T2.B&quot;, &quot;C&quot;: &quot;T2.C&quot;, &quot;E&quot;: &quot;0VA&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>60909a60-7855-54ef-9291-f8de01f32a96</tstamps>
     </comp>
     <comp ref="R101">
       <value>1 M / 1004</value>
@@ -536,7 +605,7 @@
         <field name="Repository_ID">B20-R2</field>
         <field name="Feld_Claude">E6</field>
         <field name="Messwerte">a→b 2,7 / b→a 3,3 kΩ</field>
-        <field name="Terminal_Aliase">{"1": "B20-R2a", "2": "B20-R2b"}</field>
+        <field name="Terminal_Aliase">{"1": "OUT4751.1", "2": "OUT4751.2"}</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -545,7 +614,7 @@
       <property name="Repository_ID" value="B20-R2"/>
       <property name="Feld_Claude" value="E6"/>
       <property name="Messwerte" value="a→b 2,7 / b→a 3,3 kΩ"/>
-      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;B20-R2a&quot;, &quot;2&quot;: &quot;B20-R2b&quot;}"/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;OUT4751.1&quot;, &quot;2&quot;: &quot;OUT4751.2&quot;}"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
       <property name="exclude_from_bom"/>
@@ -691,6 +760,190 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>868be8cd-0578-52d2-9e20-893015e16849</tstamps>
     </comp>
+    <comp ref="R601">
+      <value>22,1 k / 2212</value>
+      <fields>
+        <field name="Repository_ID">B10-2212</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "J.2212R", "2": "J.2212L"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RV" description=""/>
+      <property name="Repository_ID" value="B10-2212"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;J.2212R&quot;, &quot;2&quot;: &quot;J.2212L&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6d53f439-ef7e-5a6d-a8e2-10b5cad6efc2</tstamps>
+    </comp>
+    <comp ref="R602">
+      <value>1 k / 1001</value>
+      <fields>
+        <field name="Repository_ID">B10-1001</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "J.1001L", "2": "J.1001R"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="B10-1001"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;J.1001L&quot;, &quot;2&quot;: &quot;J.1001R&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e7249fec-d683-5f62-8a1e-1dee3f9152b8</tstamps>
+    </comp>
+    <comp ref="R603">
+      <value>100 Ω / 1000</value>
+      <fields>
+        <field name="Repository_ID">Netzsignal-1000</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "X.1000in", "2": "X"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="Netzsignal-1000"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;X.1000in&quot;, &quot;2&quot;: &quot;X&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7cf8b689-e861-5cf6-87d7-9582d51d75aa</tstamps>
+    </comp>
+    <comp ref="R604">
+      <value>2,21 k / 2211</value>
+      <fields>
+        <field name="Repository_ID">T3-2211</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "MCU.11", "2": "B20-Tc"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="T3-2211"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;MCU.11&quot;, &quot;2&quot;: &quot;B20-Tc&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d83eb836-a544-5732-94b1-2569263472bd</tstamps>
+    </comp>
+    <comp ref="R605">
+      <value>10 k / 01C</value>
+      <fields>
+        <field name="Repository_ID">T3-01C</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "+5VA", "2": "MCU.11"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="T3-01C"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;+5VA&quot;, &quot;2&quot;: &quot;MCU.11&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>debdf43e-e03a-5971-a6e4-425821cd897d</tstamps>
+    </comp>
+    <comp ref="R606">
+      <value>1 k / 1001</value>
+      <fields>
+        <field name="Repository_ID">T4-1001</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "MCU.24", "2": "T4.B"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="T4-1001"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;MCU.24&quot;, &quot;2&quot;: &quot;T4.B&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5380adb1-fa80-557f-8bd0-96457ab6394c</tstamps>
+    </comp>
+    <comp ref="R607">
+      <value>475 Ω / 4750</value>
+      <fields>
+        <field name="Repository_ID">1P-Basis-4750</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "Q2-1P.L", "2": "T2.series"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="1P-Basis-4750"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;Q2-1P.L&quot;, &quot;2&quot;: &quot;T2.series&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ef4709be-3af6-58cc-9816-0ffe5f401e85</tstamps>
+    </comp>
+    <comp ref="R608">
+      <value>2,21 k / 2211</value>
+      <fields>
+        <field name="Repository_ID">1P-Basis-2211</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "T2.series", "2": "T2.C"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="RH" description=""/>
+      <property name="Repository_ID" value="1P-Basis-2211"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;T2.series&quot;, &quot;2&quot;: &quot;T2.C&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0fc2839a-8d2e-5799-81d0-00154f5c3cdd</tstamps>
+    </comp>
     <comp ref="SW501">
       <value>Thermokontakt, kalt geschlossen</value>
       <fields>
@@ -806,6 +1059,29 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>11da782f-6ba6-5713-be59-3baec427e70f</tstamps>
     </comp>
+    <comp ref="TP604">
+      <value>F27+ / SOT223-Tab</value>
+      <fields>
+        <field name="Repository_ID">F27+ / SOT223-Tab</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "+24V"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="TP" description=""/>
+      <property name="Repository_ID" value="F27+ / SOT223-Tab"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;+24V&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2f4cfa9d-ef02-530c-93f9-8f7adb73f3b7</tstamps>
+    </comp>
     <comp ref="U201">
       <value>SOT-23-5: Typ offen</value>
       <fields>
@@ -830,7 +1106,7 @@
       <tstamps>ec7b541a-ca74-5e20-95bf-37c421cf3562</tstamps>
     </comp>
     <comp ref="U202">
-      <value>1P: Typ offen</value>
+      <value>1P NPN, Typ offen</value>
       <fields>
         <field name="Repository_ID">Q2-1P</field>
         <field name="Feld_Claude">B5</field>
@@ -858,7 +1134,7 @@
         <field name="Repository_ID">L4981AD</field>
         <field name="Feld_Claude">E6</field>
         <field name="Messwerte"/>
-        <field name="Terminal_Aliase">{"14": "L4981AD.14"}</field>
+        <field name="Terminal_Aliase">{"14": "L4981AD.14", "15": "L4981AD.15", "19": "L4981AD.19"}</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -867,7 +1143,7 @@
       <property name="Repository_ID" value="L4981AD"/>
       <property name="Feld_Claude" value="E6"/>
       <property name="Messwerte" value=""/>
-      <property name="Terminal_Aliase" value="{&quot;14&quot;: &quot;L4981AD.14&quot;}"/>
+      <property name="Terminal_Aliase" value="{&quot;14&quot;: &quot;L4981AD.14&quot;, &quot;15&quot;: &quot;L4981AD.15&quot;, &quot;19&quot;: &quot;L4981AD.19&quot;}"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
       <property name="exclude_from_bom"/>
@@ -876,7 +1152,7 @@
       <tstamps>d88e11eb-a66f-5ccc-9fee-4b28aea11ec3</tstamps>
     </comp>
     <comp ref="U401">
-      <value>Typ / Funktionen offen</value>
+      <value>T3 NPN, Typ offen</value>
       <fields>
         <field name="Repository_ID">B20-SOT23</field>
         <field name="Feld_Claude">E6</field>
@@ -898,6 +1174,121 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>16d26b42-e544-5891-888b-bea70670074c</tstamps>
     </comp>
+    <comp ref="U601">
+      <value>Arbeitsnummern, kein Datenblatt</value>
+      <fields>
+        <field name="Repository_ID">MCU unbekannt</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"8": "MCU.8", "11": "MCU.11", "12": "MCU.12", "13": "MCU.13", "17": "MCU.17", "18": "MCU.18", "24": "MCU.24", "26": "MCU.26", "28": "MCU.28"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="MCU" description=""/>
+      <property name="Repository_ID" value="MCU unbekannt"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;8&quot;: &quot;MCU.8&quot;, &quot;11&quot;: &quot;MCU.11&quot;, &quot;12&quot;: &quot;MCU.12&quot;, &quot;13&quot;: &quot;MCU.13&quot;, &quot;17&quot;: &quot;MCU.17&quot;, &quot;18&quot;: &quot;MCU.18&quot;, &quot;24&quot;: &quot;MCU.24&quot;, &quot;26&quot;: &quot;MCU.26&quot;, &quot;28&quot;: &quot;MCU.28&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2226277b-c753-52b2-8d12-e5f69144a5de</tstamps>
+    </comp>
+    <comp ref="U602">
+      <value>TL082I / A = Spannungsfolger</value>
+      <fields>
+        <field name="Repository_ID">TL082 neben T3</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"1": "TL082.1", "2": "TL082.2", "3": "TL082.3", "4": "TL082.4", "5": "TL082.5", "8": "TL082.8"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="TL082" description=""/>
+      <property name="Repository_ID" value="TL082 neben T3"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;TL082.1&quot;, &quot;2&quot;: &quot;TL082.2&quot;, &quot;3&quot;: &quot;TL082.3&quot;, &quot;4&quot;: &quot;TL082.4&quot;, &quot;5&quot;: &quot;TL082.5&quot;, &quot;8&quot;: &quot;TL082.8&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>75856293-cbd9-58be-bfa3-c5b064d9d3b0</tstamps>
+    </comp>
+    <comp ref="U603">
+      <value>OC04</value>
+      <fields>
+        <field name="Repository_ID">OC04</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"A": "OC04.A", "K": "LM2903.7", "C": "+5VA", "E": "MCU.12"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="OC" description=""/>
+      <property name="Repository_ID" value="OC04"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;A&quot;: &quot;OC04.A&quot;, &quot;K&quot;: &quot;LM2903.7&quot;, &quot;C&quot;: &quot;+5VA&quot;, &quot;E&quot;: &quot;MCU.12&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fb06bffb-f340-5483-91fa-99deb3e564ea</tstamps>
+    </comp>
+    <comp ref="U604">
+      <value>OC05</value>
+      <fields>
+        <field name="Repository_ID">OC05</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"A": "OC05.A", "K": "P2.7", "C": "+5VA", "E": "MCU.17"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="OC" description=""/>
+      <property name="Repository_ID" value="OC05"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;A&quot;: &quot;OC05.A&quot;, &quot;K&quot;: &quot;P2.7&quot;, &quot;C&quot;: &quot;+5VA&quot;, &quot;E&quot;: &quot;MCU.17&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8878a6d9-6c5e-5424-a212-d50814307089</tstamps>
+    </comp>
+    <comp ref="U605">
+      <value>Schottky-Kandidat, Typ offen</value>
+      <fields>
+        <field name="Repository_ID">LD3N an Y</field>
+        <field name="Feld_Claude"/>
+        <field name="Messwerte"/>
+        <field name="Terminal_Aliase">{"L": "LD3N.L", "O": "LD3N.O", "R": "LD3N.R"}</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Diag" part="LD3N" description=""/>
+      <property name="Repository_ID" value="LD3N an Y"/>
+      <property name="Feld_Claude" value=""/>
+      <property name="Messwerte" value=""/>
+      <property name="Terminal_Aliase" value="{&quot;L&quot;: &quot;LD3N.L&quot;, &quot;O&quot;: &quot;LD3N.O&quot;, &quot;R&quot;: &quot;LD3N.R&quot;}"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>71dd607e-5316-577a-8a12-beeeb84f306c</tstamps>
+    </comp>
   </components>
   <libparts>
     <libpart lib="Diag" part="B20">
@@ -912,6 +1303,19 @@
         <pin num="Ta" name="Ta" type="passive"/>
         <pin num="Tb" name="Tb" type="passive"/>
         <pin num="Tc" name="Tc" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diag" part="CAP">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Diag" part="DH">
@@ -956,6 +1360,40 @@
         <pin num="2" name="K" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Diag" part="LD3N">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="L" name="L" type="passive"/>
+        <pin num="O" name="O" type="passive"/>
+        <pin num="R" name="R" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diag" part="MCU">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="8" name="8_+5VA" type="passive"/>
+        <pin num="11" name="11_PFC" type="passive"/>
+        <pin num="12" name="12_Enable" type="passive"/>
+        <pin num="13" name="13_P70" type="passive"/>
+        <pin num="17" name="17_PWM" type="passive"/>
+        <pin num="18" name="18_PWM" type="passive"/>
+        <pin num="24" name="24_F27" type="passive"/>
+        <pin num="26" name="26_Y" type="passive"/>
+        <pin num="28" name="28_X" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Diag" part="MOTOR">
       <fields>
         <field name="Reference">U</field>
@@ -969,6 +1407,20 @@
         <pin num="2" name="-" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Diag" part="NPN">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="B" name="B_/_L" type="passive"/>
+        <pin num="C" name="C_/_O" type="passive"/>
+        <pin num="E" name="E_/_R" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Diag" part="NTC">
       <fields>
         <field name="Reference">U</field>
@@ -980,6 +1432,21 @@
       <pins>
         <pin num="1" name="Ka" type="passive"/>
         <pin num="2" name="Kb" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diag" part="OC">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="A" name="1_LED_A" type="passive"/>
+        <pin num="C" name="4_C" type="passive"/>
+        <pin num="E" name="3_E" type="passive"/>
+        <pin num="K" name="2_LED_K" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Diag" part="ONEP">
@@ -1038,6 +1505,8 @@
       </fields>
       <pins>
         <pin num="14" name="14_VFEED" type="passive"/>
+        <pin num="15" name="15_P-UVLO" type="passive"/>
+        <pin num="19" name="19_VCC" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Diag" part="Q2">
@@ -1067,8 +1536,8 @@
         <pin num="11b" name="11b" type="passive"/>
         <pin num="14a" name="14a" type="passive"/>
         <pin num="14b" name="14b" type="passive"/>
-        <pin num="Ca" name="Ca" type="passive"/>
-        <pin num="Cb" name="Cb" type="passive"/>
+        <pin num="minus" name="-" type="passive"/>
+        <pin num="plus" name="+" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Diag" part="RH">
@@ -1110,6 +1579,23 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Diag" part="TL082">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1_OUT_A" type="passive"/>
+        <pin num="2" name="2_IN-_A" type="passive"/>
+        <pin num="3" name="3_IN+_A" type="passive"/>
+        <pin num="4" name="4_V-" type="passive"/>
+        <pin num="5" name="5_IN+_B" type="passive"/>
+        <pin num="8" name="8_V+" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Diag" part="TP">
       <fields>
         <field name="Reference">U</field>
@@ -1126,201 +1612,284 @@
   <libraries/>
   <nets>
     <net code="1" name="/+5VA" class="Default">
+      <node ref="R605" pin="1" pintype="passive"/>
       <node ref="TP501" pin="1" pintype="passive"/>
+      <node ref="U601" pin="8" pinfunction="8_+5VA" pintype="passive"/>
+      <node ref="U603" pin="C" pinfunction="4_C" pintype="passive"/>
+      <node ref="U604" pin="C" pinfunction="4_C" pintype="passive"/>
+      <node ref="U605" pin="R" pinfunction="R" pintype="passive"/>
     </net>
-    <net code="2" name="/+24V" class="Default">
+    <net code="2" name="/+12VA" class="Default">
+      <node ref="U602" pin="8" pinfunction="8_V+" pintype="passive"/>
+    </net>
+    <net code="3" name="/+24V" class="Default">
+      <node ref="K501" pin="plus" pinfunction="+" pintype="passive"/>
       <node ref="TP502" pin="1" pintype="passive"/>
+      <node ref="TP604" pin="1" pintype="passive"/>
     </net>
-    <net code="3" name="/0VA" class="Default">
+    <net code="4" name="/-12VA" class="Default">
+      <node ref="U602" pin="4" pinfunction="4_V-" pintype="passive"/>
+    </net>
+    <net code="5" name="/0VA" class="Default">
+      <node ref="C601" pin="2" pintype="passive"/>
       <node ref="Q2" pin="S" pinfunction="S" pintype="passive"/>
+      <node ref="Q601" pin="E" pinfunction="E_/_R" pintype="passive"/>
+      <node ref="Q602" pin="E" pinfunction="E_/_R" pintype="passive"/>
       <node ref="R106" pin="2" pintype="passive"/>
       <node ref="R107" pin="1" pintype="passive"/>
+      <node ref="R601" pin="2" pintype="passive"/>
       <node ref="TP503" pin="1" pintype="passive"/>
       <node ref="U201" pin="B" pinfunction="B" pintype="passive"/>
       <node ref="U202" pin="R" pinfunction="R" pintype="passive"/>
       <node ref="U401" pin="Tb" pinfunction="Tb" pintype="passive"/>
+      <node ref="U602" pin="5" pinfunction="5_IN+_B" pintype="passive"/>
+      <node ref="U605" pin="L" pinfunction="L" pintype="passive"/>
     </net>
-    <net code="4" name="/0V_KONSOLE" class="Default">
+    <net code="6" name="/0V_KONSOLE" class="Default">
       <node ref="J201" pin="7" pinfunction="7" pintype="passive"/>
       <node ref="J201" pin="8" pinfunction="8" pintype="passive"/>
       <node ref="J204" pin="0V" pinfunction="0V" pintype="passive"/>
+      <node ref="U604" pin="K" pinfunction="2_LED_K" pintype="passive"/>
     </net>
-    <net code="5" name="/1P_L" class="Default">
+    <net code="7" name="/1P_L" class="Default">
+      <node ref="R607" pin="1" pintype="passive"/>
       <node ref="U202" pin="L" pinfunction="L" pintype="passive"/>
     </net>
-    <net code="6" name="/AC_L" class="Default">
+    <net code="8" name="/AC_L" class="Default">
       <node ref="R403" pin="1" pintype="passive"/>
     </net>
-    <net code="7" name="/AC_N" class="Default">
+    <net code="9" name="/AC_N" class="Default">
       <node ref="R401" pin="1" pintype="passive"/>
     </net>
-    <net code="8" name="/B10_KATHODEN" class="Default">
+    <net code="10" name="/B10_KATHODEN" class="Default">
       <node ref="D401" pin="2" pinfunction="K" pintype="passive"/>
       <node ref="D402" pin="2" pinfunction="K" pintype="passive"/>
+      <node ref="R601" pin="1" pintype="passive"/>
+      <node ref="R602" pin="1" pintype="passive"/>
     </net>
-    <net code="9" name="/B18_TP1" class="Default">
+    <net code="11" name="/B18_TP1" class="Default">
       <node ref="R101" pin="2" pintype="passive"/>
       <node ref="R102" pin="1" pintype="passive"/>
     </net>
-    <net code="10" name="/B19_1M_L" class="Default">
+    <net code="12" name="/B19_1M_L" class="Default">
       <node ref="R108" pin="1" pintype="passive"/>
       <node ref="R109" pin="1" pintype="passive"/>
     </net>
-    <net code="11" name="/B19_1M_R" class="Default">
+    <net code="13" name="/B19_1M_R" class="Default">
       <node ref="R108" pin="2" pintype="passive"/>
       <node ref="R109" pin="2" pintype="passive"/>
     </net>
-    <net code="12" name="/B19_A" class="Default">
+    <net code="14" name="/B19_A" class="Default">
       <node ref="R104" pin="2" pintype="passive"/>
       <node ref="R105" pin="1" pintype="passive"/>
     </net>
-    <net code="13" name="/B19_C" class="Default">
+    <net code="15" name="/B19_C" class="Default">
       <node ref="R107" pin="2" pintype="passive"/>
     </net>
-    <net code="14" name="/B20_Ta" class="Default">
+    <net code="16" name="/B20_Ta" class="Default">
+      <node ref="U301" pin="15" pinfunction="15_P-UVLO" pintype="passive"/>
       <node ref="U401" pin="Ta" pinfunction="Ta" pintype="passive"/>
     </net>
-    <net code="15" name="/B20_Tc" class="Default">
+    <net code="17" name="/B20_Tc" class="Default">
+      <node ref="R604" pin="2" pintype="passive"/>
       <node ref="U401" pin="Tc" pinfunction="Tc" pintype="passive"/>
     </net>
-    <net code="16" name="/DRV_A" class="Default">
+    <net code="18" name="/DRV_A" class="Default">
       <node ref="U201" pin="A" pinfunction="A" pintype="passive"/>
     </net>
-    <net code="17" name="/DRV_D5" class="Default">
+    <net code="19" name="/DRV_C" class="Default">
+      <node ref="R202" pin="1" pintype="passive"/>
+      <node ref="U201" pin="C" pinfunction="C" pintype="passive"/>
+      <node ref="U301" pin="19" pinfunction="19_VCC" pintype="passive"/>
+    </net>
+    <net code="20" name="/DRV_D5" class="Default">
       <node ref="U201" pin="D5" pinfunction="D5" pintype="passive"/>
     </net>
-    <net code="18" name="/GATE" class="Default">
+    <net code="21" name="/ENABLE" class="Default">
+      <node ref="U601" pin="12" pinfunction="12_Enable" pintype="passive"/>
+      <node ref="U603" pin="E" pinfunction="3_E" pintype="passive"/>
+    </net>
+    <net code="22" name="/F27_CTRL" class="Default">
+      <node ref="R606" pin="1" pintype="passive"/>
+      <node ref="U601" pin="24" pinfunction="24_F27" pintype="passive"/>
+    </net>
+    <net code="23" name="/GATE" class="Default">
       <node ref="Q2" pin="G" pinfunction="G" pintype="passive"/>
       <node ref="R201" pin="1" pintype="passive"/>
     </net>
-    <net code="19" name="/L+" class="Default">
+    <net code="24" name="/L+" class="Default">
       <node ref="D3" pin="2" pinfunction="K" pintype="passive"/>
       <node ref="M1" pin="1" pinfunction="+" pintype="passive"/>
       <node ref="R101" pin="1" pintype="passive"/>
     </net>
-    <net code="20" name="/L-" class="Default">
+    <net code="25" name="/L-" class="Default">
       <node ref="D3" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="M1" pin="2" pinfunction="-" pintype="passive"/>
       <node ref="Q2" pin="D" pinfunction="D" pintype="passive"/>
     </net>
-    <net code="21" name="/N_P2_6" class="Default">
+    <net code="26" name="/N_F27-minus" class="Default">
+      <node ref="K501" pin="minus" pinfunction="-" pintype="passive"/>
+      <node ref="Q601" pin="C" pinfunction="C_/_O" pintype="passive"/>
+    </net>
+    <net code="27" name="/N_J_1001R" class="Default">
+      <node ref="R602" pin="2" pintype="passive"/>
+      <node ref="U602" pin="3" pinfunction="3_IN+_A" pintype="passive"/>
+    </net>
+    <net code="28" name="/N_LM2903_7" class="Default">
+      <node ref="U603" pin="K" pinfunction="2_LED_K" pintype="passive"/>
+    </net>
+    <net code="29" name="/N_OC04_A" class="Default">
+      <node ref="U603" pin="A" pinfunction="1_LED_A" pintype="passive"/>
+    </net>
+    <net code="30" name="/N_OC05_A" class="Default">
+      <node ref="U604" pin="A" pinfunction="1_LED_A" pintype="passive"/>
+    </net>
+    <net code="31" name="/N_P2_6" class="Default">
       <node ref="J201" pin="6" pinfunction="6" pintype="passive"/>
     </net>
-    <net code="22" name="/N_P2_11" class="Default">
+    <net code="32" name="/N_P2_11" class="Default">
       <node ref="J201" pin="11" pinfunction="11" pintype="passive"/>
     </net>
-    <net code="23" name="/P1_E1" class="Default">
+    <net code="33" name="/N_T2_B" class="Default">
+      <node ref="Q602" pin="B" pinfunction="B_/_L" pintype="passive"/>
+    </net>
+    <net code="34" name="/N_T2_C" class="Default">
+      <node ref="Q602" pin="C" pinfunction="C_/_O" pintype="passive"/>
+      <node ref="R608" pin="2" pintype="passive"/>
+    </net>
+    <net code="35" name="/N_T2_series" class="Default">
+      <node ref="R607" pin="2" pintype="passive"/>
+      <node ref="R608" pin="1" pintype="passive"/>
+    </net>
+    <net code="36" name="/N_T4_B" class="Default">
+      <node ref="Q601" pin="B" pinfunction="B_/_L" pintype="passive"/>
+      <node ref="R606" pin="2" pintype="passive"/>
+    </net>
+    <net code="37" name="/P1_E1" class="Default">
       <node ref="R103" pin="2" pintype="passive"/>
       <node ref="R104" pin="1" pintype="passive"/>
     </net>
-    <net code="24" name="/P2_1_4" class="Default">
+    <net code="38" name="/P2_1_4" class="Default">
       <node ref="J201" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="J201" pin="4" pinfunction="4" pintype="passive"/>
     </net>
-    <net code="25" name="/P2_TACHO" class="Default">
+    <net code="39" name="/P2_TACHO" class="Default">
       <node ref="J201" pin="9" pinfunction="9" pintype="passive"/>
     </net>
-    <net code="26" name="/P4_TACHO" class="Default">
+    <net code="40" name="/P4_TACHO" class="Default">
       <node ref="J204" pin="TACHO" pinfunction="TACHO" pintype="passive"/>
     </net>
-    <net code="27" name="/RG_U" class="Default">
+    <net code="41" name="/P70" class="Default">
+      <node ref="U601" pin="13" pinfunction="13_P70" pintype="passive"/>
+    </net>
+    <net code="42" name="/PFC_CTRL" class="Default">
+      <node ref="R604" pin="1" pintype="passive"/>
+      <node ref="R605" pin="2" pintype="passive"/>
+      <node ref="U601" pin="11" pinfunction="11_PFC" pintype="passive"/>
+    </net>
+    <net code="43" name="/PWM" class="Default">
+      <node ref="U601" pin="17" pinfunction="17_PWM" pintype="passive"/>
+      <node ref="U601" pin="18" pinfunction="18_PWM" pintype="passive"/>
+      <node ref="U604" pin="E" pinfunction="3_E" pintype="passive"/>
+    </net>
+    <net code="44" name="/RG_U" class="Default">
       <node ref="R201" pin="2" pintype="passive"/>
       <node ref="U201" pin="E" pinfunction="E" pintype="passive"/>
     </net>
-    <net code="28" name="/THERM_PINK" class="Default">
+    <net code="45" name="/THERM_PINK" class="Default">
       <node ref="SW501" pin="2" pintype="passive"/>
     </net>
-    <net code="29" name="/VFEED" class="Default">
+    <net code="46" name="/TL082_OUT" class="Default">
+      <node ref="R301" pin="1" pintype="passive"/>
+      <node ref="R302" pin="1" pintype="passive"/>
+      <node ref="U602" pin="1" pinfunction="1_OUT_A" pintype="passive"/>
+      <node ref="U602" pin="2" pinfunction="2_IN-_A" pintype="passive"/>
+    </net>
+    <net code="47" name="/VFEED" class="Default">
       <node ref="R105" pin="2" pintype="passive"/>
       <node ref="R106" pin="1" pintype="passive"/>
       <node ref="U301" pin="14" pinfunction="14_VFEED" pintype="passive"/>
     </net>
-    <net code="30" name="Net-(D401-A)" class="Default">
+    <net code="48" name="/X" class="Default">
+      <node ref="C601" pin="1" pintype="passive"/>
+      <node ref="R603" pin="2" pintype="passive"/>
+      <node ref="U601" pin="28" pinfunction="28_X" pintype="passive"/>
+    </net>
+    <net code="49" name="/X_VOR_100R" class="Default">
+      <node ref="R302" pin="2" pintype="passive"/>
+      <node ref="R603" pin="1" pintype="passive"/>
+    </net>
+    <net code="50" name="/Y" class="Default">
+      <node ref="U601" pin="26" pinfunction="26_Y" pintype="passive"/>
+      <node ref="U605" pin="O" pinfunction="O" pintype="passive"/>
+    </net>
+    <net code="51" name="Net-(D401-A)" class="Default">
       <node ref="D401" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="R402" pin="2" pintype="passive"/>
     </net>
-    <net code="31" name="Net-(D402-A)" class="Default">
+    <net code="52" name="Net-(D402-A)" class="Default">
       <node ref="D402" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="R404" pin="2" pintype="passive"/>
     </net>
-    <net code="32" name="Net-(J201-Pad5)" class="Default">
+    <net code="53" name="Net-(J201-Pad5)" class="Default">
       <node ref="J201" pin="5" pinfunction="5" pintype="passive"/>
       <node ref="SW501" pin="1" pintype="passive"/>
     </net>
-    <net code="33" name="Net-(K501-Pad11a)" class="Default">
+    <net code="54" name="Net-(K501-Pad11a)" class="Default">
       <node ref="K501" pin="11a" pinfunction="11a" pintype="passive"/>
       <node ref="K501" pin="11b" pinfunction="11b" pintype="passive"/>
     </net>
-    <net code="34" name="Net-(K501-Pad14a)" class="Default">
+    <net code="55" name="Net-(K501-Pad14a)" class="Default">
       <node ref="K501" pin="14a" pinfunction="14a" pintype="passive"/>
       <node ref="K501" pin="14b" pinfunction="14b" pintype="passive"/>
     </net>
-    <net code="35" name="Net-(R102-Pad2)" class="Default">
+    <net code="56" name="Net-(R102-Pad2)" class="Default">
       <node ref="R102" pin="2" pintype="passive"/>
       <node ref="R103" pin="1" pintype="passive"/>
     </net>
-    <net code="36" name="Net-(R202-Pad1)" class="Default">
-      <node ref="R202" pin="1" pintype="passive"/>
-      <node ref="U201" pin="C" pinfunction="C" pintype="passive"/>
-    </net>
-    <net code="37" name="Net-(R202-Pad2)" class="Default">
+    <net code="57" name="Net-(R202-Pad2)" class="Default">
       <node ref="R202" pin="2" pintype="passive"/>
       <node ref="U202" pin="O" pinfunction="O" pintype="passive"/>
     </net>
-    <net code="38" name="Net-(R401-Pad2)" class="Default">
+    <net code="58" name="Net-(R401-Pad2)" class="Default">
       <node ref="R401" pin="2" pintype="passive"/>
       <node ref="R402" pin="1" pintype="passive"/>
     </net>
-    <net code="39" name="Net-(R403-Pad2)" class="Default">
+    <net code="59" name="Net-(R403-Pad2)" class="Default">
       <node ref="R403" pin="2" pintype="passive"/>
       <node ref="R404" pin="1" pintype="passive"/>
     </net>
-    <net code="40" name="unconnected-(K501-PadCa)" class="Default">
-      <node ref="K501" pin="Ca" pinfunction="Ca" pintype="passive"/>
-    </net>
-    <net code="41" name="unconnected-(K501-PadCb)" class="Default">
-      <node ref="K501" pin="Cb" pinfunction="Cb" pintype="passive"/>
-    </net>
-    <net code="42" name="unconnected-(R203-Pad1)" class="Default">
+    <net code="60" name="unconnected-(R203-Pad1)" class="Default">
       <node ref="R203" pin="1" pintype="passive"/>
     </net>
-    <net code="43" name="unconnected-(R203-Pad2)" class="Default">
+    <net code="61" name="unconnected-(R203-Pad2)" class="Default">
       <node ref="R203" pin="2" pintype="passive"/>
     </net>
-    <net code="44" name="unconnected-(R204-Pad1)" class="Default">
+    <net code="62" name="unconnected-(R204-Pad1)" class="Default">
       <node ref="R204" pin="1" pintype="passive"/>
     </net>
-    <net code="45" name="unconnected-(R204-Pad2)" class="Default">
+    <net code="63" name="unconnected-(R204-Pad2)" class="Default">
       <node ref="R204" pin="2" pintype="passive"/>
     </net>
-    <net code="46" name="unconnected-(R301-Pad1)" class="Default">
-      <node ref="R301" pin="1" pintype="passive"/>
-    </net>
-    <net code="47" name="unconnected-(R301-Pad2)" class="Default">
+    <net code="64" name="unconnected-(R301-Pad2)" class="Default">
       <node ref="R301" pin="2" pintype="passive"/>
     </net>
-    <net code="48" name="unconnected-(R302-Pad1)" class="Default">
-      <node ref="R302" pin="1" pintype="passive"/>
-    </net>
-    <net code="49" name="unconnected-(R302-Pad2)" class="Default">
-      <node ref="R302" pin="2" pintype="passive"/>
-    </net>
-    <net code="50" name="unconnected-(R303-Pad1)" class="Default">
+    <net code="65" name="unconnected-(R303-Pad1)" class="Default">
       <node ref="R303" pin="1" pintype="passive"/>
     </net>
-    <net code="51" name="unconnected-(R303-Pad2)" class="Default">
+    <net code="66" name="unconnected-(R303-Pad2)" class="Default">
       <node ref="R303" pin="2" pintype="passive"/>
     </net>
-    <net code="52" name="unconnected-(R304-Pad1)" class="Default">
+    <net code="67" name="unconnected-(R304-Pad1)" class="Default">
       <node ref="R304" pin="1" pintype="passive"/>
     </net>
-    <net code="53" name="unconnected-(R304-Pad2)" class="Default">
+    <net code="68" name="unconnected-(R304-Pad2)" class="Default">
       <node ref="R304" pin="2" pintype="passive"/>
     </net>
-    <net code="54" name="unconnected-(TH501-Ka-Pad1)" class="Default">
+    <net code="69" name="unconnected-(TH501-Ka-Pad1)" class="Default">
       <node ref="TH501" pin="1" pinfunction="Ka" pintype="passive"/>
     </net>
-    <net code="55" name="unconnected-(TH501-Kb-Pad2)" class="Default">
+    <net code="70" name="unconnected-(TH501-Kb-Pad2)" class="Default">
       <node ref="TH501" pin="2" pinfunction="Kb" pintype="passive"/>
     </net>
   </nets>

@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "sheet": "A1",
-  "branch": "110926",
-  "source_commit": "4e8a91f0a84bc1fafa61f6027e0ec2bc0bf99199",
+  "sheet": "User 841x1100 mm",
+  "branch": "main",
+  "source_commit": "f60fe5d339c43876fd33d5baed5f18d2b33cc3d1",
   "components": [
     {
       "Reference": "R101",
@@ -147,11 +147,21 @@
       "Feld_Claude": "E6",
       "Messwerte": "",
       "Terminals": {
-        "14": "L4981AD.14"
+        "14": "L4981AD.14",
+        "15": "L4981AD.15",
+        "19": "L4981AD.19"
       },
       "Pins_xy": {
         "14": [
           550,
+          80
+        ],
+        "15": [
+          585,
+          107
+        ],
+        "19": [
+          620,
           80
         ]
       },
@@ -602,7 +612,7 @@
       "Reference": "U202",
       "Symbol": "ONEP",
       "Repository_ID": "Q2-1P",
-      "Wert": "1P: Typ offen",
+      "Wert": "1P NPN, Typ offen",
       "Feld_Claude": "B5",
       "Messwerte": "",
       "Terminals": {
@@ -643,7 +653,7 @@
       "Reference": "U401",
       "Symbol": "B20",
       "Repository_ID": "B20-SOT23",
-      "Wert": "Typ / Funktionen offen",
+      "Wert": "T3 NPN, Typ offen",
       "Feld_Claude": "E6",
       "Messwerte": "",
       "Terminals": {
@@ -715,8 +725,8 @@
       "Feld_Claude": "E6",
       "Messwerte": "a→b 2,7 / b→a 3,3 kΩ",
       "Terminals": {
-        "1": "B20-R2a",
-        "2": "B20-R2b"
+        "1": "OUT4751.1",
+        "2": "OUT4751.2"
       },
       "Pins_xy": {
         "1": [
@@ -1012,19 +1022,19 @@
       "Feld_Claude": "I4",
       "Messwerte": "Spule 1,41 kΩ; Kontaktgruppe 68,4 Ω in-circuit",
       "Terminals": {
-        "Ca": "F27-Ca",
-        "Cb": "F27-Cb",
+        "plus": "F27-plus",
+        "minus": "F27-minus",
         "11a": "F27-11a",
         "11b": "F27-11b",
         "14a": "F27-14a",
         "14b": "F27-14b"
       },
       "Pins_xy": {
-        "Ca": [
+        "plus": [
           380,
           455
         ],
-        "Cb": [
+        "minus": [
           480,
           455
         ],
@@ -1233,6 +1243,622 @@
           578
         ]
       ]
+    },
+    {
+      "Reference": "U601",
+      "Symbol": "MCU",
+      "Repository_ID": "MCU unbekannt",
+      "Wert": "Arbeitsnummern, kein Datenblatt",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "8": "MCU.8",
+        "11": "MCU.11",
+        "12": "MCU.12",
+        "13": "MCU.13",
+        "17": "MCU.17",
+        "18": "MCU.18",
+        "24": "MCU.24",
+        "26": "MCU.26",
+        "28": "MCU.28"
+      },
+      "Pins_xy": {
+        "8": [
+          715,
+          640
+        ],
+        "11": [
+          715,
+          654
+        ],
+        "12": [
+          715,
+          668
+        ],
+        "13": [
+          715,
+          682
+        ],
+        "17": [
+          715,
+          696
+        ],
+        "18": [
+          715,
+          710
+        ],
+        "24": [
+          715,
+          724
+        ],
+        "26": [
+          715,
+          738
+        ],
+        "28": [
+          715,
+          752
+        ]
+      },
+      "Position_mm": [
+        760,
+        710
+      ],
+      "Properties": [
+        [
+          720,
+          625
+        ],
+        [
+          720,
+          790
+        ]
+      ]
+    },
+    {
+      "Reference": "R601",
+      "Symbol": "RV",
+      "Repository_ID": "B10-2212",
+      "Wert": "22,1 k / 2212",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "J.2212R",
+        "2": "J.2212L"
+      },
+      "Pins_xy": {
+        "1": [
+          65,
+          672.3
+        ],
+        "2": [
+          65,
+          697.7
+        ]
+      },
+      "Position_mm": [
+        65,
+        685
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R602",
+      "Symbol": "RH",
+      "Repository_ID": "B10-1001",
+      "Wert": "1 k / 1001",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "J.1001L",
+        "2": "J.1001R"
+      },
+      "Pins_xy": {
+        "1": [
+          132.3,
+          660
+        ],
+        "2": [
+          157.7,
+          660
+        ]
+      },
+      "Position_mm": [
+        145,
+        660
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "U602",
+      "Symbol": "TL082",
+      "Repository_ID": "TL082 neben T3",
+      "Wert": "TL082I / A = Spannungsfolger",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "TL082.1",
+        "2": "TL082.2",
+        "3": "TL082.3",
+        "4": "TL082.4",
+        "5": "TL082.5",
+        "8": "TL082.8"
+      },
+      "Pins_xy": {
+        "3": [
+          230,
+          675
+        ],
+        "2": [
+          230,
+          695
+        ],
+        "1": [
+          300,
+          685
+        ],
+        "8": [
+          265,
+          650
+        ],
+        "4": [
+          265,
+          720
+        ],
+        "5": [
+          285,
+          720
+        ]
+      },
+      "Position_mm": [
+        265,
+        685
+      ],
+      "Properties": [
+        [
+          230,
+          742
+        ],
+        [
+          230,
+          750
+        ]
+      ]
+    },
+    {
+      "Reference": "R603",
+      "Symbol": "RH",
+      "Repository_ID": "Netzsignal-1000",
+      "Wert": "100 Ω / 1000",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "X.1000in",
+        "2": "X"
+      },
+      "Pins_xy": {
+        "1": [
+          412.3,
+          685
+        ],
+        "2": [
+          437.7,
+          685
+        ]
+      },
+      "Position_mm": [
+        425,
+        685
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "C601",
+      "Symbol": "CAP",
+      "Repository_ID": "X-Filterkondensator",
+      "Wert": "C Wert offen",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "X",
+        "2": "0VA"
+      },
+      "Pins_xy": {
+        "1": [
+          507.3,
+          685
+        ],
+        "2": [
+          532.7,
+          685
+        ]
+      },
+      "Position_mm": [
+        520,
+        685
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "U605",
+      "Symbol": "LD3N",
+      "Repository_ID": "LD3N an Y",
+      "Wert": "Schottky-Kandidat, Typ offen",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "L": "LD3N.L",
+        "O": "LD3N.O",
+        "R": "LD3N.R"
+      },
+      "Pins_xy": {
+        "L": [
+          450,
+          750
+        ],
+        "O": [
+          485,
+          775
+        ],
+        "R": [
+          520,
+          750
+        ]
+      },
+      "Position_mm": [
+        485,
+        750
+      ],
+      "Properties": [
+        [
+          455,
+          733
+        ],
+        [
+          455,
+          740
+        ]
+      ]
+    },
+    {
+      "Reference": "U603",
+      "Symbol": "OC",
+      "Repository_ID": "OC04",
+      "Wert": "OC04",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "A": "OC04.A",
+        "K": "LM2903.7",
+        "C": "+5VA",
+        "E": "MCU.12"
+      },
+      "Pins_xy": {
+        "A": [
+          70,
+          840
+        ],
+        "K": [
+          70,
+          870
+        ],
+        "C": [
+          130,
+          840
+        ],
+        "E": [
+          130,
+          870
+        ]
+      },
+      "Position_mm": [
+        100,
+        855
+      ],
+      "Properties": [
+        [
+          80,
+          818
+        ],
+        [
+          80,
+          825
+        ]
+      ]
+    },
+    {
+      "Reference": "U604",
+      "Symbol": "OC",
+      "Repository_ID": "OC05",
+      "Wert": "OC05",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "A": "OC05.A",
+        "K": "P2.7",
+        "C": "+5VA",
+        "E": "MCU.17"
+      },
+      "Pins_xy": {
+        "A": [
+          270,
+          840
+        ],
+        "K": [
+          270,
+          870
+        ],
+        "C": [
+          330,
+          840
+        ],
+        "E": [
+          330,
+          870
+        ]
+      },
+      "Position_mm": [
+        300,
+        855
+      ],
+      "Properties": [
+        [
+          280,
+          818
+        ],
+        [
+          280,
+          825
+        ]
+      ]
+    },
+    {
+      "Reference": "R604",
+      "Symbol": "RH",
+      "Repository_ID": "T3-2211",
+      "Wert": "2,21 k / 2211",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "MCU.11",
+        "2": "B20-Tc"
+      },
+      "Pins_xy": {
+        "1": [
+          457.3,
+          835
+        ],
+        "2": [
+          482.7,
+          835
+        ]
+      },
+      "Position_mm": [
+        470,
+        835
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R605",
+      "Symbol": "RH",
+      "Repository_ID": "T3-01C",
+      "Wert": "10 k / 01C",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "+5VA",
+        "2": "MCU.11"
+      },
+      "Pins_xy": {
+        "1": [
+          457.3,
+          875
+        ],
+        "2": [
+          482.7,
+          875
+        ]
+      },
+      "Position_mm": [
+        470,
+        875
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R606",
+      "Symbol": "RH",
+      "Repository_ID": "T4-1001",
+      "Wert": "1 k / 1001",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "MCU.24",
+        "2": "T4.B"
+      },
+      "Pins_xy": {
+        "1": [
+          627.3,
+          835
+        ],
+        "2": [
+          652.7,
+          835
+        ]
+      },
+      "Position_mm": [
+        640,
+        835
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "Q601",
+      "Symbol": "NPN",
+      "Repository_ID": "T4 1P",
+      "Wert": "NPN, genauer Typ offen",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "B": "T4.B",
+        "C": "F27-minus",
+        "E": "0VA"
+      },
+      "Pins_xy": {
+        "B": [
+          710,
+          875
+        ],
+        "C": [
+          750,
+          850
+        ],
+        "E": [
+          750,
+          900
+        ]
+      },
+      "Position_mm": [
+        735,
+        875
+      ],
+      "Properties": [
+        [
+          710,
+          913
+        ],
+        [
+          710,
+          921
+        ]
+      ]
+    },
+    {
+      "Reference": "TP604",
+      "Symbol": "TP",
+      "Repository_ID": "F27+ / SOT223-Tab",
+      "Wert": "F27+ / SOT223-Tab",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "+24V"
+      },
+      "Pins_xy": {
+        "1": [
+          610,
+          940
+        ]
+      },
+      "Position_mm": [
+        610,
+        940
+      ],
+      "Properties": [
+        [
+          613,
+          933
+        ],
+        [
+          613,
+          944
+        ]
+      ]
+    },
+    {
+      "Reference": "R607",
+      "Symbol": "RH",
+      "Repository_ID": "1P-Basis-4750",
+      "Wert": "475 Ω / 4750",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "Q2-1P.L",
+        "2": "T2.series"
+      },
+      "Pins_xy": {
+        "1": [
+          137.3,
+          1015
+        ],
+        "2": [
+          162.7,
+          1015
+        ]
+      },
+      "Position_mm": [
+        150,
+        1015
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "R608",
+      "Symbol": "RH",
+      "Repository_ID": "1P-Basis-2211",
+      "Wert": "2,21 k / 2211",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "1": "T2.series",
+        "2": "T2.C"
+      },
+      "Pins_xy": {
+        "1": [
+          277.3,
+          1015
+        ],
+        "2": [
+          302.7,
+          1015
+        ]
+      },
+      "Position_mm": [
+        290,
+        1015
+      ],
+      "Properties": null
+    },
+    {
+      "Reference": "Q602",
+      "Symbol": "NPN",
+      "Repository_ID": "T2",
+      "Wert": "NPN, Typ offen",
+      "Feld_Claude": "",
+      "Messwerte": "",
+      "Terminals": {
+        "B": "T2.B",
+        "C": "T2.C",
+        "E": "0VA"
+      },
+      "Pins_xy": {
+        "B": [
+          400,
+          1030
+        ],
+        "C": [
+          440,
+          1005
+        ],
+        "E": [
+          440,
+          1055
+        ]
+      },
+      "Position_mm": [
+        425,
+        1030
+      ],
+      "Properties": [
+        [
+          400,
+          1070
+        ],
+        [
+          400,
+          1078
+        ]
+      ]
     }
   ],
   "nets": {
@@ -1255,7 +1881,9 @@
       "B10-D1.2",
       "B10-J1",
       "B10-J3",
-      "B10-D2.2"
+      "B10-D2.2",
+      "J.2212R",
+      "J.1001L"
     ],
     "N_B10-R4_2": [
       "B10-D2.1",
@@ -1276,7 +1904,8 @@
       "B18-P2",
       "B18-R3.2",
       "B18-V2/TP2",
-      "DC MOTOR L+"
+      "DC MOTOR L+",
+      "Zwischenkreis-Elko.+"
     ],
     "B18_TP1": [
       "B18-R3.1",
@@ -1305,10 +1934,19 @@
       "B20-Tb",
       "Q2-DRV.B",
       "0V24",
-      "Q2-1P.R"
+      "Q2-1P.R",
+      "J.2212L",
+      "TL082.5",
+      "LD3N.L",
+      "T4.E",
+      "T2.E"
     ],
     "+5VA": [
-      "+5VA"
+      "+5VA",
+      "LD3N.R",
+      "MCU.8",
+      "OC04.C",
+      "OC05.C"
     ],
     "L-": [
       "DC MOTOR L-",
@@ -1325,7 +1963,8 @@
     "0V_KONSOLE": [
       "P4.0V",
       "P2.7",
-      "P2.8"
+      "P2.8",
+      "OC05.K"
     ],
     "P2_1_4": [
       "P2.1",
@@ -1361,17 +2000,20 @@
       "B19-1004oben.rechts",
       "B19-1004unten.rechts"
     ],
-    "N_B20-R1a": [
-      "B20-R1a"
+    "TL082_OUT": [
+      "B20-R1a",
+      "B20-R2a",
+      "TL082.1",
+      "TL082.2",
+      "OUT4751.1"
     ],
     "N_B20-R1b": [
       "B20-R1b"
     ],
-    "N_B20-R2a": [
-      "B20-R2a"
-    ],
-    "N_B20-R2b": [
-      "B20-R2b"
+    "X_VOR_100R": [
+      "B20-R2b",
+      "OUT4751.2",
+      "X.1000in"
     ],
     "N_B20-R3a": [
       "B20-R3a"
@@ -1386,7 +2028,8 @@
       "B20-R4b"
     ],
     "B20_Ta": [
-      "B20-Ta"
+      "B20-Ta",
+      "L4981AD.15"
     ],
     "B20_Tc": [
       "B20-Tc"
@@ -1396,7 +2039,8 @@
     ],
     "DRV_C": [
       "Q2-DRV.C",
-      "Q2-R2211.b"
+      "Q2-R2211.b",
+      "L4981AD.19"
     ],
     "DRV_D5": [
       "Q2-DRV.D5"
@@ -1418,7 +2062,9 @@
       "R4752-b"
     ],
     "+24V": [
-      "+24V"
+      "+24V",
+      "F27-plus",
+      "SOT223.Tab"
     ],
     "1P_L": [
       "Q2-1P.L"
@@ -1443,11 +2089,80 @@
     "THERM_PINK": [
       "THERM_PINK_UNBEKANNT"
     ],
+    "N_J_1001R": [
+      "J.1001R",
+      "TL082.3"
+    ],
+    "+12VA": [
+      "TL082.8",
+      "+12VA"
+    ],
+    "-12VA": [
+      "TL082.4",
+      "-12VA"
+    ],
+    "X": [
+      "X",
+      "MCU.28"
+    ],
+    "Y": [
+      "LD3N.O",
+      "MCU.26"
+    ],
+    "PWM": [
+      "MCU.17",
+      "MCU.18",
+      "OC05.E"
+    ],
+    "P70": [
+      "MCU.13",
+      "P70"
+    ],
+    "PFC_CTRL": [
+      "MCU.11"
+    ],
+    "F27_CTRL": [
+      "MCU.24"
+    ],
+    "N_T4_B": [
+      "T4.B"
+    ],
+    "N_F27-minus": [
+      "F27-minus",
+      "T4.C"
+    ],
     "N_P2_6": [
       "P2.6"
     ],
+    "N_OC05_A": [
+      "OC05.A"
+    ],
+    "N_LM2903_6": [
+      "LM2903.6"
+    ],
+    "ENABLE": [
+      "MCU.12",
+      "OC04.E"
+    ],
+    "N_LM2903_7": [
+      "OC04.K",
+      "LM2903.7"
+    ],
+    "N_T2_series": [
+      "T2.series"
+    ],
+    "N_T2_C": [
+      "T2.C"
+    ],
+    "N_T2_B": [
+      "T2.B",
+      "T2.Testpad"
+    ],
     "N_P2_11": [
       "P2.11"
+    ],
+    "N_OC04_A": [
+      "OC04.A"
     ]
   },
   "scope": "0V24=0VA only in measured plug configuration; unknown continuation remains open",

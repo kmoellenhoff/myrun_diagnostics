@@ -133,3 +133,66 @@ RLY-03;F27-14a;F27-14b;Kupfer direkt;M;0 Ω beidseitig;docs/messplan_stromlos_20
 RLY-04;F27-11a;F27-14a;"In-Circuit-Messung; keine Netzvereinigung";M;68,4 Ω beidseitig;docs/messplan_stromlos_2026-11-08/messprotokoll_2026-11-09.csv RLY-04 / 04b / 04c;;"Kein einzeln belegter 68-Ω-Parallelwiderstand ergänzt; Kontakt nicht betätigt geprüft"
 NTC-01.kalt;P600-Ka;P600-Kb;Sensorwiderstand;M;"11,28 kΩ beidseitig abgezogen; fingerwarm 10,9 kΩ";docs/messplan_stromlos_2026-11-08/messprotokoll_2026-11-09.csv NTC-01.kalt / warm;;"Gesteckter In-Circuit-Wert 3,11 / 2,47 kΩ; Platinenpfad nicht identifiziert"
 HW-THERM;P2.5;THERM_PINK_UNBEKANNT;Motor-Thermokontakt (Bauteil, keine permanente Kupfervereinigung);M;≈0 Ω kalt;docs/HARDWARE.md Abschnitt 3, thermal loop;;"Orange Leitung zu P2.5; rosa Rückleitung ohne bestätigten Steckerpin"
+AKT-001;B10-J1;J.2212R;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-002;B10-J1;J.1001L;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-003;J.2212L;0VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-004;J.1001R;TL082.3;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-005;TL082.1;TL082.2;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-006;TL082.8;+12VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-007;TL082.4;-12VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-008;TL082.5;0VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-009;TL082.1;OUT4751.1;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-010;OUT4751.2;X.1000in;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-011;X;MCU.28;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-012;LD3N.O;MCU.26;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-013;LD3N.L;0VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-014;LD3N.R;+5VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-015;MCU.8;+5VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-016;MCU.17;MCU.18;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-017;B20-Ta;L4981AD.15;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-018;B20-Tb;0VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-019;MCU.13;P70;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-020;L4981AD.19;Q2-DRV.C;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-11.md — Nach dem Nachlöten, 10:24;;
+AKT-021;F27-plus;+24V;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-022;J.2212R;J.2212L;Bauteil;M;22,1 kΩ / 2212;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;Fußwiderstand
+AKT-023;J.1001L;J.1001R;Bauteil;M;1 kΩ / 1001;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;kein direkter MCU-Pfad
+AKT-024;OUT4751.1;OUT4751.2;Bauteil;M;4,75 kΩ / 4751;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;"Genau EIN Serien-4751 = B20-R2/R302; Identität per Fotoabgleich, alte Messwerte erhalten"
+AKT-025;X.1000in;X;Bauteil;M;100 Ω / 1000;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-026;X;0VA;Kondensator;M;Wert offen;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;Parallelfilter, kein Serienkondensator
+AKT-027;LD3N.L;LD3N.O;Diodenrichtung;M;L → O;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;Ein physisches LD3N-Gehäuse U605 mit zwei Übergängen
+AKT-028;LD3N.O;LD3N.R;Diodenrichtung;M;O → R;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;"Ein physisches LD3N-Gehäuse U605 mit zwei Übergängen; Schottky-Kandidat, kein Leck bewiesen"
+AKT-029;X;MCU.26;Getrennte Netze;M;6,4–6,5 kΩ;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;kein Kupferbeleg, keine Vereinigung
+AKT-030;MCU.11;B20-Tc;Bauteil;M;2,21 kΩ / 2211;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;T3-Basis
+AKT-031;+5VA;MCU.11;Bauteil;M;10 kΩ / 01C;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;T3-Pullup
+AKT-032;MCU.24;T4.B;Bauteil;M;1 kΩ / 1001;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;T4 NPN: BasisL, KollektorO, EmitterR
+AKT-033;F27-plus;F27-minus;Relaisspule;M;ca. 1,4 kΩ;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;"Ca/Cb-Aliaszuordnung offen; keine zusätzliche Spule"
+AKT-034;F27-11a;F27-14a;"In-Circuit-Messung; keine Netzvereinigung";M;0,03 Ω erregt, wiederholt;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11., F27 Bestromungstest;;historische 68,4 Ω im unbetätigten Zustand erhalten
+AKT-035;P2.6;OC05.A;Unaufgelöster Serienpfad;M;0,956 kΩ;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;kein unabhängig identifizierter Einzelwiderstand
+AKT-036;P2.5;LM2903.6;"In-Circuit-Messung; keine Netzvereinigung";M;17 kΩ;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;kein physischer 17-kΩ-Widerstand identifiziert
+AKT-037;MCU.12;0VA;"In-Circuit-Messung; keine Netzvereinigung";M;3,3 kΩ;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;kein identifizierter Einzelwiderstand
+AKT-038;MCU.17;0VA;"In-Circuit-Messung; keine Netzvereinigung";M;10 kΩ;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;kein identifizierter Einzelwiderstand
+AKT-039;MCU.11;0VA;Live-Messung;M;4,9 V Standby und Start;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;keine neue Messung
+AKT-040;L4981AD.15;0VA;Live-Messung;M;ca. 6 mV Standby und Start;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-041;L4981AD.19;0VA;Live-Messung;M;13,5 V stabil;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;"Treiber-VDD; nicht MCU-VDD; nicht ohne Beleg mit +12VA vereinigt"
+AKT-042;F27-plus;F27-minus;Live-Messung;M;0 V Standby und Fehlstart;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;"Plus gegen 0VA 24 V; SOT223-Tab = Plus, Typ offen"
+AKT-043;OC04.C;+5VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-044;OC05.C;+5VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-045;OC04.E;MCU.12;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-046;OC05.E;MCU.17;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-047;OC04.K;LM2903.7;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-048;OC05.K;P2.7;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-049;T4.E;0VA;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-050;T4.C;F27-minus;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-051;SOT223.Tab;F27-plus;Kupfer direkt;M;≈0 Ω;docs/LAUF_2026-11-14.md — bestätigte Schlusskorrekturen 14.–16.11.;;
+AKT-052;Q2-1P.L;T2.series;Bauteil;M;475 Ω / 4750;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;physischer Serienwiderstand
+AKT-053;T2.series;T2.C;Bauteil;M;2,21 kΩ / 2211;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;physischer Serienwiderstand
+AKT-054;T2.B;T2.Testpad;Kupfer direkt;M;0 Ω;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;"Quelle hinter kleinem 01C/010 unbekannt; Wert offen"
+AKT-055;T2.E;0VA;Kupfer direkt;M;0 Ω;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;NPN: L=B, O=C, R=E
+AKT-056;Q2-1P.L;Q2-1P.R;Diodentest;M;0,70 / 1,56 V;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;"13.11. gemessen; historische Ausstehend-Datei unverändert"
+AKT-057;Q2-1P.L;Q2-1P.O;Diodentest;M;0,70 / 2,18 V;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;"13.11. gemessen; eingebaut"
+AKT-058;Q2-1P.O;Q2-1P.R;"In-Circuit-Messung; keine Netzvereinigung";M;3,39 kΩ;docs/NEUBEWERTUNG_2026-11-12.md — Messungen 13.11.;;Netzwerk, kein isolierter Lecknachweis
+AKT-059;B20-R2a;OUT4751.1;Kupfer direkt;F;optischer Leiterzug;"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md; photos/2026-11-09/b20/50370.jpg; photos/2026-11-15/netzsignal_4751.jpg";photos/2026-11-15/netzsignal_4751.jpg;"R1–R4 links→rechts; a unten/b oben. R2b zum Via, R2a und R1a an TL082 OUT; R1b Fortsetzung offen."
+AKT-060;B20-R2b;OUT4751.2;Kupfer direkt;F;optischer Leiterzug;"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md; photos/2026-11-09/b20/50370.jpg; photos/2026-11-15/netzsignal_4751.jpg";photos/2026-11-15/netzsignal_4751.jpg;"R1–R4 links→rechts; a unten/b oben. R2b zum Via, R2a und R1a an TL082 OUT; R1b Fortsetzung offen."
+AKT-061;B20-R1a;TL082.1;Kupfer direkt;F;optischer Leiterzug;"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md; photos/2026-11-09/b20/50370.jpg; photos/2026-11-15/netzsignal_4751.jpg";photos/2026-11-15/netzsignal_4751.jpg;"R1–R4 links→rechts; a unten/b oben. R2b zum Via, R2a und R1a an TL082 OUT; R1b Fortsetzung offen."
+AKT-062;DC MOTOR L-;Q2-D;Kupfer direkt;M;0 Ω;docs/LAUF_2026-11-11.md — Motorstromkreis ohne Relais (12.11. 21:54);;"Mittleres Q2-Bein; eigener Durchgangsbeleg ersetzt die frühere reine Pinout-Ableitung."
+AKT-063;DC MOTOR L+;Zwischenkreis-Elko.+;Kupfer direkt;M;0 Ω;docs/LAUF_2026-11-11.md — Motorstromkreis ohne Relais (12.11. 21:54);;L+ unmittelbar am Pluspad des Zwischenkreis-Elkos gemessen.

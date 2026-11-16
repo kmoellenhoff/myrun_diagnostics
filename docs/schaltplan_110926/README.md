@@ -1,6 +1,8 @@
+> Historischer Teilstand: Der [aktuelle gemeinsame Schaltplan](../gesamtschaltplan_110926/README.md) enthält die bestätigten Ergänzungen bis 16.11.2026.
+
 # GIRT S6T30: Teilschaltplan und weitere Fehlereingrenzung
 
-**Neu: [Gemeinsamer, elektrisch verbundener Schaltplan aller gemessenen Teilnetze](../gesamtschaltplan_110926/README.md)** mit bearbeitbarer KiCad-Datei, A1-Übersicht, vergrößerten Ausschnitten und vollständigem Messregister. Die folgenden vier Blätter dokumentieren den bisherigen Teilplanstand.
+**Neu: [Gemeinsamer, elektrisch verbundener Schaltplan aller gemessenen Teilnetze](../gesamtschaltplan_110926/README.md)** mit bearbeitbarer KiCad-Datei, Gesamtübersicht, vergrößerten Ausschnitten und vollständigem Messregister. Die folgenden vier Blätter dokumentieren den bisherigen Teilplanstand.
 
 Branch **110926**, auf Basis von `9d1f74617b602f57db36a1993998581de360b832`. Die vorhandenen Fotos, Messprotokolle und Claudes Raster bleiben erhalten. Nachtrag 09.11.2026: Nutzer-Messungen der Blätter 01–07 einschließlich 05b sind in den Ergebnisberichten dokumentiert; Blatt 2 wurde entsprechend korrigiert. Der Assistent hat selbst keine elektrische Messung ausgeführt.
 

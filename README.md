@@ -140,7 +140,7 @@ locked and again after a power cycle. Output: CSV with
 
 ## Hardware documentation
 
-### Fotoatlas und Schaltplan (Branch `110926`)
+### Fotoatlas und Schaltplan (aktuell auf `main`)
 
 - [Alle 110 Originalfotos zugeordnet, mit Raster und Gewissheit](docs/atlas_110926/README.md)
 - [Gemeinsamer, elektrisch verbundener Schaltplan aller gemessenen Teilnetze: PDF, KiCad und Messregister](docs/gesamtschaltplan_110926/README.md)

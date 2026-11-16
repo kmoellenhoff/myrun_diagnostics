@@ -1,11 +1,21 @@
 {
-  "base_commit": "4e8a91f0a84bc1fafa61f6027e0ec2bc0bf99199",
-  "checked_files": 148,
+  "base_commit": "f60fe5d339c43876fd33d5baed5f18d2b33cc3d1",
+  "checked_files": 246,
   "all_unchanged": true,
   "files": [
     {
+      "path": "docs/img/Nachloeten_Uebersicht_2026-11-10.jpg",
+      "sha256": "57f1367c511fb55696611ebe2af03d3f0fa91b31d4ec5e69b4cb6ca4c9780d0a",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/b10_ids.png",
       "sha256": "465d6d3878ec604b3256b50912d78c57daf005c595831a91127c27e3a70cf489",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/b10_weg_zum_sot23-5.jpg",
+      "sha256": "634317ba4469007936235167ef59d72ebad3a584ae19615094b66ae0f2d7ad3f",
       "unchanged": true
     },
     {
@@ -29,8 +39,13 @@
       "unchanged": true
     },
     {
+      "path": "docs/img/belag_l\u00f6tstopplack_2026-11-14.jpg",
+      "sha256": "7e2bc1cdb3393612137cbe202ae98128a5fe8cd4717d8bb543e5b59a404f6284",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/block_diagram.png",
-      "sha256": "317999669beae8d8d6bb68f5df290f05286c6b31b5a0a35d0bbf0be2b7ebc9dd",
+      "sha256": "c62c400f6c17c477f82ffe9e2e62765877c784bbccecb803d03a8307f71f4e78",
       "unchanged": true
     },
     {
@@ -39,13 +54,68 @@
       "unchanged": true
     },
     {
+      "path": "docs/img/block_diagram_v4.png",
+      "sha256": "317999669beae8d8d6bb68f5df290f05286c6b31b5a0a35d0bbf0be2b7ebc9dd",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/block_diagram_v4_source.py",
       "sha256": "6d57e4b1584b759578bcea01a421bc07d28174ac1ab458ad3c69b48999812405",
       "unchanged": true
     },
     {
+      "path": "docs/img/block_diagram_v5.png",
+      "sha256": "23ab50cd8b16685382a8439aec3ba8d0340867f94a3f4aa4cbe3d20def8181a2",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/block_diagram_v5_source.py",
+      "sha256": "132557f2d98309f36f59fe205dc70a9753236b2c211e08f8585391b58854b4cc",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/block_diagram_v6.png",
+      "sha256": "c62c400f6c17c477f82ffe9e2e62765877c784bbccecb803d03a8307f71f4e78",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/block_diagram_v6_source.py",
+      "sha256": "2a83712434f0c4d2a82d755e4ffce9a99c01573ec6f33bcb0a554d8cc706e06a",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/edge_corrosion.jpg",
       "sha256": "54f8cc027416ae1fb3e0617538c6d9b6059ff768fe0869256094efbcbb6492ed",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/elko_messpunkte.jpg",
+      "sha256": "8ece02d6e2fc42d6ae738b6e49e387937abfd51ef6223f3d902a8dddc8eceb28",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/elkos_pruefen.jpg",
+      "sha256": "19ba7e6b8819e1b0cf8dad028584f97e08bf5cd65093bd397b7b1fe43918a710",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/f27_relais_vorwiderstand.jpg",
+      "sha256": "82f90929bfbbc9154511b08c8015e56ffec8ab82f7ff8581a5c533e2862cc25d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/j1_gegenpunkt_2212_1001.jpg",
+      "sha256": "b1be3da0ced3546c87866663a3791e5395d3831d901308dc6f899828420b1ead",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/l4981_messpins_pfc.jpg",
+      "sha256": "cf51a1e59943d7debd81ed6924b524c7da56227cad93f5784d4283ba8d02ed97",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/l4981_rueckseite_pins.jpg",
+      "sha256": "d7c1e9423ee916e37303947147c4cb10ff3f67bcb247d3ada739c59d9b845212",
       "unchanged": true
     },
     {
@@ -59,8 +129,98 @@
       "unchanged": true
     },
     {
+      "path": "docs/img/live_messpunkte_2026-11-16.jpg",
+      "sha256": "b71406225e6808e3b8ae58a5d65efbffe14d625ff64a836bc1b817add951d61b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/lm2903_adm485_pins.jpg",
+      "sha256": "cb781cefe356cad112ca105fd83887c5e61ae10ab42d3ce59f5c2c73c6db42d2",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/mcu_pin_kandidaten_t3.jpg",
+      "sha256": "34c199dd52d7b0b1d324e4336ceacf47fafc48df0e78a0c68a19ec00212b488d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/mcu_pin_netzsignal.jpg",
+      "sha256": "9627fffcb0f880fa849fa70b58110bf7073c61e5ed6d3ae27dfe3be2ab295ed4",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/mcu_pin_oc04_emitter.jpg",
+      "sha256": "5a77000163775db3980cde7c2b0d6e5b74da9203b0b711e82a88225a0c721584",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/mcu_pin_oc04_enable.jpg",
+      "sha256": "0f2c7613e82cf8fce2173c2706ab1e47046e837459bdb7333b647b7e12c4c65d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/mcu_pinbelegung.jpg",
+      "sha256": "ae129fb3f436204cc50844a63a07cacc5f178d2cc0a3d19a25a6331fcf1e5d23",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/mcu_qfp32_pins.jpg",
+      "sha256": "9abd745abadbb9e75cc296797cc17978a326bdd46d023575e4b97f24f78d76bd",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messpunkte_2026-11-14_t3_quelle.jpg",
+      "sha256": "6c42e019ec3fa894c8760c97976794acbe8573e64ef428c63dd972c11d84e691",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messpunkte_b18.jpg",
+      "sha256": "039a776c15cb2112c6bdd9e99980a32b7281e5487d4b44f4b6c273a17e291ba3",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messpunkte_b19_pin14.jpg",
+      "sha256": "76c00bcc3bd8c34b40eb41429780a1ea14ee97387efdddc62baf196145a90a1a",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messpunkte_b20.jpg",
+      "sha256": "01d6909c963f9c2935cdd103a582fb423b4847a698853ce3a0ace3c993562bc8",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messpunkte_l4981_pin19.jpg",
+      "sha256": "0c14dce45b558e71742b32bd6d82f873a54993ee2dc989fe363bcd9c56b7825b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messpunkte_l4981_pins.jpg",
+      "sha256": "9859ed187626d95613a8ae1f949ff26a1f209286628e99b6e21cd8e0a58adebb",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/messstelle_kondensator_zu_O.jpg",
+      "sha256": "72608524d0c9af0087884d959c4ee7a7785c742bd20d6b1b1757a314f70336da",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/optocoupler_pads.png",
       "sha256": "2101bf542ae867b440416ee3afd85ca6ba4de9180c8f555ce4b8964721dde3f1",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/optokoppler_rueckseite.jpg",
+      "sha256": "40ffb5149f09fc80a90bc39af56ff09a42fb58572820b9e1b77ec5cd40a07586",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/optokoppler_testschema.png",
+      "sha256": "e3fbf79650208ebe0a68e39671a689fe47fce633720ed117aa5b062f79724993",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/optokoppler_zuordnung.jpg",
+      "sha256": "ad9a0a77dbe110c851cbb7085ed8dd8e48a37b8eefaaeb6f068fa422bdc13dbe",
       "unchanged": true
     },
     {
@@ -109,6 +269,21 @@
       "unchanged": true
     },
     {
+      "path": "docs/img/pfc_shunt_l4981_pins.jpg",
+      "sha256": "d4ed5636162f65240f6b972b1c312a15be3fafd20f72bf347d3015d786ef2ce1",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/pin15_transistor_T3.jpg",
+      "sha256": "bc49e57fb4c749939bae8cbfaefe0cd52b4de4e8de6e360848b21c539017407b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/q1_rueckseite_pins.jpg",
+      "sha256": "363a04df12ab9229f9573dc22aa307bbcd8c1b2faee009910a96155adf50c116",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/q2_rueckseite_GDS.jpg",
       "sha256": "759187842aa2dbaa7b14fd57fb21a30fd9fcc9a6215d2ec0165337e2cf9a6678",
       "unchanged": true
@@ -119,8 +294,33 @@
       "unchanged": true
     },
     {
+      "path": "docs/img/t2_basis_messpunkt.jpg",
+      "sha256": "1bbe83cd0582e3b1e0a7837f809886b5d5ff9a7a3b07ddcb7218d28d181a7d9f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/t3_ansteuerung_buendel.jpg",
+      "sha256": "e24d76dd776b5a32699c438cabf29078fde9f6513b3ecf1a31ff182305af6d5c",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/t3_quelle_01C.jpg",
+      "sha256": "02d53abe121de424031ec7522ff8abd653f8610dce5b853083e1ecc291adf536",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/tl082_pins.jpg",
+      "sha256": "f3b467a39456fbff1256f850fff6c459c672243329212a6cc3a36f9c4a98e27d",
+      "unchanged": true
+    },
+    {
       "path": "docs/img/trace_bundle_corrosion.jpg",
       "sha256": "142eb53a3fa133ae0f7f42aff70d6318dba3ba27453c712925e934f169a583c5",
+      "unchanged": true
+    },
+    {
+      "path": "docs/img/vdd_messpunkt.jpg",
+      "sha256": "b10975e1128da474b25096bb778ffa087afa76cb6a2ea6f05081063e7cd6cb7a",
       "unchanged": true
     },
     {
@@ -741,6 +941,296 @@
     {
       "path": "photos/2026-11-09/q2/metadaten_pruefung.json",
       "sha256": "10c5e129bf906292ac6398cabeaa98d035ca627f01984dd06d75b684ebb85274",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-11/notstop_aufnahme_konsole.jpg",
+      "sha256": "ae7f7fd2acb47fb6daabdf95c9ccdb47023802323d0fe6aa9693a8f4dd53f3d9",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-11/notstop_schluessel_rost.jpg",
+      "sha256": "86804100df8739fdaecfec7523194547ad78b1af686af1cd0e779c79e7c363d7",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-11/p2_kabel_thermoschalter_stecker.jpg",
+      "sha256": "c5e14c76cbaef9be2db0727b1f1e7c5abe35bc70311e5b36c430c21c63b26a62",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-11/p600_q2_sensorleitung.jpg",
+      "sha256": "0d7cd5cd0f279c7f246a788a88eb84d6bfa6f55ed6e367d1e16e7282f1897212",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-11/p600_q2_sensorleitung_2.jpg",
+      "sha256": "da162d0580a9de59aab054824d24e47bf49974203a12c122ac180b6a92617c05",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-11/q2_treiber_100CA_vdd.jpg",
+      "sha256": "ebfa65c817d6f6210289b6ab1dd4c89f6dfce54045a49319279dde9bd35baf33",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/f19_elkos_messung.jpg",
+      "sha256": "b75006c9904b3d9e6617cb2d72b32decc281f6299bb11c75db4937ae154d61df",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/f20_elkoA_lcr_1khz_wiederholung.jpg",
+      "sha256": "731557ab3ef3f6d223d147ed4812707ae5fe7e1a87edff5477a793f33d66528b",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/q2_freigabe_1P_umfeld.jpg",
+      "sha256": "83472c47b664dbd510424467ce02693ea5702a89bb5ea3d946bfb54146bfa958",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/zk_elko_epcos_b43630_aufdruck.jpg",
+      "sha256": "24aa7e7a5a7fe5247633595b6fad053f035b36ed238b6458e7df4d465c2fb233",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/zk_elko_epcos_b43630_aufdruck_2.jpg",
+      "sha256": "bac982f45982a868bf03ff9d55bbfc56cebd54735e23ef0e4be1c06bc09d3fba",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/zk_elko_lcr_100hz_475uF_270mOhm.jpg",
+      "sha256": "565a900c783f003c8ee13303a3b27fadbdc51b383b0b373ab436f60a7a4ddf9b",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-12/zk_elko_lcr_1khz_471uF_208mOhm.jpg",
+      "sha256": "d786528e53417539183e4700d0d8f0f03867df6046fbe3fb622f28f0b677705a",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-13/q2_freigabe_T2_basis_messpunkt.jpg",
+      "sha256": "a180b7ffa50c8694d5eeac3a3489bcc2795fabcc855bb0001a101eed8937b9fc",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-13/speedsensor_ausgebaut_kabel.jpg",
+      "sha256": "912997b06efdc934edb903dac9842493bdced0606ec5878363344ebb58c9994f",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-13/speedsensor_gabel_verschmutzt.jpg",
+      "sha256": "4231c8fdb323dcde828c0308b8e10c2ab4eb0f93bc4e35e2cf47bf20c4f633e5",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-13/speedsensor_omron_seite.jpg",
+      "sha256": "14a39ba34ead88979e7aa9fe2e818b0c2dd7dda0a28a5e68aa44474e1fdd92cb",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/b10_ziel_sot23-5_nah.jpg",
+      "sha256": "cd219e32af88eb735831a7297b20c24548ea6b76a932aab5aeb868412e1e582e",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/b10_ziel_uebersicht.jpg",
+      "sha256": "f1454da164da2a691d03c34fdd40cdc34a8074b8f773f2d6ab0a8f51cb9e4776",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/l4981_umgebung.jpg",
+      "sha256": "004415ef6300644a8c73786b6aa83126deecf16660e23d7f70a135a2589d3b03",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/mcu_p70_uebersicht.jpg",
+      "sha256": "3ebd5787bd06e95c2a2db27a568c83d9d7ce480d7147dabe48d206b95256d10d",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/mcu_pin_t3_messspitze.jpg",
+      "sha256": "be0c9f351177f18003418c70ed8976ab75dc500b6891b4f14cb490b85e5e9bdf",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/pin15_netz_messspitze.jpg",
+      "sha256": "5096498e65627c223f6fad9ddf24d5649276bc19905348fc4934d585a5d9e5f8",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/pin15_transistor_umfeld.jpg",
+      "sha256": "77026ebc0b8f773ae24bea5d517cc0f195d32b2c541d03697cae1efc7f292422",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/t3_quelle_01C_messspitze.jpg",
+      "sha256": "e2f372219341c62d69729f94a5a8df0d3b30e9cdc9f630e0a22099329ff21853",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-14/t3_quelle_01C_uebersicht.jpg",
+      "sha256": "82f820c7baf02f683211c7c48d79ec6b17c98475ab22f166ca1d2a90d2bb172b",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/j1_gegenpunkt_messspitze.jpg",
+      "sha256": "e8d62c9c8ac240e06f93dbc82144819de1c2316d9bec1adc1d9d8ffbb9a16a7c",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/j1_gegenpunkt_nah.jpg",
+      "sha256": "36ee4c61124fd76c357d2e23ff80dab27d97e0dec133562e1d3f71b44ad0a715",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/j1_gegenpunkt_uebersicht_l4981_tl082.jpg",
+      "sha256": "dc3272f191e8b1630e634e72c4c50146938f683fa9854394babaa406e0f36c74",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_4751.jpg",
+      "sha256": "3af085b7074a187bc23891a05b8e86a4c9ee0e81e0d0dee220dea8c403d8320f",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_C_lcr_100hz.jpg",
+      "sha256": "f80c720fccc260a465309d24fbf8f296e90e6521874775bc27b7f4df55cfe96c",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_C_lcr_10khz.jpg",
+      "sha256": "d7f0adb73ed7c82f4a208cc18824ab6a0fd45fa62ec2a10611902bab0af421f1",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_C_lcr_1khz.jpg",
+      "sha256": "bb9b2e30f99245eab07f73df3031b2dfec105d5f378c7fb24c9d3e69498006a2",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_C_lcr_1khz_Cmodus.jpg",
+      "sha256": "5d6163ea58eaf29e2567625d29c4c98c1432fbeac3e341ce7420c8c320c3d959",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_C_lcr_messstelle.jpg",
+      "sha256": "fd5c47e3be10aa120053fa78a624059f509fe09400714068b2b385b40e8b9555",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_kondensator_detail.png",
+      "sha256": "f8336c7b7b7a31e01e47f56022ccd4d08cc30ed9759253536277fa33fbf02299",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_pfad_markiert_nutzer.jpg",
+      "sha256": "f4e24a3b9d681ed66bef6ed728e3fbc180036f2032d52b93b4fe952a4c3b9cb9",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_pfad_ohne_markierung.jpg",
+      "sha256": "6954ef4869a6b6ff699c6f985642599492ce3967e1118e22f9f7b03dc2d55bff",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_weg_1.jpg",
+      "sha256": "f7568c3a130b1b3351616fb79296790bd62dc0734a1e8ae9946836f779231a33",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_weg_2.jpg",
+      "sha256": "e6e8bce946015a4e97b657a08ec1ce8da7de5db11ac35fe06102e98fc3def141",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_weg_3.jpg",
+      "sha256": "d68531885ba1afe68e149c9834733f27ea02802f6c487348b8ac66e127c1b78d",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_weg_4.jpg",
+      "sha256": "27b97a5b473ebc96aa8bab7732f6f44de146cff7bcff4baa7f464f3683893af1",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_weg_5.jpg",
+      "sha256": "6ea78975fc41413a2a26abff2f12805054df4c4a237af731f9ce42676a33822b",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/netzsignal_weg_6.jpg",
+      "sha256": "411d22f3b03280708c29004c2af7feb9b6d1ab11dd37f07d7df3b4d7c66773e2",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-15/tl082_aufdruck.jpg",
+      "sha256": "ebc3dfedfb9b661af5c87fb5aadb837bf8e16241c68b10593a805b22591411e6",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_rueckseite.jpg",
+      "sha256": "14313d270f03b8f0e20b0ecd1924ae5e27ca510bdbd1436db5a82052279b9e35",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_rueckseite_spule_markiert.jpg",
+      "sha256": "21a15582087fddf56aea37bede0f973a0abfbbfbcdae515d9224e0d0e7456520",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_spulenminus_treiber_messspitze.jpg",
+      "sha256": "cc04a3dbfa727b99b07a9a93c2bd78810497de8b90ab55d13f3c822212a99665",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_spulenplus_sot223.jpg",
+      "sha256": "3a1e28e64ad97226ca35ca5b0088c3bcd605958f7e337f1ce1c5c153395d0be8",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_spulenplus_sot223_messspitze.jpg",
+      "sha256": "2d571fec3a144195fa58f88a3465c569f511539df0ae24cfbefc503c6849ee57",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_treiber_1P_nah.jpg",
+      "sha256": "8a7f7299b4eb3faac85cde22fbe53d43bf3e9e66a9b63156a10b456b46489b6a",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/f27_treiber_uebersicht.jpg",
+      "sha256": "aca62f221c7c56d5f2d72d4678ae2539600513f14509f6bda0ce2996b1e1ce54",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/ld3n_L_0VA.jpg",
+      "sha256": "df0bcad43f791c26be7bd479650e8517b62cd6973d42de595c03e245fe60d752",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/oc04_emitter_mcu_pin.jpg",
+      "sha256": "e17b73949dcf11db2b35a033466a5e380d115e72e8c8480c92ad571f928e0488",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/oc04_kollektor_mcu_pin.jpg",
+      "sha256": "9c78013cf2b45de2b0c2c0372c6f2337fb96608f4686df71fb3c9912033a3de9",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/oc05_emitter_mcu_pins.jpg",
+      "sha256": "84025a4c41002a076208a449ceb36d76d7e3675f7d359f74b48a66e2e7bbca4e",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/t4_1001_bahn_a.jpg",
+      "sha256": "6eb75402f17dee34b32ea3501b1a6ef97920ce3d372ef1bc538a2db8d4d75ad7",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-16/t4_bahn_a_mcu_eckpin.jpg",
+      "sha256": "6ce1b744d682ba70131839670ddbb3d7df24c980e2c43b4463423aefffe4ee87",
       "unchanged": true
     }
   ]
