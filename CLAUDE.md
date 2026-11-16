@@ -18,3 +18,12 @@ Sprache: Deutsch. Branch: `main` (Branch `110926` ist gemergt).
 - Messungen chronologisch in `docs/LAUF_2026-11-14.md` (bzw. Folgedatei), Bewertung in `docs/NEUBEWERTUNG_*.md`, Messplan in `docs/MESSPLAN_*.md`.
 - Fotos nach `photos/<Datum>/`, Markierungsbilder nach `docs/img/`. Originalfotos nicht verändern.
 - Nach jeder Änderung committen und pushen.
+
+## Arbeitsweise mit Agenten (Anweisung Nutzer, 16.11.2026)
+- **Claude (Hauptagent) plant**, Agenten führen aus.
+- Ausführende Agenten: **höchstens `sonnet` mit Aufwand `medium`**. Einfache Tätigkeiten (Dateien kopieren, Protokollzeilen eintragen, Bilder beschriften, Suchen) an kleinere Modelle (`haiku`) mit geringem Aufwand.
+- **Niemals ein größeres Modell als sonnet/medium für Agenten** – auch nicht für Kritik-Runden – ohne ausdrückliche Freigabe des Nutzers.
+- Am Ende prüft Claude das Ergebnis selbst (gegen Messprotokoll, Schaltplan, Fotos).
+- Bei Unzufriedenheit: Kritik **einmal** an einen passenden Agenten zurückgeben.
+- Passt es danach immer noch nicht: den Nutzer darauf hinweisen und fragen, ob Claude die Arbeit selbst erledigen soll.
+- Kurze Rückfragen, Einordnung von Messwerten im Dialog und Sicherheitshinweise beantwortet Claude direkt.
