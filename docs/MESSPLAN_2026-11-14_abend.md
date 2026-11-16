@@ -70,3 +70,12 @@ Erwartungswerte nur, wo begründet; sonst Werte notieren. Netzseite: klemmen nur
 | O2 | Via oberhalb LD3N-L (Netzsignal X, MCU-Pin 28) | 0VA | 1 V/div, 5 ms/div, AUTO | OC04 Pin 3 (Enable) DC | Kommt das Netzsignal am MCU an? Standby genügt, dann Start |
 | O3 | OC05 Pin 3 (PWM am MCU, Pin 17/18) | 0VA | 1 V/div, 1 ms/div, Trigger 2 V | Basis T4 DC MIN/MAX | Erreicht der Sollwert den MCU; schaltet der MCU F27 |
 | O4 | Testpad Basis T2 bzw. Basis T4 | 0VA | 0,5 V/div, 100 ms/div, SINGLE, Trigger 0,3 V | Steuerleitung T3 DC MIN/MAX | Kurze Ansteuerungsversuche erfassen, die Multimeter-MAX nicht sieht |
+
+## Ergänzung 16.11. abends – nach Durchsicht aller Unterlagen
+Begründung und vollständige Liste: `NEUBEWERTUNG_2026-11-16.md`. Zusätzlich zu den Punkten oben, in dieser Reihenfolge:
+1. Beim nächsten Startversuch STS1/STS2 mit Ton filmen (blinkt STS1 weiter? Zeit bis zum ersten STS2-Puls).
+2. Stromlos: **J ↔ 0VA** in beiden Polaritäten (22 kΩ oder 6,4–6,9 kΩ?); Testpunkte am SOT-23-5 ↔ 0VA / +5VA.
+3. Stromlos: Y (LD3N-O) ↔ B20-R1b und ↔ TL082 Pin 7 (Quelle von Y).
+4. Punkt 3.6 vorziehen und um **P4 TACHO / P2.9** ergänzen: Zuordnung OC02/OC03/OC08, danach deren Emitter → MCU-Pin.
+5. Punkt 3.7 vorziehen: P2.15, P2.17, P2.18 gegen P2.7 in Standby und Start (Konsolenseite).
+6. Netzspannung an der Steckdose bei jedem Versuch notieren.
