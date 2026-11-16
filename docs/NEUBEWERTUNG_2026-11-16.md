@@ -65,3 +65,11 @@ Tags: [M] gemessen, [O] beobachtet, [I] gefolgert, [H] Hypothese.
 
 ## 5. Korrektur
 - OC05 (14.11. 13:41): gemessen wurde Kollektor gegen Emitter (4,95 → 4,5 → 4,3 V). Der Emitter (= MCU-Eingang) steigt also im Mittel von ≈ 0 auf ≈ 0,45–0,65 V; das Signal ist **nicht invertiert**. Eine anderslautende Bemerkung im Dialog vom 16.11. morgens war falsch.
+
+## 6. Nachtrag 16.11. 21:45 – Ergebnis der stromlosen Prüfungen 2 und 3
+Messwerte: `LAUF_2026-11-14.md`, Abschnitt „16.11. abends“.
+- **Ansatz A (zweiter Pfad an J): nicht bestätigt.** J ↔ 0VA = 22,1 kΩ in beiden Polaritäten [M]. Der Widerspruch ist zugunsten des Schaltplans aufgelöst; der Wert vom 08.11. ist nicht reproduziert.
+- **Ansatz C (Quelle von Y): beide Kandidaten widerlegt, Quelle gefunden.** Y ist weder B20-R1b noch der Ausgang von Verstärker B, sondern hängt über ≈ 1 kΩ an P600 (Temperaturfühler an Q2) und hat ≈ 1,9 kΩ nach 0VA [M]. Y ist damit sehr wahrscheinlich der Temperatureingang [I].
+- **Neu:** Vor X liegt ein Teiler 1:2 (R1 in Reihe, R2 nach 0VA) [M]. Der Schaltplan ist an dieser Stelle zu korrigieren.
+- Erwartungswerte für die Messung im Betrieb (Rechenmodelle, keine Sollwerte): X ≈ 3,7 V Spitze, Form eines gleichgerichteten Sinus (je nach Filterkondensator geglättet); Y ≈ 0,7–0,8 V bei Raumtemperatur.
+- Statisch bleiben damit beide MCU-Eingänge ohne Befund. Die Ansätze B (OC02/OC03/OC08, Tacho-Kanal, Wake-up), D (Enable-Pegel), E (kurze Schaltversuche) und Prüfung 1 (STS1 filmen) sind unverändert offen.

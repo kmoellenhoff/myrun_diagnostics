@@ -79,3 +79,8 @@ Begründung und vollständige Liste: `NEUBEWERTUNG_2026-11-16.md`. Zusätzlich z
 4. Punkt 3.6 vorziehen und um **P4 TACHO / P2.9** ergänzen: Zuordnung OC02/OC03/OC08, danach deren Emitter → MCU-Pin.
 5. Punkt 3.7 vorziehen: P2.15, P2.17, P2.18 gegen P2.7 in Standby und Start (Konsolenseite).
 6. Netzspannung an der Steckdose bei jedem Versuch notieren.
+
+### Stand 16.11. 21:45
+- Punkte 2 und 3 der Ergänzung erledigt (`LAUF_2026-11-14.md`, „16.11. abends“): J nur 22,1 kΩ nach 0VA; Teiler 1:2 vor X; Y = Temperatureingang über P600.
+- Für die Live-Messung: **X** (Oszi, Lauf O2) rechnerisch ≈ 3,7 V Spitze; **Y** (LD3N-O gegen 0VA, Multimeter DC) rechnerisch ≈ 0,7–0,8 V bei Raumtemperatur, 0 V = Fühlerkreis offen. Beides Rechenmodelle, keine Sollwerte.
+- Noch stromlos offen: P600 Kontakt 2 ↔ +5VA (0 Ω erwartet); Zuordnung OC02/OC03/OC08 (Punkt 4).

@@ -46,3 +46,18 @@ L− → Q2-Drain und L+ → Zwischenkreis-Elko-Plus sind inzwischen mit eigenen
 Die Aktualisierung wurde an **GPT-6.1 Sol mit niedrigem Reasoning-Aufwand** delegiert und anschließend vom Hauptagenten gegen die Originalbelege geprüft. Korrigiert wurden die physische B20-R2-Zuordnung (statt eines ungesicherten R1/R2-Alias), veraltete Versorgungshinweise, Belegstellen sowie die Darstellung von TL082-Rückkopplung und T2-Serienpfad. Zusätzliche Detailansichten zeigen Anschlüsse und MCU-Arbeitsnummern lesbar.
 
 Die [zweite Prüfung](unabhaengige_pruefung.json) verwendet eigene, aus den letzten Protokollkorrekturen abgeleitete Anschluss-Erwartungen direkt gegen die exportierte KiCad-XML-Netzliste – ohne Import des Generators oder seines Netzmodells. **59 Prüfungen bestanden**, darunter getrennte MCU-Eingänge, Versorgungen, Konsolenmasse und alle Widerstandsenden. [Prüfskript](pruefen_unabhaengig.py): `python docs/gesamtschaltplan_110926/pruefen_unabhaengig.py`. Zusätzlich sind **254 Original-/Referenzdateien** inklusive der bisherigen Messplan-Markierungen gegenüber dem Quellenstand bytegleich.
+
+## Offen: Neuaufbau nach Messungen vom 16.11. abends
+
+Neue Eingabe: [befunde_2026-11-16_abend.csv](befunde_2026-11-16_abend.csv) (AKT-064 bis AKT-076; Quelle: [Protokoll 16.11. abends](../LAUF_2026-11-14.md)). Die bestehende `befunde_2026-11-16.csv` bleibt unverändert. PDF, SVG, KiCad-Schaltplan, Netzlisten und Prüfnachweise sind **noch nicht neu erzeugt** und deshalb in folgenden Punkten überholt:
+
+- Tabellenzeilen „Netzsignal X“, „B20-Widerstände“ und „Y, Quelle offen“; Netze TL082_OUT, X_VOR_100R, Y, N_P600-Ka/Kb; Bauteile R301/R302.
+
+Beim Neuaufbau zu ändern:
+
+- R1 (4,75 kΩ) ist der Serienwiderstand TL082 Pin 1 → Knoten N (= B20-R1b = B20-R2b = TL082-seitiges Pad des „1000“, Netz X_VOR_100R); danach 100 Ω → X.
+- R2 (4,75 kΩ) liegt von X_VOR_100R nach 0VA (B20-R2a ↔ 0VA 0 Ω gemessen). AKT-059 bis AKT-061 und die R2-Zuordnung in AKT-024 sind damit ersetzt.
+- Y (MCU-Arbeitsnummer 26) hängt über ≈ 1 kΩ an P600 Kontakt 1; Widerstand Y → 0VA (1,883 kΩ eingebaut) mit offenem Einzelwert; keine direkte Verbindung zu TL082 Pin 1/Pin 7 oder B20-R1b.
+- P600 Kontakt 2 ↔ +5VA bleibt Hypothese H bis zur 0-Ω-Messung; „Y = Temperatureingang“ ist Ableitung, keine Kupferverbindung. Zuordnung „Kontakt 1/2“ zu P600-Ka/Kb ist offen.
+
+Der Neuaufbau ist offen, weil KiCad CLI und PyMuPDF in dieser Umgebung fehlen. `erzeugen.py` liest bisher nur `befunde_2026-11-16.csv` ein und muss die neue Datei noch einbinden; danach ist `pruefen_unabhaengig.py` (Erwartungen zu X-Pfad, B20-Widerständen, Y) anzupassen.
