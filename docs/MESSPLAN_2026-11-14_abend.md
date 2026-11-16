@@ -29,7 +29,7 @@ Erwartungswerte nur, wo begründet; sonst Werte notieren. Netzseite: klemmen nur
 | # | Zustand | Messung | Notieren / Erwartung |
 |---|---|---|---|
 | 3.1 | stromlos | **Quelle von Y**: vom Via/Leiterbahn an Diode O rückwärts verfolgen | Signal, Beschaltung |
-| 3.2 | erledigt | OC04 Kollektor → MCU-Eckpin (Reihe ab Gehäusepunkt, Seite P602); OC05 Kollektor → derselbe Eckpin (Korrektur 01:46); Emitter nicht an 0VA/+5VA | Pull-ups/Emitter noch prüfen |
+| 3.2 | erledigt | OC04/OC05: gemeinsamer Kollektor an +5VA (MCU-Eckpin = VDD); Emitterfolger, Emitter 3,3 kΩ bzw. 10 kΩ nach 0VA | Emitter → MCU-Pins offen |
 | 3.3 | stromlos | **Motorfreigabe T2** unabhängig von T3 verfolgen (Basis → Quelle; Pull-up/-down) | Quelle |
 | 3.4 | stromlos | **F27-Ansteuerung**: Spulen-Minus → Treibertransistor → Basis → Quelle | Quelle |
 | 3.5 | Standby / Start | an den in 3.1–3.4 gefundenen Punkten messen | Pegel, Änderung beim Start |
