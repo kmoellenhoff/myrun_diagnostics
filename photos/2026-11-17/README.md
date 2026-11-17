@@ -1,3 +1,4 @@
 - `netzeingang_b10_rueckseite.jpg` – Rückseite, Netzeingang bis B10 (unten rechts: je 2 × „4753“ + Diode, Kathoden verbunden → J); Foto Nutzer 17.11.2026, Metadaten entfernt.
 - `netzeingang_filter_vorderseite.jpg` – Vorderseite Netzeingang (Faston L/N, X-Kondensatoren, drei Drosseln, Varistor, FUSE MOT); gegenüber der Rückseite oben/unten gespiegelt; Foto Nutzer 17.11.2026, Metadaten entfernt.
 - b10_*.jpg (6 Dateien) – Nahaufnahmen der B10-Reihen (4 × „4753“, 2 Dioden, Kathodenverbindung), Zustand vor Reparatur; Fotos Nutzer 17.11.2026, Metadaten entfernt.
+- b10_dioden_ausgeloetet.jpg – B10 nach Auslöten beider Dioden, Pads gereinigt/verzinnt; ein Pad leicht gelöst; Foto Nutzer 17.11.2026, Metadaten entfernt.
