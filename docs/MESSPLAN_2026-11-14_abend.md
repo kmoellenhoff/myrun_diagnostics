@@ -2,14 +2,17 @@
 
 Maßgeblich: [Prüfung des aktuellen Stands](PRUEFUNG_2026-11-16_spaet.md), [Schaltplan](gesamtschaltplan_110926/README.md) und [chronologisches Protokoll](LAUF_2026-11-14.md). Neue Ergebnisse stehen im [Protokoll vom 17.11.](LAUF_2026-11-17.md); die Tabellen unten beschreiben weiterhin geplante Messungen. MCU-Pins sind Arbeitsnummern, keine bestätigte Herstellerbelegung.
 
-**Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Der neue ADM485/OC06-Tacho-Kandidat wird zuerst gezielt geprüft; sein Funktionsnachweis ist noch offen.
+**Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Die Prüfung vom 17.11. hat die Tacho-Funktion des ADM485/OC06 bisher nicht bestätigt. Vorrang hat jetzt die stromlose Verfolgung des tatsächlichen Pfads ab P4; PWM-Übertragung auf der Netzseite bleibt bei ungeklärtem Messaufbau zurückgestellt.
 
-## Vorrang nach der Messgruppe vom 17.11.
+## Vorrang nach den Nachtragsmessungen vom 17.11.
 
-- **Erledigt:** C–E am Sensor schaltet bei manueller Bewegung etwa 0 ↔ 11,75 V, an P4 etwa 0 ↔ 12 V. High-Wackeltest stabil. P2.7 gegen P4-0V konstant 0 V berichtet. Frühe 50-Hz-Bilder nach Neuanklemmen nicht reproduziert; letzte AC-AUTO-Aufnahme nur 80 mVpp bei 100 µs/Div, keine bestätigten 3,19-kHz-Tachoimpulse.
-- **Jetzt K2 als separater Funktionstest im Standby:** OC06-K/Pin2 (= ADM485 RO/Pin1) gegen P2.7. DC, ×1, zunächst 2 V/Div, 5 ms/Div; Stillstand → manuell versetzte Schlitzstellungen → Stillstand. Erwartung unter der Tacho-Hypothese: zwei stabile Logikpegel, High in Größenordnung der ADM485-Versorgung, nicht die 12 V des Sensors. Versorgung und Polarität noch nicht gemessen. [Genaue Anleitung und Originalfoto](LAUF_2026-11-17.md#nächste-messung-ro--oc06-k-konsolenseite).
-- **Bei ausbleibender/auffälliger RO-Reaktion K1/K3:** Versorgung, A/B-Eingänge und Empfängerfreigabe prüfen, bevor ein Bauteil verdächtigt wird. OC06-Ausgangszuordnung S0 bleibt für die weitere Verfolgung offen; ein RO-Wechsel beweist noch keinen LED-Strom oder MCU-Empfang.
-- Sensor/Kabel unter diesen Bedingungen entlastet, nicht für alle Drehzahlen/Lastfälle freigegeben. Kein weiterer Start nötig für diesen Schritt. Manuelle Bewegungsversuche getrennt von späteren Start-/Fehleraufnahmen halten.
+- **Sensor/P4 erledigt:** C–E schaltet bei manueller Bewegung etwa 0 ↔ 11,75 V, an P4 etwa 0 ↔ 12 V. High-Wackeltest stabil; P2.7 gegen P4-0V konstant 0 V berichtet. Späteres ×10-Versehen und Wiederholungen sind im Tagesprotokoll ausdrücklich dokumentiert.
+- **K1/K2/K3 im Standby geprüft:** ADM485 Pin8 4,8 V; /RE Pin2 0 V, DE Pin3 0 V; Pin6/A **2,4 V**, Pin7/B **2,2 V**, OC06-K/RO **4,8 V**, alle drei Signalpegel auch bei manueller Bandbewegung konstant. Pin6 0,2 V ist überholt. Versorgung während START/kurze Einbrüche nicht separat erfasst. Kein Defektnachweis, keine bestätigte Tacho-Funktion des ADM485/OC06. Endliche Widerstände zu P4 allein belegen keinen vollständigen Signalpfad.
+- **50 Hz erneut bei fraglichem Kontakt:** 2,70 Vpp/50 Hz auch bei DC-Kopplung; nach Neupositionieren beider Messkontakte verschwunden. Messkontakt-/Einkopplungseffekt deutlich gestützt, Masseklemme allein als Ursache nicht bewiesen.
+- **K4 teilweise erledigt:** P2.6 Standby nahe 0 V. **OC05 Pin1/Anode** im Standby nahe 0 V, bei Start kurze Pulse um 1 V (VMAX 1,0 V, Vpp 1,1 V). LED-begrenzte Spannung plausibel; Frequenz/Tastgrad und Übertragung zum MCU offen. Ursprüngliche Nutzerbezeichnung OC06 für dieses Bild ausdrücklich zu OC05 korrigiert. Keine gesicherte neue Motor-/Fehlercodechronologie zu diesem Start.
+- **Jetzt stromlos den realen Pfad ab P4 verfolgen:** Sensorstecker abziehen; platinen­seitigen TACHO-Kontakt gegen beide Kappen des zuvor verfolgten ersten „1000“ nahe P4 messen. Beim richtigen 100-Ω-Serienwiderstand ungefähr 0 Ω / 100 Ω erwartet, Parallelpfade beachten. Noch keine Ergebnisse. Danach nur bis zum nächsten elektrisch bestätigten Anschluss weitergehen. [Ergebnisse, Korrekturen und nächste Schritte](LAUF_2026-11-17.md).
+- **N2 / OC05 Pin3 gegen 0VA zurückgestellt:** Elektrisch das richtige Messpaar, aber Netzpotential des gesamten Kreises gegenüber Erde. Keine Herstellerbestätigung für OT3 samt Tastkopf/Kabel zum potentialfreien Anschluss an 0VA vorhanden. Akkubetrieb ohne Erdung/USB und CAT-Aufdruck allein ersetzen diese nicht. Erst geeigneten Aufbau nachweisen; P2.7 nie mit 0VA verbinden. Diese Messung wurde nicht ausgeführt.
+- Sensor/Kabel unter den getesteten Bedingungen entlastet, nicht für alle Drehzahlen/Lastfälle freigegeben. OC06-Ausgang→MCU bleibt offen. Manuelle Bewegungsversuche getrennt von späteren Start-/Fehleraufnahmen halten.
 
 ## Bereits erledigt
 
@@ -30,7 +33,9 @@ Konsolenseite und Netzseite getrennt behandeln. Messanschlüsse netzgetrennt, Zw
 
 Gleiche Startfolge, STS1/STS2-Video mit Ton, Zeitpunkte Netz-Ein/START/erster Fehler/STOP protokollieren. Band vor dem normalen Startversuch nicht von Hand bewegen: Das löste bereits einen eigenen Fehler aus. Ein gesonderter Bewegungs-/Sensorvergleich muss davon getrennt bleiben. Bei einem einkanaligen Oszi sind nacheinander erfasste Signale keine zeitgleiche Korrelation.
 
-## Reihenfolge und Auswertung
+## Weiterführende Messungen und ursprüngliche Prüferwartungen
+
+Die Prioritäten und erledigten Teilprüfungen oben haben Vorrang. K1–K3 nicht pauschal erneut durchführen; N-Schritte bleiben an einen nachgewiesen geeigneten Messaufbau gebunden.
 
 | Schritt | Messung / Bezug | Modus und begründete Erwartung | Entscheidung |
 |---|---|---|---|
@@ -50,7 +55,7 @@ N1–N5 sind keine pauschale Freigabe für das OT3 auf Netzpotential. DMM-Prüfu
 ## Was sich gegenüber dem bisherigen Plan ändert
 
 - Erledigte J-/Y-/P600-/F27-Zuordnungen nicht wiederholen. Kein Rückgriff auf den widerlegten R2-Serienpfad.
-- OC06 gezielt prüfen; OC02/03/08/Wake-up/Sleep bleiben nachrangige Kandidaten. Kleinster Ω-Wert allein identifiziert keinen Kanal.
+- Nach den konstanten ADM485-/OC06-Pegeln zuerst den tatsächlichen Pfad ab P4 stromlos prüfen. OC06 nicht allein aufgrund der Widerstandskopplung als Tachokanal behandeln. OC02/03/08/Wake-up/Sleep bleiben ohne konkreten Pfadbefund nachrangig.
 - Nicht jeden RO-Puls sofort als Tacho-Fehler interpretieren. Zuerst Funktion, tatsächlichen Stillstand und zeitliche Reihenfolge absichern.
 - Keine pauschalen Aussagen „≥4 V sicher“, „2–3,5 V grenzwertig“, „beidseitig 0 V im Diodentest = dieses Bauteil defekt“. Typgrenzen und eingelötete Parallelwege beachten.
 - F27-Spulenmessung nur gezielt wiederholen, wenn ein Steuerbefehl/kurzer Versuch oder Widerspruch gefunden wird. Kein weiterer Batterie-Test ohne Anlass.

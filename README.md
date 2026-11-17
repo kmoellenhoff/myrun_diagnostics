@@ -5,7 +5,7 @@ Small Linux/Python BLE diagnostic tools for the **Technogym MYRUN** treadmill.
 The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved and whose lower-kit belt drive (Gefran GIRT S6T30) faults on start. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the active tests, issue controlled FTMS START/STOP and low-incline requests.
 
 
-> **Diagnosestand 17.11.2026:** [Heutige Messungen und Bewertung](docs/LAUF_2026-11-17.md), [aktueller Messplan](docs/MESSPLAN_2026-11-14_abend.md). Sensor schaltet bei manueller Bewegung; etwa 0–12 V kommen an P4 an. High-Wackeltest unauffällig, starke frühe 50-Hz-Schwankung nicht reproduzierbar. Nächster Schritt: Reaktion ADM485-RO/OC06-K auf Sensorwechsel; Übertragung zum MCU weiter offen. [Vorherige Prüfung](docs/PRUEFUNG_2026-11-16_spaet.md), [ältere Messchronik](docs/LAUF_2026-11-14.md).
+> **Diagnosestand 17.11.2026, nach ADM485-/OC05-Messungen:** [Tagesprotokoll mit Korrekturen](docs/LAUF_2026-11-17.md), [aktueller Messplan](docs/MESSPLAN_2026-11-14_abend.md). Sensor schaltet bis P4 etwa 0–12 V. ADM485 A/B/RO bleiben bei manueller Bewegung konstant (2,4/2,2/4,8 V); seine Tacho-Funktion ist nicht bestätigt. OC05-Anode zeigt beim Start kurze Pulse um 1 V; Übertragung zum MCU offen. Starke 50-Hz-Bilder verschwinden nach Kontaktkorrektur. Nächster Schritt: tatsächlichen Pfad stromlos ab P4 verfolgen. Netzseitige OC05-Messung bis zur Klärung des geeigneten Messaufbaus zurückgestellt. [Vorherige Prüfung](docs/PRUEFUNG_2026-11-16_spaet.md).
 
 ## Contents
 

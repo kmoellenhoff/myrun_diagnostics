@@ -2,7 +2,7 @@
 
 ![Optokoppler-Zuordnung](../img/optokoppler_zuordnung.jpg)
 
-> **Prüfstand 17.11.2026:** P4 → ADM485 → OC06 bleibt ein konkret gestützter **Tacho-Funktionskandidat**. Sicher gemessen sind ADM485 RO/Pin1 = OC06-Kathode sowie die Widerstandskopplung von P4 zu ADM485 Pin7/6. Die Umschaltung des Sensors kommt an P4 an; RO-Reaktion und OC06-Ausgang zum MCU sind noch offen. Die frühere sichere Zuordnung „OC06 ist Tacho, RS-485 widerlegt“ war zu weitgehend. [Neue Messungen und nächste Prüfung](../LAUF_2026-11-17.md).
+> **Prüfstand 17.11.2026, Nachtrag:** P4 → ADM485 → OC06 ist als Tacho-Funktion **nicht bestätigt**: P4 schaltet bei manueller Bewegung, ADM485 Pin6/7 und RO bleiben dagegen bei 2,4/2,2/4,8 V konstant. VCC 4,8 V, /RE und DE je 0 V; kein Defektnachweis. Die gemessenen Kupferverbindungen RO=OC06-K und GND=P2.7 bleiben gültig. Der tatsächliche Signalpfad ab P4 ist stromlos zu verfolgen. **OC05-Anode** zeigt beim Start kurze Pulse um 1 V; PWM-Übertragung zum MCU bleibt offen. [Messungen und Korrekturen](../LAUF_2026-11-17.md).
 
 Grundlage: Pad-Rollen aus `../img/optocoupler_pads.png`, Bauteilliste `parts.csv`, Foto
 `photos/2026-11-08/front/PXL_20261108_155332127.jpg`. Tags: **[O]** beobachtet, **[I]** gefolgert, **[H]** Hypothese.
@@ -109,7 +109,7 @@ Nicht belegt. Prüfung stromlos auf der Vorderseite (ADM485-Pinout laut `parts.c
 | OC02, OC03, OC08 | Kathode an 0 V Konsole, Signal an Anode | offen | Kathode → P2.7 = 0 Ω |
 | **OC05** | Kathode an 0 V Konsole, Anode über ≈ 1 kΩ an **P2.6** | **PWM-Sollwert Konsole → MCU** | P2.6 → OC05.1 = 0,956 kΩ (14.11.), andere Anoden 15–20 kΩ |
 | **OC04** | Kathode an **LM2903 OUT B (Pin 7)** | **Enable/OtM-Kette von P2.5** (über IN− B, Pin 6, ≈17 kΩ zu P2.5) | 0 Ω Pin 7 → OC04.2; P2.5 → Pin 6 17 kΩ, → Pin 5 1 MΩ |
-| **OC06** | Kathode an **ADM485 RO (Pin 1)** | **Tacho-Aufbereitung P4 → ADM485 → OC06 als Funktionskandidat; MCU-Ziel offen** | 0 Ω Pin 1 → OC06.2 (11.11.), P4 TACHO → Pin 7 1,103 kΩ (16.11.) |
+| **OC06** | Kathode an **ADM485 RO (Pin 1)** | **Funktionskandidat Tacho dynamisch bisher nicht bestätigt; MCU-Ziel offen** | 0 Ω Pin 1 → OC06.2 (11.11.), P4 TACHO → Pin 7 1,103 kΩ (16.11.) |
 | OC01, OC07 | LED auf Netzseite (MCU → Konsole) | Funktion offen | offen |
 
 Stand 16.11.: Die Tacho-Hypothese ist jetzt konkret gestützt. Die Funktion wird nicht allein aus endlichen Widerständen bewiesen; RO-Reaktion und OC06-Ausgang zum MCU sind noch zu bestätigen. Die frühere RS-485-Deutung ist ebenfalls keine gesicherte Zuordnung. Siehe [aktuellen Review](../PRUEFUNG_2026-11-16_spaet.md).
