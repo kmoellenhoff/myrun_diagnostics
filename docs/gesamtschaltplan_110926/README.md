@@ -72,3 +72,8 @@ OC05-Anode zeigt beim Startversuch kurze Pulse um 1 V; diese Aufnahme wurde vom 
 ## Foto-/Messwert-Abgleich B10 bis MCU am 17.11.
 
 [Ausführlicher Review](../PRUEFUNG_B10_X_2026-11-17.md): Topologie der Originalmakros, letzte Korrekturen und KiCad-XML sind für die geprüfte B10–X-Kette konsistent; neun Anschlussgruppen und die Trennung X/Y abgeglichen. Belegstufen AKT-009/010/025 sind hinsichtlich der Rohbelege zu stark, und eine zweite Klemmdiode an X ist erst Foto-Kandidat, noch nicht im nativen CAD. Vollständigkeit der X-Schutzbeschaltung ist daher offen. Foto-/Ableitungsgrenzen bleiben ausdrücklich erhalten. Modell an X bei 230 V: 2,35 V DC, 3,70 V Spitze; kein Hersteller-Sollwert. T17-36 (103 mV DC) verlangt zuerst gesicherten Kontakt am X-Kondensatorpad, dann Vergleich J/Pin3/Pin1/N/X und reale ±12VA-Versorgung. CAD-Stand unverändert 16.11.; keine neuen Kupferbelege oder elektrischen Messungen durch diesen Review.
+
+
+## Messnachtrag bis T17-52 – keine neue Kupfergruppe
+
+[Tagesprotokoll](../LAUF_2026-11-17.md) und [Sitzungs-CSV](../messprotokoll_2026-11-17.csv) enthalten jetzt **52** Mess-/Beobachtungszeilen, einschließlich der zuvor nur im Protokoll vorhandenen T17-29 bis T17-36. J-/TL082-Abfälle sind kontaktierungsbedingt ungesichert; zuletzt beide J-Kontakte etwa 300 mV ohne Klicken. TL082-Schienen −14/+13,5 V bei Einzelmessungen, +5VA stabil 5 V mindestens 2 Minuten ohne Relaisereignis. Keine gleichzeitige Entwarnung für die frühere Klickfolge. Der [aktuelle Plan](../MESSPLAN_2026-11-14_abend.md) verlangt zuerst sichere stationäre Kontaktierung. CAD/PDF und deren Register bleiben ausdrücklich Stand 16.11.; unsichere Spannungswerte erzeugen keine neuen Kupferverbindungen. [Gerätespezifikationen](../MESSGERAET_ASTROAI_DM6000AR.md).

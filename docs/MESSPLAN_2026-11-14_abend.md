@@ -4,6 +4,19 @@ Maßgeblich: [Prüfung des aktuellen Stands](PRUEFUNG_2026-11-16_spaet.md), [Sch
 
 **Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Die Prüfung vom 17.11. hat die Tacho-Funktion des ADM485/OC06 bisher nicht bestätigt. Nach den neuesten Mittagswerten und dem Foto-/CAD-Abgleich hat die Kontaktkontrolle und Wiederholungsmessung an X Vorrang. Netzseitige Oszi-Prüfungen bleiben bei ungeklärtem Messaufbau zurückgestellt.
 
+## Letzter Stand nach T17-37 bis T17-52 – Kontaktierung zuerst
+
+[Tagesprotokoll](LAUF_2026-11-17.md): X erneut 100–120 mV DC, Zusatzwert 48 mV (AC-Zuordnung nicht ausdrücklich bestätigt). J zuerst 5 V DC / 90 mV AC / 0 Hz; später Pin3 und Pin1 sowie J etwa 300 mV. TL082-Versorgung beim jeweiligen Ablesen −14/+13,5 V. Netzspannung 238 V bei angeschlossenem Board gemeldet, ohne gesicherte Gleichzeitigkeit zum J-Minimum.
+
+**Die J-/Pin-Abfälle und die wiederholten Relaisereignisse wurden mit nur aufgesetzter, nicht befestigter Spitze beobachtet; Bewegung nicht ausgeschlossen.** Kein bewiesener Platinenfehler, keine gesicherte Ursache-Wirkungs-Reihenfolge. Wiederholung mit fester Kontaktierung mangels geeigneter Befestigung verschoben. **+5VA blieb mindestens 2 Minuten bei 5 V, dabei ausdrücklich kein Klicken**: nur ruhiger Zustand, keine Entwarnung für die frühere Klickfolge. Letzter Zusatz: **beide J-Kontakte jeweils etwa 300 mV gegen Elko-Minus, ohne Klicken**; Befestigung weiterhin unbestätigt.
+
+1. Zuerst geeignete isolierte, zugentlastete Kontaktierung herstellen, netzgetrennt/entladen vorbereiten. Bis dahin keine weitere Fehlerprovokation mit Druck oder bewegter Messspitze.
+2. J im Standby ohne Motorstart und ohne Berührung beobachten. Hoher/niedriger Pegel und Relais-/STS-Ereignisse zeitlich dokumentieren. Niedriger Pegel kann auch ohne Klicken auftreten; daraus keine feste Relaisfunktion ableiten.
+3. Erst bei verlässlich reproduziertem Abfall Versorgung gezielt vergleichen; nicht gleichzeitig erfasste Werte sind keine zeitgleiche Korrelation. 2 Anzeigen/s des Multimeters schließen kurze Einbrüche nicht aus. [Offizielle DM6000AR-Spezifikationen](MESSGERAET_ASTROAI_DM6000AR.md).
+4. Danach je nach bestätigtem Zustand B10/J-Belastung oder TL082/Teiler/X gezielt eingrenzen. J–0VA-Ω-Wiederholung und stationäre Messung am bestätigten X-Pad bleiben offen. Keine Bauteile auf Verdacht tauschen.
+
+Die folgenden Abschnitte erhalten die frühere Planung und die Rechenmodelle; diese aktuelle Kontaktierungsgrenze hat Vorrang.
+
 ## Aktuelle Priorität nach T17-29 bis T17-36 und Foto-/CAD-Review
 
 Maßgeblich ist jetzt der [Abgleich B10 → TL082 → X → MCU](PRUEFUNG_B10_X_2026-11-17.md). Diese Priorität ersetzt die unten erhaltene Zwischenplanung „zuerst P4 weiterverfolgen“.

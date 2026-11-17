@@ -5,7 +5,7 @@ Small Linux/Python BLE diagnostic tools for the **Technogym MYRUN** treadmill.
 The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved and whose lower-kit belt drive (Gefran GIRT S6T30) faults on start. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the active tests, issue controlled FTMS START/STOP and low-incline requests.
 
 
-> **Diagnosestand 17.11.2026 nach Mittagsmessungen:** [B10–X: Foto-/Messwert-/CAD-Abgleich und Eingrenzung](docs/PRUEFUNG_B10_X_2026-11-17.md), [Tagesprotokoll](docs/LAUF_2026-11-17.md), [aktueller Messplan](docs/MESSPLAN_2026-11-14_abend.md). X nur 103 mV DC gemeldet, Kontakt am Via noch ungesichert; Modell etwa 2,35 V DC bei 230 V. Zuerst am bestätigten X-Pad prüfen, danach J/TL082/Teiler eingrenzen. Enable am MCU 4,88 V; PWM-Anodenpulse und Emitter-Mittelwertanstieg vorhanden, Ausgangskurvenform offen. Sensor bis P4 schaltet, ADM485-Tacho-Funktion unbestätigt. Keine defekte Einzelstelle bewiesen.
+> **Diagnosestand 17.11.2026, letzter Nachtrag:** [Tagesprotokoll bis T17-52](docs/LAUF_2026-11-17.md), [Messplan](docs/MESSPLAN_2026-11-14_abend.md), [DM6000AR-Herstellerdaten](docs/MESSGERAET_ASTROAI_DM6000AR.md). J wechselnd mit 5 V bis wenigen 100 mV und Relaisereignissen berichtet; Spitze nur aufgesetzt, daher Befund vorläufig. Zuletzt beide J-Kontakte etwa 300 mV ohne Klicken. TL082 Pin3/Pin1 etwa 300 mV bei −14/+13,5 V Versorgung gemessen. +5VA mindestens 2 Minuten konstant 5 V **ohne Relaisklicken**, kein zeitgleicher Versorgungstest der Klickfolge. Zuerst feste Messkontaktierung, kein Einzeldefekt bewiesen. [Foto-/CAD-Abgleich B10–X](docs/PRUEFUNG_B10_X_2026-11-17.md).
 
 ## Contents
 
