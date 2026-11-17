@@ -1,8 +1,15 @@
-# Messplan – Stand nach Abendmessungen 16.11.2026
+# Messplan – aktualisiert nach den Sensortests am 17.11.2026
 
-Maßgeblich: [Prüfung des aktuellen Stands](PRUEFUNG_2026-11-16_spaet.md), [Schaltplan](gesamtschaltplan_110926/README.md) und [chronologisches Protokoll](LAUF_2026-11-14.md). Keine neuen Messungen in diesem Dokument. MCU-Pins sind Arbeitsnummern, keine bestätigte Herstellerbelegung.
+Maßgeblich: [Prüfung des aktuellen Stands](PRUEFUNG_2026-11-16_spaet.md), [Schaltplan](gesamtschaltplan_110926/README.md) und [chronologisches Protokoll](LAUF_2026-11-14.md). Neue Ergebnisse stehen im [Protokoll vom 17.11.](LAUF_2026-11-17.md); die Tabellen unten beschreiben weiterhin geplante Messungen. MCU-Pins sind Arbeitsnummern, keine bestätigte Herstellerbelegung.
 
 **Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Der neue ADM485/OC06-Tacho-Kandidat wird zuerst gezielt geprüft; sein Funktionsnachweis ist noch offen.
+
+## Vorrang nach der Messgruppe vom 17.11.
+
+- **Erledigt:** C–E am Sensor schaltet bei manueller Bewegung etwa 0 ↔ 11,75 V, an P4 etwa 0 ↔ 12 V. High-Wackeltest stabil. P2.7 gegen P4-0V konstant 0 V berichtet. Frühe 50-Hz-Bilder nach Neuanklemmen nicht reproduziert; letzte AC-AUTO-Aufnahme nur 80 mVpp bei 100 µs/Div, keine bestätigten 3,19-kHz-Tachoimpulse.
+- **Jetzt K2 als separater Funktionstest im Standby:** OC06-K/Pin2 (= ADM485 RO/Pin1) gegen P2.7. DC, ×1, zunächst 2 V/Div, 5 ms/Div; Stillstand → manuell versetzte Schlitzstellungen → Stillstand. Erwartung unter der Tacho-Hypothese: zwei stabile Logikpegel, High in Größenordnung der ADM485-Versorgung, nicht die 12 V des Sensors. Versorgung und Polarität noch nicht gemessen. [Genaue Anleitung und Originalfoto](LAUF_2026-11-17.md#nächste-messung-ro--oc06-k-konsolenseite).
+- **Bei ausbleibender/auffälliger RO-Reaktion K1/K3:** Versorgung, A/B-Eingänge und Empfängerfreigabe prüfen, bevor ein Bauteil verdächtigt wird. OC06-Ausgangszuordnung S0 bleibt für die weitere Verfolgung offen; ein RO-Wechsel beweist noch keinen LED-Strom oder MCU-Empfang.
+- Sensor/Kabel unter diesen Bedingungen entlastet, nicht für alle Drehzahlen/Lastfälle freigegeben. Kein weiterer Start nötig für diesen Schritt. Manuelle Bewegungsversuche getrennt von späteren Start-/Fehleraufnahmen halten.
 
 ## Bereits erledigt
 

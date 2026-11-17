@@ -2,7 +2,7 @@
 
 ![Optokoppler-Zuordnung](../img/optokoppler_zuordnung.jpg)
 
-> **Stand 16.11.2026:** OC06 ist der Tacho-Kanal (P4 TACHO → ADM485 Pin 7 → RO → OC06 → MCU). Alle Stellen weiter unten, die OC06 bzw. den ADM485 als RS-485-Empfang deuten (Kandidatentabelle, Abschnitt D, Messplan), sind damit überholt; maßgeblich ist die Tabelle „Gemessene Zuordnung“.
+> **Prüfstand 17.11.2026:** P4 → ADM485 → OC06 bleibt ein konkret gestützter **Tacho-Funktionskandidat**. Sicher gemessen sind ADM485 RO/Pin1 = OC06-Kathode sowie die Widerstandskopplung von P4 zu ADM485 Pin7/6. Die Umschaltung des Sensors kommt an P4 an; RO-Reaktion und OC06-Ausgang zum MCU sind noch offen. Die frühere sichere Zuordnung „OC06 ist Tacho, RS-485 widerlegt“ war zu weitgehend. [Neue Messungen und nächste Prüfung](../LAUF_2026-11-17.md).
 
 Grundlage: Pad-Rollen aus `../img/optocoupler_pads.png`, Bauteilliste `parts.csv`, Foto
 `photos/2026-11-08/front/PXL_20261108_155332127.jpg`. Tags: **[O]** beobachtet, **[I]** gefolgert, **[H]** Hypothese.

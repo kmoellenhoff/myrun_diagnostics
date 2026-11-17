@@ -53,3 +53,10 @@ Die [zweite Prüfung](unabhaengige_pruefung.json) verwendet eigene, aus den letz
 PDF, SVG, KiCad, Register und Prüfnachweise sind nach Einbindung von AKT-064 bis AKT-082 neu erzeugt. Der Generator liest beide Befunddateien und deaktiviert widersprochene Fotoverbindungen. Zusätzlich zur Korrektur des X-Teilers enthält er die bestätigte ADM485/OC06-Kupfergruppe.
 
 P600-Kontakt1–Y ca. 1 kΩ und Y–0VA 1,883 kΩ sind Messkopplungen, keine isoliert identifizierten Bauteile. P600-Kontakt2=+5VA ist als Netzalias gemessen; die Zuordnung zu den alten Sensorpins Ka/Kb ist weiterhin offen. Deshalb bleibt die native NTC-Darstellung mit den alten Sensorlabels getrennt und erhält die neuen Befundhinweise. Auch P4 TACHO→ADM485 Pin7 1,103 kΩ ist kein als isolierter Einzelwiderstand eingezeichnetes Bauteil. [Bewertung und Messentscheidungen](../PRUEFUNG_2026-11-16_spaet.md).
+
+
+## Messnachtrag 17.11.2026 – Sensor bis P4
+
+[Tagesprotokoll mit Bewertung und nächstem Messpunkt](../LAUF_2026-11-17.md), [Messregister dieser Sitzung](../messprotokoll_2026-11-17.csv). Sensor C–E und P4-TACHO schalten bei manueller Bewegung etwa 0–12 V; High-Wackeltest unauffällig. Braun–C und Weiß–A je 0 Ω, beide 0-V-Adern zeigen im gemessenen Aufbau 0 Ω zu E/K; Einzeladerzuordnung ohne Parallelrückwege und LED-Strombegrenzung bleiben offen. Kein neuer Funktionsnachweis für ADM485/OC06 oder dessen MCU-Ziel.
+
+Der native CAD-/PDF-Stand bleibt ausdrücklich **16.11.**; die heutigen Betriebswerte sind im verlinkten Sitzungsregister, nicht im bisherigen generierten Messregister enthalten. Die bestätigte P4–Konsolenmasse/ADM485-RO–OC06-K-Topologie ändert sich nicht. Die externe Sensorplatine mit A/K/C/E ist im nativen Blatt noch nicht detailliert modelliert. Keine ungesicherten Einzeladern, Vorwiderstände oder MCU-Anschlüsse ergänzt. Für die neue Messanweisung gilt OC06-K = ADM485.1 (AKT-082).
