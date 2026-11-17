@@ -5,7 +5,7 @@ Small Linux/Python BLE diagnostic tools for the **Technogym MYRUN** treadmill.
 The scripts were created while diagnosing a MYRUN DCKA-series machine whose incline mechanism no longer moved and whose lower-kit belt drive (Gefran GIRT S6T30) faults on start. They use standard FTMS plus Technogym's proprietary BLE command channel to read diagnostic information and, in the active tests, issue controlled FTMS START/STOP and low-incline requests.
 
 
-> **Diagnosestand 17.11.2026, nach ADM485-/OC05-Messungen:** [Tagesprotokoll mit Korrekturen](docs/LAUF_2026-11-17.md), [aktueller Messplan](docs/MESSPLAN_2026-11-14_abend.md). Sensor schaltet bis P4 etwa 0–12 V. ADM485 A/B/RO bleiben bei manueller Bewegung konstant (2,4/2,2/4,8 V); seine Tacho-Funktion ist nicht bestätigt. OC05-Anode zeigt beim Start kurze Pulse um 1 V; Übertragung zum MCU offen. Starke 50-Hz-Bilder verschwinden nach Kontaktkorrektur. Nächster Schritt: tatsächlichen Pfad stromlos ab P4 verfolgen. Netzseitige OC05-Messung bis zur Klärung des geeigneten Messaufbaus zurückgestellt. [Vorherige Prüfung](docs/PRUEFUNG_2026-11-16_spaet.md).
+> **Diagnosestand 17.11.2026 nach Mittagsmessungen:** [B10–X: Foto-/Messwert-/CAD-Abgleich und Eingrenzung](docs/PRUEFUNG_B10_X_2026-11-17.md), [Tagesprotokoll](docs/LAUF_2026-11-17.md), [aktueller Messplan](docs/MESSPLAN_2026-11-14_abend.md). X nur 103 mV DC gemeldet, Kontakt am Via noch ungesichert; Modell etwa 2,35 V DC bei 230 V. Zuerst am bestätigten X-Pad prüfen, danach J/TL082/Teiler eingrenzen. Enable am MCU 4,88 V; PWM-Anodenpulse und Emitter-Mittelwertanstieg vorhanden, Ausgangskurvenform offen. Sensor bis P4 schaltet, ADM485-Tacho-Funktion unbestätigt. Keine defekte Einzelstelle bewiesen.
 
 ## Contents
 

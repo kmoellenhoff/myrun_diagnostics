@@ -2,7 +2,19 @@
 
 Maßgeblich: [Prüfung des aktuellen Stands](PRUEFUNG_2026-11-16_spaet.md), [Schaltplan](gesamtschaltplan_110926/README.md) und [chronologisches Protokoll](LAUF_2026-11-14.md). Neue Ergebnisse stehen im [Protokoll vom 17.11.](LAUF_2026-11-17.md); die Tabellen unten beschreiben weiterhin geplante Messungen. MCU-Pins sind Arbeitsnummern, keine bestätigte Herstellerbelegung.
 
-**Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Die Prüfung vom 17.11. hat die Tacho-Funktion des ADM485/OC06 bisher nicht bestätigt. Vorrang hat jetzt die stromlose Verfolgung des tatsächlichen Pfads ab P4; PWM-Übertragung auf der Netzseite bleibt bei ungeklärtem Messaufbau zurückgestellt.
+**Ziel für den 17.11.:** Signalfehler zeitlich vor der Abschaltung erkennen und Steuerbefehl von Schaltreaktion unterscheiden. Die Prüfung vom 17.11. hat die Tacho-Funktion des ADM485/OC06 bisher nicht bestätigt. Nach den neuesten Mittagswerten und dem Foto-/CAD-Abgleich hat die Kontaktkontrolle und Wiederholungsmessung an X Vorrang. Netzseitige Oszi-Prüfungen bleiben bei ungeklärtem Messaufbau zurückgestellt.
+
+## Aktuelle Priorität nach T17-29 bis T17-36 und Foto-/CAD-Review
+
+Maßgeblich ist jetzt der [Abgleich B10 → TL082 → X → MCU](PRUEFUNG_B10_X_2026-11-17.md). Diese Priorität ersetzt die unten erhaltene Zwischenplanung „zuerst P4 weiterverfolgen“.
+
+1. **X-Kontakt sichern:** stromlos/entladen die Signalseite des Filter-C und deren Zuordnung zu X/MCU-Arbeitsnummer28 prüfen. Y/LD3N-O ist ein anderer Eingang. Der bisherige 103-mV-Wert am möglicherweise lackierten Via ist noch kein gesicherter Defektbefund.
+2. **X am bestätigten Lötpad erneut messen**, zunächst Standby, geeignete Messmittel gegen 0VA: V DC und ergänzend V AC. Modell bei 230 V: etwa 2,35 V DC, 3,70 V Spitze, ungefiltert etwa 1,14 V AC-Ripple. Keine Hersteller-Sollwerte; Filter/Last beachten.
+3. **Falls weiterhin niedrig:** J → TL082 Pin3 → Pin1 → N → X vergleichen, zusätzlich TL082 Pin8/+12VA und Pin4/−12VA im Betrieb prüfen. Die stromlose Schienenzuordnung ersetzt keine Spannungsmessung. OPV/R1/R2/100-Ω-Pfad anhand der ersten Abweichung eingrenzen; noch nichts tauschen.
+4. **Netzversorgung unter Last** kann den unbelasteten Faston-Wert ergänzen. Geeignetes DMM V AC/MIN/MAX und sicher vorbereitete Kontakte, kein direktes L/N-Oszillogramm mit ungeklärtem OT3-Aufbau. Für die Wellenform geeignete Differenz-/Isolationsmessung erforderlich.
+5. X plausibel → tatsächlichen Tachopfad, PWM-Übertragung und F27-Steuerbefehl weiterprüfen. OC04-Emitter 4,88 V und OC05-Emitter 39→450 mV wurden inzwischen **mit dem Multimeter** gemessen. PWM-Pulshöhe nicht allein aus Mittelwert plus geschätztem Eingangstastgrad als bestätigt ausgeben. Netzseitige Oszi-Messungen bleiben zurückgestellt.
+
+Y wurde mit 428 mV gemessen; ohne zeitnahen Fühlerwiderstand und vollständige Modellprüfung nicht allein als „nur kälter, sicher in Ordnung“ bewerten. X ist aktuell der deutlich auffälligere Kandidat. Die weiteren Tabellen sind nachrangige Prüferwartungen, keine Aufforderung zur Wiederholung erledigter Schritte.
 
 ## Vorrang nach den Nachtragsmessungen vom 17.11.
 
