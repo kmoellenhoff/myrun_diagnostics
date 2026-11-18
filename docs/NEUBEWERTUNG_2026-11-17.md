@@ -47,3 +47,5 @@ Messung 1 und 2 nur mit fest geklemmten Leitungen und ohne Berührung; der Katho
 - **Lesart [H]:** J hat neben „2212“ einen zweiten Pfad über 10 kΩ zu einem Knoten am SOT-23-5. Dieser Knoten lag am 08.11. (stromlos) niederohmig an 0VA, am 16.11. nicht. Möglich: das SOT-23-5 (Schalter/Vergleicher o. Ä.) zieht seinen Ausgang zeitweise auf 0VA; stromlos kann aber auch ein ungespeistes Bauteil je nach Ladezustand seiner Versorgung niederohmig wirken. Ebenso möglich: Unterschiede durch Messpunkt (08.11. am Diodenbein, Platine nicht fixiert) oder Belag vor der Reinigung am 10.11.
 - Größenordnung: Diese Last allein senkt J im Betrieb nur auf ≈ 1,5 V, nicht auf 0,3 V; zusammen mit einem fehlenden Zweig ergeben sich Werte in der Nähe der gemessenen.
 - **Prüfung:** stromlos beide SOT-23-5-Testpunkte gegen 0VA und +5VA, Aufdruck des SOT-23-5 ablesen; beide B10-Dioden ersetzen (nicht nur die untere); bei erneutem Abfall von J sofort SOT-23-5-Testpunkt gegen 0VA messen.
+
+- **Nachtrag 18.11.:** Abschnitt 6 nicht bestätigt – J ↔ Testpunkt ② = 31,2 kΩ (= 22,1 + 9,2 kΩ, nur über 0VA); SOT-23-5 „100CA“ vermutlich PFC-Gate-Treiber (FAN3100C). Details: LAUF_2026-11-18.md.
