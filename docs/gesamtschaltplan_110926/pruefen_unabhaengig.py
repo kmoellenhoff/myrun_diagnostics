@@ -24,6 +24,7 @@ assert xml.find(".//components/comp[@ref='C602']/property[@name='dnp']") is not 
 assert not any(c.attrib['ref'].startswith(('D90','R90')) for c in xml.findall('.//components/comp'))
 same('R601.2','U602.5','C601.2','U401.Tb','Q601.E','Q602.E','U201.B','U202.R','TP503.1')
 same('R602.2','U602.3')
+separate('U602.6','U602.7','U602.5','U602.3','U602.1')
 same('U602.1','U602.2','R301.1')
 same('R302.1','TP503.1')
 same('R301.2','R302.2','R603.1')
@@ -98,7 +99,7 @@ assert umbau.find(".//components/comp[@ref='C602']/property[@name='dnp']") is no
 assert not {'R401','R402','R403','R404','D401','D402'} & {c.attrib['ref'] for c in umbau.findall('.//components/comp')}
 media=[]
 media_details=[]
-baseline='89748e932129eaaa9f03a0504eaa5261f45b501d'
+baseline='d11d0b216334c2af546306586f4df1c6df6b13a6'
 for entry in subprocess.check_output(['git','ls-tree','-rz',baseline,'--','photos','docs/img','docs/messplan_stromlos_2026-11-08/makros'],cwd=root).split(b'\0'):
  if not entry: continue
  head,path=entry.split(b'\t',1);blob=head.split()[2].decode();name=path.decode();data=(root/name).read_bytes()

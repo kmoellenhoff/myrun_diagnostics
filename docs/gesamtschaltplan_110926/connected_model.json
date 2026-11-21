@@ -3,7 +3,7 @@
   "sheet": "User 841x1250 mm",
   "branch": "main",
   "date": "2026-11-21",
-  "source_commit": "89748e932129eaaa9f03a0504eaa5261f45b501d",
+  "source_commit": "d11d0b216334c2af546306586f4df1c6df6b13a6",
   "components": [
     {
       "Reference": "R101",
@@ -1411,7 +1411,7 @@
       "Reference": "U602",
       "Symbol": "TL082",
       "Repository_ID": "TL082 neben T3",
-      "Wert": "TL082I / A = Spannungsfolger",
+      "Wert": "TL082I / A folgt J, B offen",
       "Feld_Claude": "",
       "Messwerte": "",
       "Terminals": {
@@ -1420,6 +1420,8 @@
         "3": "TL082.3",
         "4": "TL082.4",
         "5": "TL082.5",
+        "6": "TL082.6",
+        "7": "TL082.7",
         "8": "TL082.8"
       },
       "Pins_xy": {
@@ -1446,6 +1448,14 @@
         "5": [
           285,
           720
+        ],
+        "6": [
+          245,
+          720
+        ],
+        "7": [
+          300,
+          677
         ]
       },
       "Position_mm": [

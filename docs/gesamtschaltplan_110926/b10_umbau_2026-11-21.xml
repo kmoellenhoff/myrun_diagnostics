@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/workspace/myrun_diagnostics/docs/gesamtschaltplan_110926/B10_Umbau_2026-11-21.kicad_sch</source>
-    <date>2026-11-21T13:24:26+0000</date>
+    <date>2026-11-21T14:08:32+0000</date>
     <tool>Eeschema 9.0.2+dfsg-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -294,28 +294,28 @@
       <node ref="R601" pin="2" pintype="passive"/>
     </net>
     <net code="2" name="/AC_L" class="Default">
-      <node ref="D902" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R903" pin="1" pintype="passive"/>
     </net>
     <net code="3" name="/AC_N" class="Default">
-      <node ref="D901" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R901" pin="1" pintype="passive"/>
     </net>
     <net code="4" name="/B10_KATHODEN" class="Default">
       <node ref="C602" pin="1" pintype="passive"/>
+      <node ref="D901" pin="2" pinfunction="K" pintype="passive"/>
+      <node ref="D902" pin="2" pinfunction="K" pintype="passive"/>
       <node ref="R601" pin="1" pintype="passive"/>
       <node ref="R602" pin="1" pintype="passive"/>
-      <node ref="R902" pin="2" pintype="passive"/>
-      <node ref="R904" pin="2" pintype="passive"/>
     </net>
     <net code="5" name="/N_J_1001R" class="Default">
       <node ref="R602" pin="2" pintype="passive"/>
     </net>
-    <net code="6" name="Net-(D901-K)" class="Default">
-      <node ref="D901" pin="2" pinfunction="K" pintype="passive"/>
-      <node ref="R901" pin="1" pintype="passive"/>
+    <net code="6" name="Net-(D901-A)" class="Default">
+      <node ref="D901" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R902" pin="2" pintype="passive"/>
     </net>
-    <net code="7" name="Net-(D902-K)" class="Default">
-      <node ref="D902" pin="2" pinfunction="K" pintype="passive"/>
-      <node ref="R903" pin="1" pintype="passive"/>
+    <net code="7" name="Net-(D902-A)" class="Default">
+      <node ref="D902" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R904" pin="2" pintype="passive"/>
     </net>
     <net code="8" name="Net-(R901-Pad2)" class="Default">
       <node ref="R901" pin="2" pintype="passive"/>

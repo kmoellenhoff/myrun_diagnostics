@@ -1,6 +1,6 @@
 {
-  "baseline": "89748e932129eaaa9f03a0504eaa5261f45b501d",
-  "independent_native_net_assertions": 67,
+  "baseline": "d11d0b216334c2af546306586f4df1c6df6b13a6",
+  "independent_native_net_assertions": 68,
   "independent_umbau_net_assertions": 10,
   "all_passed": true,
   "checks": [
@@ -50,6 +50,15 @@
       "same": [
         "R602.2",
         "U602.3"
+      ]
+    },
+    {
+      "separate": [
+        "U602.6",
+        "U602.7",
+        "U602.5",
+        "U602.3",
+        "U602.1"
       ]
     },
     {
@@ -457,20 +466,14 @@
   "umbau_checks": [
     {
       "same": [
-        "D901.2",
-        "R901.1"
-      ]
-    },
-    {
-      "same": [
         "R901.2",
         "R902.1"
       ]
     },
     {
       "same": [
-        "D902.2",
-        "R903.1"
+        "R902.2",
+        "D901.1"
       ]
     },
     {
@@ -481,8 +484,14 @@
     },
     {
       "same": [
-        "R902.2",
         "R904.2",
+        "D902.1"
+      ]
+    },
+    {
+      "same": [
+        "D901.2",
+        "D902.2",
         "R601.1",
         "R602.1",
         "C602.1"
@@ -496,25 +505,25 @@
     },
     {
       "separate": [
-        "D901.1",
-        "D902.1",
+        "R901.1",
+        "R903.1",
         "C602.1",
         "C602.2"
       ]
     },
     {
       "separate": [
-        "D901.1",
-        "D901.2",
+        "R901.1",
         "R901.2",
+        "D901.1",
         "C602.1"
       ]
     },
     {
       "separate": [
-        "D902.1",
-        "D902.2",
+        "R903.1",
         "R903.2",
+        "D902.1",
         "C602.1"
       ]
     },
@@ -531,6 +540,6 @@
   "unchanged_original_and_reference_files": 282,
   "source": "Final corrections through 16 Nov; C602 connections, measured capacity and actual B10 replacement in LAUF_2026-11-21.md; original photographs",
   "hardware_function_verified": false,
-  "reviewed_xml_sha256": "4e55caa5cc4ab77656e3a0f607654cecf1e41b5dd57f98848f8a4938ac232e3c",
-  "reviewed_umbau_xml_sha256": "95059fb7cde554e517dd8d9c86c03d4c6d537fe491a44defe8e28c9376fc8810"
+  "reviewed_xml_sha256": "ba16057e4b11690710d2aece71e8cdd5d7f3da60bc5344482f114b7f77a5fffa",
+  "reviewed_umbau_xml_sha256": "aa0a07d89d4bc65592a3306ac3e2cec7729a0c8df9ef468b17c9cd4e5655ba00"
 }

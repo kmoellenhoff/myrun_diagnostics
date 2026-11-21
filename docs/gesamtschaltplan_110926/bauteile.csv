@@ -41,7 +41,7 @@ U601;MCU unbekannt;;Arbeitsnummern, kein Datenblatt;
 R601;B10-2212;;22,1 k / 2212;
 C602;J-Filter neben 2212;E6 / neben 2212;ca. 470 pF [I];"0,43 nF ausgebaut kalt; im Profil-Lauf 21.11. entfernt"
 R602;B10-1001;;1 k / 1001;
-U602;TL082 neben T3;;TL082I / A = Spannungsfolger;
+U602;TL082 neben T3;;TL082I / A folgt J, B offen;
 R603;Netzsignal-1000;;100 Ω / 1000;
 C601;X-Filterkondensator;;C Wert offen;
 U605;LD3N an Y;;Typ / Innenstruktur offen;

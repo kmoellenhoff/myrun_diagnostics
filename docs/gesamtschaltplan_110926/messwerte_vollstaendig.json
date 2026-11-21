@@ -4834,17 +4834,17 @@
     "Modus": "Kupfer direkt",
     "Wert": "Faston-Pad zum ersten 470-kΩ-Widerstand",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F].",
+    "Kontext": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F]. Zuordnung nach ausdrücklicher Nutzerkorrektur; kein neuer fotografischer Durchgangsnachweis.",
     "Originalzeile": {
       "ID": "NOV21-004",
       "Knoten_A": "UMB-RN1.1",
       "Knoten_B": "AC LINE N",
       "Art": "Kupfer direkt",
-      "Status": "F",
+      "Status": "I",
       "Wert": "Faston-Pad zum ersten 470-kΩ-Widerstand",
       "Quelle": "docs/LAUF_2026-11-21.md — Vormittag, korrigiert nach Nutzerangabe 21.11. 14:50–14:53",
       "Originalfoto": "photos/2026-11-21/umbau_uebersicht_litzen_faston_zu_j.jpg",
-      "Bemerkung": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F]."
+      "Bemerkung": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F]. Zuordnung nach ausdrücklicher Nutzerkorrektur; kein neuer fotografischer Durchgangsnachweis."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },
@@ -4880,7 +4880,7 @@
     "Modus": "Kupfer direkt",
     "Wert": "Zweiter 470-kΩ-Widerstand zur Anode von US1M",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt.",
+    "Kontext": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur.",
     "Originalzeile": {
       "ID": "NOV21-006",
       "Knoten_A": "UMB-RN2.2",
@@ -4890,7 +4890,7 @@
       "Wert": "Zweiter 470-kΩ-Widerstand zur Anode von US1M",
       "Quelle": "docs/LAUF_2026-11-21.md — Vormittag, korrigiert nach Nutzerangabe 21.11. 14:50–14:53",
       "Originalfoto": "photos/2026-11-21/ketten_detail_dioden_widerstaende.jpg",
-      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt."
+      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },
@@ -4903,7 +4903,7 @@
     "Modus": "Kupfer direkt",
     "Wert": "Kathode (Diodenstrich) von US1M an J",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J.",
+    "Kontext": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur.",
     "Originalzeile": {
       "ID": "NOV21-007",
       "Knoten_A": "UMB-DN.K",
@@ -4913,7 +4913,7 @@
       "Wert": "Kathode (Diodenstrich) von US1M an J",
       "Quelle": "docs/LAUF_2026-11-21.md — Vormittag, korrigiert nach Nutzerangabe 21.11. 14:50–14:53",
       "Originalfoto": "photos/2026-11-21/j_anschluss_2212_1001_litzen.jpg",
-      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J."
+      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },
@@ -4926,17 +4926,17 @@
     "Modus": "Kupfer direkt",
     "Wert": "Faston-Pad zum ersten 470-kΩ-Widerstand",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F].",
+    "Kontext": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F]. Zuordnung nach ausdrücklicher Nutzerkorrektur; kein neuer fotografischer Durchgangsnachweis.",
     "Originalzeile": {
       "ID": "NOV21-008",
       "Knoten_A": "UMB-RL1.1",
       "Knoten_B": "AC LINE L",
       "Art": "Kupfer direkt",
-      "Status": "F",
+      "Status": "I",
       "Wert": "Faston-Pad zum ersten 470-kΩ-Widerstand",
       "Quelle": "docs/LAUF_2026-11-21.md — Vormittag, korrigiert nach Nutzerangabe 21.11. 14:50–14:53",
       "Originalfoto": "photos/2026-11-21/umbau_uebersicht_litzen_faston_zu_j.jpg",
-      "Bemerkung": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F]."
+      "Bemerkung": "Reihenfolge je Seite: Faston – 470 kΩ – 470 kΩ – US1M – J (Reihenfolge der Originalschaltung, nur mit neuen Teilen). Neue Teile auf den alten Pads; zusätzlich mit Litzen überbrückt (Litze = zusätzliche Brücke über denselben Knoten, kein Parallelzweig; kein elektrisch paralleler alter Zweig). Foto/Nutzerangabe [F]. Zuordnung nach ausdrücklicher Nutzerkorrektur; kein neuer fotografischer Durchgangsnachweis."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },
@@ -4972,7 +4972,7 @@
     "Modus": "Kupfer direkt",
     "Wert": "Zweiter 470-kΩ-Widerstand zur Anode von US1M",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt.",
+    "Kontext": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur.",
     "Originalzeile": {
       "ID": "NOV21-010",
       "Knoten_A": "UMB-RL2.2",
@@ -4982,7 +4982,7 @@
       "Wert": "Zweiter 470-kΩ-Widerstand zur Anode von US1M",
       "Quelle": "docs/LAUF_2026-11-21.md — Vormittag, korrigiert nach Nutzerangabe 21.11. 14:50–14:53",
       "Originalfoto": "photos/2026-11-21/ketten_detail_dioden_widerstaende.jpg",
-      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt."
+      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Anode am Widerstandsende) [I]; gestützt durch Ohm-Messung (NOV21-012/-013) und J positiv gegen 0VA. Die frühere Foto-Beschreibung (Diode am Faston) ist überholt. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },
@@ -4995,7 +4995,7 @@
     "Modus": "Kupfer direkt",
     "Wert": "Kathode (Diodenstrich) von US1M an J",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J.",
+    "Kontext": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur.",
     "Originalzeile": {
       "ID": "NOV21-011",
       "Knoten_A": "UMB-DL.K",
@@ -5005,7 +5005,7 @@
       "Wert": "Kathode (Diodenstrich) von US1M an J",
       "Quelle": "docs/LAUF_2026-11-21.md — Vormittag, korrigiert nach Nutzerangabe 21.11. 14:50–14:53",
       "Originalfoto": "photos/2026-11-21/j_anschluss_2212_1001_litzen.jpg",
-      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J."
+      "Bemerkung": "Nutzerangabe 21.11. 14:50 (Kathode am J-Ende, Anschluss an gemeinsamer Kappe 2212/1001) [I]; Polarität gestützt durch J = +4,9 V gegen 0VA [M]. Beide Seiten treffen sich an J. Der Gesamtwiderstand und die Durchlassrichtung beweisen die Position der Diode innerhalb der Serienkette nicht; die Reihenfolge stammt aus der Nutzerkorrektur."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },
@@ -5064,7 +5064,7 @@
     "Modus": "Betriebsbeobachtung / Fehlerhypothese",
     "Wert": "Wärmeeinbruch mit C, ohne C nicht reproduziert, anschließender Profil-Lauf ohne Fehler",
     "Gegenrichtung": "siehe Primärquelle",
-    "Kontext": "Nebenschluss (Riss mit Metallbrücke oder leitende Verschmutzung am Pad möglich) an C602 oder dessen Lötumfeld, nicht gewöhnlicher Leckstrom: Der Einbruch von J auf ca. 0,1 V (0,9 V in anderen Phasen) verlangt rechnerisch einen Nebenschluss von ca. 0,5 kΩ (bei 0,9 V rund 4 kΩ nach Dreisatz 22,1 kΩ · 0,9/4,9; Nutzer nannte ca. 1 kΩ, Abweichung offen) parallel zu 22,1 kΩ, also eine Brücke/einen Kurzschluss. Kein elektrischer Nebenschlusswiderstand als Bauteil ergänzt.",
+    "Kontext": "Im vereinfachten Modell mit unveränderter Einspeisung und ursprünglich J = 4,9 V ergibt sich aus Rth = 22,1 kΩ ∥ 940 kΩ ≈ 21,6 kΩ ein zusätzlicher Parallelwiderstand Rzus = Rth · Jniedrig / (4,9 V − Jniedrig). Für 0,1 V sind das ca. 0,45 kΩ, für 0,9 V ca. 4,9 kΩ; ca. 1 kΩ passt eher zu J ≈ 0,2 V. Das sind Modellwerte, keine Widerstandsmessungen. Ein solcher niederohmiger Nebenschluss kann durch eine interne temperaturabhängige Isolationsstörung von C602 oder einen leitenden Pfad im Anschlussumfeld entstehen. Die Rechnung beweist weder eine Metallbrücke noch einen harten 0-Ω-Kurzschluss. Gewöhnlicher kleiner Isolationsleckstrom wäre zu gering; ein stark erhöhter Leckstrom ist als Mechanismus nicht ausgeschlossen. Kein Nebenschlusswiderstand als gemessenes Bauteil ergänzt.",
     "Originalzeile": {
       "ID": "NOV21-014",
       "Knoten_A": "J-C.A",
@@ -5074,7 +5074,7 @@
       "Wert": "Wärmeeinbruch mit C, ohne C nicht reproduziert, anschließender Profil-Lauf ohne Fehler",
       "Quelle": "docs/LAUF_2026-11-21.md — 13:10–13:37",
       "Originalfoto": "",
-      "Bemerkung": "Nebenschluss (Riss mit Metallbrücke oder leitende Verschmutzung am Pad möglich) an C602 oder dessen Lötumfeld, nicht gewöhnlicher Leckstrom: Der Einbruch von J auf ca. 0,1 V (0,9 V in anderen Phasen) verlangt rechnerisch einen Nebenschluss von ca. 0,5 kΩ (bei 0,9 V rund 4 kΩ nach Dreisatz 22,1 kΩ · 0,9/4,9; Nutzer nannte ca. 1 kΩ, Abweichung offen) parallel zu 22,1 kΩ, also eine Brücke/einen Kurzschluss. Kein elektrischer Nebenschlusswiderstand als Bauteil ergänzt."
+      "Bemerkung": "Im vereinfachten Modell mit unveränderter Einspeisung und ursprünglich J = 4,9 V ergibt sich aus Rth = 22,1 kΩ ∥ 940 kΩ ≈ 21,6 kΩ ein zusätzlicher Parallelwiderstand Rzus = Rth · Jniedrig / (4,9 V − Jniedrig). Für 0,1 V sind das ca. 0,45 kΩ, für 0,9 V ca. 4,9 kΩ; ca. 1 kΩ passt eher zu J ≈ 0,2 V. Das sind Modellwerte, keine Widerstandsmessungen. Ein solcher niederohmiger Nebenschluss kann durch eine interne temperaturabhängige Isolationsstörung von C602 oder einen leitenden Pfad im Anschlussumfeld entstehen. Die Rechnung beweist weder eine Metallbrücke noch einen harten 0-Ω-Kurzschluss. Gewöhnlicher kleiner Isolationsleckstrom wäre zu gering; ein stark erhöhter Leckstrom ist als Mechanismus nicht ausgeschlossen. Kein Nebenschlusswiderstand als gemessenes Bauteil ergänzt."
     },
     "Ebene": "21.11.2026 – Ergänzungen"
   },

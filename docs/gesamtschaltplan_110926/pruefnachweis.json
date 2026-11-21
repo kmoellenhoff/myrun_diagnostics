@@ -1,8 +1,8 @@
 {
   "native_export": "KiCad 9.0.2, XML/PDF/SVG erfolgreich",
   "components": 58,
-  "pins_checked": 151,
-  "pairwise_pin_comparisons": 22801,
+  "pins_checked": 153,
+  "pairwise_pin_comparisons": 23409,
   "net_partitions_equal": true,
   "0VA_console_separate": true,
   "series_resistors_not_shorted": true,
@@ -17,9 +17,9 @@
     "C602_dnp": true
   },
   "latest_rows_covered": 87,
-  "measurement_rows_total": 242,
-  "pdf_pages": 42,
-  "source_commit": "89748e932129eaaa9f03a0504eaa5261f45b501d",
+  "measurement_rows_total": 243,
+  "pdf_pages": 43,
+  "source_commit": "d11d0b216334c2af546306586f4df1c6df6b13a6",
   "source_sha256": {
     "docs/schaltplan_110926/verbindungen.csv": "47576e6b344e5977ef751d10fda1be5e0fb904839539c68f440f21a4f2fa5abc",
     "docs/messplan_stromlos_2026-11-08/messprotokoll_2026-11-09.csv": "fceeb1587c2aca62d1feef5b9b180f401a473cea161ed2930d18519fc51af070",
@@ -44,11 +44,11 @@
     "docs/netlist/q2_treiber_fan3100c_kandidat.md": "9666023dd3b98c1f3f15e273689abc6e4b4858883aa95651f914a22516c5c8d9",
     "photos/2026-11-08/back_raster_index.csv": "709b5a83a23f7a67c6c6594b55681384d4e4b5f87944d8f2fc8c424e110faf16",
     "docs/messplan_stromlos_2026-11-08/Q2_1P_DIODENTEST_AUSSTEHEND.csv": "978244639395bb057eee00923af52e2c28c5e5f6682320cad0a8785a9c7c8d67",
-    "docs/gesamtschaltplan_110926/befunde_2026-11-21.csv": "0376b2dd00ac3af5e29d0afd2a733cdd46d4131f562f79f2ea335534bb896d35",
+    "docs/gesamtschaltplan_110926/befunde_2026-11-21.csv": "be1d8339f24d3bd03162b8f37266a837f690a2ca05fba9701104b918158ba5f8",
     "docs/LAUF_2026-11-17.md": "bf125d38b8434fcdc5cde25d45f07caa506dcbdc055d4906c2ab25b7bff565c9",
     "docs/LAUF_2026-11-18.md": "d42f3728dd5747ea6f9a4a256bc9302605ea100cfc4e64564cd1befa8f37cf0e",
     "docs/LAUF_2026-11-19.md": "9b322b1743a6e3d5a4aa4b56cc2e3c06ff4cae3f22357048414cd20ac487f980",
-    "docs/LAUF_2026-11-21.md": "c630f36d8aa75274bdd8854d990a99d2984a0528e44767375fa2ee2460657b79",
+    "docs/LAUF_2026-11-21.md": "212ba1c436c61d9e1225c550b85cdbc20f18be28c65e7f23331f6be209be30fe",
     "docs/messprotokoll_2026-11-17.csv": "776e351f08d9b8a6cb4d16f780f332e2de61503ffe8d808b99a2f243917ef731"
   }
 }

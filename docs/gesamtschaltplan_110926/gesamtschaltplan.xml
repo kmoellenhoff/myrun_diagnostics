@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/workspace/myrun_diagnostics/docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch</source>
-    <date>2026-11-21T13:24:25+0000</date>
+    <date>2026-11-21T14:08:31+0000</date>
     <tool>Eeschema 9.0.2+dfsg-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1222,12 +1222,12 @@
       <tstamps>2226277b-c753-52b2-8d12-e5f69144a5de</tstamps>
     </comp>
     <comp ref="U602">
-      <value>TL082I / A = Spannungsfolger</value>
+      <value>TL082I / A folgt J, B offen</value>
       <fields>
         <field name="Repository_ID">TL082 neben T3</field>
         <field name="Feld_Claude"/>
         <field name="Messwerte"/>
-        <field name="Terminal_Aliase">{"1": "TL082.1", "2": "TL082.2", "3": "TL082.3", "4": "TL082.4", "5": "TL082.5", "8": "TL082.8"}</field>
+        <field name="Terminal_Aliase">{"1": "TL082.1", "2": "TL082.2", "3": "TL082.3", "4": "TL082.4", "5": "TL082.5", "6": "TL082.6", "7": "TL082.7", "8": "TL082.8"}</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1236,7 +1236,7 @@
       <property name="Repository_ID" value="TL082 neben T3"/>
       <property name="Feld_Claude" value=""/>
       <property name="Messwerte" value=""/>
-      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;TL082.1&quot;, &quot;2&quot;: &quot;TL082.2&quot;, &quot;3&quot;: &quot;TL082.3&quot;, &quot;4&quot;: &quot;TL082.4&quot;, &quot;5&quot;: &quot;TL082.5&quot;, &quot;8&quot;: &quot;TL082.8&quot;}"/>
+      <property name="Terminal_Aliase" value="{&quot;1&quot;: &quot;TL082.1&quot;, &quot;2&quot;: &quot;TL082.2&quot;, &quot;3&quot;: &quot;TL082.3&quot;, &quot;4&quot;: &quot;TL082.4&quot;, &quot;5&quot;: &quot;TL082.5&quot;, &quot;6&quot;: &quot;TL082.6&quot;, &quot;7&quot;: &quot;TL082.7&quot;, &quot;8&quot;: &quot;TL082.8&quot;}"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="docs/gesamtschaltplan_110926/GIRT_Gesamtschaltplan.kicad_sch"/>
       <property name="exclude_from_bom"/>
@@ -1691,6 +1691,8 @@
         <pin num="3" name="3_IN+_A" type="passive"/>
         <pin num="4" name="4_V-" type="passive"/>
         <pin num="5" name="5_IN+_B" type="passive"/>
+        <pin num="6" name="6_IN-_B" type="passive"/>
+        <pin num="7" name="7_OUT_B" type="passive"/>
         <pin num="8" name="8_V+" type="passive"/>
       </pins>
     </libpart>
@@ -2009,6 +2011,12 @@
     </net>
     <net code="75" name="unconnected-(TH501-Kb-Pad2)" class="Default">
       <node ref="TH501" pin="2" pinfunction="Kb" pintype="passive"/>
+    </net>
+    <net code="76" name="unconnected-(U602-6_IN-_B-Pad6)" class="Default">
+      <node ref="U602" pin="6" pinfunction="6_IN-_B" pintype="passive"/>
+    </net>
+    <net code="77" name="unconnected-(U602-7_OUT_B-Pad7)" class="Default">
+      <node ref="U602" pin="7" pinfunction="7_OUT_B" pintype="passive"/>
     </net>
   </nets>
 </export>

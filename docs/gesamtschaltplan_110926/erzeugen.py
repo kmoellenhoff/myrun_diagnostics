@@ -21,7 +21,7 @@ STEM = "GIRT_Gesamtschaltplan"
 NS = uuid.UUID("23c6e191-a399-469c-bd6a-12971145a067")
 ROOT_UUID = str(uuid.uuid5(NS, STEM))
 DOC_DATE = "2026-11-21"
-SOURCE_COMMIT = "89748e932129eaaa9f03a0504eaa5261f45b501d"
+SOURCE_COMMIT = "d11d0b216334c2af546306586f4df1c6df6b13a6"
 
 
 def uid(s): return str(uuid.uuid5(NS, s))
@@ -378,7 +378,7 @@ label("Q2-DRV.C",pos("U201","C"))
 lib("CAP", [("1","~",-12.7,0,0,10.7),("2","~",12.7,0,180,10.7)],line((-2,-5),(-2,5))+line((2,-5),(2,5)))
 lib("CV", [("1","~",0,12.7,270,10.7),("2","~",0,-12.7,90,10.7)],line((-5,2),(5,2))+line((-5,-2),(5,-2)))
 lib("MCU", [(str(n),f"{n} {role}",-45,70-i*14,0,10) for i,(n,role) in enumerate([(8,"+5VA"),(11,"PFC"),(12,"Enable"),(13,"P70"),(17,"PWM"),(18,"PWM"),(24,"F27"),(26,"Y"),(28,"X")])],rect((-35,-65),(45,80)),True)
-lib("TL082",[(str(n),name,px,py,angle,10) for n,name,px,py,angle in [(3,"3 IN+ A",-35,10,0),(2,"2 IN- A",-35,-10,0),(1,"1 OUT A",35,0,180),(8,"8 V+",0,35,270),(4,"4 V-",0,-35,90),(5,"5 IN+ B",20,-35,90)]],poly([(-25,25),(-25,-25),(25,0),(-25,25)]),True)
+lib("TL082",[(str(n),name,px,py,angle,10) for n,name,px,py,angle in [(3,"3 IN+ A",-35,10,0),(2,"2 IN- A",-35,-10,0),(1,"1 OUT A",35,0,180),(8,"8 V+",0,35,270),(4,"4 V-",0,-35,90),(5,"5 IN+ B",20,-35,90),(6,"6 IN- B",-20,-35,90),(7,"7 OUT B",35,8,180)]],rect((-25,-25),(25,25)),True)
 lib("OC",[("A","1 LED A",-30,15,0,10),("K","2 LED K",-30,-15,0,10),("C","4 C",30,15,180,10),("E","3 E",30,-15,180,10)],rect((-20,-25),(20,25))+poly([(-12,-5),(-2,0),(-12,5),(-12,-5)])+line((-2,-5),(-2,5))+line((0,-20),(0,20))+line((8,-9),(8,9))+line((8,5),(20,15))+line((8,-5),(20,-15))+poly([(14,-8),(20,-15),(13,-14)]),True)
 lib("NPN",[("B","B / L",-25,0,0,10),("C","C / O",15,25,270,10),("E","E / R",15,-25,90,10)],line((-15,-12),(-15,12))+line((-15,0),(5,15))+line((-15,0),(5,-15))+line((5,15),(15,15))+line((5,-15),(15,-15))+poly([(3,-8),(5,-15),(-2,-13)]),True)
 text("Anschlussstand 21.11.2026 — Originaltopologie; C602 aktuell ausgebaut",25,610,3,True)
@@ -392,11 +392,11 @@ parts[-1]["DNP"] = True
 wire(pos("C602","1"),(105,660),(65,660));junction((105,660))
 lead("C602","2",(105,715))
 text("C602: 0,43 nF kalt [M]; derzeit ausgebaut / DNP.",25,736,1.65)
-text("HF-Filter, kein Spitzendetektor; Leckfehler verdächtig.",25,744,1.65)
-text("TL082-Pinzählung 21.11. geklärt: Nutzerangaben waren 180° gedreht (echt = 9 - genannt). Pin 6/7 vermutlich verbunden, nicht gemessen [H].",25,752,1.4)
+text("HF-Filter, kein Spitzendetektor; Nebenschluss verdächtig.",25,744,1.65)
+text("TL082: Pin 3 bestätigt; Pin 6/7-Fortsetzung offen, keine Verbindung belegt.",25,752,1.4)
 add("R602","RH",145,660,"B10-1001","1 k / 1001",{"1":"J.1001L","2":"J.1001R"})
 lead("R602","1",(100,660));lead("R602","2",(185,660))
-add("U602","TL082",265,685,"TL082 neben T3","TL082I / A = Spannungsfolger",{str(n):f"TL082.{n}" for n in [1,2,3,4,5,8]},labels_pos=((230,742),(230,750)))
+add("U602","TL082",265,685,"TL082 neben T3","TL082I / A folgt J, B offen",{str(n):f"TL082.{n}" for n in range(1,9)},labels_pos=((230,742),(230,750)))
 # Visible input and feedback wires, in addition to the shared native labels.
 wire((65,660),pos("R602","1")); junction((65,660))
 wire(pos("R602","2"),(210,660),(210,675),pos("U602","3"))
@@ -573,8 +573,9 @@ def generate_umbau():
         parts, drawing, wires, labels, junctions = [], [], [], [], set()
         text("GIRT S6T30 | B10: dokumentierter Ist-Umbau 21.11.2026",18,16,3.4,True)
         text("Eigenständiges Vergleichsblatt. NICHT zusätzlich parallel zur Originalschaltung anschließen.",18,27,2)
-        text("F = Fotos / Nutzerbeschreibung; M = gemessen. R901–R904 / D901–D902 sind neue CAD-Referenzen.",18,36,1.8)
-        text("Reihenfolge je Seite: Faston - 470 k - 470 k - US1M - J (wie Originalschaltung, neue Teile). Zusatzlitzen sind Brücken über dieselben Knoten, keine Parallelzweige.",18,43,1.8)
+        text("M = gemessen | F = Foto | I = Nutzerkorrektur / Ableitung. R901–R904 und D901–D902: Ersatzteile.",18,36,1.8)
+        text("Nach Nutzerkorrektur: Faston - 470 k - 470 k - US1M - J (neue Teile auf alten Pads).",18,43,1.8)
+        text("Zusatzlitzen überbrücken dieselben Knoten; kein zusätzlicher Parallelzweig. Netzplan, kein Verdrahtungsbild.",18,50,1.8)
         # Reihenfolge je Seite (Nutzerangabe 21.11. 14:50): Faston - R - R - US1M - J,
         # Anode am Widerstandsende, Kathode (Diodenstrich) an J.
         for phase, y, d, r1, r2 in [("N",80,"D901","R901","R902"),("L",125,"D902","R903","R904")]:
@@ -595,9 +596,9 @@ def generate_umbau():
         add("R602","RH",355,150,"B10-1001, unverändert","1 k / 1001",{"1":"J.1001L","2":"J.1001R"},labels_pos=((332,130),(332,138)))
         wire((315,150),pos("R602","1"));junction((315,150));lead("R602","2",(393,150))
         text("zum TL082",365,159,1.7)
-        text("Pin 3 (IN A+) bestätigt",365,166,1.7)
+        text("Pin 3 / IN A+",365,166,1.7)
         text("C602 mit Kreuz / DNP: im erfolgreichen Profil-Lauf NICHT bestückt. Ersatz noch nicht dokumentiert.",18,235,1.9)
-        text("Alte B10-Dioden entfernt: R401–R404 sind in diesem Blatt kein weiterer Einspeisezweig.",18,245,1.9)
+        text("Alte Teile ersetzt, alte Pads genutzt. Originalpfade nicht als weiterer Parallelzweig gezeichnet.",18,245,1.9)
         text("Kein Nachweis von L/N nach 0VA, Gleichrichter oder F27-Leistungskontakten; hier nicht erfunden.",18,255,1.9)
         text("Befunde NOV21-001..015 und Originalfotos: siehe README und befunde_2026-11-21.csv.",18,265,1.9)
         save_schematic(420,297,"GIRT S6T30 - B10 Ist-Umbau 21.11.2026")
