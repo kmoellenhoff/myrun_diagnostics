@@ -1,6 +1,6 @@
 {
-  "base_commit": "d917aa8dcadb72afa94c133d4b6bf7259a89952a",
-  "checked_files": 252,
+  "base_commit": "89748e932129eaaa9f03a0504eaa5261f45b501d",
+  "checked_files": 282,
   "all_unchanged": true,
   "files": [
     {
@@ -326,6 +326,46 @@
     {
       "path": "docs/img/vdd_messpunkt.jpg",
       "sha256": "b10975e1128da474b25096bb778ffa087afa76cb6a2ea6f05081063e7cd6cb7a",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/01.png",
+      "sha256": "6c74b0198c12746354430975b3aae3f6447ca46a3fed9a914395a53db0985d6d",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/02.png",
+      "sha256": "3f79328c3cd10ea9f2c90c9d0193ca16388dd76a6b21d52501e06348dbff8d88",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/03.png",
+      "sha256": "d0d2f1f79ccf3a632b11365ecd63502fe5da75787189d110c7c0f9bd1932b9e8",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/04.png",
+      "sha256": "5c2705658387f377bc991d98a61341e731f4858ce97be9dd5d74324eba48f877",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/05.png",
+      "sha256": "76f8239ce1a84a415c65d8c4865582462408bb77547e53c4ef7227cd05bfadd8",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/05b.png",
+      "sha256": "d18a1e8a8ab59607d0fe7f3368c84daabffbf828de32982b9e960a0d384731a5",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/06.png",
+      "sha256": "ba0c0ad7cc1731a062f83bb0c7f41106ab28be77e0c5dbb5a3e23b5202648f90",
+      "unchanged": true
+    },
+    {
+      "path": "docs/messplan_stromlos_2026-11-08/makros/07.png",
+      "sha256": "e404c950d411780ccde944942537929d846bc968cd3a8fe11cdfacf46cd201b5",
       "unchanged": true
     },
     {
@@ -1261,6 +1301,116 @@
     {
       "path": "photos/2026-11-16/tacho_p4_rueckseite.jpg",
       "sha256": "1f5ef8411a94e67a3de41cd27ecde7dc9c508fb966d807a741b05b427bf08db2",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/README.md",
+      "sha256": "e27ad46c9ee678d8de816f29ca2d42637dc91710536bfa2a6c9007ddff07c416",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_dioden_ausgeloetet.jpg",
+      "sha256": "f044adf42d2e0c23b82684e08e8141294b9464274e8d857b8ba871669fac9489",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_dioden_kathodenverbindung.jpg",
+      "sha256": "cba8f5440bd3c7409b7555551f2c1ba69498b28b5c99f5c645e2eeeae054e508",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_dioden_nah.jpg",
+      "sha256": "fad71bd60e1719efd159d6f3b2f912145e98208e613db9378209c8660c38aa0e",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_erste_4753_nah.jpg",
+      "sha256": "97740fbfe977ea2d16ed47ab56a4cf4ebc04208f9a2e3438e407737bf6acfdbf",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_erste_4753_schraeg.jpg",
+      "sha256": "9d23079494e77324b16164744f1ec47236b1662319e91fe83ec9856dd377f592",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_reihen_draufsicht.jpg",
+      "sha256": "64a1311b088868cc1a7bb18c33f418e9b5f751d01b93fca6fab7d564fc84b5ef",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/b10_zweite_4753_dioden.jpg",
+      "sha256": "2ae37a854386a86329df70a787d1752f9a3486be70d27180912d054a6c11968d",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/netzeingang_b10_rueckseite.jpg",
+      "sha256": "5e6f2f54a5b76cc5d935f45915db01fd3338de06bbfe7ae142e8e425378b5a7b",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-17/netzeingang_filter_vorderseite.jpg",
+      "sha256": "fa9bd011c682b2a46635fd1d7702e6232a2ae3a8d9a3f16e118a81bcaeb38214",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-19/README.md",
+      "sha256": "1b06f2340a232c5a85b7a6b1e062dc175c8387a1d7749959cf558a831f827085",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-19/b10_litze_verlegung_uebersicht.jpg",
+      "sha256": "2dfe5d14a22bf5d05a538bdbee8245a6cb25d88aec5752881f6a95104d41ce17",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-19/b10_litzen_kathoden.jpg",
+      "sha256": "8878480b5e43d0636cc5e91cae38b1547f8b8318a2ec3733bbb0e676e4964da8",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-19/b10_neue_us1m_loetstellen_1.jpg",
+      "sha256": "efdb30549b0599ab1283fbd7c45ee6b4115d055d9698d5152f32bb9b25d7edc1",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-19/b10_neue_us1m_loetstellen_2.jpg",
+      "sha256": "0995c66b340a4a560900f942a23b8e1d3deb1a76376c7004cdb62a993a2b1da0",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-19/j_2212_litze.jpg",
+      "sha256": "67d8730032463a1afb75e6118165e8e8af78918023aa01553008b1fac23f15d3",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-21/README.md",
+      "sha256": "ac3c047ab47dad571003db0652f3db2bb24d2ec1ad6daa3f3e3431a2173cf153",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-21/altes_b10_dioden_entfernt.jpg",
+      "sha256": "fe5a34e71bbb364d459872b0d49181901dced0defe2fff8301cfbc2cc0e49f17",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-21/j_anschluss_2212_1001_litzen.jpg",
+      "sha256": "ba93adb7849df74a267e3df0ecca58bf612e9ce62006ab865064651e99d27143",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-21/ketten_detail_dioden_widerstaende.jpg",
+      "sha256": "33f5fe24edb0d549e90165a4a6182f3d6c93922790c6ba27088909779083ba82",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-21/umbau_faston_zu_ketten.jpg",
+      "sha256": "7827082b2b456bd875734b871d8b4887a4077ebeedc5af190792fe67acfa6e01",
+      "unchanged": true
+    },
+    {
+      "path": "photos/2026-11-21/umbau_uebersicht_litzen_faston_zu_j.jpg",
+      "sha256": "e4e94eeb0c5425a991791b03626c61e8abe4119b6f66374549ebcb88118be069",
       "unchanged": true
     }
   ]

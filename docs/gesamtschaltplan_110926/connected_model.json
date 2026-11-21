@@ -1,8 +1,9 @@
 {
-  "schema": 1,
+  "schema": 2,
   "sheet": "User 841x1250 mm",
   "branch": "main",
-  "source_commit": "d917aa8",
+  "date": "2026-11-21",
+  "source_commit": "89748e932129eaaa9f03a0504eaa5261f45b501d",
   "components": [
     {
       "Reference": "R101",
@@ -1343,6 +1344,43 @@
       "Properties": null
     },
     {
+      "Reference": "C602",
+      "Symbol": "CV",
+      "Repository_ID": "J-Filter neben 2212",
+      "Wert": "ca. 470 pF [I]",
+      "Feld_Claude": "E6 / neben 2212",
+      "Messwerte": "0,43 nF ausgebaut kalt; im Profil-Lauf 21.11. entfernt",
+      "Terminals": {
+        "1": "J-C.A",
+        "2": "J-C.B"
+      },
+      "Pins_xy": {
+        "1": [
+          105,
+          672.3
+        ],
+        "2": [
+          105,
+          697.7
+        ]
+      },
+      "Position_mm": [
+        105,
+        685
+      ],
+      "Properties": [
+        [
+          112,
+          677
+        ],
+        [
+          112,
+          687
+        ]
+      ],
+      "DNP": true
+    },
+    {
       "Reference": "R602",
       "Symbol": "RH",
       "Repository_ID": "B10-1001",
@@ -1483,7 +1521,7 @@
       "Reference": "U605",
       "Symbol": "LD3N",
       "Repository_ID": "LD3N an Y",
-      "Wert": "Schottky-Kandidat, Typ offen",
+      "Wert": "Typ / Innenstruktur offen",
       "Feld_Claude": "",
       "Messwerte": "",
       "Terminals": {
@@ -1512,11 +1550,11 @@
       "Properties": [
         [
           455,
-          733
+          720
         ],
         [
           455,
-          740
+          730
         ]
       ]
     },
@@ -1957,7 +1995,8 @@
     "AC_N": [
       "B10-T1",
       "B10-R1.1",
-      "AC LINE N"
+      "AC LINE N",
+      "UMB-DN.A"
     ],
     "N_B10-R1_2": [
       "B10-R1.2",
@@ -1975,7 +2014,10 @@
       "B10-J3",
       "B10-D2.2",
       "J.2212R",
-      "J.1001L"
+      "J.1001L",
+      "J-C.A",
+      "UMB-RN2.2",
+      "UMB-RL2.2"
     ],
     "N_B10-R4_2": [
       "B10-D2.1",
@@ -1990,7 +2032,8 @@
     "AC_L": [
       "B10-R3.1",
       "B10-T2",
-      "AC LINE L"
+      "AC LINE L",
+      "UMB-DL.A"
     ],
     "L+": [
       "B18-P2",
@@ -2032,7 +2075,8 @@
       "TL082.5",
       "LD3N.L",
       "T4.E",
-      "T2.E"
+      "T2.E",
+      "J-C.B"
     ],
     "+5VA": [
       "+5VA",
@@ -2267,6 +2311,22 @@
       "ADM485.1",
       "OC06.K"
     ],
+    "N_UMB-DN_K": [
+      "UMB-DN.K",
+      "UMB-RN1.1"
+    ],
+    "N_UMB-RN1_2": [
+      "UMB-RN1.2",
+      "UMB-RN2.1"
+    ],
+    "N_UMB-DL_K": [
+      "UMB-DL.K",
+      "UMB-RL1.1"
+    ],
+    "N_UMB-RL1_2": [
+      "UMB-RL1.2",
+      "UMB-RL2.1"
+    ],
     "N_P2_11": [
       "P2.11"
     ],
@@ -2283,6 +2343,6 @@
       "OC06.E"
     ]
   },
-  "scope": "0V24=0VA only in measured plug configuration; unknown continuation remains open",
+  "scope": "Rekonstruierte Originalschaltung mit ausgebautem C602/DNP; B10-Ist-Umbau in eigenständiger Datei. 0V24=0VA only in measured plug configuration; unknown continuation remains open",
   "notation": "M measured, F original photo, I inference; CAD references do not change Claude grid"
 }

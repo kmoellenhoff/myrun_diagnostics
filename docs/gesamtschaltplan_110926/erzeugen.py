@@ -20,6 +20,8 @@ ROOT = HERE.parent.parent
 STEM = "GIRT_Gesamtschaltplan"
 NS = uuid.UUID("23c6e191-a399-469c-bd6a-12971145a067")
 ROOT_UUID = str(uuid.uuid5(NS, STEM))
+DOC_DATE = "2026-11-21"
+SOURCE_COMMIT = "89748e932129eaaa9f03a0504eaa5261f45b501d"
 
 
 def uid(s): return str(uuid.uuid5(NS, s))
@@ -61,7 +63,8 @@ supplements = [
 evidence += supplements
 current_path = HERE / "befunde_2026-11-16.csv"
 evening_path = HERE / "befunde_2026-11-16_abend.csv"
-current = read_csv(current_path) + read_csv(evening_path)
+nov21_path = HERE / "befunde_2026-11-21.csv"
+current = read_csv(current_path) + read_csv(evening_path) + read_csv(nov21_path)
 # Preserve historical rows, but never union photo links contradicted by measurement.
 for row in current:
     if row["ID"] in {"AKT-059", "AKT-060"}:
@@ -206,7 +209,7 @@ def tp(ref,node,x,y,value):
 
 
 text("GIRT S6T30 | Gemeinsamer Schaltplan der gemessenen Teilnetze", 18, 13, 4, True)
-text("Stand 16.11.2026 · Branch main · Ein Blatt, gemeinsame Netze elektrisch verbunden · Historische Messungen im Anhang",18,23,2.1)
+text("Stand 21.11.2026 · Rekonstruierte Originalschaltung · Ist-Umbau B10 auf separatem Blatt · Historische Messungen im Anhang",18,23,2.1)
 text("M = gemessen  |  F = Originalfoto  |  I = aus Typ/Pinout/Altstand abgeleitet  |  OFFEN = Fortsetzung nicht ermittelt",18,30,2.1)
 text("CAD-Referenzen (R101 usw.) sind neu; Original-IDs und Claudes Raster bleiben in Beschriftung und Bauteiltabelle erhalten.",18,36,1.8)
 
@@ -327,6 +330,7 @@ lead("R401","1",(35,400));lead("R403","1",(35,445));wire((260,400),(260,445));la
 text("Bahnen F; T1=N / T2=L [M]",28,469,1.8)
 text("Kathoden-Auswertung: 22,1 kΩ nach 0VA; 1 kΩ zum",28,477,1.7)
 text("TL082-A, Detail unten. AC_N/L nicht an DC-Bus gebrückt.",28,484,1.7)
+text("ORIGINAL: Zweige seit 21.11. ersetzt; siehe Ist-Blatt.",28,491,1.7)
 
 # 6. Relay and temperature sensor are measured but not mapped to power nets.
 text("Relais F27 / I4 — T4-Ansteuerung unten",335,427,2.4,True)
@@ -372,16 +376,24 @@ text("0V_KONSOLE ist NICHT als 0VA nachgewiesen; T2-Quelle und weitere MCU-Pins 
 label("Q2-DRV.C",pos("U201","C"))
 # Current detail shares native labels with the historical overview above.
 lib("CAP", [("1","~",-12.7,0,0,10.7),("2","~",12.7,0,180,10.7)],line((-2,-5),(-2,5))+line((2,-5),(2,5)))
+lib("CV", [("1","~",0,12.7,270,10.7),("2","~",0,-12.7,90,10.7)],line((-5,2),(5,2))+line((-5,-2),(5,-2)))
 lib("MCU", [(str(n),f"{n} {role}",-45,70-i*14,0,10) for i,(n,role) in enumerate([(8,"+5VA"),(11,"PFC"),(12,"Enable"),(13,"P70"),(17,"PWM"),(18,"PWM"),(24,"F27"),(26,"Y"),(28,"X")])],rect((-35,-65),(45,80)),True)
 lib("TL082",[(str(n),name,px,py,angle,10) for n,name,px,py,angle in [(3,"3 IN+ A",-35,10,0),(2,"2 IN- A",-35,-10,0),(1,"1 OUT A",35,0,180),(8,"8 V+",0,35,270),(4,"4 V-",0,-35,90),(5,"5 IN+ B",20,-35,90)]],poly([(-25,25),(-25,-25),(25,0),(-25,25)]),True)
 lib("OC",[("A","1 LED A",-30,15,0,10),("K","2 LED K",-30,-15,0,10),("C","4 C",30,15,180,10),("E","3 E",30,-15,180,10)],rect((-20,-25),(20,25))+poly([(-12,-5),(-2,0),(-12,5),(-12,-5)])+line((-2,-5),(-2,5))+line((0,-20),(0,20))+line((8,-9),(8,9))+line((8,5),(20,15))+line((8,-5),(20,-15))+poly([(14,-8),(20,-15),(13,-14)]),True)
 lib("NPN",[("B","B / L",-25,0,0,10),("C","C / O",15,25,270,10),("E","E / R",15,-25,90,10)],line((-15,-12),(-15,12))+line((-15,0),(5,15))+line((-15,0),(5,-15))+line((5,15),(15,15))+line((5,-15),(15,-15))+poly([(3,-8),(5,-15),(-2,-13)]),True)
-text("Aktueller Anschlussstand 16.11.2026 — gemeinsame Netze mit Übersicht",25,610,3,True)
+text("Anschlussstand 21.11.2026 — Originaltopologie; C602 aktuell ausgebaut",25,610,3,True)
 text("MCU-Arbeitsnummern nach angenommener QFP-Zählung; Hersteller-Pins / Portfunktionen und Masseanschluss unbekannt.",25,620,2)
 add("U601","MCU",760,710,"MCU unbekannt","Arbeitsnummern, kein Datenblatt",{str(n):f"MCU.{n}" for n in [8,11,12,13,17,18,24,26,28]},labels_pos=((720,625),(720,790)))
 for pin in ["8","11","12","13","17","18","24","26","28"]: lead("U601",pin,(685,pos("U601",pin)[1]))
 add("R601","RV",65,685,"B10-2212","22,1 k / 2212",{"1":"J.2212R","2":"J.2212L"})
 lead("R601","1",(65,660));lead("R601","2",(65,715))
+add("C602","CV",105,685,"J-Filter neben 2212","ca. 470 pF [I]",{"1":"J-C.A","2":"J-C.B"},"E6 / neben 2212","0,43 nF ausgebaut kalt; im Profil-Lauf 21.11. entfernt",labels_pos=((112,677),(112,687)))
+parts[-1]["DNP"] = True
+wire(pos("C602","1"),(105,660),(65,660));junction((105,660))
+lead("C602","2",(105,715))
+text("C602: 0,43 nF kalt [M]; derzeit ausgebaut / DNP.",25,736,1.65)
+text("HF-Filter, kein Spitzendetektor; Leckfehler verdächtig.",25,744,1.65)
+text("TL082-Pinzählung am 21.11. widersprüchlich; 16.11.-Zuordnung beibehalten.",25,752,1.4)
 add("R602","RH",145,660,"B10-1001","1 k / 1001",{"1":"J.1001L","2":"J.1001R"})
 lead("R602","1",(100,660));lead("R602","2",(185,660))
 add("U602","TL082",265,685,"TL082 neben T3","TL082I / A = Spannungsfolger",{str(n):f"TL082.{n}" for n in [1,2,3,4,5,8]},labels_pos=((230,742),(230,750)))
@@ -403,8 +415,8 @@ add("R603","RH",425,685,"Netzsignal-1000","100 Ω / 1000",{"1":"X.1000in","2":"X
 lead("R603","1",(385,685));lead("R603","2",(470,685))
 add("C601","CAP",520,685,"X-Filterkondensator","C Wert offen",{"1":"X","2":"0VA"})
 lead("C601","1",(485,685),labelled=False);lead("C601","2",(560,685)); wire((470,685),(485,685))
-lib("LD3N", [("L","L",-35,0,0,10),("O","O",0,-25,90,15),("R","R",35,0,180,10)],poly([(-18,-5),(-8,0),(-18,5),(-18,-5)])+line((-8,-5),(-8,5))+poly([(8,-5),(18,0),(8,5),(8,-5)])+line((18,-5),(18,5))+line((-25,0),(-18,0))+line((-8,0),(8,0))+line((18,0),(25,0))+line((0,0),(0,-10)),True)
-add("U605","LD3N",485,750,"LD3N an Y","Schottky-Kandidat, Typ offen",{"L":"LD3N.L","O":"LD3N.O","R":"LD3N.R"},labels_pos=((455,733),(455,740)))
+lib("LD3N", [("L","L",-35,0,0,10),("O","O",0,-25,90,15),("R","R",35,0,180,10)],rect((-25,-10),(25,10)),True)
+add("U605","LD3N",485,750,"LD3N an Y","Typ / Innenstruktur offen",{"L":"LD3N.L","O":"LD3N.O","R":"LD3N.R"},labels_pos=((455,720),(455,730)))
 for pin in ["L","O","R"]: label(next(p for p in parts if p["Reference"]=="U605")["Terminals"][pin],pos("U605",pin),1.6)
 text("X ≠ Y; kein Serienkondensator, keine Drahtbrücke. Y: P600-Temperaturkandidat; ca. 1 kΩ zu Kontakt1 [M/I].",25,778,2)
 text("Optokoppler — galvanische Trennung bleibt erhalten",25,800,2.7,True)
@@ -458,6 +470,7 @@ text("P4 TACHO–Pin7: 1,103 kΩ; zu Pin6: 12,94 kΩ [M].",440,1135,1.8)
 text("Endliche In-Circuit-Pfade, keine erfundenen Serienbauteile.",440,1145,1.8)
 text("Pin5 = LM2903 Pin4 = P2.7 / 0V_KONSOLE [M].",440,1155,1.8)
 text("RO = OC06-Kathode [M]; Pulsfunktion noch nicht gemessen.",440,1165,1.8)
+text("17.11.: VCC 4,8 V; /RE=DE=0 V. Pin6/7 2,4/2,2 V.",440,1175,1.7)
 text("P600: Kontakt2 = +5VA [M], Kontakt1–Y ca. 1 kΩ [M].",440,1185,1.8)
 text("Y–0VA: 1,883 kΩ mit Fühler; Einzelwiderstand unbekannt.",440,1195,1.8)
 text("Kein erfundener 2,2-kΩ-Widerstand, Ka/Kb-Aliase offen.",440,1205,1.8)
@@ -474,13 +487,13 @@ def symbol_sexpr(p):
     for key,val in [("Feld_Claude",p["Feld_Claude"]),("Messwerte",p["Messwerte"]),("Terminal_Aliase",json.dumps(p["Terminals"],ensure_ascii=False))]:
         props += f'(property {q(key)} {q(val)} (at {x} {y} 0) {effects(1.5,hide=True)})'
     pins = "".join(f'(pin {q(k)} (uuid "{uid(ref+".pin."+k)}"))' for k in p["Terminals"])
-    return f'''(symbol (lib_id "Diag:{sym}") (at {x} {y} 0) (unit 1) (exclude_from_sim yes) (in_bom no) (on_board no) (dnp no) (uuid "{uid(ref)}")
+    return f'''(symbol (lib_id "Diag:{sym}") (at {x} {y} 0) (unit 1) (exclude_from_sim yes) (in_bom no) (on_board no) (dnp {"yes" if p.get("DNP") else "no"}) (uuid "{uid(ref)}")
     {props} {pins} (instances (project "{STEM}" (path "/{ROOT_UUID}" (reference {q(ref)}) (unit 1)))))'''
 
 
-def save_schematic():
-    txt = f'(kicad_sch (version 20250114) (generator "eeschema") (uuid "{ROOT_UUID}") (paper "User" 841 1250)\n'
-    txt += '(title_block (title "GIRT S6T30 - gemessene Teilnetze") (date "2026-11-16") (rev "main / Evidenzmodell") (company "myrun_diagnostics") (comment 1 "M gemessen / F Foto / I abgeleitet; keine vollstaendige Platinenrekonstruktion"))\n'
+def save_schematic(width=841, height=1250, title="GIRT S6T30 - rekonstruierte Originalschaltung"):
+    txt = f'(kicad_sch (version 20250114) (generator "eeschema") (uuid "{ROOT_UUID}") (paper "User" {width} {height})\n'
+    txt += f'(title_block (title {q(title)}) (date "{DOC_DATE}") (rev "main / Evidenzmodell") (company "myrun_diagnostics") (comment 1 "M gemessen / F Foto / I abgeleitet; keine vollstaendige Platinenrekonstruktion"))\n'
     txt += '(lib_symbols\n' + "\n".join(v["text"] for v in libraries.values()) + ')\n'
     txt += "\n".join(drawing) + "\n"
     # KiCad expects T junctions to be explicit wire endpoints. Merely placing
@@ -503,26 +516,31 @@ def save_schematic():
     (HERE / (STEM+".kicad_sch")).write_text(txt)
 
 
-def export_and_verify():
+def export_drawing(stem, basename):
     env=os.environ.copy()
     task_runtime=Path("/workspace/work/kicad_runtime")
     for key,sub in [("XDG_CONFIG_HOME","config"),("XDG_CACHE_HOME","cache"),("XDG_DATA_HOME","data")]:
         (task_runtime/sub).mkdir(parents=True,exist_ok=True); env[key]=str(task_runtime/sub)
     def run(*args):
-        r=subprocess.run(["kicad-cli","sch",*args,str(HERE/(STEM+".kicad_sch"))],env=env,text=True,capture_output=True)
+        r=subprocess.run(["kicad-cli","sch",*args,str(HERE/(stem+".kicad_sch"))],env=env,text=True,capture_output=True)
         if r.returncode: raise RuntimeError(r.stdout+r.stderr)
         return r.stdout+r.stderr
-    run("export","netlist","--format","kicadxml","-o",str(HERE/"gesamtschaltplan.xml"))
-    run("export","pdf","--exclude-drawing-sheet","--no-background-color","-o",str(HERE/"uebersicht_A1.pdf"))
-    run("export","svg","--exclude-drawing-sheet","--no-background-color","-o",str(HERE/"svg"))
-    svg_files=list((HERE/"svg").glob("*.svg")); assert len(svg_files)==1
-    (HERE/"gesamtschaltplan.svg").write_text("\n".join(line.rstrip() for line in svg_files[0].read_text().splitlines())+"\n")
-    svg_files[0].unlink();(HERE/"svg").rmdir()
-    doc=ET.parse(HERE/"gesamtschaltplan.xml")
+    run("export","netlist","--format","kicadxml","-o",str(HERE/(basename+".xml")))
+    pdf_name = "uebersicht_A1.pdf" if basename == "gesamtschaltplan" else basename+".pdf"
+    run("export","pdf","--exclude-drawing-sheet","--no-background-color","-o",str(HERE/pdf_name))
+    temp_svg = HERE/("svg_"+basename)
+    run("export","svg","--exclude-drawing-sheet","--no-background-color","-o",str(temp_svg))
+    svg_files=list(temp_svg.glob("*.svg")); assert len(svg_files)==1
+    (HERE/(basename+".svg")).write_text("\n".join(line.rstrip() for line in svg_files[0].read_text().splitlines())+"\n")
+    svg_files[0].unlink();temp_svg.rmdir()
+
+
+def verify_native_netlist(path, model_parts):
+    doc=ET.parse(path)
     actual={}
     for n in doc.findall(".//nets/net"):
         for p in n.findall("node"): actual[(p.attrib["ref"],p.attrib["pin"])]=n.attrib["name"].lstrip("/")
-    expected={(p["Reference"],pin):net(node) for p in parts for pin,node in p["Terminals"].items()}
+    expected={(p["Reference"],pin):net(node) for p in model_parts for pin,node in p["Terminals"].items()}
     # Singleton pins can be omitted by the exporter. Validate graph partitions,
     # not a particular auto-generated net name for those solitary endpoints.
     for a in expected:
@@ -530,13 +548,63 @@ def export_and_verify():
             want=expected[a]==expected[b]
             got=a==b or (a in actual and b in actual and actual[a]==actual[b])
             assert want==got, f"Netzabweichung {a} {expected[a]} / {b} {expected[b]} -> {actual.get(a)} / {actual.get(b)}"
-    assert len(doc.findall(".//components/comp"))==len(parts)
+    assert len(doc.findall(".//components/comp"))==len(model_parts)
+    return len(expected)
+
+
+def export_and_verify():
+    export_drawing(STEM, "gesamtschaltplan")
+    pins_checked = verify_native_netlist(HERE/"gesamtschaltplan.xml", parts)
     for a,b in [("X","LD3N.O"),("TL082.1","X"),("MCU.24","+5VA"),("L4981AD.19","+12VA"),("F27-plus","F27-minus"),("0VA","P4.0V"),("0VA","+5VA"),("0VA","+24V"),("DC MOTOR L+","DC MOTOR L-"),("B19-PadA","B19-PadB"),("B19-PadB","B19-PadC"),("F27-11a","F27-14a"),("Q2-DRV.C","Q2-1P.O")]:
         assert net(a)!=net(b), (a,b)
     pending=read_csv(ROOT/"docs/messplan_stromlos_2026-11-08/Q2_1P_DIODENTEST_AUSSTEHEND.csv")
     assert len(pending)==2 and all(not r["Anzeige_V"] and not r["Gegenrichtung_V"] and r["Status"].startswith("AUSSTEHEND") for r in pending)
     assert not {r["Test_ID"] for r in pending} & {r["Mess_ID"] for r in latest}
-    return {"native_export": "KiCad 9.0.2, XML/PDF/SVG erfolgreich", "components":len(parts),"pins_checked":len(expected),"pairwise_pin_comparisons":len(expected)**2,"net_partitions_equal":True,"0VA_console_separate":True,"series_resistors_not_shorted":True,"historical_pending_rows_preserved":len(pending),"1P_diode_tests_completed_2026_11_13":True,"simulation_or_function_test":False}
+    return {"native_export": "KiCad 9.0.2, XML/PDF/SVG erfolgreich", "components":len(parts),"pins_checked":pins_checked,"pairwise_pin_comparisons":pins_checked**2,"net_partitions_equal":True,"0VA_console_separate":True,"series_resistors_not_shorted":True,"historical_pending_rows_preserved":len(pending),"1P_diode_tests_completed_2026_11_13":True,"simulation_or_function_test":False}
+
+
+def generate_umbau():
+    """Independent native sheet: replacement chains, never parallel to original."""
+    global STEM, ROOT_UUID, parts, drawing, wires, labels, junctions
+    saved = STEM, ROOT_UUID, parts, drawing, wires, labels, junctions
+    try:
+        STEM = "B10_Umbau_2026-11-21"
+        ROOT_UUID = uid(STEM)
+        parts, drawing, wires, labels, junctions = [], [], [], [], set()
+        text("GIRT S6T30 | B10: dokumentierter Ist-Umbau 21.11.2026",18,16,3.4,True)
+        text("Eigenständiges Vergleichsblatt. NICHT zusätzlich parallel zur Originalschaltung anschließen.",18,27,2)
+        text("F = Fotos / Nutzerbeschreibung; M = gemessen. R901–R904 / D901–D902 sind neue CAD-Referenzen.",18,36,1.8)
+        for phase, y, d, r1, r2 in [("N",80,"D901","R901","R902"),("L",125,"D902","R903","R904")]:
+            add(d,"DH",90,y,"Neue US1M, Zweig "+phase,"US1M",{"1":f"UMB-D{phase}.A","2":f"UMB-D{phase}.K"},"J6 / Umbau")
+            add(r1,"RH",155,y,"Neue 4703, Zweig "+phase+" / 1","470 k / 4703",{"1":f"UMB-R{phase}1.1","2":f"UMB-R{phase}1.2"})
+            add(r2,"RH",220,y,"Neue 4703, Zweig "+phase+" / 2","470 k / 4703",{"1":f"UMB-R{phase}2.1","2":f"UMB-R{phase}2.2"})
+            lead(d,"1",(35,y));join(d,"2",r1,"1");join(r1,"2",r2,"1")
+            wire(pos(r2,"2"),(285,y))
+            text("Faston "+phase,20,y-13,2)
+            text("Anode links / Kathodenring rechts",60,y+14,1.6)
+        wire((285,80),(285,150),(260,150));junction((285,125));label("B10-J1",(285,150))
+        add("R601","RV",260,180,"B10-2212, unverändert","22,1 k / 2212",{"1":"J.2212R","2":"J.2212L"},labels_pos=((195,172),(195,182)))
+        wire((260,150),pos("R601","1"));lead("R601","2",(260,215))
+        add("C602","CV",315,180,"J-Filter, derzeit entfernt","ca. 470 pF [I]",{"1":"J-C.A","2":"J-C.B"},measurements="0,43 nF ausgebaut kalt; seit Wärmetest entfernt",labels_pos=((328,172),(328,182)))
+        parts[-1]["DNP"]=True
+        wire((285,150),(315,150),pos("C602","1"));junction((285,150))
+        wire(pos("C602","2"),(315,215),(260,215));label("0VA",(270,215))
+        add("R602","RH",355,150,"B10-1001, unverändert","1 k / 1001",{"1":"J.1001L","2":"J.1001R"},labels_pos=((332,130),(332,138)))
+        wire((315,150),pos("R602","1"));junction((315,150));lead("R602","2",(393,150))
+        text("zum TL082",365,159,1.7)
+        text("Pinlage prüfen",365,166,1.7)
+        text("C602 mit Kreuz / DNP: im erfolgreichen Profil-Lauf NICHT bestückt. Ersatz noch nicht dokumentiert.",18,235,1.9)
+        text("Alte B10-Dioden entfernt: R401–R404 sind in diesem Blatt kein weiterer Einspeisezweig.",18,245,1.9)
+        text("Kein Nachweis von L/N nach 0VA, Gleichrichter oder F27-Leistungskontakten; hier nicht erfunden.",18,255,1.9)
+        text("Befunde NOV21-001..014 und Originalfotos: siehe README und befunde_2026-11-21.csv.",18,265,1.9)
+        save_schematic(420,297,"GIRT S6T30 - B10 Ist-Umbau 21.11.2026")
+        export_drawing(STEM, "b10_umbau_2026-11-21")
+        pins_checked = verify_native_netlist(HERE/"b10_umbau_2026-11-21.xml",parts)
+        write_csv(HERE/"bauteile_umbau_2026-11-21.csv",parts,["Reference","Repository_ID","Wert","Messwerte","DNP"])
+        dump(HERE/"umbau_model_2026-11-21.json",{"source_commit":SOURCE_COMMIT,"scope":"Eigenständiger Ist-Umbau; nicht parallel zum Originalmodell","components":parts,"C602_removed":True})
+        return {"components":len(parts),"pins_checked":pins_checked,"pairwise_pin_comparisons":pins_checked**2,"net_partitions_equal":True,"C602_dnp":True}
+    finally:
+        STEM, ROOT_UUID, parts, drawing, wires, labels, junctions = saved
 
 
 def measurement_ledger():
@@ -545,7 +613,7 @@ def measurement_ledger():
         group={"01":"Relais", "02":"NTC", "03":"B18/B19", "04":"B20", "05":"Q2/Treiber", "05b":"Q2/Treiber", "06":"Versorgung", "07":"Versorgung"}.get(r["Blatt"],"Q2 / 1P-Nachtrag" if r["Blatt"].startswith("05") else r["Bauteil_Feld"])
         rows.append({"Mess_ID":r["Mess_ID"],"Gruppe":group,"Quelle":str(latest_path.relative_to(ROOT)),"Rot":r["Rot"],"Schwarz":r["Schwarz"],"Modus":r["Modus"],"Wert":r["Anzeige_RotSchwarz"],"Gegenrichtung":r["Anzeige_SchwarzRot"],"Kontext":r["Zeitverlauf"]+"; Steckzustand: "+r["Steckzustand"]+"; "+r["Hinweis"],"Originalzeile":r,"Ebene":"09.11.2026"})
     for r in current:
-        rows.append({"Mess_ID":r["ID"],"Gruppe":"Aktuelle bestätigte Netzzuordnung", "Quelle":r["Quelle"],"Rot":r["Knoten_A"],"Schwarz":r["Knoten_B"],"Modus":r["Art"],"Wert":r["Wert"],"Gegenrichtung":"siehe Primärquelle","Kontext":r["Bemerkung"],"Originalzeile":r,"Ebene":"12.–16.11.2026 – Schlusskorrekturen"})
+        rows.append({"Mess_ID":r["ID"],"Gruppe":"B10 / J-Filter und getrennter Ist-Umbau" if r["ID"].startswith("NOV21-") else "Aktuelle bestätigte Netzzuordnung", "Quelle":r["Quelle"],"Rot":r["Knoten_A"],"Schwarz":r["Knoten_B"],"Modus":r["Art"],"Wert":r["Wert"],"Gegenrichtung":"siehe Primärquelle","Kontext":r["Bemerkung"],"Originalzeile":r,"Ebene":"21.11.2026 – Ergänzungen" if r["ID"].startswith("NOV21-") else "12.–16.11.2026 – Schlusskorrekturen"})
     old_sources=[]
     for filename,group in [("messprotokoll_b10.csv","B10"),("messprotokoll_b18.csv","B18/B19"),("messprotokoll_leistungsteil.csv","Motor/Q2"),("messprotokoll_v0_chatgpt.csv","P2/P4")]:
         p=ROOT/"docs/netlist"/filename;old_sources.append(p)
@@ -586,7 +654,7 @@ def pdf_bundle(rows):
     small=ParagraphStyle("small",fontName="DejaVu",fontSize=8,leading=11)
     def para(s): return Paragraph(escape(str(s)).replace("\n","<br/>"),small)
     out=io.BytesIO(); flow=[]
-    flow += [Paragraph("Messwerte zum gemeinsamen Schaltplan",styles["Title"]),Spacer(1,10),para("Die erste Seite ist der gemeinsame Schaltplan (841 × 1250 mm). Es folgen vergrößerte Ausschnitte desselben elektrisch verbundenen Blatts und dieses Messregister. Nichtzero Messwerte sind In-Circuit-Ergebnisse, keine zusätzlichen Einzelbauteile. Bestätigte Schlusskorrekturen bis 16.11.2026 haben Vorrang vor der Historie. Vollständige Rohfelder, Polung, Steckzustand und Hinweise: messwerte_vollstaendig.json / messwerte.csv."),Spacer(1,12)]
+    flow += [Paragraph("Messwerte zum gemeinsamen Schaltplan",styles["Title"]),Spacer(1,10),para("Die erste Seite zeigt die rekonstruierte Originalschaltung (841 × 1250 mm). Es folgen vergrößerte Ausschnitte, das separate Ist-Blatt des B10-Umbaus vom 21.11. und dieses Messregister. Die beiden Bestückungsstände sind nicht parallel verbunden. C602 liegt ursprünglich zwischen J und 0VA, ist im erfolgreichen Lauf aber entfernt (DNP). Nichtzero Messwerte sind In-Circuit-Ergebnisse, keine zusätzlichen Einzelbauteile. Schlusskorrekturen bis 21.11.2026 und ihre Beleggrenzen beachten. Vollständige Rohfelder: messwerte_vollstaendig.json / messwerte.csv."),Spacer(1,12)]
     groups=[]
     for r in rows:
         key=(r["Ebene"],r["Gruppe"])
@@ -602,13 +670,13 @@ def pdf_bundle(rows):
         table.setStyle(TableStyle([("VALIGN",(0,0),(-1,-1),"TOP"),("BACKGROUND",(0,0),(-1,0),colors.HexColor("#dce7ee")),("ROWBACKGROUNDS",(0,1),(-1,-1),[colors.white,colors.HexColor("#f2f5f7")]),("GRID",(0,0),(-1,-1),.3,colors.HexColor("#c2cbd0")),("LEFTPADDING",(0,0),(-1,-1),6),("RIGHTPADDING",(0,0),(-1,-1),6),("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6)]))
         flow.append(table)
     def footer(canvas,doc):
-        canvas.setFont("DejaVu",8);canvas.drawString(42,23,"GIRT S6T30 · Messregister · main / 16.11.2026 · keine neuen elektrischen Messungen")
+        canvas.setFont("DejaVu",8);canvas.drawString(42,23,"GIRT S6T30 · Messregister · main / 21.11.2026 · Auswertung vorhandener Nutzerbefunde")
         canvas.drawRightString(1150,23,str(doc.page))
     SimpleDocTemplate(out,pagesize=landscape(A3),leftMargin=42,rightMargin=42,topMargin=35,bottomMargin=40).build(flow,onFirstPage=footer,onLaterPages=footer)
     appendix=fitz.open(stream=out.getvalue(),filetype="pdf")
     source=fitz.open(HERE/"uebersicht_A1.pdf"); merged=fitz.open();merged.insert_pdf(source)
     # Crops are views of exactly the same native sheet; they add no new nets.
-    crops=[("B18/B19 und Versorgungs-Testpunkte",(150,40,835,205)),("Motorstufe und Gate-Pfad",(8,180,298,370)),("Treiber und 1P-Zweig",(270,190,677,365)),("B20, offene Widerstandsanschlüsse",(670,205,837,513)),("AC-Erfassung B10",(15,370,290,487)),("Relais und NTC",(325,420,673,575)),("Konsole, P2/P4 und Thermokontakt",(15,487,315,591))]
+    crops=[("B18/B19 und Versorgungs-Testpunkte",(150,40,835,205)),("Motorstufe und Gate-Pfad",(8,180,298,370)),("Treiber und 1P-Zweig",(270,190,677,365)),("B20, offene Widerstandsanschlüsse",(670,205,837,513)),("AC-Erfassung B10 - rekonstruierter Originalzustand",(15,370,290,497)),("Relais und NTC",(325,420,673,575)),("Konsole, P2/P4 und Thermokontakt",(15,487,315,591))]
     crops += [("MCU, B10-Puffer und getrennte X/Y-Netze",(15,605,825,798)),("Optokoppler, T3 und F27-Treiber",(15,797,825,955)),("Q2-Freigabe T2 und 1P",(15,965,825,1090))]
     crops += [("B10-Fusswiderstand und TL082-Puffer",(20,630,350,775)),("X-Filter und LD3N an getrenntem Y",(360,650,640,785)),("MCU-Arbeitsnummern",(650,620,825,795)),("OC04 / OC05",(20,810,380,925)),("T3-Steuerung und T4-Relaisstufe",(395,810,825,955)),("T2: reale Serienwiderstaende bis zum Kollektor",(90,985,465,1090))]
     crops += [("ADM485 / OC06: nur bestaetigte Kupferverbindungen",(20,1100,420,1225)),("Abendbefunde: P600 und offene Tacho-Funktion",(430,1125,825,1220))]
@@ -617,8 +685,9 @@ def pdf_bundle(rows):
         page.insert_text((35,28),title,fontsize=12,fontname="helv")
         clip=fitz.Rect(*[n*72/25.4 for n in mmrect]);page.show_pdf_page(fitz.Rect(30,42,1160,805),source,0,clip=clip)
         page.insert_text((35,824),"Ausschnitt aus dem gemeinsamen Blatt (841 x 1250 mm); Netzverbindungen im Originalblatt / KiCad.",fontsize=9)
+    umbau=fitz.open(HERE/"b10_umbau_2026-11-21.pdf");merged.insert_pdf(umbau)
     merged.insert_pdf(appendix)
-    merged.set_metadata({"title":"GIRT S6T30 - gemeinsamer Schaltplan und Messregister","author":"myrun_diagnostics","subject":"Evidence-based reconstruction; branch main; 2026-11-16"})
+    merged.set_metadata({"title":"GIRT S6T30 - gemeinsamer Schaltplan und Messregister","author":"myrun_diagnostics","subject":"Original reconstruction and separate B10 modification; main; 2026-11-21"})
     merged.save(HERE/"gesamtschaltplan.pdf",garbage=4,deflate=True)
     return len(merged)
 
@@ -626,6 +695,7 @@ def pdf_bundle(rows):
 if __name__=="__main__":
     save_schematic()
     proof=export_and_verify()
+    proof["separate_umbau"]=generate_umbau()
     measurements,old_sources=measurement_ledger()
     proof["latest_rows_covered"]=len(latest)
     proof["measurement_rows_total"]=len(measurements)
@@ -638,8 +708,10 @@ if __name__=="__main__":
     for p in parts:
         for pin,node in p["Terminals"].items():pins.setdefault(net(node),[]).append(p["Reference"]+"."+pin+" = "+node)
     write_csv(HERE/"netze.csv",[{"Netz":n,"Aliase":sorted(a),"CAD_Pins":pins.get(n,[])} for n,a in sorted(nets.items())],["Netz","Aliase","CAD_Pins"])
-    dump(HERE/"connected_model.json",{"schema":1,"sheet":"User 841x1250 mm","branch":"main","source_commit":"d917aa8","components":parts,"nets":nets,"scope":"0V24=0VA only in measured plug configuration; unknown continuation remains open","notation":"M measured, F original photo, I inference; CAD references do not change Claude grid"})
+    dump(HERE/"connected_model.json",{"schema":2,"sheet":"User 841x1250 mm","branch":"main","date":DOC_DATE,"source_commit":SOURCE_COMMIT,"components":parts,"nets":nets,"scope":"Rekonstruierte Originalschaltung mit ausgebautem C602/DNP; B10-Ist-Umbau in eigenständiger Datei. 0V24=0VA only in measured plug configuration; unknown continuation remains open","notation":"M measured, F original photo, I inference; CAD references do not change Claude grid"})
     sources=[source,latest_path,current_path,evening_path,ROOT/"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md",ROOT/"photos/2026-11-09/b20/50370.jpg",ROOT/"photos/2026-11-15/netzsignal_4751.jpg",ROOT/"docs/LAUF_2026-11-11.md",ROOT/"docs/messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md",ROOT/"photos/2026-11-09/b20/50370.jpg",ROOT/"photos/2026-11-15/netzsignal_4751.jpg",ROOT/"docs/NEUBEWERTUNG_2026-11-12.md",ROOT/"docs/fotospuren_2026-11-12/README.md",ROOT/"docs/LAUF_2026-11-14.md",ROOT/"docs/MESSPLAN_2026-11-14_abend.md",ROOT/"docs/mcu_skizze_2026-11-16/README.md",ROOT/"docs/netlist/optokoppler_zuordnung.md",*old_sources,ROOT/"docs/HARDWARE.md",ROOT/"docs/STAND_2026-11-08.md",ROOT/"docs/netlist/q2_treiber_fan3100c_kandidat.md",ROOT/"photos/2026-11-08/back_raster_index.csv",ROOT/"docs/messplan_stromlos_2026-11-08/Q2_1P_DIODENTEST_AUSSTEHEND.csv"]
+    sources += [nov21_path,ROOT/"docs/LAUF_2026-11-17.md",ROOT/"docs/LAUF_2026-11-18.md",ROOT/"docs/LAUF_2026-11-19.md",ROOT/"docs/LAUF_2026-11-21.md",ROOT/"docs/messprotokoll_2026-11-17.csv"]
+    proof["source_commit"]=SOURCE_COMMIT
     proof["source_sha256"]={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
     dump(HERE/"pruefnachweis.json",proof)
     print(json.dumps(proof,ensure_ascii=False,indent=2))

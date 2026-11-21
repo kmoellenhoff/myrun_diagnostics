@@ -1,6 +1,6 @@
 # Technogym MyRun – lower kit hardware notes (Gefran GIRT S6T30)
 
-Reverse-engineering notes for the lower kit ("GIRT") of a used Technogym MyRun, collected while repairing one unit. There is **no schematic** for this board. Everything below is either measured on this unit, observed (photos, videos, BLE logs), taken from service manuals of related Technogym drives, or marked as inference.
+Reverse-engineering notes for the lower kit ("GIRT") of a used Technogym MyRun, collected while repairing one unit. No manufacturer's schematic is available; the [reconstructed partial schematic](gesamtschaltplan_110926/README.md) documents the known nets and remaining gaps. Everything below is either measured on this unit, observed (photos, videos, BLE logs), taken from service manuals of related Technogym drives, or marked as inference.
 
 > **Confidence tags** used throughout: **[M]** measured on this unit · **[O]** observed (photo, video, BLE log) · **[Man]** from a manual of this or a related drive, not verified here · **[I]** inference / hypothesis.
 
@@ -26,7 +26,7 @@ The belt motor is a **brushed DC motor driven by a chopper from the rectified ma
 | DC link | EPCOS B43630-C9567-M7, 560 µF ±20 %, **400 V**, climatic category 25/085/56 (**85 °C**), date code 04.21 | ~300–380 V DC | [O] |
 | Motor chopper | Q2 + D3 (heat sink left, markings hidden), 4 × R020 shunts on the front near DC MOTOR | PWM motor drive, current sense | [O]/[I] |
 | Temperature | NTC 10 kΩ on connector P600, screwed next to Q2: 11 kΩ at room temperature, 10.75 kΩ warmed | Q2 temperature | [M] |
-| Incline path | 3 × Panasonic ALQ3F12 (12 V, 10 A), Schrack PE014012, **FUSE MOT T4A 5×20** | UP/DOWN relays and fuse for the AC incline motor | [O] |
+| Relay group near UP/DOWN | 3 × Panasonic ALQ3F12 (12 V, 10 A), Schrack PE014012, **FUSE MOT T4A 5×20** | Candidates for UP/DOWN and additional enables; individual relay contact functions are not measured | [O]/[I] |
 | Aux. supply | FSGM300N (DIP-8), transformer ETI1349X4, thermistor RT700 | +24 V, +12 V iso, ±12 V, +5 V | [O] |
 | Logic | MCU QFP-32, 2 × 74ACT14, LM2903 (comparator), TL082 (current sense), 24C32 EEPROM, 78L05, 2 × SOT-223 regulators | control, protection, parameters | [O] |
 | Isolation | 8 × VO617A-8 (OC01–OC08, see `docs/img/optocoupler_pads.png`), CPC1017N (OptoMOS) | console ↔ mains-side separation | [O] |

@@ -17,6 +17,11 @@ def separate(*pins):
  assert len({n(p) for p in pins})==len(pins),('separate',pins,[n(p) for p in pins])
  checks.append({'separate':pins})
 same('D401.2','D402.2','R601.1','R602.1')
+same('C602.1','R601.1','R602.1')
+same('C602.2','R601.2')
+separate('C602.1','C602.2','C601.1','U605.O')
+assert xml.find(".//components/comp[@ref='C602']/property[@name='dnp']") is not None
+assert not any(c.attrib['ref'].startswith(('D90','R90')) for c in xml.findall('.//components/comp'))
 same('R601.2','U602.5','C601.2','U401.Tb','Q601.E','Q602.E','U201.B','U202.R','TP503.1')
 same('R602.2','U602.3')
 same('U602.1','U602.2','R301.1')
@@ -56,13 +61,50 @@ for comp in xml.findall('.//components/comp'):
  if ref.startswith('R'):
   separate(ref+'.1',ref+'.2')
 assert len([p for p in xml.findall('.//components/comp') if p.attrib['ref'] in ['R301','R302']])==2
+assert '470' in xml.find(".//components/comp[@ref='C602']/value").text
+# A separate exported drawing must represent the repaired chains in their
+# actual order: Faston -> diode -> 470k -> 470k -> J. Never reuse the original
+# cathode-at-J ordering or put the replacement chains in the original drawing.
+umbau=ET.parse(here/'b10_umbau_2026-11-21.xml')
+unets={}
+for net in umbau.findall('.//nets/net'):
+ for pin in net.findall('node'):
+  unets[pin.attrib['ref']+'.'+pin.attrib['pin']]=net.attrib['name']
+uc=[]
+def usame(*pins):
+ assert len({unets[p] for p in pins})==1,('umbau same',pins)
+ uc.append({'same':pins})
+def useparate(*pins):
+ assert len({unets[p] for p in pins})==len(pins),('umbau separate',pins)
+ uc.append({'separate':pins})
+usame('D901.2','R901.1');usame('R901.2','R902.1')
+usame('D902.2','R903.1');usame('R903.2','R904.1')
+usame('R902.2','R904.2','R601.1','R602.1','C602.1')
+usame('R601.2','C602.2')
+useparate('D901.1','D902.1','C602.1','C602.2')
+useparate('D901.1','D901.2','R901.2','C602.1')
+useparate('D902.1','D902.2','R903.2','C602.1')
+useparate('C602.1','R602.2','C602.2')
+assert unets['D901.1'].lstrip('/')=='AC_N'
+assert unets['D902.1'].lstrip('/')=='AC_L'
+assert unets['C602.2'].lstrip('/')=='0VA'
+for ref in ['R901','R902','R903','R904']:
+ assert umbau.find(f".//components/comp[@ref='{ref}']/value").text=='470 k / 4703'
+for ref in ['D901','D902']:
+ assert umbau.find(f".//components/comp[@ref='{ref}']/value").text=='US1M'
+assert umbau.find(".//components/comp[@ref='C602']/property[@name='dnp']") is not None
+assert not {'R401','R402','R403','R404','D401','D402'} & {c.attrib['ref'] for c in umbau.findall('.//components/comp')}
 media=[]
-for entry in subprocess.check_output(['git','ls-tree','-rz','d917aa8','--','photos','docs/img','docs/messplan_stromlos_2026-11-08/makros'],cwd=root).split(b'\0'):
+media_details=[]
+baseline='89748e932129eaaa9f03a0504eaa5261f45b501d'
+for entry in subprocess.check_output(['git','ls-tree','-rz',baseline,'--','photos','docs/img','docs/messplan_stromlos_2026-11-08/makros'],cwd=root).split(b'\0'):
  if not entry: continue
  head,path=entry.split(b'\t',1);blob=head.split()[2].decode();name=path.decode();data=(root/name).read_bytes()
  got=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
  assert got==blob,('media changed',name)
  media.append(name)
-result={'baseline':'d917aa8','independent_native_net_assertions':len(checks),'all_passed':True,'checks':checks,'unchanged_original_and_reference_files':len(media),'source':'Final corrections in LAUF_2026-11-14.md (through 16 Nov 22:32), NEUBEWERTUNG_2026-11-12.md (13 Nov updates), original B20 photographs and labels','hardware_function_verified':False,'reviewed_xml_sha256':hashlib.sha256((here/'gesamtschaltplan.xml').read_bytes()).hexdigest()}
+ media_details.append({'path':name,'sha256':hashlib.sha256(data).hexdigest(),'unchanged':True})
+(here/'originalmedien_pruefung.json').write_text(json.dumps({'base_commit':baseline,'checked_files':len(media),'all_unchanged':True,'files':media_details},ensure_ascii=False,indent=2)+'\n')
+result={'baseline':baseline,'independent_native_net_assertions':len(checks),'independent_umbau_net_assertions':len(uc),'all_passed':True,'checks':checks,'umbau_checks':uc,'C602_DNP_in_both_sheets':True,'original_and_modified_B10_separate':True,'unchanged_original_and_reference_files':len(media),'source':'Final corrections through 16 Nov; C602 connections, measured capacity and actual B10 replacement in LAUF_2026-11-21.md; original photographs','hardware_function_verified':False,'reviewed_xml_sha256':hashlib.sha256((here/'gesamtschaltplan.xml').read_bytes()).hexdigest(),'reviewed_umbau_xml_sha256':hashlib.sha256((here/'b10_umbau_2026-11-21.xml').read_bytes()).hexdigest()}
 (here/'unabhaengige_pruefung.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
-print(json.dumps({k:v for k,v in result.items() if k!='checks'},ensure_ascii=False))
+print(json.dumps({k:v for k,v in result.items() if k not in {'checks','umbau_checks'}},ensure_ascii=False))

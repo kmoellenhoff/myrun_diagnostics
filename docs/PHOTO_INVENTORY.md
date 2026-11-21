@@ -16,7 +16,7 @@ Source: 41 front + 57 back macro photos and one backlight overview by the owner.
 
 ## Connectors/test points seen
 P2 (2×9, console), P3 (3-pin POT / +5 V, mains-side), P4 (4-pin TACHO/+12V/0V), **P602 (2×7 header, blue, debug/programming, mains side – do not connect)**, P601 (2-pin RST/0VA), P600 (2-pin, NTC next to Q2), P70 (6-pin, hole row, debug), P13 (test pad), P400 (2-pin, 0V24/+24V – relay coil supply), DC MOTOR (L+ orange / L− grey), UP/DOWN 3-pin (WHITE/COM, DOWN, UP, BLACK), AC LINE (BROWN L, LIGHT BLUE N), FUSE MOT, test points 0VA/+5VA, +12VISO/0VISO, ±12VA.
-Parts seen: 3 relays (1 Schrack RT334024 orange, 2 Panasonic grey), 3 mains-filter chokes (C301–C304 area), toroid RT700 / large toroid, DC link electrolytic `S890A16E U12 GIRT 140421 V.10.05` (label), transformer ETI349X4 (Falco), aluminum heatsink with Q1/Q2/D3 (green isolators).
+Parts seen (relay count corrected 21.11.2026 from the original overviews/macros): **5 mechanical relays** — Schrack PE014012 (F24), **two** Panasonic ALQ3F12 grouped as F25, another Panasonic ALQ3F12 (F26), and Schrack RT334024 (F27). The CPC1017N above is an additional solid-state signal relay. Contact functions of F24/F25/F26 are not measured. Also: 3 mains-filter chokes (C301–C304 area), toroid RT700 / large toroid, DC link electrolytic `S890A16E U12 GIRT 140421 V.10.05` (label), transformer ETI349X4 (Falco), aluminum heatsink with Q1/Q2/D3 (green isolators).
 
 ## Back side (solder side)
 - Large copper pours on the mains side, slots (isolation) between mains and logic; backlight shows continuous copper only in the pour regions, signal area dense two-layer-looking tracks (layer count not yet confirmed).

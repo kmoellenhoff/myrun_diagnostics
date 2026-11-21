@@ -2,7 +2,11 @@
 
 **[Schaltplan, Detailansichten und Messregister (PDF)](gesamtschaltplan.pdf)** · [Gesamtblatt (PDF)](uebersicht_A1.pdf) · [SVG zum Zoomen](gesamtschaltplan.svg) · [Bearbeitbare KiCad-Datei](GIRT_Gesamtschaltplan.kicad_sch)
 
-Stand **16.11.2026**, Branch **main**, Quellenstand `d917aa8dcadb72afa94c133d4b6bf7259a89952a`. Der historische Verzeichnisname bleibt erhalten. Ein gemeinsames, elektrisch verbundenes KiCad-Blatt im **Sonderformat 841 × 1250 mm** enthält 57 Bauteile/Anschlussblöcke mit 149 Pins. `uebersicht_A1.pdf` behält seinen Dateinamen aus Kompatibilitätsgründen; das Blatt ist nicht mehr A1. Die PDF hat 40 Seiten einschließlich vergrößerter Ausschnitte und Messregister.
+Stand **21.11.2026**, Branch **main**, Quellenstand `89748e932129eaaa9f03a0504eaa5261f45b501d`. Der historische Verzeichnisname bleibt erhalten. Das gemeinsame KiCad-Blatt im **Sonderformat 841 × 1250 mm** enthält 58 Bauteile/Anschlussblöcke mit 151 Pins und zeigt die **rekonstruierte Originalschaltung**. `uebersicht_A1.pdf` behält seinen Dateinamen; das Blatt ist nicht A1. Die Sammel-PDF hat 42 Seiten einschließlich Details, separatem Ist-Umbau und Messregister.
+
+**Neu: [B10-Ist-Umbau vom 21.11. (PDF)](b10_umbau_2026-11-21.pdf) · [SVG](b10_umbau_2026-11-21.svg) · [KiCad](B10_Umbau_2026-11-21.kicad_sch).** Dieses eigenständige Blatt dokumentiert die tatsächlich eingesetzten US1M-/470-kΩ-Ersatzketten. Es ist keine zusätzliche Parallelschaltung zum Originalblatt. C602 (J gegen 0VA, kalt 0,43 nF gemessen) ist in beiden Ansichten als **DNP / derzeit ausgebaut** markiert. 470 pF ist der abgeleitete Nennwertkandidat, kein gelesener Originalwert.
+
+[Prüfung, Korrekturen und noch fehlende Verbindungen](../PRUEFUNG_SCHALTPLAN_2026-11-21.md) · [Neue Befunde](befunde_2026-11-21.csv) · [Aktuelles Tagesprotokoll](../LAUF_2026-11-21.md). C602 filtert schnelle Störungen; er erkennt keine Spannungsspitzen und garantiert ohne Bestückung keine MCU-Abschaltung. Die 100-Hz-Netzwelle wird durch rund 470 pF kaum geglättet.
 
 ![Gemeinsamer Schaltplan](gesamtschaltplan.svg)
 
@@ -10,6 +14,7 @@ Stand **16.11.2026**, Branch **main**, Quellenstand `d917aa8dcadb72afa94c133d4b6
 
 | Bereich | Bestätigter Stand | CAD |
 |---|---|---|
+| J-Filter | Kondensator zwischen J und 0VA am 21.11. zugeordnet; ausgebaut 0,43 nF, seit Wärmetest entfernt. Temperaturabhängiger Defekt oder Anschlussumfeld verdächtig, kein isolierter Lecknachweis | C602, DNP |
 | B10 / TL082-A | J1 → 22,1 kΩ nach 0VA; J1 → 1 kΩ → TL082 Pin 3; Pin 1 = 2; Pin 8 +12VA, Pin 4 −12VA, Pin 5 0VA | R401–R404, D401/D402, R601/R602, U602 |
 | Netzsignal X | TL082 Pin 1 → R1 (4,75 kΩ) → N; R2 (4,75 kΩ) N–0VA; N → 100 Ω → X/MCU28; C von X nach 0VA | R301/R302, R603, C601, U601 |
 | Y, P600-Kandidat | MCU26 = LD3N O; L=0VA, R=+5VA. Y–P600 Kontakt1 ca. 1 kΩ, Kontakt2=+5VA. Endliche Messkopplung, kein erfundener Einzelwiderstand; Ka/Kb-Alias offen | U605, U601 |
@@ -24,31 +29,36 @@ L− → Q2-Drain und L+ → Zwischenkreis-Elko-Plus sind inzwischen mit eigenen
 
 ## Belege und Grenzen
 
-[Befunde bis 16.11. morgens](befunde_2026-11-16.csv) und [Abendbefunde](befunde_2026-11-16_abend.csv) ergänzen die unveränderten historischen Rohprotokolle. Die jeweils letzten bestätigten Korrekturen im [Tagesprotokoll](../LAUF_2026-11-14.md) haben Vorrang vor zurückgenommenen Zwischenständen. [Alle Verbindungsbelege](verbindungsbelege.csv), [Bauteile](bauteile.csv), [Netze](netze.csv), [Modell](connected_model.json), [KiCad-XML](gesamtschaltplan.xml).
+[Befunde bis 16.11. morgens](befunde_2026-11-16.csv), [Abendbefunde](befunde_2026-11-16_abend.csv) und [Ergänzungen vom 21.11.](befunde_2026-11-21.csv) ergänzen die unveränderten historischen Rohprotokolle. Schlusskorrekturen haben Vorrang vor zurückgenommenen Zwischenständen. [Alle Verbindungsbelege](verbindungsbelege.csv), [Bauteile Originalmodell](bauteile.csv), [Bauteile Ist-Umbau](bauteile_umbau_2026-11-21.csv), [Netze Originalmodell](netze.csv), [Modell](connected_model.json), [KiCad-XML](gesamtschaltplan.xml), [Ist-Modell](umbau_model_2026-11-21.json), [Ist-XML](b10_umbau_2026-11-21.xml).
 
 - **M** = berichtete Messung, **F** = Fotoverlauf, **I** = Ableitung. **AKT-059/060 waren falsche Foto-Aliase** und werden nicht mehr als Kupfer vereinigt. Die neuen Messungen AKT-065/066 haben Vorrang. AKT-024 bezeichnet nun R1; AKT-061 wird auf den weiterhin fotografisch zugeordneten R1a-Anschluss begrenzt. Historische Eingabe-CSV unverändert; wirksame Belegliste kennzeichnet die Überholung. Es gibt keinen dritten 4751.
 - MCU-Nummern sind **Arbeitsnummern nach angenommener QFP-Zählung**, keine bestätigten Datenblatt-Pins oder Herstellerfunktionen. MCU-Typ, Masseanschluss und übrige Pins bleiben unbekannt.
 - OC04 E–0VA 3,3 kΩ, OC05 E–0VA 10 kΩ und P2.5 → LM2903.6 17 kΩ sind **In-Circuit-Messungen**, keine identifizierten Einzelwiderstände. OC04 Kathode liegt an LM2903.7. OC05 Kathode liegt an P2.7; der 0,956-kΩ-Pfad von P2.6 zur Anode bleibt als unaufgelöster Serienpfad dokumentiert. Die nicht aufgeklärte OC04-Anode wird nicht erfunden.
-- LD3N ist ein Schottky-Kandidat. Diodentests belegen keine Leckdiagnose. Es gibt weder eine X–Y-Brücke noch einen Serienkondensator. P13 wird nicht mit X verbunden.
+- LD3N ist ein Schottky-Kandidat, Innenstruktur nicht bestätigt. Die zuvor gezeichneten zwei Dioden wurden durch einen Anschlussblock ersetzt; bestätigte L/O/R-Netze bleiben erhalten. Es gibt weder eine X–Y-Brücke noch einen Serienkondensator. P13 wird nicht mit X verbunden.
+- Die neue TL082-Pinzählung vom 21.11. widerspricht der bisherigen Zuordnung. Pin 3 aus dem bisherigen Stand bleibt mit Warnhinweis erhalten; kein ungesicherter Pin-6-Pfad oder weiterer Kondensator aus dieser widersprüchlichen Zählung ergänzt.
 - F27 wurde extern wiederholt geschaltet, Kontakt angezogen 0,03 Ω; Spule ca. 1,4 kΩ. Im Fehlstart waren über der Spule 0 V gemeldet. Eine Freilaufdiode, T4-Bahn(b)-Funktion und ein Relais-Rückmeldesignal sind nicht zugeordnet.
 - 1P-Diodentests wurden **13.11. durchgeführt**: L→R/L→O je 0,70 V, rückwärts 1,56/2,18 V eingebaut; O–R 3,39 kΩ. Die alte Datei mit ausstehenden Tests bleibt als historische Quelle erhalten und beschreibt nicht den aktuellen Status.
 - Der [Fotoentwurf Q2-A/1001/4752](../fotospuren_2026-11-12/README.md) bleibt ausdrücklich eine separate F-Rekonstruktion. Seine bisher nicht elektrisch bestätigten Verbindungen sind hier nicht als gemessene Kupferverbindungen übernommen; R203/R204 bleiben unzugeordnet. FAN3100C und genaue 1P-/T2-/T3-/T4-Typen bleiben Kandidaten. D5- und T2-Quelle sind offen.
-- Original-Messwerte einschließlich überholter B10-M16-Angabe, historischer Relaiswerte und B20-Widerstandswerte bleiben im [Messregister CSV](messwerte.csv) und [vollständigen Rohfeldern JSON](messwerte_vollstaendig.json). 228 Zeilen umfassen 87 Zeilen vom 09.11., 82 aktuelle/historisch korrigierte Belege und 59 historische Messungen/Beobachtungen.
+- Original-Messwerte einschließlich überholter B10-M16-Angabe, historischer Relaiswerte und B20-Widerstandswerte bleiben im [Messregister CSV](messwerte.csv) und [vollständigen Rohfeldern JSON](messwerte_vollstaendig.json). 242 Zeilen umfassen 87 Zeilen vom 09.11., 96 aktuelle/historisch korrigierte Belege einschließlich 21.11. und 59 historische Messungen/Beobachtungen. Vollständige spätere Betriebslogs bleiben in ihren Sitzungsdateien.
 
 ## Reproduktion und Prüfung
 
-`python docs/gesamtschaltplan_110926/erzeugen.py` benötigt KiCad CLI 9, PyMuPDF und ReportLab. Der Generator bildet die erwarteten Netze aus den historischen Eingaben und der separaten aktuellen Befund-CSV; er vergleicht alle Pinpaare mit der tatsächlich exportierten KiCad-Netzliste. [Prüfnachweis](pruefnachweis.json): **149 Pins, 22.201 Vergleiche, Netzgruppen identisch**. Getrennte Masse-/Versorgungsnetze, X/Y und Serienpfade werden zusätzlich ausdrücklich geprüft. PDF/SVG/XML wurden erfolgreich exportiert. Das ist eine Dateikonsistenzprüfung, kein elektrischer Funktionstest.
+`python docs/gesamtschaltplan_110926/erzeugen.py` benötigt KiCad CLI 9, PyMuPDF und ReportLab. Der Generator bildet die erwarteten Netze aus den Quellen und vergleicht alle Pinpaare mit den tatsächlich exportierten KiCad-Netzlisten. [Prüfnachweis](pruefnachweis.json): Hauptblatt **151 Pins, 22.801 Vergleiche**, Ist-Blatt **18 Pins, 324 Vergleiche**, Netzgruppen identisch. Getrennte Masse-/Versorgungsnetze, X/Y und Serienpfade bleiben erhalten. PDF/SVG/XML wurden exportiert. Das ist eine Dateikonsistenzprüfung, kein elektrischer Funktionstest.
 
-[Originalmedien-Prüfung](originalmedien_pruefung.json): Alle 252 bereits im Quellenstand vorhandenen Dateien unter `photos/` und `docs/img/` sind bytegleich erhalten. Es wurden keine neuen Messungen ausgeführt, keine Fotos geändert oder erzeugt und keine Fehlerursache bewiesen. Der [alte Teilschaltplan](../schaltplan_110926/README.md) bleibt historisch erhalten.
+[Originalmedien-Prüfung](originalmedien_pruefung.json): Alle **282** im Quellenstand vorhandenen Original-/Referenzdateien unter `photos/`, `docs/img/` und den Messplan-Makros sind bytegleich erhalten. Es wurden keine neuen Messungen ausgeführt, keine Fotos geändert oder erzeugt und keine Fehlerursache bewiesen. Der [alte Teilschaltplan](../schaltplan_110926/README.md) bleibt historisch erhalten.
 
 ## Unabhängige Endprüfung
 
 Die Aktualisierung wurde an **GPT-6.1 Sol mit niedrigem Reasoning-Aufwand** delegiert und anschließend vom Hauptagenten gegen die Originalbelege geprüft. Die erste Prüfung bestätigte fälschlich eine Fotozuordnung von R2 als Serienwiderstand. Die Abendmessungen widerlegen diese; der Hauptagent hat nun R1 als Serienwiderstand und R2 als Widerstand nach Masse korrigiert. Die damalige Dateikonsistenzprüfung war kein unabhängiger elektrischer Beleg für die Fotozuordnung. Versorgungshinweise, TL082-Rückkopplung und T2-Serienpfad bleiben erhalten. Zusätzliche Detailansichten zeigen Anschlüsse und MCU-Arbeitsnummern lesbar.
 
-Die [zweite Prüfung](unabhaengige_pruefung.json) verwendet eigene, aus den letzten Protokollkorrekturen abgeleitete Anschluss-Erwartungen direkt gegen die exportierte KiCad-XML-Netzliste – ohne Import des Generators oder seines Netzmodells. **64 Prüfungen bestanden**, darunter getrennte MCU-Eingänge, Versorgungen, Konsolenmasse und alle Widerstandsenden. [Prüfskript](pruefen_unabhaengig.py): `python docs/gesamtschaltplan_110926/pruefen_unabhaengig.py`. Zusätzlich sind **260 Original-/Referenzdateien** inklusive der bisherigen Messplan-Markierungen gegenüber dem Quellenstand bytegleich.
+Die [Prüfung ohne Generatorimport](unabhaengige_pruefung.json) verwendet eigene Anschluss-Erwartungen direkt gegen die exportierten XML-Netzlisten. Zu den bisherigen 64 Netzprüfungen kommen drei C602-Prüfungen und zehn Prüfungen des separaten Ist-Blatts; DNP, Ersatzteilwerte und Trennung der Bestückungsstände werden zusätzlich geprüft. [Prüfskript](pruefen_unabhaengig.py): `python docs/gesamtschaltplan_110926/pruefen_unabhaengig.py`. Original-/Referenzdateien inklusive Messplan-Markierungen werden gegen den aktuellen Quellenstand bytegleich geprüft. Das ist eine getrennte Prüflogik desselben Bearbeiters, keine neue unabhängige elektrische Messung.
 
 
-## Abendstand und verbleibende Grenzen
+## Historische Nachträge bis 17.11. – damaliger CAD-Stand
+
+Die folgenden Einträge dokumentieren die damaligen Arbeitsstände. Aussagen „CAD/PDF bleibt Stand 16.11.“ wurden durch den oben beschriebenen Neuaufbau am **21.11.** abgelöst; die jeweiligen Messgrenzen bleiben gültig.
+
+### Abendstand und verbleibende Grenzen
 
 PDF, SVG, KiCad, Register und Prüfnachweise sind nach Einbindung von AKT-064 bis AKT-082 neu erzeugt. Der Generator liest beide Befunddateien und deaktiviert widersprochene Fotoverbindungen. Zusätzlich zur Korrektur des X-Teilers enthält er die bestätigte ADM485/OC06-Kupfergruppe.
 

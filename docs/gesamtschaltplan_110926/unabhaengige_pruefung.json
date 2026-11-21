@@ -1,6 +1,7 @@
 {
-  "baseline": "d917aa8",
-  "independent_native_net_assertions": 64,
+  "baseline": "89748e932129eaaa9f03a0504eaa5261f45b501d",
+  "independent_native_net_assertions": 67,
+  "independent_umbau_net_assertions": 10,
   "all_passed": true,
   "checks": [
     {
@@ -9,6 +10,27 @@
         "D402.2",
         "R601.1",
         "R602.1"
+      ]
+    },
+    {
+      "same": [
+        "C602.1",
+        "R601.1",
+        "R602.1"
+      ]
+    },
+    {
+      "same": [
+        "C602.2",
+        "R601.2"
+      ]
+    },
+    {
+      "separate": [
+        "C602.1",
+        "C602.2",
+        "C601.1",
+        "U605.O"
       ]
     },
     {
@@ -432,8 +454,83 @@
       ]
     }
   ],
-  "unchanged_original_and_reference_files": 260,
-  "source": "Final corrections in LAUF_2026-11-14.md (through 16 Nov 22:32), NEUBEWERTUNG_2026-11-12.md (13 Nov updates), original B20 photographs and labels",
+  "umbau_checks": [
+    {
+      "same": [
+        "D901.2",
+        "R901.1"
+      ]
+    },
+    {
+      "same": [
+        "R901.2",
+        "R902.1"
+      ]
+    },
+    {
+      "same": [
+        "D902.2",
+        "R903.1"
+      ]
+    },
+    {
+      "same": [
+        "R903.2",
+        "R904.1"
+      ]
+    },
+    {
+      "same": [
+        "R902.2",
+        "R904.2",
+        "R601.1",
+        "R602.1",
+        "C602.1"
+      ]
+    },
+    {
+      "same": [
+        "R601.2",
+        "C602.2"
+      ]
+    },
+    {
+      "separate": [
+        "D901.1",
+        "D902.1",
+        "C602.1",
+        "C602.2"
+      ]
+    },
+    {
+      "separate": [
+        "D901.1",
+        "D901.2",
+        "R901.2",
+        "C602.1"
+      ]
+    },
+    {
+      "separate": [
+        "D902.1",
+        "D902.2",
+        "R903.2",
+        "C602.1"
+      ]
+    },
+    {
+      "separate": [
+        "C602.1",
+        "R602.2",
+        "C602.2"
+      ]
+    }
+  ],
+  "C602_DNP_in_both_sheets": true,
+  "original_and_modified_B10_separate": true,
+  "unchanged_original_and_reference_files": 282,
+  "source": "Final corrections through 16 Nov; C602 connections, measured capacity and actual B10 replacement in LAUF_2026-11-21.md; original photographs",
   "hardware_function_verified": false,
-  "reviewed_xml_sha256": "96d942a0ca46a1a0871c586da70a639e16240c04153770d1a7b70859eb0f6061"
+  "reviewed_xml_sha256": "4e55caa5cc4ab77656e3a0f607654cecf1e41b5dd57f98848f8a4938ac232e3c",
+  "reviewed_umbau_xml_sha256": "95059fb7cde554e517dd8d9c86c03d4c6d537fe491a44defe8e28c9376fc8810"
 }
