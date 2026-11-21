@@ -1,10 +1,10 @@
 ﻿Reference;Repository_ID;Wert;Messwerte;DNP
-D901;Neue US1M, Zweig N;US1M;;
 R901;Neue 4703, Zweig N / 1;470 k / 4703;;
 R902;Neue 4703, Zweig N / 2;470 k / 4703;;
-D902;Neue US1M, Zweig L;US1M;;
+D901;Neue US1M, Zweig N;US1M;;
 R903;Neue 4703, Zweig L / 1;470 k / 4703;;
 R904;Neue 4703, Zweig L / 2;470 k / 4703;;
+D902;Neue US1M, Zweig L;US1M;;
 R601;B10-2212, unverändert;22,1 k / 2212;;
 C602;J-Filter, derzeit entfernt;ca. 470 pF [I];"0,43 nF ausgebaut kalt; seit Wärmetest entfernt";True
 R602;B10-1001, unverändert;1 k / 1001;;

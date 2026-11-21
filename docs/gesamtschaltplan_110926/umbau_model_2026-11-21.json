@@ -3,15 +3,15 @@
   "scope": "Eigenständiger Ist-Umbau; nicht parallel zum Originalmodell",
   "components": [
     {
-      "Reference": "D901",
-      "Symbol": "DH",
-      "Repository_ID": "Neue US1M, Zweig N",
-      "Wert": "US1M",
-      "Feld_Claude": "J6 / Umbau",
+      "Reference": "R901",
+      "Symbol": "RH",
+      "Repository_ID": "Neue 4703, Zweig N / 1",
+      "Wert": "470 k / 4703",
+      "Feld_Claude": "",
       "Messwerte": "",
       "Terminals": {
-        "1": "UMB-DN.A",
-        "2": "UMB-DN.K"
+        "1": "UMB-RN1.1",
+        "2": "UMB-RN1.2"
       },
       "Pins_xy": {
         "1": [
@@ -30,15 +30,15 @@
       "Properties": null
     },
     {
-      "Reference": "R901",
+      "Reference": "R902",
       "Symbol": "RH",
-      "Repository_ID": "Neue 4703, Zweig N / 1",
+      "Repository_ID": "Neue 4703, Zweig N / 2",
       "Wert": "470 k / 4703",
       "Feld_Claude": "",
       "Messwerte": "",
       "Terminals": {
-        "1": "UMB-RN1.1",
-        "2": "UMB-RN1.2"
+        "1": "UMB-RN2.1",
+        "2": "UMB-RN2.2"
       },
       "Pins_xy": {
         "1": [
@@ -57,15 +57,15 @@
       "Properties": null
     },
     {
-      "Reference": "R902",
-      "Symbol": "RH",
-      "Repository_ID": "Neue 4703, Zweig N / 2",
-      "Wert": "470 k / 4703",
-      "Feld_Claude": "",
+      "Reference": "D901",
+      "Symbol": "DH",
+      "Repository_ID": "Neue US1M, Zweig N",
+      "Wert": "US1M",
+      "Feld_Claude": "J6 / Umbau",
       "Messwerte": "",
       "Terminals": {
-        "1": "UMB-RN2.1",
-        "2": "UMB-RN2.2"
+        "1": "UMB-DN.A",
+        "2": "UMB-DN.K"
       },
       "Pins_xy": {
         "1": [
@@ -84,15 +84,15 @@
       "Properties": null
     },
     {
-      "Reference": "D902",
-      "Symbol": "DH",
-      "Repository_ID": "Neue US1M, Zweig L",
-      "Wert": "US1M",
-      "Feld_Claude": "J6 / Umbau",
+      "Reference": "R903",
+      "Symbol": "RH",
+      "Repository_ID": "Neue 4703, Zweig L / 1",
+      "Wert": "470 k / 4703",
+      "Feld_Claude": "",
       "Messwerte": "",
       "Terminals": {
-        "1": "UMB-DL.A",
-        "2": "UMB-DL.K"
+        "1": "UMB-RL1.1",
+        "2": "UMB-RL1.2"
       },
       "Pins_xy": {
         "1": [
@@ -111,15 +111,15 @@
       "Properties": null
     },
     {
-      "Reference": "R903",
+      "Reference": "R904",
       "Symbol": "RH",
-      "Repository_ID": "Neue 4703, Zweig L / 1",
+      "Repository_ID": "Neue 4703, Zweig L / 2",
       "Wert": "470 k / 4703",
       "Feld_Claude": "",
       "Messwerte": "",
       "Terminals": {
-        "1": "UMB-RL1.1",
-        "2": "UMB-RL1.2"
+        "1": "UMB-RL2.1",
+        "2": "UMB-RL2.2"
       },
       "Pins_xy": {
         "1": [
@@ -138,15 +138,15 @@
       "Properties": null
     },
     {
-      "Reference": "R904",
-      "Symbol": "RH",
-      "Repository_ID": "Neue 4703, Zweig L / 2",
-      "Wert": "470 k / 4703",
-      "Feld_Claude": "",
+      "Reference": "D902",
+      "Symbol": "DH",
+      "Repository_ID": "Neue US1M, Zweig L",
+      "Wert": "US1M",
+      "Feld_Claude": "J6 / Umbau",
       "Messwerte": "",
       "Terminals": {
-        "1": "UMB-RL2.1",
-        "2": "UMB-RL2.2"
+        "1": "UMB-DL.A",
+        "2": "UMB-DL.K"
       },
       "Pins_xy": {
         "1": [

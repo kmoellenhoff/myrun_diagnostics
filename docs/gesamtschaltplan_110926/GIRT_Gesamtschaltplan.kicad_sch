@@ -237,7 +237,7 @@
 (text "MCU-Arbeitsnummern nach angenommener QFP-Zählung; Hersteller-Pins / Portfunktionen und Masseanschluss unbekannt." (at 25 620 0) (effects (font (size 2 2)) (justify left top)) (uuid "c92e3eec-b0db-51bd-bd83-4c671b3feacf"))
 (text "C602: 0,43 nF kalt [M]; derzeit ausgebaut / DNP." (at 25 736 0) (effects (font (size 1.65 1.65)) (justify left top)) (uuid "0a63cc58-9fb0-5b35-87c2-38bad56cdc8d"))
 (text "HF-Filter, kein Spitzendetektor; Leckfehler verdächtig." (at 25 744 0) (effects (font (size 1.65 1.65)) (justify left top)) (uuid "b3b898e7-fa7c-5142-b444-8466171f98f6"))
-(text "TL082-Pinzählung am 21.11. widersprüchlich; 16.11.-Zuordnung beibehalten." (at 25 752 0) (effects (font (size 1.4 1.4)) (justify left top)) (uuid "a95d9e76-cffd-54f0-9e77-5b14b519356b"))
+(text "TL082-Pinzählung 21.11. geklärt: Nutzerangaben waren 180° gedreht (echt = 9 - genannt). Pin 6/7 vermutlich verbunden, nicht gemessen [H]." (at 25 752 0) (effects (font (size 1.4 1.4)) (justify left top)) (uuid "a95d9e76-cffd-54f0-9e77-5b14b519356b"))
 (text "R301/B20-R1 Serie; R302/B20-R2 nach 0VA: Teiler 1:2 [M/I]." (at 25 765 0) (effects (font (size 1.9 1.9)) (justify left top)) (uuid "18e2bad4-83ce-537a-a029-a281ea24cb77"))
 (text "X ≠ Y; kein Serienkondensator, keine Drahtbrücke. Y: P600-Temperaturkandidat; ca. 1 kΩ zu Kontakt1 [M/I]." (at 25 778 0) (effects (font (size 2 2)) (justify left top)) (uuid "efc65885-f184-530a-aadc-81082ee4e4b8"))
 (text "Optokoppler — galvanische Trennung bleibt erhalten" (at 25 800 0) (effects (font (size 2.7 2.7) (bold yes)) (justify left top)) (uuid "130ec7e0-41e4-5e21-b437-a61d982eb3bd"))

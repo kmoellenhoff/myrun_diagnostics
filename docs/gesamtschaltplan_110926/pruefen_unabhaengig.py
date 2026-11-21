@@ -62,9 +62,11 @@ for comp in xml.findall('.//components/comp'):
   separate(ref+'.1',ref+'.2')
 assert len([p for p in xml.findall('.//components/comp') if p.attrib['ref'] in ['R301','R302']])==2
 assert '470' in xml.find(".//components/comp[@ref='C602']/value").text
-# A separate exported drawing must represent the repaired chains in their
-# actual order: Faston -> diode -> 470k -> 470k -> J. Never reuse the original
-# cathode-at-J ordering or put the replacement chains in the original drawing.
+# A separate exported drawing must represent the new chains in their actual
+# order (Nutzerangabe 21.11. 14:50): Faston -> 470k -> 470k -> US1M -> J, with
+# the cathode at J. This is the order of the original circuit, built from new
+# parts. Never put the replacement chains in the original drawing, and never
+# draw an additional parallel old branch (the Litzen only bridge the same nodes).
 umbau=ET.parse(here/'b10_umbau_2026-11-21.xml')
 unets={}
 for net in umbau.findall('.//nets/net'):
@@ -77,16 +79,16 @@ def usame(*pins):
 def useparate(*pins):
  assert len({unets[p] for p in pins})==len(pins),('umbau separate',pins)
  uc.append({'separate':pins})
-usame('D901.2','R901.1');usame('R901.2','R902.1')
-usame('D902.2','R903.1');usame('R903.2','R904.1')
-usame('R902.2','R904.2','R601.1','R602.1','C602.1')
+usame('R901.2','R902.1');usame('R902.2','D901.1')
+usame('R903.2','R904.1');usame('R904.2','D902.1')
+usame('D901.2','D902.2','R601.1','R602.1','C602.1')
 usame('R601.2','C602.2')
-useparate('D901.1','D902.1','C602.1','C602.2')
-useparate('D901.1','D901.2','R901.2','C602.1')
-useparate('D902.1','D902.2','R903.2','C602.1')
+useparate('R901.1','R903.1','C602.1','C602.2')
+useparate('R901.1','R901.2','D901.1','C602.1')
+useparate('R903.1','R903.2','D902.1','C602.1')
 useparate('C602.1','R602.2','C602.2')
-assert unets['D901.1'].lstrip('/')=='AC_N'
-assert unets['D902.1'].lstrip('/')=='AC_L'
+assert unets['R901.1'].lstrip('/')=='AC_N'
+assert unets['R903.1'].lstrip('/')=='AC_L'
 assert unets['C602.2'].lstrip('/')=='0VA'
 for ref in ['R901','R902','R903','R904']:
  assert umbau.find(f".//components/comp[@ref='{ref}']/value").text=='470 k / 4703'

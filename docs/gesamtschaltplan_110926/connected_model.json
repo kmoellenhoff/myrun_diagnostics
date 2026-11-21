@@ -1996,7 +1996,7 @@
       "B10-T1",
       "B10-R1.1",
       "AC LINE N",
-      "UMB-DN.A"
+      "UMB-RN1.1"
     ],
     "N_B10-R1_2": [
       "B10-R1.2",
@@ -2016,8 +2016,8 @@
       "J.2212R",
       "J.1001L",
       "J-C.A",
-      "UMB-RN2.2",
-      "UMB-RL2.2"
+      "UMB-DN.K",
+      "UMB-DL.K"
     ],
     "N_B10-R4_2": [
       "B10-D2.1",
@@ -2033,7 +2033,7 @@
       "B10-R3.1",
       "B10-T2",
       "AC LINE L",
-      "UMB-DL.A"
+      "UMB-RL1.1"
     ],
     "L+": [
       "B18-P2",
@@ -2311,21 +2311,24 @@
       "ADM485.1",
       "OC06.K"
     ],
-    "N_UMB-DN_K": [
-      "UMB-DN.K",
-      "UMB-RN1.1"
-    ],
     "N_UMB-RN1_2": [
       "UMB-RN1.2",
       "UMB-RN2.1"
     ],
-    "N_UMB-DL_K": [
-      "UMB-DL.K",
-      "UMB-RL1.1"
+    "N_UMB-RN2_2": [
+      "UMB-RN2.2",
+      "UMB-DN.A"
     ],
     "N_UMB-RL1_2": [
       "UMB-RL1.2",
       "UMB-RL2.1"
+    ],
+    "N_UMB-RL2_2": [
+      "UMB-RL2.2",
+      "UMB-DL.A"
+    ],
+    "N_TL082_6": [
+      "TL082.6"
     ],
     "N_P2_11": [
       "P2.11"
