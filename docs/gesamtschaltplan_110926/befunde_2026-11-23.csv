@@ -1,0 +1,2 @@
+﻿ID;Knoten_A;Knoten_B;Art;Status;Wert;Quelle;Originalfoto;Bemerkung
+NOV23-001;J-C.A;J-C.B;Bauteil / Messung;M;ausgebaut: Kapazität 0,15–3 nF schwankend, Widerstand 2 MΩ sinkend auf 150–20 kΩ;docs/LAUF_2026-11-23.md — 20:58–21:02;;Nebenschluss im alten C602, Neuteil 460 pF stabil, OL. erzeugen.py liest befunde_2026-11-23.csv bisher nicht (nur 16, 16_abend, 21): Aufnahme in Schaltplan-Neuaufbau offen. erzeugen.py nicht geändert.
