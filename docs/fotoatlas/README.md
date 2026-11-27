@@ -1,6 +1,6 @@
 # Fotoatlas GIRT S6T30
 
-> **Hinweis:** Die Übersichts-PDF ([GIRT_Platinen_Uebersicht.pdf](../GIRT_Platinen_Uebersicht.pdf), Stand 27.11.2026, v3) ist auf dem Reparaturstand. Ergänzend gelten [HARDWARE.md](../HARDWARE.md) und der [Schaltplan](../schaltplan/README.md). Das Koordinatenraster A–L / 1–6 und die Bauteil-IDs (F = Vorderseite, B = Rückseite) gelten unverändert.
+> **Hinweis:** Die Übersichts-PDF ([GIRT_Platinen_Uebersicht.pdf](../GIRT_Platinen_Uebersicht.pdf), Stand 27.11.2026, v3) ist auf dem Reparaturstand. Ergänzend gelten [HARDWARE.md](../HARDWARE.md) und der [Schaltplan](../schaltplan/README.md). Das Koordinatenraster A–L / 1–6 und die Bauteil-IDs (F = Vorderseite, B = Rückseite) gelten unverändert; wie sie zu Schaltplan-Referenzen und Aufdrucken passen, zeigt das [Bauteilregister](../BAUTEILE.md).
 
 **Alle 110 Originalfotos sind erfasst:** 57 Rückseite, 41 Vorderseite, 3 Q2, 7 verkleinerte Inspektionsfotos und 2 Übersichtskopien. Originaldateien und ursprünglicher Rückseitenindex bleiben unverändert.
 

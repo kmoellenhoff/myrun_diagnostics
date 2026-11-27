@@ -17,7 +17,7 @@
 
 | | Defekt 1: Kondensator C602 | Defekt 2: Sicherung FUSE MOT |
 |---|---|---|
-| Bauteil | SMD-Keramikkondensator (MLCC) 0603, ca. 470 pF | Feinsicherung 5 × 20 mm, T4A träge, 250 V |
+| Bauteil | SMD-Keramikkondensator (MLCC) 0603, ca. 470 pF; „C602“ ist eine Schaltplan-Referenz, kein Aufdruck auf der Platine, erkennbar neben dem Widerstand „2212“ | Feinsicherung 5 × 20 mm, T4A träge, 250 V |
 | Lage | Rückseite (Lötseite), Feld E6 (±1 Feld), neben dem Widerstand „2212“ (22,1 kΩ) | Vorderseite, Feld J2 (Bauteil F28) |
 | Fehlerbild | Innerer, wärmeabhängiger Nebenschluss im Netzspannungs-Messzweig: der Messknoten J brach von ca. 4,9 V zeitweise auf 0,1–0,9 V ein; die Steuerung verweigerte bzw. brach den Motorbetrieb ab (HF904/HF902) | Sicherung fehlte (Glaskörper weg): Höhenverstellung ohne Funktion |
 | Ersatz | 470 pF, 0603, ≥ 50 V, C0G/NP0 (eingebaut: 471 pF aus Sortiment, gemessen 460 pF) | T4A/250 V träge, Keramik |
@@ -30,6 +30,10 @@ Beleglage: Der Wärmetest (J-Einbruch beim alten C602, stabile 4,966 V mit neuem
 
 **Hinweis lockerer Netzstecker:** Am 24.11. fiel das Gerät während der Höhenverstellung aus, weil der Kaltgerätestecker locker saß (Knistern/Funken). Stecker und Buchse sollten geprüft und bei Bedarf getauscht werden.
 
+## Bezeichnungen
+
+Im Repo gibt es mehrere Namenssysteme nebeneinander: das Koordinatenraster A–L / 1–6 des Fotoatlas, die Bereichs-IDs F1–F33 (Vorderseite) und B1–B21 (Rückseite) der Platinenübersicht, die Bauteilreferenzen des rekonstruierten Schaltplans (z. B. C602, R601, U602), die Aufdrucke auf der Platine (z. B. FUSE MOT, P2, SMD-Code „2212“) sowie eigene Knotennamen und MCU-Arbeitsnummern. Die Schaltplan-Referenzen wurden beim Rekonstruieren vergeben und stehen nicht auf der Platine; F27 (Relais RT334024) und F28 (Bereich der Sicherung FUSE MOT) sind leicht zu verwechseln. [docs/BAUTEILE.md](docs/BAUTEILE.md) ordnet die Systeme einander zu, ohne etwas umzubenennen.
+
 ## Hardware-Überblick
 
 ![Blockdiagramm der GIRT S6T30](docs/img/block_diagram.png)
@@ -37,6 +41,7 @@ Beleglage: Der Wärmetest (J-Einbruch beim alten C602, stabile 4,966 V mit neuem
 | Dokument | Inhalt |
 |---|---|
 | [HARDWARE.md](docs/HARDWARE.md) | Baugruppen, Bauteile, Steckverbinder P2/P4, LEDs, Korrosionsbefund |
+| [BAUTEILE.md](docs/BAUTEILE.md) | Bauteilregister: Raster, F-/B-IDs, Schaltplan-Referenzen, Aufdrucke und Knotennamen einander zugeordnet |
 | [Fotoatlas](docs/fotoatlas/README.md) | Alle Originalfotos beider Platinenseiten, zugeordnet zum Raster A–L / 1–6 |
 | [Platinenübersicht mit Koordinaten (PDF)](docs/GIRT_Platinen_Uebersicht.pdf) | Gesamtübersicht Vorder-/Rückseite mit Koordinatenraster (Stand 27.11., v3, mit Markierung der beiden Defekte) |
 | [Schaltplan](docs/schaltplan/README.md) | Rekonstruierter Schaltplan (KiCad, PDF, SVG), Original und B10-Umbau |

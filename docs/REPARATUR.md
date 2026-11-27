@@ -9,7 +9,7 @@ Belegstufen: [M] gemessen, [O] beobachtet, [I] abgeleitet, [H] Hypothese.
 
 | | |
 |---|---|
-| Bauteil | SMD-Keramikkondensator (MLCC) 0603 (1,6 × 0,8 mm), ca. 470 pF (kein Aufdruck; ausgebaut kalt 0,43 nF) |
+| Bauteil | SMD-Keramikkondensator (MLCC) 0603 (1,6 × 0,8 mm), ca. 470 pF (kein Aufdruck; ausgebaut kalt 0,43 nF). „C602“ ist eine Schaltplan-Referenz, kein Aufdruck auf der Platine; erkennbar neben dem Widerstand „2212“ (Bezeichnungssysteme: [BAUTEILE.md](BAUTEILE.md)) |
 | Lage | **Rückseite** (Lötseite), Rasterfeld **E6** (Fotoatlas-Raster A–L / 1–6, Rückseite aufrecht), im oberen Randbereich neben dem Widerstand „2212“ (22,1 kΩ) und „1001“ (1 kΩ); Nachbarn: zwei SO-8 (TL082, Feld D6), SO-20 L4981 (Feld E/F6) |
 | Funktion | Netzspannungs-Messzweig: Knoten J (Netz über 2 × 470 kΩ und Diode je Seite) → 22,1 kΩ nach 0VA; C602 liegt parallel dazu und bildet mit ca. 21 kΩ einen Tiefpass (≈ 16 kHz) vor dem TL082-Spannungsfolger und dem MCU-Eingang [I] |
 | Fehlerbild | J normal ≈ 4,9 V DC (bei ≈ 238 V Netz). Mit dem defekten C602 brach J zeitweise auf 0,1–0,9 V ein, wärmeabhängig (Föhn: erst linear sinkend, dann Sprung) [M]. Die Steuerung wertete das vermutlich als fehlerhafte Netzversorgung und verweigerte oder brach den Motorbetrieb ab (HF904/902, STS2-Blinkcode) [I; Firmware nicht dokumentiert] |

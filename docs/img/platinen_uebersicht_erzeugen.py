@@ -143,7 +143,7 @@ BACK = [
  ('B18','E5','PFC-Rückführung: L+ → 1M+1M+475k → … → L4981 Pin 14 VFEED (Verbindung gemessen)','Netz/Hochspannung'),
  ('B19','E6','Widerstandsblock der PFC-Rückführung (u. a. 2×1M parallel, 39,2 kΩ nach 0VA)','Logik/Signal'),
  ('B20','E6','Reihe aus 4 Widerständen + SOT-23 (NPN-ähnlich) [H]','Leistungsteil'),
- ('C602','E6','Kondensator 470 pF 0603 am Knoten J neben „2212“ (Filter Netzsignal) – defekt, ersetzt (Defekt 1)','Logik/Signal')]
+ ('C602','E6','Kondensator 470 pF 0603 am Knoten J neben „2212“ (Filter Netzsignal) – defekt, ersetzt (Defekt 1). Schaltplan-Referenz, kein Aufdruck auf der Platine; erkennbar neben dem Widerstand „2212“','Logik/Signal')]
 HILITE = {'F28', 'C602'}
 
 def table(rows, widths):

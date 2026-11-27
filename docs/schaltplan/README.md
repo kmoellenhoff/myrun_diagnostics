@@ -12,7 +12,7 @@ Rekonstruiert aus Messungen und Fotos, **kein Herstellerplan**. Er zeigt die gem
 | [netze.csv](netze.csv), [bauteile.csv](bauteile.csv), [bauteile_umbau_2026-11-21.csv](bauteile_umbau_2026-11-21.csv) | Netzliste und Bauteillisten (Original bzw. Umbau) |
 | `*.xml` | KiCad-Netzlisten-Export beider Blätter |
 
-Das Original-Blatt und das Ist-Blatt sind zwei getrennte Bestückungsstände derselben Stelle, keine parallelen Schaltungen. Bauteil-IDs und das Raster A–L / 1–6 entsprechen dem [Fotoatlas](../fotoatlas/README.md) und der [Platinenübersicht](../GIRT_Platinen_Uebersicht.pdf).
+Das Original-Blatt und das Ist-Blatt sind zwei getrennte Bestückungsstände derselben Stelle, keine parallelen Schaltungen. Bauteil-IDs und das Raster A–L / 1–6 entsprechen dem [Fotoatlas](../fotoatlas/README.md) und der [Platinenübersicht](../GIRT_Platinen_Uebersicht.pdf). Die Zuordnung der Schaltplan-Referenzen (C602, R601 …, beim Rekonstruieren vergeben, kein Aufdruck) zu den F-/B-Bereichen und Aufdrucken steht in [BAUTEILE.md](../BAUTEILE.md).
 
 ## Belegstufen
 
