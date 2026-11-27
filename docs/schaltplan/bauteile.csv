@@ -39,7 +39,7 @@ SW501;Motor-Thermoschalter;;Thermokontakt, kalt geschlossen;0 Ω kalt
 J204;P4;;P4: TACHO / 0V;
 U601;MCU unbekannt;;Arbeitsnummern, kein Datenblatt;
 R601;B10-2212;;22,1 k / 2212;
-C602;J-Filter neben 2212;E6 / neben 2212;ca. 470 pF [I];"0,43 nF ausgebaut kalt; im Profil-Lauf 21.11. entfernt"
+C602;J-Filter neben 2212;E6 / neben 2212;470 pF (neu eingebaut);"ersetzt, 460 pF gemessen; alter C602 hatte Nebenschluss (0,43 nF kalt)"
 R602;B10-1001;;1 k / 1001;
 U602;TL082 neben T3;;TL082I / A folgt J, B offen;
 R603;Netzsignal-1000;;100 Ω / 1000;
