@@ -4,7 +4,7 @@ Rekonstruiert aus Messungen und Fotos, **kein Herstellerplan**. Er zeigt die gem
 
 | Datei | Inhalt |
 |---|---|
-| [gesamtschaltplan.pdf](gesamtschaltplan.pdf) | Hauptblatt **Original-Rekonstruktion** mit Detailansichten, dem separaten Ist-Blatt und einem Messregister (43 Seiten, Stand 21.11.) |
+| [gesamtschaltplan.pdf](gesamtschaltplan.pdf) | Hauptblatt **Original-Rekonstruktion**, direkter KiCad-Export (eine Seite, Stand 27.11.2026); die frühere 43-seitige Fassung mit Detailansichten und Messregister liegt im Archiv-Branch |
 | [uebersicht_A1.pdf](uebersicht_A1.pdf) | Gesamtblatt in einem Stück (Sonderformat, trotz Dateiname nicht A1) |
 | [gesamtschaltplan.svg](gesamtschaltplan.svg) | dasselbe zum Zoomen im Browser |
 | [GIRT_Gesamtschaltplan.kicad_sch](GIRT_Gesamtschaltplan.kicad_sch) | bearbeitbare KiCad-Quelle (KiCad 9) |
@@ -23,13 +23,18 @@ Das Original-Blatt und das Ist-Blatt sind zwei getrennte Bestückungsstände der
 
 ## C602
 
-C602 (J gegen 0VA, 470 pF 0603) ist im Plan als **ersetzt** vermerkt (neu 460 pF gemessen [M]; der alte hatte einen Nebenschluss). In den KiCad-Dateien ist dies bereits nachgetragen. **PDF und SVG zeigen noch den alten Text „ausgebaut / DNP“**, bis sie mit KiCad 9 neu exportiert werden:
+C602 (J gegen 0VA, 470 pF 0603) ist im Plan als **ersetzt** vermerkt (neu 460 pF gemessen [M]; der alte hatte einen Nebenschluss). PDF und SVG beider Blätter wurden am **27.11.2026 mit KiCad CLI 9.0.2** aus den vorhandenen KiCad-Dateien neu exportiert. `uebersicht_A1.pdf` entspricht dem neuen einseitigen Gesamtblatt. Die KiCad-Quellen wurden beim Export nicht verändert.
+
+Die Exporte lassen sich im Verzeichnis `docs/schaltplan/` so wiederholen (die SVG-Ausgaben auf die bestehenden, unten angegebenen Dateinamen umbenennen):
 
 ```bash
 kicad-cli sch export pdf GIRT_Gesamtschaltplan.kicad_sch -o gesamtschaltplan.pdf
 kicad-cli sch export svg GIRT_Gesamtschaltplan.kicad_sch -o .
 kicad-cli sch export pdf B10_Umbau_2026-11-21.kicad_sch -o b10_umbau_2026-11-21.pdf
+kicad-cli sch export svg B10_Umbau_2026-11-21.kicad_sch -o .
 ```
+
+Die erzeugten SVGs `GIRT_Gesamtschaltplan.svg` und `B10_Umbau_2026-11-21.svg` werden als `gesamtschaltplan.svg` und `b10_umbau_2026-11-21.svg` abgelegt; anschließend `gesamtschaltplan.pdf` auch nach `uebersicht_A1.pdf` kopieren.
 
 ## Offene Lücken
 
