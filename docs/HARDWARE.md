@@ -1,202 +1,186 @@
-# Technogym MyRun – lower kit hardware notes (Gefran GIRT S6T30)
+# Technogym MyRun – Hardware-Dokumentation des Unterteils (Gefran GIRT S6T30)
 
-Reverse-engineering notes for the lower kit ("GIRT") of a used Technogym MyRun, collected while repairing one unit. No manufacturer's schematic is available; the [reconstructed partial schematic](gesamtschaltplan_110926/README.md) documents the known nets and remaining gaps. Everything below is either measured on this unit, observed (photos, videos, BLE logs), taken from service manuals of related Technogym drives, or marked as inference.
+Hardware-Notizen zur Unterteil-Steuerung („GIRT“) eines gebrauchten Technogym MyRun, entstanden bei der Reparatur eines einzelnen Geräts. Ein Herstellerschaltplan liegt nicht vor; der [rekonstruierte Teilschaltplan](gesamtschaltplan_110926/README.md) dokumentiert die bekannten Netze. Alles Folgende ist an diesem Gerät gemessen, beobachtet (Fotos, Videos, BLE-Logs), aus Servicehandbüchern verwandter Technogym-Antriebe übernommen oder als Ableitung gekennzeichnet. Die Reparatur selbst steht in [REPARATUR.md](REPARATUR.md) ([PDF](REPARATUR.pdf)), die Fehlermeldungen in [FEHLERCODES.md](FEHLERCODES.md).
 
-> **Confidence tags** used throughout: **[M]** measured on this unit · **[O]** observed (photo, video, BLE log) · **[Man]** from a manual of this or a related drive, not verified here · **[I]** inference / hypothesis.
+> **Belegstufen:** **[M]** am Gerät gemessen · **[O]** beobachtet (Foto, Video, BLE-Log) · **[Man]** aus dem Handbuch dieses oder eines verwandten Antriebs, hier nicht verifiziert · **[I]** Ableitung · **[H]** Hypothese.
 
-> **Safety.** The GIRT is **not galvanically isolated on the mains side**. The DC-link capacitor (EPCOS 560 µF) holds up to ~380 V DC. Measure it (and discharge it through a resistor if above 5 V) before touching the board. Measure live only with leads clamped on while the unit is de-energised. The voltage at *DC MOTOR* rises steeply with belt speed. Never connect anything to the debug header P70 (mains side). Never measure resistance under voltage.
+> **Sicherheit.** Die Netzseite der GIRT ist **nicht galvanisch getrennt**. Der Zwischenkreis-Elko (EPCOS 560 µF) hält bis ca. 380 V DC. Vor jeder Arbeit an der Platine messen und bei mehr als 5 V über einen Widerstand entladen. Nur stromlos arbeiten; Messleitungen bei abgeschaltetem Gerät anklemmen. Die Spannung an *DC MOTOR* steigt mit der Bandgeschwindigkeit steil an. An die Debug-Buchse P70 (Netzseite) nichts anschließen. Widerstände nie unter Spannung messen.
 
-Unit documented: MyRun serial `DCKA2B021008231`, console firmware `WFW0699_BA30.35167`, lower kit Gefran GIRT S6T30, part `0WR01179AG`, board `ECS2458-6` / `ESE6114`, GIRT firmware release 10.05, HW release AG. Name plate: *Gefran Drives and Motion S.r.l., Gerenzano (VA)* (the drives division is now WEG Automation Europe), main power out 0–370 V DC, 1.5 kW **[O]**.
+Dokumentiertes Gerät: MyRun, Seriennummer `DCKA2B021008231`, Konsolen-Firmware `WFW0699_BA30.35167`, Unterteil Gefran GIRT S6T30, Teilenummer `0WR01179AG`, Platine `ECS2458-6` / `ESE6114`, GIRT-Firmware 10.05, Hardware-Stand AG. Typenschild: *Gefran Drives and Motion S.r.l., Gerenzano (VA)* (die Antriebssparte gehört heute zu WEG Automation Europe), Leistungsausgang 0–370 V DC, 1,5 kW **[O]**.
 
-## 1. Overview
+## 1. Überblick
 
-![Estimated functional block diagram](img/block_diagram.png)
+![Funktionsschaltbild (Blockdiagramm)](img/block_diagram.png)
 
-*The block diagram (version 6, 2026-11-09 afternoon; versions 3–5 kept as `img/block_diagram_v3.png`, `_v4.png`, `_v5.png`) is an estimate built from photos of both board sides and the stromlos measurements: mains sense B10 statically unremarkable (intermittent faults not excluded), B18/B19 = voltage feedback from L+ to L4981AD pin 14 VFEED (connection measured, function not verified live), Q2/D3 statically OK, Q2 driver = FAN3100C candidate (marking 100CA, VDD source unverified). Numbers mark the suspicion ranking at the time of drawing, not a verified fault location.*
+*Das Blockdiagramm ist eine grobe Schätzung aus Fotos beider Platinenseiten und Messungen, kein Leiterbahnplan. Grün: in Ordnung/belegt, blau: repariert/ersetzt, grau gestrichelt: nicht weiter verfolgt.*
 
-The belt motor is a **brushed DC motor driven by a chopper from the rectified mains** (not an AC inverter drive). The console (CPU board in the handlebar) commands the GIRT over P2: an enable/emergency line, a PWM set-point and tacho feedback. The GIRT's microcontroller (QFP-32, mains side) is separated from the console side by 8 Vishay VO617A-8 optocouplers in one column (further ones elsewhere not excluded) **[O]**.
+Der Bandmotor ist ein **Gleichstrom-Bürstenmotor, der über einen Chopper aus der gleichgerichteten Netzspannung gespeist wird** (kein Wechselstrom-Umrichter). Die Konsole (CPU-Platine im Lenker) steuert die GIRT über P2 an: Freigabe-/Notlinie, PWM-Sollwert und Tacho-Rückmeldung. Der Mikrocontroller der GIRT (QFP-32, Netzseite) ist von der Konsolenseite durch 8 Vishay VO617A-8 Optokoppler in einer Spalte getrennt (weitere an anderer Stelle nicht ausgeschlossen) **[O]**. Die Netzspannung wird über einen eigenen Messzweig (Bereich B10, Knoten J) erfasst und als Messsignal zum Mikrocontroller geführt (Abschnitt 2.1).
 
-## 2. Board areas and identified parts
+## 2. Baugruppen und identifizierte Bauteile
 
-| Area | Parts | Function | Tag |
+| Bereich | Bauteile | Funktion | Beleg |
 |---|---|---|---|
-| Mains input | EMI filter with 3 chokes, X2 1 µF, varistors RV300/RV301 | filtering | [O] |
-| Inrush limiter | Schrack RT334024 relay (24 V DC coil, 16 A) + white 7 W 68 Ω resistor | soft start / main relay | [O] |
-| Rectifier / PFC | bridge rectifier (heat sink right), Q1, D2, 4 × R020 shunts on the back | DC link supply, input current sense | [O]/[I] |
-| DC link | EPCOS B43630-C9567-M7, 560 µF ±20 %, **400 V**, climatic category 25/085/56 (**85 °C**), date code 04.21 | ~300–380 V DC | [O] |
-| Motor chopper | Q2 + D3 (heat sink left, markings hidden), 4 × R020 shunts on the front near DC MOTOR | PWM motor drive, current sense | [O]/[I] |
-| Temperature | NTC 10 kΩ on connector P600, screwed next to Q2: 11 kΩ at room temperature, 10.75 kΩ warmed | Q2 temperature | [M] |
-| Relay group near UP/DOWN | 3 × Panasonic ALQ3F12 (12 V, 10 A), Schrack PE014012, **FUSE MOT T4A 5×20** | Candidates for UP/DOWN and additional enables; individual relay contact functions are not measured | [O]/[I] |
-| Aux. supply | FSGM300N (DIP-8), transformer ETI1349X4, thermistor RT700 | +24 V, +12 V iso, ±12 V, +5 V | [O] |
-| Logic | MCU QFP-32, 2 × 74ACT14, LM2903 (comparator), TL082 (current sense), 24C32 EEPROM, 78L05, 2 × SOT-223 regulators | control, protection, parameters | [O] |
-| Isolation | 8 × VO617A-8 (OC01–OC08, see `docs/img/optocoupler_pads.png`), CPC1017N (OptoMOS) | console ↔ mains-side separation | [O] |
-| LEDs | LINE (blue), +5V (green), STS1 (green), STS2 (red) | see section 7 | [O] |
+| Netzeingang | EMV-Filter mit 3 Drosseln, X2 1 µF, Varistoren RV300/RV301 | Filterung | [O] |
+| Einschaltbegrenzung | Schrack RT334024 (Relais, 24-V-Spule, 16 A) + weißer 7-W-Widerstand 68 Ω | Sanftanlauf / Hauptrelais | [O] |
+| Gleichrichter / PFC | Brückengleichrichter (Kühlkörper rechts), Q1, D2, 4 × R020-Shunts auf der Rückseite, PFC-Regler L4981AD | Speisung des Zwischenkreises, Eingangsstrommessung | [O]/[I] |
+| Zwischenkreis | EPCOS B43630-C9567-M7, 560 µF ±20 %, **400 V**, Klimakategorie 25/085/56 (**85 °C**), Datumscode 04.21 | ca. 300–380 V DC | [O] |
+| Motor-Chopper | Q2 + D3 (Kühlkörper links), 4 × R020-Shunts auf der Vorderseite nahe DC MOTOR; Gate-Treiber, Kandidat FAN3100C (Aufdruck 100CA) | PWM-Motoransteuerung, Strommessung | [O]/[I] |
+| Temperatur | NTC 10 kΩ an Stecker P600, neben Q2 verschraubt: 11 kΩ bei Raumtemperatur, 10,75 kΩ erwärmt | Temperatur Q2 | [M] |
+| Relaisgruppe UP/DOWN | 3 × Panasonic ALQ3F12 (12 V, 10 A), Schrack PE014012, **FUSE MOT T4A 5×20** (Vorderseite, Feld J2, Fotoatlas-ID F28) | Höhenverstellung (UP/DOWN) und weitere Freigaben; einzelne Relaiskontakte nicht durchgemessen | [O]/[I] |
+| Hilfsnetzteil | FSGM300N (DIP-8), Übertrager ETI1349X4, Thermistor RT700 | +24 V, +12 V (Konsole), ±12 V, +5 V | [O] |
+| Logik | MCU QFP-32, 2 × 74ACT14, LM2903 (Komparator), **TL082 (Puffer des Netzspannungs-Messsignals)**, EEPROM 24C32, 78L05, 2 × SOT-223-Regler | Steuerung, Schutz, Parameter | [O] |
+| Potentialtrennung | 8 × VO617A-8 (OC01–OC08, siehe `img/optocoupler_pads.png`), CPC1017N (OptoMOS) | Trennung Konsole ↔ Netzseite | [O] |
+| LEDs | LINE (blau), +5V (grün), STS1 (grün), STS2 (rot) | siehe Abschnitt 6 | [O] |
 
-Resistor code `4753` on the SMD resistors of the measuring chains means **475 kΩ** (not 47.5 kΩ).
+Der Widerstandsaufdruck `4753` auf den SMD-Widerständen der Messketten bedeutet **475 kΩ** (nicht 47,5 kΩ).
 
-## 3. Connectors
+### 2.1 Netzerfassung (B10) und Messsignal zum Mikrocontroller
 
-All connectors sit on the board edge on the solder side of the PCB. The edge collects sweat and is corroded (section 9).
+Die Netzspannung wird über zwei Zweige (L und N) erfasst; die Netze stammen aus dem [Gesamtschaltplan](gesamtschaltplan_110926/README.md) (Stand 21.11.2026). Im aktuellen Aufbau gilt je Seite: Faston-Pad – 470 kΩ – 470 kΩ – Diode US1M – **Knoten J** (Kathoden beider Seiten). Am Knoten J liegen:
 
-| Designator | Purpose | Notes | Tag |
+- 22,1 kΩ („2212“) nach 0VA,
+- der Kondensator **C602** (ca. 470 pF) nach 0VA, parallel zum 22,1-kΩ-Widerstand,
+- 1 kΩ („1001“) zum nichtinvertierenden Eingang (Pin 3) des **TL082**, Kanal A, der als Spannungsfolger arbeitet (Kanal B ungenutzt).
+
+Vom TL082-Ausgang führt das Signal über einen 4,75-kΩ/4,75-kΩ-Teiler und einen 100-Ω-Widerstand zum Netz „X“, an dem ein Kondensator nach 0VA liegt, und weiter zum MCU-Anschluss mit der **Arbeitsnummer 28** (Zählung 1–32 ab Gehäusemarke gegen den Uhrzeigersinn, siehe `mcu_skizze_2026-11-16/README.md`; keine Datenblatt-Pins, MCU-Typ nicht identifiziert). Bei ca. 238 V Netzspannung liegt J bei ≈ 4,9 V DC **[M]**. C602 bildet mit der Quellimpedanz von ca. 21 kΩ einen Tiefpass (Grenzfrequenz ≈ 16 kHz) zur Entstörung des Messsignals **[I]**. Dieser Kondensator war die Hauptursache der Fehlstarts (siehe Abschnitt 7).
+
+## 3. Steckverbinder
+
+Alle Steckverbinder sitzen am Platinenrand auf der Lötseite. Der Rand war durch Schweiß/Salz korrodiert (Abschnitt 8) und ist gereinigt.
+
+| Bezeichnung | Zweck | Anmerkungen | Beleg |
 |---|---|---|---|
-| **P2** | 18-pin connector to the console | section 3.1 | [M]/[Man] |
-| **P4** | 4-pin speed sensor (TACHO / 0V / +12V / 0V) | section 3.2 | [M] |
-| **DC MOTOR** | blade terminals L+ (orange wire) / L− (grey wire) to the belt motor | 0 V while the GIRT is locked; 12.4 V DC at 1.2 km/h unloaded (good run) | [M] |
-| **UP/DOWN** | 230 V AC to the incline motor via relays and FUSE MOT | the fuse was missing (glass body gone); replaced with T4A/250 V ceramic, incline works again | [O] |
-| **P3** | 3 pads next to the earth screw | purpose not confirmed; assumed incline potentiometer | [I] |
-| **P600** | NTC on Q2 | 10 kΩ NTC | [M] |
-| **P70** | debug header | **mains side – do not connect** | [O] |
-| thermal loop | black 2-pin inline plug on the motor cable | pink wire (from the P2 cable bundle) → motor thermal switch → orange wire → **P2 pin 5**; ≈0 Ω when cold | [M] |
-| Mains inlet | 230 V AC | designator not recorded | – |
+| **P2** | 18-poliger Anschluss zur Konsole | Abschnitt 3.1 | [M]/[Man] |
+| **P4** | 4-poliger Drehzahlsensor (TACHO / 0V / +12V / 0V) | Abschnitt 3.2 | [M] |
+| **DC MOTOR** | Flachstecker L+ (orange) / L− (grau) zum Bandmotor | 0 V bei gesperrter GIRT; 12,4 V DC bei 1,2 km/h unbelastet (guter Lauf) | [M] |
+| **UP/DOWN** | 230 V AC zum Höhenmotor über Relais und FUSE MOT | Sicherung war nicht vorhanden, ersetzt durch T4A/250 V Keramik | [O] |
+| **P3** | 3 Pads neben der Erdschraube | Zweck nicht bestätigt, vermutlich Höhen-Poti | [I] |
+| **P600** | NTC an Q2 | 10-kΩ-NTC | [M] |
+| **P70** | Debug-Buchse | **Netzseite – nicht anschließen** | [O] |
+| Thermoschalter-Schleife | schwarzer 2-poliger Zwischenstecker am Motorkabel | rosa Ader (aus dem P2-Kabelbaum) → Thermoschalter des Motors → orange Ader → **P2 Pin 5**; ≈ 0 Ω kalt | [M] |
+| Netzeingang | 230 V AC | Bezeichnung nicht erfasst | – |
 
-### 3.1 P2 – console connector (18 pin, 2 × 9)
+### 3.1 P2 – Konsolenanschluss (18-polig, 2 × 9)
 
-![P2 pinout](img/p2_pinout.png)
+![Belegung P2](img/p2_pinout.png)
 
-| Pin | Signal | Wire | Observation | Tag |
+| Pin | Signal | Ader | Beobachtung | Beleg |
 |---|---|---|---|---|
-| 1 | +12 V console supply | brown | 1 ↔ 4 = 0 Ω | [M] |
-| 2 | incline DOWN | – | | [Man] |
-| 3 | incline UP | – | | [Man] |
-| 4 | +12 V console supply | violet | 1 ↔ 4 = 0 Ω | [M] |
-| 5 | emergency / enable line | orange | 4.55 V at idle and at start; runs through the motor thermal switch | [M] |
-| 6 | PWM set-point | blue | 0 V at idle, ≈0.5 V average during start (console reports 0.077–0.13 %) | [M] |
-| 7 | GND | green | 7 ↔ 8 = 0 Ω; same ground as P4 0V | [M] |
-| 8 | GND | pink-grey | | [M] |
-| 9 | tacho / RPM | red | ≈0.5 V average, changes when the belt moves; 4.3 kΩ to pin 7 (power off); 16 kΩ to P4 TACHO | [M] |
-| 10 | incline pot +5 V | – | | [Man] |
-| 11 | incline pot signal | grey | ≈0.4 V | [M] |
-| 12 | incline pot GND | – | | [Man] |
-| 13, 14, 16 | not used | – | | [Man] |
-| 15 | wake-up | – | expected 0 → ≈3 V → 0 when the belt is switched on (not the mains switch) | [Man] |
-| 17 | sleep | – | | [Man] |
+| 1 | +12 V Konsolenversorgung | braun | 1 ↔ 4 = 0 Ω | [M] |
+| 2 | Höhe DOWN | – | | [Man] |
+| 3 | Höhe UP | – | | [Man] |
+| 4 | +12 V Konsolenversorgung | violett | 1 ↔ 4 = 0 Ω | [M] |
+| 5 | Not-/Freigabelinie | orange | 4,55 V im Ruhezustand und beim Start; läuft über den Motor-Thermoschalter | [M] |
+| 6 | PWM-Sollwert | blau | 0 V im Ruhezustand, ≈ 0,5 V Mittelwert beim Start (Konsole meldet 0,077–0,13 %) | [M] |
+| 7 | GND | grün | 7 ↔ 8 = 0 Ω; gleiche Masse wie P4 0V | [M] |
+| 8 | GND | rosa-grau | | [M] |
+| 9 | Tacho / Drehzahl | rot | ≈ 0,5 V Mittelwert, ändert sich bei Bandbewegung; 4,3 kΩ gegen Pin 7 (stromlos); 16 kΩ zu P4 TACHO | [M] |
+| 10 | Höhen-Poti +5 V | – | | [Man] |
+| 11 | Höhen-Poti Signal | grau | ≈ 0,4 V | [M] |
+| 12 | Höhen-Poti GND | – | | [Man] |
+| 13, 14, 16 | nicht belegt | – | | [Man] |
+| 15 | Wake-up | – | erwartet 0 → ≈ 3 V → 0 beim Einschalten des Bandes (nicht der Netzschalter) | [Man] |
+| 17 | Sleep | – | | [Man] |
 | 18 | ERP | – | | [Man] |
 
-The [Man] names come from the MyRun service manual Rev. 2.2, which describes an older lower-kit generation. The wire colours matched for every pin that was checked.
+Die [Man]-Bezeichnungen stammen aus dem MyRun-Servicehandbuch Rev. 2.2, das eine ältere Unterteil-Generation beschreibt. Die Aderfarben stimmten bei jedem geprüften Pin.
 
-**Orientation.** View A of the figure is the plug seen from the cable side (as in the photo below): pin 1 top left, 1–9 on the top row, 10–18 on the bottom row. View B is the board seen from the solder side, rotated the way it usually lies on the bench: pin 1 (square pad) bottom left, pins 1–9 on the inner row, pins 10–18 on the row at the PCB edge (top).
+**Orientierung.** Ansicht A der Abbildung zeigt den Stecker von der Kabelseite (wie im Foto unten): Pin 1 oben links, 1–9 obere Reihe, 10–18 untere Reihe. Ansicht B zeigt die Platine von der Lötseite, so gedreht, wie sie meist auf dem Tisch liegt: Pin 1 (quadratisches Pad) unten links, Pins 1–9 in der inneren Reihe, Pins 10–18 in der Reihe am Platinenrand (oben).
 
-![P2 plug, cable side](img/p2_plug_photo.jpg)
+![P2-Stecker, Kabelseite](img/p2_plug_photo.jpg)
 
-*P2 plug from the cable side with the measurement pins marked (German labels).*
+*P2-Stecker von der Kabelseite mit markierten Messpins.*
 
-![P2 and P4 on the solder side](img/p2_p4_solder_side.jpg)
+![P2 und P4 auf der Lötseite](img/p2_p4_solder_side.jpg)
 
-*Solder side of the board, same orientation as view B: P2 inner row (pins 1–9, pin 1 = square pad at the left) and the four P4 pads on the right.*
+*Lötseite der Platine, Ausrichtung wie Ansicht B: P2 innere Reihe (Pins 1–9, Pin 1 = quadratisches Pad links) und die vier P4-Pads rechts.*
 
-### 3.2 P4 – speed sensor
+### 3.2 P4 – Drehzahlsensor
 
-![P4 pinout](img/p4_pinout.png)
+![Belegung P4](img/p4_pinout.png)
 
-![P4 header and plug](img/p4_photos.jpg)
+![P4-Buchse und Stecker](img/p4_photos.jpg)
 
-*Left: header with the plug removed. Right: plug from behind with the wire colours. German labels.*
+*Links: Stiftleiste ohne Stecker. Rechts: Stecker von hinten mit Aderfarben.*
 
-The sensor is a fork photo-interrupter (marking "1041" / "NXO") on a small PCB labelled `INT-SPEED-SENSOR`, with a finely slotted disc on the motor shaft **[O]**. The encoder frequency reported by the console (`@RENC#`) is about 250 Hz per km/h of belt speed (300–310 Hz at 1.2 km/h) **[M]**. The tacho signal passes a conditioning stage on the GIRT before it reaches P2 pin 9 **[M]**.
+Der Sensor ist eine Gabellichtschranke (Aufdruck „1041“ / „NXO“) auf einer kleinen Platine `INT-SPEED-SENSOR` mit fein geschlitzter Scheibe auf der Motorwelle **[O]**. Die von der Konsole gemeldete Encoderfrequenz (`@RENC#`) beträgt etwa 250 Hz pro km/h Bandgeschwindigkeit (300–310 Hz bei 1,2 km/h) **[M]**. Das Tachosignal durchläuft auf der GIRT eine Aufbereitungsstufe, bevor es an P2 Pin 9 anliegt **[M]**.
 
-## 4. Console ↔ GIRT signals
+## 4. Konsole ↔ GIRT-Signale
 
-`@DUMPIO#` (BLE text channel, see the README) lists the I/O lines between console and lower kit:
+`@DUMPIO#` (BLE-Textkanal, siehe README) listet die E/A-Leitungen zwischen Konsole und Unterteil:
 
-| Signal | Direction (console view) | Idle / ready | Notes |
+| Signal | Richtung (Sicht der Konsole) | Ruhe / bereit | Anmerkung |
 |---|---|---|---|
-| EM_ENGAGE | out | 0 | |
-| EM_POWENA | out | 1 | console asks for power; the next four inputs follow this output |
-| EM_WATCHD | out | 1 | watchdog |
-| LK_SL_WRK | out | 1 | |
-| EM_STATUS | in | 1 | follows EM_POWENA, **not** the GIRT fault state |
-| LK_PW_ENABLE | in | 1 | |
-| ACC_WK_SENSOR | in | 1 | dropped to 0 for ≈6 s once while idle |
-| UNFOLD_NC, DSENSOR_B | in | 1 | |
-| LOWKITENA / LOWKITENB | in | 1 / 1 | follow EM_POWENA |
-| LK_ENABLE | in | 1 | follows EM_POWENA |
-| PWM_MOTOR | PWM | 0 | ≈5400–5550 in a good 1.2 km/h run, 8526 when the console pushes harder in a failed start |
+| EM_ENGAGE | Ausgang | 0 | |
+| EM_POWENA | Ausgang | 1 | Konsole fordert Leistung an; die folgenden vier Eingänge folgen diesem Ausgang |
+| EM_WATCHD | Ausgang | 1 | Watchdog |
+| LK_SL_WRK | Ausgang | 1 | |
+| EM_STATUS | Eingang | 1 | folgt EM_POWENA, **nicht** dem Fehlerzustand der GIRT |
+| LK_PW_ENABLE | Eingang | 1 | |
+| ACC_WK_SENSOR | Eingang | 1 | fiel einmal im Ruhezustand für ≈ 6 s auf 0 |
+| UNFOLD_NC, DSENSOR_B | Eingang | 1 | |
+| LOWKITENA / LOWKITENB | Eingang | 1 / 1 | folgen EM_POWENA |
+| LK_ENABLE | Eingang | 1 | folgt EM_POWENA |
+| PWM_MOTOR | PWM | 0 | ≈ 5400–5550 im guten Lauf bei 1,2 km/h, 8526 wenn die Konsole bei einem Fehlstart stärker fordert |
 
-Other read-only BLE values: `@RPWM#` (PWM %, 0.085 % constant in a good run), `@RENC#` (encoder Hz → km/h), `@STATUS#` (state machine, `MeasSpeed`), `@RERRORLOG#`, `@RSTAT#` (usage), `@RRUNDETMINSP#` (runner-detection threshold, 3.0 km/h on this unit).
+Weitere lesbare BLE-Werte: `@RPWM#` (PWM in %, im guten Lauf konstant 0,085 %), `@RENC#` (Encoder-Hz → km/h), `@STATUS#` (Zustandsautomat, `MeasSpeed`), `@RERRORLOG#` (Fehlerspeicher, letzte 5 Einträge), `@RSTAT#` (Nutzungszähler), `@RRUNDETMINSP#` (Schwelle der Läufererkennung, an diesem Gerät 3,0 km/h). Über BLE sind weder Temperatur noch Zwischenkreisspannung abrufbar (geratene Befehle ohne Antwort).
 
-The FTMS Treadmill Data speed field (0x2ACD) is the **set-point**, not the measured speed; it stays at the set value while the belt is stuck. Real speed: `@RENC#` / `MeasSpeed`.
+Das Geschwindigkeitsfeld der FTMS-Treadmill-Data (0x2ACD) ist der **Sollwert**, nicht die gemessene Geschwindigkeit; die echte Geschwindigkeit liefern `@RENC#` bzw. `MeasSpeed`.
 
-## 5. Fault behaviour (summary)
+## 5. Fehlerverhalten (Kurzfassung)
 
-- Console error codes seen: HF900, HF901, HF902, HF904 (hardware fault after the console loses the speed signal).
-- Typical sequence in a failed start **[O]**: START accepted → console raises PWM → encoder stays at 0 Hz, `MeasSpeed` 0 → after ≈7 s EM_POWENA/EM_STATUS/LOWKITENA/B/LK_ENABLE drop (they follow the console output) → console aborts after ≈16 s → `QSHardwareFault` → new HF904.
-- The GIRT **does not drive the motor** in that state: 0 V at DC MOTOR (generator voltage is visible when the shaft is turned by hand, so the motor winding is fine).
-- The GIRT locks and starts the STS2 blink code within about 1.5 s (11/07 22:04) to 5 s (11/08 13:26, video synchronised to the BLE log, ±0.3 s) after START, and stays locked until it is fully de-energised. In the 11/08 run the first STS2 pulse came about 1.3 s *before* the console dropped the enable lines, so the GIRT notices the fault before the console does.
-- Failed start 11/08 13:26 (belt not moving, multimeter on V DC at DC MOTOR, MAX hold active according to the user, not verifiable in the video because of poor display lighting; bench test on a 9 V block: first value after ≈0.5 s tap, full 9.2 V after ≈1 s): display stayed at 0.0 V from START to START + 8 s (4 frames/s), so no voltage of ≳0.5 s duration at the motor output; the MAX capture is slow, so shorter pulses (<0.5 s) are not excluded until a pulse-length calibration is done. Console PWM request rose 0.077 → 0.099 → 0.143 % while encoder and `MeasSpeed` stayed 0; PWM_MOTOR 9366 at the first enable drop and 5046 in the second attempt (same value as 11/07). New error-log entry **902** (not 904).
-- Good run (17:18, 07.11.): belt ran 95 s at 1.2 km/h, encoder 300–310 Hz, PWM 0.085 %, 12.38–12.41 V DC at DC MOTOR.
-- Other values: motor winding 1.5–1.6 Ω over more than 16 rotor positions, thermal switch ≈0 Ω, usage counters from `@RSTAT#`: ≈1390 h powered, ≈342 h belt, ≈3719 km.
+Vor der Reparatur traten Fehlstarts und Abbrüche auf: Die Konsole meldete HF904 (Start ohne Drehzahl), HF902 (Abbruch im Lauf) oder HF901 (Fehler im Wartezustand), die GIRT-LED STS2 blinkte einen Fehlercode (8× bzw. 4×) und die Relais klickten. Im Fehlstart blieb DC MOTOR bei 0 V, die Wicklung war intakt (Generatorspannung beim Drehen von Hand). Die GIRT verriegelt dann bis zum vollständigen Abschalten. Die Bedeutung der einzelnen Codes, die Blinkcodes und die Beobachtungen im Detail stehen in [FEHLERCODES.md](FEHLERCODES.md).
 
-Technogym driver codes (same numbering in four drive generations **[Man]**): 01 OH, 02 OC, 03 UU, 04 OU, 05 ST (serial timeout), 06 PE (EEPROM), 07 EdC1 (incline-motor encoder), **08 belt-motor encoder error**, 09 OtM (motor thermal switch), 10 Oli, 11 OLm, 12 OLr. The mapping "STS2 blinks 8 times = code 08 = encoder" is the most likely reading **[I]** but unproven; no other documented board blinks codes on its STS LED.
+Weitere Werte des Geräts: Motorwicklung 1,5–1,6 Ω über mehr als 16 Rotorstellungen, Thermoschalter ≈ 0 Ω.
 
-## 6. Suspected fault area (status of the investigation)
+## 6. LEDs (Rückseite der Platine, zwischen D3 und Q2)
 
-| Hypothesis | Rating |
-|---|---|
-| Intermittent contact / corrosion in the signal or monitoring path on the GIRT between P2/P4 and the optocoupler/MCU area | most likely [I] |
-| Power stage / drive (Q2, D3, shunts, gate drive) | possible [I] |
-| Motor brushes / commutator | unlikely: 342 h of belt time, but not yet opened and checked |
-| Speed sensor / cable | **re-rated 11/13: likely contributor** – fork windows covered with black (brush) dust, mounting screws on the motor housing were loose (sensor could move while running); signal reaches P2 pin 9 when clean and still [O] |
+Siebdruck: `LINE`, `+5V`, `STS1`, `STS2`.
 
-Open measurements: MAX pulse-length calibration on the 9 V block (taps of 0.1/0.2/0.3 s), the voltage at DC MOTOR during a fresh failed start after a complete power-off, pad-to-pad continuity of the P2/P4 traces towards the logic area, leakage to neighbouring traces, and a check of the brushes and commutator.
+![LED-Siebdruck](img/leds_silkscreen.png)
 
-## 7. LEDs (rear of the board, between D3 and Q2)
-
-Silkscreen: `LINE`, `+5V`, `STS1`, `STS2`.
-
-![LED silkscreen](img/leds_silkscreen.png)
-
-| State | LINE | +5V | STS1 | STS2 |
+| Zustand | LINE | +5V | STS1 | STS2 |
 |---|---|---|---|---|
-| Boot | on at t0 | on at +0.9 s | dark until +7.6 s, then 1 Hz | one 0.2 s flash at +8.3 s |
-| Ready | on | on | 1 Hz (0.5 s on / 0.47 s off) | off |
-| Running | on | on | steady on | off |
-| Fault (locked) | on | on | 1 Hz | N pulses (≈0.27 s on, 0.5 s period), ≈1.4 s pause, then repeat; N = 8 or 4 so far, see below |
+| Start | an bei t0 | an bei +0,9 s | dunkel bis +7,6 s, dann 1 Hz | ein 0,2-s-Blitz bei +8,3 s |
+| Bereit | an | an | 1 Hz (0,5 s an / 0,47 s aus) | aus |
+| Lauf | an | an | dauerhaft an | aus |
+| Fehler (verriegelt) | an | an | 1 Hz | N Impulse (≈ 0,27 s an, 0,5 s Periode), ≈ 1,4 s Pause, dann Wiederholung; N = 8 oder 4 beobachtet |
 
-Observed fault blink codes (same pulse timing, different count):
+Zeitverlauf aus Handy-Videos, Bild für Bild ausgewertet **[O]**:
 
-| Date / run | Pulses per group | Group period | Error log entry | First pulse after START |
-|---|---|---|---|---|
-| 11/07 17:30 and 22:04 | 8 | 5.33 s | 904 | ≤ 1.5 s |
-| 11/08 13:26 | 4 | 3.33 s (pause 1.53 s) | 902 | ≈ 5 s |
+![LED-Zeitverlauf](img/led_timeline.png)
 
-Two data points only. A possible reading **[I]**: the pulse count is the drive's error number. With the Technogym numbering shared by four drive generations, 08 is *belt-motor encoder error* and 04 is *DC-bus over-voltage (OU)*. In both cases the motor output stayed at 0 V, so the GIRT may be switching its output off for different reasons (or reporting different consequences of one root cause). Noting pulse count and HF number at every failed start will show whether the mapping holds. If OU is real, the voltage measuring chains (four 475 kΩ resistors with UJ12 diodes, assumed to sense the DC link) become the first suspects.
+Zum Vergleich: Beim WEG TPD500 sind `STS1`/`STS2` Status-LEDs des Mikrocontrollers (Start = asymmetrisch, normal = symmetrisches 1-s-Blinken) ohne Fehlercode; die GIRT nutzt STS2 offenbar als eigene Fehleranzeige. Zuordnung der Blinkzahlen zu Fehlern: [FEHLERCODES.md](FEHLERCODES.md).
 
-Frame-by-frame timing from phone video **[O]**:
+## 7. Reparatur
 
-![LED timeline](img/led_timeline.png)
+Das Gerät wurde repariert; zwei Defekte wurden gefunden, dazu kamen vorsorgliche Maßnahmen. Ausführlich in [REPARATUR.md](REPARATUR.md) ([PDF](REPARATUR.pdf)).
 
-For comparison: on the WEG TPD500 `STS1`/`STS2` are µC status LEDs (boot = asymmetric, normal = symmetric 1 s blink) and carry no error code. The GIRT evidently uses STS2 as its own fault indicator.
+- **Defekt 1 – Kondensator C602 im Netzspannungs-Messzweig (Hauptursache).** SMD-Keramikkondensator (0603, ca. 470 pF) an Knoten J mit innerem Nebenschluss: J brach wärmeabhängig von ≈ 4,9 V auf 0,1–0,9 V ein; die Steuerung verweigerte vermutlich deshalb den Motorbetrieb bzw. brach ihn ab **[I]**. Nach dem Ersatz durch 471 pF ist J stabil (4,966 V, auch unter Wärme), Läufe bis 20 km/h und bei 12 % Steigung sind fehlerfrei **[M]**.
+- **Defekt 2 – Sicherung FUSE MOT.** Die Feinsicherung 5 × 20 mm T4A (250 V) im 230-V-Zweig des Höhenmotors fehlte, die Höhenverstellung war ohne Funktion. Ersetzt durch eine Keramiksicherung; Steigungstest 0 → 2 → 0 % bestanden, später bis 12 %.
+- **Weitere Maßnahmen (nicht als Ursache nachgewiesen):** Reinigung von Salz-/Schweißkrusten, Nachlöten mehrerer Lötstellen (P2, DC MOTOR, UP/DOWN, RT334024 + 68 Ω, Brückengleichrichter, Kühlkörperkontakte Q2/D2/D3, B10-Bereich), Neuaufbau der Netzerfassung B10 mit neuen Teilen (470 kΩ, US1M; bleibt eingebaut), Drehzahlsensor von Bürstenstaub gereinigt und lose Befestigungsschrauben am Motorgehäuse angezogen.
+- Ein Ausfall am 24.11. während der Höhenverstellung hatte einen lockeren Kaltgerätestecker als Ursache (Knistern/Funken); fest gesteckt, danach fehlerfrei. Stecker und Buchse sollten geprüft und ggf. getauscht werden.
 
-## 8. Repairs and work done on this unit
+## 8. Korrosionsbefund (gereinigt)
 
-- Incline: missing FUSE MOT replaced (T4A/250 V ceramic, 5×20). Incline test 0 → 2 → 0 % passes.
-- Cleaning of salt/sweat residue on the connector edge (isopropanol / water / isopropanol).
-- Re-soldered: P2 (all 18 pins), DC MOTOR, UP/DOWN, RT334024 + 68 Ω resistor, bridge rectifier, heat-sink contacts of Q2/D2/D3, all four 4753 resistors with their UJ12 diodes and other suspicious joints. Afterwards the belt ran 95 s once without failing, but the fault came back, so it is not cured.
+![Korrodierter Steckerrand](img/edge_corrosion.jpg)
 
-## 9. Corrosion findings
+*Salzkruste zwischen den P2-Pins, an P3, an der Erdschraube und zwischen den UP/DOWN-Pads; eine Salzlinie zieht sich über den ganzen Rand.*
 
-![Corroded connector edge](img/edge_corrosion.jpg)
+Die P2/P4-Signale laufen als Bündel von etwa 8 Leiterbahnen am oberen Platinenrand zum Treiber-/Logikbereich (100-Ω-Widerstände, „2F“-Transistoren, 4,75 kΩ, 22 Ω). Unter dem Lötstopplack finden sich dunkle Stellen (korrodiertes Kupfer), Rostpunkte am Rand und ein dunkler Belag auf einem P2-Pad der oberen Reihe **[O]**. Alle P2- und P4-Pads zeigten 0,3–0,5 Ω zum nächsten Kontakt (0,2–0,4 Ω für die sich berührenden Messspitzen), jede Bahn war also bis zum ersten Bauteilpad durchgängig **[M]**. Die Krusten wurden mit Isopropanol entfernt und die Lötstellen nachgelötet. Die Korrosion war nicht die Ursache der Fehlstarts, ist aber ein Zeichen für Schweißeintrag am Platinenrand.
 
-*Salt crust between the P2 pins, on P3, at the earth screw and between the UP/DOWN pads; a salt line runs along the whole edge (German labels).*
+![Leiterbahnbündel](img/trace_bundle_corrosion.jpg)
 
-The P2/P4 signals run as a bundle of about 8 traces along the top board edge towards the driver/logic area (100 Ω resistors, "2F" transistors, 4.75 kΩ, 22 Ω). Under the solder mask there are dark spots (corroded copper), rust dots at the edge and a dark deposit on one upper-row P2 pad **[O]**. **Measured 11/08 (13:40):** all P2 and P4 pads on the solder side show 0.3–0.5 Ω to the next contact, with 0.2–0.4 Ω for the probe tips touching each other, so each trace is continuous to its first component pad (at most ≈0.1–0.2 Ω of trace resistance). That makes an *open* corroded trace unlikely; an intermittent contact under pressure, leakage between neighbouring traces and faults behind the first component are not excluded. Still open: whether the values stay stable when the edge is pressed or bent, and the neighbour-trace checks (OL / MΩ expected).
+## 9. Alter und Nutzung des Geräts (Stand 08.11.2026)
 
-![Trace bundle](img/trace_bundle_corrosion.jpg)
+- **Datumscodes auf der GIRT [O]:** Gefran-Aufkleber auf dem Zwischenkreis-Elko `S890A16E U12 GIRT 140421 V.10.05` = 14.04.2021; Übertrager `ETI349X4 2110 FALCO` = Woche 10/2021. Das Unterteil wurde also im Frühjahr 2021 oder später gebaut (etwa 5,5 Jahre alt). Der Aufdruck `YH 18` auf der Platinenrückseite ist ungeklärt.
+- **Konsolenuhr** (`@GETDATE#`, 06.11.2026) ist auf das reale Datum gestellt und sagt nichts über das Baudatum. Die Seriennummer hat kein bekanntes Datumsformat.
+- **Nutzungszähler** (`@RSTAT#`, 06.11.2026; die letzten Ziffern jeder Antwort sind eine Prüfsumme): eingeschaltet 8339 × 10 min ≈ 1390 h (Standby nur 23 × 10 min), Bandlauf 2050 × 10 min ≈ 342 h, Höhenmotor 84 min, Strecke 3719 km. Geringer Verschleiß, aber das Gerät war fast nie im Standby.
 
-Repair idea if a trace is bad: 30 AWG wire-wrap bridge pad to pad, then seal with UV solder mask or protective lacquer.
+## 10. Quellen
 
-## 10. Sources
+Eingesehene Servicehandbücher: MyRun Rev. 2.2 (FR, 2016); Technogym Excite Run 500/700/900 Rev. 1.3; Run Personal + Unity Rev. 4.1; Jog Now Excite+ 700; Skillrun Unity 7000 Technical Service Guide Rev. 6.0; WEG TPD500 Instruction Manual. Deren Antriebe sind älter oder andere Hardware; nur die mit [Man] gekennzeichneten Punkte sind übernommen. Die Handbücher beschreiben weder die Codes HF901–HF904 noch die STS-LEDs dieser Platine. Die Rohprotokolle der Messungen liegen im Branch `archiv-vor-aufraeumen-2026-11-27`.
 
-Service manuals consulted: MyRun Rev. 2.2 (FR, 2016); Technogym Excite Run 500/700/900 Rev. 1.3; Run Personal + Unity Rev. 4.1; Jog Now Excite+ 700; Skillrun Unity 7000 Technical Service Guide Rev. 6.0; WEG TPD500 instruction manual. Their drives are older or different hardware; only the points tagged [Man] are taken over, and the manuals never describe the HF901–HF904 codes or the STS LEDs of this board.
+## 11. Haftungsausschluss
 
-## 11. Disclaimer
-
-Private, non-commercial repair documentation, provided as is, without warranty. It is not affiliated with or endorsed by Technogym, Gefran or WEG; product and company names belong to their owners and are used only to identify the hardware. No manufacturer documents, firmware or schematics are reproduced; all content comes from measurements, photos and logs of one lawfully acquired unit, plus short paraphrased facts from the cited manuals. Working on a mains-powered, non-isolated board can be lethal – do so only if you are qualified and follow the safety notes above.
-
-## 12. Age and usage of the unit (11/08/2026)
-- **Date codes on the GIRT [P]:** Gefran label on the DC-link electrolytic `S890A16E U12 GIRT 140421 V.10.05` = 14 Apr 2021; transformer `ETI349X4 2110 FALCO` = week 10 of 2021. So the lower kit was built in spring 2021 or later (about 5.5 years old). `YH 18` on the PCB back is unexplained (supplier/date code?).
-- **Console clock** (`@GETDATE#`, 11/06/2026) is set to the real date, so it does not tell the build date. The serial `DCKA2B021008231` has no known date format.
-- **Usage counters** (`@RSTAT#`, 11/06/2026, last digits of each reply are a checksum): powered 8339 × 10 min ≈ 1390 h (standby only 23 × 10 min), belt run 2050 × 10 min ≈ 342 h, incline motor 84 min, distance 3719 km. Light wear, but the unit was almost never in standby.
-- **Error log 11/06:** 904 (10:04, 10:11, 10:20), 902 (13:02), 904 (13:04).
-- **Guessed read commands** (`myrun_probe.py --guess`, 11/06): all timed out (`@RTEMP#`, `@RVBUS#`, `@RVDC#`, `@RIMOT#` …), so no temperature/bus telemetry is available over BLE on this firmware.
+Private, nicht kommerzielle Reparaturdokumentation, bereitgestellt wie besehen und ohne Gewähr. Sie steht in keiner Verbindung zu Technogym, Gefran oder WEG und wird von diesen nicht unterstützt; Produkt- und Firmennamen gehören ihren Inhabern und dienen nur der Identifikation der Hardware. Es werden keine Herstellerunterlagen, Firmware oder Schaltpläne wiedergegeben; alle Inhalte stammen aus Messungen, Fotos und Logs eines rechtmäßig erworbenen Geräts sowie kurzen, sinngemäß wiedergegebenen Angaben aus den genannten Handbüchern. Arbeiten an einer netzbetriebenen, nicht getrennten Platine können lebensgefährlich sein – nur mit entsprechender Qualifikation und unter Beachtung der Sicherheitshinweise oben.

@@ -1,73 +1,94 @@
 # Fehlercodes – Beobachtungen und Vergleichshypothesen
 
-**ENTWURF auf `aufraeumen`, Quellenstand 21.11.2026 (`83da2fb`). Ursache wahrscheinlich C602, Stand: Gegenversuch offen.**
+Stand 27.11.2026, nach der Reparatur (Ursache: defekter Kondensator C602 im Netzspannungs-Messzweig, siehe [REPARATUR.md](REPARATUR.md)). Hardware-Hintergrund: [HARDWARE.md](HARDWARE.md).
 
-Diese Übersicht trennt vier Ebenen: **HF-Nummer der Konsole**, **numerische err-Anzeige**, **STS2-Blinkmuster auf der GIRT** und **Protokollantworten über BLE**. Gleiche Ziffern auf unterschiedlichen Ebenen sind nicht automatisch derselbe Fehler. Eine vollständige Hersteller-Codetabelle für die untersuchte GIRT S6T30 ist im Repository nicht belegt.
+Diese Übersicht trennt vier Ebenen: **HF-Nummer der Konsole**, **numerische err-Anzeige**, **STS2-Blinkmuster auf der GIRT** und **Protokollantworten über BLE**. Gleiche Ziffern auf unterschiedlichen Ebenen sind nicht automatisch derselbe Fehler. Eine vollständige Hersteller-Codetabelle für die untersuchte GIRT S6T30 liegt nicht vor; die Firmware ist nicht dokumentiert.
 
-Belegstufen: M = elektrische Messung, F = Originalfoto, I = Ableitung, H = Hypothese. Anzeigen und Logereignisse werden als berichtete Beobachtung mit Quelle wiedergegeben. **Jede Übertragung von einem anderen Technogym-Laufband oder einer anderen Treibergeneration ist hier H**, auch wenn ältere Dateien dafür „Man“ verwenden. Aus einer elektrischen Messung wird kein unbekannter Firmwarecode abgeleitet.
+Belegstufen: **M** elektrische Messung, **O** Beobachtung (Anzeige, Foto, Video, BLE-Log), **I** Ableitung, **H** Hypothese. **Jede Übertragung von einem anderen Technogym-Laufband oder einer anderen Treibergeneration ist H**, auch wenn sie in Handbüchern steht. Aus einer elektrischen Messung wird kein unbekannter Firmwarecode abgeleitet. Die Rohprotokolle der Einzelläufe liegen im Branch `archiv-vor-aufraeumen-2026-11-27`.
 
-## 1. Am untersuchten Gerät protokollierte Meldungen
+Hinweis zur Zeit: Die Gerätezeit im Fehlerspeicher entspricht ungefähr UTC, im Winter liegt sie also eine Stunde hinter der Ortszeit zurück (Zeitstempel im Fehlerspeicher nicht mit Ortszeit-Notizen verwechseln).
 
-| Ebene / Code | Beobachtung und Quelle im Repository | Zulässige Einordnung / offener Vergleich |
+## 1. Am untersuchten Gerät beobachtete Meldungen
+
+Der Fehlerspeicher (`@RERRORLOG#`) zeigt die letzten 5 Einträge.
+
+| Ebene / Code | Beobachtung | Einordnung |
 |---|---|---|
-| Konsole **HF900** | In der [Hardware-Zusammenfassung, Abschnitt 5](HARDWARE.md#5-fault-behaviour-summary) als gesehen genannt; ein gleichwertiger datierter Einzelablauf wurde für diesen Entwurf nicht nachgewiesen. | Der ältere MyRun-Serviceleitfaden nennt HF900 im Zusammenhang mit Geschwindigkeitsrückmeldung. Übertragung auf diese Hardware **H**; nicht mit HF904 gleichsetzen. Einzelbeleg noch prüfen. |
-| Konsole **HF901 / 901** | Handbewegung des Bandes ohne START am 14.11.; Logzustand `QSWaitForStart901`, neuer Eintrag 901. [Tagesprotokoll](LAUF_2026-11-14.md), [Rohlog](logs_2026-11-14/handtest_sensor_123653.txt). | Zusammenhang mit Fehler im Wartezustand **I**; keine im älteren Manual bestätigte GIRT-Definition. Erklärung als Drehzahl-/Antriebsplausibilität **H**, kein Beweis für einen kaputten Sensor. |
-| Konsole **HF902 / 902** | U. a. kurze Läufe mit err 4/9 am 10.11.; am 19.11. auch **ohne START im Standby**. [10.11.](LAUF_2026-11-10.md), [19.11.](LAUF_2026-11-19.md), [Standby-Rohlog](logs_2026-11-19/myrun_fast_monitor_20261119_214052.txt). | Keine feste Gleichsetzung mit „Fehler nur während Motorlauf“. Genaue Firmwaredefinition offen. B10/J als gemeinsamer Auslöser bleibt **H**. |
-| Konsole **HF904 / 904** | Wiederholter Fehlstart: Anforderung/PWM-Diagnosewert vorhanden, Encoder und MeasSpeed 0, später `QSHardwareFault` und neuer Eintrag 904. [11.11.](LAUF_2026-11-11.md), [14.11.](LAUF_2026-11-14.md), [Beispiellog](logs_2026-11-14/start_per_skript_125808.txt). | Ableitung „Startanforderung nicht erfolgreich in Bewegung umgesetzt“ **I**. Weder fehlende Gate-PWM noch deren Ursache werden durch HF904 allein bewiesen. HF904 fehlt in der zitierten älteren MyRun-Ausgabe. |
-| Fehlerspeicher **1001** | Neuer Eintrag nach bewusstem Ziehen des Sicherheitsschlüssels am 11.11.; FTMS meldet zusätzlich `Stopped by safety key [03]`. [Protokoll](LAUF_2026-11-11.md), [Rohlog](logs_2026-11-11/myrun_fast_monitor_20261111_120215.txt). | Zusammenhang mit Not-Stopp-Schlüssel an diesem Gerät experimentell gestützt, als Zuordnung **I**. Nicht ohne Beleg „HF1001“ oder „GIRT-Code 1001“ nennen. |
-| Anzeige **err 4**, **STS2 4×** | Zusammen mit HF902 nach ca. 1 s Bandlauf am 10.11.; weitere 4er-Beobachtungen in der [Hardware-Dokumentation](HARDWARE.md#7-leds-rear-of-the-board-between-d3-and-q2). [10.11.](LAUF_2026-11-10.md). | Dass Anzeige und Blinkzahl in diesem Ereignis zusammenpassen, ist beobachtet. Vergleich **04 = OU / Zwischenkreisüberspannung** bleibt **H**. Keine tatsächlich gemessene Überspannung aus dem Code folgern. |
-| **STS2 8×**, als **Code 08** bezeichnet | Beim Fehlstart und bei Handbewegung im Standby; [14.11.](LAUF_2026-11-14.md), [Hardware-Blinkbeobachtungen](HARDWARE.md#7-leds-rear-of-the-board-between-d3-and-q2). | Zahl 8 ist beobachtet; ihre Interpretation als Treibercode 08 ist **I**. Fremde Definition **08 = Bandmotor-Encoderfehler** ist **H**. Die Meldung kann eine Folge ausbleibenden Antriebs oder eines Plausibilitätskonflikts sein (**H**), nicht zwingend Sensordefekt. |
-| Anzeige **err 9**, **STS2 9×** | Am 10.11. und err-9-Abbrüche am 11./19.11.; [10.11.](LAUF_2026-11-10.md), [11.11.](LAUF_2026-11-11.md), [19.11.](LAUF_2026-11-19.md). Blinkzahl und err-Anzeige passten im dokumentierten 10.11.-Ereignis zusammen. | Vergleich **09 = OtM / Motor-Thermoschalter** bleibt **H**. Die Enable-Kette kann auch anders unterbrochen werden; ihr Abfall kann Ursache oder Folge sein. Kein durch den Code bewiesener Thermoschalterdefekt. |
-| **STS2 dunkel / kein Blinkcode beobachtet** | Auch ein Fehlstart ohne beobachteten STS2-Code ist beschrieben. [11.11.](LAUF_2026-11-11.md), [Bewertung 16.11.](NEUBEWERTUNG_2026-11-16.md). | Dunkle STS2 ist kein Beweis für vorhandene Motorfreigabe. Beobachtungsumfang und Zeitpunkt beachten. |
+| Konsole **HF904 / 904** | Wiederholter Fehlstart: Konsole fordert PWM an, Encoder und `MeasSpeed` bleiben 0, DC MOTOR bleibt auf 0 V, später `QSHardwareFault` und neuer Eintrag 904. Der Motor bekommt keine Spannung. | Start ohne Drehzahl, Motor nicht in Bewegung gesetzt **I**. Der Code allein beweist weder fehlende Gate-PWM noch deren Ursache. In der zitierten älteren MyRun-Ausgabe ist HF904 nicht definiert. |
+| Konsole **HF902 / 902** | Abbruch im Lauf, u. a. kurze Läufe mit err 4 bzw. err 9 (10.11.); ein Eintrag auch ohne START im Standby (19.11.). | Abbruch während oder ohne Motorlauf; keine feste Gleichsetzung mit „Fehler nur im Lauf“ **I**. Genaue Firmwaredefinition unbekannt. |
+| Konsole **HF901 / 901** | Fehler im Wartezustand (`QSWaitForStart901`), z. B. wenn das Band im Stillstand von Hand bewegt wird; am 14.11. und 23.11. reproduziert. | Plausibilitätsprüfung der Drehzahl im Stillstand **I**; **kein** Hinweis auf einen defekten Sensor. Reproduzierbar auch am reparierten Gerät, weil durch die Handbewegung ausgelöst. |
+| Konsole **HF900** | In früheren Notizen als gesehen genannt, Einzelbeleg mit Datum nicht gesichert. | Das ältere MyRun-Handbuch nennt HF900 im Zusammenhang mit der Geschwindigkeitsrückmeldung (**H**); nicht mit HF904 gleichsetzen. |
+| Fehlerspeicher **1001** | Neuer Eintrag nach bewusstem Ziehen des Not-Stopp-Schlüssels (11.11.); FTMS meldet zusätzlich `Stopped by safety key [03]`. | Not-Stopp-Schlüssel gezogen, experimentell gestützt **I**. Nicht „HF1001“ oder „GIRT-Code 1001“ nennen. |
+| Fehlerspeicher **1004** | Zwei Einträge bei Hantieren am Schlüssel, Band nicht aktiv. | Schlüssel im Stillstand getrennt bzw. wackelnder Kontakt **H**. |
+| Anzeige **err 4**, **STS2 4×** | Zusammen mit HF902 nach ca. 1 s Bandlauf (10.11.); Blinkzahl und Anzeige passten zusammen. | Zusammenpassen von Anzeige und Blinkzahl **O**. Deutung 04 = Überspannung (OU) bleibt **H**; aus dem Code folgt keine gemessene Überspannung. |
+| **STS2 8×** („Code 08“) | Beim Fehlstart (HF904, Eintrag 904) und bei Handbewegung im Standby; erster Impuls ≤ 1,5 s bis ≈ 5 s nach START. | Zahl 8 beobachtet **O**; Lesart „Treibercode 08“ **I**; fremde Definition 08 = Bandmotor-Encoderfehler **H**. Kann Folge ausbleibenden Antriebs oder eines Plausibilitätskonflikts sein, nicht zwingend ein Sensordefekt. |
+| Anzeige **err 9**, **STS2 9×** | err-9-Abbrüche am 10.11. (Blinkzahl und Anzeige passten zusammen), 11.11. und 19.11. | Vergleich 09 = Motor-Thermoschalter (OtM) **H**. Der Thermoschalter war stromlos ≈ 0 Ω, also kein Defekt nachgewiesen; die Enable-Kette kann auch anders unterbrochen worden sein. |
+| **STS2 dunkel** | Auch Fehlstarts ohne beobachteten STS2-Code kamen vor. | Dunkle STS2 beweist keine Motorfreigabe. |
 
-Die Beobachtungen 4×/err 4 und 9×/err 9 stützen die Blinkzahl-Auswertung für diese Ereignisse (I). Daraus entsteht **keine vollständig bestätigte Codetabelle**. STS1-Bereit-/Laufanzeige ist ebenfalls kein Fehlercode und kein Messersatz für die Leistungsstufe.
+Blinkzeiten und Zeitverlauf der LED: [HARDWARE.md, Abschnitt 6](HARDWARE.md#6-leds-rückseite-der-platine-zwischen-d3-und-q2). Beobachtete Blinkcodes im Detail:
 
-## 2. Vergleichstabelle anderer Technogym-Treiber – ausschließlich H
+| Datum / Lauf | Impulse pro Gruppe | Gruppenperiode | Fehlerspeicher | Erster Impuls nach START |
+|---|---|---|---|---|
+| 07.11. 17:30 und 22:04 | 8 | 5,33 s | 904 | ≤ 1,5 s |
+| 08.11. 13:26 | 4 | 3,33 s (Pause 1,53 s) | 902 | ≈ 5 s |
 
-Die folgenden Bezeichnungen stammen aus der bestehenden [Hardware-Quellenzusammenfassung](HARDWARE.md#10-sources) und deren [Code-Liste](HARDWARE.md#5-fault-behaviour-summary). Die dort genannten Handbücher betreffen andere oder ältere Geräte. Nicht belegte Codes werden hier **nicht als auf dieser GIRT aufgetreten** dargestellt.
+Im Lauf vom 08.11. kam der erste STS2-Impuls etwa 1,3 s *vor* dem Abfall der Freigabeleitungen der Konsole: Die GIRT bemerkt den Fehler vor der Konsole **[O]**.
 
-| Vergleichscode | Im Repository übernommene Bezeichnung / Bedeutung | Beobachtung an dieser GIRT | Übertragungsstatus |
+## 2. Wie sich der C602-Defekt in den Codes zeigte
+
+Der Kondensator C602 (ca. 470 pF) am Knoten J der Netzerfassung hatte einen inneren Nebenschluss. Dadurch brach das Netzspannungs-Messsignal wärmeabhängig ein (J von normal ≈ 4,9 V auf 0,1–0,9 V) **[M]**. Die Steuerung wertete das vermutlich als fehlerhafte Netzversorgung und verweigerte oder beendete den Motorbetrieb **[I]**; die Firmware ist nicht dokumentiert, daher ist die Verknüpfung mit einzelnen Codes nicht bewiesen. Die Erscheinungsformen passten dazu:
+
+- **HF904 / STS2 8×:** Start wurde verweigert, Motor blieb bei 0 V, Relaisklicken. Das Messsignal war beim Start eingebrochen.
+- **HF902 / 902:** Abbruch im Lauf, auch kurz nach Start, und ein Eintrag im Standby ohne START. Ein zufällig einbrechendes Messsignal kann auch im Stillstand auslösen.
+- **STS2 4×, err 4 und STS2 9×, err 9:** Die Blinkzahl hing vermutlich vom Zeitpunkt des Einbruchs bzw. der Reaktion der Steuerung ab **[H]**. Dass „Überspannung“ oder „Thermoschalter“ vorlagen, ist nicht belegt.
+- **Wärmeabhängigkeit:** Der Einbruch von J war wärmeabhängig: Im Föhntest am alten Aufbau sank J erst linear und sprang dann ein **[M]**. Ob die Fehlstarts im Betrieb ebenfalls von der Temperatur abhingen, ist nicht untersucht.
+
+Nach dem Ersatz von C602 (23.11.): J 4,966 V konstant, auch unter Wärme; Läufe bis 20 km/h bzw. 6,6 km/h bei 12 % Steigung sowie mehrere Trainings ohne Fehler (Stand 27.11.) **[M/O]**. HF901 lässt sich weiter durch Handbewegung des Bandes im Stillstand auslösen und ist kein Defekt. Die Einträge 1001 und 1004 hängen mit dem Not-Stopp-Schlüssel zusammen und haben mit C602 nichts zu tun.
+
+Der Ausfall am 24.11. während der Höhenverstellung hatte eine andere Ursache: ein lockerer Kaltgerätestecker (Knistern/Funken). Nach festem Stecken lief die Höhenverstellung ohne Fehler.
+
+## 3. Vergleich mit anderen Technogym-Treibern – ausschließlich H
+
+Die Bezeichnungen stammen aus Handbüchern anderer oder älterer Antriebe (siehe [HARDWARE.md, Abschnitt 10](HARDWARE.md#10-quellen)), die dort mit demselben Nummernschema über vier Antriebsgenerationen auftauchen. Nicht beobachtete Codes werden hier nicht als auf dieser GIRT aufgetreten dargestellt.
+
+| Vergleichscode | Bezeichnung / Bedeutung im fremden Handbuch | Beobachtung an dieser GIRT | Status |
 |---|---|---|---|
-| 01 | OH, Übertemperatur | Kein eigener Ereignisbeleg gefunden | **H** |
-| 02 | OC, Überstrom | Kein eigener Ereignisbeleg gefunden | **H** |
-| 03 | UU, Unterspannung | Kein eigener Ereignisbeleg gefunden; Bezug zum Zwischenkreis für diese GIRT nicht verifiziert | **H** |
-| 04 | OU, Überspannung; in der Vergleichsauslegung DC-Zwischenkreis | err 4 / 4× beobachtet, Bedeutung nicht bestätigt | **H** |
-| 05 | ST, serieller Timeout | Kein eigener Ereignisbeleg gefunden | **H** |
-| 06 | PE, EEPROM-/Parameterfehler | Kein eigener Ereignisbeleg gefunden | **H** |
-| 07 | EdC1, Encoder der Höhenverstellung | Kein eigener Ereignisbeleg gefunden | **H** |
-| 08 | Encoderfehler Bandmotor | 8× beobachtet, Bedeutung nicht herstellerseitig bestätigt | **H** |
-| 09 | OtM, Motor-Thermoschalter | err 9 / 9× beobachtet, Bedeutung nicht herstellerseitig bestätigt | **H** |
-| 10 | Oli | Kein eigener Ereignisbeleg; genaue Überlastzuordnung noch prüfen | **H** |
-| 11 | OLm | Kein eigener Ereignisbeleg; genaue Überlastzuordnung noch prüfen | **H** |
-| 12 | OLr | Kein eigener Ereignisbeleg; genaue Überlastzuordnung noch prüfen | **H** |
-| HF500–HF505 | Älterer MyRun: Lower-Kit-Fehlerfamilie | Hier kein Einzelbeleg gefunden | **H** |
-| HF600 | Älterer MyRun: Höhenmotorfehler | Hier kein Einzelbeleg gefunden | **H** |
+| 01 | OH, Übertemperatur | kein Beleg | **H** |
+| 02 | OC, Überstrom | kein Beleg | **H** |
+| 03 | UU, Unterspannung | kein Beleg | **H** |
+| 04 | OU, Überspannung (DC-Zwischenkreis) | err 4 / 4× beobachtet, Bedeutung nicht bestätigt | **H** |
+| 05 | ST, serieller Timeout | kein Beleg | **H** |
+| 06 | PE, EEPROM-/Parameterfehler | kein Beleg | **H** |
+| 07 | EdC1, Encoder der Höhenverstellung | kein Beleg | **H** |
+| 08 | Encoderfehler Bandmotor | 8× beobachtet, Bedeutung nicht bestätigt | **H** |
+| 09 | OtM, Motor-Thermoschalter | err 9 / 9× beobachtet, Bedeutung nicht bestätigt | **H** |
+| 10 | Oli | kein Beleg | **H** |
+| 11 | OLm | kein Beleg | **H** |
+| 12 | OLr | kein Beleg | **H** |
+| HF500–HF505 | älterer MyRun: Fehlerfamilie des Unterteils | kein Beleg | **H** |
+| HF600 | älterer MyRun: Fehler des Höhenmotors | kein Beleg | **H** |
 
-„Über-/Unterspannung“ in einer fremden Antriebstabelle ist **keine direkte Anzeige der gemessenen Netzspannung L–N oder der Motorspannung**. Welchen Eingang und welche Schwellen die GIRT-Firmware dafür auswertet, ist unbekannt. J ist als Netz-Messsignal rekonstruiert; seine Verknüpfung mit einem bestimmten Fehlercode ist weiterhin H.
+„Über-/Unterspannung“ in der fremden Antriebstabelle ist **keine direkte Anzeige der gemessenen Netz- oder Motorspannung**. Welchen Eingang und welche Schwellen die GIRT-Firmware auswertet, ist unbekannt. Die Netzspannung wird über den Knoten J erfasst (siehe [HARDWARE.md, Abschnitt 2.1](HARDWARE.md#21-netzerfassung-b10-und-messsignal-zum-mikrocontroller)); eine Verknüpfung von J mit einem bestimmten Fehlercode bleibt **H**.
 
-## 3. BLE-/Statusmeldungen nicht mit Treibercodes verwechseln
+## 4. BLE-/Statusmeldungen nicht mit Treibercodes verwechseln
 
-| Meldung | Was im Repository belegt ist | Grenze |
+| Meldung | Was belegt ist | Grenze |
 |---|---|---|
-| FTMS `80 07 04` | START/RESUME abgelehnt; Skripte deuten Resultat 04 als `OPERATION_FAILED`. [10.11.](LAUF_2026-11-10.md), [Skript](../myrun_fast_monitor.py). | **Kein GIRT err 4**, trotz derselben Ziffer. |
-| FTMS `80 08 04` | STOP/PAUSE abgelehnt, u. a. nach HF904. [Root-README](../README.md#myrun-technical-service-manual-and-diagnostic-cross-check). | Software-STOP ist keine zuverlässige physische Abschaltung. |
-| FTMS Machine Status `[03]` | Beim absichtlichen Schlüsselziehen als Safety-Key-Stopp protokolliert. [11.11.](LAUF_2026-11-11.md). | **Kein Nachweis für GIRT-Code 03 / Unterspannung.** |
-| FTMS `[02 01]` | „Stopped/paused by user“ wird auch im Kontext von Fehlerabläufen protokolliert. [19.11.-Rohlog](logs_2026-11-19/myrun_fast_monitor_20261119_214052.txt). | Meldung allein beweist keinen bewusst gedrückten STOP. |
-| `@STATUS# Info:...` | Unterschiedliche Werte bei Fehlern und normalem Stopp, z. B. `000008`, `000055`, `000254`, `000016`. [14.11.](LAUF_2026-11-14.md), [19.11.-Log](logs_2026-11-19/myrun_fast_monitor_20261119_214052.txt), [21.11.-Log](logs_2026-11-21/myrun_fast_monitor_20261121_133144.txt). | Keine bestätigte Gleichsetzung mit STS2-/GIRT-Code. |
-| `TIMEOUT`, `!CMD:ERROR`, blockierter Probe-Befehl | Antwort-/Auswertestatus der Diagnoseprogramme; siehe [Probe](../myrun_probe.py). | Für sich kein gemeldeter Hardwarefehler. |
+| FTMS `80 07 04` | START/RESUME abgelehnt; die Skripte deuten Resultat 04 als `OPERATION_FAILED` (siehe [Skript](../myrun_fast_monitor.py)). | **Kein GIRT-err 4**, trotz gleicher Ziffer. |
+| FTMS `80 08 04` | STOP/PAUSE abgelehnt, u. a. nach HF904. | Software-STOP ist keine zuverlässige physische Abschaltung. |
+| FTMS Machine Status `[03]` | Beim absichtlichen Ziehen des Schlüssels als Safety-Key-Stopp protokolliert. | **Kein Hinweis auf GIRT-Code 03 / Unterspannung.** |
+| FTMS `[02 01]` | „Stopped/paused by user“ erscheint auch im Zusammenhang mit Fehlerabläufen. | Die Meldung allein beweist keinen bewusst gedrückten STOP. |
+| `@STATUS# Info:...` | Unterschiedliche Werte bei Fehlern und normalem Stopp, z. B. `000008`, `000055`, `000254`, `000016`. | Keine bestätigte Gleichsetzung mit STS2-/GIRT-Code. |
+| `TIMEOUT`, `!CMD:ERROR`, blockierter Probe-Befehl | Antwortstatus der Diagnoseprogramme (siehe [Probe](../myrun_probe.py)). | Kein gemeldeter Hardwarefehler. |
 
-## 4. Vorhandene Quellen und noch zu prüfen
+## 5. Quellen und offene Punkte
 
-Im Repository verlinkt ist das [MyRun Technical Service Manual, Rev. 2.2, französisch, November 2016](https://manuals.plus/m/077b22630fbae70ec842c1934cbd88c864a0677a4bc4fdc5807af41d91ae321d.pdf). Die [Quellenauswertung im Root-README](../README.md#myrun-technical-service-manual-and-diagnostic-cross-check) nennt gedruckte Seiten 40–54 sowie 85–88. Die dortige Lower-Kit-Generation entspricht nicht sicher der untersuchten GIRT. HF901/HF904 sind in dieser Ausgabe laut Repo-Auswertung nicht definiert. Der Link wurde für diesen Entwurf aus dem Repository übernommen, nicht neu als passend verifiziert.
+Im Repository verlinkt ist das [MyRun Technical Service Manual, Rev. 2.2, französisch, November 2016](https://manuals.plus/m/077b22630fbae70ec842c1934cbd88c864a0677a4bc4fdc5807af41d91ae321d.pdf) (gedruckte Seiten 40–54 sowie 85–88; Auswertung im [Root-README](../README.md#myrun-technical-service-manual-and-diagnostic-cross-check)). Die dortige Unterteil-Generation entspricht nicht sicher der untersuchten GIRT; HF901/HF904 sind in dieser Ausgabe nicht definiert. Weitere Handbücher (Excite Run 500/700/900 Rev. 1.3, Run Personal + Unity Rev. 4.1, Jog Now Excite+ 700, Skillrun Unity 7000 Guide Rev. 6.0, WEG TPD500) sind in [HARDWARE.md, Abschnitt 10](HARDWARE.md#10-quellen) genannt; für die einzelne Codezuordnung gibt es dort keine Seitenverweise.
 
-Weitere Handbuchnamen sind in [HARDWARE.md, Abschnitt 10](HARDWARE.md#10-sources) aufgeführt: Excite Run 500/700/900 Rev. 1.3, Run Personal + Unity Rev. 4.1, Jog Now Excite+ 700, Skillrun Unity 7000 Guide Rev. 6.0 und WEG TPD500. **Direkte Links und konkrete Seiten für die einzelne Codezuordnung sind dort nicht vorhanden**; daher keine erfundenen URLs oder bestätigten Übertragungen. Eine belastbar verlinkte Forumquelle für die GIRT-Codetabelle wurde im Repository nicht gefunden.
+Offen bleibt:
 
-Noch zu prüfen:
-
-1. Originaltabelle für genau GIRT S6T30 und die vorhandene Firmware, insbesondere HF901/902/904 und STS2-Kodierung.
-2. Je Vergleichscode Handbuchausgabe, Seitenzahl und tatsächlich passende Treibergeneration; OLi/OLm/OLr ausschreiben erst nach Quellenprüfung.
-3. Einzelbeleg und Ablauf für HF900; direkte Anzeige „err 8“ von der Interpretation der acht Blinkimpulse unterscheiden.
-4. Zeitliche Reihenfolge STS2, Enable, Motor, Encoder und J aus synchronen Aufnahmen; nacheinander abgefragte BLE-Werte nicht als simultan behandeln.
-5. Nach dem geplanten C602-Gegenversuch beobachten, welche Meldungen verschwinden. Auch dann nicht ohne weiteren Beleg alle historischen Codes auf dieselbe Ursache zurückführen.
-
-**Ursache wahrscheinlich C602, Stand: Gegenversuch offen.** Ein leerer/neuer unveränderter Fehlerspeicher während eines einzelnen Testlaufs bestätigt weder eine universelle Codetabelle noch den endgültigen Reparaturerfolg.
+1. Eine Originaltabelle für genau die GIRT S6T30 und ihre Firmware (HF901/902/904, STS2-Kodierung).
+2. Handbuchausgabe und Seite je Vergleichscode; OLi/OLm/OLr erst nach Quellenprüfung ausschreiben.
+3. Ein datierter Einzelbeleg für HF900.
+4. Die genaue zeitliche Reihenfolge von STS2, Enable, Motor, Encoder und J aus synchronen Aufnahmen (nacheinander abgefragte BLE-Werte sind nicht gleichzeitig).
+5. Ob alle historischen Codes tatsächlich auf C602 zurückgehen: Nachgewiesen ist, dass nach dem Ersatz keine Fehlstarts und Abbrüche mehr auftraten; welcher Code im Einzelfall welchen Mechanismus anzeigte, bleibt Hypothese.
