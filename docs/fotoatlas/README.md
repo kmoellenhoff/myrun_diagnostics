@@ -1,10 +1,12 @@
-# Fotoatlas GIRT S6T30 – Branch 110926
+# Fotoatlas GIRT S6T30
+
+> **Hinweis:** Die Funktionszuordnungen in der Übersichts-PDF vom 08.11. ([GIRT_Platinen_Uebersicht.pdf](../GIRT_Platinen_Uebersicht.pdf)) sind teilweise überholt. Maßgeblich sind [HARDWARE.md](../HARDWARE.md) und der [Schaltplan](../schaltplan/README.md). Das Koordinatenraster A–L / 1–6 und die Bauteil-IDs (F = Vorderseite, B = Rückseite) gelten weiter.
 
 **Alle 110 Originalfotos sind erfasst:** 57 Rückseite, 41 Vorderseite, 3 Q2, 7 verkleinerte Inspektionsfotos und 2 Übersichtskopien. Originaldateien und ursprünglicher Rückseitenindex bleiben unverändert.
 
 **Foto-Nachtrag 09.11.2026:** [Zwei weitere Aufnahmen von P600-Buchse und Kabelstecker](../../photos/2026-11-09/p600/README.md), vor dem GitHub-Upload von EXIF/Metadaten bereinigt. Der folgende Index und Kontaktatlas bleiben der historische Bestand vom 08.11.2026.
 
-[Kontaktatlas als PDF](kontaktatlas.pdf) · [Vollständiger Index CSV](fotoindex.csv) · [Bauteil-/Foto-Suchindex](bauteil_fotoindex.csv) · [Registrierungen/Originalprüfsummen JSON](registrierungen.json) · [Teilschaltplan und Diagnose](../schaltplan_110926/README.md)
+[Kontaktatlas als PDF](kontaktatlas.pdf) · [Vollständiger Index CSV](fotoindex.csv) · [Bauteil-/Foto-Suchindex](bauteil_fotoindex.csv) · [Registrierungen/Originalprüfsummen JSON](registrierungen.json) · [Schaltplan](../schaltplan/README.md)
 
 | Teil | Fotos |
 |---|---|
@@ -29,19 +31,6 @@
 
 `bauteil_fotoindex.csv` führt alle 53 F-/B-Bereiche aus Claudes Übersicht mit unverändertem Feld. Explizite visuelle Zuordnungen und bloße Treffer des Feldmittelpunkts im projizierten Fotofenster stehen in getrennten Spalten. Ein Fenster-Treffer beweist bei Bestückung/Kühlkörper keine Sichtbarkeit.
 
-Die älteren Lageangaben der Optokoppler-/Logikspalte in `parts.csv` (E2/E3) weichen von den F8/F9-Feldern der Übersichts-PDF (C2/C3) ab. Dieser Atlas folgt dem Raster und den Bauteil-IDs der Übersicht; `parts.csv` wurde nicht geändert.
-
-## Gezielt zur nächsten Messung
-
-| Bereich | Beste Originalaufnahmen / Unterlagen |
-|---|---|
-| Relais RT334024, I4 | [Vorderseite](../../photos/2026-11-08/front/PXL_20261108_155209219.jpg), [Rückseite mit allen sechs Pins](../../photos/2026-11-08/back/PXL_20261108_154119736.jpg), [markierte Kontakte](../messplan_stromlos_2026-11-08/makros/01.png) |
-| P600/Q2, B5 | [Q2/P600 vorn](../../photos/2026-11-08/q2/q2_vorderseite_makro.jpg), [Q2/Treiber hinten](../../photos/2026-11-08/q2/q2_rueckseite_makro.jpg), [Kontakte Ka/Kb](../messplan_stromlos_2026-11-08/makros/02.png), [Treiberkontakte](../messplan_stromlos_2026-11-08/makros/05.png) |
-| B18/B19/B20, E5/E6 | [Detail Kette und B19/B20](../../photos/2026-11-08/back/PXL_20261108_153921371.jpg), [weiterer Kontext](../../photos/2026-11-08/back/PXL_20261108_153913723.jpg), [markierte E1/E2/P1/P2](../messplan_stromlos_2026-11-08/makros/03.png), [B20-Anschlüsse](../messplan_stromlos_2026-11-08/makros/04.png) |
-| 0VA/+5VA, D5 | [beschriftete Testpunkte](../../photos/2026-11-08/front/PXL_20261108_155115274.jpg), [Markierungen](../messplan_stromlos_2026-11-08/makros/06.png) |
-| P400 / 24 V, F3 | [Aufdruck, Testlöcher und Stecker](../../photos/2026-11-08/front/PXL_20261108_155137120.jpg), [abgeleitete Kontaktzuordnung](../messplan_stromlos_2026-11-08/makros/07.png) |
-| B10, J6 | [Originalmakro](../../photos/2026-11-08/back/PXL_20261108_153829037.jpg), [bisherige Anschluss-IDs](../img/b10_ids.png), [Netzliste](../netlist/b10_netlist.csv) |
-
 ## Abweichungen vom bisherigen Rückseitenindex
 
 Diese Bilder werden nicht stillschweigend an den alten Mittelfeldern festgehalten. Die Tabelle enthält Altwert und Nachbarfoto-Abgleich. Die Bildlage ist eine geometrische/visuelle Auswertung, keine elektrische Messung.
@@ -54,22 +43,22 @@ Diese Bilder werden nicht stillschweigend an den alten Mittelfeldern festgehalte
 
 ## Noch nicht eindeutig lokalisierte Fotos
 
-Kein Foto bleibt ohne grobe Bereichszuordnung. Das ist ausdrücklich keine vollständige Zuordnung aller Bauteilanschlüsse: verdeckte Bahnen, unlesbare Codes und Ebenenwechsel bleiben in Schaltplan und Messplan offen.
+Kein Foto bleibt ohne grobe Bereichszuordnung. Das ist ausdrücklich keine vollständige Zuordnung aller Bauteilanschlüsse: verdeckte Bahnen, unlesbare Codes und Ebenenwechsel bleiben in Schaltplan offen.
 
 ## Originale und Prüfbarkeit
 
 Vorschauen sind verkleinerte, ungedrehte Kopien mit Foto-ID und Zuordnung in einem zusätzlichen Rand. Es wurden keine Platinenbilder generiert. Die Originalfotos wurden nur gelesen. `registrierungen.json` enthält für jedes Original die SHA-256-Prüfsumme, Quelle, Methode und gegebenenfalls die Transformation in die bestehende Übersicht. Die ursprüngliche Datei `photos/2026-11-08/back_raster_index.csv` ist unverändert.
 
-Der Teilschaltplan verwendet ausschließlich ausdrücklich belegte Verbindungen. Ein gutes Bild-Matching ergänzt keine unsichtbare Leiterbahn und identifiziert keinen unbekannten IC-Pin.
+Der Schaltplan verwendet ausschließlich ausdrücklich belegte Verbindungen. Ein gutes Bild-Matching ergänzt keine unsichtbare Leiterbahn und identifiziert keinen unbekannten IC-Pin.
 
 ### Neue Rückseitenaufnahme B20, 09.11.2026
 
-[50370.jpg und Zuordnung](../../photos/2026-11-09/b20/README.md), vor dem Import ohne EXIF/XMP bereinigt, Bildpixel unverändert. B20 / E6 bleibt unverändert; der historische Index der 110 Fotos wird nicht umnummeriert. [Messwerte](../messplan_stromlos_2026-11-08/B20_ERGEBNISSE_2026-11-09.md).
+[50370.jpg und Zuordnung](../../photos/2026-11-09/b20/README.md), vor dem Import ohne EXIF/XMP bereinigt, Bildpixel unverändert. B20 / E6 bleibt unverändert; der historische Index der 110 Fotos wird nicht umnummeriert.
 
 ### Neues Q2-Rückseitenmakro, 09.11.2026
 
-[50386.jpg ohne EXIF und mit Zuordnung](../../photos/2026-11-09/q2/README.md), Q2/B21/B5 unverändert. [Ergebnisse 05/05b und Codekorrektur 2211](../messplan_stromlos_2026-11-08/Q2_TREIBER_ERGEBNISSE_2026-11-09.md). Historische Foto-IDs und der 110-Foto-Index bleiben erhalten.
+[50386.jpg ohne EXIF und mit Zuordnung](../../photos/2026-11-09/q2/README.md), Q2/B21/B5 unverändert. Historische Foto-IDs und der 110-Foto-Index bleiben erhalten.
 
 ### Detail 50396: 1P-Dreibeiner, 09.11.2026
 
-[Originalmakro ohne EXIF und Metadatennachweis](../../photos/2026-11-09/q2/README.md) · [markierte Kontakte und Pausenstand](../messplan_stromlos_2026-11-08/Q2_C_1P_NACHTRAG_2026-11-09.md). Q2/B21/B5 unverändert; historischer 110-Foto-Index bleibt unverändert.
+[Originalmakro ohne EXIF und Metadatennachweis](../../photos/2026-11-09/q2/README.md). Q2/B21/B5 unverändert; historischer 110-Foto-Index bleibt unverändert.

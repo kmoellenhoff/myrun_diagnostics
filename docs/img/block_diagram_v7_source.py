@@ -38,7 +38,7 @@ body{margin:0;background:#fff;font-family:Arial,Helvetica,sans-serif}#c{position
 #leg b{font-size:20px}svg{position:absolute;left:0;top:0}
 </style><div id=c>
 <div style="position:absolute;left:28px;top:14px;font-size:31px;font-weight:bold">Gefran GIRT S6T30 (MyRun) – Funktionsschaltbild, Version 7 · Stand 27.11.2026 – repariert</div>
-<div style="position:absolute;left:28px;top:56px;font-size:17px;color:#444;line-height:1.35">Grobes Funktionsbild nach Fotos beider Platinenseiten und Messungen; kein Leiterbahnplan. Netze nach <i>gesamtschaltplan_110926/netze.csv</i> (Stand 21.11.).<br>Netzseite nicht galvanisch getrennt (0VA = DC−), Zwischenkreis bis ca. 380 V – nur stromlos arbeiten.</div>
+<div style="position:absolute;left:28px;top:56px;font-size:17px;color:#444;line-height:1.35">Grobes Funktionsbild nach Fotos beider Platinenseiten und Messungen; kein Leiterbahnplan. Netze nach <i>schaltplan/netze.csv</i> (Stand 21.11.).<br>Netzseite nicht galvanisch getrennt (0VA = DC−), Zwischenkreis bis ca. 380 V – nur stromlos arbeiten.</div>
 '''
 for (x,y,w,h,t,sub,st,num,dash) in boxes:
     c=BC[st];n=f'<div class=n>{num}</div>' if num else ''

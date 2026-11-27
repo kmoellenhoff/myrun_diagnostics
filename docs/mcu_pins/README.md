@@ -15,11 +15,11 @@ Die Zeichnung ist eine technische Gehäuseskizze, kein erzeugtes Platinenfoto. K
 | PWM-Sollwert | obere Seite, 1. und 2. von rechts, ab P70-Ecke | OC05 Emitter zu beiden Anschlüssen gemeldet. Gemeinsames Signal; Timer-/Interrupt-Funktion nicht belegt. | 16.11. 02:00; [Original](../../photos/2026-11-16/oc05_emitter_mcu_pins.jpg) |
 | F27-Ansteuerung, Ausgang | obere Seite, linker Eckanschluss, 1. ab P13-Ecke | MCU → 1 kΩ (1001) → Basis T4 (L); Kollektor O → Spulen-Minus; Emitter R → 0VA. Dieser Eckanschluss ist nicht direkt mit +5VA verbunden. | 16.11. 02:15–02:31; [MCU-Messfoto](../../photos/2026-11-16/t4_bahn_a_mcu_eckpin.jpg), [1001-Messfoto](../../photos/2026-11-16/t4_1001_bahn_a.jpg) |
 | Enable | rechte Seite, 4. von unten, ab EEPROM/P602-Ecke | OC04 Emitter; Zählecke 01:59 bestätigt. Das OC04-Bild ist gegenüber der Skizze um 90° gedreht. | 16.11. 01:55/01:59; [Original](../../photos/2026-11-16/oc04_emitter_mcu_pin.jpg) |
-| PFC-Sperre, Ausgang | rechte Seite, 3. von unten | Steuerknoten → 2,21 kΩ → T3-Basis; Pull-up 10 kΩ nach +5VA; T3-Kollektor an L4981 Pin 15. Steuerknoten 4,9 V in Standby und Fehlstart. | 14.11. 17:30–17:44; [lokale Zählung](../img/mcu_pin_kandidaten_t3.jpg) |
+| PFC-Sperre, Ausgang | rechte Seite, 3. von unten | Steuerknoten → 2,21 kΩ → T3-Basis; Pull-up 10 kΩ nach +5VA; T3-Kollektor an L4981 Pin 15. Steuerknoten 4,9 V in Standby und Fehlstart. | 14.11. 17:30–17:44; lokale Zählung am MCU |
 | P70, Rolle offen | rechte Seite, 5. von unten | Testpunkt P70 direkt verbunden; nicht mit T3-Steuerleitung gleichsetzen. Keine Ein-/Ausgangsrichtung behauptet. | 14.11. 17:38; gleiches Zählbild |
 | +5VA, Versorgung | untere Seite, rechter Eckanschluss | Gemeinsame Kollektoren OC04/OC05 → +5VA → dieser MCU-Anschluss. Kein Signalanschluss der beiden Koppler. | 16.11. 01:46–01:53; [Original](../../photos/2026-11-16/oc04_kollektor_mcu_pin.jpg) |
 
-Primärquelle: [Tagesprotokoll mit den Korrekturen](../LAUF_2026-11-14.md). Für die Zuordnungen gelten die jeweils letzten bestätigten Einträge, nicht zurückgenommene Zwischenstände.
+Quellen sind die Messprotokolle vom 14.–16.11.2026 (Archiv-Branch `archiv-vor-aufraeumen-2026-11-27`). Für die Zuordnungen gelten die jeweils letzten bestätigten Einträge, nicht zurückgenommene Zwischenstände.
 
 ## Elektrische Einordnung
 
@@ -33,16 +33,12 @@ Primärquelle: [Tagesprotokoll mit den Korrekturen](../LAUF_2026-11-14.md). Für
 
 Das neue [MCU-Messfoto](../../photos/2026-11-16/t4_bahn_a_mcu_eckpin.jpg) zeigt die Gehäusemarke oben links, P602 links und P70 unten. Es ist gegenüber der Skizze um 90° im Uhrzeigersinn gedreht. Sein rechter oberer Anschluss entspricht deshalb dem **linken Anschluss der oberen Reihe** in der Skizze. Er ist weder der +5VA-Anschluss rechts unten noch Y (linke Reihe, zweiter Anschluss von oben).
 
-Bestätigte Netze laut Tagesprotokoll 02:31: Basis T4 (L) → Nicht-MCU-Ende des 1001 ≈ 0 Ω; Emitter (R) → 0VA ≈ 0 Ω; Kollektor (O, Einzelanschluss) → F27-Spulenminus. L/R/O sind die lokalen Anschlussnamen des Messprotokolls, keine Richtungsangaben für alle gedrehten Fotos. „1001“ entspricht 1 kΩ. Die Diodenwerte 0,67/0,68 V ab L passen zusammen mit der Beschaltung zu einem NPN; der genaue Transistortyp und seine Funktion unter Last bleiben offen.
+Bestätigte Netze laut Messprotokoll 16.11. 02:31: Basis T4 (L) → Nicht-MCU-Ende des 1001 ≈ 0 Ω; Emitter (R) → 0VA ≈ 0 Ω; Kollektor (O, Einzelanschluss) → F27-Spulenminus. L/R/O sind die lokalen Anschlussnamen des Messprotokolls, keine Richtungsangaben für alle gedrehten Fotos. „1001“ entspricht 1 kΩ. Die Diodenwerte 0,67/0,68 V ab L passen zusammen mit der Beschaltung zu einem NPN; der genaue Transistortyp und seine Funktion unter Last bleiben offen.
 
 Spulenplus liegt laut 02:32 auf dem +24-V-Netz und ist mit dem Tab des benachbarten SOT-223 verbunden. Der Typ und die Funktion dieses SOT-223 bleiben offen; keine unbelegte Regler- oder Transistorbezeichnung ergänzen. Bereits gemessen: Spulenplus 24 V gegen 0VA, Spannung über der Spule 0 V in Standby und Fehlstart. Eine Freilaufbeschaltung ist bislang nicht zugeordnet und wird nicht erfunden. Die zweite Bahn (b) der T4-Gruppe bleibt offen; insbesondere ist eine Relais-Rückmeldung zum MCU nicht nachgewiesen.
 
-**Bewertung:** Jetzt ist ein zweiter Ausgangspfad neben T3 räumlich und elektrisch zugeordnet. Eine Basis-Emitter-Spannung um 0,7 V würde Vorwärtspolung des Basisübergangs zeigen, beweist aber weder ausreichenden Basisstrom noch einen geschlossenen Relaiskontakt. Bei der nächsten Betriebsmessung sind MCU-seitiges und basisseitiges Ende des 1-kΩ-Widerstands zu unterscheiden. Bei tatsächlich passender Ansteuerung, aber weiterhin fehlender Spulenspannung wäre der T4-/Spulenpfad zu prüfen; bei ausbleibender Ansteuerung bleibt die Ursache vor der Treiberstufe offen. Aus den bisherigen stromlosen Werten folgt noch kein Fehlernachweis.
-
-## Kurzer Repo-Review
+## Hinweise
 
 Die neueren Emitter-Zuordnungen ersetzen die früheren Aussagen, die gemeinsamen Kollektoren seien Enable-/PWM-Eingänge. Das alte Bild `mcu_pin_oc04_enable.jpg` zeigt nach aktueller Messung den +5VA-Anschluss; seine historische Bildbeschriftung ist keine aktuelle Funktionszuordnung.
 
-Im aktuellen Messplan ist „50/100 Hz = Netz kommt am MCU an“ nur ein Aktivitätshinweis: Pegel, Pulsform und korrekte Verarbeitung sind dadurch nicht geprüft. Eine fehlende Hz-Anzeige beweist umgekehrt kein fehlendes Signal. Ebenso identifiziert ein kleiner In-circuit-Widerstand allein keine Signalrichtung und keinen defekten Einzelhalbleiter.
-
-Reproduktion: `python docs/mcu_skizze_2026-11-16/render.py` (Matplotlib). Die Skizze wertet dokumentierte Messungen aus; neue elektrische Messungen wurden nicht durchgeführt.
+Reproduktion: `python docs/mcu_pins/render.py` (Matplotlib). Die Skizze wertet dokumentierte Messungen aus; neue elektrische Messungen wurden nicht durchgeführt.

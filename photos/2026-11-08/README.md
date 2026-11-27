@@ -11,6 +11,6 @@ Originalfotos des Eigentümers von der eigenen, rechtmäßig erworbenen Platine 
 | `uebersicht_kopien/` | Übersichtsfotos, aus denen die Raster-Übersicht gebaut wurde (Kopien, erkennbar aus den Ordnern front/back) | 2 |
 
 - Dateinamen = Originalnamen (`PXL_<Datum>_<Zeit>.jpg`); Zeit = Aufnahmereihenfolge.
-- Rasterlage der Rückseitenfotos (automatisch per Bildabgleich bestimmt, ± 1 Feld): `back_raster_index.csv` (Mittelfeld, Eckfelder). Raster: Spalten A–L, Zeilen 1–6, gleiche Felder auf Vorder- und Rückseite (siehe `docs/GIRT_Platinen_Uebersicht_Entwurf.pdf`). Fotos der Vorderseite sind noch nicht indexiert.
+- Rasterlage der Rückseitenfotos (automatisch per Bildabgleich bestimmt, ± 1 Feld): `back_raster_index.csv` (Mittelfeld, Eckfelder). Raster: Spalten A–L, Zeilen 1–6, gleiche Felder auf Vorder- und Rückseite (siehe `docs/GIRT_Platinen_Uebersicht.pdf`). Fotos der Vorderseite sind noch nicht indexiert.
 - Viele Makros sind gegenüber der Übersicht um 90° oder 180° gedreht; maßgeblich ist der Aufdruck im Bild, nicht die Bildlage.
 - Beschriftete Auswertungen: `docs/img/` (B18, Q2, Optokoppler, Übersichten).

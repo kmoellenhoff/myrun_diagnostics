@@ -1,32 +1,34 @@
-# GIRT S6T30 – component inventory from macro photos (11/08/2026)
+# GIRT S6T30 – Bauteilinventar aus den Makrofotos (08.11.2026)
 
-Source: 41 front + 57 back macro photos and one backlight overview by the owner. Certainty: **P** = printed text read in photo, **I** = inferred. Everything is own observation of a lawfully owned board (see disclaimer in HARDWARE.md).
+Quelle: 41 Vorderseiten- und 57 Rückseitenmakros sowie eine Durchlichtübersicht. Gewissheit: **P** = Aufdruck im Foto gelesen, **I** = abgeleitet. Alles stammt aus eigener Beobachtung an einer rechtmäßig erworbenen Platine (Haftungshinweis siehe [HARDWARE.md](HARDWARE.md)).
 
-## Logic strip next to the optocouplers (mains-side logic, front, left edge of signal area)
-| Part | Marking read (P) | Count / note |
+## Logikleiste neben den Optokopplern (netzseitige Logik, Vorderseite)
+
+| Teil | Gelesener Aufdruck (P) | Anzahl / Hinweis |
 |---|---|---|
-| Optocoupler | `VO617A-8` (Vishay, SMD-4, CTR 130–260 %) | **8** in one column next to the 14-pin P602 side (earlier estimate "~10" to be rechecked at other places) |
-| Hex Schmitt inverter | `74ACT14G` (ON Semi, SO-14) | **2** |
-| Comparator | `2903` (LM2903, SO-8) | 1 |
-| RS-485 transceiver | `ADM485` (Analog Devices, SO-8) | 1 – new finding; purpose unknown (console link? isolation?) [I] |
-| Voltage regulator | `78L05A` (ST, SO-8) | **2**, one at each end of the strip (top and bottom) |
-| Solid-state relay | `CPC1017N` (Clare/IXYS, SOP-4), next to two SOT-223 regulators | 1 |
-| MCU | QFP-32 near P13/P70, marking illegible | 1 |
-| EEPROM | SO-8 beside MCU (24C32 per earlier reading) | 1 |
+| Optokoppler | `VO617A-8` (Vishay, SMD-4) | 8 in einer Reihe neben P602 |
+| Hex-Schmitt-Inverter | `74ACT14G` (SO-14) | 2 |
+| Komparator | `2903` (LM2903, SO-8) | 1 |
+| RS-485-Transceiver | `ADM485` (SO-8) | 1, Zweck [I]: Tachosignal von P4 |
+| Spannungsregler | `78L05A` (SO-8) | 2, je einer an den Enden der Leiste |
+| Halbleiterrelais | `CPC1017N` (SOP-4) | 1, neben zwei SOT-223-Reglern |
+| MCU | QFP-32 nahe P13/P70, Aufdruck unleserlich | 1 |
+| EEPROM | SO-8 neben der MCU | 1 |
 
-## Connectors/test points seen
-P2 (2×9, console), P3 (3-pin POT / +5 V, mains-side), P4 (4-pin TACHO/+12V/0V), **P602 (2×7 header, blue, debug/programming, mains side – do not connect)**, P601 (2-pin RST/0VA), P600 (2-pin, NTC next to Q2), P70 (6-pin, hole row, debug), P13 (test pad), P400 (2-pin, 0V24/+24V – relay coil supply), DC MOTOR (L+ orange / L− grey), UP/DOWN 3-pin (WHITE/COM, DOWN, UP, BLACK), AC LINE (BROWN L, LIGHT BLUE N), FUSE MOT, test points 0VA/+5VA, +12VISO/0VISO, ±12VA.
-Parts seen (relay count corrected 21.11.2026 from the original overviews/macros): **5 mechanical relays** — Schrack PE014012 (F24), **two** Panasonic ALQ3F12 grouped as F25, another Panasonic ALQ3F12 (F26), and Schrack RT334024 (F27). The CPC1017N above is an additional solid-state signal relay. Contact functions of F24/F25/F26 are not measured. Also: 3 mains-filter chokes (C301–C304 area), toroid RT700 / large toroid, DC link electrolytic `S890A16E U12 GIRT 140421 V.10.05` (label), transformer ETI349X4 (Falco), aluminum heatsink with Q1/Q2/D3 (green isolators).
+## Steckverbinder und Testpunkte
 
-## Back side (solder side)
-- Large copper pours on the mains side, slots (isolation) between mains and logic; backlight shows continuous copper only in the pour regions, signal area dense two-layer-looking tracks (layer count not yet confirmed).
-- LED labels LINE / +5V / STS1 / STS2 (SMD LEDs), SO-20 IC (marking illegible) bottom middle (back), three 4702 / 47R0 SMD resistors, 4× `R020` shunt resistors (0.02 Ω) next to heatsink, two `471` SMD power resistors, 4753 (475 kΩ) chains with diodes at the lower left edge.
-- P2 solder pads at top centre (two rows).
+P2 (2×9, Konsole), P3 (3-polig, Poti/+5 V, netzseitig), P4 (4-polig, TACHO/+12V/0V), **P602 (2×7, blau, Debug/Programmierung, netzseitig – nicht anschließen)**, P601 (RST/0VA), P600 (2-polig, NTC neben Q2), P70 (6-polig, Lochreihe), P13 (Testpad), P400 (0V24/+24V, Relaisspulenversorgung), DC MOTOR (L+ orange / L− grau), UP/DOWN (3-polig), AC LINE (braun L, hellblau N), FUSE MOT, Testpunkte 0VA/+5VA, +12VISO/0VISO, ±12VA.
 
-## Open
-Full per-net table not started; next steps need grid + IDs (see report section 8).
+Weitere Teile: 5 mechanische Relais (Schrack PE014012 = F24, zwei Panasonic ALQ3F12 = F25, ein Panasonic ALQ3F12 = F26, Schrack RT334024 = F27), 3 Netzfilterdrosseln, Ringkern RT700, Zwischenkreis-Elko (Aufdruck `S890A16E U12 GIRT 140421 V.10.05`), Transformator ETI349X4, Kühlkörper mit Q1/Q2/D3.
 
-## Overview drafts
-See `docs/GIRT_Platinen_Uebersicht_Entwurf.pdf` (v2, grid A-L x 1-6, both variants): variant A = front as photographed + back flipped vertically (`docs/img/overview_front.jpg`, `overview_back_flipped.jpg`); variant B = back as photographed (readable text) + front flipped vertically (`overview_back_upright.jpg`, `overview_front_flipped.jpg`). Same field names in all four; in flipped-to-upright variants the row digits run 6 (top) to 1 (bottom). New boxes B18-B20 (voltage-sense candidate, hypothesis). Traces not yet traced.
+## Rückseite (Lötseite)
 
-- Q2 (MOSFET, B5 vorn/hinten): Pinbelegung G/D/S siehe `docs/netlist/q2_zuordnung.md`, Fotos `docs/img/q2_*_GDS.jpg`. Übersicht-IDs F33/B21.
+- Große Kupferflächen auf der Netzseite, Schlitze zwischen Netz- und Logikbereich; im Signalbereich dichte Leiterbahnen.
+- LEDs LINE / +5V / STS1 / STS2, SO-20-IC (Aufdruck unleserlich) unten mittig, 4× `R020`-Shunt (0,02 Ω) am Kühlkörper, zwei `471`-Leistungswiderstände, 4753-Ketten (475 kΩ) mit Dioden am linken unteren Rand.
+- P2-Lötpads oben mittig.
+
+## Übersichten
+
+[GIRT_Platinen_Uebersicht.pdf](GIRT_Platinen_Uebersicht.pdf) (Stand 08.11., Raster A–L × 1–6): Variante A = Vorderseite wie fotografiert und Rückseite vertikal gespiegelt ([overview_front.jpg](img/overview_front.jpg), [overview_back_flipped.jpg](img/overview_back_flipped.jpg)); Variante B = Rückseite wie fotografiert und Vorderseite gespiegelt ([overview_back_upright.jpg](img/overview_back_upright.jpg), [overview_front_flipped.jpg](img/overview_front_flipped.jpg)). Die Feldnamen sind in allen vier Bildern gleich; bei der aufrechten Rückseite laufen die Zeilen von 6 (oben) bis 1 (unten). Funktionszuordnungen in der PDF sind teilweise überholt, maßgeblich sind [HARDWARE.md](HARDWARE.md) und der [Schaltplan](schaltplan/README.md).
+
+Q2 (MOSFET, Feld B5, vorn/hinten): Pinbelegung G/D/S auf den Fotos [q2_vorderseite_GDS.jpg](img/q2_vorderseite_GDS.jpg) und [q2_rueckseite_GDS.jpg](img/q2_rueckseite_GDS.jpg); Übersicht-IDs F33/B21.

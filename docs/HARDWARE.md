@@ -1,6 +1,6 @@
 # Technogym MyRun – Hardware-Dokumentation des Unterteils (Gefran GIRT S6T30)
 
-Hardware-Notizen zur Unterteil-Steuerung („GIRT“) eines gebrauchten Technogym MyRun, entstanden bei der Reparatur eines einzelnen Geräts. Ein Herstellerschaltplan liegt nicht vor; der [rekonstruierte Teilschaltplan](gesamtschaltplan_110926/README.md) dokumentiert die bekannten Netze. Alles Folgende ist an diesem Gerät gemessen, beobachtet (Fotos, Videos, BLE-Logs), aus Servicehandbüchern verwandter Technogym-Antriebe übernommen oder als Ableitung gekennzeichnet. Die Reparatur selbst steht in [REPARATUR.md](REPARATUR.md) ([PDF](REPARATUR.pdf)), die Fehlermeldungen in [FEHLERCODES.md](FEHLERCODES.md).
+Hardware-Notizen zur Unterteil-Steuerung („GIRT“) eines gebrauchten Technogym MyRun, entstanden bei der Reparatur eines einzelnen Geräts. Ein Herstellerschaltplan liegt nicht vor; der [rekonstruierte Teilschaltplan](schaltplan/README.md) dokumentiert die bekannten Netze. Alles Folgende ist an diesem Gerät gemessen, beobachtet (Fotos, Videos, BLE-Logs), aus Servicehandbüchern verwandter Technogym-Antriebe übernommen oder als Ableitung gekennzeichnet. Die Reparatur selbst steht in [REPARATUR.md](REPARATUR.md) ([PDF](REPARATUR.pdf)), die Fehlermeldungen in [FEHLERCODES.md](FEHLERCODES.md).
 
 > **Belegstufen:** **[M]** am Gerät gemessen · **[O]** beobachtet (Foto, Video, BLE-Log) · **[Man]** aus dem Handbuch dieses oder eines verwandten Antriebs, hier nicht verifiziert · **[I]** Ableitung · **[H]** Hypothese.
 
@@ -36,7 +36,7 @@ Der Widerstandsaufdruck `4753` auf den SMD-Widerständen der Messketten bedeutet
 
 ### 2.1 Netzerfassung (B10) und Messsignal zum Mikrocontroller
 
-Die Netzspannung wird über zwei Zweige (L und N) erfasst; die Netze stammen aus dem [Gesamtschaltplan](gesamtschaltplan_110926/README.md) (Stand 21.11.2026). Im aktuellen Aufbau gilt je Seite: Faston-Pad – 470 kΩ – 470 kΩ – Diode US1M – **Knoten J** (Kathoden beider Seiten). Am Knoten J liegen:
+Die Netzspannung wird über zwei Zweige (L und N) erfasst; die Netze stammen aus dem [Gesamtschaltplan](schaltplan/README.md) (Stand 21.11.2026). Im aktuellen Aufbau gilt je Seite: Faston-Pad – 470 kΩ – 470 kΩ – Diode US1M – **Knoten J** (Kathoden beider Seiten). Am Knoten J liegen:
 
 - 22,1 kΩ („2212“) nach 0VA,
 - der Kondensator **C602** (ca. 470 pF) nach 0VA, parallel zum 22,1-kΩ-Widerstand,

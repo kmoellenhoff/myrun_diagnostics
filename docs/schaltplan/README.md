@@ -4,7 +4,7 @@ Rekonstruiert aus Messungen und Fotos, **kein Herstellerplan**. Er zeigt die gem
 
 | Datei | Inhalt |
 |---|---|
-| [gesamtschaltplan.pdf](gesamtschaltplan.pdf) | Hauptblatt **Original-Rekonstruktion** mit Detailansichten (Netzerfassung B10, Treiber, MCU-Umfeld, P2/P4, Optokoppler) |
+| [gesamtschaltplan.pdf](gesamtschaltplan.pdf) | Hauptblatt **Original-Rekonstruktion** mit Detailansichten, dem separaten Ist-Blatt und einem Messregister (43 Seiten, Stand 21.11.) |
 | [uebersicht_A1.pdf](uebersicht_A1.pdf) | Gesamtblatt in einem Stück (Sonderformat, trotz Dateiname nicht A1) |
 | [gesamtschaltplan.svg](gesamtschaltplan.svg) | dasselbe zum Zoomen im Browser |
 | [GIRT_Gesamtschaltplan.kicad_sch](GIRT_Gesamtschaltplan.kicad_sch) | bearbeitbare KiCad-Quelle (KiCad 9) |
