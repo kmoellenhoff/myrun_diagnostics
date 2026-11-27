@@ -38,7 +38,7 @@ Beleglage: Der Wärmetest (J-Einbruch beim alten C602, stabile 4,966 V mit neuem
 |---|---|
 | [HARDWARE.md](docs/HARDWARE.md) | Baugruppen, Bauteile, Steckverbinder P2/P4, LEDs, Korrosionsbefund |
 | [Fotoatlas](docs/fotoatlas/README.md) | Alle Originalfotos beider Platinenseiten, zugeordnet zum Raster A–L / 1–6 |
-| [Platinenübersicht mit Koordinaten (PDF)](docs/GIRT_Platinen_Uebersicht.pdf) | Gesamtübersicht Vorder-/Rückseite mit Koordinatenraster (Stand 08.11., Funktionszuordnungen teilweise überholt) |
+| [Platinenübersicht mit Koordinaten (PDF)](docs/GIRT_Platinen_Uebersicht.pdf) | Gesamtübersicht Vorder-/Rückseite mit Koordinatenraster (Stand 27.11., v3, mit Markierung der beiden Defekte) |
 | [Schaltplan](docs/schaltplan/README.md) | Rekonstruierter Schaltplan (KiCad, PDF, SVG), Original und B10-Umbau |
 | [MCU-Pins](docs/mcu_pins/README.md) | Arbeitsnummern 1–32 des Mikrocontrollers (keine Datenblatt-Pins) |
 | [FEHLERCODES.md](docs/FEHLERCODES.md) | HF-Codes, err-Anzeigen, STS2-Blinkcodes, Fehlerspeicher |
