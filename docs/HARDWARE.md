@@ -42,7 +42,7 @@ Die Netzspannung wird über zwei Zweige (L und N) erfasst; die Netze stammen aus
 - der Kondensator **C602** (ca. 470 pF) nach 0VA, parallel zum 22,1-kΩ-Widerstand,
 - 1 kΩ („1001“) zum nichtinvertierenden Eingang (Pin 3) des **TL082**, Kanal A, der als Spannungsfolger arbeitet (Kanal B ungenutzt).
 
-Vom TL082-Ausgang führt das Signal über einen 4,75-kΩ/4,75-kΩ-Teiler und einen 100-Ω-Widerstand zum Netz „X“, an dem ein Kondensator nach 0VA liegt, und weiter zum MCU-Anschluss mit der **Arbeitsnummer 28** (Zählung 1–32 ab Gehäusemarke gegen den Uhrzeigersinn, siehe `mcu_skizze_2026-11-16/README.md`; keine Datenblatt-Pins, MCU-Typ nicht identifiziert). Bei ca. 238 V Netzspannung liegt J bei ≈ 4,9 V DC **[M]**. C602 bildet mit der Quellimpedanz von ca. 21 kΩ einen Tiefpass (Grenzfrequenz ≈ 16 kHz) zur Entstörung des Messsignals **[I]**. Dieser Kondensator war die Hauptursache der Fehlstarts (siehe Abschnitt 7).
+Vom TL082-Ausgang führt das Signal über einen 4,75-kΩ/4,75-kΩ-Teiler und einen 100-Ω-Widerstand zum Netz „X“, an dem ein Kondensator nach 0VA liegt, und weiter zum MCU-Anschluss mit der **Arbeitsnummer 28** (Zählung 1–32 ab Gehäusemarke gegen den Uhrzeigersinn, siehe [mcu_pins](mcu_pins/README.md); keine Datenblatt-Pins, MCU-Typ nicht identifiziert). Bei ca. 238 V Netzspannung liegt J bei ≈ 4,9 V DC **[M]**. C602 bildet mit der Quellimpedanz von ca. 21 kΩ einen Tiefpass (Grenzfrequenz ≈ 16 kHz) zur Entstörung des Messsignals **[I]**. Dieser Kondensator war die Hauptursache der Fehlstarts (siehe Abschnitt 7).
 
 ## 3. Steckverbinder
 
